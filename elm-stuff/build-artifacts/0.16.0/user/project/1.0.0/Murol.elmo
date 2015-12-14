@@ -1,0 +1,221 @@
+Elm.Murol = Elm.Murol || {};
+Elm.Murol.make = function (_elm) {
+   "use strict";
+   _elm.Murol = _elm.Murol || {};
+   if (_elm.Murol.values) return _elm.Murol.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Char = Elm.Char.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var script = F2(function (source,js) {
+      return A3($Html.node,"script",_U.list([$Html$Attributes.src(source),$Html$Attributes.type$("text/javascript")]),_U.list([$Html.text(js)]));
+   });
+   var capitalize = function (string) {
+      var _p0 = $String.uncons(string);
+      if (_p0.ctor === "Nothing") {
+            return "";
+         } else {
+            return A2($String.cons,$Char.toUpper(_p0._0._0),_p0._0._1);
+         }
+   };
+   var renderCounter = A2($Html.div,
+   _U.list([$Html$Attributes.id("counter")]),
+   _U.list([A2($Html.p,
+   _U.list([$Html$Attributes.align("center")]),
+   _U.list([A2(script,"http://www.123compteur.com/counterskinable01.php?votre_id=678591","")]))]));
+   var renderMeteo = A2($Html.div,
+   _U.list([$Html$Attributes.id("meteo")]),
+   _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.id("lcm2K13_1000")
+                   ,$Html$Attributes.href("http://france.lachainemeteo.com/meteo-france/ville\n                  /previsions-meteo-murol-3657-0.php")]),
+           _U.list([]))
+           ,A2(script,
+           "http://services.lachainemeteo.com/meteodirect/generationjs/javascript?type_affichage=vignette&w=140&h=175&idc=lcm2K13&entite=3657&type_entite=1&echeance=0&rand=1000",
+           "")]));
+   var renderPlugins = A2($Html.div,
+   _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
+   _U.list([A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo])))]));
+   var renderMisc = function (misc) {
+      var toLink = function (_p1) {
+         var _p2 = _p1;
+         return A2($Html.a,_U.list([$Html$Attributes.href(_p2._1)]),_U.list([A2($Html.li,_U.list([]),_U.list([$Html.text(_p2._0)]))]));
+      };
+      var linkList = A2($List.map,toLink,misc);
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("misc"),$Html$Attributes.$class("submenu entry")]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Divers:")])),A2($Html.ul,_U.list([]),linkList)]));
+   };
+   var renderNewsLetter = function (news) {
+      var toNews = function (_p3) {
+         var _p4 = _p3;
+         return A2($Html.a,_U.list([$Html$Attributes.href(_p4._1)]),_U.list([A2($Html.li,_U.list([]),_U.list([$Html.text(_p4._0)]))]));
+      };
+      var newsList = A2($List.map,toNews,news);
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("newsletters"),$Html$Attributes.$class("submenu entry")]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Inscrivez vous:")])),A2($Html.ul,_U.list([]),newsList)]));
+   };
+   var renderNews = function (news) {
+      var toNews = function (_p5) {
+         var _p6 = _p5;
+         return A2($Html.a,_U.list([$Html$Attributes.href(_p6._0)]),_U.list([A2($Html.li,_U.list([]),_U.list([$Html.text(_p6._1)]))]));
+      };
+      var newsList = A2($List.map,toNews,news);
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("news"),$Html$Attributes.$class("submenu entry")]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("La mairie vous informe")])),A2($Html.ul,_U.list([]),newsList)]));
+   };
+   var renderListImg = function (pics) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("pics")]),
+      _U.list([A2($Html.ul,
+      _U.list([]),
+      A2($List.map,
+      function (e) {
+         return A2($Html.li,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",e))]),_U.list([]))]));
+      },
+      pics))]));
+   };
+   var pageFooter = A2($Html.footer,
+   _U.list([$Html$Attributes.id("footer")]),
+   _U.list([A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Vous souhaitez passer une information")
+           ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text(" contactez le webmaster")]))]))]));
+   var renderMainMenu = F2(function (adr,m) {
+      var toUrl = function (s) {
+         return function (s) {
+            return A2($Basics._op["++"],s,".html");
+         }(A2($String.join,"",A2($List.map,capitalize,$String.words(s))));
+      };
+      var _p7 = m;
+      if (_p7.ctor === "Leaf") {
+            var _p9 = _p7._1;
+            var _p8 = _p7._0;
+            var link$ = $String.isEmpty(_p9) ? toUrl(_p8) : _p9;
+            return A2($Html.a,_U.list([$Html$Attributes.href(link$)]),_U.list([$Html.text(_p8)]));
+         } else {
+            var _p11 = _p7._1;
+            var _p10 = _p7._0;
+            return $String.isEmpty(_p10) ? A2($Html.div,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu(adr),_p11)) : A2($Html.div,
+            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p10,"Content"))]),
+            _U.list([A2($Html.a,_U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p10,"dropBtn"))]),_U.list([$Html.text(_p10)]))
+                    ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu(adr),_p11))]));
+         }
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2(renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("middleDiv")]),
+              _U.list([renderNews(function (_) {    return _.news;}(model))
+                      ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
+                      ,renderMisc(function (_) {    return _.misc;}(model))]))
+              ,renderListImg(function (_) {    return _.logos;}(model))
+              ,renderPlugins
+              ,pageFooter]));
+   });
+   var update = F2(function (action,model) {
+      var _p12 = action;
+      switch (_p12.ctor)
+      {case "NoOp": return model;
+         case "Hover": return model;
+         default: return model;}
+   });
+   var Entry = function (a) {    return {ctor: "Entry",_0: a};};
+   var renderSubMenu = F3(function (address,title,entries) {
+      var toA = function (e) {    return A2($Html.a,_U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e))]),_U.list([$Html.text(e)]));};
+      var linkList = A2($List.map,toA,entries);
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("sideMenu")]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text(title)])),A2($Html.div,_U.list([]),linkList)]));
+   });
+   var Hover = function (a) {    return {ctor: "Hover",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var misc = _U.list([{ctor: "_Tuple2",_0: "Visiter le musée des peintres de Murol",_1: "http://www.musee-murol.fr/fr"}]);
+   var newsletters = _U.list([{ctor: "_Tuple2"
+                              ,_0: "aux bulletins d\'informations de la commune"
+                              ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}
+                             ,{ctor: "_Tuple2"
+                              ,_0: "aux commissions"
+                              ,_1: "https://docs.google.com/forms/d/1RzrxYsue2UqQn2VBdPK3AamNAUb1IyejhWfENwjynkA/viewform"}
+                             ,{ctor: "_Tuple2"
+                              ,_0: "recevoir une alerte mise à jour site"
+                              ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}]);
+   var news = _U.list([{ctor: "_Tuple2"
+                       ,_0: "http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016"
+                       ,_1: "L\'Auvergne fait une entrée remarquée dans le Best of du voyage de Lonely Planet en 2016. En 6ème position du classement des régions à visiter dans le monde."}]);
+   var logos = _U.list(["FamillePlus2.gif","StationTourismeRVB2.gif","Villagefleuri2.gif","StationVertegf2.gif"]);
+   var Node = F2(function (a,b) {    return {ctor: "Node",_0: a,_1: b};});
+   var Leaf = F2(function (a,b) {    return {ctor: "Leaf",_0: a,_1: b};});
+   var mainMenu = A2(Node,
+   "",
+   _U.list([A2(Leaf,"Accueil","index.html")
+           ,A2(Leaf,"Agenda","")
+           ,A2(Leaf,"Tourisme","")
+           ,A2(Node,"Vie locale",_U.list([A2(Leaf,"Vie scolaire",""),A2(Leaf,"Les séniors",""),A2(Leaf,"Covoiturage",""),A2(Leaf,"Gestion des déchets","")]))
+           ,A2(Node,
+           "Vie économique",
+           _U.list([A2(Leaf,"Agriculture","")
+                   ,A2(Leaf,"Artisanat","")
+                   ,A2(Leaf,"Commerces","")
+                   ,A2(Leaf,"Entreprises","")
+                   ,A2(Leaf,"Offres d\'emploi","")
+                   ,A2(Leaf,"Quinzaine commerciale","")]))
+           ,A2(Leaf,"Mairie","")
+           ,A2(Node,
+           "Culture et loisirs",
+           _U.list([A2(Leaf,"Art et musique","")
+                   ,A2(Leaf,"Artisanat d\'art","")
+                   ,A2(Leaf,"Associations","")
+                   ,A2(Leaf,"Cinema","")
+                   ,A2(Leaf,"Musée des peintres","http://www.musee-murol.fr/fr")
+                   ,A2(Leaf,"Patrimoine","")
+                   ,A2(Leaf,"Phototheque","")
+                   ,A2(Leaf,"Sports et détente","")
+                   ,A2(Leaf,"Village fleuri","")]))
+           ,A2(Leaf,"Numeros d\'urgences","")
+           ,A2(Leaf,"Petites annonces","")]));
+   var initialModel = {mainMenu: mainMenu,logos: logos,news: news,newsletters: newsletters,misc: misc};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var Model = F5(function (a,b,c,d,e) {    return {mainMenu: a,logos: b,news: c,newsletters: d,misc: e};});
+   return _elm.Murol.values = {_op: _op
+                              ,Model: Model
+                              ,Leaf: Leaf
+                              ,Node: Node
+                              ,mainMenu: mainMenu
+                              ,logos: logos
+                              ,news: news
+                              ,newsletters: newsletters
+                              ,misc: misc
+                              ,initialModel: initialModel
+                              ,NoOp: NoOp
+                              ,Hover: Hover
+                              ,Entry: Entry
+                              ,update: update
+                              ,renderMainMenu: renderMainMenu
+                              ,pageFooter: pageFooter
+                              ,renderListImg: renderListImg
+                              ,renderNews: renderNews
+                              ,renderNewsLetter: renderNewsLetter
+                              ,renderMisc: renderMisc
+                              ,renderSubMenu: renderSubMenu
+                              ,renderMeteo: renderMeteo
+                              ,renderCounter: renderCounter
+                              ,renderPlugins: renderPlugins
+                              ,view: view
+                              ,main: main
+                              ,capitalize: capitalize
+                              ,script: script};
+};

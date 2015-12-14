@@ -1,0 +1,1217 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"p",
+				"padding-bottom"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"bar",
+				"barDeNuit"
+			],
+			[
+				"re",
+				"restosMurol"
+			],
+			[
+				"res",
+				"restosBeaunes"
+			],
+			[
+				"make",
+				"makeTable"
+			],
+			[
+				"al",
+				"alt'"
+			],
+			[
+				"de",
+				"descr'"
+			],
+			[
+				"des",
+				"descr"
+			],
+			[
+				"m",
+				"mail"
+			],
+			[
+				"f",
+				"font-family"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"rest",
+				"restaurants"
+			],
+			[
+				"render",
+				"renderListImg"
+			],
+			[
+				"Cha",
+				"Chautignat"
+			],
+			[
+				"con",
+				"contentMap"
+			],
+			[
+				"i",
+				"initialContent"
+			],
+			[
+				"main",
+				"mainContent"
+			],
+			[
+				"En",
+				"Entry"
+			],
+			[
+				"ren",
+				"renderMainContent"
+			],
+			[
+				"ca",
+				"capitalize"
+			],
+			[
+				"en",
+				"entries"
+			],
+			[
+				"to",
+				"toUrl"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"block",
+				"inline-block"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"N",
+				"Nothing"
+			],
+			[
+				"sc",
+				"SCOLAIRE"
+			],
+			[
+				"test",
+				"test3"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"left",
+				"margin-left"
+			],
+			[
+				"new",
+				"newsList"
+			],
+			[
+				"mai",
+				"mairie"
+			],
+			[
+				"news",
+				"newsletters"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"page",
+				"pageFooter"
+			],
+			[
+				"Pro",
+				"proj1"
+			],
+			[
+				"seg",
+				"segW"
+			],
+			[
+				"tex",
+				"texH"
+			],
+			[
+				"y",
+				"yOff"
+			],
+			[
+				"win",
+				"windowHeight"
+			],
+			[
+				"T",
+				"Type2"
+			],
+			[
+				"ty",
+				"typeToText"
+			],
+			[
+				"Ty",
+				"Type1"
+			],
+			[
+				"no",
+				"normalizeY"
+			],
+			[
+				"bu",
+				"buffList"
+			],
+			[
+				"buff",
+				"buffSize"
+			],
+			[
+				"se",
+				"segL"
+			],
+			[
+				"ran",
+				"randRoad"
+			],
+			[
+				"Ve",
+				"Vector"
+			],
+			[
+				"ini",
+				"initRoad"
+			],
+			[
+				"acc",
+				"accel"
+			],
+			[
+				"ra",
+				"randSegList"
+			],
+			[
+				"buf",
+				"buffSize"
+			],
+			[
+				"S",
+				"Segment"
+			],
+			[
+				"randS",
+				"randSegList"
+			],
+			[
+				"rand",
+				"randSlope"
+			],
+			[
+				"Type",
+				"Type1"
+			],
+			[
+				"Typ",
+				"Type1"
+			],
+			[
+				"ro",
+				"road2"
+			],
+			[
+				"r",
+				"road1"
+			],
+			[
+				"P",
+				"Pnt"
+			],
+			[
+				"ki",
+				"killOrSpawn"
+			],
+			[
+				"n",
+				"NoEvent"
+			],
+			[
+				"O",
+				"Object"
+			],
+			[
+				"pB",
+				"pBubble"
+			],
+			[
+				"B",
+				"Bubbles"
+			],
+			[
+				"s",
+				"separate"
+			],
+			[
+				"fil",
+				"filterSpecies"
+			],
+			[
+				"le",
+				"leftAnim"
+			],
+			[
+				"id",
+				"idSt"
+			],
+			[
+				"randSea",
+				"randSeaHorse"
+			],
+			[
+				"SeaHorse",
+				"SeaHorsePic"
+			],
+			[
+				"Le",
+				"Levels"
+			],
+			[
+				"L",
+				"Level"
+			],
+			[
+				"Ob",
+				"Object"
+			],
+			[
+				"l",
+				"loadTexture"
+			],
+			[
+				"c",
+				"c1"
+			],
+			[
+				"Col",
+				"Col"
+			],
+			[
+				"col",
+				"colAssocs"
+			],
+			[
+				"map",
+				"mapCol"
+			],
+			[
+				"co",
+				"colAssocs"
+			],
+			[
+				"as",
+				"assocsCol"
+			],
+			[
+				"o",
+				"oOut"
+			],
+			[
+				"em",
+				"emptyCol"
+			],
+			[
+				"E",
+				"emptyCol"
+			],
+			[
+				"Co",
+				"ColKey"
+			],
+			[
+				"Ke",
+				"KeycodeM"
+			],
+			[
+				"SDL",
+				"SDLEvent"
+			],
+			[
+				"sp",
+				"speed"
+			],
+			[
+				"fr",
+				"fromIntegral"
+			],
+			[
+				"w",
+				"windowWidth"
+			],
+			[
+				"dam",
+				"damp2"
+			],
+			[
+				"get",
+				"getVec"
+			],
+			[
+				"g",
+				"goBack"
+			],
+			[
+				"nor",
+				"norm"
+			],
+			[
+				"da",
+				"dampenSpeed"
+			],
+			[
+				"cl",
+				"clampVec"
+			],
+			[
+				"norm",
+				"normalize"
+			],
+			[
+				"v",
+				"vMax"
+			],
+			[
+				"max",
+				"maxAccY"
+			],
+			[
+				"maa",
+				"maxAccX"
+			],
+			[
+				"Vec",
+				"Vec3"
+			],
+			[
+				"fis",
+				"fishMinDist"
+			],
+			[
+				"avrg",
+				"avrgHeading"
+			],
+			[
+				"avr",
+				"avrgLoc"
+			],
+			[
+				"Obj",
+				"ObjectInit"
+			],
+			[
+				"Tex",
+				"Texture"
+			],
+			[
+				"ob",
+				"objOut"
+			],
+			[
+				"R",
+				"Righty"
+			],
+			[
+				"up",
+				"updateFish"
+			],
+			[
+				"vel",
+				"vel0"
+			],
+			[
+				"pos",
+				"pos0"
+			],
+			[
+				"ud",
+				"updateFish"
+			],
+			[
+				"fi",
+				"fishRightAnim"
+			],
+			[
+				"e",
+				"envi"
+			],
+			[
+				"obj",
+				"objOut"
+			],
+			[
+				"Game",
+				"GameInput"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Murol.elm",
+			"settings":
+			{
+				"buffer_size": 6423,
+				"line_ending": "Unix",
+				"name": "module Murol where"
+			}
+		},
+		{
+			"file": "Tourisme.elm",
+			"settings":
+			{
+				"buffer_size": 18500,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test.hs",
+			"settings":
+			{
+				"buffer_size": 326,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 645,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/style.css",
+			"settings":
+			{
+				"buffer_size": 6124,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Tourisme.html",
+			"settings":
+			{
+				"buffer_size": 1314,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"colo",
+				"Colorsublime: Browse Themes"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"*",
+			" import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/fayong/prog/elm/proj1"
+	],
+	"file_history":
+	[
+		"/home/fayong/prog/elm/murol/test.hs",
+		"/home/fayong/prog/elm/murol/murol.html",
+		"/home/fayong/prog/appEngine/chineseWords/static/css/base.css",
+		"/home/fayong/prog/elm/proj1/styles/style.css",
+		"/home/fayong/prog/elm/murol/styles/style.css",
+		"/home/fayong/prog/elm/murol/Gruntfile.js",
+		"/home/fayong/prog/elm/proj1/js/proj1.js",
+		"/home/fayong/prog/elm/proj1/index.html",
+		"/home/fayong/prog/elm/proj1/Proj1.elm",
+		"/home/fayong/prog/elm/proj1/styles/templated-iridium/index.html",
+		"/home/fayong/prog/Haskell/pseudo3D/src/Sdl2.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/IO.hs",
+		"/home/fayong/prog/Haskell/pseudo3D/src/Helper.hs",
+		"/home/fayong/prog/Haskell/pseudo3D/src/main.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/Helper.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/main.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/Types.hs",
+		"/home/fayong/prog/Haskell/test.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/Sdl2.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/Vegetation.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/SeaHorse.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/Core.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/Col.hs",
+		"/home/fayong/games/aste/asteroids.ml",
+		"/home/fayong/prog/Haskell/aquarium/src/StopWatch.hs",
+		"/home/fayong/prog/Haskell/rayCaster/raycaster.hs",
+		"/home/fayong/prog/Haskell/yampa/main.hs",
+		"/home/fayong/prog/Haskell/aquarium/src/BlueFish.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/Helper.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/EngineTypes.hs",
+		"/home/fayong/prog/Haskell/feedback.hs",
+		"/home/fayong/prog/Haskell/fractal.hs",
+		"/home/fayong/prog/Haskell/yampa/Sdl2.hs",
+		"/home/fayong/prog/Haskell/yampa/hello.hs",
+		"/home/fayong/prog/Haskell/yampa/aste/asteroids.ml",
+		"/home/fayong/prog/Haskell/little-sheep/src/haskell/Types.hs",
+		"/home/fayong/prog/Haskell/little-sheep/src/haskell/main.hs",
+		"/home/fayong/prog/Haskell/train/train2.hs",
+		"/home/fayong/prog/Haskell/timeMachine.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/main.hs",
+		"/home/fayong/prog/Haskell/rayCaster/Sdl2.hs",
+		"/home/fayong/prog/Haskell/rayCaster/TextureMapping.hs",
+		"/home/fayong/prog/Haskell/juicy/main.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/WorldUpdates.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/Vector.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/Tiles.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/Noise.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/Setup.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/Engine.hs",
+		"/home/fayong/prog/Haskell/wizzard/src/Graphics.hs",
+		"/home/fayong/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/fayong/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/fayong/.config/sublime-text-3/Packages/User/JSON.sublime-settings",
+		"/home/fayong/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter8/test.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter8/Glob.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter8/GlobRegexEither.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter8/Main.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter8/GlobRegex.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter7/tempfile.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/SimpleJSON.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter6/JSONClass.hs",
+		"/media/fayong/e47f13d0-594b-4f4e-98df-fa85b5729e10/home/damanska/Documents/prog/progLan/Week-1/hw1.sml",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/mypretty.cabal",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/Prettify.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/PrettyJSON.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/PutJSON.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/Main.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/Setup.hs",
+		"/home/fayong/prog/Haskell/realWorldHaskell/chapter5/PrettyStub.hs",
+		"/home/fayong/prog/Haskell/euterpeaMemo.hs",
+		"/home/fayong/prog/Haskell/euterpeaTest.hs",
+		"/home/fayong/prog/Haskell/wizzard/noise maker/noise.hs",
+		"/home/fayong/prog/Haskell/wizzard/Noise.hs",
+		"/home/fayong/prog/Haskell/wizzard/EngineTypes.hs",
+		"/home/fayong/prog/Haskell/wizzard/Tiles.hs",
+		"/home/fayong/prog/Haskell/wizzard/Vector.hs",
+		"/home/fayong/prog/Haskell/wizzard/Helper.hs",
+		"/home/fayong/prog/Haskell/wizzard/Graphics.hs",
+		"/home/fayong/prog/Haskell/wizzard/WorldUpdates.hs",
+		"/home/fayong/prog/Haskell/wizzard/Engine.hs",
+		"/home/fayong/prog/Haskell/wizzard/main.hs",
+		"/home/fayong/prog/Haskell/euterpeaMemo.hw",
+		"/home/fayong/prog/Haskell/wizzard/Exports.hs",
+		"/home/fayong/prog/Haskell/wizzard/alphatiles.xcf",
+		"/home/fayong/prog/Haskell/wizzard/noise.hs",
+		"/home/fayong/.config/sublime-text-3/Packages/User/Colorsublime.sublime-settings",
+		"/home/fayong/prog/Haskell/logic.hs",
+		"/home/fayong/prog/Haskell/parser.hs",
+		"/home/fayong/prog/Haskell/wizzard/tiler.hs",
+		"/home/fayong/prog/Haskell/wizzard/tiles.hs",
+		"/home/fayong/prog/Haskell/weightedTree.hs",
+		"/home/fayong/prog/Haskell/train/ChatBot.hs",
+		"/home/fayong/prog/Haskell/rotozoom/rotozoom.hs",
+		"/home/fayong/prog/Haskell/wizzard/Noise2.hs",
+		"/home/fayong/prog/Haskell/wizzard/tiler2.hs",
+		"/home/fayong/prog/Haskell/tiler/Noise.hs",
+		"/home/fayong/prog/Haskell/tiler/tiler.hs",
+		"/home/fayong/prog/Haskell/noise.hs",
+		"/home/fayong/prog/Haskell/tiler/noise.hs",
+		"/home/fayong/桌面/test.hs",
+		"/home/fayong/prog/Haskell/treeData2",
+		"/home/fayong/prog/Haskell/treeData",
+		"/home/fayong/prog/Haskell/log.hs",
+		"/home/fayong/prog/Haskell/compiler.hs",
+		"/home/fayong/prog/haskell/gloss/Main.hs",
+		"/home/fayong/prog/haskell/haskellSDL2Examples/src/lesson01.hs",
+		"/home/fayong/prog/haskell/raycaster.hs",
+		"/media/fayong/e47f13d0-594b-4f4e-98df-fa85b5729e10/home/damanska/Documents/prog/Haskell/rayCaster/raycaster.hs",
+		"/media/fayong/e47f13d0-594b-4f4e-98df-fa85b5729e10/home/damanska/Documents/prog/Haskell/euler.hs",
+		"/media/fayong/e47f13d0-594b-4f4e-98df-fa85b5729e10/home/damanska/Desktop/asteroids/asteroids.ml"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"curs",
+			"box",
+			"mainContainer",
+			"entry",
+			"Invisible",
+			"Link",
+			"#news",
+			"Proj1",
+			"return",
+			"0",
+			"renderer",
+			"aMax",
+			"Col'",
+			"Rendering",
+			"etat_suivant",
+			"' ",
+			"t3",
+			"test",
+			"output",
+			"input",
+			"drawSortedPoints",
+			"screenWi",
+			"projTo",
+			"proj",
+			"pro",
+			"renderWo",
+			"plane",
+			"xO' yO'",
+			"xO yO",
+			"Pnt",
+			"wallToL",
+			"delay",
+			"Main.Wrong",
+			"Error",
+			"Main.",
+			"Width",
+			"Point",
+			", ",
+			"makeLand",
+			"CInt",
+			"getGround",
+			"Int",
+			"screen",
+			"applySur",
+			"surfaceS",
+			"slow",
+			"}\n",
+			"SDLP",
+			"doubleToJValue",
+			"en",
+			"wn",
+			"hn",
+			"bn",
+			"noiseMat",
+			"Being Shark",
+			"Furniture Fountain",
+			"Show",
+			"fromIntegral",
+			"updateTiles",
+			"seed",
+			"updateTil",
+			"updat",
+			"pathFin",
+			"pathFinder",
+			"findNear",
+			"pat",
+			"head",
+			"updateTi",
+			"pathF",
+			"path",
+			"n",
+			"n ",
+			"200",
+			"198",
+			"199",
+			"200",
+			"addT",
+			"§",
+			"nbrPt",
+			"§",
+			"nbrPts",
+			"§",
+			"nbrP",
+			"addThi",
+			"addThi		",
+			"|",
+			"chPos",
+			"chY",
+			"chX",
+			"nbrP",
+			"§",
+			"fI",
+			"§",
+			"tiles",
+			"Offset",
+			"scree",
+			"nbrC",
+			"nbrR",
+			"update",
+			"updates",
+			"whnf2",
+			"update",
+			"lenCol",
+			"lenRow",
+			"len",
+			"Imap",
+			"matMap",
+			"add",
+			"update",
+			"vImap",
+			"fromMat",
+			"fromMAt",
+			"matMAp",
+			"Map",
+			"fromMAt",
+			"sequence",
+			"199",
+			"fromMat",
+			"!",
+			"tileList",
+			"osc",
+			"hei",
+			"1",
+			"2",
+			"poly",
+			"Deep2",
+			"Deep1",
+			"§"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"subContainerData",
+			"Content",
+			"Leaf",
+			".submenu",
+			"Murol",
+			"Col",
+			"actuate",
+			"sense",
+			"sortAndDrawPoints",
+			"off'",
+			"off",
+			"Wrong",
+			"Main.Error",
+			"Pnt",
+			"Int",
+			"CInt",
+			"unwrapJNumber",
+			"qn",
+			"hn",
+			"qn",
+			"hn",
+			"Water Swirl",
+			"Being Shark",
+			"(Show,Eq)",
+			"Show,Eq",
+			"fI",
+			"Land",
+			"canPos",
+			"canY",
+			"canX",
+			"fromIntegral",
+			"nbrRow",
+			"2",
+			"1",
+			"Water Deep2",
+			"Water Deep1",
+			"nbrCol",
+			"Integer",
+			" "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Murol.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4702,
+								4702
+							]
+						],
+						"settings":
+						{
+							"auto_name": "module Murol where",
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1941.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Tourisme.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18500,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15566,
+								15566
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"wrap_width": 0
+						},
+						"translation.x": 0.0,
+						"translation.y": 2166.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test.hs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 326,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								317,
+								317
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Haskell/Haskell.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 645,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "styles/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5487,
+								5487
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6061.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Tourisme.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1288,
+								1288
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.haskell_sublime_load":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "",
+	"project": "murolElm.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/prog/Haskell/realWorldHaskell/chapter15/chapter15.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

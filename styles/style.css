@@ -1,0 +1,420 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700italic);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif);
+
+body {
+  background-color: lightgray;
+  background-position: center top, center bottom;
+  background-image: url(/images/bannerbgf.png), url(/images/lake.png);
+  background-repeat: repeat-x;
+  margin: 0;
+  min-height: 700px;
+}
+#container
+  { width: 80%;
+  	margin: auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    margin-top: 10em;
+    /*background-image: url(/images/banner.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;*/
+  }
+
+
+#map
+{
+  width:600px;
+  height:450px;
+  border-style: none;
+}
+
+header
+  { 
+    text-align: center;
+    font-family: 'lora', Verdana, serif;
+}
+
+header #pageTitle{
+  background-color: gray;
+  font-style: italic;
+  font-size: 45px;
+  margin-bottom: 0;
+}
+
+header #subTitle{
+  margin-top: 0;
+  background-color: white;
+  font-weight: normal;
+  }
+
+
+.mainMenu
+  {
+  background-color: rgba(53, 39, 44, 0.8);
+  text-align: center;
+  margin: 0;
+  }
+
+.mainMenu div 
+{
+  display: inline-block;
+  margin: 0;
+  margin-right: 0.2em;
+  padding: 0;
+}
+
+/*.mainMenu button{
+ border-right: none;
+}
+
+button::-moz-focus-inner,*/
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.mainMenu a{
+  border: 1px solid white;
+  border-left-width: 3px;
+  height: auto;
+  display: inline-block;
+  padding: 0.5em;
+  margin-top: 0.2em;
+  margin-right: 0.2em;
+  margin-bottom: 0.2em;
+  background-color: #4d4b6d;
+  text-transform: capitalize;
+  text-decoration: none;
+   font-family: 'PT Serif', verdana, serif;
+  color: white;
+  }
+
+.mainMenu a:hover {
+  color: black;
+  text-decoration: overline;
+}
+
+.submenu a:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+/*.mainMenu div[class*="Content"]
+{
+  position: relative;
+}*/
+
+div[class*="Content"] > div
+{
+  display:none;
+}
+
+div[class*="Content"] div div
+{
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+/*.CinemaContent div
+{
+  display: none;
+  background-color: red;
+}*/
+
+
+div[class*="Content"]:hover > div
+{
+  background-color: rgba(29, 51, 162, 0.8);
+  position: absolute;
+  display: block;
+}
+
+div[class*="Content"] a
+{ text-align: left;
+  margin-right: 0;
+  display:block;
+ 
+ }
+
+/*div[class*="Content"] div button
+{ text-align: left;
+  display:inline-block;
+
+  width:100%;
+  
+}
+
+div[class*="Content"] div div:hover div
+{ position: absolute; 
+  left:105%;
+  display: inline-block;
+  background-color: red;
+
+}*/
+
+
+
+
+
+#pics{
+  clear: left;
+  text-align: center;
+  }
+
+#pics li
+  { 
+    display: inline-block;
+   	width: auto; 
+   	padding: 0.5em;
+  }
+
+#pics img
+  { 
+  width: 100%;
+  border-radius: 1em;
+  }
+
+/*sprite code
+.hide {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#pics {
+  text-align: center;
+  background-color: black;
+}
+
+#pics li {
+  width: 100px;
+  height: 136px;
+  display: inline-block;
+  background-color: blue;
+}
+
+#pics a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/logosmurol.png);
+}
+li a.stationverte { background-position: 0 0;}
+li a.familleplus { background-position: -100 0;}
+li a.villagefleuri { background-position: -200 0;}
+li a.stationtourismervb { background-position: -400 0;}
+end of sprite*/
+#middleDiv{
+  width: 80%;
+  margin: auto;
+}
+
+.entry {
+  text-align: center;
+  min-width: 150px;
+  width: 31.3%;
+  margin: 1%;
+  float: left;
+}
+
+
+
+#misc { 
+  background-image: url(/images/peintres.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  margin-right: 0%}
+
+.submenu
+  { 
+    text-align: center;
+    margin-bottom: 0.5em;
+    background-color: rgba(104, 86, 93, 0.8);;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
+
+.submenu ul
+ { list-style-type: none;
+   margin:0.5em;
+   padding:0;
+ }
+
+.submenu li
+  { 
+    text-align: left;
+    background-color: white;
+    border-radius:0.2em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+.submenu a
+  { text-decoration: none;
+    font-family: 'PT Serif', verdana, serif;
+    color: black;
+  }
+
+/*#plugins {
+  background-color: rgba(255, 255, 255, 0);
+}*/
+
+#plugins li
+  { display: inline-block;
+  }
+#counter
+  {width: 100px;
+
+  }
+
+#footer 
+  {
+    text-align: center;
+  font-size: small;
+  }
+
+
+
+
+
+#subContainer
+{ width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+  
+}
+
+.sideMenu
+{
+  font-family: 'PT Serif', verdana, serif;
+  position: fixed;
+  width: 16%;
+  padding: 1.5em 0% 0% 0;
+  margin: 0;
+  border-style: none;
+  /*background-color: red;*/
+
+  text-align: left;
+
+}
+
+.sidMenu div 
+{ 
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+.sideMenu h3
+{ font-size: 18px;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #b3b3b3;
+  letter-spacing: 0.1em;
+  border-radius: 1px;
+  border-top: 5px double gray;
+  border-bottom: 5px double gray; 
+  background-color: #68565d;
+  text-indent: 1.5em;
+  padding: 0.3em;
+  margin: 0;
+}
+
+.sideMenu a
+{ 
+  color: white;
+  display: block;
+  background-color: grey;
+  text-decoration: none;
+  padding: 0.2em;
+  padding-left: 2em;
+  margin: 0.2em;
+}
+.sideMenu a:hover, a:active {
+  cursor: pointer;
+  color: black;
+  text-decoration: overline black;
+}
+
+.subContainerData
+{
+  font-family: 'lora', Verdana, serif;
+  min-height: 400px;
+  padding: 0.5em 0% 0 5%;
+  margin: 0;
+  /*background-color: blue;*/
+  border-style: none;
+  margin-left: 20%;
+  width: 70%;
+  margin-top: 0px;
+}
+
+.subContainerData h3 {
+  color: navy;
+}
+.subContainerData h4 {
+  background-color: ;
+}
+.subContainerData h5 {
+  color: green;
+  font-size: 16px;
+}
+
+.subContainerData h6 {
+  padding-left: 1em;
+  font-size: 15px;
+  padding-bottom: 0;
+  padding-top: 0.5em;
+  margin: 0;
+}
+
+
+.subContainerData p {
+  text-align: justify; 
+  text-indent: 2em;
+  
+}
+
+.subContainerData table
+{
+  width:100%;
+}
+
+.subContainerData table p
+{ padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  text-indent: 0;
+  margin: 0.5em;
+}
+
+.subContainerData tr
+{
+  
+}
+
+.Line {
+  background-color: #f0f0f5;
+}
+
+.altLine {
+  background-color: lightgrey;
+}
+
+
+figure img {
+  border-radius: 4px;
+  border: 5px ridge blue;
+}
+
+
+
+
+
+
+

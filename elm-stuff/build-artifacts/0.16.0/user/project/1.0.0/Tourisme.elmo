@@ -1,0 +1,269 @@
+Elm.Tourisme = Elm.Tourisme || {};
+Elm.Tourisme.make = function (_elm) {
+   "use strict";
+   _elm.Tourisme = _elm.Tourisme || {};
+   if (_elm.Tourisme.values) return _elm.Tourisme.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var carte = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
+           ,A2($Html.iframe,
+           _U.list([$Html$Attributes.id("map")
+                   ,$Html$Attributes.src("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943")]),
+           _U.list([]))]));
+   var decouvrir = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([A2($Html.figure,
+           _U.list([]),
+           _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/lac-et-chateau-de-murol.jpg")]),_U.list([]))
+                   ,A2($Html.br,_U.list([]),_U.list([]))
+                   ,A2($Html.figcaption,
+                   _U.list([]),
+                   _U.list([$Html.text("Situé dans le massif du Sancy, \n                                     la commune de Murol est considérée \n                                     comme l\'un des plus beaux \n                                     sites de l\'Auvergne.")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La commune appartient au canton de\n                      Besse-et-Saint-Anastaise et est composée\n                      de quatre villages, Murol, Beaune le froid,\n                       Groire et Chautignat. Elle s\'étend sur une\n                        superficie de 15 km² à une altitude de 785m à 1500m.")]))
+           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Les villages et hameaux")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Murol")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le bourg de Murol est implanté dans un écrin de verdure à\n                     850 mètres d\'altitude, dans la vallée de la Couze Chambon,\n                     sur le versant oriental du Massif de Sancy, entre le volcan\n                     boisé du Tartaret, le promontoire du Château de Murol\n                     (monument historique classé) et le puy de Bessolles\n                     culminant à 1057m. d\'altitude. Il est également\n                     travérsé par le GR30. A deux pas du Lac Chambon\n                     et de la Vallée de Chaudefour (Réserve naturelle)\n                     le village vous ravira par ses sites remarquables\n                     ou pittoresques, par son parc arboré où se trouve\n                     le musée des peintres.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("De nombreux vestiges\n                     témoignent d\'une occupation gauloise (dolmen)\n                     et gallo-romaine (villa et fanum). Au moyen-âge\n                     s\'élève une puissante forteresse, sa construction\n                     s\'étale du XIIème au XVIIIème siècle. Après être resté\n                     trois siècles durant dans les mains de la noble famille\n                     de Murol, le château deviendra au XV ème\n                     siècle par mariage, propriété des Estaing, lesquels y\n                     feront de nombreux travaux pour moderniser les conditions\n                     de vie et adapter aux exigences de l\'artillerie le système\n                     de défense. Délaissé par ses derniers possesseurs,\n                     le château tombe en ruines au XIX ème siècle.\n                     Il est aujourd\'hui propriété de la commune.\n                     Des animations relatant la vie au moyen-âge s\'y \n                     déroulent et attirent environ 120 000 visiteurs par an.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La desserte des principaux lieux touristiques")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les visiteurs peuvent découvrir, sur le plan fourni \n                     par l’Office de Tourisme, le tracé de la \n                     « Voie Verte » , qui a nettement \n                     amélioré la circulation des piétons et des cyclistes \n                     depuis son achèvement en 2009. Il s’agit d’un \n                     sentier fléché , accessible aux handicapés, réalisé en \n                     collaboration avec le Conseil Général, qui relie le \n                     bourg de Murol au lac Chambon, en faisant \n                     une boucle autour du volcan du Tartaret. Il \n                     permet de sécuriser le cheminement des piétons et \n                     des cyclotouristes tout en respectant l’environnement car les \n                     engins motorisés y sont proscrits. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("L’accès piéton au château de Murol est lui aussi sécurisé :")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les visiteurs qui partent du bourg peuvent le \n                    rejoindre en empruntant un cheminement piéton qui longe \n                    le mur du parc du Prélong. Le parc \n                    animalier situé sur les pentes du château est \n                    ceint d’un sentier également piéton, bordé d’une barrière \n                    de bois, ce qui permet aux plus jeunes \n                    de le suivre sans danger. Le retour au \n                    bourg de Murol peut se faire en traversant \n                    le Parc du Prélong, ce qui offre aux \n                    visiteurs la possibilité de découvrir l’Arborétum, la serre, \n                    mais aussi le musée archéologique et le musée \n                    des Peintres. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La place de l’Abbé Boudal, où se trouve \n                    l’église, est un lieu au cœur du bourg \n                    de Murol, où la circulation automobile est réglementée, \n                    ce qui permet aux piétons de profiter pleinement \n                    de l’endroit et de la vue du château \n                    que l’on y découvre. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("En dehors du bourg, les visiteurs peuvent se \n                     promener en toute sécurité sur les chemins balisés \n                     par la communauté de communes du Massif du \n                     Sancy. Ils représentent à Murol un réseau de \n                     plusieurs dizaines de kilomètres de sentiers de PR \n                     (petites randonnées). Des cartes et des topoguides sont \n                     disponibles au bureau de l’Office de Tourisme. Ils \n                     permettent aux visiteurs de découvrir les plus beaux \n                     panoramas de notre commune, comme ci-dessous, le lac \n                     Chambon vu du sommet du volcan du Tartaret. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Beaune le froid")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Petit village de montagne, deuxième bourg de la \n                     commune situé sur un haut plateau, Beaune le \n                     froid est un village agricole très actif et \n                     réputé pour ses fromages de Saint Nectaire fermier, \n                     fabriqué depuis le XVIème siècle sur la commune. \n                     C\'est un lieu de promenade et de découverte \n                     du savoir-faire local. Il a su conserver son \n                     moulin à eau et son lavoir. En 2011, \n                     son four à pain a été entièrement reconstruit \n                     par des bénévoles de l’association des « chantiers \n                     de jeunesse ». L’ hiver, l’ouverture du domaine \n                     skiable permet la pratique du ski nordique et \n                     des raquettes. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Chautignat")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le hameau de Chautignat est situé à flanc \n                     de coteaux. Il bénéficie d\'un ensoleillement maximum et \n                     de prairies aux pentes douces favorables à l\'élevage \n                     comme aux cultures. A proximité du hameau se \n                     trouvent les grottes de Rajat et le moulin \n                     à eau de Landrode qui ont été les \n                     lieux de créations artistiques dans la cadre de \n                     la manifestation annuelle « Horizons rencontres Art et \n                     Nature ». ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les hameaux des Ballats et Groire")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ces hameaux ont une activité rurale marquée, ils \n                     se situent là où le fond de la \n                     vallée s\'élargit pour former de petites plaines propices \n                     aux cultures. Traversés par la Couze Chambon et \n                     les sentiers de randonnées, ils se prêtent à \n                     la flânerie. A l’occasion de la fête de \n                     Groire, le four à pain revit pour le \n                     plaisir des petits et grands gourmands. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La Chassagne ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Située sous le Château de Murol, La Chassagne \n                      est un hameau de fermes et maisons particulières. \n                      Ce lieu existait déjà sous Guillaume de Murol, \n                      seigneur du Château au début du XVème siècle. \n                      La légende raconte que Pierre Morand, \"concierge\" du \n                      château s\'est installé ici et a fondé \"la \n                      Chassagne\". L\'origine du nom vient des arbres présents \n                      à cette époque, les chênes. Aujourd\'hui, quelques-uns subsistent \n                      sur les pentes du château, entrelacés avec les \n                      pins et autres arbustes. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le volcan du Tartaret ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Il est l´un des plus récents d´Auvergne. Ses \n                     pentes boisées empêchent de distinguer son cratère mais \n                     les sentiers qui le traverse sont des plus \n                     agréables et accessibles. Parcours de santé et d\'orientation \n                     (cartes en vente à l\'office de tourisme). ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Lac Chambon")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La partie Est du lac occupe la commune \n                     de Murol pour un tiers de sa superficie. \n                     Le reste du lac se trouvant sur la \n                     commune de Chambon sur lac. Le Lac Chambon \n                     est un lac de barrage volcanique puisqu´il s´est \n                     formé à la suite de l´éruption du Tartaret \n                     il y a environ 8000 ans et de \n                     l\'effondrement de la dent du Marais , bloquant \n                     ainsi le cours de la Couze Chambon. La \n                     couze charrie une telle quantité d´alluvions que le \n                     lac se rétrécit au fil des siècles. S\'étalant \n                     aujourd\'hui sur 60 hectares, peu profond (6 m \n                     maximum) et parsemé d´îlots , il s\'ouvre largement \n                     à l\'ouest sur les paysages somptueux du massif \n                     du Sancy. Le lac est aménagé pour la \n                     baignade, les activités nautiques et la pêche. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Grottes de Rageat")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("D\'accès difficile, les falaises qui les abritent sont \n                     composées d\'un mélange de Bolts et argiles aux \n                     couleurs pastel allant de l\'ocre, vert ou rosé, \n                     au bleuté. Ces habitations troglodytes sont très anciennes, \n                     certainement antérieures à l\'époque gauloise. Toutefois leur histoire \n                     mal connue ne s\'appuie que sur des hypothèses. \n                     Ce site est un enchantement pour le promeneur \n                     attentif et permet à celui qui s\'y rend \n                     de rêver et d\'imaginer sa propre histoire. ")]))]));
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var makeRow = F6(function (name,adr,mail,site,descr,alt) {
+      var alt$ = alt ? "altLine" : "Line";
+      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},descr);
+      var site$ = $String.isEmpty(site) ? nullTag : A2($Html.p,
+      _U.list([]),
+      _U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(site)]),_U.list([$Html.text(site)]))]));
+      var mail$ = $String.isEmpty(mail) ? nullTag : A2($Html.p,
+      _U.list([]),
+      _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(mail)]),_U.list([$Html.text(mail)]))]));
+      var adr$ = $String.isEmpty(adr) ? nullTag : A2($Html.p,_U.list([]),_U.list([$Html.text(adr)]));
+      var name$ = A2($Html.h6,_U.list([]),_U.list([$Html.text(name)]));
+      return A2($Html.tr,_U.list([$Html$Attributes.$class(alt$)]),A2($Basics._op["++"],_U.list([name$,adr$,mail$,site$]),descr$));
+   });
+   var makeTable = F2(function (name,entries) {
+      var makeRows = F2(function (b,xs) {
+         var _p0 = xs;
+         if (_p0.ctor === "[]") {
+               return _U.list([]);
+            } else {
+               return A2($List._op["::"],A6(makeRow,_p0._0._0,_p0._0._1,_p0._0._2,_p0._0._3,_p0._0._4,b),A2(makeRows,$Basics.not(b),_p0._1));
+            }
+      });
+      return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
+   });
+   var restosBeaunes = A2(makeTable,
+   "restosBeaunes",
+   _U.list([{ctor: "_Tuple5"
+            ,_0: "Les Sancy\'Elles"
+            ,_1: "63790 Beaune le Froid -MUROL  Tél: 04 7388 8118"
+            ,_2: ""
+            ,_3: ""
+            ,_4: _U.list(["Crèperie, petite restauration"])}]));
+   var restosMurol = A2(makeTable,
+   "restosMurol",
+   _U.list([{ctor: "_Tuple5"
+            ,_0: "Au Montagnard"
+            ,_1: "Rue d\'Estaing - 63790 MUROL Tél: 04 73 88 61 52 "
+            ,_2: "restaurant.aumontagnard@orange.fr"
+            ,_3: "http://restaurantaumontagnard.wifeo.com/"
+            ,_4: _U.list(["Plat à emporter au restaurant"])}
+           ,{ctor: "_Tuple5"
+            ,_0: "Chez Dame Galinette"
+            ,_1: "Rue d\'Estaing - 63790 MUROL Tél: 04 73 88 61 52 "
+            ,_2: "murol@azureva-vacances.com"
+            ,_3: ""
+            ,_4: _U.list([])}
+           ,{ctor: "_Tuple5"
+            ,_0: "Le chalet de la plage"
+            ,_1: "lac Chambon - 63790 MUROL Tél : 04 73 88 82 31"
+            ,_2: "hotel@lac-chambon-plage.fr"
+            ,_3: ""
+            ,_4: _U.list([])}
+           ,{ctor: "_Tuple5"
+            ,_0: "Le Parc"
+            ,_1: "Rue Georges Sand - 63790 MUROL Tél: 04 73 88 60 08 fax : 04 73 88 64 44"
+            ,_2: "info@hotel-parc.com"
+            ,_3: ""
+            ,_4: _U.list([])}
+           ,{ctor: "_Tuple5"
+            ,_0: "Le Paris"
+            ,_1: "Pace de la mairie - 63790 MUROL Tél : 04 73 88 60 09 fax : 04 73 88 69 82"
+            ,_2: "info@hoteldeparis-murol.com"
+            ,_3: ""
+            ,_4: _U.list([])}
+           ,{ctor: "_Tuple5",_0: "Le Piccotin \"Pizzéria\"",_1: "Rue Georges Sand - 63790 MUROL Tél : 04 73 62 37 10",_2: "",_3: "",_4: _U.list([])}]));
+   var barBrasserie = A2(makeTable,
+   "barBrasserie",
+   _U.list([{ctor: "_Tuple5",_0: "A Jour et Nuit",_1: "Rue Estaing - 63790 Murol Tél : 04 73 88 64 82",_2: "",_3: "",_4: _U.list([])}
+           ,{ctor: "_Tuple5",_0: "Auberge de la plage",_1: "La plage - 63790 Murol Tél : 04 73 88 67 90",_2: "",_3: "",_4: _U.list([])}
+           ,{ctor: "_Tuple5"
+            ,_0: "L\'Arbalète"
+            ,_1: "Rue Georges Sand - 63790 MUROL Tél : 04 73 88 85 79"
+            ,_2: "restaurantlarbalete@gmail.com"
+            ,_3: ""
+            ,_4: _U.list([])}
+           ,{ctor: "_Tuple5"
+            ,_0: "Le café de la côte"
+            ,_1: "Rue Chabrol - 63790 MUROL - Tél : 06 7941 0811"
+            ,_2: ""
+            ,_3: ""
+            ,_4: _U.list(["café- restaurant- herboristerie- salle de concert\n        - atelier de confection de bougies\n        en cire d\'abeille, etc."
+                         ,"Bière locale, hypocras (entendez par là :\n          vin aux épices médiéval), barbecue ."
+                         ,"L\'ambiance ici est à la détente, et parfois à la\n         fête puisque des concerts y sont\n         organisés sporadiquement."])}]));
+   var barDeNuit = A2(makeTable,
+   "barDeNuit",
+   _U.list([{ctor: "_Tuple5"
+            ,_0: "Cubana café"
+            ,_1: "Place de la poste - 63790 MUROL Tél : 04 73 88 85 79"
+            ,_2: "larbalete@cegetel.net"
+            ,_3: ""
+            ,_4: _U.list([])}]));
+   var restaurants = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des \n                     produits du terroir qui font sa réputation : \n                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme \n                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh ! \n                     le bon jambon d’Auvergne, les saucisses et les \n                     saucissons), le tout arrosé, avec modération, de vins \n                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues, \n                     Boudes ou Corent. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le tableau ne serait pas complet, si nous \n                     ne citions quelques autres spécialités régionales comme la \n                     truffade, l\'aligot, la potée auvergnate, les tripoux ou \n                     encore les lentilles du Puy que vous dégusterez \n                     chaudes, agrémentées d\'oignons et de quelques lardons ou, \n                     en été, froides en salade... un délice... ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une \n                     Gentiane ou une Salers, vous apprécierez sans aucun \n                     doute de le terminer par une petite verveine. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Restaurants:")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
+           ,restosBeaunes
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
+           ,restosMurol
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar - Brasserie")]))
+           ,barBrasserie
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
+           ,barDeNuit]));
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A3($Murol.renderSubMenu,address,"Tourisme:",function (_) {    return _.subMenu;}(model))
+                      ,function (_) {
+                         return _.mainContent;
+                      }(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04-73-88-60-23")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mail : bt.murol-chambon@sancy.com")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h. \n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))
+           ,$Murol.renderListImg($Murol.logos)]));
+   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Découvrir Murol",_1: decouvrir}
+                                           ,{ctor: "_Tuple2",_0: "Accueil Tourisme",_1: initialContent}
+                                           ,{ctor: "_Tuple2",_0: "Restaurants",_1: restaurants}
+                                           ,{ctor: "_Tuple2",_0: "Carte & plan",_1: carte}]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p1 = newContent;
+      if (_p1.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p1._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p2 = action;
+      switch (_p2.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p2._0);
+         default: return model;}
+   });
+   var subMenu = _U.list(["Accueil Tourisme","Découvrir Murol","Hebergements","Restaurants","Carte & plan","Animation estivale"]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Tourisme.values = {_op: _op
+                                 ,subMenu: subMenu
+                                 ,initialContent: initialContent
+                                 ,initialModel: initialModel
+                                 ,contentMap: contentMap
+                                 ,view: view
+                                 ,makeTable: makeTable
+                                 ,makeRow: makeRow
+                                 ,nullTag: nullTag
+                                 ,update: update
+                                 ,changeMain: changeMain
+                                 ,main: main
+                                 ,decouvrir: decouvrir
+                                 ,restaurants: restaurants
+                                 ,restosBeaunes: restosBeaunes
+                                 ,restosMurol: restosMurol
+                                 ,barBrasserie: barBrasserie
+                                 ,barDeNuit: barDeNuit
+                                 ,carte: carte};
+};
