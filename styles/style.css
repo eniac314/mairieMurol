@@ -370,13 +370,21 @@ end of sprite*/
 }
 
 .subContainerData h6 {
-  padding-left: 1em;
-  font-size: 15px;
+  color: #191970 ;/*midnightblue*/
+  font-size: 16px;
   padding-bottom: 0;
-  padding-top: 0.5em;
   margin: 0;
+  border-left: 5px double darkslategray;
+  border-right: 5px double darkslategray;
+  width: 45%;
+  text-indent: 0.5em;
+  text-align: center;
+  background-color: rgba(245, 245, 220, 0.5);
 }
-
+.stars {
+  text-shadow: 1px 1px 1px olive;
+  color: gold;
+}
 
 .subContainerData p {
   text-align: justify; 
@@ -398,27 +406,31 @@ end of sprite*/
   margin: 0.5em;
 }
 
-.subContainerData tr
+.subContainerData td
 {
-  
+ border-bottom: 1px solid gray;
 }
 
-.Line {
-  background-color: #f0f0f5;
+
+.Line td{
+  border-radius: 0 0 0.5em 0.5em;
+  background-color: lightsteelblue;
 }
 
-.altLine {
-  background-color: lightgrey;
+.altLine td{
+  border-radius: 0 0 0.5em 0.5em;
+  background-color: lightslategray;
 }
+
 
 
 figure img {
   border: 1em double silver;
-  background-color: rgb(119, 136, 153);
+  background-color: rgb(119, 136, 153);/*lightslategray #778899 */
 }
 figcaption {
-  color: #F0FFF0;
-  background-color: rgba(119, 136, 153, 0.8);
+  color: #F0FFF0;/*honeydew rgb(240,255,240)*/
+  background-color: rgba(119, 136, 153, 0.8);/*lightslategray #778899*/
   padding: 0.3em 0.5em 0.3em 1em;
   border-top-left-radius: 1em;
   border-bottom-right-radius: 1em;
