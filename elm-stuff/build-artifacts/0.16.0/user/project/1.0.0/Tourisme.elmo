@@ -116,6 +116,49 @@ Elm.Tourisme.make = function (_elm) {
    };
    var NoLabel = {ctor: "NoLabel"};
    var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")(_U.list([]));
+   var restosBeaunes = _U.list([_U.update(emptyTe,
+   {name: "Les Sancy\'Elles",addr: "63790 Beaune le Froid -MUROL",descr: _U.list(["Crèperie, petite restauration"]),tel: "04 7388 8118"})]);
+   var restosMurol = _U.list([_U.update(emptyTe,
+                             {name: "Au Montagnard"
+                             ,addr: "Rue d\'Estaing - 63790 MUROL"
+                             ,descr: _U.list(["Plat à emporter au restaurant"])
+                             ,tel: "04 73 88 61 52"
+                             ,mail: "restaurant.aumontagnard@orange.fr"
+                             ,site: "http://restaurantaumontagnard.wifeo.com/"})
+                             ,_U.update(emptyTe,
+                             {name: "Chez Dame Galinette",addr: "Rue d\'Estaing - 63790 MUROL",tel: "04 73 88 61 52",site: "murol@azureva-vacances.com"})
+                             ,_U.update(emptyTe,
+                             {name: "Le chalet de la plage",addr: "lac Chambon - 63790 MUROL",tel: "04 73 88 82 31",mail: "hotel@lac-chambon-plage.fr"})
+                             ,_U.update(emptyTe,
+                             {name: "Le Parc",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 88 60 08",fax: "04 73 88 64 44",mail: "info@hotel-parc.com"})
+                             ,_U.update(emptyTe,
+                             {name: "Le Paris"
+                             ,addr: "Pace de la mairie - 63790 MUROL"
+                             ,tel: "04 73 88 60 09"
+                             ,fax: "04 73 88 69 82"
+                             ,mail: "info@hoteldeparis-murol.com"})
+                             ,_U.update(emptyTe,{name: "Le Piccotin \"Pizzéria\"",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 62 37 10"})]);
+   var barBrasserie = _U.list([_U.update(emptyTe,{name: "A Jour et Nuit",addr: "Rue Estaing - 63790 Murol",tel: "04 73 88 64 82"})
+                              ,_U.update(emptyTe,{name: "Auberge de la plage",addr: "La plage - 63790 Murol",tel: "04 73 88 67 90"})
+                              ,_U.update(emptyTe,
+                              {name: "L\'Arbalète",addr: "Rue Georges Sand - 63790 Murol",tel: "04 73 88 85 79",mail: "restaurantlarbalete@gmail.com"})
+                              ,_U.update(emptyTe,
+                              {name: "Le café de la côte"
+                              ,addr: "Rue Chabrol - 63790 MUROL"
+                              ,descr: _U.list(["café- restaurant- herboristerie- salle de concert\n                - atelier de confection de bougies\n                en cire d\'abeille, etc."
+                                              ,"Bière locale, hypocras (entendez par là :\n                  vin aux épices médiéval), barbecue ."
+                                              ,"L\'ambiance ici est à la détente, et parfois à la\n                 fête puisque des concerts y sont\n                 organisés sporadiquement."])
+                              ,tel: "06 7941 0811"})]);
+   var barDeNuit = _U.list([_U.update(emptyTe,
+   {name: "Cubana café",addr: "Place de la poste - 63790 Murol",tel: "04 73 88 85 79",mail: "larbalete@cegetel.net"})]);
+   var azureva = _U.list([_U.update(emptyTe,
+   {name: "Azureva"
+   ,addr: "route de Jassat 63790 MUROL"
+   ,descr: _U.list(["Contact:","azurèva MUROL - Villages & Résidences de Vacances"])
+   ,tel: "04 73 88 58 58"
+   ,fax: "04 73 88 58 00"
+   ,mail: "murol@azureva-vacances.com"
+   ,site: "http://www.azureva-vacances.com/Individuel/Village/Murol"})]);
    var hotels = _U.list([_U.update(emptyTe,
                         {stars: $Maybe.Just(2)
                         ,name: "Hotel les Dômes (résidence)"
@@ -235,7 +278,99 @@ Elm.Tourisme.make = function (_elm) {
                          ,refOt: "1470"
                          ,descr: _U.list(["3* - 6 personnes","Mme MATHIEU Anne-Marie"])
                          ,addr: "Place de l\'hôtel de ville - 63790 MUROL"
-                         ,tel: "04 73 93 69 19 - Portable : 07 50 35 54 63"})]);
+                         ,tel: "04 73 93 69 19 - Portable : 07 50 35 54 63"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(2)
+                         ,name: "Entre château et volcans"
+                         ,refOt: "3699"
+                         ,label: FamillePlus
+                         ,descr: _U.list(["2* - 2 et 3 personnes"])
+                         ,addr: "route de Besse - 63790 MUROL"
+                         ,tel: "04 73 88 67 56 - Portable : 06 28 06 81 77"
+                         ,mail: "veronique.debout@gmail.com"
+                         ,site: "www.entre-chateau-et-volcans.fr"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(2)
+                         ,name: "Chapuzadou"
+                         ,descr: _U.list(["2* - 4 personnes","Mme CLEMENT Marie-Paule"])
+                         ,addr: "La Chassagne - 63790 Murol"
+                         ,tel: "04 7388 6085 (HR)"
+                         ,mail: "lachassagne@hotmail.fr"
+                         ,site: "http://lachassagne.e-monsite.com/"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(2)
+                         ,name: "Les Cigales"
+                         ,refOt: "1467"
+                         ,descr: _U.list(["2* - 4 personnes","Mme MATHIEU Anne-Marie"])
+                         ,addr: "Rue de Groire - 63790 MUROL"
+                         ,tel: "04 73 88 80 87"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(2)
+                         ,name: "La clé des champs"
+                         ,refOt: "1446"
+                         ,descr: _U.list(["2* - 4 personnes","M. & Mme DELPEUX Annie et François"])
+                         ,addr: "Route de Groire - 63790 MUROL"
+                         ,tel: "04 73 88 66 29 - Portable : 06 21 49 42 94 - 06 77 11 62 06"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(2)
+                         ,name: "Les Elfes"
+                         ,refOt: "3125"
+                         ,descr: _U.list(["2* - 4 personnes"])
+                         ,addr: "Route de Jassat - 63790 MUROL"
+                         ,tel: "04 73 88 61 16 - Portable : 06 88 76 81 70 - joignable : de 10h à 21h"
+                         ,mail: "alice.elfes@wanadoo.fr"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(2)
+                         ,name: "Les Genêts"
+                         ,refOt: "5336"
+                         ,descr: _U.list(["2* - 4 personnes","M. NOTHEISEN Marc"])
+                         ,addr: "Rue d\'Estaing - 63790 MUROL"
+                         ,tel: "03 86 73 72 25 - Portable : 06 83 59 00 67"
+                         ,mail: "monique-notheisen@orange.fr"
+                         ,site: "http://lesgenets.murol.monsite-orange.fr"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(2)
+                         ,name: "Résidence Clair logis"
+                         ,refOt: "1469"
+                         ,descr: _U.list(["2* - 3 et 4 personnes","M. LAPORTE Rémy"])
+                         ,addr: "Rue George Sand - 63790 MUROL"
+                         ,tel: "04 73 88 65 43"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(1)
+                         ,name: "Villa Roux"
+                         ,refOt: "1478"
+                         ,descr: _U.list(["1* - 5 personnes","Type habitation : maison mitoyenne","M. ROUX André"])
+                         ,addr: "Beaune-le-Froid - 63790 MUROL"
+                         ,tel: "04 73 87 51 47"})
+                         ,_U.update(emptyTe,
+                         {stars: $Maybe.Just(1)
+                         ,name: "Mon Gai Repos"
+                         ,refOt: "1516"
+                         ,descr: _U.list(["1* - 2 personnes ","Type habitation : appartement","Mme POMMIER-DESSERRE Madeleine"])
+                         ,addr: "Groire - 63790 MUROL"
+                         ,tel: "04 73 88 60 65 - Portable : 06 63 71 70 03"})
+                         ,_U.update(emptyTe,
+                         {name: "La Christaline"
+                         ,refOt: "6586"
+                         ,descr: _U.list(["2* - studios 2 personnes et appartement 4 à 6 personnes","M. HENRY Christian"])
+                         ,tel: "04 73 88 66 19 - 05 63 75 45 24 - Portable : 06 87 97 35 40"
+                         ,addr: "Groire – 63790 MUROL"
+                         ,mail: "henrymurol@orange.fr"
+                         ,site: "http://murolsejourplus.wifeo.com"})
+                         ,_U.update(emptyTe,
+                         {name: "Résidence de Michèle"
+                         ,descr: _U.list(["2 à 4 personnes","Melle Fanny Gontelle"])
+                         ,tel: "04 73 88 68 68 / Port : 06 22 33 41 13"
+                         ,addr: "Rue du Tartaret - 63790 MUROL"
+                         ,mail: "residencedemichele@orange.fr"
+                         ,site: "http://residencedemichele.monsite-orange.fr"})
+                         ,_U.update(emptyTe,
+                         {name: "Les Homes de Vire Vent"
+                         ,descr: _U.list(["5 personnes","Melle Fanny Gontelle"])
+                         ,tel: "04 73 69 76 64    Port : 06 07 30 95 43"
+                         ,addr: "route de Jassat - 63790 MUROL"
+                         ,mail: "legoueix.nicole@club-internet.fr"
+                         ,site: "http://www.les-homes-de-virevent.com"})]);
    var addStars = F2(function (n,s) {
       var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
       var _p1 = n;
@@ -247,7 +382,7 @@ Elm.Tourisme.make = function (_elm) {
             _U.list([$Html.text(A2($Basics._op["++"],s," ")),A2($Html.span,_U.list([$Html$Attributes.$class("stars")]),_U.list([$Html.text(go(_p1._0))]))]));
          }
    });
-   var makeRow$ = F2(function (_p2,alt) {
+   var makeRow = F2(function (_p2,alt) {
       var _p3 = _p2;
       var alt$ = alt ? "altLine" : "Line";
       var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
@@ -273,134 +408,17 @@ Elm.Tourisme.make = function (_elm) {
       _U.list([A2($Html.td,_U.list([]),A2($Basics._op["++"],_U.list([name$,label$,refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))))
               ,A2($Html.td,_U.list([]),_U.list([pics$]))]));
    });
-   var makeTable$ = F2(function (name,entries) {
+   var makeTable = F2(function (name,entries) {
       var makeRows = F2(function (b,xs) {
          var _p4 = xs;
          if (_p4.ctor === "[]") {
                return _U.list([]);
             } else {
-               return A2($List._op["::"],A2(makeRow$,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
+               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
             }
       });
       return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
    });
-   var hebergements = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                                   Beaucoup d\'entre eux se sont engagés dans des \n                                   démarches de qualité, symbolisées par différents labels. Certains \n                                   sont hôtels restaurants et offrent une prestation en \n                                   demi-pension et pension complète. ")]))
-           ,A2(makeTable$,"hotels",hotels)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Campings")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Ils offrent de bonnes conditions de confort et \n                                   beaucoup d\'entre eux s\'engagent dans des démarches de \n                                   qualité, symbolisées par différents labels. Certains d\'entre eux \n                                   proposent également des locations de mobil-homes, chalets ou \n                                   bungalows.")]))
-           ,A2(makeTable$,"campings",campings)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Chambres d\'Hôtes")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                                   en proposant des prestations de très bon confort. \n                                   Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                                   de personnes passionnées par leur région et attentives \n                                   à la qualité de l\'accueil.")]))
-           ,A2(makeTable$,"chambresHotes",chambresHotes)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Meublés")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                                   répondront à toutes les attentes et à tous \n                                   les budgets. Les meublés que nous vous proposons \n                                   sont tous classés par la préfecture. Le classement, \n                                   en étoiles, indique le degré de confort de \n                                   la location. Certains sont même labellisés. ")]))
-           ,A2(makeTable$,"meubles",meubles)]));
-   var makeRow = F6(function (name,adr,mail,site,descr,alt) {
-      var alt$ = alt ? "altLine" : "Line";
-      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},descr);
-      var site$ = A2(maybeElem,
-      site,
-      function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
-      });
-      var mail$ = A2(maybeElem,
-      mail,
-      function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
-      });
-      var adr$ = A2(maybeElem,adr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      var name$ = A2($Html.h6,_U.list([]),_U.list([$Html.text(name)]));
-      return A2($Html.tr,_U.list([$Html$Attributes.$class(alt$)]),A2($Basics._op["++"],_U.list([name$,adr$,mail$,site$]),descr$));
-   });
-   var makeTable = F2(function (name,entries) {
-      var makeRows = F2(function (b,xs) {
-         var _p5 = xs;
-         if (_p5.ctor === "[]") {
-               return _U.list([]);
-            } else {
-               return A2($List._op["::"],A6(makeRow,_p5._0._0,_p5._0._1,_p5._0._2,_p5._0._3,_p5._0._4,b),A2(makeRows,$Basics.not(b),_p5._1));
-            }
-      });
-      return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
-   });
-   var restosBeaunes = A2(makeTable,
-   "restosBeaunes",
-   _U.list([{ctor: "_Tuple5"
-            ,_0: "Les Sancy\'Elles"
-            ,_1: "63790 Beaune le Froid -MUROL  Tél: 04 7388 8118"
-            ,_2: ""
-            ,_3: ""
-            ,_4: _U.list(["Crèperie, petite restauration"])}]));
-   var restosMurol = A2(makeTable,
-   "restosMurol",
-   _U.list([{ctor: "_Tuple5"
-            ,_0: "Au Montagnard"
-            ,_1: "Rue d\'Estaing - 63790 MUROL Tél: 04 73 88 61 52 "
-            ,_2: "restaurant.aumontagnard@orange.fr"
-            ,_3: "http://restaurantaumontagnard.wifeo.com/"
-            ,_4: _U.list(["Plat à emporter au restaurant"])}
-           ,{ctor: "_Tuple5"
-            ,_0: "Chez Dame Galinette"
-            ,_1: "Rue d\'Estaing - 63790 MUROL Tél: 04 73 88 61 52 "
-            ,_2: "murol@azureva-vacances.com"
-            ,_3: ""
-            ,_4: _U.list([])}
-           ,{ctor: "_Tuple5"
-            ,_0: "Le chalet de la plage"
-            ,_1: "lac Chambon - 63790 MUROL Tél : 04 73 88 82 31"
-            ,_2: "hotel@lac-chambon-plage.fr"
-            ,_3: ""
-            ,_4: _U.list([])}
-           ,{ctor: "_Tuple5"
-            ,_0: "Le Parc"
-            ,_1: "Rue Georges Sand - 63790 MUROL Tél: 04 73 88 60 08 fax : 04 73 88 64 44"
-            ,_2: "info@hotel-parc.com"
-            ,_3: ""
-            ,_4: _U.list([])}
-           ,{ctor: "_Tuple5"
-            ,_0: "Le Paris"
-            ,_1: "Pace de la mairie - 63790 MUROL Tél : 04 73 88 60 09 fax : 04 73 88 69 82"
-            ,_2: "info@hoteldeparis-murol.com"
-            ,_3: ""
-            ,_4: _U.list([])}
-           ,{ctor: "_Tuple5",_0: "Le Piccotin \"Pizzéria\"",_1: "Rue Georges Sand - 63790 MUROL Tél : 04 73 62 37 10",_2: "",_3: "",_4: _U.list([])}]));
-   var barBrasserie = A2(makeTable,
-   "barBrasserie",
-   _U.list([{ctor: "_Tuple5",_0: "A Jour et Nuit",_1: "Rue Estaing - 63790 Murol Tél : 04 73 88 64 82",_2: "",_3: "",_4: _U.list([])}
-           ,{ctor: "_Tuple5",_0: "Auberge de la plage",_1: "La plage - 63790 Murol Tél : 04 73 88 67 90",_2: "",_3: "",_4: _U.list([])}
-           ,{ctor: "_Tuple5"
-            ,_0: "L\'Arbalète"
-            ,_1: "Rue Georges Sand - 63790 MUROL Tél : 04 73 88 85 79"
-            ,_2: "restaurantlarbalete@gmail.com"
-            ,_3: ""
-            ,_4: _U.list([])}
-           ,{ctor: "_Tuple5"
-            ,_0: "Le café de la côte"
-            ,_1: "Rue Chabrol - 63790 MUROL - Tél : 06 7941 0811"
-            ,_2: ""
-            ,_3: ""
-            ,_4: _U.list(["café- restaurant- herboristerie- salle de concert\n        - atelier de confection de bougies\n        en cire d\'abeille, etc."
-                         ,"Bière locale, hypocras (entendez par là :\n          vin aux épices médiéval), barbecue ."
-                         ,"L\'ambiance ici est à la détente, et parfois à la\n         fête puisque des concerts y sont\n         organisés sporadiquement."])}]));
-   var barDeNuit = A2(makeTable,
-   "barDeNuit",
-   _U.list([{ctor: "_Tuple5"
-            ,_0: "Cubana café"
-            ,_1: "Place de la poste - 63790 MUROL Tél : 04 73 88 85 79"
-            ,_2: "larbalete@cegetel.net"
-            ,_3: ""
-            ,_4: _U.list([])}]));
    var restaurants = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData")]),
    _U.list([A2($Html.p,
@@ -415,13 +433,37 @@ Elm.Tourisme.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Restaurants")]))
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
-           ,restosBeaunes
+           ,A2(makeTable,"restosBeaunes",restosBeaunes)
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
-           ,restosMurol
+           ,A2(makeTable,"restosMurol",restosMurol)
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar - Brasserie")]))
-           ,barBrasserie
+           ,A2(makeTable,"barBrasserie",barBrasserie)
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
-           ,barDeNuit]));
+           ,A2(makeTable,"barDeNuit",barDeNuit)]));
+   var hebergements = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                                   Beaucoup d\'entre eux se sont engagés dans des \n                                   démarches de qualité, symbolisées par différents labels. Certains \n                                   sont hôtels restaurants et offrent une prestation en \n                                   demi-pension et pension complète. ")]))
+           ,A2(makeTable,"hotels",hotels)
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Campings")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ils offrent de bonnes conditions de confort et \n                                   beaucoup d\'entre eux s\'engagent dans des démarches de \n                                   qualité, symbolisées par différents labels. Certains d\'entre eux \n                                   proposent également des locations de mobil-homes, chalets ou \n                                   bungalows.")]))
+           ,A2(makeTable,"campings",campings)
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Chambres d\'Hôtes")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                                   en proposant des prestations de très bon confort. \n                                   Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                                   de personnes passionnées par leur région et attentives \n                                   à la qualité de l\'accueil.")]))
+           ,A2(makeTable,"chambresHotes",chambresHotes)
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Meublés")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                                   répondront à toutes les attentes et à tous \n                                   les budgets. Les meublés que nous vous proposons \n                                   sont tous classés par la préfecture. Le classement, \n                                   en étoiles, indique le degré de confort de \n                                   la location. Certains sont même labellisés. ")]))
+           ,A2(makeTable,"meubles",meubles)
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Village Vacances")]))
+           ,A2(makeTable,"azureva",azureva)]));
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
@@ -452,18 +494,18 @@ Elm.Tourisme.make = function (_elm) {
                                            ,{ctor: "_Tuple2",_0: "Hebergements",_1: hebergements}]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
-      var _p6 = newContent;
-      if (_p6.ctor === "Nothing") {
+      var _p5 = newContent;
+      if (_p5.ctor === "Nothing") {
             return model;
          } else {
-            return _U.update(model,{mainContent: _p6._0});
+            return _U.update(model,{mainContent: _p5._0});
          }
    });
    var update = F2(function (action,model) {
-      var _p7 = action;
-      switch (_p7.ctor)
+      var _p6 = action;
+      switch (_p6.ctor)
       {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p7._0);
+         case "Entry": return A2(changeMain,model,_p6._0);
          default: return model;}
    });
    var subMenu = _U.list(["Accueil Tourisme","Découvrir Murol","Hebergements","Restaurants","Carte & plan","Animation estivale"]);
@@ -475,15 +517,13 @@ Elm.Tourisme.make = function (_elm) {
                                  ,initialModel: initialModel
                                  ,contentMap: contentMap
                                  ,view: view
-                                 ,makeTable: makeTable
-                                 ,makeRow: makeRow
                                  ,addStars: addStars
                                  ,FamillePlus: FamillePlus
                                  ,NoLabel: NoLabel
                                  ,TableEntry: TableEntry
                                  ,emptyTe: emptyTe
-                                 ,makeTable$: makeTable$
-                                 ,makeRow$: makeRow$
+                                 ,makeTable: makeTable
+                                 ,makeRow: makeRow
                                  ,maybeElem: maybeElem
                                  ,nullTag: nullTag
                                  ,labelToHtml: labelToHtml
@@ -498,6 +538,7 @@ Elm.Tourisme.make = function (_elm) {
                                  ,barDeNuit: barDeNuit
                                  ,carte: carte
                                  ,hebergements: hebergements
+                                 ,azureva: azureva
                                  ,hotels: hotels
                                  ,campings: campings
                                  ,chambresHotes: chambresHotes

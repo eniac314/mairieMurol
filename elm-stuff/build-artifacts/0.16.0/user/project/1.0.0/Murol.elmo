@@ -135,7 +135,9 @@ Elm.Murol.make = function (_elm) {
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
    var renderSubMenu = F3(function (address,title,entries) {
-      var toA = function (e) {    return A2($Html.a,_U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e))]),_U.list([$Html.text(e)]));};
+      var toA = function (e) {
+         return A2($Html.a,_U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#top")]),_U.list([$Html.text(e)]));
+      };
       var linkList = A2($List.map,toA,entries);
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("sideMenu")]),

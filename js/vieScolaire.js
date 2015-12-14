@@ -10542,3 +10542,77 @@ Elm.Murol.make = function (_elm) {
                               ,capitalize: capitalize
                               ,script: script};
 };
+Elm.VieScolaire = Elm.VieScolaire || {};
+Elm.VieScolaire.make = function (_elm) {
+   "use strict";
+   _elm.VieScolaire = _elm.VieScolaire || {};
+   if (_elm.VieScolaire.values) return _elm.VieScolaire.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var initialContent = nullTag;
+   var mater = nullTag;
+   var elem = nullTag;
+   var second = nullTag;
+   var peri = nullTag;
+   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Ecole Maternelle",_1: mater}
+                                           ,{ctor: "_Tuple2",_0: "Ecole Elementaire",_1: elem}
+                                           ,{ctor: "_Tuple2",_0: "Le Secondaire",_1: second}
+                                           ,{ctor: "_Tuple2",_0: "Periscolaire",_1: peri}]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A3($Murol.renderSubMenu,address,"Vie Scolaire:",function (_) {    return _.subMenu;}(model))
+                      ,function (_) {
+                         return _.mainContent;
+                      }(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list(["Ecole Maternelle","Ecole Elementaire","Le Secondaire","Periscolaire"]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.VieScolaire.values = {_op: _op
+                                    ,subMenu: subMenu
+                                    ,initialModel: initialModel
+                                    ,view: view
+                                    ,contentMap: contentMap
+                                    ,update: update
+                                    ,changeMain: changeMain
+                                    ,main: main
+                                    ,nullTag: nullTag
+                                    ,initialContent: initialContent
+                                    ,mater: mater
+                                    ,elem: elem
+                                    ,second: second
+                                    ,peri: peri};
+};

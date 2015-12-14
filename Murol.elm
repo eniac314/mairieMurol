@@ -191,7 +191,7 @@ renderMisc misc =
       ]
 
 renderSubMenu address title entries =
-  let toA e = a [id e, onClick address (Entry e)] [text e]
+  let toA e = a [id e, onClick address (Entry e), href "#top"] [text e]
       linkList = map toA entries 
   in
   div [ class "sideMenu"]

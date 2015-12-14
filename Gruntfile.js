@@ -5,13 +5,14 @@ module.exports = function(grunt) {
       compile: {
         files: {
           "./js/murol.js": ["Murol.elm"],
-          "./js/tourisme.js": ["Tourisme.elm"]
+          "./js/tourisme.js": ["Tourisme.elm"],
+          "./js/vieScolaire.js": ["VieScolaire.elm"]
         }
       }
     },
     watch: {
       elm: {
-        files: ["Murol.elm", "Tourisme.elm"],
+        files: ["Murol.elm", "Tourisme.elm", "VieScolaire.elm"],
         tasks: ["elm"]
       }
     },

@@ -70,26 +70,26 @@ view address model =
       , pageFooter
       ]
 
-makeTable name entries =
-  let
-  makeRows b xs =
-    case xs of
-      [] -> []
-      ((n,a,m,s,d)::xs') ->
-        makeRow n a m s d b :: makeRows (not b) xs'
-  in table [id name] (makeRows True entries)
+--makeTable name entries =
+--  let
+--  makeRows b xs =
+--    case xs of
+--      [] -> []
+--      ((n,a,m,s,d)::xs') ->
+--        makeRow n a m s d b :: makeRows (not b) xs'
+--  in table [id name] (makeRows True entries)
 
-makeRow : String -> String -> String -> String -> List String -> Bool -> Html
-makeRow  name adr mail site descr alt =
-  let name' = h6 [] [text name]
-      adr'  = maybeElem adr  (\s -> p [] [text s])
-      mail' = maybeElem mail (\s -> p [] [text "e.mail: ", a [href s] [text s]])
-      site' = maybeElem site (\s -> p [] [text "site: ", a [href s] [text s]])
+--makeRow : String -> String -> String -> String -> List String -> Bool -> Html
+--makeRow  name adr mail site descr alt =
+--  let name' = h6 [] [text name]
+--      adr'  = maybeElem adr  (\s -> p [] [text s])
+--      mail' = maybeElem mail (\s -> p [] [text "e.mail: ", a [href s] [text s]])
+--      site' = maybeElem site (\s -> p [] [text "site: ", a [href s] [text s]])
 
-      descr' = List.map (\s -> p [] [text s]) descr
-      alt'   = if alt then "altLine" else "Line"
-  in tr [class alt']
-        ([name',adr',mail',site'] ++ descr')
+--      descr' = List.map (\s -> p [] [text s]) descr
+--      alt'   = if alt then "altLine" else "Line"
+--  in tr [class alt']
+--        ([name',adr',mail',site'] ++ descr')
 
 addStars : Maybe Int -> String -> Html
 addStars n s =
@@ -123,18 +123,18 @@ type alias TableEntry =
 
 emptyTe = TableEntry "" NoLabel Nothing "" [] "" "" "" "" "" []
 
-makeTable' name entries =
+makeTable name entries =
   let
   makeRows b xs =
     case xs of
       [] -> []
       (e::xs') ->
-        makeRow' e b :: makeRows (not b) xs'
+        makeRow e b :: makeRows (not b) xs'
   in table [id name] (makeRows True entries)
 
 
-makeRow' : TableEntry -> Bool -> Html
-makeRow' { name, label, stars, refOt, descr,
+makeRow : TableEntry -> Bool -> Html
+makeRow { name, label, stars, refOt, descr,
            addr, tel, fax, mail, site, pics } alt =
   let name'  = h6 [] [addStars stars name]
 
@@ -395,123 +395,120 @@ restaurants =
 
       , h4 [] [ text "Nos Restaurants"]
       , h5 [] [ text "A Beaune le Froid"]
-      , restosBeaunes
+      , makeTable "restosBeaunes" restosBeaunes
 
       , h5 [] [ text "A Murol"]
-      , restosMurol
+      , makeTable "restosMurol" restosMurol
 
       , h4 [] [ text "Bar - Brasserie"]
-      , barBrasserie
+      , makeTable "barBrasserie" barBrasserie
 
       , h4 [] [ text "Bar de Nuit"]
-      , barDeNuit
+      , makeTable "barDeNuit" barDeNuit
     ]
 
 
 
 restosBeaunes =
- makeTable "restosBeaunes"
-  [ ("Les Sancy'Elles"
-    ,"63790 Beaune le Froid -MUROL  Tél: 04 7388 8118"
-    ,""
-    ,""
-    ,["Crèperie, petite restauration"]
-    )
-  ]
+   [{ emptyTe |
+      name  = "Les Sancy'Elles"
+    , addr  = "63790 Beaune le Froid -MUROL"
+    , descr = ["Crèperie, petite restauration"]
+    , tel   = "04 7388 8118"
+    }]
 
 restosMurol =
-  makeTable "restosMurol"
-    [ ("Au Montagnard"
-      ,"Rue d'Estaing - 63790 MUROL Tél: 04 73 88 61 52 "
-      ,"restaurant.aumontagnard@orange.fr"
-      ,"http://restaurantaumontagnard.wifeo.com/"
-      ,["Plat à emporter au restaurant"]
-      )
-      ,
-      ("Chez Dame Galinette"
-      ,"Rue d'Estaing - 63790 MUROL Tél: 04 73 88 61 52 "
-      ,"murol@azureva-vacances.com"
-      ,""
-      ,[]
-      )
-      ,
-      ("Le chalet de la plage"
-      ,"lac Chambon - 63790 MUROL Tél : 04 73 88 82 31"
-      ,"hotel@lac-chambon-plage.fr"
-      ,""
-      ,[]
-      )
-      ,
-      ("Le Parc"
-      ,"Rue Georges Sand - 63790 MUROL Tél: 04 73 88 60 08 fax : 04 73 88 64 44"
-      ,"info@hotel-parc.com"
-      ,""
-      ,[]
-      )
-      ,
-      ("Le Paris"
-      ,"Pace de la mairie - 63790 MUROL Tél : 04 73 88 60 09 fax : 04 73 88 69 82"
-      ,"info@hoteldeparis-murol.com"
-      ,""
-      ,[]
-      )
-      ,
-      ("Le Piccotin \"Pizzéria\""
-      ,"Rue Georges Sand - 63790 MUROL Tél : 04 73 62 37 10"
-      ,""
-      ,""
-      ,[]
-      )
+  [{ emptyTe |
+      name  = "Au Montagnard"
+    , addr  = "Rue d'Estaing - 63790 MUROL"
+    , descr = ["Plat à emporter au restaurant"]
+    , tel   = "04 73 88 61 52"
+    , mail  = "restaurant.aumontagnard@orange.fr"
+    , site  = "http://restaurantaumontagnard.wifeo.com/"
+    }
+    ,
+    { emptyTe |
+      name  = "Chez Dame Galinette"
+    , addr  = "Rue d'Estaing - 63790 MUROL"
+    , tel   = "04 73 88 61 52"
+    , site  = "murol@azureva-vacances.com"
+    }
+    ,
+    { emptyTe |
+      name  = "Le chalet de la plage"
+    , addr  = "lac Chambon - 63790 MUROL"
+    , tel   = "04 73 88 82 31"
+    , mail  = "hotel@lac-chambon-plage.fr"
+    }
+    ,
+    { emptyTe |
+      name  = "Le Parc"
+    , addr  = "Rue Georges Sand - 63790 MUROL"
+    , tel   = "04 73 88 60 08"
+    , fax   = "04 73 88 64 44"
+    , mail  = "info@hotel-parc.com"
+    }
+    ,
+    { emptyTe |
+      name  = "Le Paris"
+    , addr  = "Pace de la mairie - 63790 MUROL"
+    , tel   = "04 73 88 60 09"
+    , fax   = "04 73 88 69 82"
+    , mail  = "info@hoteldeparis-murol.com"
+    }
+    ,
+    { emptyTe |
+      name  = "Le Piccotin \"Pizzéria\""
+    , addr  = "Rue Georges Sand - 63790 MUROL"
+    , tel   = "04 73 62 37 10"
+    }
     ]
+
+
 
 barBrasserie =
-  makeTable "barBrasserie"
-    [ ("A Jour et Nuit"
-      ,"Rue Estaing - 63790 Murol Tél : 04 73 88 64 82"
-      ,""
-      ,""
-      ,[]
-      )
-      ,
-      ("Auberge de la plage"
-      ,"La plage - 63790 Murol Tél : 04 73 88 67 90"
-      ,""
-      ,""
-      ,[]
-      )
-      ,
-      ("L'Arbalète"
-      ,"Rue Georges Sand - 63790 MUROL Tél : 04 73 88 85 79"
-      ,"restaurantlarbalete@gmail.com"
-      ,""
-      ,[]
-      )
-      ,
-      ("Le café de la côte"
-      ,"Rue Chabrol - 63790 MUROL - Tél : 06 7941 0811"
-      ,""
-      ,""
-      ,["café- restaurant- herboristerie- salle de concert
-        - atelier de confection de bougies
-        en cire d'abeille, etc."
-        ,"Bière locale, hypocras (entendez par là :
-          vin aux épices médiéval), barbecue ."
-        ,"L'ambiance ici est à la détente, et parfois à la
-         fête puisque des concerts y sont
-         organisés sporadiquement."
-       ]
-      )
+  [{ emptyTe |
+      name  = "A Jour et Nuit"
+    , addr  = "Rue Estaing - 63790 Murol"
+    , tel   = "04 73 88 64 82"
+    }
+    ,
+    { emptyTe |
+      name  = "Auberge de la plage"
+    , addr  = "La plage - 63790 Murol"
+    , tel   = "04 73 88 67 90"
+    }
+    ,
+    { emptyTe |
+      name  = "L'Arbalète"
+    , addr  = "Rue Georges Sand - 63790 Murol"
+    , tel   = "04 73 88 85 79"
+    , mail  = "restaurantlarbalete@gmail.com"
+    }
+    ,
+    { emptyTe |
+      name  = "Le café de la côte"
+    , addr  = "Rue Chabrol - 63790 MUROL"
+    , descr = ["café- restaurant- herboristerie- salle de concert
+                - atelier de confection de bougies
+                en cire d'abeille, etc."
+                ,"Bière locale, hypocras (entendez par là :
+                  vin aux épices médiéval), barbecue ."
+                ,"L'ambiance ici est à la détente, et parfois à la
+                 fête puisque des concerts y sont
+                 organisés sporadiquement."]
+    , tel   = "06 7941 0811"
+    }
     ]
+   
 
 barDeNuit =
-  makeTable "barDeNuit"
-   [("Cubana café"
-    ,"Place de la poste - 63790 MUROL Tél : 04 73 88 85 79"
-    ,"larbalete@cegetel.net"
-    ,""
-    ,[]
-    )
-   ]
+  [ { emptyTe |
+      name  = "Cubana café"
+    , addr  = "Place de la poste - 63790 Murol"
+    , tel   = "04 73 88 85 79"
+    , mail  = "larbalete@cegetel.net"
+    }]
 
 carte =
   div [ class "subContainerData"]
@@ -528,21 +525,21 @@ hebergements = div [ class "subContainerData"]
                                    démarches de qualité, symbolisées par différents labels. Certains 
                                    sont hôtels restaurants et offrent une prestation en 
                                    demi-pension et pension complète. "]
-                   , makeTable' "hotels" hotels
+                   , makeTable "hotels" hotels
                    , h4 [] [ text "Nos Campings"]
                    , p  [] [ text "Ils offrent de bonnes conditions de confort et 
                                    beaucoup d'entre eux s'engagent dans des démarches de 
                                    qualité, symbolisées par différents labels. Certains d'entre eux 
                                    proposent également des locations de mobil-homes, chalets ou 
                                    bungalows."]
-                   , makeTable' "campings" campings
+                   , makeTable "campings" campings
                    , h4 [] [ text "Nos Chambres d'Hôtes"]
                    , p  [] [ text "Elles répondent aux exigences actuelles de la clientèle, 
                                    en proposant des prestations de très bon confort. 
                                    Séjourner en chambre d'hôtes, c'est partager le quotidien 
                                    de personnes passionnées par leur région et attentives 
                                    à la qualité de l'accueil."]
-                   , makeTable' "chambresHotes" chambresHotes
+                   , makeTable "chambresHotes" chambresHotes
                    , h4 [] [ text "Nos Meublés"]
                    , p  [] [ text "Très répandus dans le Massif du Sancy, ils 
                                    répondront à toutes les attentes et à tous 
@@ -550,8 +547,20 @@ hebergements = div [ class "subContainerData"]
                                    sont tous classés par la préfecture. Le classement, 
                                    en étoiles, indique le degré de confort de 
                                    la location. Certains sont même labellisés. "]
-                   , makeTable' "meubles" meubles
+                   , makeTable "meubles" meubles
+                   , h4 [] [ text "Village Vacances"]
+                   , makeTable "azureva" azureva
                    ]
+
+azureva = [{ emptyTe |
+             name  = "Azureva"
+           , addr  = "route de Jassat 63790 MUROL"
+           , descr = ["Contact:","azurèva MUROL - Villages & Résidences de Vacances"]
+           , tel   = "04 73 88 58 58"
+           , fax   = "04 73 88 58 00"
+           , mail  = "murol@azureva-vacances.com"
+           , site  = "http://www.azureva-vacances.com/Individuel/Village/Murol"
+          }]
 
 hotels = [{ emptyTe |
             stars = Just 2
@@ -733,5 +742,127 @@ meubles =
    , addr  = "Place de l'hôtel de ville - 63790 MUROL"
    , tel   = "04 73 93 69 19 - Portable : 07 50 35 54 63"
    }
-
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "Entre château et volcans"
+   , refOt = "3699"
+   , label = FamillePlus
+   , descr = ["2* - 2 et 3 personnes"]
+   , addr  = "route de Besse - 63790 MUROL"
+   , tel   = "04 73 88 67 56 - Portable : 06 28 06 81 77"
+   , mail  = "veronique.debout@gmail.com"
+   , site  = "www.entre-chateau-et-volcans.fr"
+   }
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "Chapuzadou"
+   , descr = ["2* - 4 personnes", "Mme CLEMENT Marie-Paule"]
+   , addr  = "La Chassagne - 63790 Murol"
+   , tel   = "04 7388 6085 (HR)"
+   , mail  = "lachassagne@hotmail.fr"
+   , site  = "http://lachassagne.e-monsite.com/"
+   }
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "Les Cigales"
+   , refOt = "1467"
+   , descr = ["2* - 4 personnes","Mme MATHIEU Anne-Marie"]
+   , addr  = "Rue de Groire - 63790 MUROL"
+   , tel   = "04 73 88 80 87"
+   }
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "La clé des champs"
+   , refOt = "1446"
+   , descr = ["2* - 4 personnes","M. & Mme DELPEUX Annie et François"]
+   , addr  = "Route de Groire - 63790 MUROL"
+   , tel   = "04 73 88 66 29 - Portable : 06 21 49 42 94 - 06 77 11 62 06"
+   }
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "Les Elfes"
+   , refOt = "3125"
+   , descr = ["2* - 4 personnes"]
+   , addr  = "Route de Jassat - 63790 MUROL"
+   , tel   = "04 73 88 61 16 - Portable : 06 88 76 81 70 - joignable : de 10h à 21h"
+   , mail  = "alice.elfes@wanadoo.fr"
+   }
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "Les Genêts"
+   , refOt = "5336"
+   , descr = ["2* - 4 personnes","M. NOTHEISEN Marc"]
+   , addr  = "Rue d'Estaing - 63790 MUROL"
+   , tel   = "03 86 73 72 25 - Portable : 06 83 59 00 67"
+   , mail  = "monique-notheisen@orange.fr"
+   , site  = "http://lesgenets.murol.monsite-orange.fr"
+   }
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "Résidence Clair logis"
+   , refOt = "1469"
+   , descr = ["2* - 3 et 4 personnes","M. LAPORTE Rémy"]
+   , addr  = "Rue George Sand - 63790 MUROL"
+   , tel   = "04 73 88 65 43"
+   }
+   ,
+   { emptyTe |
+     stars = Just 1
+   , name  = "Villa Roux"
+   , refOt = "1478"
+   , descr = ["1* - 5 personnes",
+              "Type habitation : maison mitoyenne",
+              "M. ROUX André"]
+   , addr  = "Beaune-le-Froid - 63790 MUROL"
+   , tel   = "04 73 87 51 47"
+   }
+   ,
+   { emptyTe |
+     stars = Just 1
+   , name  = "Mon Gai Repos"
+   , refOt = "1516"
+   , descr = ["1* - 2 personnes ",
+              "Type habitation : appartement",
+              "Mme POMMIER-DESSERRE Madeleine"]
+   , addr  = "Groire - 63790 MUROL"
+   , tel   = "04 73 88 60 65 - Portable : 06 63 71 70 03"
+   }
+   ,
+   { emptyTe |
+     name  = "La Christaline"
+   , refOt = "6586"
+   , descr = ["2* - studios 2 personnes et appartement 4 à 6 personnes"
+             , "M. HENRY Christian"]
+   , tel   = "04 73 88 66 19 - 05 63 75 45 24 - Portable : 06 87 97 35 40"
+   , addr  = "Groire – 63790 MUROL"
+   , mail  = "henrymurol@orange.fr"
+   , site  = "http://murolsejourplus.wifeo.com"
+   }
+   ,
+   { emptyTe |
+     name  = "Résidence de Michèle"
+   , descr = ["2 à 4 personnes"
+             , "Melle Fanny Gontelle"]
+   , tel   = "04 73 88 68 68 / Port : 06 22 33 41 13"
+   , addr  = "Rue du Tartaret - 63790 MUROL"
+   , mail  = "residencedemichele@orange.fr"
+   , site  = "http://residencedemichele.monsite-orange.fr"
+   }
+   ,
+   { emptyTe |
+     name  = "Les Homes de Vire Vent"
+   , descr = ["5 personnes"
+             , "Melle Fanny Gontelle"]
+   , tel   = "04 73 69 76 64    Port : 06 07 30 95 43"
+   , addr  = "route de Jassat - 63790 MUROL"
+   , mail  = "legoueix.nicole@club-internet.fr"
+   , site  = "http://www.les-homes-de-virevent.com"
+   }
    ]
