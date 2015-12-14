@@ -1,1 +1,6 @@
-https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943 
+très répandus dans le Massif du Sancy, ils 
+ répondront à toutes les attentes et à tous 
+ les budgets. Les meublés que nous vous proposons 
+ sont tous classés par la préfecture. Le classement, 
+ en étoiles, indique le degré de confort de 
+ la location. Certains sont même labellisés. 
