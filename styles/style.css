@@ -352,6 +352,9 @@ end of sprite*/
   width: 70%;
   margin-top: 0px;
 }
+.subContainerData p {
+  font-family: 'PT Serif', Verdana, serif;
+}
 
 .subContainerData h3 {
   font-size: 150%;
@@ -422,7 +425,34 @@ end of sprite*/
   background-color: lightslategray;
 }
 
+.schoolAddress {
+  width: 70%;
+  padding: 0.5em;
+  background-color: lightslategray;
+  border-top: 0.5em ridge darkslateblue;
+  box-shadow: 2px 2px gray;
+  border-radius: 0.1em 1em;
+}
+.schoolAddress p{
+  color: rgb(10, 10, 50);
+  text-shadow: 1px 1px 0 lightgray;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+  /*padding: 0;*/
+}
 
+h5.trashCat {
+  color: white;
+  background-color: seagreen;
+  text-shadow: 1px 1px 0px darkslategray;
+}
+h6.trashCat {
+  color: white;
+  background-color: seagreen;
+  text-shadow: 1px 1px 0px darkslategray;
+}
 
 figure img {
   border: 1em double silver;
