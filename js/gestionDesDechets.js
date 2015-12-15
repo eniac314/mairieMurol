@@ -10576,25 +10576,25 @@ Elm.GestionDesDechets.make = function (_elm) {
            "Informations concernant la taxe d\'enlèvement des ordures ménagère",
            "http://www.murol.fr/Base_documentaire/SICTOM/Informationsaugmentationtaxes.pdf")
            ,$Html.text("2014")
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Ramassage des ordures")]))
+           ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Ramassage des ordures")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le ramassage des ordures a lieu le: ")]))
            ,A2($Html.ul,
            _U.list([]),
            _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("lundi pour les ordures ménagères")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("le mercredi pour le tri sélectif \"poubelles jaunes\"")]))]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Objets encombrants")]))
+           ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Objets encombrants")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("La municipalité souhaite aider les personnes n’ayant pas \n                        les moyens matériels nécessaires pour évacuer leurs objets \n                        encombrants en organisant des ramassages groupés.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Pour vous inscrire, merci de téléphoner à la mairie\n                       au 04 73 88 60 67, afin que la municipalité puisse\n                       programmer un ramassage dès que les demandes seront suffisantes.")]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchets verts")]))
+           ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchets verts")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Les déchets verts (tontes, branches et même troncs débités)\n                        doivent être apportés au SICTOM DES COUZES à St Diéry.")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ils ne doivent pas être déposés ni brûlés sur le site de  RABACHOT.")]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchèteries")]))
+           ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchèteries")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("La plus proche est celle de Besse")]))
            ,A2($Html.ul,
            _U.list([]),
@@ -10606,8 +10606,99 @@ Elm.GestionDesDechets.make = function (_elm) {
            _U.list([]),
            _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Fermée lundi et dimanche")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("Mardi au samedi : 9h-12h / 14h-18")]))]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("La collecte des déchets recyclables")]))
-           ,A2($Html.p,_U.list([]),_U.list([]))]));
+           ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("La collecte des déchets recyclables")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tri des déchets sur la commune de Murol se fait selon 4 possibilités :")]))
+           ,A2($Html.ol,
+           _U.list([]),
+           _U.list([A2($Html.li,
+           _U.list([]),
+           _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Les points d’apport volontaire")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Deux points d’apport volontaire, ou points propres, sont présents\n                                  sur la commune : l’un dans le bourg et l’autre à Beaune le froid.")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Plusieurs colonnes ou bacs y sont installés, pour séparer\n                                  différents matériaux :")]))
+                   ,A2($Html.ul,
+                   _U.list([]),
+                   _U.list([A2($Html.li,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le verre : uniquement pour les bouteilles et bocaux vides.")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("forbidden")]),
+                                   _U.list([$Html.text("Sont interdits : ampoules, miroirs, vitres cassées, vaisselle.")]))
+                                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Il est préférable d’enlever les bouchons et couvercles métalliques.")]))]))
+                           ,A2($Html.li,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Les papiers et cartons:")]))
+                                   ,A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("pour le papier, la publicité, journaux et magazines,\n                                          mais aussi le carton à condition qu’il soit plié.")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("forbidden")]),
+                                   _U.list([$Html.text("Sont interdits : les papiers et cartons souillés.")]))]))
+                           ,A2($Html.li,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Les corps « creux »:")]))
+                                   ,A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text(" bouteilles plastiques, boîtes de conserve, aérosols et briques alimentaires.")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("forbidden")]),
+                                   _U.list([$Html.text("Sont interdits : les plastiques autres que les bouteilles\n                                                              (le polystyrène, sacs, sachets alimentaires)")]))]))
+                           ,A2($Html.li,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("L’huile de vidange :")]))
+                                   ,A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("seule l’huile de vidange est acceptée. Il est possible de laisser le contenant\n                                          (bidon) dans le casier réservé à cet effet (intégré à la colonne).")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("forbidden")]),
+                                   _U.list([$Html.text("Il est interdit d’y déposer les huiles de friture, ainsi\n                                                           que torchons, filtres à huiles ou autres objets pouvant\n                                                           gêner l’utilisation de la colonne.")]))]))
+                           ,A2($Html.li,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Les piles:")]))
+                                   ,A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("une poubelle rouge est prévue à cet effet. Il est possible d’y déposer\n                                          tout type de pile (hors batterie auto).")]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Les colonnes à Verre")]))
+                           ,A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Outre les deux points d’apport volontaires, huit colonnes \n                                     à verre sont réparties sur le territoire :Vival \n                                     de Murol, camping de la Plage, tennis (route \n                                     de Besse), La Chassagne, camping de l’Europe, Groire, \n                                     camping des Fougères, et à Beaune le Froid.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Les bacs jaunes")]))
+                           ,A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("A l’automne 2004, le SICTOM des Couzes a mis en\n                                    place la collecte sélective des déchets d’emballages\n                                    recyclables en bacs à couvercles jaunes. Cela concerne\n                                    le bourg de Murol.")]))
+                           ,A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Les habitants font alors le tri à domicile et vont vider\n                                   les déchets dans les bacs jaunes dispersés dans le bourg.")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Sont acceptés:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Les emballages plastiques : bouteilles UNIQUEMENT")]))
+                                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Les emballages cartons : propres et pliés pour ne pas encombrer le bac")]))
+                                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Les papiers, journaux et magazines")]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([$Html.text("Les emballages métalliques: : boites de conserve, aérosols, canettes…vides !")]))]))
+                           ,A2($Html.p,
+                           _U.list([$Html$Attributes.$class("forbidden")]),
+                           _U.list([$Html.text("Sont interdits : les sacs et films plastiques, jouets, polystyrène, pots de produits laitiers.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Déposez en déchèterie:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Les encombrants (meubles, lavabos, …)")]))
+                                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("les déchets électriques (micro-ondes, électro ménager …)")]))
+                                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("les déchets spéciaux (peintures, produits chimiques …)")]))
+                                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("les déchets verts (gazons, tailles de haies…)")]))]))]))]))]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Au moindre doute, il est préférable de jeter le déchet dans la poubelle traditionnelle.")]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
