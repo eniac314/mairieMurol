@@ -388,7 +388,7 @@ end of sprite*/
 
 .subContainerData p {
   text-align: justify; 
-  text-indent: 2em;
+  /*text-indent: 2em;*/
   
 }
 
@@ -443,10 +443,24 @@ figcaption {
 
 .imgHolydays img{
   margin: 0;
+  margin-right: 0.1em;
   width: 45%;
 }
 
+h6.periCat {
+  border: none;
+  background-color: rgba(0, 139, 139 , 0.5); /*darkcyan*/
+  color: navy;
+  border-top: 5px double midnightblue;
+  border-bottom: 5px double midnightblue;
+}
 
+#quotient {
+  border: 1px solid black;
+}
+#quotient .quotLine {
+  background-color: skyblue;
+}
 
 
 
