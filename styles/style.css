@@ -449,10 +449,12 @@ figcaption {
 
 h6.periCat {
   border: none;
-  background-color: rgba(0, 139, 139 , 0.5); /*darkcyan*/
-  color: navy;
-  border-top: 5px double midnightblue;
-  border-bottom: 5px double midnightblue;
+  background-color: rgba(135,206,235 , 0.8); /*skyblue*/
+  color: darkred;
+  border-top: 5px double indianred;
+  /*border-bottom: 5px double darkcyan;*/
+  border-radius: 0 0 5px 5px;
+  box-shadow: 2px 2px 2px slategray;
 }
 
 #quotient {
@@ -461,6 +463,8 @@ h6.periCat {
 #quotient .quotLine {
   background-color: skyblue;
 }
-
+#quotient .quotAltLine {
+  background-color: antiquewhite;
+}
 
 
