@@ -10338,6 +10338,13 @@ Elm.Murol.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var link = F2(function (tex,addr) {    return A2($Html.a,_U.list([$Html$Attributes.href(addr)]),_U.list([$Html.text(tex)]));});
+   var site = F2(function (tex,addr) {
+      return A2($Html.span,_U.list([]),_U.list([$Html.text("Site: "),A2($Html.a,_U.list([$Html$Attributes.href(addr)]),_U.list([$Html.text(tex)]))]));
+   });
+   var mail = function (s) {
+      return A2($Html.span,_U.list([]),_U.list([$Html.text("Email: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+   };
    var script = F2(function (source,js) {
       return A3($Html.node,"script",_U.list([$Html$Attributes.src(source),$Html$Attributes.type$("text/javascript")]),_U.list([$Html.text(js)]));
    });
@@ -10540,7 +10547,10 @@ Elm.Murol.make = function (_elm) {
                               ,view: view
                               ,main: main
                               ,capitalize: capitalize
-                              ,script: script};
+                              ,script: script
+                              ,mail: mail
+                              ,site: site
+                              ,link: link};
 };
 Elm.Tourisme = Elm.Tourisme || {};
 Elm.Tourisme.make = function (_elm) {

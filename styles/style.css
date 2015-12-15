@@ -437,7 +437,14 @@ figcaption {
   box-shadow: 2px 2px 2px gray;
 }
 
+.imgHolydays {
+  display: inline-block;
+}
 
+.imgHolydays img{
+  margin: 0;
+  width: 45%;
+}
 
 
 

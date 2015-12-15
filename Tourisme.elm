@@ -70,27 +70,6 @@ view address model =
       , pageFooter
       ]
 
---makeTable name entries =
---  let
---  makeRows b xs =
---    case xs of
---      [] -> []
---      ((n,a,m,s,d)::xs') ->
---        makeRow n a m s d b :: makeRows (not b) xs'
---  in table [id name] (makeRows True entries)
-
---makeRow : String -> String -> String -> String -> List String -> Bool -> Html
---makeRow  name adr mail site descr alt =
---  let name' = h6 [] [text name]
---      adr'  = maybeElem adr  (\s -> p [] [text s])
---      mail' = maybeElem mail (\s -> p [] [text "e.mail: ", a [href s] [text s]])
---      site' = maybeElem site (\s -> p [] [text "site: ", a [href s] [text s]])
-
---      descr' = List.map (\s -> p [] [text s]) descr
---      alt'   = if alt then "altLine" else "Line"
---  in tr [class alt']
---        ([name',adr',mail',site'] ++ descr')
-
 addStars : Maybe Int -> String -> Html
 addStars n s =
   let go n = if n == 0

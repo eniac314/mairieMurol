@@ -257,6 +257,17 @@ script source js =
   node "script" [src source, type' "text/javascript"] [text js]
 
 
+mail s  = span [] [ text "Email: "
+         , a [href s] [text s]
+         ]
+
+site tex addr =
+ span [] [ text "Site: "
+         , a [href addr] [text tex]
+         ]
+
+link tex addr = a [href addr] [text tex]
+
 
 
  
