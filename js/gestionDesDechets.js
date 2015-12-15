@@ -10552,11 +10552,11 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
-Elm.VieScolaire = Elm.VieScolaire || {};
-Elm.VieScolaire.make = function (_elm) {
+Elm.GestionDesDechets = Elm.GestionDesDechets || {};
+Elm.GestionDesDechets.make = function (_elm) {
    "use strict";
-   _elm.VieScolaire = _elm.VieScolaire || {};
-   if (_elm.VieScolaire.values) return _elm.VieScolaire.values;
+   _elm.GestionDesDechets = _elm.GestionDesDechets || {};
+   if (_elm.GestionDesDechets.values) return _elm.GestionDesDechets.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10570,150 +10570,45 @@ Elm.VieScolaire.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var peri = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les Chèques Emploi Service Universel sont dorénavant acceptés pour\n                 le paiement de la garderie périscolaire.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("En dehors des heures de classe, le SIVOM de la VALLEE VERTE propose\n                 les services de garderie et de restaurant scolaire, selon les\n                 horaires et les tarifs suivants: ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Restaurant scolaire: ")]))
-                   ,A2($Murol.link,"Fiche d\'inscription","")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("ouvert de 12h00 à 13h30")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text(" Le montant de la participation des familles est fonction des revenus\n                  de celles-ci (tarification selon le quotient familial): ")]))
-           ,A2($Html.table,
-           _U.list([$Html$Attributes.id("quotient")]),
-           _U.list([A2($Html.tr,
-                   _U.list([$Html$Attributes.$class("quotLine")]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Quotient familial")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("de 0 à 350€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("de 351 à 500€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("de 501 à 600€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("plus de 600€")]))]))
-                   ,A2($Html.tr,
-                   _U.list([$Html$Attributes.$class("quotAltLine")]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Tarif maternelle")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,00€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,40€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,70€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,95€")]))]))
-                   ,A2($Html.tr,
-                   _U.list([$Html$Attributes.$class("quotLine")]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Tarif  élémentaire")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,00€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,50€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,85€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("3,10€")]))]))]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Un repas « bio » sera servi aux enfants une fois par mois.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Garderie: ")])),A2($Murol.link,"Fiche d\'inscription","")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("ouverte de 7h00 à 9h00 et de 16h30 à 19h00 : 1,20€ de l’heure.")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"Charte du savoir-vivre",""),$Html.text(" en milieu scolaire et périscolaire")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"Règlement intérieur",""),$Html.text(" du restaurant scolaire et de la garderie")]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Centre de loisirs")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert pendant les vacances scolaires")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le centre de loisirs est ouvert du lundi au vendredi, dans les\n                 locaux de l\'école maternelle de Murol")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Inscription en mairie")]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Transport scolaire")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Pour le transport scolaire, la participation des familles \n                 a été fixée forfaitairement par le Conseil Général \n                 pour l’année scolaire 2008 / 2009 à 12,80€ \n                 par mois (64€ par mois pour les élèves \n                 non subventionnés).")]))]));
-   var second = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.div,
-           _U.list([$Html$Attributes.$class("schoolAddress")]),
-           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Collège du Pavin")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue des Prés de la ville")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("63610 - Besse et Saint Anastaise")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 79 52 74")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04 73 79 57 94")]))]))
-           ,$Murol.mail("ce.0630008S@ac.clermont.fr")
-           ,A2($Html.br,_U.list([]),_U.list([]))
-           ,A2($Murol.site,"Collège du Pavin","http://www.clg-pavin.ac-clermont.fr/")
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
-           ,A2($Murol.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
-   var elem = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.div,
-           _U.list([$Html$Attributes.$class("schoolAddress")]),
-           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de l\'hôtel de ville - 63790 Murol")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 62 91")]))]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vous êtes nouveaux sur la commune:")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Allez à la mairie avec les documents suivants: ")]))
-           ,A2($Html.ul,
-           _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("le livret de famille")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("une carte d\'identité ou une copie d\'extrait d\'acte de naissance")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("un justificatif de domicile")]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([$Html.text("un document attestant que l\'enfant a subi les \n                              vaccinations obligatoires pour son âge\n                              (antidiphtérique, antitétanique, antipoliomyélitique)")]))]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants déjà scolarisés à Murol, Chambon et Saint Victor")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                      votre enfant est déjà scolarisé au sein du \n                      SIVOM de la Vallée Verte soit, de Murol, \n                      Chambon et Saint Victor la Rivière;. L\'école se \n                      charge de l\' inscription de votre enfant pour \n                      la poursuite de sa scolarité dans le cadre \n                      du regroupement pédagogique intercommunal (RPI), du CP au \n                      CM2.")]))]));
-   var mater = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.div,
-           _U.list([$Html$Attributes.$class("schoolAddress")]),
-           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue du Tartaret - 63790 Murol")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 64 70")]))]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les enfants peuvent y être accueillis à 3 \n                    ans. Ils peuvent également être admis dans la \n                    limite des places disponibles s\'ils ont atteint l\'âge \n                    de 2 ans au jour de la rentrée \n                    scolaire, à condition qu\'ils soient physiquement et psychologiquement \n                    prêts à la fréquenter.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Ils y restent jusqu\'à la rentrée scolaire de l\'année civile\n                    au cours de laquelle ils atteignent l\'âge de 6 ans.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Prenez rendez-vous auprès de la directrice de la \n                     maternelle. Vos enfants seront inscrits directement par la \n                     directrice à l\'école qui en profitera pour faire \n                     connaissance avec les parents et faire visiter l\'école. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Munissez vous des documents suivants :")]))
-           ,A2($Html.ul,
-           _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("le livret de famille")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("une carte d\'identité ou une copie d\'extrait d\'acte de naissance")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("un justificatif de domicile")]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([$Html.text("un document attestant que l\'enfant a subi les \n                             vaccinations obligatoires pour son âge\n                             (antidiphtérique, antitétanique, antipoliomyélitique)")]))]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants déjà scolarisés à Murol, Chambon, Saint Victor et Saint Nectaire:")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                     votre enfant est déjà scolarisé au sein du \n                     SIVOM de la Vallée Verte soit, de Murol, \n                     Chambon, Saint Victor la Rivière et Saint Nectaire;. \n                     L\'école se charge de l\' inscription de votre \n                     enfant pour la poursuite de sa scolarité dans \n                     le cadre du regroupement pédagogique intercommunal (RPI), de \n                     la Petite Section de maternelle au CM2.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Pause Douceur")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Des séances de contes sont proposées le temps de la pause déjeuner au sein de l\'école maternelle.")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les dates et horaires seront précisées ultérieurement (renseignement à l\'école)")]))]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Scolarisez vos enfants à Murol de la maternelle au primaire")]))
-           ,A2($Html.figure,
-           _U.list([$Html$Attributes.$class("imgHolydays")]),
-           _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/carteZones.jpg")]),_U.list([]))
-                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/calendVac.jpg")]),_U.list([]))
-                   ,A2($Html.figcaption,
-                   _U.list([]),
-                   _U.list([$Html.text("Vacances scolaires, répartition des zones et calendrier")
-                           ,A2($Html.br,_U.list([]),_U.list([]))
-                           ,A2($Html.a,
-                           _U.list([$Html$Attributes.href("http://www.education.gouv.fr/cid87910/calendrier-scolaire-pour-les-annees-2015-2016-2016-2017-2017-2018.html")]),
-                           _U.list([$Html.text("source: education.gouv.fr")]))]))]))]));
-   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
-   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Ecole Maternelle",_1: mater}
-                                           ,{ctor: "_Tuple2",_0: "Ecole Elementaire",_1: elem}
-                                           ,{ctor: "_Tuple2",_0: "Le Secondaire",_1: second}
-                                           ,{ctor: "_Tuple2",_0: "Periscolaire",_1: peri}]));
+   _U.list([A2($Murol.link,
+           "Informations concernant la taxe d\'enlèvement des ordures ménagère",
+           "http://www.murol.fr/Base_documentaire/SICTOM/Informationsaugmentationtaxes.pdf")
+           ,$Html.text("2014")
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Ramassage des ordures")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le ramassage des ordures a lieu le: ")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("lundi pour les ordures ménagères")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("le mercredi pour le tri sélectif \"poubelles jaunes\"")]))]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Objets encombrants")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La municipalité souhaite aider les personnes n’ayant pas \n                        les moyens matériels nécessaires pour évacuer leurs objets \n                        encombrants en organisant des ramassages groupés.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour vous inscrire, merci de téléphoner à la mairie\n                       au 04 73 88 60 67, afin que la municipalité puisse\n                       programmer un ramassage dès que les demandes seront suffisantes.")]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchets verts")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les déchets verts (tontes, branches et même troncs débités)\n                        doivent être apportés au SICTOM DES COUZES à St Diéry.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ils ne doivent pas être déposés ni brûlés sur le site de  RABACHOT.")]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchèteries")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La plus proche est celle de Besse")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Fermée jeudi et dimanche")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Lundi mercredi vendredi et samedi : 9h-12h / 14h-18h")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Mardi : 8h-12h / 14h/17h")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Autre possibilité : la déchèterie de Montaigut le Blanc")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Fermée lundi et dimanche")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Mardi au samedi : 9h-12h / 14h-18")]))]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("La collecte des déchets recyclables")]))
+           ,A2($Html.p,_U.list([]),_U.list([]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
       var _p0 = newContent;
@@ -10734,29 +10629,19 @@ Elm.VieScolaire.make = function (_elm) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
       _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A3($Murol.renderSubMenu,address,"Vie Scolaire:",function (_) {    return _.subMenu;}(model))
-                      ,function (_) {
-                         return _.mainContent;
-                      }(model)]))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
-   var subMenu = _U.list(["Ecole Maternelle","Ecole Elementaire","Le Secondaire","Periscolaire"]);
+   var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.VieScolaire.values = {_op: _op
-                                    ,subMenu: subMenu
-                                    ,initialModel: initialModel
-                                    ,view: view
-                                    ,contentMap: contentMap
-                                    ,update: update
-                                    ,changeMain: changeMain
-                                    ,main: main
-                                    ,nullTag: nullTag
-                                    ,initialContent: initialContent
-                                    ,mater: mater
-                                    ,elem: elem
-                                    ,second: second
-                                    ,peri: peri};
+   return _elm.GestionDesDechets.values = {_op: _op
+                                          ,subMenu: subMenu
+                                          ,initialModel: initialModel
+                                          ,view: view
+                                          ,contentMap: contentMap
+                                          ,update: update
+                                          ,changeMain: changeMain
+                                          ,main: main
+                                          ,initialContent: initialContent};
 };

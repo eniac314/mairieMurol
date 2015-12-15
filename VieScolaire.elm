@@ -97,9 +97,11 @@ initialContent =
 
 mater  =
  div [ class "subContainerData"]
-     [ p [ class "schoolAddress"] [ text "Ecole Maternelle"]
-     , p [ class "schoolAddress"] [ text "Rue du Tartaret - 63790 Murol"]
-     , p [ class "schoolAddress"] [ text "Tél : 04 73 88 64 70"]
+     [ div [ class "schoolAddress"]
+           [ p [] [ text "Ecole Maternelle"]
+           , p [] [ text "Rue du Tartaret - 63790 Murol"]
+           , p [] [ text "Tél : 04 73 88 64 70"]
+           ]
      , p [] [ text "Les enfants peuvent y être accueillis à 3 
                     ans. Ils peuvent également être admis dans la 
                     limite des places disponibles s'ils ont atteint l'âge 
@@ -140,9 +142,11 @@ mater  =
         
 elem   = 
   div [ class "subContainerData"]
-      [ p [ class "schoolAddress"] [ text "Ecole élémentaire"]
-      , p [ class "schoolAddress"] [ text "Rue de l'hôtel de ville - 63790 Murol"]
-      , p [ class "schoolAddress"] [ text "Tél : 04 73 88 62 91"]
+      [ div [ class "schoolAddress"] 
+            [ p [] [ text "Ecole élémentaire"]
+            , p [] [ text "Rue de l'hôtel de ville - 63790 Murol"]
+            , p [] [ text "Tél : 04 73 88 62 91"]
+            ]
       , h4 [] [ text "Inscription"]
       , h5 [] [ text "Vous êtes nouveaux sur la commune:"]
       , p  [] [ text "Allez à la mairie avec les documents suivants: "]
@@ -168,11 +172,13 @@ elem   =
 
 second = 
   div [ class "subContainerData"]
-      [ p [ class "schoolAddress"] [ text "Collège du Pavin"]
-      , p [ class "schoolAddress"] [ text "Rue des Prés de la ville"]
-      , p [ class "schoolAddress"] [ text "63610 - Besse et Saint Anastaise"]
-      , p [ class "schoolAddress"] [ text "Tél : 04 73 79 52 74"]
-      , p [ class "schoolAddress"] [ text "Fax : 04 73 79 57 94"]
+      [ div [ class "schoolAddress"] 
+            [ p [] [ text "Collège du Pavin"]
+            , p [] [ text "Rue des Prés de la ville"]
+            , p [] [ text "63610 - Besse et Saint Anastaise"]
+            , p [] [ text "Tél : 04 73 79 52 74"]
+            , p [] [ text "Fax : 04 73 79 57 94"]
+            ]
       , mail "ce.0630008S@ac.clermont.fr"
       , br [] []
       , site "Collège du Pavin"

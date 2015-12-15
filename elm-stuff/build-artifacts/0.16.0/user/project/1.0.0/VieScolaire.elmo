@@ -74,11 +74,13 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([$Html.text("Pour le transport scolaire, la participation des familles \n                 a été fixée forfaitairement par le Conseil Général \n                 pour l’année scolaire 2008 / 2009 à 12,80€ \n                 par mois (64€ par mois pour les élèves \n                 non subventionnés).")]))]));
    var second = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Collège du Pavin")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Rue des Prés de la ville")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("63610 - Besse et Saint Anastaise")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Tél : 04 73 79 52 74")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Fax : 04 73 79 57 94")]))
+   _U.list([A2($Html.div,
+           _U.list([$Html$Attributes.$class("schoolAddress")]),
+           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Collège du Pavin")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue des Prés de la ville")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("63610 - Besse et Saint Anastaise")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 79 52 74")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04 73 79 57 94")]))]))
            ,$Murol.mail("ce.0630008S@ac.clermont.fr")
            ,A2($Html.br,_U.list([]),_U.list([]))
            ,A2($Murol.site,"Collège du Pavin","http://www.clg-pavin.ac-clermont.fr/")
@@ -86,9 +88,11 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Murol.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
    var elem = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Ecole élémentaire")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Rue de l\'hôtel de ville - 63790 Murol")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Tél : 04 73 88 62 91")]))
+   _U.list([A2($Html.div,
+           _U.list([$Html$Attributes.$class("schoolAddress")]),
+           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de l\'hôtel de ville - 63790 Murol")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 62 91")]))]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vous êtes nouveaux sur la commune:")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Allez à la mairie avec les documents suivants: ")]))
@@ -106,9 +110,11 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                      votre enfant est déjà scolarisé au sein du \n                      SIVOM de la Vallée Verte soit, de Murol, \n                      Chambon et Saint Victor la Rivière;. L\'école se \n                      charge de l\' inscription de votre enfant pour \n                      la poursuite de sa scolarité dans le cadre \n                      du regroupement pédagogique intercommunal (RPI), du CP au \n                      CM2.")]))]));
    var mater = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData")]),
-   _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Ecole Maternelle")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Rue du Tartaret - 63790 Murol")]))
-           ,A2($Html.p,_U.list([$Html$Attributes.$class("schoolAddress")]),_U.list([$Html.text("Tél : 04 73 88 64 70")]))
+   _U.list([A2($Html.div,
+           _U.list([$Html$Attributes.$class("schoolAddress")]),
+           _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue du Tartaret - 63790 Murol")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 64 70")]))]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Les enfants peuvent y être accueillis à 3 \n                    ans. Ils peuvent également être admis dans la \n                    limite des places disponibles s\'ils ont atteint l\'âge \n                    de 2 ans au jour de la rentrée \n                    scolaire, à condition qu\'ils soient physiquement et psychologiquement \n                    prêts à la fréquenter.")]))

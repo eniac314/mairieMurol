@@ -1,0 +1,93 @@
+Elm.GestionDesDechets = Elm.GestionDesDechets || {};
+Elm.GestionDesDechets.make = function (_elm) {
+   "use strict";
+   _elm.GestionDesDechets = _elm.GestionDesDechets || {};
+   if (_elm.GestionDesDechets.values) return _elm.GestionDesDechets.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([A2($Murol.link,
+           "Informations concernant la taxe d\'enlèvement des ordures ménagère",
+           "http://www.murol.fr/Base_documentaire/SICTOM/Informationsaugmentationtaxes.pdf")
+           ,$Html.text("2014")
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Ramassage des ordures")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le ramassage des ordures a lieu le: ")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("lundi pour les ordures ménagères")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("le mercredi pour le tri sélectif \"poubelles jaunes\"")]))]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Objets encombrants")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La municipalité souhaite aider les personnes n’ayant pas \n                        les moyens matériels nécessaires pour évacuer leurs objets \n                        encombrants en organisant des ramassages groupés.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour vous inscrire, merci de téléphoner à la mairie\n                       au 04 73 88 60 67, afin que la municipalité puisse\n                       programmer un ramassage dès que les demandes seront suffisantes.")]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchets verts")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les déchets verts (tontes, branches et même troncs débités)\n                        doivent être apportés au SICTOM DES COUZES à St Diéry.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ils ne doivent pas être déposés ni brûlés sur le site de  RABACHOT.")]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchèteries")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La plus proche est celle de Besse")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Fermée jeudi et dimanche")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Lundi mercredi vendredi et samedi : 9h-12h / 14h-18h")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Mardi : 8h-12h / 14h/17h")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Autre possibilité : la déchèterie de Montaigut le Blanc")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Fermée lundi et dimanche")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Mardi au samedi : 9h-12h / 14h-18")]))]))
+           ,A2($Html.h6,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("La collecte des déchets recyclables")]))
+           ,A2($Html.p,_U.list([]),_U.list([]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.GestionDesDechets.values = {_op: _op
+                                          ,subMenu: subMenu
+                                          ,initialModel: initialModel
+                                          ,view: view
+                                          ,contentMap: contentMap
+                                          ,update: update
+                                          ,changeMain: changeMain
+                                          ,main: main
+                                          ,initialContent: initialContent};
+};
