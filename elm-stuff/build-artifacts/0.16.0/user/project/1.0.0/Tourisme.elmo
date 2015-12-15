@@ -18,7 +18,7 @@ Elm.Tourisme.make = function (_elm) {
    $String = Elm.String.make(_elm);
    var _op = {};
    var carte = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("carteTourisme")]),
    _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
@@ -27,7 +27,7 @@ Elm.Tourisme.make = function (_elm) {
                    ,$Html$Attributes.src("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943")]),
            _U.list([]))]));
    var decouvrir = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("decouvTourisme")]),
    _U.list([A2($Html.figure,
            _U.list([]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/lac-et-chateau-de-murol.jpg")]),_U.list([]))
@@ -420,7 +420,7 @@ Elm.Tourisme.make = function (_elm) {
       return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
    });
    var restaurants = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("restosTourisme")]),
    _U.list([A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des\n                     produits du terroir qui font sa réputation :\n                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme\n                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh !\n                     le bon jambon d’Auvergne, les saucisses et les\n                     saucissons), le tout arrosé, avec modération, de vins\n                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,\n                     Boudes ou Corent. ")]))
@@ -441,7 +441,7 @@ Elm.Tourisme.make = function (_elm) {
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
            ,A2(makeTable,"barDeNuit",barDeNuit)]));
    var hebergements = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("hebergTourisme")]),
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
            ,A2($Html.p,
            _U.list([]),
@@ -477,7 +477,7 @@ Elm.Tourisme.make = function (_elm) {
               ,$Murol.pageFooter]));
    });
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initTourisme")]),
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))

@@ -67,7 +67,7 @@ main =
     }
 
 initialContent = 
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "initDechets"]
       [ link "Informations concernant la taxe d'enlèvement des ordures ménagère"
              "http://www.murol.fr/Base_documentaire/SICTOM/Informationsaugmentationtaxes.pdf"
         , text "2014"

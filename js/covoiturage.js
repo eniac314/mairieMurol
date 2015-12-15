@@ -10571,19 +10571,19 @@ Elm.Covoiturage.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initCovoit")]),
    _U.list([A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                      ! Au lieu que chacun utilise sa voiture \n                      pour effectuer des trajets quotidiens ou ponctuels, le \n                      covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                      personnes. Cela permet évidement de réduire les coûts \n                      de transport (prix de l\'essence, usure de la \n                      voiture, ...), la pollution, les temps de transport. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("En effet, le covoiturage vous permettra de diminuer \n                    largement vos frais liés à vos trajets en \n                    voiture (essence, usure de la voiture, ...). Dans \n                    le cas d\'un covoiturage alterné (plusieurs conducteurs qui \n                    conduisent par alternance) vous pourrez diviser vos frais \n                    de trajet par autant de conducteur qui participe \n                    au covoiturage. Dans le cas d\'un covoiturage avec \n                    participation (Les passagers participent financièrement aux trajets), là \n                    encore on observera une nette diminution des frais \n                    engendrés par l\'utilisation de votre voiture. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Un geste pour l\'écologie")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Un geste pour l\'écologie")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le covoiturage est une pratique qui permet de \n                      diminuer significativement le nombre de voiture circulant sur \n                      les routes. La première conséquence est la diminution \n                      de la pollution et de l\'émission des gaz \n                      à effet de serre. Ceci permet également la \n                      diminution de consommation d\'énergie non renouvelable comme le \n                      pétrole. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://www.covoiturageauvergne.net","http://www.covoiturageauvergne.net")]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://www.covoiturage.fr/","http://www.covoiturage.fr/")]))]));
    var contentMap = $Dict.fromList(_U.list([]));

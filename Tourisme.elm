@@ -29,7 +29,7 @@ subMenu = [ "Accueil Tourisme"
           , "Animation estivale" ]
 
 initialContent =
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "initTourisme"]
       [ h4 [] [ text "Office de tourisme"]
       , p []
           [ text "Rue de jassaguet - 63790 Murol"]
@@ -188,7 +188,7 @@ main =
 --Data
 
 decouvrir =
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "decouvTourisme"]
       [ figure []
                [ img [src "/images/lac-et-chateau-de-murol.jpg"] []
                , br [] []
@@ -352,7 +352,7 @@ decouvrir =
       ]
 
 restaurants =
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "restosTourisme"]
       [ p [] [ text "On ne peut évoquer l’Auvergne sans parler des
                      produits du terroir qui font sa réputation :
                      les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme
@@ -490,14 +490,14 @@ barDeNuit =
     }]
 
 carte =
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "carteTourisme"]
        [ p [] [ text "Coordonnées : Latitude / longitude N 45°34'34\" / E 002°56'34\" "]
        , p [] [ text "UTM : 31T 0495538 5046689 "]
        , p [] [ text "Situer Murol en cliquant sur la carte"]
        ,  iframe [ id "map", src "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943"] []
       ]
 
-hebergements = div [ class "subContainerData"]
+hebergements = div [ class "subContainerData", id "hebergTourisme"]
                    [ h4 [] [ text "Nos Hotels"]
                    , p  [] [ text "Murol offre une grande diversité d'établissements, généralement indépendants. 
                                    Beaucoup d'entre eux se sont engagés dans des 

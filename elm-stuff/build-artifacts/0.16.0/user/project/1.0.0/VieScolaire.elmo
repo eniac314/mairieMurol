@@ -17,7 +17,7 @@ Elm.VieScolaire.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var peri = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("periVieScolaire")]),
    _U.list([A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Les Chèques Emploi Service Universel sont dorénavant acceptés pour\n                 le paiement de la garderie périscolaire.")]))
@@ -73,7 +73,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Pour le transport scolaire, la participation des familles \n                 a été fixée forfaitairement par le Conseil Général \n                 pour l’année scolaire 2008 / 2009 à 12,80€ \n                 par mois (64€ par mois pour les élèves \n                 non subventionnés).")]))]));
    var second = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("secondVieScolaire")]),
    _U.list([A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Collège du Pavin")]))
@@ -87,7 +87,7 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
            ,A2($Murol.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
    var elem = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("elemVieScolaire")]),
    _U.list([A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
@@ -109,7 +109,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                      votre enfant est déjà scolarisé au sein du \n                      SIVOM de la Vallée Verte soit, de Murol, \n                      Chambon et Saint Victor la Rivière;. L\'école se \n                      charge de l\' inscription de votre enfant pour \n                      la poursuite de sa scolarité dans le cadre \n                      du regroupement pédagogique intercommunal (RPI), du CP au \n                      CM2.")]))]));
    var mater = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("materVieScolaire")]),
    _U.list([A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
@@ -142,7 +142,7 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Des séances de contes sont proposées le temps de la pause déjeuner au sein de l\'école maternelle.")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les dates et horaires seront précisées ultérieurement (renseignement à l\'école)")]))]));
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initVieScolaire")]),
    _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Scolarisez vos enfants à Murol de la maternelle au primaire")]))
            ,A2($Html.figure,
            _U.list([$Html$Attributes.$class("imgHolydays")]),

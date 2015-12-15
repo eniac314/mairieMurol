@@ -67,7 +67,7 @@ main =
     }
 
 initialContent = 
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "initCovoit"]
       [ p  [] [ text "Le concept du covoiturage est vraiment très simple 
                       ! Au lieu que chacun utilise sa voiture 
                       pour effectuer des trajets quotidiens ou ponctuels, le 
@@ -75,7 +75,7 @@ initialContent =
                       personnes. Cela permet évidement de réduire les coûts 
                       de transport (prix de l'essence, usure de la 
                       voiture, ...), la pollution, les temps de transport. "]
-     , p [] [ text "L'aspect économique"]
+     , h5 [] [ text "L'aspect économique"]
      , p [] [ text "En effet, le covoiturage vous permettra de diminuer 
                     largement vos frais liés à vos trajets en 
                     voiture (essence, usure de la voiture, ...). Dans 
@@ -86,7 +86,7 @@ initialContent =
                     participation (Les passagers participent financièrement aux trajets), là 
                     encore on observera une nette diminution des frais 
                     engendrés par l'utilisation de votre voiture. "]
-       , p [] [ text "Un geste pour l'écologie"]
+       , h5 [] [ text "Un geste pour l'écologie"]
        , p [] [ text "Le covoiturage est une pratique qui permet de 
                       diminuer significativement le nombre de voiture circulant sur 
                       les routes. La première conséquence est la diminution 
@@ -94,7 +94,7 @@ initialContent =
                       à effet de serre. Ceci permet également la 
                       diminution de consommation d'énergie non renouvelable comme le 
                       pétrole. "]
-       , p [] [ text "Créer ou trouver un trajet, suivez les liens ci-dessous"]
+       , h5 [] [ text "Créer ou trouver un trajet, suivez les liens ci-dessous"]
        , p [] [ link "http://www.covoiturageauvergne.net" "http://www.covoiturageauvergne.net"]
        , p [] [ link "http://www.covoiturage.fr/" "http://www.covoiturage.fr/"]
        ]

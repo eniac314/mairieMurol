@@ -82,7 +82,7 @@ nullTag = span [style [("display","none")]] []
 -- Data
 
 initialContent = 
-    div [ class "subContainerData"]
+    div [ class "subContainerData", id "initVieScolaire"]
         [ p [] [ text "Scolarisez vos enfants à Murol de la maternelle au primaire"]
         ,
         figure [ class "imgHolydays"]
@@ -96,7 +96,7 @@ initialContent =
 
 
 mater  =
- div [ class "subContainerData"]
+ div [ class "subContainerData", id "materVieScolaire"]
      [ div [ class "schoolAddress"]
            [ p [] [ text "Ecole Maternelle"]
            , p [] [ text "Rue du Tartaret - 63790 Murol"]
@@ -141,7 +141,7 @@ mater  =
 
         
 elem   = 
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "elemVieScolaire"]
       [ div [ class "schoolAddress"] 
             [ p [] [ text "Ecole élémentaire"]
             , p [] [ text "Rue de l'hôtel de ville - 63790 Murol"]
@@ -171,7 +171,7 @@ elem   =
 
 
 second = 
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "secondVieScolaire"]
       [ div [ class "schoolAddress"] 
             [ p [] [ text "Collège du Pavin"]
             , p [] [ text "Rue des Prés de la ville"]
@@ -189,7 +189,7 @@ second =
       ]
 
 peri =
-  div [ class "subContainerData"]
+  div [ class "subContainerData", id "periVieScolaire"]
   [ p [] [ text "Les Chèques Emploi Service Universel sont dorénavant acceptés pour
                  le paiement de la garderie périscolaire."]
   , p [] [ text "En dehors des heures de classe, le SIVOM de la VALLEE VERTE propose

@@ -17,7 +17,7 @@ Elm.GestionDesDechets.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData")]),
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initDechets")]),
    _U.list([A2($Murol.link,
            "Informations concernant la taxe d\'enlèvement des ordures ménagère",
            "http://www.murol.fr/Base_documentaire/SICTOM/Informationsaugmentationtaxes.pdf")
