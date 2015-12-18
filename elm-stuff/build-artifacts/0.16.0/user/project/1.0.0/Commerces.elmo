@@ -1,0 +1,208 @@
+Elm.Commerces = Elm.Commerces || {};
+Elm.Commerces.make = function (_elm) {
+   "use strict";
+   _elm.Commerces = _elm.Commerces || {};
+   if (_elm.Commerces.values) return _elm.Commerces.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var renderCommerce = function (_p2) {
+      var _p3 = _p2;
+      var site$ = A2(maybeElem,
+      _p3.site,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var mail$ = A2(maybeElem,
+      _p3.mail,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
+      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
+      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
+      var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      return A2($Html.td,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
+   };
+   var renderCommerceMap = function (am) {
+      var toRow = F3(function (k,v,acc) {
+         return A2($List._op["::"],
+         A2($Html.tr,_U.list([]),A2($Basics._op["++"],_U.list([A2($Html.th,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderCommerce,v))),
+         acc);
+      });
+      var toRows = A3($Dict.foldr,toRow,_U.list([]),am);
+      return A2($Html.table,_U.list([]),toRows);
+   };
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var Commerce = F7(function (a,b,c,d,e,f,g) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g};});
+   var defCom = A7(Commerce,"",_U.list([]),"","","","","");
+   var comMapYearLong = $Dict.fromList(_U.list([{ctor: "_Tuple2"
+                                                ,_0: "Alimentation générale"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                             {name: "Petit Casino",addr: "rue Pierre Céleirol - 63790 MUROL",tel: "04 7380 1364"})
+                                                             ,_U.update(defCom,
+                                                             {name: "SPAR",addr: "Rue de Besse - 63790 MUROL",tel: "04 73 88 60 45 ",fax: "04 73 88 66 60"})
+                                                             ,_U.update(defCom,{name: "Vival",addr: "Rue Chabrol - 63790 MUROL",tel: "04 7388 6156"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Assurances"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                {name: "AXA assurances Verdier",addr: "Rue George Sand",tel: "04 7388 6877",fax: "04 73 88 63 79"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Banques"
+                                                ,_1: _U.list([_U.update(defCom,{name: "La Poste",addr: "La Poste",tel: "04 7388 6149"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Boucherie"
+                                                ,_1: _U.list([_U.update(defCom,{addr: "Rue George Sand 63790 MUROL",tel: "04 7388 6905"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Boulangerie"
+                                                ,_1: _U.list([_U.update(defCom,{addr: "Rue Chabrol - 63790 MUROL",tel: "04 7388 6024"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Café"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                {name: "Café de la côte",addr: "Rue Chabrol - 63790 MUROL",tel: "06 7941 0811"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Coiffure"
+                                                ,_1: _U.list([_U.update(defCom,{name: "Beal Patricia",addr: "Rue Estaing - 63790 MUROL",tel: "04 7388 6059"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Garage"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                             {name: "Garage Pons",addr: "Le Marais - 63790 MUROL",tel: "04 7388 6022",fax: "04 73 88 61 33"})
+                                                             ,_U.update(defCom,
+                                                             {name: "Murol Moto Sport"
+                                                             ,descr: _U.list(["Vente, réparations, location parking moto sécurisé et hors gel"])
+                                                             ,addr: "route de Besse - 63790 MUROL"
+                                                             ,tel: "06 78 08 35 74"
+                                                             ,fax: "04 76 88 66 60"
+                                                             ,mail: "cattarellisacha@orange.fr"
+                                                             ,site: "http://murolmotosport.wifeo.com"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Laverie automatique"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                             {name: "Laverie des Aloés"
+                                                             ,addr: "Rue Chabrol - 63790 MUROL"
+                                                             ,descr: _U.list(["Ouvert 7 jours / 7 – toute l’année de 8h à 22h"
+                                                                             ,"Lave-linge: 6 kg / 4,50€ – 16kg / 10,00€"
+                                                                             ,"Sèche-linge : 1,00€ - Distributeur de lessive"])
+                                                             ,tel: "06 52 43 52 52"})
+                                                             ,_U.update(defCom,
+                                                             {name: "Blanchisserie et vente de linge de maison"
+                                                             ,addr: "Rue Chabrol - 63790 MUROL"
+                                                             ,tel: "06 52 43 52 52"
+                                                             ,mail: "lavaloes@gmail.com"
+                                                             ,descr: _U.list(["Ouvert toute l’année"
+                                                                             ,"Lundi et jeudi de 14h00 à 19h30 (juillet/août 22h00)"
+                                                                             ,"Mercredi de 09h00 à 13h00"
+                                                                             ,"Vendredi et samedi de 9h30 à 12h30 / 14h00 à 19h30"
+                                                                             ,"Dimanche de 9h30 à 12h30"])})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Pharmacie"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                {name: "Pharmacie Brassier",addr: "Rue Estaing - 63790 MUROL",tel: "04 7388 6042"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Produit du terroir"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                             {name: "Les Caves du château",addr: "Place du pont - 63790 MUROL",tel: "04 7388 6334"})
+                                                             ,_U.update(defCom,
+                                                             {name: "Saveurs d\'antan",addr: "Le Marais - 63790 MUROL",tel: "04 7388 6923"})])}]));
+   var comMapSummer = $Dict.fromList(_U.list([{ctor: "_Tuple2"
+                                              ,_0: "Art de la maison - cadeaux - souvenirs"
+                                              ,_1: _U.list([_U.update(defCom,
+                                              {name: "Le grenier du château"
+                                              ,addr: "rue Georges Sand - 63790 MUROL"
+                                              ,tel: "04 7388 9528"
+                                              ,mail: "le-grenier-du-chateau@sfr.fr"
+                                              ,descr: _U.list(["Ouvert du 1 avril au 30 septembre de 10h00 à 12h30 / 14h30 à 19h30"])})])}
+                                             ,{ctor: "_Tuple2"
+                                              ,_0: "Artisanat d\'Art : Cuir"
+                                              ,_1: _U.list([_U.update(defCom,
+                                              {name: "Cuir Cath"
+                                              ,addr: "Rue de Chabrol - 63790 MUROL"
+                                              ,tel: "06 1189 1452"
+                                              ,mail: "cuircath63@orange.fr"
+                                              ,descr: _U.list(["Ouvert du 1 juillet au 31 août, tout les jours, sauf le lundi et les mercredis matin de mai et juin"])})])}
+                                             ,{ctor: "_Tuple2"
+                                              ,_0: "Produit du terroir"
+                                              ,_1: _U.list([_U.update(defCom,
+                                              {name: "Lou Cava\'yo"
+                                              ,addr: "Rue Georges Sand - 63790 MUROL"
+                                              ,tel: "06 3144 1980"
+                                              ,descr: _U.list(["Ouvert du 1/06 au 30/09 de 9h00 à 21h00"])})])}
+                                             ,{ctor: "_Tuple2"
+                                              ,_0: "Vêtements"
+                                              ,_1: _U.list([_U.update(defCom,
+                                                           {name: "Altitude cottayshop"
+                                                           ,addr: "rue Georges Sand - 63790 MUROL"
+                                                           ,tel: ""
+                                                           ,descr: _U.list(["Ouvert du 1 juillet au 30 septembre de 10h00 à 13h00 et de 15h00 à 20h00"
+                                                                           ,"Chaussures de randonnée - vêtements divers"])})
+                                                           ,_U.update(defCom,
+                                                           {name: "Toutiveti "
+                                                           ,addr: "Route de Besse - parking supermarché SPAR - 63790 MUROL"
+                                                           ,tel: "06 7666 9747"
+                                                           ,mail: "toutiveti@hotmail.fr"
+                                                           ,descr: _U.list(["Ouvert du 15 avril au 15 septembre de 09h30 à 12h30 et de 14h30 à 19h00."
+                                                                           ,"Vêtements/chaussures - hommes/femmes/enfants "])})])}]));
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("commerces")]),
+   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouvert toute l\'année")]))
+           ,renderCommerceMap(comMapYearLong)
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouverture Saisonière")]))
+           ,renderCommerceMap(comMapSummer)]));
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Commerces.values = {_op: _op
+                                  ,subMenu: subMenu
+                                  ,initialModel: initialModel
+                                  ,Commerce: Commerce
+                                  ,view: view
+                                  ,renderCommerceMap: renderCommerceMap
+                                  ,renderCommerce: renderCommerce
+                                  ,maybeElem: maybeElem
+                                  ,nullTag: nullTag
+                                  ,contentMap: contentMap
+                                  ,update: update
+                                  ,changeMain: changeMain
+                                  ,main: main
+                                  ,initialContent: initialContent
+                                  ,defCom: defCom
+                                  ,comMapYearLong: comMapYearLong
+                                  ,comMapSummer: comMapSummer};
+};

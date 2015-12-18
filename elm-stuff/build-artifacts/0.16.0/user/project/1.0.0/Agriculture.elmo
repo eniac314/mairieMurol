@@ -1,0 +1,70 @@
+Elm.Agriculture = Elm.Agriculture || {};
+Elm.Agriculture.make = function (_elm) {
+   "use strict";
+   _elm.Agriculture = _elm.Agriculture || {};
+   if (_elm.Agriculture.values) return _elm.Agriculture.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("agriculture")]),
+   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Producteur fermier")]))
+           ,A2($Murol.link,"Saint-Nectaire AOP","http://www.fromages-aop-auvergne.com/AOP-Saint-Nectaire")
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("C’est dans une ferme datant de 1970 que \n                     Josette TIXIER vous accueillera pour vous faire découvrir \n                     ses secrets de fabrication du saint-Nectaire. Avec son \n                     fils David à la traite et sa belle-fille \n                     Angélique à la fromagerie, c’est une affaire de \n                     famille ! Suite à votre visite de la \n                     fromagerie, vous aurez droit bien entendu à une \n                     petite dégustation ! ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situation Beaune-le-froid, rue de Clermont")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Visite guidée")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Juillet et août : jeudi, vendredi, samedi à 9h15 (compter 1h)")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vente au détail")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Toute l’année, tous les jours (sauf le mardi) de 9h15 à 12h et de 15h à 20h")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Contactez-nous")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Josette TIXIER, son fils David et son épouse Angélique LAIR")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél./Fax. : 04.73.88.62.09")]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Agriculture.values = {_op: _op
+                                    ,subMenu: subMenu
+                                    ,initialModel: initialModel
+                                    ,view: view
+                                    ,contentMap: contentMap
+                                    ,update: update
+                                    ,changeMain: changeMain
+                                    ,main: main
+                                    ,initialContent: initialContent};
+};

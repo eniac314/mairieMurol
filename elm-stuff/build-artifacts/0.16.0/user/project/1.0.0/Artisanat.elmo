@@ -1,0 +1,166 @@
+Elm.Artisanat = Elm.Artisanat || {};
+Elm.Artisanat.make = function (_elm) {
+   "use strict";
+   _elm.Artisanat = _elm.Artisanat || {};
+   if (_elm.Artisanat.values) return _elm.Artisanat.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var renderArtisan = function (_p2) {
+      var _p3 = _p2;
+      var site$ = A2(maybeElem,
+      _p3.site,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var mail$ = A2(maybeElem,
+      _p3.mail,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
+      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
+      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
+      var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      return A2($Html.td,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
+   };
+   var renderArtisanMap = function (am) {
+      var toRow = F3(function (k,v,acc) {
+         return A2($List._op["::"],
+         A2($Html.tr,_U.list([]),A2($Basics._op["++"],_U.list([A2($Html.th,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderArtisan,v))),
+         acc);
+      });
+      var toRows = A3($Dict.foldr,toRow,_U.list([]),am);
+      return A2($Html.table,_U.list([]),toRows);
+   };
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var Artisan = F7(function (a,b,c,d,e,f,g) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g};});
+   var defArt = A7(Artisan,"",_U.list([]),"","","","","");
+   var artMap = $Dict.fromList(_U.list([{ctor: "_Tuple2"
+                                        ,_0: "Electricité générale"
+                                        ,_1: _U.list([_U.update(defArt,{name: "Boulhol Cougoul (Sarl)",addr: "Groire 63790 MUROL",tel: "04 7388 6733"})
+                                                     ,_U.update(defArt,
+                                                     {name: "Cattarelli Rémi"
+                                                     ,addr: "route de Besse - 63790 Murol"
+                                                     ,tel: "06 8618 1654"
+                                                     ,mail: "remi.cattarelli@orange.fr"
+                                                     ,site: "http://electymurol.wifeo.com"})
+                                                     ,_U.update(defArt,{name: "Sancy Electricité",addr: "chemin des sables 63790 MUROL",tel: "04 7388 6716"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Electricité et petits travaux du bâtiment"
+                                        ,_1: _U.list([_U.update(defArt,
+                                        {name: "Olivier Dhainaut"
+                                        ,addr: "Groire 63790 MUROL"
+                                        ,tel: "04 7388 6633 ou 06 99 40 17 08"
+                                        ,mail: "ace.dhainaut@neuf.fr"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Maçonnerie"
+                                        ,_1: _U.list([_U.update(defArt,{name: "Bouche (SARL)",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 8072"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Peintre en bâtiment"
+                                        ,_1: _U.list([_U.update(defArt,{name: "Peuch Gérard",addr: "rue de Groire 63790 MUROL",tel: "04 7388 6033"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Marché de gros et demi-gros"
+                                        ,_1: _U.list([_U.update(defArt,
+                                        {name: "Jallet Fruits et légumes",addr: "route de Besse 63790 MUROL",tel: "04 7388 6682",fax: "04 73 88 64 88"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Quincaillerie"
+                                        ,_1: _U.list([_U.update(defArt,
+                                        {name: "Legoueix Père et Fils (SARL)",addr: "rue du Tartaret 63790 MUROL",tel: "04 7388 6621",fax: "04 73 88 80 39"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Reprographie"
+                                        ,_1: _U.list([_U.update(defArt,
+                                        {name: "Chazay Yvon"
+                                        ,descr: _U.list(["création - impression - dépannage informatique"])
+                                        ,addr: "rue Georges Sand 63790 Murol"
+                                        ,tel: "06 2451 7696"
+                                        ,mail: "murol.repro@sfr.fr"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Agriculteur & producteur de fromages"
+                                        ,_1: _U.list([_U.update(defArt,{name: "GAEC de Chautignat",addr: "Chautignat - 63790 Murol",tel: "04 7388 8192"})
+                                                     ,_U.update(defArt,
+                                                     {name: "Tourreix Pascal",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 6234 ou 09 6149 3912"})
+                                                     ,_U.update(defArt,{name: "Tixier David",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 8110"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Taxi"
+                                        ,_1: _U.list([_U.update(defArt,
+                                                     {name: "Amblard Taxi",addr: "La Chassagne 63790 MUROL",tel: "04 7388 6937 ou 06 7455 1533"})
+                                                     ,_U.update(defArt,
+                                                     {name: "Miseroux Taxi",addr: "Groire 63790 MUROL",tel: "04 7388 8112",site: "www.taxi-murol.com"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Boulanger"
+                                        ,_1: _U.list([_U.update(defArt,{name: "Bigand Michel",addr: "Rue Chabrol - 63790 MUROL",tel: "04 7388 6024"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Boucherie"
+                                        ,_1: _U.list([_U.update(defArt,{addr: "Rue Chabrol - 63790 MUROL",tel: "04 7388 6905"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Coiffure"
+                                        ,_1: _U.list([_U.update(defArt,{name: "Béal Patricia",addr: "rue Estaing 63790 MUROL",tel: "04 7388 6059"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Création et travail du cuir"
+                                        ,_1: _U.list([_U.update(defArt,
+                                        {name: "Peaux de vaches création"
+                                        ,addr: "Rue de Chabrol 63790 MUROL"
+                                        ,tel: "047378 1653"
+                                        ,mail: "marc.humbert.cuir@orange.fr"
+                                        ,site: "http://www.peaux-de-vaches-creation.com"})])}]));
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("artisanat")]),
+   _U.list([renderArtisanMap(artMap)]));
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Artisanat.values = {_op: _op
+                                  ,subMenu: subMenu
+                                  ,initialModel: initialModel
+                                  ,Artisan: Artisan
+                                  ,view: view
+                                  ,renderArtisanMap: renderArtisanMap
+                                  ,renderArtisan: renderArtisan
+                                  ,maybeElem: maybeElem
+                                  ,nullTag: nullTag
+                                  ,contentMap: contentMap
+                                  ,update: update
+                                  ,changeMain: changeMain
+                                  ,main: main
+                                  ,initialContent: initialContent
+                                  ,defArt: defArt
+                                  ,artMap: artMap};
+};
