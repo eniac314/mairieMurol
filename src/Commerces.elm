@@ -52,12 +52,12 @@ view address model =
 
 renderCommerceMap : CommerceMap -> Html
 renderCommerceMap am = 
-  let toRow k v acc =
-        (tr []
-            ( [ th [] [text k]] ++
+  let toDiv k v acc =
+        (div [class "businesses"]
+            ( [ h5 [] [text k]] ++
                 List.map renderCommerce v)) :: acc
-      toRows = Dict.foldr toRow [] am
-  in table [] toRows     
+      toDivs = Dict.foldr toDiv [] am
+  in div [] toDivs     
   
 
 
@@ -75,7 +75,7 @@ renderCommerce { name, descr, addr, tel, fax, mail, site} =
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
-  in td [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site'])
+  in div [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site'])
 
 
 maybeElem : String -> ( String -> Html ) -> Html
@@ -285,7 +285,7 @@ comMapSummer = fromList
       }
      ,
       { defCom |
-        name   = "Toutiveti "
+        name   = "Toutiveti"
       , addr   = "Route de Besse - parking supermarché SPAR - 63790 MUROL"
       , tel    = "06 7666 9747"
       , mail   = "toutiveti@hotmail.fr"

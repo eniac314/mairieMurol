@@ -52,12 +52,12 @@ view address model =
 
 renderArtisanMap : ArtisanMap -> Html
 renderArtisanMap am = 
-  let toRow k v acc =
-        (tr []
-            ( [ th [] [text k]] ++
+  let toDiv k v acc =
+        (div [class "businesses"]
+            ( [ h5 [] [text k]] ++
                 List.map renderArtisan v)) :: acc
-      toRows = Dict.foldr toRow [] am
-  in table [] toRows     
+      toDivs = Dict.foldr toDiv [] am
+  in div [] toDivs     
   
 
 
@@ -75,7 +75,7 @@ renderArtisan { name, descr, addr, tel, fax, mail, site} =
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
-  in td [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site'])
+  in div [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site'])
 
 
 maybeElem : String -> ( String -> Html ) -> Html

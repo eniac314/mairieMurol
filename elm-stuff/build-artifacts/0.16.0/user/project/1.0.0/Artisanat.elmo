@@ -53,16 +53,18 @@ Elm.Artisanat.make = function (_elm) {
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      return A2($Html.td,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
+      return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
    };
    var renderArtisanMap = function (am) {
-      var toRow = F3(function (k,v,acc) {
+      var toDiv = F3(function (k,v,acc) {
          return A2($List._op["::"],
-         A2($Html.tr,_U.list([]),A2($Basics._op["++"],_U.list([A2($Html.th,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderArtisan,v))),
+         A2($Html.div,
+         _U.list([$Html$Attributes.$class("businesses")]),
+         A2($Basics._op["++"],_U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderArtisan,v))),
          acc);
       });
-      var toRows = A3($Dict.foldr,toRow,_U.list([]),am);
-      return A2($Html.table,_U.list([]),toRows);
+      var toDivs = A3($Dict.foldr,toDiv,_U.list([]),am);
+      return A2($Html.div,_U.list([]),toDivs);
    };
    var view = F2(function (address,model) {
       return A2($Html.div,

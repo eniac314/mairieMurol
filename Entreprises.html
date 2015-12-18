@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>La commune de Murol</title>
+  <script type="text/javascript" src="./js/entreprises.js"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+  <a name="top"></a>
+  <header id="header">
+          <h1 id="pageTitle">
+            Murol
+          </h1>
+          <h2 id="subTitle">
+            La commune de Murol vous souhaite la bienvenue
+          </h2>
+  </header>
+  <div id="elm-app"></div>
+</body>
+
+<script type="text/javascript">
+  var elmDiv = document.getElementById('elm-app');
+  Elm.embed(Elm.Entreprises, elmDiv);
+</script>
+</html>

@@ -10607,16 +10607,18 @@ Elm.Commerces.make = function (_elm) {
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      return A2($Html.td,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
+      return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
    };
    var renderCommerceMap = function (am) {
-      var toRow = F3(function (k,v,acc) {
+      var toDiv = F3(function (k,v,acc) {
          return A2($List._op["::"],
-         A2($Html.tr,_U.list([]),A2($Basics._op["++"],_U.list([A2($Html.th,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderCommerce,v))),
+         A2($Html.div,
+         _U.list([$Html$Attributes.$class("businesses")]),
+         A2($Basics._op["++"],_U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderCommerce,v))),
          acc);
       });
-      var toRows = A3($Dict.foldr,toRow,_U.list([]),am);
-      return A2($Html.table,_U.list([]),toRows);
+      var toDivs = A3($Dict.foldr,toDiv,_U.list([]),am);
+      return A2($Html.div,_U.list([]),toDivs);
    };
    var view = F2(function (address,model) {
       return A2($Html.div,
@@ -10727,7 +10729,7 @@ Elm.Commerces.make = function (_elm) {
                                                            ,descr: _U.list(["Ouvert du 1 juillet au 30 septembre de 10h00 à 13h00 et de 15h00 à 20h00"
                                                                            ,"Chaussures de randonnée - vêtements divers"])})
                                                            ,_U.update(defCom,
-                                                           {name: "Toutiveti "
+                                                           {name: "Toutiveti"
                                                            ,addr: "Route de Besse - parking supermarché SPAR - 63790 MUROL"
                                                            ,tel: "06 7666 9747"
                                                            ,mail: "toutiveti@hotmail.fr"
