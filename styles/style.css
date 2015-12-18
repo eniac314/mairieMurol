@@ -23,22 +23,37 @@ body {
     background-position: center top;*/
   }
 
-#tableUrgence{
-  width:100%;
+#urgence {
 }
 
 #urgence table{
   width: 100%;
 }
 
+#tableUrgence{
+  
+  border-radius: 0.2em;
+ /* padding: 0.5em 1em;*/
+  width:100%;
+}
+
 #urgence th{
   text-align: center;
+  color: black;
+  background-color: lightgrey;
+ /* border-top: 1px solid black;*/
+  border-bottom: 1px solid black;
+  /*text-shadow: 1px 1px 0px #2F4F4F;*/
 }
 
 #urgence .telTitle{
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 #urgence .telNumber{
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
   padding-left: 2em;
   width: 30%;
 }
