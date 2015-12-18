@@ -13,7 +13,10 @@ module.exports = function(grunt) {
           "./js/agriculture.js": ["./src/Agriculture.elm"],
           "./js/artisanat.js": ["./src/Artisanat.elm"],
           "./js/commerces.js": ["./src/Commerces.elm"],
-          "./js/entreprises.js": ["./src/Entreprises.elm"]
+          "./js/entreprises.js": ["./src/Entreprises.elm"],
+          "./js/lesSeniors.js": ["./src/LesSeniors.elm"],
+          "./js/offresEmploi.js": ["./src/OffresEmploi.elm"],
+          "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"]
         }
       }
     },
@@ -28,7 +31,10 @@ module.exports = function(grunt) {
                 , "./src/Agriculture.elm"
                 , "./src/Artisanat.elm"
                 , "./src/Commerces.elm"
-                , "./src/Entreprises.elm"],
+                , "./src/Entreprises.elm"
+                , "./src/LesSeniors.elm"
+                , "./src/OffresEmploi.elm"
+                , "./src/QuinzaineCom.elm"],
         tasks: ["elm"]
       }
     },

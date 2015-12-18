@@ -1,4 +1,4 @@
-module Entreprises where
+module LesSeniors where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -75,16 +75,8 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "entreprises"]
-      [ h4 [] [ text "Etudes et conseils"]
-      , h5 [] [ text "L'expérience de l'art du bois"]
-      , p  [] [ text "Agnès Bonnefoy"]
-      , p  [] [ text "Consultant en batiment"]
-      , p  [] [ text "2 rue de Chabrol - 63790 Murol"]
-      , p  [] [ text "Tél : 04 7383 6552    Fax : 06 3824 3372"]
-      , site "www.etudesetconseils.com" "www.etudesetconseils.com"
-      , mail "agnesbonnefoy2@orange.fr"
-      ]
+  div [ class "subContainerData", id "lesSeniors"]
+      []
       
 
 -- Data

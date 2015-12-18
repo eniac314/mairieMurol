@@ -23,8 +23,15 @@ body {
     background-position: center top;*/
   }
 
+#urgence div{
+  display: inline-block;
+}
+
 #tableUrgence{
-  width:100%;
+}
+
+#tablePratique{
+  vertical-align: top;
 }
 
 #urgence table{

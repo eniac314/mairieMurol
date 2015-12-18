@@ -10552,11 +10552,11 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
-Elm.Entreprises = Elm.Entreprises || {};
-Elm.Entreprises.make = function (_elm) {
+Elm.LesSeniors = Elm.LesSeniors || {};
+Elm.LesSeniors.make = function (_elm) {
    "use strict";
-   _elm.Entreprises = _elm.Entreprises || {};
-   if (_elm.Entreprises.values) return _elm.Entreprises.values;
+   _elm.LesSeniors = _elm.LesSeniors || {};
+   if (_elm.LesSeniors.values) return _elm.LesSeniors.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10570,16 +10570,7 @@ Elm.Entreprises.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("entreprises")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Etudes et conseils")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'expérience de l\'art du bois")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Agnès Bonnefoy")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Consultant en batiment")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("2 rue de Chabrol - 63790 Murol")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 7383 6552    Fax : 06 3824 3372")]))
-           ,A2($Murol.site,"www.etudesetconseils.com","www.etudesetconseils.com")
-           ,$Murol.mail("agnesbonnefoy2@orange.fr")]));
+   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("lesSeniors")]),_U.list([]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -10608,14 +10599,14 @@ Elm.Entreprises.make = function (_elm) {
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.Entreprises.values = {_op: _op
-                                    ,subMenu: subMenu
-                                    ,initialModel: initialModel
-                                    ,Category: Category
-                                    ,view: view
-                                    ,contentMap: contentMap
-                                    ,update: update
-                                    ,changeMain: changeMain
-                                    ,main: main
-                                    ,initialContent: initialContent};
+   return _elm.LesSeniors.values = {_op: _op
+                                   ,subMenu: subMenu
+                                   ,initialModel: initialModel
+                                   ,Category: Category
+                                   ,view: view
+                                   ,contentMap: contentMap
+                                   ,update: update
+                                   ,changeMain: changeMain
+                                   ,main: main
+                                   ,initialContent: initialContent};
 };
