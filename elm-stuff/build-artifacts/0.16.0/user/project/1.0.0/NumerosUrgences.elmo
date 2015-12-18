@@ -87,11 +87,14 @@ Elm.NumerosUrgences.make = function (_elm) {
          var _p3 = _p2;
          return A2($Html.tr,
          _U.list([]),
-         _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text(_p3._0)])),A2($Html.td,_U.list([]),_U.list([$Html.text(_p3._1)]))]));
+         _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("telTitle")]),_U.list([$Html.text(_p3._0)]))
+                 ,A2($Html.td,_U.list([$Html$Attributes.$class("telNumber")]),_U.list([$Html.text(_p3._1)]))]));
       },
       es);
       var t = function (_) {    return _.title;}(cat);
-      return A2($Html.table,_U.list([$Html$Attributes.id(t)]),A2($List._op["::"],A2($Html.th,_U.list([]),_U.list([$Html.text(t)])),rows));
+      return A2($Html.table,
+      _U.list([$Html$Attributes.id(t)]),
+      A2($List._op["::"],A2($Html.th,_U.list([$Html$Attributes.colspan(2)]),_U.list([$Html.text(t)])),rows));
    };
    var urgenceDiv = A2($Html.div,
    _U.list([$Html$Attributes.id("tableUrgence")]),
@@ -107,9 +110,7 @@ Elm.NumerosUrgences.make = function (_elm) {
    var pratiqueDiv = A2($Html.div,
    _U.list([$Html$Attributes.id("tablePratique")]),
    _U.list([catToTable(services),catToTable(publicServ),catToTable(volPerteCarte),catToTable(volPerteTel)]));
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initVieScolaire")]),
-   _U.list([urgenceDiv,pratiqueDiv]));
+   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("urgence")]),_U.list([urgenceDiv,pratiqueDiv]));
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),

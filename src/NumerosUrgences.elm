@@ -55,11 +55,11 @@ catToTable cat =
       rows = 
         List.map 
           (\(a,b) ->
-            tr [] [ td [] [text a]
-                  , td [] [text b]]) es 
+            tr [] [ td [class "telTitle" ] [text a]
+                  , td [class "telNumber"] [text b]]) es 
   in 
   table [ id t]
-        (th [] [text t] :: rows)
+        (th [colspan 2] [text t] :: rows)
 
 urgenceDiv = 
   div [ id "tableUrgence"]
@@ -109,7 +109,7 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "initVieScolaire"]
+  div [ class "subContainerData", id "urgence"]
       [ urgenceDiv
       , pratiqueDiv
       ]

@@ -76,7 +76,8 @@ main =
 
 initialContent =
   div [ class "subContainerData", id "entreprises"]
-      []
+      [ h5 [] []
+      ]
       
 
 -- Data

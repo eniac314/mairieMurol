@@ -23,6 +23,26 @@ body {
     background-position: center top;*/
   }
 
+#tableUrgence{
+  width:100%;
+}
+
+#urgence table{
+  width: 100%;
+}
+
+#urgence th{
+  text-align: center;
+}
+
+#urgence .telTitle{
+}
+
+#urgence .telNumber{
+  padding-left: 2em;
+  width: 30%;
+}
+
 
 #map
 {
@@ -519,4 +539,4 @@ h6.periCat {
   background-color: antiquewhite;
 }
 
-
+s

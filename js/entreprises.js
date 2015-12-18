@@ -10552,11 +10552,11 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
-Elm.NumerosUrgences = Elm.NumerosUrgences || {};
-Elm.NumerosUrgences.make = function (_elm) {
+Elm.Entreprises = Elm.Entreprises || {};
+Elm.Entreprises.make = function (_elm) {
    "use strict";
-   _elm.NumerosUrgences = _elm.NumerosUrgences || {};
-   if (_elm.NumerosUrgences.values) return _elm.NumerosUrgences.values;
+   _elm.Entreprises = _elm.Entreprises || {};
+   if (_elm.Entreprises.values) return _elm.Entreprises.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10570,53 +10570,9 @@ Elm.NumerosUrgences.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var volPerteTel = {title: "Vol / perte de votre téléphone mobile"
-                     ,entries: _U.list([{ctor: "_Tuple2",_0: "Bouygues",_1: "0 803 803 614"}
-                                       ,{ctor: "_Tuple2",_0: "Orange",_1: "0 800 14 20 14"}
-                                       ,{ctor: "_Tuple2",_0: "SFR",_1: "06 1000 1900"}])};
-   var volPerteCarte = {title: "Vol / Perte de carte bancaire ou chéquier"
-                       ,entries: _U.list([{ctor: "_Tuple2",_0: "Chéquiers",_1: "0 892 68 32 08"}
-                                         ,{ctor: "_Tuple2",_0: "Carte bleue et visa",_1: "0 892 70 57 05"}
-                                         ,{ctor: "_Tuple2",_0: "Carte premier",_1: "01 42 77 45 45"}
-                                         ,{ctor: "_Tuple2",_0: "Carte Diner\'s Club",_1: "01 47 62 75 75"}
-                                         ,{ctor: "_Tuple2",_0: "Carte Eurocard",_1: "01 45 67 53 53"}
-                                         ,{ctor: "_Tuple2",_0: "Carte American express",_1: "01 47 77 72 00"}
-                                         ,{ctor: "_Tuple2",_0: "SOS cartes perdues/volées groupement des cartes",_1: "0 892 69 08 80"}])};
-   var publicServ = {title: "Service public"
-                    ,entries: _U.list([{ctor: "_Tuple2",_0: "Service public renseignements administratifs",_1: "3939"}
-                                      ,{ctor: "_Tuple2",_0: "Mairie de Murol",_1: "04 73 88 60 67"}])};
-   var services = {title: "Services"
-                  ,entries: _U.list([{ctor: "_Tuple2",_0: "Météorologie Puy de dôme",_1: "0 836 680 2 63"}
-                                    ,{ctor: "_Tuple2",_0: "SNCF horaires et informations",_1: "0 836 676 869"}
-                                    ,{ctor: "_Tuple2",_0: "SNCF informations et réservations",_1: "0 836 353 535"}
-                                    ,{ctor: "_Tuple2",_0: "Horloge parlante",_1: "3699"}])};
-   var telecom = {title: "France télécom",entries: _U.list([{ctor: "_Tuple2",_0: "Urgence",_1: "1013"}])};
-   var eau = {title: "Lyonnaise des Eaux",entries: _U.list([{ctor: "_Tuple2",_0: "Urgence",_1: "0 810 843 843"}])};
-   var edf = {title: "EDF",entries: _U.list([{ctor: "_Tuple2",_0: "Dépannage électricité",_1: "0 810 333 063"}])};
-   var divers = {title: "Divers",entries: _U.list([{ctor: "_Tuple2",_0: "Allo escroquerie",_1: "0 811 020 217"}])};
-   var personnesAgees = {title: "Personnes âgées"
-                        ,entries: _U.list([{ctor: "_Tuple2",_0: "Allo Maltraitance des personnes âgées ",_1: "08 92 68 01 18"}
-                                          ,{ctor: "_Tuple2"
-                                           ,_0: "Association Française de protection et d\'assistance aux personnes âgées"
-                                           ,_1: "08 00 02 05 28"}])};
-   var couple = {title: "Couple",entries: _U.list([{ctor: "_Tuple2",_0: "Violence conjugale",_1: "3919"}])};
-   var enfance = {title: "Enfance"
-                 ,entries: _U.list([{ctor: "_Tuple2",_0: "Antenne enfance maltraitée ou délaissée",_1: "119"}
-                                   ,{ctor: "_Tuple2",_0: "Fil santé jeunes",_1: "0 800 235 236"}
-                                   ,{ctor: "_Tuple2",_0: "Bizutage SOS violences",_1: "08 10 55 55 00"}])};
-   var sante = {title: "Santé"
-               ,entries: _U.list([{ctor: "_Tuple2",_0: "Pour toute urgence médicale SAMU",_1: "15"}
-                                 ,{ctor: "_Tuple2",_0: "numéro d\'urgence européen (urgences médicales, incendies, police...)",_1: "112"}
-                                 ,{ctor: "_Tuple2",_0: "hébergement d\'urgence",_1: "115"}
-                                 ,{ctor: "_Tuple2",_0: "Centre anti-poison Lyon",_1: "04 72 11 69 11"}
-                                 ,{ctor: "_Tuple2",_0: "Sida Info Service",_1: "0 800 840 800"}
-                                 ,{ctor: "_Tuple2",_0: "Drogue Info Service",_1: "0 800 231 313"}
-                                 ,{ctor: "_Tuple2",_0: "Pharmacie de garde",_1: "04 73 79 50 02"}])};
-   var secours = {title: "Secours"
-                 ,entries: _U.list([{ctor: "_Tuple2",_0: "Pompiers",_1: "18"}
-                                   ,{ctor: "_Tuple2",_0: "Gendarmerie",_1: "17"}
-                                   ,{ctor: "_Tuple2",_0: "Gendarmerie de Besse",_1: "04 73 79 50 02"}
-                                   ,{ctor: "_Tuple2",_0: "Gendarmerie de Murol (Poste saisonnier juillet-août)",_1: "04 73 88 61 53"}])};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("entreprises")]),
+   _U.list([A2($Html.h5,_U.list([]),_U.list([]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -10634,37 +10590,6 @@ Elm.NumerosUrgences.make = function (_elm) {
          case "Entry": return A2(changeMain,model,_p1._0);
          default: return model;}
    });
-   var catToTable = function (cat) {
-      var es = function (_) {    return _.entries;}(cat);
-      var rows = A2($List.map,
-      function (_p2) {
-         var _p3 = _p2;
-         return A2($Html.tr,
-         _U.list([]),
-         _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("telTitle")]),_U.list([$Html.text(_p3._0)]))
-                 ,A2($Html.td,_U.list([$Html$Attributes.$class("telNumber")]),_U.list([$Html.text(_p3._1)]))]));
-      },
-      es);
-      var t = function (_) {    return _.title;}(cat);
-      return A2($Html.table,
-      _U.list([$Html$Attributes.id(t)]),
-      A2($List._op["::"],A2($Html.th,_U.list([$Html$Attributes.colspan(2)]),_U.list([$Html.text(t)])),rows));
-   };
-   var urgenceDiv = A2($Html.div,
-   _U.list([$Html$Attributes.id("tableUrgence")]),
-   _U.list([catToTable(secours)
-           ,catToTable(sante)
-           ,catToTable(enfance)
-           ,catToTable(couple)
-           ,catToTable(personnesAgees)
-           ,catToTable(divers)
-           ,catToTable(edf)
-           ,catToTable(eau)
-           ,catToTable(telecom)]));
-   var pratiqueDiv = A2($Html.div,
-   _U.list([$Html$Attributes.id("tablePratique")]),
-   _U.list([catToTable(services),catToTable(publicServ),catToTable(volPerteCarte),catToTable(volPerteTel)]));
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("urgence")]),_U.list([urgenceDiv,pratiqueDiv]));
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
@@ -10676,30 +10601,14 @@ Elm.NumerosUrgences.make = function (_elm) {
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.NumerosUrgences.values = {_op: _op
-                                        ,subMenu: subMenu
-                                        ,initialModel: initialModel
-                                        ,Category: Category
-                                        ,view: view
-                                        ,catToTable: catToTable
-                                        ,urgenceDiv: urgenceDiv
-                                        ,pratiqueDiv: pratiqueDiv
-                                        ,contentMap: contentMap
-                                        ,update: update
-                                        ,changeMain: changeMain
-                                        ,main: main
-                                        ,initialContent: initialContent
-                                        ,secours: secours
-                                        ,sante: sante
-                                        ,enfance: enfance
-                                        ,couple: couple
-                                        ,personnesAgees: personnesAgees
-                                        ,divers: divers
-                                        ,edf: edf
-                                        ,eau: eau
-                                        ,telecom: telecom
-                                        ,services: services
-                                        ,publicServ: publicServ
-                                        ,volPerteCarte: volPerteCarte
-                                        ,volPerteTel: volPerteTel};
+   return _elm.Entreprises.values = {_op: _op
+                                    ,subMenu: subMenu
+                                    ,initialModel: initialModel
+                                    ,Category: Category
+                                    ,view: view
+                                    ,contentMap: contentMap
+                                    ,update: update
+                                    ,changeMain: changeMain
+                                    ,main: main
+                                    ,initialContent: initialContent};
 };

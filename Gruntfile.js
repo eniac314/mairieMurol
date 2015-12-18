@@ -12,7 +12,8 @@ module.exports = function(grunt) {
           "./js/numerosUrgences.js": ["./src/NumerosUrgences.elm"],
           "./js/agriculture.js": ["./src/Agriculture.elm"],
           "./js/artisanat.js": ["./src/Artisanat.elm"],
-          "./js/commerces.js": ["./src/Commerces.elm"]
+          "./js/commerces.js": ["./src/Commerces.elm"],
+          "./js/entreprises.js": ["./src/Entreprises.elm"]
         }
       }
     },
@@ -26,7 +27,8 @@ module.exports = function(grunt) {
                 , "./src/NumerosUrgences.elm"
                 , "./src/Agriculture.elm"
                 , "./src/Artisanat.elm"
-                , "./src/Commerces.elm"],
+                , "./src/Commerces.elm"
+                , "./src/Entreprises.elm"],
         tasks: ["elm"]
       }
     },
