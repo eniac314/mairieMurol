@@ -3,9 +3,9 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Serif);
 
 body {
-  background-color: lightgray;
+  background-color: #d3d3d3; /*lightgrey*/
   background-position: center top, center bottom;
-  background-image: url(/images/bannerbgf.png), url(/images/lake.png);
+  background-image: url(/images/bannerbgf.jpg), url(/images/wtreesbg.jpg);
   background-repeat: repeat-x;
   margin: 0;
   min-height: 700px;
@@ -533,10 +533,13 @@ h6.periCat {
 #urgence th{
   text-align: center;
   color: black;
-  background-color: rosybrown;
+  background-color: lightgrey;
  /* border-top: 1px solid black;*/
   border-bottom: 1px solid black;
   /*text-shadow: 1px 1px 0px #2F4F4F;*/
+}
+#urgence tr:hover {
+  background-color: #B0C4DE ; /*lightsteelblue*/
 }
 
 #urgence .telTitle{
@@ -546,7 +549,6 @@ h6.periCat {
 }
 
 #urgence .telNumber{
-  background-color: yellow;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   padding-left: 2em;
