@@ -23,42 +23,6 @@ body {
     background-position: center top;*/
   }
 
-#urgence {
-}
-
-#urgence table{
-  width: 100%;
-}
-
-#tableUrgence{
-  
-  border-radius: 0.2em;
- /* padding: 0.5em 1em;*/
-  width:100%;
-}
-
-#urgence th{
-  text-align: center;
-  color: black;
-  background-color: lightgrey;
- /* border-top: 1px solid black;*/
-  border-bottom: 1px solid black;
-  /*text-shadow: 1px 1px 0px #2F4F4F;*/
-}
-
-#urgence .telTitle{
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-#urgence .telNumber{
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-  padding-left: 2em;
-  width: 30%;
-}
-
-
 #map
 {
   width:600px;
@@ -190,9 +154,6 @@ div[class*="Content"] div div:hover div
   background-color: red;
 
 }*/
-
-
-
 
 
 #pics{
@@ -554,4 +515,86 @@ h6.periCat {
   background-color: antiquewhite;
 }
 
-s
+#urgence {
+}
+
+#urgence table{
+  width: 100%;
+  padding: 1em;
+}
+
+#tableUrgence{
+  
+  border-radius: 0.2em;
+ /* padding: 0.5em 1em;*/
+  width:100%;
+}
+
+#urgence th{
+  text-align: center;
+  color: black;
+  background-color: rosybrown;
+ /* border-top: 1px solid black;*/
+  border-bottom: 1px solid black;
+  /*text-shadow: 1px 1px 0px #2F4F4F;*/
+}
+
+#urgence .telTitle{
+  padding-left: 0.5em;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#urgence .telNumber{
+  background-color: yellow;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-left: 2em;
+  width: 30%;
+}
+
+
+#artisanat, #commerces {
+ overflow: auto;
+}
+
+.businesses {
+  width: 300px;
+  height: 300px;
+  float: left;
+  text-align: center;
+  margin: 1em 1em;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px gray;
+}
+
+#commerces .businesses {
+  height: auto;
+}
+#commerces h5 {
+  clear: left;
+}
+ 
+.businesses h5 {
+  /*color: saddlebrown;
+  background-color: rgba(255, 165 , 0, 0.5);*/
+  border: 1px double black;
+  font-size: 17px;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  margin-left: 1em;
+ /* padding: 0;*/
+}
+
+.businesses div {
+  border-top: 1px solid gray;
+  margin: 0.5em 0;
+  background-color: rgba(210, 180, 140, 0.6);
+}
+
+.businesses p {
+  text-align: center;
+  margin: 0;
+}
