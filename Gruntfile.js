@@ -18,7 +18,8 @@ module.exports = function(grunt) {
           "./js/offresEmploi.js": ["./src/OffresEmploi.elm"],
           "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"],
           "./js/laCommune.js": ["./src/LaCommune.elm"],
-          "./js/vosDemarches.js": ["./src/VosDemarches.elm"]
+          "./js/vosDemarches.js": ["./src/VosDemarches.elm"],
+          "./js/conseilMunicipal.js": ["./src/ConseilMunicipal.elm"]
 
         }
       }
@@ -39,7 +40,8 @@ module.exports = function(grunt) {
                 , "./src/OffresEmploi.elm"
                 , "./src/QuinzaineCom.elm"
                 , "./src/LaCommune.elm"
-                , "./src/VosDemarches.elm"],
+                , "./src/VosDemarches.elm"
+                , "./src/ConseilMunicipal.elm"],
         tasks: ["elm"]
       }
     },
