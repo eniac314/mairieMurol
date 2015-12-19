@@ -10562,11 +10562,11 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
-Elm.Tourisme = Elm.Tourisme || {};
-Elm.Tourisme.make = function (_elm) {
+Elm.LaCommune = Elm.LaCommune || {};
+Elm.LaCommune.make = function (_elm) {
    "use strict";
-   _elm.Tourisme = _elm.Tourisme || {};
-   if (_elm.Tourisme.values) return _elm.Tourisme.values;
+   _elm.LaCommune = _elm.LaCommune || {};
+   if (_elm.LaCommune.values) return _elm.LaCommune.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10578,533 +10578,105 @@ Elm.Tourisme.make = function (_elm) {
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $String = Elm.String.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var carte = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("carteTourisme")]),
-   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
-           ,A2($Html.iframe,
-           _U.list([$Html$Attributes.id("map")
-                   ,$Html$Attributes.src("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943")]),
-           _U.list([]))]));
-   var decouvrir = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("decouvTourisme")]),
-   _U.list([A2($Html.figure,
-           _U.list([]),
-           _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/lac-et-chateau-de-murol.jpg")]),_U.list([]))
-                   ,A2($Html.br,_U.list([]),_U.list([]))
-                   ,A2($Html.figcaption,
-                   _U.list([]),
-                   _U.list([$Html.text("Situé dans le massif du Sancy,\n                                     la commune de Murol est considérée\n                                     comme l\'un des plus beaux\n                                     sites de l\'Auvergne.")]))]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("La commune appartient au canton de\n                      Besse-et-Saint-Anastaise et est composée\n                      de quatre villages, Murol, Beaune le froid,\n                       Groire et Chautignat. Elle s\'étend sur une\n                        superficie de 15 km² à une altitude de 785m à 1500m.")]))
-           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Les villages et hameaux")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Murol")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le bourg de Murol est implanté dans un écrin de verdure à\n                     850 mètres d\'altitude, dans la vallée de la Couze Chambon,\n                     sur le versant oriental du Massif de Sancy, entre le volcan\n                     boisé du Tartaret, le promontoire du Château de Murol\n                     (monument historique classé) et le puy de Bessolles\n                     culminant à 1057m. d\'altitude. Il est également\n                     travérsé par le GR30. A deux pas du Lac Chambon\n                     et de la Vallée de Chaudefour (Réserve naturelle)\n                     le village vous ravira par ses sites remarquables\n                     ou pittoresques, par son parc arboré où se trouve\n                     le musée des peintres.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("De nombreux vestiges\n                     témoignent d\'une occupation gauloise (dolmen)\n                     et gallo-romaine (villa et fanum). Au moyen-âge\n                     s\'élève une puissante forteresse, sa construction\n                     s\'étale du XIIème au XVIIIème siècle. Après être resté\n                     trois siècles durant dans les mains de la noble famille\n                     de Murol, le château deviendra au XV ème\n                     siècle par mariage, propriété des Estaing, lesquels y\n                     feront de nombreux travaux pour moderniser les conditions\n                     de vie et adapter aux exigences de l\'artillerie le système\n                     de défense. Délaissé par ses derniers possesseurs,\n                     le château tombe en ruines au XIX ème siècle.\n                     Il est aujourd\'hui propriété de la commune.\n                     Des animations relatant la vie au moyen-âge s\'y\n                     déroulent et attirent environ 120 000 visiteurs par an.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La desserte des principaux lieux touristiques")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les visiteurs peuvent découvrir, sur le plan fourni\n                     par l’Office de Tourisme, le tracé de la\n                     « Voie Verte » , qui a nettement\n                     amélioré la circulation des piétons et des cyclistes\n                     depuis son achèvement en 2009. Il s’agit d’un\n                     sentier fléché , accessible aux handicapés, réalisé en\n                     collaboration avec le Conseil Général, qui relie le\n                     bourg de Murol au lac Chambon, en faisant\n                     une boucle autour du volcan du Tartaret. Il\n                     permet de sécuriser le cheminement des piétons et\n                     des cyclotouristes tout en respectant l’environnement car les\n                     engins motorisés y sont proscrits. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("L’accès piéton au château de Murol est lui aussi sécurisé :")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les visiteurs qui partent du bourg peuvent le\n                    rejoindre en empruntant un cheminement piéton qui longe\n                    le mur du parc du Prélong. Le parc\n                    animalier situé sur les pentes du château est\n                    ceint d’un sentier également piéton, bordé d’une barrière\n                    de bois, ce qui permet aux plus jeunes\n                    de le suivre sans danger. Le retour au\n                    bourg de Murol peut se faire en traversant\n                    le Parc du Prélong, ce qui offre aux\n                    visiteurs la possibilité de découvrir l’Arborétum, la serre,\n                    mais aussi le musée archéologique et le musée\n                    des Peintres. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("La place de l’Abbé Boudal, où se trouve\n                    l’église, est un lieu au cœur du bourg\n                    de Murol, où la circulation automobile est réglementée,\n                    ce qui permet aux piétons de profiter pleinement\n                    de l’endroit et de la vue du château\n                    que l’on y découvre. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("En dehors du bourg, les visiteurs peuvent se\n                     promener en toute sécurité sur les chemins balisés\n                     par la communauté de communes du Massif du\n                     Sancy. Ils représentent à Murol un réseau de\n                     plusieurs dizaines de kilomètres de sentiers de PR\n                     (petites randonnées). Des cartes et des topoguides sont\n                     disponibles au bureau de l’Office de Tourisme. Ils\n                     permettent aux visiteurs de découvrir les plus beaux\n                     panoramas de notre commune, comme ci-dessous, le lac\n                     Chambon vu du sommet du volcan du Tartaret. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Beaune le froid")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Petit village de montagne, deuxième bourg de la\n                     commune situé sur un haut plateau, Beaune le\n                     froid est un village agricole très actif et\n                     réputé pour ses fromages de Saint Nectaire fermier,\n                     fabriqué depuis le XVIème siècle sur la commune.\n                     C\'est un lieu de promenade et de découverte\n                     du savoir-faire local. Il a su conserver son\n                     moulin à eau et son lavoir. En 2011,\n                     son four à pain a été entièrement reconstruit\n                     par des bénévoles de l’association des « chantiers\n                     de jeunesse ». L’ hiver, l’ouverture du domaine\n                     skiable permet la pratique du ski nordique et\n                     des raquettes. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Chautignat")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le hameau de Chautignat est situé à flanc\n                     de coteaux. Il bénéficie d\'un ensoleillement maximum et\n                     de prairies aux pentes douces favorables à l\'élevage\n                     comme aux cultures. A proximité du hameau se\n                     trouvent les grottes de Rajat et le moulin\n                     à eau de Landrode qui ont été les\n                     lieux de créations artistiques dans la cadre de\n                     la manifestation annuelle « Horizons rencontres Art et\n                     Nature ». ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les hameaux des Ballats et Groire")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Ces hameaux ont une activité rurale marquée, ils\n                     se situent là où le fond de la\n                     vallée s\'élargit pour former de petites plaines propices\n                     aux cultures. Traversés par la Couze Chambon et\n                     les sentiers de randonnées, ils se prêtent à\n                     la flânerie. A l’occasion de la fête de\n                     Groire, le four à pain revit pour le\n                     plaisir des petits et grands gourmands. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La Chassagne ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Située sous le Château de Murol, La Chassagne\n                      est un hameau de fermes et maisons particulières.\n                      Ce lieu existait déjà sous Guillaume de Murol,\n                      seigneur du Château au début du XVème siècle.\n                      La légende raconte que Pierre Morand, \"concierge\" du\n                      château s\'est installé ici et a fondé \"la\n                      Chassagne\". L\'origine du nom vient des arbres présents\n                      à cette époque, les chênes. Aujourd\'hui, quelques-uns subsistent\n                      sur les pentes du château, entrelacés avec les\n                      pins et autres arbustes. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le volcan du Tartaret ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Il est l´un des plus récents d´Auvergne. Ses\n                     pentes boisées empêchent de distinguer son cratère mais\n                     les sentiers qui le traverse sont des plus\n                     agréables et accessibles. Parcours de santé et d\'orientation\n                     (cartes en vente à l\'office de tourisme). ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Lac Chambon")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("La partie Est du lac occupe la commune\n                     de Murol pour un tiers de sa superficie.\n                     Le reste du lac se trouvant sur la\n                     commune de Chambon sur lac. Le Lac Chambon\n                     est un lac de barrage volcanique puisqu´il s´est\n                     formé à la suite de l´éruption du Tartaret\n                     il y a environ 8000 ans et de\n                     l\'effondrement de la dent du Marais , bloquant\n                     ainsi le cours de la Couze Chambon. La\n                     couze charrie une telle quantité d´alluvions que le\n                     lac se rétrécit au fil des siècles. S\'étalant\n                     aujourd\'hui sur 60 hectares, peu profond (6 m\n                     maximum) et parsemé d´îlots , il s\'ouvre largement\n                     à l\'ouest sur les paysages somptueux du massif\n                     du Sancy. Le lac est aménagé pour la\n                     baignade, les activités nautiques et la pêche. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Grottes de Rageat")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("D\'accès difficile, les falaises qui les abritent sont\n                     composées d\'un mélange de Bolts et argiles aux\n                     couleurs pastel allant de l\'ocre, vert ou rosé,\n                     au bleuté. Ces habitations troglodytes sont très anciennes,\n                     certainement antérieures à l\'époque gauloise. Toutefois leur histoire\n                     mal connue ne s\'appuie que sur des hypothèses.\n                     Ce site est un enchantement pour le promeneur\n                     attentif et permet à celui qui s\'y rend\n                     de rêver et d\'imaginer sa propre histoire. ")]))]));
-   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
-   var labelToHtml = function (l) {    var _p0 = l;if (_p0.ctor === "NoLabel") {    return nullTag;} else {    return nullTag;}};
-   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
-   var TableEntry = function (a) {
-      return function (b) {
-         return function (c) {
-            return function (d) {
-               return function (e) {
-                  return function (f) {
-                     return function (g) {
-                        return function (h) {
-                           return function (i) {
-                              return function (j) {
-                                 return function (k) {
-                                    return {name: a,label: b,stars: c,refOt: d,descr: e,addr: f,tel: g,fax: h,mail: i,site: j,pics: k};
-                                 };
-                              };
-                           };
-                        };
-                     };
-                  };
-               };
-            };
-         };
-      };
-   };
-   var NoLabel = {ctor: "NoLabel"};
-   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")(_U.list([]));
-   var restosBeaunes = _U.list([_U.update(emptyTe,
-   {name: "Les Sancy\'Elles",addr: "63790 Beaune le Froid -MUROL",descr: _U.list(["Crèperie, petite restauration"]),tel: "04 7388 8118"})]);
-   var restosMurol = _U.list([_U.update(emptyTe,
-                             {name: "Au Montagnard"
-                             ,addr: "Rue d\'Estaing - 63790 MUROL"
-                             ,descr: _U.list(["Plat à emporter au restaurant"])
-                             ,tel: "04 73 88 61 52"
-                             ,mail: "restaurant.aumontagnard@orange.fr"
-                             ,site: "http://restaurantaumontagnard.wifeo.com/"})
-                             ,_U.update(emptyTe,
-                             {name: "Chez Dame Galinette",addr: "Rue d\'Estaing - 63790 MUROL",tel: "04 73 88 61 52",site: "murol@azureva-vacances.com"})
-                             ,_U.update(emptyTe,
-                             {name: "Le chalet de la plage",addr: "lac Chambon - 63790 MUROL",tel: "04 73 88 82 31",mail: "hotel@lac-chambon-plage.fr"})
-                             ,_U.update(emptyTe,
-                             {name: "Le Parc",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 88 60 08",fax: "04 73 88 64 44",mail: "info@hotel-parc.com"})
-                             ,_U.update(emptyTe,
-                             {name: "Le Paris"
-                             ,addr: "Pace de la mairie - 63790 MUROL"
-                             ,tel: "04 73 88 60 09"
-                             ,fax: "04 73 88 69 82"
-                             ,mail: "info@hoteldeparis-murol.com"})
-                             ,_U.update(emptyTe,{name: "Le Piccotin \"Pizzéria\"",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 62 37 10"})]);
-   var barBrasserie = _U.list([_U.update(emptyTe,{name: "A Jour et Nuit",addr: "Rue Estaing - 63790 Murol",tel: "04 73 88 64 82"})
-                              ,_U.update(emptyTe,{name: "Auberge de la plage",addr: "La plage - 63790 Murol",tel: "04 73 88 67 90"})
-                              ,_U.update(emptyTe,
-                              {name: "L\'Arbalète",addr: "Rue Georges Sand - 63790 Murol",tel: "04 73 88 85 79",mail: "restaurantlarbalete@gmail.com"})
-                              ,_U.update(emptyTe,
-                              {name: "Le café de la côte"
-                              ,addr: "Rue Chabrol - 63790 MUROL"
-                              ,descr: _U.list(["café- restaurant- herboristerie- salle de concert\n                - atelier de confection de bougies\n                en cire d\'abeille, etc."
-                                              ,"Bière locale, hypocras (entendez par là :\n                  vin aux épices médiéval), barbecue ."
-                                              ,"L\'ambiance ici est à la détente, et parfois à la\n                 fête puisque des concerts y sont\n                 organisés sporadiquement."])
-                              ,tel: "06 7941 0811"})]);
-   var barDeNuit = _U.list([_U.update(emptyTe,
-   {name: "Cubana café",addr: "Place de la poste - 63790 Murol",tel: "04 73 88 85 79",mail: "larbalete@cegetel.net"})]);
-   var azureva = _U.list([_U.update(emptyTe,
-   {name: "Azureva"
-   ,addr: "route de Jassat 63790 MUROL"
-   ,descr: _U.list(["Contact:","azurèva MUROL - Villages & Résidences de Vacances"])
-   ,tel: "04 73 88 58 58"
-   ,fax: "04 73 88 58 00"
-   ,mail: "murol@azureva-vacances.com"
-   ,site: "http://www.azureva-vacances.com/Individuel/Village/Murol"})]);
-   var hotels = _U.list([_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel les Dômes (résidence)"
-                        ,addr: "rue de Groire, 63790 Murol"
-                        ,tel: "04 73 88 60 13"
-                        ,fax: "04 73 88 80 05"
-                        ,mail: "domes4@wanadoo.fr"
-                        ,site: "http://www.lesdomes.com"})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel du Parc"
-                        ,addr: "rue George Sand 63790 MUROL"
-                        ,tel: "04 73 88 60 08"
-                        ,fax: "04 73 88 64 44"
-                        ,descr: _U.list(["Hôtel restaurant"])})
-                        ,_U.update(emptyTe,{stars: $Maybe.Just(2),name: "Hotel les Volcans",addr: "rue Estaing 63790 MUROL",tel: "04 73 88 80 19"})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel des Pins"
-                        ,addr: "rue du Levat 63790 MUROL"
-                        ,tel: "04 73 88 60 50"
-                        ,fax: "04 73 88 60 29"
-                        ,descr: _U.list(["Hôtel restaurant"])})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel le Grillon"
-                        ,addr: "le lac Chambon 63790 MUROL"
-                        ,tel: "04 73 88 60 66"
-                        ,fax: "04 73 88 65 55"
-                        ,descr: _U.list(["Hôtel restaurant"])})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(3)
-                        ,name: "Hotel de Paris"
-                        ,addr: "Place de l’Hôtel de Ville 63790 MUROL"
-                        ,tel: "04 73 88 60 09"
-                        ,fax: "04 73 88 69 62"
-                        ,descr: _U.list(["Hôtel restaurant"])
-                        ,mail: "info@hoteldeparis-murol.com"
-                        ,site: "http://www.hoteldeparis-murol.com"})]);
-   var campings = _U.list([_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Domaine du marais"
-                          ,addr: "Le Marais - 63790 MUROL"
-                          ,tel: "04 73 88 67 08"
-                          ,fax: "04 73 88 64 63"
-                          ,site: "www.domaine-du-marais.com"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Le Repos du Baladin"
-                          ,addr: "Groire - 63790 Murol"
-                          ,tel: "04 73 88 61 93"
-                          ,fax: "04 73 88 66 41"
-                          ,mail: "reposbaladin@free.fr"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Camping de la Plage"
-                          ,addr: "Centre touristique du lac Chambon - 63790 Murol"
-                          ,tel: "04 73 88 60 04"
-                          ,mail: "lac.chambon@wanadoo.fr"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Camping des Fougères"
-                          ,addr: "Pont du Marais - 63790 MUROL"
-                          ,tel: "04 73 88 67 68"
-                          ,fax: "04 73 88 64 63"
-                          ,mail: "camping-les-fougères@wanadoo.fr"
-                          ,site: "http://www.les-fougeres.com"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(4)
-                          ,name: "Camping de la Rybeyre"
-                          ,addr: "Jassat - 63790 MUROL"
-                          ,tel: "04 73 88 64 29"
-                          ,fax: "04 73 88 68 41"
-                          ,mail: "laribeyre@free.fr"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(4)
-                          ,name: "Camping de l\'Europe"
-                          ,addr: "Route de Jassat - 63790 - Murol"
-                          ,tel: "04 73 39 76 66"
-                          ,fax: "04 73 39 76 61 "
-                          ,mail: "europe.camping@wanadoo.fr"})]);
-   var chambresHotes = _U.list([_U.update(emptyTe,{stars: $Maybe.Nothing,name: "La Clé des champs",addr: "Route de Groire - 63790 MUROL",tel: "04 73 88 66 29"})
-                               ,_U.update(emptyTe,
-                               {stars: $Maybe.Nothing,name: "Marie Roche",addr: "Groire - 63790 MUROL",tel: "04 73 88 65 99 - Portable : 06 11 57 97 72"})
-                               ,_U.update(emptyTe,
-                               {stars: $Maybe.Nothing,name: "Auvergne France homes",addr: "303 rue Pardaniche - 63790 MUROL",tel: "04 73 88 81 65"})
-                               ,_U.update(emptyTe,
-                               {stars: $Maybe.Nothing,name: "Le Dolmen",addr: "Gite Le Dolmen La Chassagne 63790 MUROL",tel: "04 73 88 81 67"})]);
-   var FamillePlus = {ctor: "FamillePlus"};
-   var meubles = _U.list([_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "La Cacode"
-                         ,descr: _U.list(["3* - 4 personnes","Mme CLEMENT Marie-Paule"])
-                         ,addr: "La Chassagne - 63790 Murol"
-                         ,tel: "04 7388 6085 (HR)"
-                         ,mail: "lachassagne@hotmail.fr"
-                         ,site: "http://lachassagne.e-monsite.com/"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "La Quiétude"
-                         ,refOt: "5473"
-                         ,label: FamillePlus
-                         ,descr: _U.list(["3* - 8 personnes","Mme PLANEIX Suzanne"])
-                         ,addr: "Rue de la vieille tour - 63790 MUROL"
-                         ,tel: "04 73 78 65 08 - 06 95 29 30 48"
-                         ,mail: "info@hoteldeparis-murol.com"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "Villa Bergogne"
-                         ,refOt: "2885"
-                         ,descr: _U.list(["3* - 8 personnes"])
-                         ,addr: "Beaune le froid - 63790 MUROL"
-                         ,tel: "04 73 65 36 00"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "Villa Mathieu"
-                         ,refOt: "1470"
-                         ,descr: _U.list(["3* - 6 personnes","Mme MATHIEU Anne-Marie"])
-                         ,addr: "Place de l\'hôtel de ville - 63790 MUROL"
-                         ,tel: "04 73 93 69 19 - Portable : 07 50 35 54 63"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Entre château et volcans"
-                         ,refOt: "3699"
-                         ,label: FamillePlus
-                         ,descr: _U.list(["2* - 2 et 3 personnes"])
-                         ,addr: "route de Besse - 63790 MUROL"
-                         ,tel: "04 73 88 67 56 - Portable : 06 28 06 81 77"
-                         ,mail: "veronique.debout@gmail.com"
-                         ,site: "www.entre-chateau-et-volcans.fr"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Chapuzadou"
-                         ,descr: _U.list(["2* - 4 personnes","Mme CLEMENT Marie-Paule"])
-                         ,addr: "La Chassagne - 63790 Murol"
-                         ,tel: "04 7388 6085 (HR)"
-                         ,mail: "lachassagne@hotmail.fr"
-                         ,site: "http://lachassagne.e-monsite.com/"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Les Cigales"
-                         ,refOt: "1467"
-                         ,descr: _U.list(["2* - 4 personnes","Mme MATHIEU Anne-Marie"])
-                         ,addr: "Rue de Groire - 63790 MUROL"
-                         ,tel: "04 73 88 80 87"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "La clé des champs"
-                         ,refOt: "1446"
-                         ,descr: _U.list(["2* - 4 personnes","M. & Mme DELPEUX Annie et François"])
-                         ,addr: "Route de Groire - 63790 MUROL"
-                         ,tel: "04 73 88 66 29 - Portable : 06 21 49 42 94 - 06 77 11 62 06"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Les Elfes"
-                         ,refOt: "3125"
-                         ,descr: _U.list(["2* - 4 personnes"])
-                         ,addr: "Route de Jassat - 63790 MUROL"
-                         ,tel: "04 73 88 61 16 - Portable : 06 88 76 81 70 - joignable : de 10h à 21h"
-                         ,mail: "alice.elfes@wanadoo.fr"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Les Genêts"
-                         ,refOt: "5336"
-                         ,descr: _U.list(["2* - 4 personnes","M. NOTHEISEN Marc"])
-                         ,addr: "Rue d\'Estaing - 63790 MUROL"
-                         ,tel: "03 86 73 72 25 - Portable : 06 83 59 00 67"
-                         ,mail: "monique-notheisen@orange.fr"
-                         ,site: "http://lesgenets.murol.monsite-orange.fr"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Résidence Clair logis"
-                         ,refOt: "1469"
-                         ,descr: _U.list(["2* - 3 et 4 personnes","M. LAPORTE Rémy"])
-                         ,addr: "Rue George Sand - 63790 MUROL"
-                         ,tel: "04 73 88 65 43"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(1)
-                         ,name: "Villa Roux"
-                         ,refOt: "1478"
-                         ,descr: _U.list(["1* - 5 personnes","Type habitation : maison mitoyenne","M. ROUX André"])
-                         ,addr: "Beaune-le-Froid - 63790 MUROL"
-                         ,tel: "04 73 87 51 47"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(1)
-                         ,name: "Mon Gai Repos"
-                         ,refOt: "1516"
-                         ,descr: _U.list(["1* - 2 personnes ","Type habitation : appartement","Mme POMMIER-DESSERRE Madeleine"])
-                         ,addr: "Groire - 63790 MUROL"
-                         ,tel: "04 73 88 60 65 - Portable : 06 63 71 70 03"})
-                         ,_U.update(emptyTe,
-                         {name: "La Christaline"
-                         ,refOt: "6586"
-                         ,descr: _U.list(["2* - studios 2 personnes et appartement 4 à 6 personnes","M. HENRY Christian"])
-                         ,tel: "04 73 88 66 19 - 05 63 75 45 24 - Portable : 06 87 97 35 40"
-                         ,addr: "Groire – 63790 MUROL"
-                         ,mail: "henrymurol@orange.fr"
-                         ,site: "http://murolsejourplus.wifeo.com"})
-                         ,_U.update(emptyTe,
-                         {name: "Résidence de Michèle"
-                         ,descr: _U.list(["2 à 4 personnes","Melle Fanny Gontelle"])
-                         ,tel: "04 73 88 68 68 / Port : 06 22 33 41 13"
-                         ,addr: "Rue du Tartaret - 63790 MUROL"
-                         ,mail: "residencedemichele@orange.fr"
-                         ,site: "http://residencedemichele.monsite-orange.fr"})
-                         ,_U.update(emptyTe,
-                         {name: "Les Homes de Vire Vent"
-                         ,descr: _U.list(["5 personnes","Melle Fanny Gontelle"])
-                         ,tel: "04 73 69 76 64    Port : 06 07 30 95 43"
-                         ,addr: "route de Jassat - 63790 MUROL"
-                         ,mail: "legoueix.nicole@club-internet.fr"
-                         ,site: "http://www.les-homes-de-virevent.com"})]);
-   var addStars = F2(function (n,s) {
-      var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
-      var _p1 = n;
-      if (_p1.ctor === "Nothing") {
-            return $Html.text(s);
-         } else {
-            return A2($Html.span,
-            _U.list([]),
-            _U.list([$Html.text(A2($Basics._op["++"],s," ")),A2($Html.span,_U.list([$Html$Attributes.$class("stars")]),_U.list([$Html.text(go(_p1._0))]))]));
-         }
-   });
-   var makeRow = F2(function (_p2,alt) {
-      var _p3 = _p2;
-      var alt$ = alt ? "altLine" : "Line";
-      var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
-      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
-      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
-      var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
-      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
-      var site$ = A2(maybeElem,
-      _p3.site,
-      function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
-      });
-      var mail$ = A2(maybeElem,
-      _p3.mail,
-      function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
-      });
-      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      var label$ = labelToHtml(_p3.label);
-      var name$ = A2($Html.h6,_U.list([]),_U.list([A2(addStars,_p3.stars,_p3.name)]));
-      return A2($Html.tr,
-      _U.list([$Html$Attributes.$class(alt$)]),
-      _U.list([A2($Html.td,_U.list([]),A2($Basics._op["++"],_U.list([name$,label$,refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))))
-              ,A2($Html.td,_U.list([]),_U.list([pics$]))]));
-   });
-   var makeTable = F2(function (name,entries) {
-      var makeRows = F2(function (b,xs) {
-         var _p4 = xs;
-         if (_p4.ctor === "[]") {
-               return _U.list([]);
-            } else {
-               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
-            }
-      });
-      return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
-   });
-   var restaurants = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("restosTourisme")]),
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("laCommune")]),
    _U.list([A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des\n                     produits du terroir qui font sa réputation :\n                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme\n                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh !\n                     le bon jambon d’Auvergne, les saucisses et les\n                     saucissons), le tout arrosé, avec modération, de vins\n                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,\n                     Boudes ou Corent. ")]))
+           _U.list([$Html.text("La population de Murol est de 555 habitants \n                   (546 + 9 comptés à part). On compte \n                   266 résidences principales, avec une augmentation de + \n                   8% en 10 ans et 424 résidences secondaires, \n                   avec une augmentation de +9% sur la même \n                   période (INSEE 2009). Le commerce et les services \n                   représentent le principal secteur d’activité de notre commune \n                   avec 67% des établissements, mais l’agriculture reste présente \n                   avec 12% des établissements. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le tableau ne serait pas complet, si nous\n                     ne citions quelques autres spécialités régionales comme la\n                     truffade, l\'aligot, la potée auvergnate, les tripoux ou\n                     encore les lentilles du Puy que vous dégusterez\n                     chaudes, agrémentées d\'oignons et de quelques lardons ou,\n                     en été, froides en salade... un délice... ")]))
+           _U.list([$Html.text("Le territoire du Parc Naturel Régional des Volcans \n                   d’Auvergne est la première destination touristique de la \n                   région. Il propose les sites emblématiques les plus \n                   fréquentés de la région Auvergne. Or, Murol, au \n                   cœur du Parc, se trouve cerné par les \n                   volcans de la Chaîne des Puys et les \n                   sommets du Sancy, surplombé par le château de \n                   Murol (deuxième site sur Sancy-Volcan) qui attire 100 \n                   000 visiteurs payants par an. Le nombre de \n                   personnes passant au pied du château ne peut \n                   être quantifié avec exactitude, mais il est estimé \n                   à 300 000. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une\n                     Gentiane ou une Salers, vous apprécierez sans aucun\n                     doute de le terminer par une petite verveine. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Restaurants")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
-           ,A2(makeTable,"restosBeaunes",restosBeaunes)
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
-           ,A2(makeTable,"restosMurol",restosMurol)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar - Brasserie")]))
-           ,A2(makeTable,"barBrasserie",barBrasserie)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
-           ,A2(makeTable,"barDeNuit",barDeNuit)]));
-   var hebergements = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("hebergTourisme")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
+           _U.list([$Html.text("La fréquentation touristique est très importante : le \n                   taux de fonction touristique atteint dans notre vallée \n                   6.82, chiffre le plus élevé dans le massif \n                   du Sancy, qui est a comparé avec le \n                   chiffre moyen de 1.3 au niveau national et \n                   5.3, chiffre moyen des zones de montagne. La \n                   population de Murol est multipliée par plus de \n                   3 en hiver et plus de 5 en \n                   été grâce aux atouts dont notre destination touristique \n                   dispose. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                                   Beaucoup d\'entre eux se sont engagés dans des \n                                   démarches de qualité, symbolisées par différents labels. Certains \n                                   sont hôtels restaurants et offrent une prestation en \n                                   demi-pension et pension complète. ")]))
-           ,A2(makeTable,"hotels",hotels)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Campings")]))
+           _U.list([$Html.text("Station Verte depuis 1964, notre commune convient parfaitement \n                   à des vacances orientées « Nature». C’est pourquoi, \n                   nous comptabilisons de nombreuses familles, notamment en été, \n                   qui profitent des activités de pleine nature, au \n                   lac ou sur nos sentiers. Dans une étude \n                   réalisée en décembre 2007, portant sur la composition \n                   de la clientèle en séjour à Murol, on \n                   compte 67.8% des visiteurs qui viennent en famille, \n                   22.3% en couple, 6.8% entre amis. Sans oublier \n                   qu’il y a un nombre non négligeable d’étrangers \n                   qui séjournent à Murol, nous ayant incité à \n                   nous rendre davantage accessible d’un point de vue \n                   linguistique avec, par exemple, la traduction de nos \n                   ouvrages au musée et l’emploi de personnel bilingue. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Ils offrent de bonnes conditions de confort et \n                                   beaucoup d\'entre eux s\'engagent dans des démarches de \n                                   qualité, symbolisées par différents labels. Certains d\'entre eux \n                                   proposent également des locations de mobil-homes, chalets ou \n                                   bungalows.")]))
-           ,A2(makeTable,"campings",campings)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Chambres d\'Hôtes")]))
+           _U.list([$Html.text("Par ailleurs, notre commune, qui se situe à \n                   deux pas des deux principales stations de ski \n                   alpin du Massif du Sancy, bénéficie de la \n                   présence d’un foyer de ski nordique (avec une \n                   zone de raquette) au village de Beaune-le-Froid, à \n                   1000m d’altitude. Les pistes s’étendent dans la Forêt \n                   de Beaune-leFroid (gérée par l’Office National des Forêts). \n                   Ce site engendre une certaine complémentarité dans l’offre \n                   et nous permet de compter également sur le \n                   tourisme hivernal dès le mois de décembre.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                                   en proposant des prestations de très bon confort. \n                                   Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                                   de personnes passionnées par leur région et attentives \n                                   à la qualité de l\'accueil.")]))
-           ,A2(makeTable,"chambresHotes",chambresHotes)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Meublés")]))
+           _U.list([$Html.text("En intersaison, nous accueillons davantage les vacanciers sans \n                   enfants, les seniors et un nombre croissant de \n                   camping-caristes, ce qui permet un allongement notable de \n                   la saison touristique.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le déneigement sur la commune ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                                   répondront à toutes les attentes et à tous \n                                   les budgets. Les meublés que nous vous proposons \n                                   sont tous classés par la préfecture. Le classement, \n                                   en étoiles, indique le degré de confort de \n                                   la location. Certains sont même labellisés. ")]))
-           ,A2(makeTable,"meubles",meubles)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Village Vacances")]))
-           ,A2(makeTable,"azureva",azureva)]));
+           _U.list([$Html.text("En raison de la situation de moyenne montagne \n                   de la commune où l’altitude varie de 785 \n                   mètres à 1500 mètres, certains hivers nécessitent un \n                   service de déneigement performant. La période d’enneigement s’étale \n                   de novembre à fin mars.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le déneigement des routes départementales situées sur la \n                   commune hors agglomération est du ressort des services \n                   du Conseil Général du Puy de Dôme. Le \n                   service est effectivement assuré, comme l’atteste le plan \n                   de viabilité hivernale fourni par le Conseil Général \n                   du Puy de Dôme.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("En agglomération, c’est à la commune de Murol \n                   qu’échoit le déneigement. Les services techniques communaux disposent \n                   de 5 employés chargés en alternance d’effectuer le \n                   déneigement. Des astreintes sont organisées pour les weekends \n                   du 15 novembre à fin mars afin de \n                   répondre au mieux aux besoins. Les employés utilisent \n                   du matériel spécifique qui a été renouvelé en \n                   2011. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les dessertes de la commune par les transports")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La situation géographique de notre commune est un \n                   atout considérable étant donné que celle-ci bénéficie d’une \n                   position centrale au niveau régional, mais également au \n                   niveau national , ce qui nous permet de \n                   recevoir des visiteurs venant de part et d’autres \n                   de la France.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Au cœur du massif du Sancy, Murol se \n                   trouve effectivement à seulement 30 minutes des autoroutes \n                   A71, A72, A75 et A89 . Nous sommes \n                   donc relativement bien desservis, étant à quatre heures \n                   de Paris par l’A71 (3h10 en train) et \n                   de Montpellier (A75), à deux heures de Lyon \n                   (A72) et seulement à quatre heures de Bordeaux \n                   avec la nouvelle autoroute A89, qui permet une \n                   ouverture sur le Sud-Ouest. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Au niveau de l’accès par le train, les \n                   gares du Mont Dore, d’Issoire et de Clermont-Ferrand \n                   se situent respectivement à 25 minutes, 35 minutes \n                   et 40 minutes environ en voiture de Murol.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour venir à Murol par avion, l’aéroport international \n                   de Clermont-Ferrand Aulnat est le plus proche. Il \n                   se situe à 40 minutes de voiture de \n                   Murol par l’autoroute A75. Les vols réguliers pour \n                   la France se font vers Ajaccio, Bastia, Biarritz, \n                   Bordeaux, Lille, Lyon, Marseille, Metz/Nancy, Montpellier, Nantes, Nice, \n                   Paris/Orly et Paris/Charles de Gaulle, Strasbourg, Toulouse.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les vols réguliers pour l’Europe, directs ou avec \n                   une correspondance, sont à destination des pays suivants \n                   : Belgique, Grande-Bretagne, Italie, Pays-Bas, Suisse, Allemagne, Espagne, \n                   Portugal, Norvège, Danemark, Suède, Finlande, Russie, Pologne, Autriche, \n                   République Tchèque, Hongrie, Serbie, Bulgarie et Grèce. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour un accès par le car, un service \n                   de navette permet de rejoindre Murol depuis la \n                   gare ou l’aéroport de Clermont-Ferrand. Elle effectue le \n                   trajet Chambon sur Lac - Murol - Saint-Nectaire \n                   – Champeix – Clermont-Ferrand, en service régulier tous \n                   les mardis de l’année, mais également le samedi \n                   en juillet et en août . En saison \n                   estivale l’offre de transport collectif est donc plus \n                   importante.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un service de réservation est disponible sur le \n                   site internet de l’Office de Tourisme du Sancy \n                   ainsi que les horaires et trajet des navettes. \n                   Les mêmes informations sont disponibles au bureau de \n                   l’Office de Tourisme de Murol ainsi qu’à la \n                   mairie.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un service de taxis indépendants est offert sur \n                   le territoire de la commune de Murol. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Enfin, la municipalité de Murol favorise le covoiturage \n                   en mettant à la disposition de tous, une \n                   aire de covoiturage répertoriée dans le schéma départemental \n                   du Conseil Général du Puy de Dôme .")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ainsi, il existe de nombreuses alternatives à la \n                   voiture individuelle pour se rendre à Murol, sans \n                   oublier que le GR30 traverse la commune et \n                   que certains randonneurs viennent à pied pour une \n                   halte d’une ou plusieurs nuits dans notre station.")]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
       _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,
-              _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A3($Murol.renderSubMenu,address,"Tourisme:",function (_) {    return _.subMenu;}(model))
-                      ,function (_) {
-                         return _.mainContent;
-                      }(model)]))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initTourisme")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04-73-88-60-23")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mail : bt.murol-chambon@sancy.com")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.\n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))
-           ,$Murol.renderListImg($Murol.logos)]));
-   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Découvrir Murol",_1: decouvrir}
-                                           ,{ctor: "_Tuple2",_0: "Accueil Tourisme",_1: initialContent}
-                                           ,{ctor: "_Tuple2",_0: "Restaurants",_1: restaurants}
-                                           ,{ctor: "_Tuple2",_0: "Carte & plan",_1: carte}
-                                           ,{ctor: "_Tuple2",_0: "Hebergements",_1: hebergements}]));
-   var changeMain = F2(function (model,s) {
-      var newContent = A2($Dict.get,s,contentMap);
-      var _p5 = newContent;
-      if (_p5.ctor === "Nothing") {
-            return model;
-         } else {
-            return _U.update(model,{mainContent: _p5._0});
-         }
-   });
-   var update = F2(function (action,model) {
-      var _p6 = action;
-      switch (_p6.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p6._0);
-         default: return model;}
-   });
-   var subMenu = _U.list(["Accueil Tourisme","Découvrir Murol","Hebergements","Restaurants","Carte & plan","Animation estivale"]);
+   var Category = F2(function (a,b) {    return {title: a,entries: b};});
+   var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.Tourisme.values = {_op: _op
-                                 ,subMenu: subMenu
-                                 ,initialContent: initialContent
-                                 ,initialModel: initialModel
-                                 ,contentMap: contentMap
-                                 ,view: view
-                                 ,addStars: addStars
-                                 ,FamillePlus: FamillePlus
-                                 ,NoLabel: NoLabel
-                                 ,TableEntry: TableEntry
-                                 ,emptyTe: emptyTe
-                                 ,makeTable: makeTable
-                                 ,makeRow: makeRow
-                                 ,maybeElem: maybeElem
-                                 ,nullTag: nullTag
-                                 ,labelToHtml: labelToHtml
-                                 ,update: update
-                                 ,changeMain: changeMain
-                                 ,main: main
-                                 ,decouvrir: decouvrir
-                                 ,restaurants: restaurants
-                                 ,restosBeaunes: restosBeaunes
-                                 ,restosMurol: restosMurol
-                                 ,barBrasserie: barBrasserie
-                                 ,barDeNuit: barDeNuit
-                                 ,carte: carte
-                                 ,hebergements: hebergements
-                                 ,azureva: azureva
-                                 ,hotels: hotels
-                                 ,campings: campings
-                                 ,chambresHotes: chambresHotes
-                                 ,meubles: meubles};
+   return _elm.LaCommune.values = {_op: _op
+                                  ,subMenu: subMenu
+                                  ,initialModel: initialModel
+                                  ,Category: Category
+                                  ,view: view
+                                  ,contentMap: contentMap
+                                  ,update: update
+                                  ,changeMain: changeMain
+                                  ,main: main
+                                  ,initialContent: initialContent};
 };

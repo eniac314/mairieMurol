@@ -13,9 +13,9 @@ b :: Menu
 b = Link "test"
 
 cutter :: Int -> [String] -> [String]
-cutter n [] = []
+cutter n [] = ["\n"]
 cutter n xs = 
-	let (h,t) = splitAt n xs
-	in (h ++ ["\n"])++cutter n t  
+    let (h,t) = splitAt n xs
+    in (h ++ ["\n"])++cutter n t  
 
-main = interact $ unwords . (cutter 8) . words
+main = interact $ concat . map (unwords . (cutter 8) . words) . lines

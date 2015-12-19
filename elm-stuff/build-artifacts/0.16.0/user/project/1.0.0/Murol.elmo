@@ -182,7 +182,17 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Entreprises","")
                    ,A2(Leaf,"Offres d\'emploi","")
                    ,A2(Leaf,"Quinzaine commerciale","")]))
-           ,A2(Leaf,"Mairie","")
+           ,A2(Node,
+           "Mairie",
+           _U.list([A2(Leaf,"La commune","")
+                   ,A2(Leaf,"Vos démarches","")
+                   ,A2(Leaf,"Conseil municipal","")
+                   ,A2(Leaf,"CMU","")
+                   ,A2(Leaf,"CCAS","")
+                   ,A2(Leaf,"Commissions","")
+                   ,A2(Leaf,"Gestion des risques","")
+                   ,A2(Leaf,"Horaires","")
+                   ,A2(Leaf,"Publications","")]))
            ,A2(Node,
            "Culture et loisirs",
            _U.list([A2(Leaf,"Art et musique","")

@@ -1,0 +1,600 @@
+Elm.VosDemarches = Elm.VosDemarches || {};
+Elm.VosDemarches.make = function (_elm) {
+   "use strict";
+   _elm.VosDemarches = _elm.VosDemarches || {};
+   if (_elm.VosDemarches.values) return _elm.VosDemarches.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var servCiv = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("servCivDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Comment m\'engager?")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Quelles sont les conditions pour pouvoir m’engager en \n                     Service Civique ? ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour être volontaire, il faut avoir entre 16 \n                     et 25 ans et posséder la nationalité française, \n                     celle d’un état membre de l’Union européenne ou \n                     de l’espace économique européen, ou justifier d’un séjour \n                     régulier en France depuis plus d’un an. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Aucune autre condition n’est requise ; en particulier, \n                     il n’y a pas de condition en termes \n                     de diplôme ou d’expérience professionnelle préalable. Ce sont \n                     les savoirs-être et la motivation qui comptent avant \n                     tout.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les conditions d’engagement des jeunes entre 16 et \n                     18 ans sont aménagées. Les missions doivent être \n                     adaptées à leur âge et une autorisation parentale \n                     est nécessaire.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les jeunes en situation de handicap peuvent faire \n                     un Service Civique. L’indemnité de Service Civique est \n                     entièrement cumulable avec l’Allocation aux Adultes Handicapés (AAH).")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Quelles sont les modalités de l’engagement de Service \n                     Civique ?")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le Service Civique est un engagement volontaire de \n                     6 à 12 mois pour l’accomplissement d’une mission \n                     d’intérêt général dans un des neuf domaines d’interventions \n                     reconnus prioritaires pour la Nation : culture et \n                     loisirs, développement international et action humanitaire, éducation pour \n                     tous, environnement, intervention d\'urgence en cas de crise, \n                     mémoire et citoyenneté, santé, solidarité, sport. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Une indemnité de 446,65 euros nets par mois \n                     est directement versée au volontaire par l\'Etat, quelle \n                     que soit la durée hebdomadaire de la mission. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("L\'organisme d’accueil verse aussi au volontaire une prestation \n                     en nature ou en espèce d’un montant de \n                     101,49 euros, correspondant à la prise en charge \n                     des frais d’alimentation (fourniture de repas) ou de \n                     transports. Cette prestation peut être versée de différentes \n                     façons (titre repas, accès à la cantine, remboursements \n                     de frais, etc.) ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les jeunes, bénéficiaires ou appartenant à un foyer \n                     bénéficiaire du RSA, ou titulaire d\'une bourse de \n                     l\'enseignement supérieur au titre du 5e échelon ou \n                     au delà bénéficient d’une majoration d\'indemnité de 101,68 \n                     euros par mois. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les volontaires en Service Civique bénéficient d\'une protection \n                    sociale intégrale.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Au total, selon les situations, les volontaires en \n                     Service Civique perçoivent entre 548,14 euros et 649,82 \n                     euros par mois. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le bénéfice de l’aide au logement est conservé \n                     pendant le Service Civique.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un accompagnement pour faciliter le déroulement de la \n                     mission est proposé. Il s\'agit d\'une phase de \n                     préparation et d\'accompagnement dans la réalisation de la \n                     mission, d\'une formation civique et citoyenne et d\'un \n                     appui à la réflexion sur le projet d’avenir. ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Comment postuler à une mission de Service Civique? ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Postulez auprès des organismes proposant des missions de \n                     Service Civique directement à partir du site:")]))
+           ,A2($Murol.link,"http://www.service-civique.gouv.fr","http://www.service-civique.gouv.fr")
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mission dans le puy de dôme:")]))
+           ,A2($Murol.link,"service civique puy de dôme","http://www.service-civique.gouv.fr/les_missions?tid=All&tid_1=16&tid_2=All&dept=Puy-de-Dôme ")]));
+   var listElec = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("listElecDemarches")]),
+   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Vous devez vous rendre à la mairie munis:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("d\'une pièce d\'identité (carte nationale d\'identité, passeport)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("et d\'un justificatif d\'adresse (facture de téléphone, \n                                quittance de loyer, EDF...).")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([A2($Murol.link,"du formulaire qui vous concerne","http://www.murol.fr/Base_documentaire/electionsinscriptionf.pdf")]))]))]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Recommandations générales")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour que votre inscription sur les \n                     listes électorales soit effective au 1er mars de \n                     l’année prochaine, votre formulaire de demande d’inscription et \n                     les pièces justificatives (voir la rubrique « documents \n                     à fournir » ci-dessous) doivent impérativement être parvenus \n                     en mairie avant le 31 décembre de cette \n                     année. Il est donc fortement conseillé d’envoyer votre \n                     demande à votre mairie avant le 15 décembre.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Veillez à remplir le formulaire en \n                     lettres majuscules de façon lisible")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Notez impérativement vos coordonnées à la \n                     fin du formulaire afin que la mairie puisse \n                     vous contacter au cas où votre demande serait \n                     incomplète. La communication d’une adresse de courrier électronique \n                     est fortement recommandée afin qu’un accusé de réception \n                     sous format informatique puisse vous être adressé. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("En l’absence d’accusé de réception de \n                     la part de votre mairie, par courrier ou \n                     par courriel, assurez-vous avant la fin de l’année \n                     en cours que votre demande a bien été \n                     reçue par les services compétents. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Documents à fournir")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Afin que votre inscription soit prise en compte, \n                     vous devez impérativement faire parvenir au service des \n                     élections de votre mairie les trois types de \n                     documents suivants : ")]))
+           ,A2($Html.ol,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Le formulaire d’inscription dûment renseigné")]))
+                           ,A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Veuillez à être le plus clair et lisible \n                                 possible, et à bien remplir toutes les rubriques \n                                 du formulaire qui vous concernent.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h5,
+                           _U.list([]),
+                           _U.list([$Html.text("Une photocopie d’un titre d’identité et \n                                 de nationalité en cours de validité ")]))
+                           ,A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Vous adresserez à votre commune une photocopie lisible \n                                 de votre pièce d’identité en cours de validité:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("carte nationale d’identité (photocopie recto verso) ")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou passeport (photocopie de la double page \n                                            où figure votre photo)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou permis de conduire (valable uniquement s’il \n                                            est accompagné d’un justificatif de nationalité)")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Un justificatif de domicile")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Seront acceptées:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("les pièces prouvant que vous êtes domicilié \n                                           dans la commune où vous souhaitez être inscrit(e) \n                                           (facture d’électricité, de gaz ou de téléphone fixe). \n                                           Veillez à ce que les factures soient établies \n                                           à votre nom et prénom et qu’elles ne datent pas de plus \n                                           de 3 mois")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou les pièces permettant de prouver que \n                                           vous êtes inscrit(e), pour la cinquième fois et \n                                           sans interruption, au rôle d’une des contributions directes \n                                           communales ou que votre conjoint répond à ces \n                                           conditions. ")]))]))]))]))]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Cas particuliers")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Les personnes domiciliées chez un parent ou \n                               un tiers sont invitées à prendre contact avec \n                               leur mairie pour connaître les justificatifs à fournir.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Pour les personnes résidant à l’étranger, seront \n                                acceptées : ")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("les pièces prouvant que vous êtes inscrit(e) \n                                           au rôle des contributions directes de la commune \n                                           sur la liste électorale de laquelle vous souhaitez \n                                           être inscrit(e)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                           _U.list([]),
+                                           _U.list([$Html.text("un certificat d’inscription au registre des Français \n                                           établis hors de France et les pièces prouvant \n                                           que la commune sur la liste de laquelle \n                                           vous souhaitez être inscrit(e) est soit : votre \n                                           commune de naissance ; la commune de votre \n                                           dernier domicile en France ; la commune de votre dernière résidence en France, \n                                           à condition que cette résidence ait été de \n                                           six mois au moins ; la commune sur \n                                           la liste électorale de laquelle est né, est \n                                           inscrit ou a été inscrit un de vos \n                                           ascendants ; la commune sur la liste électorale \n                                           de laquelle est inscrit un de vos parents \n                                           au quatrième degré. ")]))
+                                           ,A2($Html.p,
+                                           _U.list([]),
+                                           _U.list([$Html.text("NB : la mention « inscrit(e) au registre \n                                             des Français établis hors de France » suivie \n                                             du cachet de l’ambassade ou du poste consulaire \n                                             compétent et de la date apposée à la \n                                             ligne du « cachet de la mairie » \n                                             vaut certificat d’inscription ")]))]))]))]))]))]));
+   var etatCiv = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("etatCivDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Demande d\'acte de naissance")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les actes d\'état civil ne peuvent être délivrés \n                     que pour les personnes nées à Murol.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour adresser votre demande par courrier postal, imprimez \n                     la demande en ")
+                   ,A2($Murol.link,"cliquant ici","http://www.murol.fr/Base_documentaire/demande%20acte%20de%20naissance.pdf")
+                   ,$Html.text(", remplissez-la et envoyez à la mairie")]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.$class("important")]),
+           _U.list([$Html.text("Le délai d\'obtention d\'une demande d\'acte de \n                                      naissance est de 8 jours (courrier transmis par voie postale)")]))
+           ,A2($Html.p,_U.list([$Html$Attributes.$class("important")]),_U.list([$Html.text("Nous vous remercions de votre compréhension")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Déclaration de naissance")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La déclaration de naissance doit être effectuée à \n                    la Mairie du lieu de naissance (service Etat-Civil). ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants légitimes (dont les parents sont mariés):")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("les parents doivent se présenter à la \n                     clinique où a lieu l\'accouchement avec le livret \n                     de famille, la clinique se chargeant des formalités \n                     administratives pour la déclaration.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants naturels (dont les parents ne sont \n                     pas mariés):")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Si les parents ont reconnu l\'enfant avant \n                               la naissance à la Mairie du lieu de \n                               naissance, il suffit de donner le papier ainsi \n                               que la carte d\'identité des parents à la \n                               clinique, qui se chargera de l\'envoi des formalités \n                               administratives")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("S\'il n\'y a pas eu de reconnaissance \n                               anticipée de l\'enfant, le père doit se présenter \n                               à la Mairie dans les 3 jours suivant \n                               la naissance (jour de celui-ci exclu), muni des \n                               pièces d\'identité des 2 parents ")]))]))]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Demande de célébration de mariage")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La demande de célébration de mariage doit se \n                     faire à la mairie du lieu de mariage \n                     (service Etat-Civil). ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Pièces à fournir:")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un recueil fournissant tous les renseignements sur \n                     les formalités à accomplir est à votre disposition \n                     au bureau de l\'Etat-Civil de la Mairie. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Note : le mariage doit être célébré à \n                     la Mairie du domicile de l\'un des futurs \n                     époux ou de leur résidence établie par un \n                     mois d\'habitation continue.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Déclaration de décès")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("C\'est la mairie du lieu de décès qui \n                     dresse l\'acte de décès (service Etat-Civil).")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Pièces à fournir:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le livret de famille, l\'extrait d\'acte de \n                               naissance, ou la carte d\'identité du défunt")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le certificat médical constatant le décès")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Note : la déclaration doit être faite par \n                     un parent ou une personne susceptible de donner \n                     des renseignements complets sur l\'Etat-Civil du défunt")]))]));
+   var vehic = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("vehicDemarches")]),
+   _U.list([A2($Html.ul,
+   _U.list([]),
+   _U.list([A2($Html.li,
+           _U.list([]),
+           _U.list([A2($Html.span,_U.list([]),_U.list([$Html.text("Certificat ")]))
+                   ,A2($Murol.link,"d\'immatriculation","http://www.murol.fr/Base_documentaire/ddeimatcerfa10672.pdf")
+                   ,A2($Html.span,_U.list([]),_U.list([$Html.text(" + ")]))
+                   ,A2($Murol.link,"notice explicative","http://www.murol.fr/Base_documentaire/notexpcg50322C.pdf")]))
+           ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Certificat de cession de véhicule","http://www.murol.fr/Base_documentaire/cessionvehic.pdf")]))
+           ,A2($Html.li,
+           _U.list([]),
+           _U.list([A2($Murol.link,"Certificat de non gage","http://www.interieur.gouv.fr/A-votre-service/Mes-demarches/Mes-teleservices")]))]))]));
+   var permis = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("permisDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Délivrance du permis")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Il peut être demandé que le permis soit \n                     délivré dans n\'importe quelle sous-préfecture du département dont \n                     dépend le domicile du candidat reçu (par exemple \n                     celle du lieu où il travaille).")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Dans tous les cas, la demande peut être \n                     faite sur place ou par correspondance.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Formalités sur place:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Il convient, en principe, de présenter : ")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("une pièce prouvant son identité (carte nationale d\'identité, \n                                 passeport...). ")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le certificat d\'examen du permis de conduire (attestation \n                                 provisoire ou \"feuille jaune\"), délivré par l\'inspecteur")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le montant de la taxe régionale ((non demandée \n                                 dans certaines régions).")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Attention : aucun texte réglementaire ne précise le \n                     nombre et le type de pièces à fournir \n                     pour la délivrance du permis définitif. Se renseigner \n                     au préalable.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Demande par correspondance:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Pour une demande par correspondance doit être joint, \n                     en principe :")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le certificat d\'examen du permis de conduire (attestation \n                                 provisoire ou \"feuille jaune\"), délivré par l\'inspecteur")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("une enveloppe libellée aux noms et adresses du \n                                 demandeur, timbrée au tarif \"lettre recommandée\"")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un chèque ou mandat-lettre à l\'ordre de Monsieur \n                                 le régisseur des recettes de la préfecture, au \n                                 montant de la taxe régionale (si elle est \n                                 demandée)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Murol.link,"Demande de délivrance","http://www.murol.fr/Base_documentaire/imprime_demande_permis_conduire.pdf")
+                           ,A2($Html.span,_U.list([]),_U.list([$Html.text(" du permis de conduire")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Murol.link,
+                   "Demande de permis international",
+                   "http://www.murol.fr/Base_documentaire/imprime_demande_permis_international.pdf")]))]))]));
+   var justifDom = A2($Html.div,
+   _U.list([$Html$Attributes.$class("justif")]),
+   _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Justificatif de domicile ou de résidence")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif de domicile à son nom:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("avis d\'imposition ou de non imposition")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("quittance de loyer")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("facture d\'électricité ou de gaz")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("facture de téléphone fixe ou portable")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("titre de propriété")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("attestation d\'assurance du logement")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("s\'il est hébergé, un justificatif d\'identité de l\'hébergeant \n                               ainsi qu\'une lettre de celui-ci certifiant que le \n                               demandeur habite chez lui depuis plus de trois \n                               mois, et un justificatif de domicile de l\'hébergeant \n                               (voir liste ci dessus)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("dans les autres cas s\'adresser à la mairie du domicile")]))]))]))]));
+   var justifNat = A2($Html.div,
+   _U.list([$Html$Attributes.$class("justif")]),
+   _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Justificatif de la nationalité française")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("si le demandeur est né en France et \n                                  l\'un au moins de ses parents est né \n                                  en France, un extrait de son acte de \n                                  naissance qui comporte les dates et lieux de \n                                  naissance de son (ses) parent(s) peut suffire")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("en cas contraire, le demandeur doit produire un \n                                  document attestant qu\'il possède bien la nationalité française. \n                                  Par exemple:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("la déclaration d\'acquisition de la nationalité française")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le décret de naturalisation")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le décret de réintégration dans la nationalité française")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le certificat de nationalité")]))]))]))]))]))]));
+   var passport = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("passDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Bénéficiaire")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le demandeur doit être de nationalité française.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("A noter : Il n\'est plus possible d\'inscrire un enfant mineur sur le passeport de l\'un de ses parents.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Durée de validité")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("10 ans")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Coût")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("88€ (timbre fiscal à acheter dans un bureau de tabac ou au centre des impôts).")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Dépôt de la demande")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La demande est rédigée sur un formulaire à demander en mairie. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le formulaire renseigné doit être déposée à de la mairie du lieu de domicile. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votre présence est exigée lors du dépôt de la demande.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Pièces justificatives à fournir")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Dans tous les cas:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("deux photographies d\'identité identiques, récentes et parfaitement ressemblantes, \n                                de face, tête nue (format 35mm x 45 mm)")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("l\'ancien passeport en cas de renouvellement")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif d\'état civil:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("une copie intégrale d\'acte de naissance")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou, à défaut la copie intégrale de l\'acte\n                                             de mariage, sous réserve de la preuve de\n                                             l\'impossibilité de produire l\'acte de naissance précité")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un justificatif de nationalité \n                               française : original + photocopie (voir ci dessous)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif de domicile ou de résidence (voir ci dessous)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un autre document officiel avec photographie (passeport, permis \n                               de conduire...) si possible en cas de première \n                               demande.")]))]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("En cas de perte ou de vol de passeport:")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Si le demandeur a perdu ou s\'est fait voler son passeport, il doit, outre les pièces à fournir pour toute demande de passeport :")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de perte")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("la déclarer en renseignant le formulaire de déclaration \n                                           de perte de passeport (au lieu de dépôt \n                                           du dossier)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou, s\'il a déjà effectué cette déclaration auprès \n                                           des services de police nationale ou de gendarmerie, \n                                           d\'un consulat de France à l\'étranger ou des \n                                           services de police étrangers, il doit présenter le \n                                           récépissé de la déclaration,")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("et fournir également si possible un document officiel \n                                           avec photographie (CNI, permis de conduire, carte permis \n                                           de chasser...)")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de vol")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir la déclaration de vol enregistrée auprès des \n                                           services de la police nationale ou de la \n                                           gendarmerie d\'un consulat de France à l\'étranger ou \n                                           des services de police étrangers, ")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir également si possible un document officiel avec \n                                           photographie.")]))]))]))]))]))
+           ,justifNat
+           ,justifDom]));
+   var carteId = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("idDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Bénéficiaire")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le demandeur doit être de nationalité française.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Durée de validité")]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.$class("important")]),
+           _U.list([$Html.text("À compter du 1er janvier 2014, la durée de validité \n                   des cartes nationales d\'identité délivrées aux personnes majeures \n                   passera de 10 à 15 ans.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Coût")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Gratuit en cas de première demande ou renouvellement\n                     avec présentation de l\'ancienne CNI, 25€ (timbres fiscaux) en\n                     cas de perte ou de vol.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Dépôt de la demande")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La demande est rédigée sur un formulaire à demander en mairie. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le formulaire renseigné doit être déposée à de la mairie du lieu de domicile. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votre présence est exigée lors du dépôt de la demande.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Pièces justificatives à fournir")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Dans tous les cas:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("deux photographies d\'identité identiques, récentes et parfaitement ressemblantes, \n                                de face, tête nue (format 35mm x 45 mm)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un justificatif d\'état civil (extrait d\'acte de naissance \n                                comportant l\'indication de la filiation du demandeur),en cas \n                                de première demande.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Si l\'acte de naissance ne permet pas de \n                               prouver la nationalité : un justificatif de nationalité \n                               française : original + photocopie (voir ci dessous)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif de domicile ou de résidence (voir ci dessous)")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("l\'ancienne CNI en cas de renouvellement")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un autre document officiel avec photographie (passeport, permis \n                               de conduire...) si possible en cas de première \n                               demande.")]))]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("En cas de perte ou de vol de CNI:")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Si le demandeur a perdu ou s\'est fait voler sa CNI il doit, en plus des pièces à fournir pour toute demande de CNI:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de perte")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("déclarer la perte en renseignant le formulaire de \n                                           déclaration de perte de CNI (au lieu de \n                                           dépôt du dossier de demande de CNI)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou, s\'il a déjà effectué cette déclaration auprès \n                                           des services de police nationale ou de gendarmerie, \n                                           d\'un consulat de France à l\'étranger ou des \n                                           services de police étrangers, il doit présenter le \n                                           récépissé de la déclaration,")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("et fournir également si possible un document officiel \n                                           avec photographie (passeport, permis de conduire, carte permis \n                                           de chasser...)")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de vol")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir la déclaration de vol enregistrée auprès des \n                                           services de la police nationale ou de la \n                                           gendarmerie d\'un consulat de France à l\'étranger ou \n                                           des services de police étrangers, ")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir également si possible un document officiel avec \n                                           photographie.")]))]))]))]))]))
+           ,justifNat
+           ,justifDom]));
+   var initialContent = carteId;
+   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Carte d\'identité",_1: carteId}
+                                           ,{ctor: "_Tuple2",_0: "Passeport",_1: passport}
+                                           ,{ctor: "_Tuple2",_0: "Permis de conduire",_1: permis}
+                                           ,{ctor: "_Tuple2",_0: "Véhicules",_1: vehic}
+                                           ,{ctor: "_Tuple2",_0: "Etat civil",_1: etatCiv}
+                                           ,{ctor: "_Tuple2",_0: "Liste électorale",_1: listElec}
+                                           ,{ctor: "_Tuple2",_0: "Service civique",_1: servCiv}]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A3($Murol.renderSubMenu,address,"Vos démarches:",function (_) {    return _.subMenu;}(model))
+                      ,function (_) {
+                         return _.mainContent;
+                      }(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list(["Carte d\'identité","Passeport","Permis de conduire","Véhicules","Etat civil","Liste électorale","Service civique"]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.VosDemarches.values = {_op: _op
+                                     ,subMenu: subMenu
+                                     ,initialModel: initialModel
+                                     ,view: view
+                                     ,contentMap: contentMap
+                                     ,update: update
+                                     ,changeMain: changeMain
+                                     ,main: main
+                                     ,initialContent: initialContent
+                                     ,carteId: carteId
+                                     ,justifNat: justifNat
+                                     ,justifDom: justifDom
+                                     ,passport: passport
+                                     ,permis: permis
+                                     ,vehic: vehic
+                                     ,etatCiv: etatCiv
+                                     ,listElec: listElec
+                                     ,servCiv: servCiv};
+};

@@ -10562,11 +10562,11 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
-Elm.Tourisme = Elm.Tourisme || {};
-Elm.Tourisme.make = function (_elm) {
+Elm.VosDemarches = Elm.VosDemarches || {};
+Elm.VosDemarches.make = function (_elm) {
    "use strict";
-   _elm.Tourisme = _elm.Tourisme || {};
-   if (_elm.Tourisme.values) return _elm.Tourisme.values;
+   _elm.VosDemarches = _elm.VosDemarches || {};
+   if (_elm.VosDemarches.values) return _elm.VosDemarches.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10578,533 +10578,587 @@ Elm.Tourisme.make = function (_elm) {
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $String = Elm.String.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var carte = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("carteTourisme")]),
-   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
-           ,A2($Html.iframe,
-           _U.list([$Html$Attributes.id("map")
-                   ,$Html$Attributes.src("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943")]),
-           _U.list([]))]));
-   var decouvrir = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("decouvTourisme")]),
-   _U.list([A2($Html.figure,
+   var servCiv = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("servCivDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Comment m\'engager?")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Quelles sont les conditions pour pouvoir m’engager en \n                     Service Civique ? ")]))
+           ,A2($Html.p,
            _U.list([]),
-           _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/lac-et-chateau-de-murol.jpg")]),_U.list([]))
-                   ,A2($Html.br,_U.list([]),_U.list([]))
-                   ,A2($Html.figcaption,
+           _U.list([$Html.text("Pour être volontaire, il faut avoir entre 16 \n                     et 25 ans et posséder la nationalité française, \n                     celle d’un état membre de l’Union européenne ou \n                     de l’espace économique européen, ou justifier d’un séjour \n                     régulier en France depuis plus d’un an. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Aucune autre condition n’est requise ; en particulier, \n                     il n’y a pas de condition en termes \n                     de diplôme ou d’expérience professionnelle préalable. Ce sont \n                     les savoirs-être et la motivation qui comptent avant \n                     tout.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les conditions d’engagement des jeunes entre 16 et \n                     18 ans sont aménagées. Les missions doivent être \n                     adaptées à leur âge et une autorisation parentale \n                     est nécessaire.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les jeunes en situation de handicap peuvent faire \n                     un Service Civique. L’indemnité de Service Civique est \n                     entièrement cumulable avec l’Allocation aux Adultes Handicapés (AAH).")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Quelles sont les modalités de l’engagement de Service \n                     Civique ?")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le Service Civique est un engagement volontaire de \n                     6 à 12 mois pour l’accomplissement d’une mission \n                     d’intérêt général dans un des neuf domaines d’interventions \n                     reconnus prioritaires pour la Nation : culture et \n                     loisirs, développement international et action humanitaire, éducation pour \n                     tous, environnement, intervention d\'urgence en cas de crise, \n                     mémoire et citoyenneté, santé, solidarité, sport. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Une indemnité de 446,65 euros nets par mois \n                     est directement versée au volontaire par l\'Etat, quelle \n                     que soit la durée hebdomadaire de la mission. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("L\'organisme d’accueil verse aussi au volontaire une prestation \n                     en nature ou en espèce d’un montant de \n                     101,49 euros, correspondant à la prise en charge \n                     des frais d’alimentation (fourniture de repas) ou de \n                     transports. Cette prestation peut être versée de différentes \n                     façons (titre repas, accès à la cantine, remboursements \n                     de frais, etc.) ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les jeunes, bénéficiaires ou appartenant à un foyer \n                     bénéficiaire du RSA, ou titulaire d\'une bourse de \n                     l\'enseignement supérieur au titre du 5e échelon ou \n                     au delà bénéficient d’une majoration d\'indemnité de 101,68 \n                     euros par mois. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les volontaires en Service Civique bénéficient d\'une protection \n                    sociale intégrale.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Au total, selon les situations, les volontaires en \n                     Service Civique perçoivent entre 548,14 euros et 649,82 \n                     euros par mois. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le bénéfice de l’aide au logement est conservé \n                     pendant le Service Civique.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un accompagnement pour faciliter le déroulement de la \n                     mission est proposé. Il s\'agit d\'une phase de \n                     préparation et d\'accompagnement dans la réalisation de la \n                     mission, d\'une formation civique et citoyenne et d\'un \n                     appui à la réflexion sur le projet d’avenir. ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Comment postuler à une mission de Service Civique? ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Postulez auprès des organismes proposant des missions de \n                     Service Civique directement à partir du site:")]))
+           ,A2($Murol.link,"http://www.service-civique.gouv.fr","http://www.service-civique.gouv.fr")
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mission dans le puy de dôme:")]))
+           ,A2($Murol.link,"service civique puy de dôme","http://www.service-civique.gouv.fr/les_missions?tid=All&tid_1=16&tid_2=All&dept=Puy-de-Dôme ")]));
+   var listElec = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("listElecDemarches")]),
+   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Vous devez vous rendre à la mairie munis:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
                    _U.list([]),
-                   _U.list([$Html.text("Situé dans le massif du Sancy,\n                                     la commune de Murol est considérée\n                                     comme l\'un des plus beaux\n                                     sites de l\'Auvergne.")]))]))
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("d\'une pièce d\'identité (carte nationale d\'identité, passeport)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("et d\'un justificatif d\'adresse (facture de téléphone, \n                                quittance de loyer, EDF...).")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([A2($Murol.link,"du formulaire qui vous concerne","http://www.murol.fr/Base_documentaire/electionsinscriptionf.pdf")]))]))]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Recommandations générales")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("La commune appartient au canton de\n                      Besse-et-Saint-Anastaise et est composée\n                      de quatre villages, Murol, Beaune le froid,\n                       Groire et Chautignat. Elle s\'étend sur une\n                        superficie de 15 km² à une altitude de 785m à 1500m.")]))
-           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Les villages et hameaux")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Murol")]))
+           _U.list([$Html.text("Pour que votre inscription sur les \n                     listes électorales soit effective au 1er mars de \n                     l’année prochaine, votre formulaire de demande d’inscription et \n                     les pièces justificatives (voir la rubrique « documents \n                     à fournir » ci-dessous) doivent impérativement être parvenus \n                     en mairie avant le 31 décembre de cette \n                     année. Il est donc fortement conseillé d’envoyer votre \n                     demande à votre mairie avant le 15 décembre.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Veillez à remplir le formulaire en \n                     lettres majuscules de façon lisible")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le bourg de Murol est implanté dans un écrin de verdure à\n                     850 mètres d\'altitude, dans la vallée de la Couze Chambon,\n                     sur le versant oriental du Massif de Sancy, entre le volcan\n                     boisé du Tartaret, le promontoire du Château de Murol\n                     (monument historique classé) et le puy de Bessolles\n                     culminant à 1057m. d\'altitude. Il est également\n                     travérsé par le GR30. A deux pas du Lac Chambon\n                     et de la Vallée de Chaudefour (Réserve naturelle)\n                     le village vous ravira par ses sites remarquables\n                     ou pittoresques, par son parc arboré où se trouve\n                     le musée des peintres.")]))
+           _U.list([$Html.text("Notez impérativement vos coordonnées à la \n                     fin du formulaire afin que la mairie puisse \n                     vous contacter au cas où votre demande serait \n                     incomplète. La communication d’une adresse de courrier électronique \n                     est fortement recommandée afin qu’un accusé de réception \n                     sous format informatique puisse vous être adressé. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("De nombreux vestiges\n                     témoignent d\'une occupation gauloise (dolmen)\n                     et gallo-romaine (villa et fanum). Au moyen-âge\n                     s\'élève une puissante forteresse, sa construction\n                     s\'étale du XIIème au XVIIIème siècle. Après être resté\n                     trois siècles durant dans les mains de la noble famille\n                     de Murol, le château deviendra au XV ème\n                     siècle par mariage, propriété des Estaing, lesquels y\n                     feront de nombreux travaux pour moderniser les conditions\n                     de vie et adapter aux exigences de l\'artillerie le système\n                     de défense. Délaissé par ses derniers possesseurs,\n                     le château tombe en ruines au XIX ème siècle.\n                     Il est aujourd\'hui propriété de la commune.\n                     Des animations relatant la vie au moyen-âge s\'y\n                     déroulent et attirent environ 120 000 visiteurs par an.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La desserte des principaux lieux touristiques")]))
+           _U.list([$Html.text("En l’absence d’accusé de réception de \n                     la part de votre mairie, par courrier ou \n                     par courriel, assurez-vous avant la fin de l’année \n                     en cours que votre demande a bien été \n                     reçue par les services compétents. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Documents à fournir")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les visiteurs peuvent découvrir, sur le plan fourni\n                     par l’Office de Tourisme, le tracé de la\n                     « Voie Verte » , qui a nettement\n                     amélioré la circulation des piétons et des cyclistes\n                     depuis son achèvement en 2009. Il s’agit d’un\n                     sentier fléché , accessible aux handicapés, réalisé en\n                     collaboration avec le Conseil Général, qui relie le\n                     bourg de Murol au lac Chambon, en faisant\n                     une boucle autour du volcan du Tartaret. Il\n                     permet de sécuriser le cheminement des piétons et\n                     des cyclotouristes tout en respectant l’environnement car les\n                     engins motorisés y sont proscrits. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("L’accès piéton au château de Murol est lui aussi sécurisé :")]))
+           _U.list([$Html.text("Afin que votre inscription soit prise en compte, \n                     vous devez impérativement faire parvenir au service des \n                     élections de votre mairie les trois types de \n                     documents suivants : ")]))
+           ,A2($Html.ol,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Le formulaire d’inscription dûment renseigné")]))
+                           ,A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Veuillez à être le plus clair et lisible \n                                 possible, et à bien remplir toutes les rubriques \n                                 du formulaire qui vous concernent.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h5,
+                           _U.list([]),
+                           _U.list([$Html.text("Une photocopie d’un titre d’identité et \n                                 de nationalité en cours de validité ")]))
+                           ,A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Vous adresserez à votre commune une photocopie lisible \n                                 de votre pièce d’identité en cours de validité:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("carte nationale d’identité (photocopie recto verso) ")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou passeport (photocopie de la double page \n                                            où figure votre photo)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou permis de conduire (valable uniquement s’il \n                                            est accompagné d’un justificatif de nationalité)")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Un justificatif de domicile")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Seront acceptées:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("les pièces prouvant que vous êtes domicilié \n                                           dans la commune où vous souhaitez être inscrit(e) \n                                           (facture d’électricité, de gaz ou de téléphone fixe). \n                                           Veillez à ce que les factures soient établies \n                                           à votre nom et prénom et qu’elles ne datent pas de plus \n                                           de 3 mois")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou les pièces permettant de prouver que \n                                           vous êtes inscrit(e), pour la cinquième fois et \n                                           sans interruption, au rôle d’une des contributions directes \n                                           communales ou que votre conjoint répond à ces \n                                           conditions. ")]))]))]))]))]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Cas particuliers")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Les personnes domiciliées chez un parent ou \n                               un tiers sont invitées à prendre contact avec \n                               leur mairie pour connaître les justificatifs à fournir.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("Pour les personnes résidant à l’étranger, seront \n                                acceptées : ")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("les pièces prouvant que vous êtes inscrit(e) \n                                           au rôle des contributions directes de la commune \n                                           sur la liste électorale de laquelle vous souhaitez \n                                           être inscrit(e)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                           _U.list([]),
+                                           _U.list([$Html.text("un certificat d’inscription au registre des Français \n                                           établis hors de France et les pièces prouvant \n                                           que la commune sur la liste de laquelle \n                                           vous souhaitez être inscrit(e) est soit : votre \n                                           commune de naissance ; la commune de votre \n                                           dernier domicile en France ; la commune de votre dernière résidence en France, \n                                           à condition que cette résidence ait été de \n                                           six mois au moins ; la commune sur \n                                           la liste électorale de laquelle est né, est \n                                           inscrit ou a été inscrit un de vos \n                                           ascendants ; la commune sur la liste électorale \n                                           de laquelle est inscrit un de vos parents \n                                           au quatrième degré. ")]))
+                                           ,A2($Html.p,
+                                           _U.list([]),
+                                           _U.list([$Html.text("NB : la mention « inscrit(e) au registre \n                                             des Français établis hors de France » suivie \n                                             du cachet de l’ambassade ou du poste consulaire \n                                             compétent et de la date apposée à la \n                                             ligne du « cachet de la mairie » \n                                             vaut certificat d’inscription ")]))]))]))]))]))]));
+   var etatCiv = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("etatCivDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Demande d\'acte de naissance")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les visiteurs qui partent du bourg peuvent le\n                    rejoindre en empruntant un cheminement piéton qui longe\n                    le mur du parc du Prélong. Le parc\n                    animalier situé sur les pentes du château est\n                    ceint d’un sentier également piéton, bordé d’une barrière\n                    de bois, ce qui permet aux plus jeunes\n                    de le suivre sans danger. Le retour au\n                    bourg de Murol peut se faire en traversant\n                    le Parc du Prélong, ce qui offre aux\n                    visiteurs la possibilité de découvrir l’Arborétum, la serre,\n                    mais aussi le musée archéologique et le musée\n                    des Peintres. ")]))
+           _U.list([$Html.text("Les actes d\'état civil ne peuvent être délivrés \n                     que pour les personnes nées à Murol.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("La place de l’Abbé Boudal, où se trouve\n                    l’église, est un lieu au cœur du bourg\n                    de Murol, où la circulation automobile est réglementée,\n                    ce qui permet aux piétons de profiter pleinement\n                    de l’endroit et de la vue du château\n                    que l’on y découvre. ")]))
+           _U.list([$Html.text("Pour adresser votre demande par courrier postal, imprimez \n                     la demande en ")
+                   ,A2($Murol.link,"cliquant ici","http://www.murol.fr/Base_documentaire/demande%20acte%20de%20naissance.pdf")
+                   ,$Html.text(", remplissez-la et envoyez à la mairie")]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.$class("important")]),
+           _U.list([$Html.text("Le délai d\'obtention d\'une demande d\'acte de \n                                      naissance est de 8 jours (courrier transmis par voie postale)")]))
+           ,A2($Html.p,_U.list([$Html$Attributes.$class("important")]),_U.list([$Html.text("Nous vous remercions de votre compréhension")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Déclaration de naissance")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("En dehors du bourg, les visiteurs peuvent se\n                     promener en toute sécurité sur les chemins balisés\n                     par la communauté de communes du Massif du\n                     Sancy. Ils représentent à Murol un réseau de\n                     plusieurs dizaines de kilomètres de sentiers de PR\n                     (petites randonnées). Des cartes et des topoguides sont\n                     disponibles au bureau de l’Office de Tourisme. Ils\n                     permettent aux visiteurs de découvrir les plus beaux\n                     panoramas de notre commune, comme ci-dessous, le lac\n                     Chambon vu du sommet du volcan du Tartaret. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Beaune le froid")]))
+           _U.list([$Html.text("La déclaration de naissance doit être effectuée à \n                    la Mairie du lieu de naissance (service Etat-Civil). ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants légitimes (dont les parents sont mariés):")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Petit village de montagne, deuxième bourg de la\n                     commune situé sur un haut plateau, Beaune le\n                     froid est un village agricole très actif et\n                     réputé pour ses fromages de Saint Nectaire fermier,\n                     fabriqué depuis le XVIème siècle sur la commune.\n                     C\'est un lieu de promenade et de découverte\n                     du savoir-faire local. Il a su conserver son\n                     moulin à eau et son lavoir. En 2011,\n                     son four à pain a été entièrement reconstruit\n                     par des bénévoles de l’association des « chantiers\n                     de jeunesse ». L’ hiver, l’ouverture du domaine\n                     skiable permet la pratique du ski nordique et\n                     des raquettes. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Chautignat")]))
+           _U.list([$Html.text("les parents doivent se présenter à la \n                     clinique où a lieu l\'accouchement avec le livret \n                     de famille, la clinique se chargeant des formalités \n                     administratives pour la déclaration.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants naturels (dont les parents ne sont \n                     pas mariés):")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Si les parents ont reconnu l\'enfant avant \n                               la naissance à la Mairie du lieu de \n                               naissance, il suffit de donner le papier ainsi \n                               que la carte d\'identité des parents à la \n                               clinique, qui se chargera de l\'envoi des formalités \n                               administratives")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("S\'il n\'y a pas eu de reconnaissance \n                               anticipée de l\'enfant, le père doit se présenter \n                               à la Mairie dans les 3 jours suivant \n                               la naissance (jour de celui-ci exclu), muni des \n                               pièces d\'identité des 2 parents ")]))]))]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Demande de célébration de mariage")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le hameau de Chautignat est situé à flanc\n                     de coteaux. Il bénéficie d\'un ensoleillement maximum et\n                     de prairies aux pentes douces favorables à l\'élevage\n                     comme aux cultures. A proximité du hameau se\n                     trouvent les grottes de Rajat et le moulin\n                     à eau de Landrode qui ont été les\n                     lieux de créations artistiques dans la cadre de\n                     la manifestation annuelle « Horizons rencontres Art et\n                     Nature ». ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les hameaux des Ballats et Groire")]))
+           _U.list([$Html.text("La demande de célébration de mariage doit se \n                     faire à la mairie du lieu de mariage \n                     (service Etat-Civil). ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Pièces à fournir:")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Ces hameaux ont une activité rurale marquée, ils\n                     se situent là où le fond de la\n                     vallée s\'élargit pour former de petites plaines propices\n                     aux cultures. Traversés par la Couze Chambon et\n                     les sentiers de randonnées, ils se prêtent à\n                     la flânerie. A l’occasion de la fête de\n                     Groire, le four à pain revit pour le\n                     plaisir des petits et grands gourmands. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La Chassagne ")]))
+           _U.list([$Html.text("Un recueil fournissant tous les renseignements sur \n                     les formalités à accomplir est à votre disposition \n                     au bureau de l\'Etat-Civil de la Mairie. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Située sous le Château de Murol, La Chassagne\n                      est un hameau de fermes et maisons particulières.\n                      Ce lieu existait déjà sous Guillaume de Murol,\n                      seigneur du Château au début du XVème siècle.\n                      La légende raconte que Pierre Morand, \"concierge\" du\n                      château s\'est installé ici et a fondé \"la\n                      Chassagne\". L\'origine du nom vient des arbres présents\n                      à cette époque, les chênes. Aujourd\'hui, quelques-uns subsistent\n                      sur les pentes du château, entrelacés avec les\n                      pins et autres arbustes. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le volcan du Tartaret ")]))
+           _U.list([$Html.text("Note : le mariage doit être célébré à \n                     la Mairie du domicile de l\'un des futurs \n                     époux ou de leur résidence établie par un \n                     mois d\'habitation continue.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Déclaration de décès")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Il est l´un des plus récents d´Auvergne. Ses\n                     pentes boisées empêchent de distinguer son cratère mais\n                     les sentiers qui le traverse sont des plus\n                     agréables et accessibles. Parcours de santé et d\'orientation\n                     (cartes en vente à l\'office de tourisme). ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Lac Chambon")]))
+           _U.list([$Html.text("C\'est la mairie du lieu de décès qui \n                     dresse l\'acte de décès (service Etat-Civil).")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Pièces à fournir:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le livret de famille, l\'extrait d\'acte de \n                               naissance, ou la carte d\'identité du défunt")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le certificat médical constatant le décès")]))]))]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("La partie Est du lac occupe la commune\n                     de Murol pour un tiers de sa superficie.\n                     Le reste du lac se trouvant sur la\n                     commune de Chambon sur lac. Le Lac Chambon\n                     est un lac de barrage volcanique puisqu´il s´est\n                     formé à la suite de l´éruption du Tartaret\n                     il y a environ 8000 ans et de\n                     l\'effondrement de la dent du Marais , bloquant\n                     ainsi le cours de la Couze Chambon. La\n                     couze charrie une telle quantité d´alluvions que le\n                     lac se rétrécit au fil des siècles. S\'étalant\n                     aujourd\'hui sur 60 hectares, peu profond (6 m\n                     maximum) et parsemé d´îlots , il s\'ouvre largement\n                     à l\'ouest sur les paysages somptueux du massif\n                     du Sancy. Le lac est aménagé pour la\n                     baignade, les activités nautiques et la pêche. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Grottes de Rageat")]))
+           _U.list([$Html.text("Note : la déclaration doit être faite par \n                     un parent ou une personne susceptible de donner \n                     des renseignements complets sur l\'Etat-Civil du défunt")]))]));
+   var vehic = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("vehicDemarches")]),
+   _U.list([A2($Html.ul,
+   _U.list([]),
+   _U.list([A2($Html.li,
+           _U.list([]),
+           _U.list([A2($Html.span,_U.list([]),_U.list([$Html.text("Certificat ")]))
+                   ,A2($Murol.link,"d\'immatriculation","http://www.murol.fr/Base_documentaire/ddeimatcerfa10672.pdf")
+                   ,A2($Html.span,_U.list([]),_U.list([$Html.text(" + ")]))
+                   ,A2($Murol.link,"notice explicative","http://www.murol.fr/Base_documentaire/notexpcg50322C.pdf")]))
+           ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Certificat de cession de véhicule","http://www.murol.fr/Base_documentaire/cessionvehic.pdf")]))
+           ,A2($Html.li,
+           _U.list([]),
+           _U.list([A2($Murol.link,"Certificat de non gage","http://www.interieur.gouv.fr/A-votre-service/Mes-demarches/Mes-teleservices")]))]))]));
+   var permis = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("permisDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Délivrance du permis")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("D\'accès difficile, les falaises qui les abritent sont\n                     composées d\'un mélange de Bolts et argiles aux\n                     couleurs pastel allant de l\'ocre, vert ou rosé,\n                     au bleuté. Ces habitations troglodytes sont très anciennes,\n                     certainement antérieures à l\'époque gauloise. Toutefois leur histoire\n                     mal connue ne s\'appuie que sur des hypothèses.\n                     Ce site est un enchantement pour le promeneur\n                     attentif et permet à celui qui s\'y rend\n                     de rêver et d\'imaginer sa propre histoire. ")]))]));
-   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
-   var labelToHtml = function (l) {    var _p0 = l;if (_p0.ctor === "NoLabel") {    return nullTag;} else {    return nullTag;}};
-   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
-   var TableEntry = function (a) {
-      return function (b) {
-         return function (c) {
-            return function (d) {
-               return function (e) {
-                  return function (f) {
-                     return function (g) {
-                        return function (h) {
-                           return function (i) {
-                              return function (j) {
-                                 return function (k) {
-                                    return {name: a,label: b,stars: c,refOt: d,descr: e,addr: f,tel: g,fax: h,mail: i,site: j,pics: k};
-                                 };
-                              };
-                           };
-                        };
-                     };
-                  };
-               };
-            };
-         };
-      };
-   };
-   var NoLabel = {ctor: "NoLabel"};
-   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")(_U.list([]));
-   var restosBeaunes = _U.list([_U.update(emptyTe,
-   {name: "Les Sancy\'Elles",addr: "63790 Beaune le Froid -MUROL",descr: _U.list(["Crèperie, petite restauration"]),tel: "04 7388 8118"})]);
-   var restosMurol = _U.list([_U.update(emptyTe,
-                             {name: "Au Montagnard"
-                             ,addr: "Rue d\'Estaing - 63790 MUROL"
-                             ,descr: _U.list(["Plat à emporter au restaurant"])
-                             ,tel: "04 73 88 61 52"
-                             ,mail: "restaurant.aumontagnard@orange.fr"
-                             ,site: "http://restaurantaumontagnard.wifeo.com/"})
-                             ,_U.update(emptyTe,
-                             {name: "Chez Dame Galinette",addr: "Rue d\'Estaing - 63790 MUROL",tel: "04 73 88 61 52",site: "murol@azureva-vacances.com"})
-                             ,_U.update(emptyTe,
-                             {name: "Le chalet de la plage",addr: "lac Chambon - 63790 MUROL",tel: "04 73 88 82 31",mail: "hotel@lac-chambon-plage.fr"})
-                             ,_U.update(emptyTe,
-                             {name: "Le Parc",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 88 60 08",fax: "04 73 88 64 44",mail: "info@hotel-parc.com"})
-                             ,_U.update(emptyTe,
-                             {name: "Le Paris"
-                             ,addr: "Pace de la mairie - 63790 MUROL"
-                             ,tel: "04 73 88 60 09"
-                             ,fax: "04 73 88 69 82"
-                             ,mail: "info@hoteldeparis-murol.com"})
-                             ,_U.update(emptyTe,{name: "Le Piccotin \"Pizzéria\"",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 62 37 10"})]);
-   var barBrasserie = _U.list([_U.update(emptyTe,{name: "A Jour et Nuit",addr: "Rue Estaing - 63790 Murol",tel: "04 73 88 64 82"})
-                              ,_U.update(emptyTe,{name: "Auberge de la plage",addr: "La plage - 63790 Murol",tel: "04 73 88 67 90"})
-                              ,_U.update(emptyTe,
-                              {name: "L\'Arbalète",addr: "Rue Georges Sand - 63790 Murol",tel: "04 73 88 85 79",mail: "restaurantlarbalete@gmail.com"})
-                              ,_U.update(emptyTe,
-                              {name: "Le café de la côte"
-                              ,addr: "Rue Chabrol - 63790 MUROL"
-                              ,descr: _U.list(["café- restaurant- herboristerie- salle de concert\n                - atelier de confection de bougies\n                en cire d\'abeille, etc."
-                                              ,"Bière locale, hypocras (entendez par là :\n                  vin aux épices médiéval), barbecue ."
-                                              ,"L\'ambiance ici est à la détente, et parfois à la\n                 fête puisque des concerts y sont\n                 organisés sporadiquement."])
-                              ,tel: "06 7941 0811"})]);
-   var barDeNuit = _U.list([_U.update(emptyTe,
-   {name: "Cubana café",addr: "Place de la poste - 63790 Murol",tel: "04 73 88 85 79",mail: "larbalete@cegetel.net"})]);
-   var azureva = _U.list([_U.update(emptyTe,
-   {name: "Azureva"
-   ,addr: "route de Jassat 63790 MUROL"
-   ,descr: _U.list(["Contact:","azurèva MUROL - Villages & Résidences de Vacances"])
-   ,tel: "04 73 88 58 58"
-   ,fax: "04 73 88 58 00"
-   ,mail: "murol@azureva-vacances.com"
-   ,site: "http://www.azureva-vacances.com/Individuel/Village/Murol"})]);
-   var hotels = _U.list([_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel les Dômes (résidence)"
-                        ,addr: "rue de Groire, 63790 Murol"
-                        ,tel: "04 73 88 60 13"
-                        ,fax: "04 73 88 80 05"
-                        ,mail: "domes4@wanadoo.fr"
-                        ,site: "http://www.lesdomes.com"})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel du Parc"
-                        ,addr: "rue George Sand 63790 MUROL"
-                        ,tel: "04 73 88 60 08"
-                        ,fax: "04 73 88 64 44"
-                        ,descr: _U.list(["Hôtel restaurant"])})
-                        ,_U.update(emptyTe,{stars: $Maybe.Just(2),name: "Hotel les Volcans",addr: "rue Estaing 63790 MUROL",tel: "04 73 88 80 19"})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel des Pins"
-                        ,addr: "rue du Levat 63790 MUROL"
-                        ,tel: "04 73 88 60 50"
-                        ,fax: "04 73 88 60 29"
-                        ,descr: _U.list(["Hôtel restaurant"])})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(2)
-                        ,name: "Hotel le Grillon"
-                        ,addr: "le lac Chambon 63790 MUROL"
-                        ,tel: "04 73 88 60 66"
-                        ,fax: "04 73 88 65 55"
-                        ,descr: _U.list(["Hôtel restaurant"])})
-                        ,_U.update(emptyTe,
-                        {stars: $Maybe.Just(3)
-                        ,name: "Hotel de Paris"
-                        ,addr: "Place de l’Hôtel de Ville 63790 MUROL"
-                        ,tel: "04 73 88 60 09"
-                        ,fax: "04 73 88 69 62"
-                        ,descr: _U.list(["Hôtel restaurant"])
-                        ,mail: "info@hoteldeparis-murol.com"
-                        ,site: "http://www.hoteldeparis-murol.com"})]);
-   var campings = _U.list([_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Domaine du marais"
-                          ,addr: "Le Marais - 63790 MUROL"
-                          ,tel: "04 73 88 67 08"
-                          ,fax: "04 73 88 64 63"
-                          ,site: "www.domaine-du-marais.com"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Le Repos du Baladin"
-                          ,addr: "Groire - 63790 Murol"
-                          ,tel: "04 73 88 61 93"
-                          ,fax: "04 73 88 66 41"
-                          ,mail: "reposbaladin@free.fr"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Camping de la Plage"
-                          ,addr: "Centre touristique du lac Chambon - 63790 Murol"
-                          ,tel: "04 73 88 60 04"
-                          ,mail: "lac.chambon@wanadoo.fr"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(3)
-                          ,name: "Camping des Fougères"
-                          ,addr: "Pont du Marais - 63790 MUROL"
-                          ,tel: "04 73 88 67 68"
-                          ,fax: "04 73 88 64 63"
-                          ,mail: "camping-les-fougères@wanadoo.fr"
-                          ,site: "http://www.les-fougeres.com"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(4)
-                          ,name: "Camping de la Rybeyre"
-                          ,addr: "Jassat - 63790 MUROL"
-                          ,tel: "04 73 88 64 29"
-                          ,fax: "04 73 88 68 41"
-                          ,mail: "laribeyre@free.fr"})
-                          ,_U.update(emptyTe,
-                          {stars: $Maybe.Just(4)
-                          ,name: "Camping de l\'Europe"
-                          ,addr: "Route de Jassat - 63790 - Murol"
-                          ,tel: "04 73 39 76 66"
-                          ,fax: "04 73 39 76 61 "
-                          ,mail: "europe.camping@wanadoo.fr"})]);
-   var chambresHotes = _U.list([_U.update(emptyTe,{stars: $Maybe.Nothing,name: "La Clé des champs",addr: "Route de Groire - 63790 MUROL",tel: "04 73 88 66 29"})
-                               ,_U.update(emptyTe,
-                               {stars: $Maybe.Nothing,name: "Marie Roche",addr: "Groire - 63790 MUROL",tel: "04 73 88 65 99 - Portable : 06 11 57 97 72"})
-                               ,_U.update(emptyTe,
-                               {stars: $Maybe.Nothing,name: "Auvergne France homes",addr: "303 rue Pardaniche - 63790 MUROL",tel: "04 73 88 81 65"})
-                               ,_U.update(emptyTe,
-                               {stars: $Maybe.Nothing,name: "Le Dolmen",addr: "Gite Le Dolmen La Chassagne 63790 MUROL",tel: "04 73 88 81 67"})]);
-   var FamillePlus = {ctor: "FamillePlus"};
-   var meubles = _U.list([_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "La Cacode"
-                         ,descr: _U.list(["3* - 4 personnes","Mme CLEMENT Marie-Paule"])
-                         ,addr: "La Chassagne - 63790 Murol"
-                         ,tel: "04 7388 6085 (HR)"
-                         ,mail: "lachassagne@hotmail.fr"
-                         ,site: "http://lachassagne.e-monsite.com/"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "La Quiétude"
-                         ,refOt: "5473"
-                         ,label: FamillePlus
-                         ,descr: _U.list(["3* - 8 personnes","Mme PLANEIX Suzanne"])
-                         ,addr: "Rue de la vieille tour - 63790 MUROL"
-                         ,tel: "04 73 78 65 08 - 06 95 29 30 48"
-                         ,mail: "info@hoteldeparis-murol.com"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "Villa Bergogne"
-                         ,refOt: "2885"
-                         ,descr: _U.list(["3* - 8 personnes"])
-                         ,addr: "Beaune le froid - 63790 MUROL"
-                         ,tel: "04 73 65 36 00"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(3)
-                         ,name: "Villa Mathieu"
-                         ,refOt: "1470"
-                         ,descr: _U.list(["3* - 6 personnes","Mme MATHIEU Anne-Marie"])
-                         ,addr: "Place de l\'hôtel de ville - 63790 MUROL"
-                         ,tel: "04 73 93 69 19 - Portable : 07 50 35 54 63"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Entre château et volcans"
-                         ,refOt: "3699"
-                         ,label: FamillePlus
-                         ,descr: _U.list(["2* - 2 et 3 personnes"])
-                         ,addr: "route de Besse - 63790 MUROL"
-                         ,tel: "04 73 88 67 56 - Portable : 06 28 06 81 77"
-                         ,mail: "veronique.debout@gmail.com"
-                         ,site: "www.entre-chateau-et-volcans.fr"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Chapuzadou"
-                         ,descr: _U.list(["2* - 4 personnes","Mme CLEMENT Marie-Paule"])
-                         ,addr: "La Chassagne - 63790 Murol"
-                         ,tel: "04 7388 6085 (HR)"
-                         ,mail: "lachassagne@hotmail.fr"
-                         ,site: "http://lachassagne.e-monsite.com/"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Les Cigales"
-                         ,refOt: "1467"
-                         ,descr: _U.list(["2* - 4 personnes","Mme MATHIEU Anne-Marie"])
-                         ,addr: "Rue de Groire - 63790 MUROL"
-                         ,tel: "04 73 88 80 87"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "La clé des champs"
-                         ,refOt: "1446"
-                         ,descr: _U.list(["2* - 4 personnes","M. & Mme DELPEUX Annie et François"])
-                         ,addr: "Route de Groire - 63790 MUROL"
-                         ,tel: "04 73 88 66 29 - Portable : 06 21 49 42 94 - 06 77 11 62 06"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Les Elfes"
-                         ,refOt: "3125"
-                         ,descr: _U.list(["2* - 4 personnes"])
-                         ,addr: "Route de Jassat - 63790 MUROL"
-                         ,tel: "04 73 88 61 16 - Portable : 06 88 76 81 70 - joignable : de 10h à 21h"
-                         ,mail: "alice.elfes@wanadoo.fr"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Les Genêts"
-                         ,refOt: "5336"
-                         ,descr: _U.list(["2* - 4 personnes","M. NOTHEISEN Marc"])
-                         ,addr: "Rue d\'Estaing - 63790 MUROL"
-                         ,tel: "03 86 73 72 25 - Portable : 06 83 59 00 67"
-                         ,mail: "monique-notheisen@orange.fr"
-                         ,site: "http://lesgenets.murol.monsite-orange.fr"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(2)
-                         ,name: "Résidence Clair logis"
-                         ,refOt: "1469"
-                         ,descr: _U.list(["2* - 3 et 4 personnes","M. LAPORTE Rémy"])
-                         ,addr: "Rue George Sand - 63790 MUROL"
-                         ,tel: "04 73 88 65 43"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(1)
-                         ,name: "Villa Roux"
-                         ,refOt: "1478"
-                         ,descr: _U.list(["1* - 5 personnes","Type habitation : maison mitoyenne","M. ROUX André"])
-                         ,addr: "Beaune-le-Froid - 63790 MUROL"
-                         ,tel: "04 73 87 51 47"})
-                         ,_U.update(emptyTe,
-                         {stars: $Maybe.Just(1)
-                         ,name: "Mon Gai Repos"
-                         ,refOt: "1516"
-                         ,descr: _U.list(["1* - 2 personnes ","Type habitation : appartement","Mme POMMIER-DESSERRE Madeleine"])
-                         ,addr: "Groire - 63790 MUROL"
-                         ,tel: "04 73 88 60 65 - Portable : 06 63 71 70 03"})
-                         ,_U.update(emptyTe,
-                         {name: "La Christaline"
-                         ,refOt: "6586"
-                         ,descr: _U.list(["2* - studios 2 personnes et appartement 4 à 6 personnes","M. HENRY Christian"])
-                         ,tel: "04 73 88 66 19 - 05 63 75 45 24 - Portable : 06 87 97 35 40"
-                         ,addr: "Groire – 63790 MUROL"
-                         ,mail: "henrymurol@orange.fr"
-                         ,site: "http://murolsejourplus.wifeo.com"})
-                         ,_U.update(emptyTe,
-                         {name: "Résidence de Michèle"
-                         ,descr: _U.list(["2 à 4 personnes","Melle Fanny Gontelle"])
-                         ,tel: "04 73 88 68 68 / Port : 06 22 33 41 13"
-                         ,addr: "Rue du Tartaret - 63790 MUROL"
-                         ,mail: "residencedemichele@orange.fr"
-                         ,site: "http://residencedemichele.monsite-orange.fr"})
-                         ,_U.update(emptyTe,
-                         {name: "Les Homes de Vire Vent"
-                         ,descr: _U.list(["5 personnes","Melle Fanny Gontelle"])
-                         ,tel: "04 73 69 76 64    Port : 06 07 30 95 43"
-                         ,addr: "route de Jassat - 63790 MUROL"
-                         ,mail: "legoueix.nicole@club-internet.fr"
-                         ,site: "http://www.les-homes-de-virevent.com"})]);
-   var addStars = F2(function (n,s) {
-      var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
-      var _p1 = n;
-      if (_p1.ctor === "Nothing") {
-            return $Html.text(s);
+           _U.list([$Html.text("Il peut être demandé que le permis soit \n                     délivré dans n\'importe quelle sous-préfecture du département dont \n                     dépend le domicile du candidat reçu (par exemple \n                     celle du lieu où il travaille).")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Dans tous les cas, la demande peut être \n                     faite sur place ou par correspondance.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Formalités sur place:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Il convient, en principe, de présenter : ")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("une pièce prouvant son identité (carte nationale d\'identité, \n                                 passeport...). ")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le certificat d\'examen du permis de conduire (attestation \n                                 provisoire ou \"feuille jaune\"), délivré par l\'inspecteur")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le montant de la taxe régionale ((non demandée \n                                 dans certaines régions).")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Attention : aucun texte réglementaire ne précise le \n                     nombre et le type de pièces à fournir \n                     pour la délivrance du permis définitif. Se renseigner \n                     au préalable.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Demande par correspondance:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Pour une demande par correspondance doit être joint, \n                     en principe :")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("le certificat d\'examen du permis de conduire (attestation \n                                 provisoire ou \"feuille jaune\"), délivré par l\'inspecteur")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("une enveloppe libellée aux noms et adresses du \n                                 demandeur, timbrée au tarif \"lettre recommandée\"")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un chèque ou mandat-lettre à l\'ordre de Monsieur \n                                 le régisseur des recettes de la préfecture, au \n                                 montant de la taxe régionale (si elle est \n                                 demandée)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Murol.link,"Demande de délivrance","http://www.murol.fr/Base_documentaire/imprime_demande_permis_conduire.pdf")
+                           ,A2($Html.span,_U.list([]),_U.list([$Html.text(" du permis de conduire")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Murol.link,
+                   "Demande de permis international",
+                   "http://www.murol.fr/Base_documentaire/imprime_demande_permis_international.pdf")]))]))]));
+   var justifDom = A2($Html.div,
+   _U.list([$Html$Attributes.$class("justif")]),
+   _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Justificatif de domicile ou de résidence")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif de domicile à son nom:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("avis d\'imposition ou de non imposition")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("quittance de loyer")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("facture d\'électricité ou de gaz")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("facture de téléphone fixe ou portable")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("titre de propriété")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("attestation d\'assurance du logement")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("s\'il est hébergé, un justificatif d\'identité de l\'hébergeant \n                               ainsi qu\'une lettre de celui-ci certifiant que le \n                               demandeur habite chez lui depuis plus de trois \n                               mois, et un justificatif de domicile de l\'hébergeant \n                               (voir liste ci dessus)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("dans les autres cas s\'adresser à la mairie du domicile")]))]))]))]));
+   var justifNat = A2($Html.div,
+   _U.list([$Html$Attributes.$class("justif")]),
+   _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Justificatif de la nationalité française")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("si le demandeur est né en France et \n                                  l\'un au moins de ses parents est né \n                                  en France, un extrait de son acte de \n                                  naissance qui comporte les dates et lieux de \n                                  naissance de son (ses) parent(s) peut suffire")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                           _U.list([]),
+                           _U.list([$Html.text("en cas contraire, le demandeur doit produire un \n                                  document attestant qu\'il possède bien la nationalité française. \n                                  Par exemple:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("la déclaration d\'acquisition de la nationalité française")]))]))
+                                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le décret de naturalisation")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le décret de réintégration dans la nationalité française")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("le certificat de nationalité")]))]))]))]))]))]));
+   var passport = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("passDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Bénéficiaire")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le demandeur doit être de nationalité française.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("A noter : Il n\'est plus possible d\'inscrire un enfant mineur sur le passeport de l\'un de ses parents.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Durée de validité")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("10 ans")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Coût")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("88€ (timbre fiscal à acheter dans un bureau de tabac ou au centre des impôts).")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Dépôt de la demande")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La demande est rédigée sur un formulaire à demander en mairie. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le formulaire renseigné doit être déposée à de la mairie du lieu de domicile. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votre présence est exigée lors du dépôt de la demande.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Pièces justificatives à fournir")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Dans tous les cas:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("deux photographies d\'identité identiques, récentes et parfaitement ressemblantes, \n                                de face, tête nue (format 35mm x 45 mm)")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("l\'ancien passeport en cas de renouvellement")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif d\'état civil:")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("une copie intégrale d\'acte de naissance")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou, à défaut la copie intégrale de l\'acte\n                                             de mariage, sous réserve de la preuve de\n                                             l\'impossibilité de produire l\'acte de naissance précité")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un justificatif de nationalité \n                               française : original + photocopie (voir ci dessous)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif de domicile ou de résidence (voir ci dessous)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un autre document officiel avec photographie (passeport, permis \n                               de conduire...) si possible en cas de première \n                               demande.")]))]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("En cas de perte ou de vol de passeport:")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Si le demandeur a perdu ou s\'est fait voler son passeport, il doit, outre les pièces à fournir pour toute demande de passeport :")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de perte")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("la déclarer en renseignant le formulaire de déclaration \n                                           de perte de passeport (au lieu de dépôt \n                                           du dossier)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou, s\'il a déjà effectué cette déclaration auprès \n                                           des services de police nationale ou de gendarmerie, \n                                           d\'un consulat de France à l\'étranger ou des \n                                           services de police étrangers, il doit présenter le \n                                           récépissé de la déclaration,")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("et fournir également si possible un document officiel \n                                           avec photographie (CNI, permis de conduire, carte permis \n                                           de chasser...)")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de vol")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir la déclaration de vol enregistrée auprès des \n                                           services de la police nationale ou de la \n                                           gendarmerie d\'un consulat de France à l\'étranger ou \n                                           des services de police étrangers, ")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir également si possible un document officiel avec \n                                           photographie.")]))]))]))]))]))
+           ,justifNat
+           ,justifDom]));
+   var carteId = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("idDemarches")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Bénéficiaire")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le demandeur doit être de nationalité française.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Durée de validité")]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.$class("important")]),
+           _U.list([$Html.text("À compter du 1er janvier 2014, la durée de validité \n                   des cartes nationales d\'identité délivrées aux personnes majeures \n                   passera de 10 à 15 ans.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Coût")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Gratuit en cas de première demande ou renouvellement\n                     avec présentation de l\'ancienne CNI, 25€ (timbres fiscaux) en\n                     cas de perte ou de vol.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Dépôt de la demande")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La demande est rédigée sur un formulaire à demander en mairie. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le formulaire renseigné doit être déposée à de la mairie du lieu de domicile. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votre présence est exigée lors du dépôt de la demande.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Pièces justificatives à fournir")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Dans tous les cas:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("deux photographies d\'identité identiques, récentes et parfaitement ressemblantes, \n                                de face, tête nue (format 35mm x 45 mm)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un justificatif d\'état civil (extrait d\'acte de naissance \n                                comportant l\'indication de la filiation du demandeur),en cas \n                                de première demande.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Si l\'acte de naissance ne permet pas de \n                               prouver la nationalité : un justificatif de nationalité \n                               française : original + photocopie (voir ci dessous)")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("un justificatif de domicile ou de résidence (voir ci dessous)")]))]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("l\'ancienne CNI en cas de renouvellement")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("un autre document officiel avec photographie (passeport, permis \n                               de conduire...) si possible en cas de première \n                               demande.")]))]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("En cas de perte ou de vol de CNI:")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Si le demandeur a perdu ou s\'est fait voler sa CNI il doit, en plus des pièces à fournir pour toute demande de CNI:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de perte")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("déclarer la perte en renseignant le formulaire de \n                                           déclaration de perte de CNI (au lieu de \n                                           dépôt du dossier de demande de CNI)")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("ou, s\'il a déjà effectué cette déclaration auprès \n                                           des services de police nationale ou de gendarmerie, \n                                           d\'un consulat de France à l\'étranger ou des \n                                           services de police étrangers, il doit présenter le \n                                           récépissé de la déclaration,")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("et fournir également si possible un document officiel \n                                           avec photographie (passeport, permis de conduire, carte permis \n                                           de chasser...)")]))]))]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("En cas de vol")]))
+                           ,A2($Html.ul,
+                           _U.list([]),
+                           _U.list([A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir la déclaration de vol enregistrée auprès des \n                                           services de la police nationale ou de la \n                                           gendarmerie d\'un consulat de France à l\'étranger ou \n                                           des services de police étrangers, ")]))]))
+                                   ,A2($Html.li,
+                                   _U.list([]),
+                                   _U.list([A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([$Html.text("fournir également si possible un document officiel avec \n                                           photographie.")]))]))]))]))]))
+           ,justifNat
+           ,justifDom]));
+   var initialContent = carteId;
+   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Carte d\'identité",_1: carteId}
+                                           ,{ctor: "_Tuple2",_0: "Passeport",_1: passport}
+                                           ,{ctor: "_Tuple2",_0: "Permis de conduire",_1: permis}
+                                           ,{ctor: "_Tuple2",_0: "Véhicules",_1: vehic}
+                                           ,{ctor: "_Tuple2",_0: "Etat civil",_1: etatCiv}
+                                           ,{ctor: "_Tuple2",_0: "Liste électorale",_1: listElec}
+                                           ,{ctor: "_Tuple2",_0: "Service civique",_1: servCiv}]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
          } else {
-            return A2($Html.span,
-            _U.list([]),
-            _U.list([$Html.text(A2($Basics._op["++"],s," ")),A2($Html.span,_U.list([$Html$Attributes.$class("stars")]),_U.list([$Html.text(go(_p1._0))]))]));
+            return _U.update(model,{mainContent: _p0._0});
          }
    });
-   var makeRow = F2(function (_p2,alt) {
-      var _p3 = _p2;
-      var alt$ = alt ? "altLine" : "Line";
-      var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
-      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
-      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
-      var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
-      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
-      var site$ = A2(maybeElem,
-      _p3.site,
-      function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
-      });
-      var mail$ = A2(maybeElem,
-      _p3.mail,
-      function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
-      });
-      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      var label$ = labelToHtml(_p3.label);
-      var name$ = A2($Html.h6,_U.list([]),_U.list([A2(addStars,_p3.stars,_p3.name)]));
-      return A2($Html.tr,
-      _U.list([$Html$Attributes.$class(alt$)]),
-      _U.list([A2($Html.td,_U.list([]),A2($Basics._op["++"],_U.list([name$,label$,refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))))
-              ,A2($Html.td,_U.list([]),_U.list([pics$]))]));
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
    });
-   var makeTable = F2(function (name,entries) {
-      var makeRows = F2(function (b,xs) {
-         var _p4 = xs;
-         if (_p4.ctor === "[]") {
-               return _U.list([]);
-            } else {
-               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
-            }
-      });
-      return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
-   });
-   var restaurants = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("restosTourisme")]),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des\n                     produits du terroir qui font sa réputation :\n                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme\n                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh !\n                     le bon jambon d’Auvergne, les saucisses et les\n                     saucissons), le tout arrosé, avec modération, de vins\n                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,\n                     Boudes ou Corent. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le tableau ne serait pas complet, si nous\n                     ne citions quelques autres spécialités régionales comme la\n                     truffade, l\'aligot, la potée auvergnate, les tripoux ou\n                     encore les lentilles du Puy que vous dégusterez\n                     chaudes, agrémentées d\'oignons et de quelques lardons ou,\n                     en été, froides en salade... un délice... ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une\n                     Gentiane ou une Salers, vous apprécierez sans aucun\n                     doute de le terminer par une petite verveine. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Restaurants")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
-           ,A2(makeTable,"restosBeaunes",restosBeaunes)
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
-           ,A2(makeTable,"restosMurol",restosMurol)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar - Brasserie")]))
-           ,A2(makeTable,"barBrasserie",barBrasserie)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
-           ,A2(makeTable,"barDeNuit",barDeNuit)]));
-   var hebergements = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("hebergTourisme")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                                   Beaucoup d\'entre eux se sont engagés dans des \n                                   démarches de qualité, symbolisées par différents labels. Certains \n                                   sont hôtels restaurants et offrent une prestation en \n                                   demi-pension et pension complète. ")]))
-           ,A2(makeTable,"hotels",hotels)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Campings")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Ils offrent de bonnes conditions de confort et \n                                   beaucoup d\'entre eux s\'engagent dans des démarches de \n                                   qualité, symbolisées par différents labels. Certains d\'entre eux \n                                   proposent également des locations de mobil-homes, chalets ou \n                                   bungalows.")]))
-           ,A2(makeTable,"campings",campings)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Chambres d\'Hôtes")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                                   en proposant des prestations de très bon confort. \n                                   Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                                   de personnes passionnées par leur région et attentives \n                                   à la qualité de l\'accueil.")]))
-           ,A2(makeTable,"chambresHotes",chambresHotes)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Meublés")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                                   répondront à toutes les attentes et à tous \n                                   les budgets. Les meublés que nous vous proposons \n                                   sont tous classés par la préfecture. Le classement, \n                                   en étoiles, indique le degré de confort de \n                                   la location. Certains sont même labellisés. ")]))
-           ,A2(makeTable,"meubles",meubles)
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Village Vacances")]))
-           ,A2(makeTable,"azureva",azureva)]));
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
       _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A3($Murol.renderSubMenu,address,"Tourisme:",function (_) {    return _.subMenu;}(model))
+              _U.list([A3($Murol.renderSubMenu,address,"Vos démarches:",function (_) {    return _.subMenu;}(model))
                       ,function (_) {
                          return _.mainContent;
                       }(model)]))
               ,$Murol.pageFooter]));
    });
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initTourisme")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04-73-88-60-23")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mail : bt.murol-chambon@sancy.com")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.\n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))
-           ,$Murol.renderListImg($Murol.logos)]));
-   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Découvrir Murol",_1: decouvrir}
-                                           ,{ctor: "_Tuple2",_0: "Accueil Tourisme",_1: initialContent}
-                                           ,{ctor: "_Tuple2",_0: "Restaurants",_1: restaurants}
-                                           ,{ctor: "_Tuple2",_0: "Carte & plan",_1: carte}
-                                           ,{ctor: "_Tuple2",_0: "Hebergements",_1: hebergements}]));
-   var changeMain = F2(function (model,s) {
-      var newContent = A2($Dict.get,s,contentMap);
-      var _p5 = newContent;
-      if (_p5.ctor === "Nothing") {
-            return model;
-         } else {
-            return _U.update(model,{mainContent: _p5._0});
-         }
-   });
-   var update = F2(function (action,model) {
-      var _p6 = action;
-      switch (_p6.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p6._0);
-         default: return model;}
-   });
-   var subMenu = _U.list(["Accueil Tourisme","Découvrir Murol","Hebergements","Restaurants","Carte & plan","Animation estivale"]);
+   var subMenu = _U.list(["Carte d\'identité","Passeport","Permis de conduire","Véhicules","Etat civil","Liste électorale","Service civique"]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.Tourisme.values = {_op: _op
-                                 ,subMenu: subMenu
-                                 ,initialContent: initialContent
-                                 ,initialModel: initialModel
-                                 ,contentMap: contentMap
-                                 ,view: view
-                                 ,addStars: addStars
-                                 ,FamillePlus: FamillePlus
-                                 ,NoLabel: NoLabel
-                                 ,TableEntry: TableEntry
-                                 ,emptyTe: emptyTe
-                                 ,makeTable: makeTable
-                                 ,makeRow: makeRow
-                                 ,maybeElem: maybeElem
-                                 ,nullTag: nullTag
-                                 ,labelToHtml: labelToHtml
-                                 ,update: update
-                                 ,changeMain: changeMain
-                                 ,main: main
-                                 ,decouvrir: decouvrir
-                                 ,restaurants: restaurants
-                                 ,restosBeaunes: restosBeaunes
-                                 ,restosMurol: restosMurol
-                                 ,barBrasserie: barBrasserie
-                                 ,barDeNuit: barDeNuit
-                                 ,carte: carte
-                                 ,hebergements: hebergements
-                                 ,azureva: azureva
-                                 ,hotels: hotels
-                                 ,campings: campings
-                                 ,chambresHotes: chambresHotes
-                                 ,meubles: meubles};
+   return _elm.VosDemarches.values = {_op: _op
+                                     ,subMenu: subMenu
+                                     ,initialModel: initialModel
+                                     ,view: view
+                                     ,contentMap: contentMap
+                                     ,update: update
+                                     ,changeMain: changeMain
+                                     ,main: main
+                                     ,initialContent: initialContent
+                                     ,carteId: carteId
+                                     ,justifNat: justifNat
+                                     ,justifDom: justifDom
+                                     ,passport: passport
+                                     ,permis: permis
+                                     ,vehic: vehic
+                                     ,etatCiv: etatCiv
+                                     ,listElec: listElec
+                                     ,servCiv: servCiv};
 };

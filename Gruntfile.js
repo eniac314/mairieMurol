@@ -16,7 +16,10 @@ module.exports = function(grunt) {
           "./js/entreprises.js": ["./src/Entreprises.elm"],
           "./js/lesSeniors.js": ["./src/LesSeniors.elm"],
           "./js/offresEmploi.js": ["./src/OffresEmploi.elm"],
-          "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"]
+          "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"],
+          "./js/laCommune.js": ["./src/LaCommune.elm"],
+          "./js/vosDemarches.js": ["./src/VosDemarches.elm"]
+
         }
       }
     },
@@ -34,7 +37,9 @@ module.exports = function(grunt) {
                 , "./src/Entreprises.elm"
                 , "./src/LesSeniors.elm"
                 , "./src/OffresEmploi.elm"
-                , "./src/QuinzaineCom.elm"],
+                , "./src/QuinzaineCom.elm"
+                , "./src/LaCommune.elm"
+                , "./src/VosDemarches.elm"],
         tasks: ["elm"]
       }
     },
