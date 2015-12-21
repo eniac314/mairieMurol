@@ -527,6 +527,7 @@ h5.trashCat {
  
 .businesses h5 {
   border: 1px double black;
+  color: black;
   font-size: 17px;
   margin-bottom: 0;
   margin-top: 0.5em;
@@ -591,20 +592,39 @@ h5.trashCat {
 -------------------------------------------------------------------------------*/
 #conseilMunicipal table {
   border-collapse: collapse;
-  text-align: center;
   font-size: 18px;
   border: 1px solid black;
+}
+#conseilMunicipal table p {
+  text-align: left;
 }
 
 #conseilMunicipal tr {
   border-bottom: 1px solid gray;
 }
+#conseilMunicipal tr:hover {
+  background-color: rgb(200, 210, 200);
+  transition-duration: 1s;
 
+}
 #conseilMunicipal td {
   border-style: none;
 }
-#conseilMunicipal td:nth-child(odd) {
+#conseilMunicipal td:nth-child(even) {
+  width: 30%;
+}
 
+.status {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: rgba(255, 255, 240, 0.5);
+  padding: 0.5em;
+}
+.nom {
+  border-bottom: 1px solid rgb(1, 1, 10);
+  /*background-color: rgba(211, 211, 211, 0.8);*/
+}
+.jop {
 }
 
 #conseilMunicipal img {
