@@ -635,8 +635,44 @@ h5.trashCat {
   border-left: 1px solid gray;
   border-bottom: 1px solid black;
 }
-
 /*--end of code for conseilMunicipal---------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for gestionDesRisques
+-------------------------------------------------------------------------------*/
+#gestionDesRisques img {
+  width: 95%;
+}
+/*--end of code for gestionDesRisques--------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for gestionDesRisques
+-------------------------------------------------------------------------------*/
+#horairesContact {
+  background-image: url(/images/Mairiebg.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+#horairesContact figure {
+  display: block;
+  text-align: center;
+}
+#horairesContact h5 {
+  color: white;
+  text-align: center;
+}
+
+#horairesContact p {
+  width: 90%;
+  text-align: center;
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+
+/*--end of code for horairesContact----------------------------------------------*/
 
 /*--end of code for Mairie-------------------------------------------------------*/
 
