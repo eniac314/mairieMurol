@@ -157,8 +157,10 @@ carteId =
                      ]
                 ]
            ]
-      , justifNat
-      , justifDom
+      , div [class "justifFrame"]
+           [ justifNat
+           , justifDom 
+           ]
       ]
 justifNat = 
   div [class "justif"]
@@ -273,8 +275,10 @@ passport =
                      ]
                 ]
            ]
-      , justifNat
-      , justifDom
+      , div [class "justifFrame"]
+           [ justifNat
+           , justifDom 
+           ]
       ]
 
 permis = 

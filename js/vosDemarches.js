@@ -10508,7 +10508,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([A2(Leaf,"La commune","")
                    ,A2(Leaf,"Vos démarches","")
                    ,A2(Leaf,"Conseil municipal","")
-                   ,A2(Leaf,"CMU","")
+                   ,A2(Leaf,"CMJ","")
                    ,A2(Leaf,"CCAS","")
                    ,A2(Leaf,"Commissions","")
                    ,A2(Leaf,"Gestion des risques","")
@@ -11015,8 +11015,7 @@ Elm.VosDemarches.make = function (_elm) {
                                    _U.list([A2($Html.p,
                                    _U.list([]),
                                    _U.list([$Html.text("fournir également si possible un document officiel avec \n                                           photographie.")]))]))]))]))]))
-           ,justifNat
-           ,justifDom]));
+           ,A2($Html.div,_U.list([$Html$Attributes.$class("justifFrame")]),_U.list([justifNat,justifDom]))]));
    var carteId = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("idDemarches")]),
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Bénéficiaire")]))
@@ -11102,8 +11101,7 @@ Elm.VosDemarches.make = function (_elm) {
                                    _U.list([A2($Html.p,
                                    _U.list([]),
                                    _U.list([$Html.text("fournir également si possible un document officiel avec \n                                           photographie.")]))]))]))]))]))
-           ,justifNat
-           ,justifDom]));
+           ,A2($Html.div,_U.list([$Html$Attributes.$class("justifFrame")]),_U.list([justifNat,justifDom]))]));
    var initialContent = carteId;
    var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Carte d\'identité",_1: carteId}
                                            ,{ctor: "_Tuple2",_0: "Passeport",_1: passport}

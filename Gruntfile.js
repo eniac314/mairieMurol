@@ -19,7 +19,9 @@ module.exports = function(grunt) {
           "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"],
           "./js/laCommune.js": ["./src/LaCommune.elm"],
           "./js/vosDemarches.js": ["./src/VosDemarches.elm"],
-          "./js/conseilMunicipal.js": ["./src/ConseilMunicipal.elm"]
+          "./js/conseilMunicipal.js": ["./src/ConseilMunicipal.elm"],
+          "./js/cmj.js": ["./src/CMJ.elm"]
+
 
         }
       }
@@ -41,7 +43,8 @@ module.exports = function(grunt) {
                 , "./src/QuinzaineCom.elm"
                 , "./src/LaCommune.elm"
                 , "./src/VosDemarches.elm"
-                , "./src/ConseilMunicipal.elm"],
+                , "./src/ConseilMunicipal.elm"
+                , "./src/CMJ.elm"],
         tasks: ["elm"]
       }
     },

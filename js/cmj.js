@@ -10562,11 +10562,11 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
-Elm.Covoiturage = Elm.Covoiturage || {};
-Elm.Covoiturage.make = function (_elm) {
+Elm.CMJ = Elm.CMJ || {};
+Elm.CMJ.make = function (_elm) {
    "use strict";
-   _elm.Covoiturage = _elm.Covoiturage || {};
-   if (_elm.Covoiturage.values) return _elm.Covoiturage.values;
+   _elm.CMJ = _elm.CMJ || {};
+   if (_elm.CMJ.values) return _elm.CMJ.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10581,21 +10581,105 @@ Elm.Covoiturage.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initCovoit")]),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                      ! Au lieu que chacun utilise sa voiture \n                      pour effectuer des trajets quotidiens ou ponctuels, le \n                      covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                      personnes. Cela permet évidement de réduire les coûts \n                      de transport (prix de l\'essence, usure de la \n                      voiture, ...), la pollution, les temps de transport. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("cmj")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Présentation du Conseil municipal des jeunes (CMJ)")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le CMJ est élu pour un mandat de \n                     2 ans.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("En effet, le covoiturage vous permettra de diminuer \n                    largement vos frais liés à vos trajets en \n                    voiture (essence, usure de la voiture, ...). Dans \n                    le cas d\'un covoiturage alterné (plusieurs conducteurs qui \n                    conduisent par alternance) vous pourrez diviser vos frais \n                    de trajet par autant de conducteur qui participe \n                    au covoiturage. Dans le cas d\'un covoiturage avec \n                    participation (Les passagers participent financièrement aux trajets), là \n                    encore on observera une nette diminution des frais \n                    engendrés par l\'utilisation de votre voiture. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Un geste pour l\'écologie")]))
+           _U.list([$Html.text("Rôles et objectifs du conseil municipal des jeunes \n                     Le conseil municipal des jeunes a pour mission \n                     d\'initier les jeunes à la vie politique réelle \n                     et de collecter les idées et initiatives pour \n                     améliorer la vie dans le cadre de la \n                     municipalité. Ils débattent dans tous les domaines, (embellissement, \n                     animation, tourisme, associations, jeunesse et sport, agriculture, environnement, \n                     forêt, musée, culture, patrimoine, social, etc…) ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Election du CMJ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le covoiturage est une pratique qui permet de \n                      diminuer significativement le nombre de voiture circulant sur \n                      les routes. La première conséquence est la diminution \n                      de la pollution et de l\'émission des gaz \n                      à effet de serre. Ceci permet également la \n                      diminution de consommation d\'énergie non renouvelable comme le \n                      pétrole. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://www.covoiturageauvergne.net","http://www.covoiturageauvergne.net")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://www.covoiturage.fr/","http://www.covoiturage.fr/")]))]));
+           _U.list([$Html.text("Tous les jeunes de 9 ans et jusqu\'à \n                     20 ans votent pour élire les jeunes conseillers. \n                     Pour que toutes les classes d\'âge soient représentées \n                     le conseil est subdivisé en 2 collèges électoraux. \n                     Les jeunes sont élus pour deux ans et \n                     siègent sous la présidence du Maire. ")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([]),_U.list([$Html.text("Pour être ELECTEUR")]))
+                           ,A2($Html.th,_U.list([]),_U.list([$Html.text("Pour être CANDIDAT")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("habiter la commune de Murol")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("habiter la commune de Murol")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("avoir entre 9 et 20 ans au moment de l\'élection")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("avoir entre 9 et 20 ans au moment de l\'élection")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("")])),A2($Html.td,_U.list([]),_U.list([$Html.text("faire acte de candidature")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("avoir l\'autorisation parentale (pour les mineurs) ")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("avoir envie de s\'investir dans la vie de la commune")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les jeunes feront acte de candidatures à la \n                     mairie, munis de la déclaration de candidature, de \n                     l\'autorisation parentale, pour les mineurs) et de la \n                     charte du candidat (documents téléchargeable sur la page \n                     documents) ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Collège électoral et sièges à pourvoir")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les électeurs seront répartis en 2 collèges électoraux \n                     comportant chacun 7 sièges : - 1er collège, \n                     pour les jeunes de 9 à 12 ans \n                     inclus. - 2ème collège, pour les jeunes de \n                     13 à 20 ans. Le CMJ se composera \n                     du maire et des 14 jeunes élus. ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vote sur la liste et le décompte des voix")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Il s\'agit d\'un mode de scrutin à un \n                     seul tour. Chaque électeur vote en utilisant la \n                     liste de son collège électoral et se voit \n                     reconnaître la possibilité d\'y barrer un ou plusieurs \n                     noms de candidats. Sur une liste comportant des \n                     modifications, seuls les 7 premiers noms seront comptabilisés. \n                     Les bulletins blancs sont autorisés. Ils seront comptabilisés \n                     comme des suffrages exprimés. Les bulletins nuls ne \n                     seront pas comptés comme suffrages exprimés.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Tous les jeunes murolais, de 9 à 20 \n                     ans, peuvent se présenter. Les candidats pourront, s\'ils \n                     le souhaitent, faire leur campagne électorale en faisant \n                     des affiches ou des tracts pour présenter leurs \n                     propositions. Les services municipaux prépareront tout le matériel \n                     nécessaire pour le vote : o les bulletins \n                     de vote : sur chaque bulletin seront inscrits \n                     les noms des candidats par collèges. o Les \n                     enveloppes : pour y glisser le bulletin o \n                     Les urnes : où chacun déposera son enveloppe \n                     o Les isoloirs : ce sont des petites \n                     cabines où les votants devront s\'isoler pour choisir \n                     tranquillement le candidat pour qui ils voteront. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Comment Voter?")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le vote se déroule à bulletin secret (sous \n                     enveloppe) selon les conditions générales des votes en \n                     France. Il faut exprimer son choix en déposant \n                     le bulletin des candidats que vous aurez choisi \n                     dans une enveloppe.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vote (comptabilisé):")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Vous placez un bulletin de vote dans l\'enveloppe, sans rature.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Vous placez un bulletin modifié dans l\'enveloppe seuls les 7 premiers noms sont comptés.")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Si vous mettez un bulletin blanc, votre vote sera comptabilisé comme un suffrage exprimé. ")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Si vous mettez plusieurs bulletins identiques, un seul comptera. Dans tous les cas vous aurez voté et donc marqué votre intérêt à la vie publique.")]))]))]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("En cas d\'absence vous pourrez voter par procuration.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Après le vote")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le scrutin est déclaré clos à l\'issue de \n                     la journée d\'élection, dont la date est fixée \n                     le 11 octobre 2014. Le dépouillement des enveloppes \n                     se déroule dès la clôture du scrutin. Celui \n                     ou celle qui a obtenu le plus de \n                     voix dans son collège électoral est élu, conseillé \n                     municipal des jeunes de la commune. S\'il y \n                     a égalité de voix, c\'est le ou la \n                     plus âgé(e) qui l\'emporte. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le travail des conseillers")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les nouveaux élus commencent par découvrir les services \n                     municipaux. Ils apprennent leurs fonctionnements et les diverses \n                     possibilités d\'intervention. Les conseillers se réunissent plusieurs fois \n                     par an en conseil municipal avec le maire. \n                     Ils organisent également des réunions de travail pour \n                     élaborer leurs projets. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Deux réunions d\'informations seront organisées par la commission \n                     \"Jeunesse & sport\" pour présenter à \n                     l\'ensemble des jeunes de la commune le CMJ. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Calendrier")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Première réunion, fixée au 2 juillet 2014 à \n                     18h00 à la salle des fêtes. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Du 13 au 19 septembre 2014, dépôts de \n                     candidatures au CMJ ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Du 1 au 10 octobre, campagne des candidats ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Samedi 11 octobre 2014 de 10h à 12h00 \n                    : élections du CMJ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Renseignements sur murol.fr/mairie/CMJ ou à la mairie.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Documents")]))
+           ,A2($Murol.link,"Demande de subvention","http://www.murol.fr/Base_documentaire/Associations/Demande%20de%20subvention.pdf")
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Murol.link,"Fiche SACEM","http://www.murol.fr/Base_documentaire/Associations/fiche%20SACEM%20-%20mairie.pdf")
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Murol.link,"SACEM","http://www.murol.fr/Base_documentaire/Associations/SACEM.pdf")
+           ,A2($Html.br,_U.list([]),_U.list([]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -10620,16 +10704,18 @@ Elm.Covoiturage.make = function (_elm) {
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
+   var Category = F2(function (a,b) {    return {title: a,entries: b};});
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.Covoiturage.values = {_op: _op
-                                    ,subMenu: subMenu
-                                    ,initialModel: initialModel
-                                    ,view: view
-                                    ,contentMap: contentMap
-                                    ,update: update
-                                    ,changeMain: changeMain
-                                    ,main: main
-                                    ,initialContent: initialContent};
+   return _elm.CMJ.values = {_op: _op
+                            ,subMenu: subMenu
+                            ,initialModel: initialModel
+                            ,Category: Category
+                            ,view: view
+                            ,contentMap: contentMap
+                            ,update: update
+                            ,changeMain: changeMain
+                            ,main: main
+                            ,initialContent: initialContent};
 };

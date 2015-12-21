@@ -10508,7 +10508,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([A2(Leaf,"La commune","")
                    ,A2(Leaf,"Vos démarches","")
                    ,A2(Leaf,"Conseil municipal","")
-                   ,A2(Leaf,"CMU","")
+                   ,A2(Leaf,"CMJ","")
                    ,A2(Leaf,"CCAS","")
                    ,A2(Leaf,"Commissions","")
                    ,A2(Leaf,"Gestion des risques","")
