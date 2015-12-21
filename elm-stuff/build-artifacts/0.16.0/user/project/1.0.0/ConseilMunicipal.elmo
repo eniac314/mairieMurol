@@ -77,91 +77,155 @@ Elm.ConseilMunicipal.make = function (_elm) {
            _U.list([A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/GOUTTEBEL.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Maire")]))
+                           ,A2($Html.td,_U.list([]),_U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Maire")]))]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Sébastien GOUTTEBEL, \n                                     Président SIVOM de la Vallée Verte\n                                     Président des Maires Ruraux du Puy-de-Dôme")]))]))
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Sébastien GOUTTEBEL")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Président SIVOM de la Vallée Verte\n                                         Président des Maires Ruraux du Puy-de-Dôme")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DUMONTEL.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("1er adjoint")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Roger DUMONTEL\n                                     Retraité Michelin")]))]))
+                           ,A2($Html.td,_U.list([]),_U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("1er adjoint")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Roger DUMONTEL")]))
+                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Retraité Michelin")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/AUBERTY.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2ème Adjoint")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("François AUBERTY,\n                                     Capitaine - Chef de compagnie\n                                     des Sapeurs Pompiers")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("2ème Adjoint")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("François AUBERTY")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Capitaine - Chef de compagnie\n                                         des Sapeurs Pompiers")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/BOUCHE.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("3ème adjoint")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Estel BOUCHE, \n                                     Professeur d\'anglais")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("3ème adjoint")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Estel BOUCHE")]))
+                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Professeur d\'anglais")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/GILLARD.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("4ème adjoint")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Sylvie GILLARD,\n                                     Vice-Présidente du CCAS\n                                     Professeur des Ecoles")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("4ème adjoint")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Sylvie GILLARD")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Vice-Présidente du CCAS\n                                         Professeur des Ecoles")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/CATTARELLI.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Yvan CATTARELLI, \n                                     Commerçant retraité")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Yvan CATTARELLI")]))
+                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Commerçant retraité")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/COMPAGNON.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Gilles COMPAGNON,\n                                     Technicien informatique")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Gilles COMPAGNON")]))
+                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Technicien informatique")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DEBOUT.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Véronique DEBOUT,  \n                                     Webmaster du site \"murol.fr\"\n                                     Bénévole associatif - Militaire à la retraite ")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Véronique DEBOUT")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Webmaster du site \"murol.fr\"\n                                         Bénévole associatif - Militaire à la retraite")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DOTTE.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Anne-Marie DOTTE,\n                                     Retraitée du Tourisme\n                                     Co-présidente du COSA")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Anne-Marie DOTTE")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Retraitée du Tourisme\n                                            Co-présidente du COSA")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/LAIR.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Angélique LAIR, \n                                     Présidente du Syndicat agricole\n                                     Exploitante agricole")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Angélique LAIR")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Présidente du Syndicat agricole\n                                         Exploitante agricole")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/LANARO.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Joséphine LANARO, \n                                     Membre du CCAS\n                                     responsable de la régie d’avance\n                                     Educatrice\n                                     spécialisée retraitée")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Joséphine LANARO")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Membre du CCAS\n                                        responsable de la régie d’avance\n                                        Educatrice\n                                        spécialisée retraitée")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/MAURY.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Cathy MAURY,  \n                                     Responsable de Halte Garderie ")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Cathy MAURY")]))
+                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Responsable de Halte Garderie")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/PEROL.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
                            ,A2($Html.td,
                            _U.list([]),
-                           _U.list([$Html.text("Séverine PEROL,  \n                                    Exploitante agricole -\n                                    Présidente de l’association pour l’expansion\n                                    du St Nectaire")]))]))
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Séverine PEROL")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.$class("job")]),
+                                   _U.list([$Html.text("Exploitante agricole -\n                                        Présidente de l’association pour l’expansion\n                                        du St Nectaire")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/ROUX.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Conseiller municipal")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Christelle ROUX\n                                     Commerciale")]))]))]))]));
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
+                           ,A2($Html.td,
+                           _U.list([]),
+                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Christelle ROUX")]))
+                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Commerciale")]))]))]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

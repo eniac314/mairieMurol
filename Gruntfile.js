@@ -20,7 +20,8 @@ module.exports = function(grunt) {
           "./js/laCommune.js": ["./src/LaCommune.elm"],
           "./js/vosDemarches.js": ["./src/VosDemarches.elm"],
           "./js/conseilMunicipal.js": ["./src/ConseilMunicipal.elm"],
-          "./js/cmj.js": ["./src/CMJ.elm"]
+          "./js/cmj.js": ["./src/CMJ.elm"],
+          "./js/ccas.js": ["./src/CCAS.elm"]
 
 
         }
@@ -44,7 +45,8 @@ module.exports = function(grunt) {
                 , "./src/LaCommune.elm"
                 , "./src/VosDemarches.elm"
                 , "./src/ConseilMunicipal.elm"
-                , "./src/CMJ.elm"],
+                , "./src/CMJ.elm"
+                , "./src/CCAS.elm"],
         tasks: ["elm"]
       }
     },

@@ -1,0 +1,84 @@
+Elm.CCAS = Elm.CCAS || {};
+Elm.CCAS.make = function (_elm) {
+   "use strict";
+   _elm.CCAS = _elm.CCAS || {};
+   if (_elm.CCAS.values) return _elm.CCAS.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("ccas")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Centre Communal d\'Action Social")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Président: Sébastien GOUTTEBEL")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vice-présidente: Sylvie GILLARD")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Régie : Joséphine LANARO")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("+ cinq membres non élus à désigner par le maire parmi les Murolais.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Mutuelle municipale")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votre avis compte !")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Lors des élections, vous avez soutenu l’élaboration d’un \n                     projet concret pour améliorer votre pouvoir d’achat :")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("la création d’une complémentaire santé communale avec un \n                     tarif unique et accessible à tous. Une complémentaire \n                     santé, rappelons-le, sert à couvrir partiellement ou en \n                     totalité les frais médicaux non remboursés par votre \n                     assurance maladie. Nous sollicitons aujourd’hui un peu de \n                     votre temps pour répondre à quelques questions qui \n                     permettront de créer une offre adaptée à vos \n                     besoins. Grâce au questionnaire ci-dessous les tarifs des \n                     différentes mutuelles seront mis en concurrence. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La commune lance une consultation pour proposer une \n                     complémentaire santé à des tarifs négociés à ses \n                     habitants. Proposé aux murolais de se regrouper pour \n                     négocier une complémentaire santé à des tarifs préférentiels")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Vous recevrez dans le bulletin municipal un questionnaire \n                     à remplir et à retourner pour cerner les \n                     besoins et les personnes concernées par ce dispositif, \n                     vous pouvez également répondre en ligne au questionnaire \n                     en suivant le lien ci-dessous.. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Une fois les réponses des murolais compilées par \n                    la mairie, les élus passeront ensuite à la \n                    phase de négociation avec les organismes de santé. \n                    \" Plus nous serons nombreux, plus les tarifs \n                    seront intéressants.\"")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Questionnaire Mutuelle municipale")]))
+           ,A2($Murol.link,"Remplir en ligne","https://docs.google.com/forms/d/179U2zTrhm6usamB724BMlI197oXq58-TS-3sIi933wM/viewform?usp=send_form")]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var Category = F2(function (a,b) {    return {title: a,entries: b};});
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.CCAS.values = {_op: _op
+                             ,subMenu: subMenu
+                             ,initialModel: initialModel
+                             ,Category: Category
+                             ,view: view
+                             ,contentMap: contentMap
+                             ,update: update
+                             ,changeMain: changeMain
+                             ,main: main
+                             ,initialContent: initialContent};
+};

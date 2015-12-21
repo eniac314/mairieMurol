@@ -140,85 +140,112 @@ initialContent =
       , h4 [] [text "Vos élus"]
       , table [] 
               [ tr [] [ td [] [img [src "/images/elus/GOUTTEBEL.jpg"] []]
-                      , td [] [text "Maire"]
-                      , td [] [text "Sébastien GOUTTEBEL, 
-                                     Président SIVOM de la Vallée Verte
-                                     Président des Maires Ruraux du Puy-de-Dôme"]
+                      , td [] [span [class "status"] [text "Maire"]]
+                      , td [] [ p [class "nom"] [text "Sébastien GOUTTEBEL"]
+                              , p [class "job"]
+                                  [text "Président SIVOM de la Vallée Verte
+                                         Président des Maires Ruraux du Puy-de-Dôme"]  
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/DUMONTEL.jpg"] []]
-                      , td [] [text "1er adjoint"]
-                      , td [] [text "Roger DUMONTEL
-                                     Retraité Michelin"]
+                      , td [] [span [class "status"] [text "1er adjoint"]]
+                      , td [] [ p [class "nom"] [text "Roger DUMONTEL"]
+                              , p [class "job"]
+                                  [text "Retraité Michelin"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/AUBERTY.jpg"] []]
-                      , td [] [text "2ème Adjoint"]
-                      , td [] [text "François AUBERTY,
-                                     Capitaine - Chef de compagnie
-                                     des Sapeurs Pompiers"]
+                      , td [] [span [class "status"] [text "2ème Adjoint"]]
+                      , td [] [ p [class "nom"] [text "François AUBERTY"]
+                              , p [class "job"]
+                                  [text "Capitaine - Chef de compagnie
+                                         des Sapeurs Pompiers"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/BOUCHE.jpg"] []]
-                      , td [] [text "3ème adjoint"]
-                      , td [] [text "Estel BOUCHE, 
-                                     Professeur d'anglais"]
+                      , td [] [span [class "status"] [text "3ème adjoint"]]
+                      , td [] [ p [class "nom"] [text "Estel BOUCHE"]
+                              , p [class "job"]
+                                  [text "Professeur d'anglais"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/GILLARD.jpg"] []]
-                      , td [] [text "4ème adjoint"]
-                      , td [] [text "Sylvie GILLARD,
-                                     Vice-Présidente du CCAS
-                                     Professeur des Ecoles"]
+                      , td [] [span [class "status"] [text "4ème adjoint"]]
+                      , td [] [ p [class "nom"] [text "Sylvie GILLARD"]
+                              , p [class "job"]
+                                  [text "Vice-Présidente du CCAS
+                                         Professeur des Ecoles"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/CATTARELLI.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Yvan CATTARELLI, 
-                                     Commerçant retraité"]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Yvan CATTARELLI"]
+                              , p [class "job"]
+                                  [text "Commerçant retraité"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/COMPAGNON.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Gilles COMPAGNON,
-                                     Technicien informatique"]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Gilles COMPAGNON"]
+                              , p [class "job"]
+                                  [text "Technicien informatique"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/DEBOUT.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Véronique DEBOUT,  
-                                     Webmaster du site \"murol.fr\"
-                                     Bénévole associatif - Militaire à la retraite "]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Véronique DEBOUT"]
+                              , p [class "job"]
+                                  [text "Webmaster du site \"murol.fr\"
+                                         Bénévole associatif - Militaire à la retraite"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/DOTTE.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Anne-Marie DOTTE,
-                                     Retraitée du Tourisme
-                                     Co-présidente du COSA"]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Anne-Marie DOTTE"]
+                              , p [class "job"]
+                                  [text "Retraitée du Tourisme
+                                            Co-présidente du COSA"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/LAIR.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Angélique LAIR, 
-                                     Présidente du Syndicat agricole
-                                     Exploitante agricole"]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Angélique LAIR"]
+                              , p [class "job"]
+                                  [text "Présidente du Syndicat agricole
+                                         Exploitante agricole"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/LANARO.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Joséphine LANARO, 
-                                     Membre du CCAS
-                                     responsable de la régie d’avance
-                                     Educatrice
-                                     spécialisée retraitée"]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Joséphine LANARO"]
+                              , p [class "job"]
+                                  [text "Membre du CCAS
+                                        responsable de la régie d’avance
+                                        Educatrice
+                                        spécialisée retraitée"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/MAURY.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Cathy MAURY,  
-                                     Responsable de Halte Garderie "]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Cathy MAURY"]
+                              , p [class "job"]
+                                  [text "Responsable de Halte Garderie"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/PEROL.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Séverine PEROL,  
-                                    Exploitante agricole -
-                                    Présidente de l’association pour l’expansion
-                                    du St Nectaire"]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Séverine PEROL"]
+                              , p [class "job"] 
+                                  [text "Exploitante agricole -
+                                        Présidente de l’association pour l’expansion
+                                        du St Nectaire"]
+                              ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/ROUX.jpg"] []]
-                      , td [] [text "Conseiller municipal"]
-                      , td [] [text "Christelle ROUX
-                                     Commerciale"]
+                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [ p [class "nom"] [text "Christelle ROUX"]
+                              , p [class "job"] [text "Commerciale"]
+                              ]
                       ]
               ]
 

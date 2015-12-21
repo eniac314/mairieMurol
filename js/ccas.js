@@ -10562,11 +10562,11 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
-Elm.ConseilMunicipal = Elm.ConseilMunicipal || {};
-Elm.ConseilMunicipal.make = function (_elm) {
+Elm.CCAS = Elm.CCAS || {};
+Elm.CCAS.make = function (_elm) {
    "use strict";
-   _elm.ConseilMunicipal = _elm.ConseilMunicipal || {};
-   if (_elm.ConseilMunicipal.values) return _elm.ConseilMunicipal.values;
+   _elm.CCAS = _elm.CCAS || {};
+   if (_elm.CCAS.values) return _elm.CCAS.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -10581,215 +10581,32 @@ Elm.ConseilMunicipal.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("conseilMunicipal")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Le Conseil Municipal")]))
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("ccas")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Centre Communal d\'Action Social")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Président: Sébastien GOUTTEBEL")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vice-présidente: Sylvie GILLARD")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Régie : Joséphine LANARO")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("+ cinq membres non élus à désigner par le maire parmi les Murolais.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Mutuelle municipale")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votre avis compte !")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le conseil municipal règle par ses délibérations les \n                     affaires de la commune : vote du budget, \n                     gestion du domaine municipal… Le nombre d’adjoints est \n                     déterminé par le nombre d’habitants de la ville. \n                     Avec ses 500 habitants, Murol bénéficie de 4 \n                     adjoints. Le conseil se réunit généralement une fois \n                     par mois, sauf en été. Les séances sont \n                     publiques.")]))
+           _U.list([$Html.text("Lors des élections, vous avez soutenu l’élaboration d’un \n                     projet concret pour améliorer votre pouvoir d’achat :")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Dans un souci de transparence et de participation \n                     des citoyens à la démocratie locale, les projets \n                     de délibération soumis au vote du Conseil Municipal \n                     sont diffusés avant chaque séance.")]))
+           _U.list([$Html.text("la création d’une complémentaire santé communale avec un \n                     tarif unique et accessible à tous. Une complémentaire \n                     santé, rappelons-le, sert à couvrir partiellement ou en \n                     totalité les frais médicaux non remboursés par votre \n                     assurance maladie. Nous sollicitons aujourd’hui un peu de \n                     votre temps pour répondre à quelques questions qui \n                     permettront de créer une offre adaptée à vos \n                     besoins. Grâce au questionnaire ci-dessous les tarifs des \n                     différentes mutuelles seront mis en concurrence. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les comptes-rendus des débats et les délibérations sont \n                     publiés à l’issue des séances sur la page \n                     compte rendu, vous les trouverez également sur les \n                     panneaux d\'informations de la mairie. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Rôles et missions des élus")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Le Maire")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le Maire est le représentant de l’Etat dans la commune. ")]))
+           _U.list([$Html.text("La commune lance une consultation pour proposer une \n                     complémentaire santé à des tarifs négociés à ses \n                     habitants. Proposé aux murolais de se regrouper pour \n                     négocier une complémentaire santé à des tarifs préférentiels")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("A ce titre, il est officier d’état civil \n                     et officier de police judiciaire, chargé de missions \n                     déléguées par l’Etat : ")]))
-           ,A2($Html.ul,
-           _U.list([]),
-           _U.list([A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("il gère certains services administratifs (état civil, \n                                listes électorales, listes de conscription …) ")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("il fait exécuter les lois, règlements et \n                                décisions transmis par le préfecture")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("il veille, en accord avec le préfet, \n                                à la bonne marche de la police municipale \n                                qui a pour mission de faire respecter les \n                                arrêtés pris par le Maire (stationnement, circulation …), \n                                la police nationale étant chargée du maintien de \n                                la sécurité publique")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("enfin, il est responsable de la sécurité \n                                civile (centre de secours, sapeurs-pompiers)")]))]))]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le Maire est aussi chef de l’administration communale")]))
+           _U.list([$Html.text("Vous recevrez dans le bulletin municipal un questionnaire \n                     à remplir et à retourner pour cerner les \n                     besoins et les personnes concernées par ce dispositif, \n                     vous pouvez également répondre en ligne au questionnaire \n                     en suivant le lien ci-dessous.. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Un peu comme un chef d’entreprise, il assume \n                     quotidiennement de nombreuses charges : faire exécuter les \n                     décisions du Conseil municipal ; préparer le budget \n                     et ordonnancer les dépenses ; signer les contrats \n                     ; diriger les travaux, etc.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le Maire joue enfin le rôle d’ambassadeur de \n                     la commune auprès des pouvoirs publics et de \n                     tous les interlocuteurs (organismes publics, etc.) qui peuvent \n                     influer sur le sort de la commune. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les adjoints")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les Adjoints sont chargés d’assumer des fonctions que \n                     le Maire leur confie, et éventuellement de suppléer \n                     le Maire en cas d’empêchement (dans l’ordre de \n                     nomination). Ils exercent leurs responsabilités dans un domaine \n                     spécifique, en rapport avec leurs compétences et leurs \n                     motivations : finances, habitat, culture, environnement, etc. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les conseillers municipaux")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Quant aux Conseillers municipaux , ils ont reçu \n                     une délégation pour exercer une mission précise auprès \n                     des adjoints ou du Maire.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Vos élus")]))
-           ,A2($Html.table,
-           _U.list([]),
-           _U.list([A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/GOUTTEBEL.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Maire")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Sébastien GOUTTEBEL")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Président SIVOM de la Vallée Verte\n                                         Président des Maires Ruraux du Puy-de-Dôme")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DUMONTEL.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,_U.list([]),_U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("1er adjoint")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Roger DUMONTEL")]))
-                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Retraité Michelin")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/AUBERTY.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("2ème Adjoint")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("François AUBERTY")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Capitaine - Chef de compagnie\n                                         des Sapeurs Pompiers")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/BOUCHE.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("3ème adjoint")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Estel BOUCHE")]))
-                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Professeur d\'anglais")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/GILLARD.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("4ème adjoint")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Sylvie GILLARD")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Vice-Présidente du CCAS\n                                         Professeur des Ecoles")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/CATTARELLI.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Yvan CATTARELLI")]))
-                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Commerçant retraité")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/COMPAGNON.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Gilles COMPAGNON")]))
-                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Technicien informatique")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DEBOUT.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Véronique DEBOUT")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Webmaster du site \"murol.fr\"\n                                         Bénévole associatif - Militaire à la retraite")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DOTTE.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Anne-Marie DOTTE")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Retraitée du Tourisme\n                                            Co-présidente du COSA")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/LAIR.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Angélique LAIR")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Présidente du Syndicat agricole\n                                         Exploitante agricole")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/LANARO.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Joséphine LANARO")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Membre du CCAS\n                                        responsable de la régie d’avance\n                                        Educatrice\n                                        spécialisée retraitée")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/MAURY.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Cathy MAURY")]))
-                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Responsable de Halte Garderie")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/PEROL.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Séverine PEROL")]))
-                                   ,A2($Html.p,
-                                   _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Exploitante agricole -\n                                        Présidente de l’association pour l’expansion\n                                        du St Nectaire")]))]))]))
-                   ,A2($Html.tr,
-                   _U.list([]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/ROUX.jpg")]),_U.list([]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("status")]),_U.list([$Html.text("Conseiller municipal")]))]))
-                           ,A2($Html.td,
-                           _U.list([]),
-                           _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Christelle ROUX")]))
-                                   ,A2($Html.p,_U.list([$Html$Attributes.$class("job")]),_U.list([$Html.text("Commerciale")]))]))]))]))]));
+           _U.list([$Html.text("Une fois les réponses des murolais compilées par \n                    la mairie, les élus passeront ensuite à la \n                    phase de négociation avec les organismes de santé. \n                    \" Plus nous serons nombreux, plus les tarifs \n                    seront intéressants.\"")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Questionnaire Mutuelle municipale")]))
+           ,A2($Murol.link,"Remplir en ligne","https://docs.google.com/forms/d/179U2zTrhm6usamB724BMlI197oXq58-TS-3sIi933wM/viewform?usp=send_form")]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -10818,14 +10635,14 @@ Elm.ConseilMunicipal.make = function (_elm) {
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.ConseilMunicipal.values = {_op: _op
-                                         ,subMenu: subMenu
-                                         ,initialModel: initialModel
-                                         ,Category: Category
-                                         ,view: view
-                                         ,contentMap: contentMap
-                                         ,update: update
-                                         ,changeMain: changeMain
-                                         ,main: main
-                                         ,initialContent: initialContent};
+   return _elm.CCAS.values = {_op: _op
+                             ,subMenu: subMenu
+                             ,initialModel: initialModel
+                             ,Category: Category
+                             ,view: view
+                             ,contentMap: contentMap
+                             ,update: update
+                             ,changeMain: changeMain
+                             ,main: main
+                             ,initialContent: initialContent};
 };
