@@ -666,7 +666,8 @@ h5.trashCat {
 }
 
 #horairesContact p {
-  width: 90%;
+  display: inline-table;
+  padding: 0 0.5em;
   text-align: center;
   background-color: rgba(200, 200, 200, 0.5);
 }
