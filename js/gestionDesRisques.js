@@ -10564,3 +10564,99 @@ Elm.Murol.make = function (_elm) {
                               ,site: site
                               ,link: link};
 };
+Elm.GestionDesRisques = Elm.GestionDesRisques || {};
+Elm.GestionDesRisques.make = function (_elm) {
+   "use strict";
+   _elm.GestionDesRisques = _elm.GestionDesRisques || {};
+   if (_elm.GestionDesRisques.values) return _elm.GestionDesRisques.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("gestionDesRisques")]),
+   _U.list([A2($Murol.link,
+           "Télécharger le document d\'information communal sur les risques majeurs \"DICRIM\"",
+           "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf")
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Murol.link,
+           "Télécharger la brochure prise en compte du risque sismique en Auvergne",
+           "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf")
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Réévaluation des risques sismiques de la région Auvergne")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les séismes font partie des aléas naturels majeurs, \n                     au même titre que les inondations, les mouvements \n                     de terrain, les incendies de forêts, les avalanches \n                     ou le volcanisme. Ils sont susceptibles d’avoir de \n                     graves conséquences sur les vies humaines et d’affecter \n                     très durement le fonctionnement de notre société. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La réglementation en vigueur depuis 1991 vise à \n                     prévenir les effets d’un tel événement notamment par \n                     l’obligation de systèmes constructifs résistants. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le plan Séisme engagé par le gouvernement depuis \n                     2005 a consisté à actualiser les connaissances, à \n                     ajuster les mesures de prévention et de protection \n                     et à favoriser la prise de conscience du \n                     risque notamment en réduisant la vulnérabilité propre de \n                     chaque citoyen.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Il s’est traduit par la publication de deux \n                     décrets et d’un arrêté, le 22 octobre 2010. \n                     Ces textes redéfinissent le zonage sismique du territoire \n                     français et complètent les règles de construction parasismique \n                     applicables aux bâtiments de classe dite à risque \n                     normal, qui comprennent notamment les maisons individuelles. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le nouveau zonage facilitera l’application des nouvelles normes \n                     européennes de construction parasismique basées elles aussi sur \n                     une approche probabiliste.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La France améliore la prévention du risque sismique \n                     et étend l’application des règles de construction parasismique \n                     à 21 000 communes à compter du 1er \n                     mai 2011. ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L’Auvergne, une région sismiquement active")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Par un contexte sismotectonique particulier (le Massif Central \n                     et son système de failles profondes), la région \n                     Auvergne est considérée comme une région sismiquement active. \n                     Les séismes de grande ampleur y sont rares \n                     ; le dernier en date remonte au moyen \n                     age : 1490 ; il avait fait d’importants \n                     dommages aux édifices de Riom et Clermont-Ferrand, pour \n                     une magnitude de 5.1 sur l’échelle de Richter.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("L’activité sismique est toutefois permanente avec une centaine \n                     de répliques par an (de magnitude inférieure à \n                     3 et donc peu ou pas perceptibles) enregistrées \n                     par le réseau Sismologique localisé à l’Observatoire de \n                     Physique du Globe. ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("En Auvergne, un zonage redéfini, un aléa sismique \n                     réévalué ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La région Auvergne est aujourd’hui concernée pour la \n                     totalité de ses communes par des zonages de \n                     sismicité très faible, faible ou modérée. Seules les \n                     zones de sismicité faible (845 communes) ou modérée \n                     (390 communes) disposent d’une réglementation spécifique.")]))
+           ,A2($Html.figure,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/seismes.jpg")]),_U.list([]))]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.GestionDesRisques.values = {_op: _op
+                                          ,subMenu: subMenu
+                                          ,initialModel: initialModel
+                                          ,view: view
+                                          ,contentMap: contentMap
+                                          ,update: update
+                                          ,changeMain: changeMain
+                                          ,main: main
+                                          ,initialContent: initialContent};
+};

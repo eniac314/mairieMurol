@@ -10343,7 +10343,9 @@ Elm.Murol.make = function (_elm) {
       return A2($Html.span,_U.list([]),_U.list([$Html.text("Site: "),A2($Html.a,_U.list([$Html$Attributes.href(addr)]),_U.list([$Html.text(tex)]))]));
    });
    var mail = function (s) {
-      return A2($Html.span,_U.list([]),_U.list([$Html.text("Email: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      return A2($Html.span,
+      _U.list([]),
+      _U.list([$Html.text("Email: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
    };
    var script = F2(function (source,js) {
       return A3($Html.node,"script",_U.list([$Html$Attributes.src(source),$Html$Attributes.type$("text/javascript")]),_U.list([$Html.text(js)]));
@@ -10512,7 +10514,7 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"CCAS","")
                    ,A2(Leaf,"Commissions","")
                    ,A2(Leaf,"Gestion des risques","")
-                   ,A2(Leaf,"Horaires","")
+                   ,A2(Leaf,"Horaires et contact","")
                    ,A2(Leaf,"Publications","")]))
            ,A2(Node,
            "Culture et loisirs",

@@ -52,7 +52,7 @@ mainMenu = Node ""
          , Leaf "CCAS" ""
          , Leaf "Commissions" ""
          , Leaf "Gestion des risques" ""
-         , Leaf "Horaires" ""
+         , Leaf "Horaires et contact" ""
          , Leaf "Publications" ""
          ]
   , Node "Culture et loisirs"
@@ -268,7 +268,7 @@ script source js =
 
 
 mail s  = span [] [ text "Email: "
-         , a [href s] [text s]
+         , a [href ("mailto:"++s)] [text s]
          ]
 
 site tex addr =

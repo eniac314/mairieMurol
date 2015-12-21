@@ -21,7 +21,11 @@ module.exports = function(grunt) {
           "./js/vosDemarches.js": ["./src/VosDemarches.elm"],
           "./js/conseilMunicipal.js": ["./src/ConseilMunicipal.elm"],
           "./js/cmj.js": ["./src/CMJ.elm"],
-          "./js/ccas.js": ["./src/CCAS.elm"]
+          "./js/ccas.js": ["./src/CCAS.elm"],
+          "./js/commissions.js": ["./src/Commissions.elm"],
+          "./js/gestionDesRisques.js": ["./src/GestionDesRisques.elm"],
+          "./js/horairesContact.js": ["./src/HorairesContact.elm"],
+          "./js/publications.js": ["./src/Publications.elm"]
 
 
         }
@@ -46,7 +50,11 @@ module.exports = function(grunt) {
                 , "./src/VosDemarches.elm"
                 , "./src/ConseilMunicipal.elm"
                 , "./src/CMJ.elm"
-                , "./src/CCAS.elm"],
+                , "./src/CCAS.elm"
+                , "./src/Commissions.elm"
+                , "./src/GestionDesRisques.elm"
+                , "./src/HorairesContact.elm"
+                , "./src/Publications.elm"],
         tasks: ["elm"]
       }
     },

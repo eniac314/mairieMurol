@@ -1,0 +1,144 @@
+Elm.Commissions = Elm.Commissions || {};
+Elm.Commissions.make = function (_elm) {
+   "use strict";
+   _elm.Commissions = _elm.Commissions || {};
+   if (_elm.Commissions.values) return _elm.Commissions.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("commissions")]),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les commissions ci-dessous sont ouvertes aux personnes intéressées. \n                   Pour participer, contactez la mairie ou inscrivez-vous en \n                   ligne: ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Inscription en ligne aux différentes")
+                   ,A2($Murol.link," commissions","https://docs.google.com/forms/d/1RzrxYsue2UqQn2VBdPK3AamNAUb1IyejhWfENwjynkA/viewform")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Commissions publiques")]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission artisanat et commerce")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Sébastien GOUTTEBEL")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Gilles COMPAGNON et Christelle ROUX")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission embellissement")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Estel BOUCHE")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Sébastien GOUTTEBEL, Roger DUMONTEL, François AUBERTY, Angélique LAIR et Christelle ROUX")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission animation/tourisme/associations")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Sébastien GOUTTEBEL")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Estel BOUCHE, Anne-Marie DOTTE, Angélique LAIR et Catherine MAURY")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission jeunesse et sport ")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Véronique DEBOUT")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, François AUBERTY, Estel BOUCHE, Sylvie GILLARD,\n                           Gilles COMPAGNON, Joséphine LANARO, Séverine PEROL")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission agriculture, environnement, forêt ")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Angélique LAIR")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, Roger DUMONTEL, Estel BOUCHE, Gilles COMPAGNON, Anne-Marie DOTTE et Séverine PEROL")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission musée/culture/patrimoine ")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Catherine MAURY")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, François AUBERTY, Sylvie GILLARD, Véronique DEBOUT et Joséphine LANARO")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission petite enfance")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Sylvie GILLARD")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Sébastien GOUTTEBEL, Estel BOUCHE, Joséphine LANARO et Christelle ROUX")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Une commission lac et rivières sera créée prochainement \n                   par le SIVU, structure porteuse du contrat de \n                   lac. Nous vous communiquerons les modalités d’inscription dès \n                   que possible.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Commissions privées")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ces commissions sont des groupes de travail qui \n                   permettent de préparer les éléments qui conduiront à \n                   la prise de décisions en conseil municipal, elles \n                   ne sont pas ouvertes au public. ")]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission des travaux, des aménagements et de l’urbanisme")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Roger DUMONTEL")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, François AUBERTY, Estel BOUCHE, Sylvie GILLARD, Yvan CATTARELLI, Gilles COMPAGNON et Séverine PEROL")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission du château et de l’archéologie")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Yvan CATTARELLI")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, Roger DUMONTEL, François AUBERTY, Angélique LAIR, Séverine PEROL et Christelle ROUX")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission d’appel d’offres (commission réglementaire)")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, Roger DUMONTEL, François AUBERTY, Yvan CATTARELLI, Gilles COMPAGNON, Véronique DEBOUT, Séverine PEROL et Angélique LAIR")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("C.C.A.S. (centre communal d’action sociale, structure réglementaire)")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, Sylvie GILLARD, Véronique DEBOUT, Joséphine LANARO, Cathy MAURY et Christelle ROUX + cinq membres non élus à désigner par le maire parmi les Murolais")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("commission")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission communication/information")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Sylvie GILLARD")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Sébastien GOUTTEBEL, Estel BOUCHE, Véronique DEBOUT et Anne-Marie DOTTE")]))]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Commissions.values = {_op: _op
+                                    ,subMenu: subMenu
+                                    ,initialModel: initialModel
+                                    ,view: view
+                                    ,contentMap: contentMap
+                                    ,update: update
+                                    ,changeMain: changeMain
+                                    ,main: main
+                                    ,initialContent: initialContent};
+};

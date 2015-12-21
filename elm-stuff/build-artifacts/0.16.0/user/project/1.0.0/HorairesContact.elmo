@@ -1,0 +1,74 @@
+Elm.HorairesContact = Elm.HorairesContact || {};
+Elm.HorairesContact.make = function (_elm) {
+   "use strict";
+   _elm.HorairesContact = _elm.HorairesContact || {};
+   if (_elm.HorairesContact.values) return _elm.HorairesContact.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("horairesContact")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Contacter la mairie")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Par courrier:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mairie de Murol - Place de l\'hôtel de ville - 63790 Murol")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Par téléphone :")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("04 73 88 60 67 / Fax : 04 73 88 65 03 ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Par mail:")]))
+           ,$Murol.mail("mairie.murol@wanadoo.fr")
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires d\'ouverture:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("du lundi au vendredi : 9h à 12h / 13h30 à 17h30")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Permanence maire/adjoints samedi de 10h à 12h")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Location de salles des fêtes municipales")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La commune dispose de 3 salles polyvalentes.\n                     2 situés sur le bourg de Murol et la 3ème sur le bourg de Beaune le froid.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ces salles sont mises à la location au tarif de 150€ la journée pour vos évènements")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Elles restent à disposition à titre gracieux pour les murolais.")]))
+           ,A2($Html.figure,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/Mairie.jpg")]),_U.list([]))]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.HorairesContact.values = {_op: _op
+                                        ,subMenu: subMenu
+                                        ,initialModel: initialModel
+                                        ,view: view
+                                        ,contentMap: contentMap
+                                        ,update: update
+                                        ,changeMain: changeMain
+                                        ,main: main
+                                        ,initialContent: initialContent};
+};
