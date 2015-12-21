@@ -283,6 +283,17 @@ div[class*="Content"] a
   margin-top: 0px;
 }
 
+.subContainerData a {
+  text-decoration: none;
+  color: teal;
+  padding:0 0.1em;
+}
+.subContainerData a:hover {
+  color: white;
+  background-color: teal;
+  border-radius: 2px;
+}
+
 .subContainerData p {
   font-family: 'PT Serif', Verdana, serif;
   text-align: justify; 
@@ -488,13 +499,14 @@ h5.trashCat {
   style for artisanat and commerces
 -------------------------------------------------------------------------------*/
 #artisanat, #commerces {
- overflow: auto;
+ /*overflow: auto;*/
 }
 
 .businesses {
   width: 300px;
-  height: 300px;
-  float: left;
+  height: auto;
+  vertical-align: top;
+  display: inline-block;
   text-align: center;
   margin: 1em 1em;
   border: 1px solid black;
@@ -506,6 +518,10 @@ h5.trashCat {
   height: auto;
 }
 #commerces h5 {
+  text-align: center;
+  color: black;
+  border-top: 1px double black;
+  border-bottom: 1px double black;
   clear: left;
 }
  
@@ -521,7 +537,7 @@ h5.trashCat {
 .businesses div {
   border-top: 1px solid gray;
   margin: 0.5em 0;
-  background-color: rgba(210, 180, 140, 0.6);
+  background-color: rgba(102, 205, 170, 0.6);
 }
 
 .businesses p {
@@ -531,6 +547,78 @@ h5.trashCat {
 /*--end of code for artisanat and commerces--------------------------------------*/
 /*--end of code for Vie Economique-----------------------------------------------*/
 
+/*-------------------------------------------------------------------------------
+  style for Mairie
+-------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------
+  style for Vos démarches
+-------------------------------------------------------------------------------*/
+.justifFrame {
+  height: auto; 
+}
+
+.justif {
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  margin: 0 0.5em;
+  padding-right: 1em;
+  vertical-align: top;
+  display: inline-block;
+  background-color: rgba(176, 196, 222, 0.9);
+  border-radius: 1px;
+  box-shadow: -1px -1px 1px #778899;
+}
+
+
+.justif h6 {
+  border: none;
+  text-align: left;
+  width: 100%;
+  border-top: 2px inset black;
+  border-bottom: 2px inset black;
+  margin: 0.5em auto;
+  background-color: white;
+}
+.justif p {
+  text-align: left;
+  margin: 0;
+}
+/*--end of code for Vos démarches------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for conseilMunicipal
+-------------------------------------------------------------------------------*/
+#conseilMunicipal table {
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid black;
+}
+
+#conseilMunicipal tr {
+  border-bottom: 1px solid gray;
+}
+
+#conseilMunicipal td {
+  border-style: none;
+}
+#conseilMunicipal td:nth-child(odd) {
+
+}
+
+#conseilMunicipal img {
+  width: 148px;
+  height: 148px;
+  border-top: 1px solid gray;
+  border-right: 1px solid black;
+  border-left: 1px solid gray;
+  border-bottom: 1px solid black;
+}
+
+/*--end of code for conseilMunicipal---------------------------------------------*/
+
+/*--end of code for Mairie-------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
   style for Numeros D'urgence
