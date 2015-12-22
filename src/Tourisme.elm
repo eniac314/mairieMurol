@@ -99,7 +99,7 @@ type alias TableEntry =
    , site  : String
    , pics  : List String
    }
-
+ 
 emptyTe = TableEntry "" NoLabel Nothing "" [] "" "" "" "" "" []
 
 makeTable name entries =

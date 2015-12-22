@@ -1,0 +1,24 @@
+Elm.Repl = Elm.Repl || {};
+Elm.Repl.make = function (_elm) {
+   "use strict";
+   _elm.Repl = _elm.Repl || {};
+   if (_elm.Repl.values) return _elm.Repl.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm);
+   var _op = {};
+   var tsol = {ctor: "_Tuple0"};
+   var toto = function (rec) {    return function (_) {    return _.x;}(rec) + 3;};
+   var rec1 = {x: 2,y: 3};
+   var deltron3030 = toto(rec1);
+   var a = {x: 52,y: 3};
+   var b = _U.update(a,{y: 21});
+   var Cat = function (a) {    return {ctor: "Cat",_0: a};};
+   var Dog = function (a) {    return {ctor: "Dog",_0: a};};
+   var c = Dog("Milou");
+   return _elm.Repl.values = {_op: _op,Dog: Dog,Cat: Cat,a: a,b: b,c: c,deltron3030: deltron3030,rec1: rec1,toto: toto,tsol: tsol};
+};
