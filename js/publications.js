@@ -10582,8 +10582,37 @@ Elm.Publications.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("publications")]),_U.list([]));
-   var contentMap = $Dict.fromList(_U.list([]));
+   var divers = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("diversPubli")]),_U.list([]));
+   var elections = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("elecPubli")]),_U.list([]));
+   var reportages = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("repoPubli")]),_U.list([]));
+   var bulletin = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("bullPubli")]),_U.list([]));
+   var murolInf = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("murolInfPubli")]),_U.list([]));
+   var delib = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("delibPubli")]),
+   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("2014")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"19 mars","http://www.murol.fr/Deliberations_conseil/2014/19032014.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"4 avril","http://www.murol.fr/Deliberations_conseil/2014/04042014.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"10 avril","http://www.murol.fr/Deliberations_conseil/2014/10042014.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"16 juillet","http://www.murol.fr/Deliberations_conseil/2014/16072014.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"28 oct","http://www.murol.fr/Deliberations_conseil/2014/28102014.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"22 dec","http://www.murol.fr/Deliberations_conseil/2014/22122014.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2015")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"12 février","http://www.murol.fr/Deliberations_conseil/2015/CM12022015.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"19 mars","http://www.murol.fr/Deliberations_conseil/2015/CM19032015.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"15 avril","http://www.murol.fr/Deliberations_conseil/2015/CM15042015.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"2 juin","http://www.murol.fr/Deliberations_conseil/2015/CM24092015.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"4 novembre","http://www.murol.fr/Deliberations_conseil/2015/CM04112015.pdf")]))]))]));
+   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("publications")]),_U.list([delib]));
+   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Délibération conseil municipal",_1: delib}
+                                           ,{ctor: "_Tuple2",_0: "Murol info",_1: murolInf}
+                                           ,{ctor: "_Tuple2",_0: "Bulletin municipal",_1: bulletin}
+                                           ,{ctor: "_Tuple2",_0: "Reportages à Murol",_1: reportages}
+                                           ,{ctor: "_Tuple2",_0: "Elections",_1: elections}
+                                           ,{ctor: "_Tuple2",_0: "Divers",_1: divers}]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
       var _p0 = newContent;
@@ -10604,10 +10633,15 @@ Elm.Publications.make = function (_elm) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
       _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A3($Murol.renderSubMenu,address,"Publications:",function (_) {    return _.subMenu;}(model))
+                      ,function (_) {
+                         return _.mainContent;
+                      }(model)]))
               ,$Murol.pageFooter]));
    });
-   var subMenu = _U.list([]);
+   var subMenu = _U.list(["Délibération conseil municipal","Murol info","Bulletin municipal","Reportages à Murol","Elections","Divers"]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Publications.values = {_op: _op
@@ -10618,5 +10652,11 @@ Elm.Publications.make = function (_elm) {
                                      ,update: update
                                      ,changeMain: changeMain
                                      ,main: main
-                                     ,initialContent: initialContent};
+                                     ,initialContent: initialContent
+                                     ,delib: delib
+                                     ,murolInf: murolInf
+                                     ,bulletin: bulletin
+                                     ,reportages: reportages
+                                     ,elections: elections
+                                     ,divers: divers};
 };

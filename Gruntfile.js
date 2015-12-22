@@ -5,26 +5,26 @@ module.exports = function(grunt) {
       compile: {
         files: {
           "./js/murol.js": ["./src/Murol.elm"],
-          "./js/tourisme.js": ["./src/Tourisme.elm"],
-          "./js/vieScolaire.js": ["./src/VieScolaire.elm"],
-          "./js/covoiturage.js": ["./src/Covoiturage.elm"],
-          "./js/gestionDesDechets.js": ["./src/GestionDesDechets.elm"],
-          "./js/numerosUrgences.js": ["./src/NumerosUrgences.elm"],
-          "./js/agriculture.js": ["./src/Agriculture.elm"],
-          "./js/artisanat.js": ["./src/Artisanat.elm"],
-          "./js/commerces.js": ["./src/Commerces.elm"],
-          "./js/entreprises.js": ["./src/Entreprises.elm"],
-          "./js/lesSeniors.js": ["./src/LesSeniors.elm"],
-          "./js/offresEmploi.js": ["./src/OffresEmploi.elm"],
-          "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"],
-          "./js/laCommune.js": ["./src/LaCommune.elm"],
-          "./js/vosDemarches.js": ["./src/VosDemarches.elm"],
-          "./js/conseilMunicipal.js": ["./src/ConseilMunicipal.elm"],
-          "./js/cmj.js": ["./src/CMJ.elm"],
-          "./js/ccas.js": ["./src/CCAS.elm"],
-          "./js/commissions.js": ["./src/Commissions.elm"],
-          "./js/gestionDesRisques.js": ["./src/GestionDesRisques.elm"],
-          "./js/horairesContact.js": ["./src/HorairesContact.elm"],
+          // "./js/tourisme.js": ["./src/Tourisme.elm"],
+          // "./js/vieScolaire.js": ["./src/VieScolaire.elm"],
+          // "./js/covoiturage.js": ["./src/Covoiturage.elm"],
+          // "./js/gestionDesDechets.js": ["./src/GestionDesDechets.elm"],
+          // "./js/numerosUrgences.js": ["./src/NumerosUrgences.elm"],
+          // "./js/agriculture.js": ["./src/Agriculture.elm"],
+          // "./js/artisanat.js": ["./src/Artisanat.elm"],
+          // "./js/commerces.js": ["./src/Commerces.elm"],
+          // "./js/entreprises.js": ["./src/Entreprises.elm"],
+          // "./js/lesSeniors.js": ["./src/LesSeniors.elm"],
+          // "./js/offresEmploi.js": ["./src/OffresEmploi.elm"],
+          // "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"],
+          // "./js/laCommune.js": ["./src/LaCommune.elm"],
+          // "./js/vosDemarches.js": ["./src/VosDemarches.elm"],
+          // "./js/conseilMunicipal.js": ["./src/ConseilMunicipal.elm"],
+          // "./js/cmj.js": ["./src/CMJ.elm"],
+          // "./js/ccas.js": ["./src/CCAS.elm"],
+          // "./js/commissions.js": ["./src/Commissions.elm"],
+          // "./js/gestionDesRisques.js": ["./src/GestionDesRisques.elm"],
+          // "./js/horairesContact.js": ["./src/HorairesContact.elm"],
           "./js/publications.js": ["./src/Publications.elm"]
 
 
@@ -34,26 +34,26 @@ module.exports = function(grunt) {
     watch: {
       elm: {
         files: ["./src/Murol.elm"
-                , "./src/Tourisme.elm"
-                , "./src/VieScolaire.elm"
-                , "./src/Covoiturage.elm"
-                , "./src/GestionDesDechets.elm"
-                , "./src/NumerosUrgences.elm"
-                , "./src/Agriculture.elm"
-                , "./src/Artisanat.elm"
-                , "./src/Commerces.elm"
-                , "./src/Entreprises.elm"
-                , "./src/LesSeniors.elm"
-                , "./src/OffresEmploi.elm"
-                , "./src/QuinzaineCom.elm"
-                , "./src/LaCommune.elm"
-                , "./src/VosDemarches.elm"
-                , "./src/ConseilMunicipal.elm"
-                , "./src/CMJ.elm"
-                , "./src/CCAS.elm"
-                , "./src/Commissions.elm"
-                , "./src/GestionDesRisques.elm"
-                , "./src/HorairesContact.elm"
+                // , "./src/Tourisme.elm"
+                // , "./src/VieScolaire.elm"
+                // , "./src/Covoiturage.elm"
+                // , "./src/GestionDesDechets.elm"
+                // , "./src/NumerosUrgences.elm"
+                // , "./src/Agriculture.elm"
+                // , "./src/Artisanat.elm"
+                // , "./src/Commerces.elm"
+                // , "./src/Entreprises.elm"
+                // , "./src/LesSeniors.elm"
+                // , "./src/OffresEmploi.elm"
+                // , "./src/QuinzaineCom.elm"
+                // , "./src/LaCommune.elm"
+                // , "./src/VosDemarches.elm"
+                // , "./src/ConseilMunicipal.elm"
+                // , "./src/CMJ.elm"
+                // , "./src/CCAS.elm"
+                // , "./src/Commissions.elm"
+                // , "./src/GestionDesRisques.elm"
+                // , "./src/HorairesContact.elm"
                 , "./src/Publications.elm"],
         tasks: ["elm"]
       }

@@ -56,7 +56,7 @@ Elm.GestionDesRisques.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("La région Auvergne est aujourd’hui concernée pour la \n                     totalité de ses communes par des zonages de \n                     sismicité très faible, faible ou modérée. Seules les \n                     zones de sismicité faible (845 communes) ou modérée \n                     (390 communes) disposent d’une réglementation spécifique.")]))
-           ,A2($Html.figure,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/seismes.jpg")]),_U.list([]))]))]));
+           ,A2($Html.figure,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/seismes.gif")]),_U.list([]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

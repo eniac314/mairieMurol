@@ -126,7 +126,7 @@ initialContent =
                      (390 communes) disposent d’une réglementation spécifique."]
 
       , figure []
-               [img [src "/images/seismes.jpg"] []]
+               [img [src "/images/seismes.gif"] []]
       ]
 
       
