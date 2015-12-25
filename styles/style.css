@@ -646,7 +646,7 @@ h5.trashCat {
 /*--end of code for gestionDesRisques--------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
-  style for gestionDesRisques
+  style for horairesContact
 -------------------------------------------------------------------------------*/
 #horairesContact {
   background-image: url(/images/Mairiebg.gif);
@@ -671,9 +671,76 @@ h5.trashCat {
   text-align: center;
   background-color: rgba(200, 200, 200, 0.5);
 }
-
-
 /*--end of code for horairesContact----------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style fot Publicationq
+-------------------------------------------------------------------------------*/
+#bullPubli {
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.bulletin {
+  /*background-color: blue;*/
+  margin-bottom: 1em;
+}
+
+.cover {
+  margin: 0;
+  /*background-color: red;*/
+  display: inline-block;
+}
+
+.cover img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.cover figcaption {
+  border-radius: 0;
+  border-bottom-left-radius: 1px;
+  border-bottom-right-radius: 1px;
+  box-shadow: none;
+  background-color: 
+}
+
+.bulletin ul {
+  background-color: rgba(176, 196, 222, 0.5);
+  vertical-align: top;
+  /*background-color: yellow;*/
+  display: inline-block;
+  width: 30%;
+  min-width: 100px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 4px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.bulletin li {
+  list-style: square;
+}
+
+.bulletin h6 {
+  border: 0;
+  width: 100%;
+  font-weight: normal;
+  font-size:  20px;
+  color: white;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+  text-align: left;
+}
+.bulletin ul a {
+  display: block;
+  color: white;
+  background-color: gray;
+  margin-top: 0.3em;
+  padding: 0.8em;
+}
+
+/*--end of code for Publications-------------------------------------------------------*/
 
 /*--end of code for Mairie-------------------------------------------------------*/
 
