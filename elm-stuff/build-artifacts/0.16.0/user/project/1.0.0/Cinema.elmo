@@ -1,8 +1,8 @@
-Elm.QuinzaineCom = Elm.QuinzaineCom || {};
-Elm.QuinzaineCom.make = function (_elm) {
+Elm.Cinema = Elm.Cinema || {};
+Elm.Cinema.make = function (_elm) {
    "use strict";
-   _elm.QuinzaineCom = _elm.QuinzaineCom || {};
-   if (_elm.QuinzaineCom.values) return _elm.QuinzaineCom.values;
+   _elm.Cinema = _elm.Cinema || {};
+   if (_elm.Cinema.values) return _elm.Cinema.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -16,7 +16,7 @@ Elm.QuinzaineCom.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("quinzaineCom")]),_U.list([]));
+   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("cinema")]),_U.list([]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -44,13 +44,13 @@ Elm.QuinzaineCom.make = function (_elm) {
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.QuinzaineCom.values = {_op: _op
-                                     ,subMenu: subMenu
-                                     ,initialModel: initialModel
-                                     ,view: view
-                                     ,contentMap: contentMap
-                                     ,update: update
-                                     ,changeMain: changeMain
-                                     ,main: main
-                                     ,initialContent: initialContent};
+   return _elm.Cinema.values = {_op: _op
+                               ,subMenu: subMenu
+                               ,initialModel: initialModel
+                               ,view: view
+                               ,contentMap: contentMap
+                               ,update: update
+                               ,changeMain: changeMain
+                               ,main: main
+                               ,initialContent: initialContent};
 };

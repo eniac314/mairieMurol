@@ -1,8 +1,8 @@
-Elm.Publication = Elm.Publication || {};
-Elm.Publication.make = function (_elm) {
+Elm.SportEtDetentes = Elm.SportEtDetentes || {};
+Elm.SportEtDetentes.make = function (_elm) {
    "use strict";
-   _elm.Publication = _elm.Publication || {};
-   if (_elm.Publication.values) return _elm.Publication.values;
+   _elm.SportEtDetentes = _elm.SportEtDetentes || {};
+   if (_elm.SportEtDetentes.values) return _elm.SportEtDetentes.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
@@ -16,7 +16,7 @@ Elm.Publication.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("publications")]),_U.list([]));
+   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("sportEtDetentes")]),_U.list([]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -44,13 +44,13 @@ Elm.Publication.make = function (_elm) {
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.Publication.values = {_op: _op
-                                    ,subMenu: subMenu
-                                    ,initialModel: initialModel
-                                    ,view: view
-                                    ,contentMap: contentMap
-                                    ,update: update
-                                    ,changeMain: changeMain
-                                    ,main: main
-                                    ,initialContent: initialContent};
+   return _elm.SportEtDetentes.values = {_op: _op
+                                        ,subMenu: subMenu
+                                        ,initialModel: initialModel
+                                        ,view: view
+                                        ,contentMap: contentMap
+                                        ,update: update
+                                        ,changeMain: changeMain
+                                        ,main: main
+                                        ,initialContent: initialContent};
 };

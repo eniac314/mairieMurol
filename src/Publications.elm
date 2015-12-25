@@ -58,8 +58,8 @@ renderBulletin
   {cover, date, index} = 
     div [class "bulletin"]
         [ figure [ class "cover"]
-                 [ img [src ("/images/bulletin/" ++ cover)] []
-                 , figcaption [] [text date]
+                 [ figcaption [] [text date] 
+                 , img [src ("/images/bulletin/" ++ cover)] []
                  ]
         , ul []
              ((h6 [] [text "Dans ce numéro:"]
@@ -180,7 +180,7 @@ murolInf =
            ]
       ]
 
-bulls =
+bulls = List.reverse
  [ Bulletin "cover0.png" "Janvier 2009"
             [ "La maison médicale"
             , "La sécurité : Pompiers et Maîtres Nageurs Sauveteurs"

@@ -10607,14 +10607,12 @@ Elm.QuinzaineCom.make = function (_elm) {
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
-   var Category = F2(function (a,b) {    return {title: a,entries: b};});
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.QuinzaineCom.values = {_op: _op
                                      ,subMenu: subMenu
                                      ,initialModel: initialModel
-                                     ,Category: Category
                                      ,view: view
                                      ,contentMap: contentMap
                                      ,update: update
