@@ -128,26 +128,34 @@ div[class*="Content"] a
   margin: auto;
 }
 
-.entry {
-  text-align: center;
-  min-width: 150px;
-  width: 31.3%;
-  margin: 1%;
-  float: left;
+.entry h3 {
+  font-size: 20px;
+  word-spacing: 0.3em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+  border-bottom: 1px solid black;
 }
 
-.submenu
-  { 
-    text-align: center;
-    margin-bottom: 0.5em;
-    background-color: rgba(104, 86, 93, 0.8);;
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-  }
+.entry {
+  display: inline-block;
+  text-align: center;
+  margin-top: 1em;
+}
+
+#news {
+  width: 100%;
+}
+
+#newsletters, #misc {
+  margin-right: 10px; 
+  width: 49.4%;
+  vertical-align: top;
+}
 
 .submenu a:hover {
   cursor: pointer;
-  color: grey;
+  color: black;
 }
 
 .submenu ul
@@ -156,26 +164,25 @@ div[class*="Content"] a
    padding:0;
  }
 
-.submenu li
-  { 
-    text-align: left;
-    background-color: white;
-    border-radius:0.2em;
-    padding: 0.5em;
-    margin-bottom: 0.5em;
+.submenu li { 
+  background-color: rgba(104, 86, 93, 0.8);
+  border-radius: 1px;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
   }
 
 .submenu a
   { text-decoration: none;
     font-family: 'PT Serif', verdana, serif;
-    color: black;
+    color: white;
   }
 
 #misc { 
-  background-image: url(/images/peintres.png);
+/*  background-image: url(/images/peintres.png);
   background-repeat: no-repeat;
-  background-position: right bottom;
-  margin-right: 0%}
+  background-position: right bottom;*/
+  margin-right: 0;
+}
 
 #pics{
   clear: left;
@@ -193,6 +200,15 @@ div[class*="Content"] a
   { 
   width: 100%;
   border-radius: 1em;
+  }
+
+#plugins
+  { 
+    text-align: center;
+    margin-bottom: 0.5em;
+    background-color: rgba(104, 86, 93, 0.8);
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
   }
 
 #plugins li {
@@ -716,6 +732,7 @@ h5.trashCat {
   border-bottom-right-radius: 4px;
   padding-top: 1em;
   padding-bottom: 1em;
+  margin-top: 0;
 }
 
 .bulletin li {
