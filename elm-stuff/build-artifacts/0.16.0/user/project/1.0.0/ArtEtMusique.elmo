@@ -1,0 +1,74 @@
+Elm.ArtEtMusique = Elm.ArtEtMusique || {};
+Elm.ArtEtMusique.make = function (_elm) {
+   "use strict";
+   _elm.ArtEtMusique = _elm.ArtEtMusique || {};
+   if (_elm.ArtEtMusique.values) return _elm.ArtEtMusique.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("artEtMusique")]),
+   _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Artistes Murolais")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Danielle lance l\'idée d\'un Site Internet gratuit des \"Artistes Murolais Contemporains\"")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Peinture, dessin, poésie, sculpture, artisanat d\'art, etc.....")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("vous êtes intéressés, contactez-la en utilisant les lien ci-dessous")]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://murol-terre-des-arts.wifeo.com"," http://murol-terre-des-arts.wifeo.com")]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://murolpoesicales.wifeo.com","http://murolpoesicales.wifeo.com")]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://daniellaero.wifeo.com","http://daniellaero.wifeo.com")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Création d\'un orchestre")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Madame Marie-Laure Franc, chef d\'orchestre, cherche des musiciens pour créer un orchestre dans notre région.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Je suis chef d\'orchestre et je cherche des \n                     musiciens pour créer un orchestre dans notre région. \n                     Le projet est de faire quelques concerts par \n                     an en soutien aux associations humanitaires. Je fais \n                     ça à titre bénévole, ne demande aucune participation \n                     financière, mais simplement musicale dans une ambiance conviviale, \n                     pour développer les activités artistiques dans notre région. \n                     N\'hésitez pas à me contacter quel que soit \n                     votre instrument et niveau. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Contact :")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 06 13 39 33 01")]))
+           ,$Murol.mail("mariefranc@orange.fr")]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.ArtEtMusique.values = {_op: _op
+                                     ,subMenu: subMenu
+                                     ,initialModel: initialModel
+                                     ,view: view
+                                     ,contentMap: contentMap
+                                     ,update: update
+                                     ,changeMain: changeMain
+                                     ,main: main
+                                     ,initialContent: initialContent};
+};

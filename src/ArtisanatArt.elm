@@ -1,4 +1,4 @@
-module QuinzaineCom where
+module ArtisanatArt where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -68,7 +68,7 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "quinzaineCom"]
+  div [ class "subContainerData", id "artisanatArt"]
       []
       
 

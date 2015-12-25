@@ -25,7 +25,10 @@ module.exports = function(grunt) {
           // "./js/commissions.js": ["./src/Commissions.elm"],
           // "./js/gestionDesRisques.js": ["./src/GestionDesRisques.elm"],
           // "./js/horairesContact.js": ["./src/HorairesContact.elm"],
-          "./js/publications.js": ["./src/Publications.elm"]
+          //"./js/publications.js": ["./src/Publications.elm"],
+          //"./js/artEtMusique.js": ["./src/ArtEtMusique.elm"],
+          "./js/associations.js": ["./src/Associations.elm"],
+          "./js/artisanatArt.js": ["./src/ArtisanatArt.elm"]
 
 
         }
@@ -54,7 +57,10 @@ module.exports = function(grunt) {
                 // , "./src/Commissions.elm"
                 // , "./src/GestionDesRisques.elm"
                 // , "./src/HorairesContact.elm"
-                , "./src/Publications.elm"],
+                //, "./src/Publications.elm"
+                //, "./src/ArtEtMusique.elm"
+                , "./src/Associations.elm"
+                , "./src/ArtisanatArt.elm"],
         tasks: ["elm"]
       }
     },
