@@ -249,7 +249,7 @@ view address model =
       [ renderMainMenu address (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
-            , div [class "sideMenu"]
+            , div [class "sidebar"]
                   [ renderPlugins
                   , renderNewsLetter (.newsletters model)
                   , renderMisc (.misc model)

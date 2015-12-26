@@ -10792,7 +10792,7 @@ Elm.Murol.make = function (_elm) {
                          return _.mainContent;
                       }(model)
                       ,A2($Html.div,
-                      _U.list([$Html$Attributes.$class("sideMenu")]),
+                      _U.list([$Html$Attributes.$class("sidebar")]),
                       _U.list([renderPlugins
                               ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
                               ,renderMisc(function (_) {    return _.misc;}(model))]))]))
