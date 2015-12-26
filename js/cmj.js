@@ -10713,10 +10713,11 @@ Elm.Murol.make = function (_elm) {
       }();
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("news")]),
-      _U.list([A2($Html.h5,_U.list([$Html$Attributes.$class("newsTitle")]),_U.list([$Html.text(_p7.title)]))
-              ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))
-              ,pic$
-              ,_p7.descr]));
+      _U.list([A2($Html.div,
+              _U.list([]),
+              _U.list([A2($Html.h5,_U.list([$Html$Attributes.$class("newsTitle")]),_U.list([$Html.text(_p7.title)]))
+                      ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))]))
+              ,A2($Html.div,_U.list([]),_U.list([pic$,_p7.descr]))]));
    };
    var renderNewsList = F2(function (title,xs) {
       return A2($Html.div,

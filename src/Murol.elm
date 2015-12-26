@@ -185,10 +185,14 @@ renderNews { title, date, descr, pic} =
         Just  p -> img [src ("/images/news/" ++ p)] []  
   in 
   div [class "news"]
-      [ h5 [class "newsTitle"] [text title]
-      , span [class "date"] [text date']
-      , pic'
-      , descr
+      [ div [] 
+            [ h5 [class "newsTitle"] [text title]
+            , span [class "date"] [text date']
+            ]
+      , div []
+           [ pic'
+           , descr
+           ]
       ]
 
 
