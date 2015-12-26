@@ -15,7 +15,6 @@ import Date exposing (..)
 type alias Model = 
   { mainMenu    : Menu
   , logos       : List  String
-  , mainContent : Signal.Address Action -> Html
   , newsletters : List (String,String)
   , news        : List News
   , newsMairie  : List News
@@ -101,13 +100,9 @@ logos    = ["FamillePlus2.gif"
 
 
 
-
-
-
 initialModel = 
   { mainMenu    = mainMenu
   , logos       = logos
-  , mainContent = initialContent
   , newsletters = newsletters
   , misc        = misc
   , news        = tag 0 0 news
@@ -133,17 +128,19 @@ update action model =
     Drop id -> 
       let n1 = List.map (dropN id) (.news model)
           n2 = List.map (dropN id) (.newsMairie model)
-      in { model | news = n1, newsMairie = n2 , mainContent = updateContent n1 n2 }
+      in { model | news = n1, newsMairie = n2 }
 
 
 
-updateContent n1 n2 address = 
+
+
+-- View
+
+renderContent n1 n2 address = 
   div [ class "subContainerData", id "index"]
       [ renderNewsList address "Actualités de la commune" n1
       , renderNewsList address "La mairie vous informe" n2
       ]
-
--- View
 
 renderMainMenu : Signal.Address Action -> Menu -> Html
 renderMainMenu adr m = 
@@ -281,7 +278,8 @@ view address model =
   div [id "container"]
       [ renderMainMenu address (.mainMenu model)
       , div [ id "subContainer"]
-            [ (.mainContent model) address
+            [ --(.mainContent model) address
+              renderContent (.news model) (.newsMairie model) address
             , div [class "sidebar"]
                   [ renderPlugins
                   , renderNewsLetter (.newsletters model)
@@ -351,10 +349,7 @@ maybeElem s f =
 nullTag = span [style [("display","none")]] []
 
 -- Data
-initialContent address = updateContent news newsMairie address 
-
-
-
+ 
 news : List News
 news = 
   [{ emptyNews |
@@ -415,9 +410,10 @@ newsMairie =
   [{ emptyNews |
      title = "Nouveaux Horaires Navette"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsMairieContent"]
+   , descr = div [class "newsbody"]
                  [ p  [] [text "les nouveaux horaires de la Navette Chambon/Lac - Murol - Saint Nectaire ---- Clermont Ferrand"]
                  , link "Télécharger les horaires" ""
+                 , br [] []
                  , link "Dépliant ligne 74 navette" ""  
                  ]
    }
@@ -425,11 +421,12 @@ newsMairie =
    { emptyNews |
      title = "Application vols/cambriolage"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsMairieContent"]
+   , descr = div [class "newsbody"]
                  [ p  [] [text "Une application a été créée par les gendarmes 
                                 pour faire l'inventaire de biens en cas de vols
                                  ou de cambriolages: \" Cambrio-Liste \"."]
                  , link "lien Apple-Store" ""
+                 , br [] []
                  , link "lien Google Play" "" 
                  ]
    }
@@ -437,7 +434,7 @@ newsMairie =
    { emptyNews |
      title = "Permanence mission locale pour l'emploi"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsMairieContent"]
+   , descr = div [class "newsbody"]
                  [ p  [] [text "1er lundi de chaque mois permanence mission locale pour l'emploi."]
                  ]
    }
@@ -445,7 +442,7 @@ newsMairie =
    { emptyNews |
      title = "Vente de terrain communaux"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsMairieContent"]
+   , descr = div [class "newsbody"]
                  [link "Contactez la mairie" "" 
                  ]
    }
@@ -453,7 +450,7 @@ newsMairie =
    { emptyNews |
      title = "Simplification du système administratif français"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsMairieContent"]
+   , descr = div [class "newsbody"]
                  [ p [] [text "Le système administratif français nécessite une
                                simplification. Un site a été créé afin de recueillir
                                des suggestions d'amélioration dans les
