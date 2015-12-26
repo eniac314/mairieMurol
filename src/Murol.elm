@@ -8,16 +8,27 @@ import StartApp.Simple as StartApp
 import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
+import Date exposing (..)
 
 -- Model
 
 type alias Model = 
   { mainMenu    : Menu
   , logos       : List  String
-  , news        : List (String,String)
+  , mainContent : Html
   , newsletters : List (String,String)
   , misc        : List (String,String)
   }
+
+type alias News = 
+  { title : String
+  , date  : Result String Date
+  , descr : Html
+  , pic   : Maybe String
+  }
+
+
+emptyNews = News "" (Err "") nullTag Nothing 
 
 type alias Link    = String
 type alias Label   = String
@@ -75,26 +86,7 @@ logos    = ["FamillePlus2.gif"
            ,"StationVertegf2.gif"
            ]
 
-news = [("http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016"
-        ,"L'Auvergne fait une entrée remarquée dans le Best of du voyage de Lonely Planet en 2016. En 6ème position du classement des régions à visiter dans le monde."
-        )]
 
-newsletters =
-  [("aux bulletins d'informations de la commune"
-   ,"https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"
-   )
-   ,
-   ("aux commissions"
-   ,"https://docs.google.com/forms/d/1RzrxYsue2UqQn2VBdPK3AamNAUb1IyejhWfENwjynkA/viewform"
-   )
-   ,
-   ("recevoir une alerte mise à jour site"
-   ,"https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"
-   )
-  ]
-
-misc = 
-  [("Visiter le musée des peintres de Murol","http://www.musee-murol.fr/fr")]
 
 
 
@@ -102,7 +94,7 @@ misc =
 initialModel = 
   { mainMenu    = mainMenu
   , logos       = logos
-  , news        = news
+  , mainContent = initialContent
   , newsletters = newsletters
   , misc        = misc
   }
@@ -169,15 +161,35 @@ renderListImg pics =
            (map (\e -> li [] [img [src ("/images/" ++ e)] []]) pics)]
 
 
-renderNews news =
-  let toNews (address,content) =
-        a [href address] [li [] [text content]] 
-      newsList = map toNews news
-  in
-  div [id "news", class "submenu entry"]
-      [ h3 [] [text "La mairie vous informe"]
-      , ul [] newsList
+renderNewsList : String -> List News -> Html
+renderNewsList title xs =
+  div [class title]
+      ([ h4 [] [text title]]
+      ++ (List.map renderNews xs))
+
+renderNews : News -> Html
+renderNews { title, date, descr, pic} =
+  let date' = 
+       case date of
+        Err s -> s
+        Ok d  -> (day' d)
+                 ++ "\\" ++
+                 (months' d)
+                 ++ "\\" ++
+                 (year' d)  
+
+      pic' = 
+       case pic of 
+        Nothing -> nullTag
+        Just  p -> img [src ("/images/news/" ++ p)] []  
+  in 
+  div [class "news"]
+      [ h5 [class "newsTitle"] [text title]
+      , span [class "date"] [text date']
+      , pic'
+      , descr
       ]
+
 
 
 renderNewsLetter news =
@@ -234,11 +246,11 @@ view : Signal.Address Action -> Model -> Html
 view address model =
   div [id "container"]
       [ renderMainMenu address (.mainMenu model)
-      , div [id "middleDiv"]
-            [ renderNews (.news model)
-            , renderNewsLetter (.newsletters model)
-            , renderMisc (.misc model)
-            ] 
+      , div [ id "subContainer"]
+            [ .mainContent model
+            ]
+      , renderNewsLetter (.newsletters model)
+      , renderMisc (.misc model)
       , renderListImg (.logos model)
       
       , renderPlugins
@@ -254,6 +266,24 @@ main =
 
 
 -- Utils
+
+months' date = 
+  case Date.month date of
+    Jan -> "01" 
+    Feb -> "02"
+    Mar -> "03"
+    Apr -> "04"
+    May -> "05"
+    Jun -> "06"
+    Jul -> "07"
+    Aug -> "08"
+    Sep -> "09"
+    Oct -> "10"
+    Nov -> "11"
+    Dec -> "12"
+
+day' date  = toString (Date.day date)
+year' date = toString (Date.year date)
 
 capitalize : String -> String
 capitalize string =
@@ -278,9 +308,151 @@ site tex addr =
 
 link tex addr = a [href addr] [text tex]
 
+maybeElem : String -> ( String -> Html ) -> Html
+maybeElem s f =
+  if String.isEmpty s
+  then nullTag
+  else f s
 
+nullTag = span [style [("display","none")]] []
 
- 
+-- Data
+initialContent = 
+  div [ class "subContainerData", id "index"]
+      [ renderNewsList "Actualités de la commune" news
+      , renderNewsList "La mairie vous informe" newsMairie
+      ]
+
+news : List News
+news = 
+  [{ emptyNews |
+     title = "L'Auvergne dans le Best of de Lonely Planet"
+   , date  = Date.fromString "10/29/2015"
+   , descr = div [class "newsContent"]
+                 [p [] [text "L'Auvergne fait une entrée remarquée dans le Best
+                              of du voyage de Lonely Planet en 2016.
+                              En 6ème position du classement des régions
+                              à visiter dans le monde"]
+                 , br [] []
+                 , link "Source" "http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016"
+                 ]
+   , pic   = Just "lonely.png"            
+   }
+  ,{ emptyNews |
+     title = "Chant de Noël à l'église de Beaune le Froid"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsContent"]
+                 [p [] [ text " Samedi 19 à 15h à l'église de Beaune le Froid, chant de Noël
+                                 avec l'ensemble instrumental de la vallée verte et la
+                                 chorale de Murol"]
+                 ]
+   }
+  ,{ emptyNews |
+     title = "Noël des enfants à la salle des fêtes de Murol"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsContent"]
+                 [p [] [ text "Dimanche 20 à 14h, Noël des enfants à la salle des fêtes de Murol.
+                                Une collecte  de denrée alimentaire sera réalisé à cette occasion
+                                au profit de la banque alimentaire."]
+                 ]
+   }
+  ,{ emptyNews |
+     title = "Animations de Noêl "
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsContent"]
+                 [p [] [text "Lundi 21 toute la journée, rue G. Sand,
+                              animations de Noêl organisées par les commerçants."]]
+   }
+  ,{ emptyNews |
+     title = "Chasse au trésor de Noël"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsContent"]
+                 [p [] [text "Lundi 21 à 15h, chasse au trésor de Noël."]]
+   }
+  ,{ emptyNews |
+     title = "3 contes de Noël"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsContent"]
+                 [ p [] [text "Pour Noël : 3 contes de Noël."]
+                 , br [] []
+                 , link "lien" "" 
+                 ]
+   }                
+  ]
+
+newsMairie : List News
+newsMairie =
+  [{ emptyNews |
+     title = "Nouveaux Horaires Navette"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsMairieContent"]
+                 [ p  [] [text "les nouveaux horaires de la Navette Chambon/Lac - Murol - Saint Nectaire ---- Clermont Ferrand"]
+                 , br [] []
+                 , link "Télécharger les horaires" ""
+                 , br [] []
+                 , link "Dépliant ligne 74 navette" ""  
+                 ]
+   }
+   ,
+   { emptyNews |
+     title = "Application vols/cambriolage"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsMairieContent"]
+                 [ p  [] [text "Une application a été créée par les gendarmes 
+                                pour faire l'inventaire de biens en cas de vols
+                                 ou de cambriolages: \" Cambrio-Liste \"."]
+                 , br [] []
+                 , link "lien Apple-Store" ""
+                 , br [] []
+                 , link "lien Google Play" "" 
+                 ]
+   }
+   ,
+   { emptyNews |
+     title = "Permanence mission locale pour l'emploi"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsMairieContent"]
+                 [ p  [] [text "1er lundi de chaque mois permanence mission locale pour l'emploi."]
+                 ]
+   }
+   ,
+   { emptyNews |
+     title = "Vente de terrain communaux"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsMairieContent"]
+                 [link "Contactez la mairie" "" 
+                 ]
+   }
+   ,
+   { emptyNews |
+     title = "Simplification du système administratif français"
+   , date  = Date.fromString "12/15/2015"
+   , descr = div [class "newsMairieContent"]
+                 [ p [] [text "Le système administratif français nécessite une
+                               simplification. Un site a été créé afin de recueillir
+                               des suggestions d'amélioration dans les
+                                démarches administratives. En savoir plus sur "]
+                 , link "http://www.faire-simple.gouv.fr/" "http://www.faire-simple.gouv.fr/" 
+                 ]
+   }
+  ]
+
+newsletters =
+  [("aux bulletins d'informations de la commune"
+   ,"https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"
+   )
+   ,
+   ("aux commissions"
+   ,"https://docs.google.com/forms/d/1RzrxYsue2UqQn2VBdPK3AamNAUb1IyejhWfENwjynkA/viewform"
+   )
+   ,
+   ("recevoir une alerte mise à jour site"
+   ,"https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"
+   )
+  ]
+
+misc = 
+  [("Visiter le musée des peintres de Murol","http://www.musee-murol.fr/fr")] 
 
 
 
