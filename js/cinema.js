@@ -10708,7 +10708,7 @@ Elm.Murol.make = function (_elm) {
                return _p9._0;
             } else {
                var _p10 = _p9._0;
-               return A2($Basics._op["++"],day$(_p10),A2($Basics._op["++"],"\\",A2($Basics._op["++"],months$(_p10),A2($Basics._op["++"],"\\",year$(_p10)))));
+               return A2($Basics._op["++"],day$(_p10),A2($Basics._op["++"]," ",A2($Basics._op["++"],months$(_p10),A2($Basics._op["++"]," ",year$(_p10)))));
             }
       }();
       return A2($Html.div,
@@ -10734,12 +10734,6 @@ Elm.Murol.make = function (_elm) {
       },
       pics))]));
    };
-   var pageFooter = A2($Html.footer,
-   _U.list([$Html$Attributes.id("footer")]),
-   _U.list([A2($Html.p,
-   _U.list([]),
-   _U.list([$Html.text("Vous souhaitez passer une information")
-           ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text(" contactez le webmaster")]))]))]));
    var renderMainMenu = F2(function (adr,m) {
       var toUrl = function (s) {
          return function (s) {
@@ -10761,17 +10755,6 @@ Elm.Murol.make = function (_elm) {
                     ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu(adr),_p15))]));
          }
    });
-   var view = F2(function (address,model) {
-      return A2($Html.div,
-      _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2(renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
-              ,renderMisc(function (_) {    return _.misc;}(model))
-              ,renderListImg(function (_) {    return _.logos;}(model))
-              ,renderPlugins
-              ,pageFooter]));
-   });
    var update = F2(function (action,model) {
       var _p16 = action;
       switch (_p16.ctor)
@@ -10792,6 +10775,27 @@ Elm.Murol.make = function (_elm) {
    var Hover = function (a) {    return {ctor: "Hover",_0: a};};
    var NoOp = {ctor: "NoOp"};
    var logos = _U.list(["FamillePlus2.gif","StationTourismeRVB2.gif","Villagefleuri2.gif","StationVertegf2.gif"]);
+   var pageFooter = A2($Html.footer,
+   _U.list([$Html$Attributes.id("footer")]),
+   _U.list([renderListImg(logos)
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Vous souhaitez passer une information")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text(" contactez le webmaster")]))]))]));
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2(renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([function (_) {
+                         return _.mainContent;
+                      }(model)
+                      ,renderPlugins
+                      ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
+                      ,renderMisc(function (_) {    return _.misc;}(model))
+                      ,pageFooter]))]));
+   });
    var Node = F2(function (a,b) {    return {ctor: "Node",_0: a,_1: b};});
    var Leaf = F2(function (a,b) {    return {ctor: "Leaf",_0: a,_1: b};});
    var mainMenu = A2(Node,

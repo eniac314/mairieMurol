@@ -148,9 +148,10 @@ renderMainMenu adr m =
 
 pageFooter = 
   footer [ id "footer"]
-         [p [] [ text "Vous souhaitez passer une information"
-               , a [href ""] [text " contactez le webmaster"]
-               ]
+         [ renderListImg logos
+         , p [] [ text "Vous souhaitez passer une information"
+                , a [href ""] [text " contactez le webmaster"]
+                ]
          ] 
 
 
@@ -173,9 +174,9 @@ renderNews { title, date, descr, pic} =
        case date of
         Err s -> s
         Ok d  -> (day' d)
-                 ++ "\\" ++
+                 ++ " " ++
                  (months' d)
-                 ++ "\\" ++
+                 ++ " " ++
                  (year' d)  
 
       pic' = 
@@ -248,13 +249,11 @@ view address model =
       [ renderMainMenu address (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
+            , renderPlugins
+            , renderNewsLetter (.newsletters model)
+            , renderMisc (.misc model)
+            , pageFooter 
             ]
-      , renderNewsLetter (.newsletters model)
-      , renderMisc (.misc model)
-      , renderListImg (.logos model)
-      
-      , renderPlugins
-      , pageFooter
       ]
 
 main =
