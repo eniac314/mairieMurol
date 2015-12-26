@@ -301,57 +301,62 @@ figcaption {
   /*background-color: violet;*/
 }
 
-/*.news  {
-  position: relative;
-}
-
-.news div:nth-child(even) {
-  display:none;
-}
-.news:active div:nth-child(even) {
-  display: block;
-}*/
-
-.news div {
-  padding:0.5em 1em;
+.news {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .news .newsTitle {
   color: rgb(50, 50, 70);
   display: inline-block;
   margin: 0;
-  border-bottom: 2px solid #778899;
   cursor: pointer;
+  border-bottom: 1px solid #778899;
   /*background-color: blue;*/
+}
+
+.news .newsTitle:hover {
+  background-color: rgba(119,136,153, 0.3);
+  box-shadow: 0px -1px 1px gray;
 }
 
 .news .date {
   float: right;
-  border-bottom: 2px solid #778899;
-  /*background-color: red;*/
+  color: white;
+  letter-spacing: 0.1em;
+  background-color: rgba(119,136,153, 0.8);
+  padding: 0.1em 0.5em 0 0.4em;
+  border-top-left-radius: 0.5em;
+  box-shadow: -1px -1px 1px gray;
 }
 
 .news p {
+  margin: 0;
+  padding: 0 0.5em;
 }
 
 .news img {
   float: right;
-  padding: 0.5em;
+  padding: 0 0.5em;
+  margin-top: 1em;
+  margin-left: 1em; 
 }
 
 .newsbody {
-  /*padding: 1em;*/
+  background-color: rgba(176,196,222,0.4);
+  padding: 1em;
+  box-shadow: 0 1px 1px #B0C4DE;
 }
 
 .newsbody a {
   text-decoration: none;
   color: teal;
   padding:0 0.1em;
+  margin-left: 1em;
 }
 .newsbody a:hover {
-  color: white;
-  background-color: teal;
-  border-radius: 2px;
+  border-bottom: 1px solid teal;
+  background-color: transparent;
 }
 
 /*---------------------------------------
@@ -411,21 +416,21 @@ figcaption {
  }
 
 .entry li { 
-  background-color: rgba(104, 86, 93, 0.8);
   border-radius: 1px;
   padding: 0.5em;
   margin-bottom: 0.5em;
+  border-bottom: 1px solid black;
   }
 
 .entry a {
   text-decoration: none;
   font-family: 'PT Serif', verdana, serif;
-  color: white;
+  color: black;
   }
 
 .entry a:hover {
   cursor: pointer;
-  color: black;
+  text-decoration: underline;
 }
 /*--end of code fot sidebar--------------*/
 
@@ -876,26 +881,24 @@ h5.trashCat {
   style for footer
 -------------------------------------------------------------------------------*/
 #pics{
+  border-top: 1px solid #aca6a9;
   clear: left;
   text-align: center;
-  }
+}
 
-#pics li
-  { 
-    display: inline-block;
-    width: auto; 
-    padding: 0.5em;
-  }
+#pics li { 
+  display: inline-block;
+  width: auto; 
+  padding: 0 0.5em;
+}
 
-#pics img
-  { 
+#pics img { 
   width: 100%;
   border-radius: 1em;
-  }
+}
 
-footer 
-  {
+footer {
   text-align: center;
   font-size: small;
-  }
+}
 /*--end of code for footer-------------------------------------------------------*/
