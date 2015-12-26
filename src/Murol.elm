@@ -164,7 +164,7 @@ renderListImg pics =
 
 renderNewsList : String -> List News -> Html
 renderNewsList title xs =
-  div [class (capitalize title)]
+  div [class (title |> words |> map capitalize |> join "")]
       ([ h4 [] [text title]]
       ++ (List.map renderNews xs))
 

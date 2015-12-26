@@ -10720,7 +10720,7 @@ Elm.Murol.make = function (_elm) {
    };
    var renderNewsList = F2(function (title,xs) {
       return A2($Html.div,
-      _U.list([$Html$Attributes.$class(capitalize(title))]),
+      _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],_U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))]),A2($List.map,renderNews,xs)));
    });
    var renderListImg = function (pics) {
