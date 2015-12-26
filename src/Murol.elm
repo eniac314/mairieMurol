@@ -164,7 +164,7 @@ renderListImg pics =
 
 renderNewsList : String -> List News -> Html
 renderNewsList title xs =
-  div [class title]
+  div [class (capitalize title)]
       ([ h4 [] [text title]]
       ++ (List.map renderNews xs))
 
@@ -249,13 +249,13 @@ view address model =
       [ renderMainMenu address (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
-            div [class "sideMenu"]
-                [ renderPlugins
-                , renderNewsLetter (.newsletters model)
-                , renderMisc (.misc model)
-                ]
-            , pageFooter 
+            , div [class "sideMenu"]
+                  [ renderPlugins
+                  , renderNewsLetter (.newsletters model)
+                  , renderMisc (.misc model)
+                  ] 
             ]
+      , pageFooter 
       ]
 
 main =

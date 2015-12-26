@@ -10720,7 +10720,7 @@ Elm.Murol.make = function (_elm) {
    };
    var renderNewsList = F2(function (title,xs) {
       return A2($Html.div,
-      _U.list([$Html$Attributes.$class(title)]),
+      _U.list([$Html$Attributes.$class(capitalize(title))]),
       A2($Basics._op["++"],_U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))]),A2($List.map,renderNews,xs)));
    });
    var renderListImg = function (pics) {
@@ -10791,10 +10791,12 @@ Elm.Murol.make = function (_elm) {
               _U.list([function (_) {
                          return _.mainContent;
                       }(model)
-                      ,renderPlugins
-                      ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
-                      ,renderMisc(function (_) {    return _.misc;}(model))
-                      ,pageFooter]))]));
+                      ,A2($Html.div,
+                      _U.list([$Html$Attributes.$class("sideMenu")]),
+                      _U.list([renderPlugins
+                              ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
+                              ,renderMisc(function (_) {    return _.misc;}(model))]))]))
+              ,pageFooter]));
    });
    var Node = F2(function (a,b) {    return {ctor: "Node",_0: a,_1: b};});
    var Leaf = F2(function (a,b) {    return {ctor: "Leaf",_0: a,_1: b};});
