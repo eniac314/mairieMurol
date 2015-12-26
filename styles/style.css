@@ -4,6 +4,7 @@
 -------------------------------------------------------------------------------*/
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700italic);
 @import url(https://fonts.googleapis.com/css?family=PT+Serif);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
 /*--end of code for fonts------------------------------------------------------*/
 
 
@@ -606,17 +607,22 @@ h5.trashCat {
 /*-------------------------------------------------------------------------------
   style for conseilMunicipal
 -------------------------------------------------------------------------------*/
+#conseilMunicipal {
+  font-family: 'Roboto', sans-serif;
+}
+
 #conseilMunicipal table {
   border-collapse: collapse;
   font-size: 18px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 #conseilMunicipal table p {
+  font-family: 'Roboto', sans-serif;
   text-align: left;
 }
 
 #conseilMunicipal tr {
-  border-bottom: 1px solid gray;
+  /*border-bottom: 1px solid gray;*/
 }
 #conseilMunicipal tr:hover {
   background-color: rgb(200, 210, 200);
@@ -634,9 +640,10 @@ h5.trashCat {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
   background-color: rgba(255, 255, 240, 0.5);
-  padding: 0.5em;
+  padding: 0.3em;
 }
 .nom {
+  font-weight: 500;
   border-bottom: 1px solid rgb(1, 1, 10);
   /*background-color: rgba(211, 211, 211, 0.8);*/
 }
@@ -644,12 +651,19 @@ h5.trashCat {
 }
 
 #conseilMunicipal img {
-  width: 148px;
-  height: 148px;
-  border-top: 1px solid gray;
-  border-right: 1px solid black;
+  width: 130px;
+  height: 130px;
+  margin: 1em;
+  margin-right: 0;
+/*  border-top: 1px solid gray;
+  border-right: 1px solid gray;
   border-left: 1px solid gray;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid gray;*/
+  box-shadow: 0px 0px 3px gray;
+  border-top-right-radius: 75px;
+  border-top-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+  border-bottom-left-radius: 75px;
 }
 /*--end of code for conseilMunicipal---------------------------------------------*/
 
