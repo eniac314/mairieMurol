@@ -122,106 +122,6 @@ div[class*="Content"] a
 
 
 /*-------------------------------------------------------------------------------
-  style for Accueil
--------------------------------------------------------------------------------*/
-#middleDiv{
-  width: 80%;
-  margin: auto;
-}
-
-.entry h3 {
-  font-size: 20px;
-  word-spacing: 0.3em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0;
-  border-bottom: 1px solid black;
-}
-
-.entry {
-  display: inline-block;
-  text-align: center;
-  margin-top: 1em;
-}
-
-#news {
-  width: 100%;
-}
-
-#newsletters, #misc {
-  margin-right: 10px; 
-  width: 49.4%;
-  vertical-align: top;
-}
-
-.submenu a:hover {
-  cursor: pointer;
-  color: black;
-}
-
-.submenu ul
- { list-style-type: none;
-   margin:0.5em;
-   padding:0;
- }
-
-.submenu li { 
-  background-color: rgba(104, 86, 93, 0.8);
-  border-radius: 1px;
-  padding: 0.5em;
-  margin-bottom: 0.5em;
-  }
-
-.submenu a
-  { text-decoration: none;
-    font-family: 'PT Serif', verdana, serif;
-    color: white;
-  }
-
-#misc { 
-/*  background-image: url(/images/peintres.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;*/
-  margin-right: 0;
-}
-
-#pics{
-  clear: left;
-  text-align: center;
-  }
-
-#pics li
-  { 
-    display: inline-block;
-    width: auto; 
-    padding: 0.5em;
-  }
-
-#pics img
-  { 
-  width: 100%;
-  border-radius: 1em;
-  }
-
-#plugins
-  { 
-    text-align: center;
-    margin-bottom: 0.5em;
-    background-color: rgba(104, 86, 93, 0.8);
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-  }
-
-#plugins li {
-  display: inline-block;
-}
-#counter {
-  width: 100px;
-}
-/*--end of code for Accueil------------------------------------------------------*/
-
-
-/*-------------------------------------------------------------------------------
   style for subContainer
 -------------------------------------------------------------------------------*/
 #subContainer
@@ -229,6 +129,7 @@ div[class*="Content"] a
   padding: 0;
   margin: 0;
   display: block;
+  overflow: auto;
 }
 
 /*-------------------------------------------------------------------------------
@@ -377,6 +278,154 @@ figcaption {
   box-shadow: 2px 2px 2px gray;
 }
   /*__end_of_code_for_overall_style______*/
+
+/*-------------------------------------------------------------------------------
+  style for Accueil
+-------------------------------------------------------------------------------*/
+#index {
+  width: 70%;
+  float: right;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #aca6a9;
+}
+
+#index h4{
+  padding-top: 1em; 
+}
+
+.ActualitésDeLaCommune {
+  
+}
+.LaMairieVousInforme {
+  /*background-color: violet;*/
+}
+
+/*.news  {
+  position: relative;
+}
+
+.news div:nth-child(even) {
+  display:none;
+}
+.news:active div:nth-child(even) {
+  display: block;
+}*/
+
+.news div {
+  padding:0.5em 1em;
+}
+
+.news .newsTitle {
+  color: rgb(50, 50, 70);
+  display: inline-block;
+  margin: 0;
+  border-bottom: 2px solid #778899;
+  /*background-color: blue;*/
+}
+
+.news .date {
+  float: right;
+  border-bottom: 2px solid #778899;
+  /*background-color: red;*/
+}
+
+.news p {
+}
+
+.news img {
+  float: right;
+  padding: 0.5em;
+}
+
+.newsContent {
+  /*padding: 1em;*/
+}
+
+.newsContent a {
+  background-color: red;
+}
+.newsContent a:hover {
+  background-color: red;
+  text-decoration: underline;
+}
+
+/*---------------------------------------
+  style for sidebar
+---------------------------------------*/
+.sidebar {
+  width: 29%;
+  float: left;
+}
+
+#newsletters, #misc, #plugins {
+  /*margin-right: 10px;*/
+  vertical-align: top;
+}
+
+#plugins:before {
+  content: "METEO";
+}
+
+#plugins {
+  text-align: center;
+  margin-bottom: 0.5em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  }
+
+#plugins ul {
+  padding: 0;
+  margin: 0;
+}
+
+#plugins li {
+  display: inline-block;
+}
+
+#counter {
+  width: 100px;
+}
+
+.entry {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.entry h3 {
+  font-size: 20px;
+  word-spacing: 0.3em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.entry ul
+ { list-style-type: none;
+   margin:0.5em;
+   padding:0;
+ }
+
+.entry li { 
+  background-color: rgba(104, 86, 93, 0.8);
+  border-radius: 1px;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  }
+
+.entry a {
+  text-decoration: none;
+  font-family: 'PT Serif', verdana, serif;
+  color: white;
+  }
+
+.entry a:hover {
+  cursor: pointer;
+  color: black;
+}
+/*--end of code fot sidebar--------------*/
+
+/*--end of code for Accueil------------------------------------------------------*/
 
 
 /*-------------------------------------------------------------------------------
@@ -763,7 +812,7 @@ h5.trashCat {
   border-bottom: 1px solid black;
   text-align: left;
 }
-.bulletin ul a {
+.bulletin a {
   display: block;
   color: white;
   background-color: gray;
@@ -822,6 +871,24 @@ h5.trashCat {
 /*-------------------------------------------------------------------------------
   style for footer
 -------------------------------------------------------------------------------*/
+#pics{
+  clear: left;
+  text-align: center;
+  }
+
+#pics li
+  { 
+    display: inline-block;
+    width: auto; 
+    padding: 0.5em;
+  }
+
+#pics img
+  { 
+  width: 100%;
+  border-radius: 1em;
+  }
+
 footer 
   {
   text-align: center;
