@@ -15,8 +15,10 @@ import Date exposing (..)
 type alias Model = 
   { mainMenu    : Menu
   , logos       : List  String
-  , mainContent : Html
+  , mainContent : Signal.Address Action -> Html
   , newsletters : List (String,String)
+  , news        : List News
+  , newsMairie  : List News
   , misc        : List (String,String)
   }
 
@@ -25,10 +27,21 @@ type alias News =
   , date  : Result String Date
   , descr : Html
   , pic   : Maybe String
+  , drop  : Bool
+  , id    : Int
   }
 
 
-emptyNews = News "" (Err "") nullTag Nothing 
+emptyNews = News "" (Err "") nullTag Nothing False 0
+
+tag i n xs =
+ case xs of
+      [] -> []
+      (x::xs') -> {x | id = i+n} :: tag i (n+1) xs'  
+
+dropN id n = if .id n == id
+             then {n | drop = not (.drop n)}
+             else n 
 
 type alias Link    = String
 type alias Label   = String
@@ -97,6 +110,8 @@ initialModel =
   , mainContent = initialContent
   , newsletters = newsletters
   , misc        = misc
+  , news        = tag 0 0 news
+  , newsMairie  = tag 0 100 newsMairie
   }
 
 
@@ -106,6 +121,8 @@ type Action
   = NoOp
   | Hover String
   | Entry String
+  | Drop  Int
+
 
 
 update action model =
@@ -113,7 +130,18 @@ update action model =
     NoOp    -> model
     Hover s -> model
     Entry e -> model
+    Drop id -> 
+      let n1 = List.map (dropN id) (.news model)
+          n2 = List.map (dropN id) (.newsMairie model)
+      in { model | news = n1, newsMairie = n2 , mainContent = updateContent n1 n2 }
 
+
+
+updateContent n1 n2 address = 
+  div [ class "subContainerData", id "index"]
+      [ renderNewsList address "Actualités de la commune" n1
+      , renderNewsList address "La mairie vous informe" n2
+      ]
 
 -- View
 
@@ -162,14 +190,14 @@ renderListImg pics =
            (map (\e -> li [] [img [src ("/images/" ++ e)] []]) pics)]
 
 
-renderNewsList : String -> List News -> Html
-renderNewsList title xs =
+renderNewsList : Signal.Address Action -> String -> List News -> Html
+renderNewsList address title xs =
   div [class (title |> words |> map capitalize |> join "")]
       ([ h4 [] [text title]]
-      ++ (List.map renderNews xs))
+      ++ (List.map (renderNews address) xs))
 
-renderNews : News -> Html
-renderNews { title, date, descr, pic} =
+renderNews : Signal.Address Action -> News -> Html
+renderNews address { title, date, descr, pic, drop, id} =
   let date' = 
        case date of
         Err s -> s
@@ -182,17 +210,18 @@ renderNews { title, date, descr, pic} =
       pic' = 
        case pic of 
         Nothing -> nullTag
-        Just  p -> img [src ("/images/news/" ++ p)] []  
+        Just  p -> img [src ("/images/news/" ++ p)] []
+
+      body = if drop
+             then div [][ pic', descr]
+             else nullTag 
   in 
   div [class "news"]
       [ div [] 
-            [ h5 [class "newsTitle"] [text title]
+            [ h5 [class "newsTitle", onClick address (Drop id)] [text title]
             , span [class "date"] [text date']
             ]
-      , div []
-           [ pic'
-           , descr
-           ]
+      , body
       ]
 
 
@@ -252,7 +281,7 @@ view address model =
   div [id "container"]
       [ renderMainMenu address (.mainMenu model)
       , div [ id "subContainer"]
-            [ .mainContent model
+            [ (.mainContent model) address
             , div [class "sidebar"]
                   [ renderPlugins
                   , renderNewsLetter (.newsletters model)
@@ -322,23 +351,20 @@ maybeElem s f =
 nullTag = span [style [("display","none")]] []
 
 -- Data
-initialContent = 
-  div [ class "subContainerData", id "index"]
-      [ renderNewsList "Actualités de la commune" news
-      , renderNewsList "La mairie vous informe" newsMairie
-      ]
+initialContent address = updateContent news newsMairie address 
+
+
 
 news : List News
 news = 
   [{ emptyNews |
      title = "L'Auvergne dans le Best of de Lonely Planet"
    , date  = Date.fromString "10/29/2015"
-   , descr = div [class "newsContent"]
+   , descr = div [class "newsbody"]
                  [p [] [text "L'Auvergne fait une entrée remarquée dans le Best
                               of du voyage de Lonely Planet en 2016.
                               En 6ème position du classement des régions
                               à visiter dans le monde"]
-                 , br [] []
                  , link "Source" "http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016"
                  ]
    , pic   = Just "lonely.png"            
@@ -346,7 +372,7 @@ news =
   ,{ emptyNews |
      title = "Chant de Noël à l'église de Beaune le Froid"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsContent"]
+   , descr = div [class "newsbody"]
                  [p [] [ text " Samedi 19 à 15h à l'église de Beaune le Froid, chant de Noël
                                  avec l'ensemble instrumental de la vallée verte et la
                                  chorale de Murol"]
@@ -355,7 +381,7 @@ news =
   ,{ emptyNews |
      title = "Noël des enfants à la salle des fêtes de Murol"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsContent"]
+   , descr = div [class "newsbody"]
                  [p [] [ text "Dimanche 20 à 14h, Noël des enfants à la salle des fêtes de Murol.
                                 Une collecte  de denrée alimentaire sera réalisé à cette occasion
                                 au profit de la banque alimentaire."]
@@ -364,22 +390,21 @@ news =
   ,{ emptyNews |
      title = "Animations de Noêl "
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsContent"]
+   , descr = div [class "newsbody"]
                  [p [] [text "Lundi 21 toute la journée, rue G. Sand,
                               animations de Noêl organisées par les commerçants."]]
    }
   ,{ emptyNews |
      title = "Chasse au trésor de Noël"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsContent"]
+   , descr = div [class "newsbody"]
                  [p [] [text "Lundi 21 à 15h, chasse au trésor de Noël."]]
    }
   ,{ emptyNews |
      title = "3 contes de Noël"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsContent"]
+   , descr = div [class "newsbody"]
                  [ p [] [text "Pour Noël : 3 contes de Noël."]
-                 , br [] []
                  , link "lien" "" 
                  ]
    }                
@@ -392,9 +417,7 @@ newsMairie =
    , date  = Date.fromString "12/15/2015"
    , descr = div [class "newsMairieContent"]
                  [ p  [] [text "les nouveaux horaires de la Navette Chambon/Lac - Murol - Saint Nectaire ---- Clermont Ferrand"]
-                 , br [] []
                  , link "Télécharger les horaires" ""
-                 , br [] []
                  , link "Dépliant ligne 74 navette" ""  
                  ]
    }
@@ -406,9 +429,7 @@ newsMairie =
                  [ p  [] [text "Une application a été créée par les gendarmes 
                                 pour faire l'inventaire de biens en cas de vols
                                  ou de cambriolages: \" Cambrio-Liste \"."]
-                 , br [] []
                  , link "lien Apple-Store" ""
-                 , br [] []
                  , link "lien Google Play" "" 
                  ]
    }

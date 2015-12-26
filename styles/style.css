@@ -321,6 +321,7 @@ figcaption {
   display: inline-block;
   margin: 0;
   border-bottom: 2px solid #778899;
+  cursor: pointer;
   /*background-color: blue;*/
 }
 
@@ -338,16 +339,19 @@ figcaption {
   padding: 0.5em;
 }
 
-.newsContent {
+.newsbody {
   /*padding: 1em;*/
 }
 
-.newsContent a {
-  background-color: red;
+.newsbody a {
+  text-decoration: none;
+  color: teal;
+  padding:0 0.1em;
 }
-.newsContent a:hover {
-  background-color: red;
-  text-decoration: underline;
+.newsbody a:hover {
+  color: white;
+  background-color: teal;
+  border-radius: 2px;
 }
 
 /*---------------------------------------
