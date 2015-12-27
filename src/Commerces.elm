@@ -114,7 +114,8 @@ main =
 
 initialContent = 
   div [ class "subContainerData", id "commerces"]
-      [ h5 [] [text "Ouvert toute l'année"]
+      [ h2 [] [text "Commerce"]
+      , h5 [] [text "Ouvert toute l'année"]
       , renderCommerceMap comMapYearLong
       , h5 [] [text "Ouverture Saisonière"]
       , renderCommerceMap comMapSummer

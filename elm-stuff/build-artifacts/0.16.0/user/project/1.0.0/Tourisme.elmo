@@ -19,7 +19,8 @@ Elm.Tourisme.make = function (_elm) {
    var _op = {};
    var carte = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("carteTourisme")]),
-   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Carte & Plan")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
            ,A2($Html.iframe,
@@ -422,7 +423,8 @@ Elm.Tourisme.make = function (_elm) {
    });
    var restaurants = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("restosTourisme")]),
-   _U.list([A2($Html.p,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Restaurants")]))
+           ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des\n                     produits du terroir qui font sa réputation :\n                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme\n                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh !\n                     le bon jambon d’Auvergne, les saucisses et les\n                     saucissons), le tout arrosé, avec modération, de vins\n                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,\n                     Boudes ou Corent. ")]))
            ,A2($Html.p,
@@ -443,7 +445,8 @@ Elm.Tourisme.make = function (_elm) {
            ,A2(makeTable,"barDeNuit",barDeNuit)]));
    var hebergements = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("hebergTourisme")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Hebergements")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                                   Beaucoup d\'entre eux se sont engagés dans des \n                                   démarches de qualité, symbolisées par différents labels. Certains \n                                   sont hôtels restaurants et offrent une prestation en \n                                   demi-pension et pension complète. ")]))

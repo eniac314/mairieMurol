@@ -83,7 +83,8 @@ nullTag = span [style [("display","none")]] []
 
 initialContent = 
     div [ class "subContainerData", id "initVieScolaire"]
-        [ p [] [ text "Scolarisez vos enfants à Murol de la maternelle au primaire"]
+        [ h2 [] [text "Vie Scolaire"]
+        , p [] [ text "Scolarisez vos enfants à Murol de la maternelle au primaire"]
         ,
         figure [ class "imgHolydays"]
                [ img [src "/images/carteZones.jpg"] []
@@ -97,7 +98,8 @@ initialContent =
 
 mater  =
  div [ class "subContainerData", id "materVieScolaire"]
-     [ div [ class "schoolAddress"]
+     [ h2 [] [text "Ecole Maternelle"]
+     , div [ class "schoolAddress"]
            [ p [] [ text "Ecole Maternelle"]
            , p [] [ text "Rue du Tartaret - 63790 Murol"]
            , p [] [ text "Tél : 04 73 88 64 70"]
@@ -142,7 +144,8 @@ mater  =
         
 elem   = 
   div [ class "subContainerData", id "elemVieScolaire"]
-      [ div [ class "schoolAddress"] 
+      [ h2 [] [text "Ecole Elémentaire"]
+      , div [ class "schoolAddress"] 
             [ p [] [ text "Ecole élémentaire"]
             , p [] [ text "Rue de l'hôtel de ville - 63790 Murol"]
             , p [] [ text "Tél : 04 73 88 62 91"]
@@ -172,7 +175,8 @@ elem   =
 
 second = 
   div [ class "subContainerData", id "secondVieScolaire"]
-      [ div [ class "schoolAddress"] 
+      [ h2 [] [text "Le Secondaire"]
+      , div [ class "schoolAddress"] 
             [ p [] [ text "Collège du Pavin"]
             , p [] [ text "Rue des Prés de la ville"]
             , p [] [ text "63610 - Besse et Saint Anastaise"]
@@ -190,7 +194,8 @@ second =
 
 peri =
   div [ class "subContainerData", id "periVieScolaire"]
-  [ p [] [ text "Les Chèques Emploi Service Universel sont dorénavant acceptés pour
+  [ h2 [] [text "Périscolaire"]
+  , p [] [ text "Les Chèques Emploi Service Universel sont dorénavant acceptés pour
                  le paiement de la garderie périscolaire."]
   , p [] [ text "En dehors des heures de classe, le SIVOM de la VALLEE VERTE propose
                  les services de garderie et de restaurant scolaire, selon les

@@ -18,7 +18,8 @@ Elm.Covoiturage.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initCovoit")]),
-   _U.list([A2($Html.p,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le covoiturage")]))
+           ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                      ! Au lieu que chacun utilise sa voiture \n                      pour effectuer des trajets quotidiens ou ponctuels, le \n                      covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                      personnes. Cela permet évidement de réduire les coûts \n                      de transport (prix de l\'essence, usure de la \n                      voiture, ...), la pollution, les temps de transport. ")]))
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))

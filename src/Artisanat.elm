@@ -114,7 +114,8 @@ main =
 
 initialContent = 
   div [ class "subContainerData", id "artisanat"]
-      [ renderArtisanMap artMap]
+      [ h2 [] [text "Artisanat"]
+      , renderArtisanMap artMap]
 
 --Data 
 defArt = Artisan "" [] "" "" "" "" ""

@@ -68,7 +68,8 @@ main =
 
 initialContent = 
   div [ class "subContainerData", id "initCovoit"]
-      [ p  [] [ text "Le concept du covoiturage est vraiment très simple 
+      [ h2 [] [text "Le covoiturage"]
+      , p  [] [ text "Le concept du covoiturage est vraiment très simple 
                       ! Au lieu que chacun utilise sa voiture 
                       pour effectuer des trajets quotidiens ou ponctuels, le 
                       covoiturage vous permet d'utiliser une voiture pour plusieurs 

@@ -183,7 +183,8 @@ Elm.Commerces.make = function (_elm) {
                                                                            ,"Vêtements/chaussures - hommes/femmes/enfants "])})])}]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("commerces")]),
-   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouvert toute l\'année")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Commerce")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouvert toute l\'année")]))
            ,renderCommerceMap(comMapYearLong)
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouverture Saisonière")]))
            ,renderCommerceMap(comMapSummer)]));

@@ -68,7 +68,8 @@ main =
 
 initialContent = 
   div [ class "subContainerData", id "agriculture"]
-      [ p [] [ text "Producteur fermier"]
+      [ h2 [] [text "Agriculture"]
+      , p [] [ text "Producteur fermier"]
       , link "Saint-Nectaire AOP" "http://www.fromages-aop-auvergne.com/AOP-Saint-Nectaire"
       , p [] [ text "C’est dans une ferme datant de 1970 que 
                      Josette TIXIER vous accueillera pour vous faire découvrir 

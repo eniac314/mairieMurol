@@ -42,6 +42,12 @@ dropN id n = if .id n == id
              then {n | drop = not (.drop n)}
              else n 
 
+newstime news = 
+ case .date news of 
+   Err s  -> 0
+   Ok  d' -> Date.toTime d'
+
+
 type alias Link    = String
 type alias Label   = String
 type alias Visible = Bool
@@ -105,8 +111,8 @@ initialModel =
   , logos       = logos
   , newsletters = newsletters
   , misc        = misc
-  , news        = tag 0 0 news
-  , newsMairie  = tag 0 100 newsMairie
+  , news        = tag 0 0 (reverse (List.sortBy newstime news))
+  , newsMairie  = tag 0 100 (reverse (List.sortBy newstime newsMairie))
   }
 
 

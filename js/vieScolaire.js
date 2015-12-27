@@ -10841,26 +10841,34 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Village fleuri","")]))
            ,A2(Leaf,"Numeros d\'urgences","")
            ,A2(Leaf,"Petites annonces","")]));
+   var newstime = function (news) {
+      var _p16 = function (_) {    return _.date;}(news);
+      if (_p16.ctor === "Err") {
+            return 0;
+         } else {
+            return $Date.toTime(_p16._0);
+         }
+   };
    var dropN = F2(function (id,n) {
       return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
    });
    var update = F2(function (action,model) {
-      var _p16 = action;
-      switch (_p16.ctor)
+      var _p17 = action;
+      switch (_p17.ctor)
       {case "NoOp": return model;
          case "Hover": return model;
          case "Entry": return model;
-         default: var _p17 = _p16._0;
-           var n2 = A2($List.map,dropN(_p17),function (_) {    return _.newsMairie;}(model));
-           var n1 = A2($List.map,dropN(_p17),function (_) {    return _.news;}(model));
+         default: var _p18 = _p17._0;
+           var n2 = A2($List.map,dropN(_p18),function (_) {    return _.newsMairie;}(model));
+           var n1 = A2($List.map,dropN(_p18),function (_) {    return _.news;}(model));
            return _U.update(model,{news: n1,newsMairie: n2});}
    });
    var tag = F3(function (i,n,xs) {
-      var _p18 = xs;
-      if (_p18.ctor === "[]") {
+      var _p19 = xs;
+      if (_p19.ctor === "[]") {
             return _U.list([]);
          } else {
-            return A2($List._op["::"],_U.update(_p18._0,{id: i + n}),A3(tag,i,n + 1,_p18._1));
+            return A2($List._op["::"],_U.update(_p19._0,{id: i + n}),A3(tag,i,n + 1,_p19._1));
          }
    });
    var News = F6(function (a,b,c,d,e,f) {    return {title: a,date: b,descr: c,pic: d,drop: e,id: f};});
@@ -10952,7 +10960,12 @@ Elm.Murol.make = function (_elm) {
                                     _U.list([]),
                                     _U.list([$Html.text("Le système administratif français nécessite une\n                               simplification. Un site a été créé afin de recueillir\n                               des suggestions d\'amélioration dans les\n                                démarches administratives. En savoir plus sur ")]))
                                     ,A2(link,"http://www.faire-simple.gouv.fr/","http://www.faire-simple.gouv.fr/")]))})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,misc: misc,news: A3(tag,0,0,news),newsMairie: A3(tag,0,100,newsMairie)};
+   var initialModel = {mainMenu: mainMenu
+                      ,logos: logos
+                      ,newsletters: newsletters
+                      ,misc: misc
+                      ,news: A3(tag,0,0,$List.reverse(A2($List.sortBy,newstime,news)))
+                      ,newsMairie: A3(tag,0,100,$List.reverse(A2($List.sortBy,newstime,newsMairie)))};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    var Model = F6(function (a,b,c,d,e,f) {    return {mainMenu: a,logos: b,newsletters: c,news: d,newsMairie: e,misc: f};});
    return _elm.Murol.values = {_op: _op
@@ -10961,6 +10974,7 @@ Elm.Murol.make = function (_elm) {
                               ,emptyNews: emptyNews
                               ,tag: tag
                               ,dropN: dropN
+                              ,newstime: newstime
                               ,Leaf: Leaf
                               ,Node: Node
                               ,mainMenu: mainMenu
@@ -11020,7 +11034,8 @@ Elm.VieScolaire.make = function (_elm) {
    var _op = {};
    var peri = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("periVieScolaire")]),
-   _U.list([A2($Html.p,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Périscolaire")]))
+           ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Les Chèques Emploi Service Universel sont dorénavant acceptés pour\n                 le paiement de la garderie périscolaire.")]))
            ,A2($Html.p,
@@ -11076,7 +11091,8 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([$Html.text("Pour le transport scolaire, la participation des familles \n                 a été fixée forfaitairement par le Conseil Général \n                 pour l’année scolaire 2008 / 2009 à 12,80€ \n                 par mois (64€ par mois pour les élèves \n                 non subventionnés).")]))]));
    var second = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("secondVieScolaire")]),
-   _U.list([A2($Html.div,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le Secondaire")]))
+           ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Collège du Pavin")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue des Prés de la ville")]))
@@ -11090,7 +11106,8 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Murol.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
    var elem = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("elemVieScolaire")]),
-   _U.list([A2($Html.div,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole Elémentaire")]))
+           ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de l\'hôtel de ville - 63790 Murol")]))
@@ -11112,7 +11129,8 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                      votre enfant est déjà scolarisé au sein du \n                      SIVOM de la Vallée Verte soit, de Murol, \n                      Chambon et Saint Victor la Rivière;. L\'école se \n                      charge de l\' inscription de votre enfant pour \n                      la poursuite de sa scolarité dans le cadre \n                      du regroupement pédagogique intercommunal (RPI), du CP au \n                      CM2.")]))]));
    var mater = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("materVieScolaire")]),
-   _U.list([A2($Html.div,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
+           ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue du Tartaret - 63790 Murol")]))
@@ -11145,7 +11163,8 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les dates et horaires seront précisées ultérieurement (renseignement à l\'école)")]))]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initVieScolaire")]),
-   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Scolarisez vos enfants à Murol de la maternelle au primaire")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Vie Scolaire")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Scolarisez vos enfants à Murol de la maternelle au primaire")]))
            ,A2($Html.figure,
            _U.list([$Html$Attributes.$class("imgHolydays")]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/carteZones.jpg")]),_U.list([]))

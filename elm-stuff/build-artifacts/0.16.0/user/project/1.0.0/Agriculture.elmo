@@ -18,7 +18,8 @@ Elm.Agriculture.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("agriculture")]),
-   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Producteur fermier")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Agriculture")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Producteur fermier")]))
            ,A2($Murol.link,"Saint-Nectaire AOP","http://www.fromages-aop-auvergne.com/AOP-Saint-Nectaire")
            ,A2($Html.p,
            _U.list([]),
