@@ -208,7 +208,6 @@ div[class*="Content"] a
   border-style: none;
   margin-left: 20%;
   width: 70%;
-  margin-top: 0px;
 }
 
 .subContainerData a {
@@ -226,6 +225,14 @@ div[class*="Content"] a
   font-family: 'PT Serif', Verdana, serif;
   text-align: justify; 
   /*text-indent: 2em;*/
+}
+
+.subContainerData h2{
+  text-align: center;
+  background-color: #635c8d;
+  color: aliceblue;
+  padding: 0.3em 0;
+  margin-top: 0.5em
 }
 
 .subContainerData h3 {
