@@ -321,21 +321,20 @@ figcaption {
   clear: both;
 }*/
 
-.news .newsTitle {
+h5.newsTitle {
   color: rgb(50, 50, 70);
   display: inline-block;
   margin: 0;
   cursor: pointer;
   border-bottom: 1px solid #778899;
-  /*background-color: blue;*/
 }
 
-.news .newsTitle:hover {
+h5.newsTitle:hover {
   background-color: rgba(119,136,153, 0.3);
   box-shadow: 0px -1px 1px gray;
 }
 
-.news .date {
+span.date {
   float: right;
   color: white;
   letter-spacing: 0.1em;
@@ -379,26 +378,38 @@ figcaption {
 .sidebar {
   width: 29%;
   float: left;
+  overflow: auto;
+
+}
+
+.sidebar h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  background-color: #4d4b6d;
+  color: white;
+  padding-left: 0.5em;
 }
 
 #newsletters, #misc, #plugins {
-  /*margin-right: 10px;*/
-  vertical-align: top;
-}
-
-#plugins:before {
-  content: "METEO";
 }
 
 #plugins {
-  text-align: center;
   margin-bottom: 0.5em;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
-  }
+}
+
+#plugins h3 {
+  border-top: 1px solid #aca6a9;
+  font-size: 20px;
+  margin: 0;
+}
 
 #plugins ul {
+  text-align: center;
   padding: 0;
+  padding-top: 0.5em;
   margin: 0;
 }
 
@@ -411,40 +422,41 @@ figcaption {
 }
 
 .entry {
-  text-align: center;
-  margin-top: 1em;
+  border-top: 1px solid #aca6a9;
 }
 
 .entry h3 {
   font-size: 20px;
-  word-spacing: 0.3em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   margin: 0;
 }
 
-.entry ul
- { list-style-type: none;
-   margin:0.5em;
-   padding:0;
- }
+.entry ul {
+  text-transform: capitalize;
+  list-style-type: none;
+  margin:0.5em;
+  padding:0;
+}
 
-.entry li { 
-  border-radius: 1px;
+.entry li {
   padding: 0.5em;
   margin-bottom: 0.5em;
-  border-bottom: 1px solid black;
-  }
+  font-family: 'lora', Verdana, serif;
+  border-bottom: 1px solid #aca6a9;
+}
 
 .entry a {
   text-decoration: none;
-  font-family: 'PT Serif', verdana, serif;
   color: black;
-  }
+}
 
-.entry a:hover {
-  cursor: pointer;
-  text-decoration: underline;
+.entry li:hover {
+  /*text-decoration: overline;*/
+  background-color: #B0E0E6; /*powderblue*/
+  opacity: 0.9;
+}
+
+#newsletters {
+
 }
 /*--end of code fot sidebar--------------*/
 
