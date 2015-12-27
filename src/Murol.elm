@@ -229,7 +229,7 @@ renderNewsLetter news =
       newsList = map toNews news
   in
   div [id "newsletters", class "submenu entry"]
-      [ h3 [] [text "Inscrivez vous:"]
+      [ h3 [] [text "Inscrivez vous"]
       , ul [] newsList
       ]
 
@@ -239,7 +239,7 @@ renderMisc misc =
       linkList = map toLink misc
   in
   div [id "misc", class "submenu entry"]
-      [ h3 [] [text "Divers:"]
+      [ h3 [] [text "Divers"]
       , ul [] linkList
       ]
 
@@ -270,7 +270,8 @@ renderCounter =
 
 renderPlugins =
   div [ id "plugins", class "submenu"]
-      [ ul []
+      [ h3 [] [text "Pratique"]
+      , ul []
            (map (\p -> li [] [p]) [renderMeteo])
       ]
 view : Signal.Address Action -> Model -> Html
@@ -278,8 +279,7 @@ view address model =
   div [id "container"]
       [ renderMainMenu address (.mainMenu model)
       , div [ id "subContainer"]
-            [ --(.mainContent model) address
-              renderContent (.news model) (.newsMairie model) address
+            [ renderContent (.news model) (.newsMairie model) address
             , div [class "sidebar"]
                   [ renderPlugins
                   , renderNewsLetter (.newsletters model)

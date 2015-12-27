@@ -10671,7 +10671,8 @@ Elm.Murol.make = function (_elm) {
            "")]));
    var renderPlugins = A2($Html.div,
    _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
-   _U.list([A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo])))]));
+   _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Pratique")]))
+           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo])))]));
    var renderMisc = function (misc) {
       var toLink = function (_p2) {
          var _p3 = _p2;
@@ -10680,7 +10681,7 @@ Elm.Murol.make = function (_elm) {
       var linkList = A2($List.map,toLink,misc);
       return A2($Html.div,
       _U.list([$Html$Attributes.id("misc"),$Html$Attributes.$class("submenu entry")]),
-      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Divers:")])),A2($Html.ul,_U.list([]),linkList)]));
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Divers")])),A2($Html.ul,_U.list([]),linkList)]));
    };
    var renderNewsLetter = function (news) {
       var toNews = function (_p4) {
@@ -10690,7 +10691,7 @@ Elm.Murol.make = function (_elm) {
       var newsList = A2($List.map,toNews,news);
       return A2($Html.div,
       _U.list([$Html$Attributes.id("newsletters"),$Html$Attributes.$class("submenu entry")]),
-      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Inscrivez vous:")])),A2($Html.ul,_U.list([]),newsList)]));
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Inscrivez vous")])),A2($Html.ul,_U.list([]),newsList)]));
    };
    var renderListImg = function (pics) {
       return A2($Html.div,
