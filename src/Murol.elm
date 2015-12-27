@@ -118,7 +118,8 @@ type Action
   | Entry String
   | Drop  Int
 
-
+port scrollY : Signal Int
+port scrollY = Signal.constant 5
 
 update action model =
   case action of 
@@ -408,7 +409,7 @@ news =
 newsMairie : List News
 newsMairie =
   [{ emptyNews |
-     title = "Nouveaux Horaires Navette"
+     title = "Nouveaux horaires navette"
    , date  = Date.fromString "12/15/2015"
    , descr = div [class "newsdescr"]
                  [ p  [] [text "les nouveaux horaires de la Navette Chambon/Lac - Murol - Saint Nectaire ---- Clermont Ferrand"]
@@ -461,15 +462,15 @@ newsMairie =
   ]
 
 newsletters =
-  [("aux bulletins d'informations de la commune"
+  [("Aux bulletins d'informations de la commune"
    ,"https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"
    )
    ,
-   ("aux commissions"
+   ("Aux commissions"
    ,"https://docs.google.com/forms/d/1RzrxYsue2UqQn2VBdPK3AamNAUb1IyejhWfENwjynkA/viewform"
    )
    ,
-   ("recevoir une alerte mise à jour site"
+   ("Recevoir une alerte mise à jour site"
    ,"https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"
    )
   ]

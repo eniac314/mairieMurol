@@ -28,7 +28,8 @@ Elm.Tourisme.make = function (_elm) {
            _U.list([]))]));
    var decouvrir = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("decouvTourisme")]),
-   _U.list([A2($Html.figure,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Découvrir Murol")]))
+           ,A2($Html.figure,
            _U.list([]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/lac-et-chateau-de-murol.jpg")]),_U.list([]))
                    ,A2($Html.br,_U.list([]),_U.list([]))
@@ -478,15 +479,14 @@ Elm.Tourisme.make = function (_elm) {
    });
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initTourisme")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04-73-88-60-23")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mail : bt.murol-chambon@sancy.com")]))
+           ,$Murol.mail("bt.murol-chambon@sancy.com")
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.\n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))
-           ,$Murol.renderListImg($Murol.logos)]));
+           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.\n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))]));
    var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Découvrir Murol",_1: decouvrir}
                                            ,{ctor: "_Tuple2",_0: "Accueil Tourisme",_1: initialContent}
                                            ,{ctor: "_Tuple2",_0: "Restaurants",_1: restaurants}

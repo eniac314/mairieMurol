@@ -9,10 +9,8 @@ Elm.Repl.make = function (_elm) {
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm),
-   $String = Elm.String.make(_elm);
+   $Signal = Elm.Signal.make(_elm);
    var _op = {};
    var tsol = {ctor: "_Tuple0"};
-   var deltron3030 = $String.uncons("la mairie vous informe");
-   return _elm.Repl.values = {_op: _op,deltron3030: deltron3030,tsol: tsol};
+   return _elm.Repl.values = {_op: _op,tsol: tsol};
 };

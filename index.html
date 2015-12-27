@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <a name="top" id="top"></a>
   <header id="header">
           <!--<img src="/images/banner.jpg">-->
           <h1 id="pageTitle">
@@ -24,6 +25,9 @@
 <script type="text/javascript">
   var elmDiv = document.getElementById('elm-app');
   Elm.embed(Elm.Murol, elmDiv);
+
+  murol.ports.scrollY.send(12)
+
 </script>
 
 </html>

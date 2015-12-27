@@ -10607,13 +10607,13 @@ Elm.Murol.make = function (_elm) {
    var _op = {};
    var misc = _U.list([{ctor: "_Tuple2",_0: "Visiter le musée des peintres de Murol",_1: "http://www.musee-murol.fr/fr"}]);
    var newsletters = _U.list([{ctor: "_Tuple2"
-                              ,_0: "aux bulletins d\'informations de la commune"
+                              ,_0: "Aux bulletins d\'informations de la commune"
                               ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}
                              ,{ctor: "_Tuple2"
-                              ,_0: "aux commissions"
+                              ,_0: "Aux commissions"
                               ,_1: "https://docs.google.com/forms/d/1RzrxYsue2UqQn2VBdPK3AamNAUb1IyejhWfENwjynkA/viewform"}
                              ,{ctor: "_Tuple2"
-                              ,_0: "recevoir une alerte mise à jour site"
+                              ,_0: "Recevoir une alerte mise à jour site"
                               ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}]);
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
@@ -10725,6 +10725,7 @@ Elm.Murol.make = function (_elm) {
                     ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu(adr),_p10))]));
          }
    });
+   var scrollY = Elm.Native.Port.make(_elm).outboundSignal("scrollY",function (v) {    return v;},$Signal.constant(5));
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
    var renderNews = F2(function (address,_p11) {
       var _p12 = _p11;
@@ -10911,7 +10912,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Pour Noël : 3 contes de Noël.")])),A2(link,"lien","")]))})]);
    var newsMairie = _U.list([_U.update(emptyNews,
-                            {title: "Nouveaux Horaires Navette"
+                            {title: "Nouveaux horaires navette"
                             ,date: $Date.fromString("12/15/2015")
                             ,descr: A2($Html.div,
                             _U.list([$Html$Attributes.$class("newsdescr")]),
@@ -11029,7 +11030,8 @@ Elm.Tourisme.make = function (_elm) {
            _U.list([]))]));
    var decouvrir = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("decouvTourisme")]),
-   _U.list([A2($Html.figure,
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Découvrir Murol")]))
+           ,A2($Html.figure,
            _U.list([]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/lac-et-chateau-de-murol.jpg")]),_U.list([]))
                    ,A2($Html.br,_U.list([]),_U.list([]))
@@ -11479,15 +11481,14 @@ Elm.Tourisme.make = function (_elm) {
    });
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initTourisme")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04-73-88-60-23")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mail : bt.murol-chambon@sancy.com")]))
+           ,$Murol.mail("bt.murol-chambon@sancy.com")
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.\n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))
-           ,$Murol.renderListImg($Murol.logos)]));
+           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.\n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))]));
    var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Découvrir Murol",_1: decouvrir}
                                            ,{ctor: "_Tuple2",_0: "Accueil Tourisme",_1: initialContent}
                                            ,{ctor: "_Tuple2",_0: "Restaurants",_1: restaurants}

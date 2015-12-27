@@ -11,6 +11,14 @@
 /*-------------------------------------------------------------------------------
   style for overview
 -------------------------------------------------------------------------------*/
+html{
+  margin: 0;
+  padding: 0;
+}
+#top{
+  display: none;
+}
+
 body {
   background-color: #d3d3d3; /*lightgrey*/
   background-position: center top, center bottom;
@@ -85,7 +93,7 @@ input::-moz-focus-inner {
   background-color: #4d4b6d;
   text-transform: capitalize;
   text-decoration: none;
-   font-family: 'PT Serif', verdana, serif;
+  font-family: 'PT Serif', verdana, serif;
   color: white;
   }
 
@@ -140,17 +148,19 @@ div[class*="Content"] a
   font-family: 'PT Serif', verdana, serif;
   position: fixed;
   width: 16%;
-  padding: 1.5em 0% 0% 0;
+  padding: 0.5em 0% 0% 0;
   margin: 0;
   border-style: none;
   text-align: left;
+  min-width: 200px;
 }
 
-.sidMenu div 
+.sideMenu div 
 { 
   padding: 0;
   margin: 0;
   text-decoration: none;
+
 }
 
 .sideMenu h3
@@ -175,7 +185,7 @@ div[class*="Content"] a
   text-decoration: none;
   padding: 0.2em;
   padding-left: 2em;
-  margin: 0.2em;
+  margin: 0.2em 0 0.2em 0;
 }
 .sideMenu a:hover, a:active {
   cursor: pointer;
@@ -193,7 +203,7 @@ div[class*="Content"] a
 .subContainerData {
   font-family: 'lora', Verdana, serif;
   min-height: 400px;
-  padding: 0.5em 0% 0 5%;
+  padding: 0em 0% 0 5%;
   margin: 0;
   border-style: none;
   margin-left: 20%;
@@ -223,6 +233,7 @@ div[class*="Content"] a
   color: #2F4F4F;/*darkslategray*/
 }
 .subContainerData h4 {
+  margin-top: 0.5em;
   text-transform: uppercase;
   font-size: 100%;
   color: white;
@@ -291,7 +302,8 @@ figcaption {
 }
 
 #index h4{
-  padding-top: 1em; 
+  padding-top: 0.5em;
+  padding-bottom: 0.5em; 
 }
 
 .ActualitésDeLaCommune {
@@ -302,6 +314,7 @@ figcaption {
 }
 
 .news {
+  margin-left: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
@@ -379,6 +392,7 @@ span.date {
   width: 29%;
   float: left;
   overflow: auto;
+  margin-top: 0.5em;
 
 }
 
@@ -389,6 +403,7 @@ span.date {
   background-color: #4d4b6d;
   color: white;
   padding-left: 0.5em;
+
 }
 
 #newsletters, #misc, #plugins {
@@ -396,7 +411,6 @@ span.date {
 
 #plugins {
   margin-bottom: 0.5em;
-  padding-top: 0.2em;
   padding-bottom: 0.2em;
 }
 
@@ -431,7 +445,6 @@ span.date {
 }
 
 .entry ul {
-  text-transform: capitalize;
   list-style-type: none;
   margin:0.5em;
   padding:0;

@@ -16,7 +16,8 @@ import Murol exposing (mainMenu,
                        renderListImg,
                        logos,
                        Action (..),
-                       renderSubMenu)
+                       renderSubMenu,
+                       mail)
 
 
 --Model
@@ -30,19 +31,17 @@ subMenu = [ "Accueil Tourisme"
 
 initialContent =
   div [ class "subContainerData", id "initTourisme"]
-      [ h4 [] [ text "Office de tourisme"]
+      [ h2 [] [ text "Office de tourisme"]
       , p []
           [ text "Rue de jassaguet - 63790 Murol"]
       , p []
           [ text "Tel: 04-73-88-62-62"]
       , p []
           [ text "Fax : 04-73-88-60-23"]
-      , p []
-          [ text "Mail : bt.murol-chambon@sancy.com"]
+      , mail "bt.murol-chambon@sancy.com"
       , p []
           [ text "Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.
                   Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h."]
-      , renderListImg logos
       ]
 
 initialModel =
@@ -189,7 +188,8 @@ main =
 
 decouvrir =
   div [ class "subContainerData", id "decouvTourisme"]
-      [ figure []
+      [ h2 [] [text "Découvrir Murol"]
+      , figure []
                [ img [src "/images/lac-et-chateau-de-murol.jpg"] []
                , br [] []
                , figcaption [] [text "Situé dans le massif du Sancy,
