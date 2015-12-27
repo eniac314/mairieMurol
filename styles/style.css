@@ -306,6 +306,21 @@ figcaption {
   padding-bottom: 0.5em;
 }
 
+.newsBody{
+  background-color: rgba(176,196,222,0.4);
+  box-shadow: 0 1px 1px #B0C4DE;
+  overflow: hidden;
+  clear: both;
+}
+
+/*#news:after {
+  content: "Foo";
+  visibility: hidden;
+  display: block;
+  height: 0px;
+  clear: both;
+}*/
+
 .news .newsTitle {
   color: rgb(50, 50, 70);
   display: inline-block;
@@ -342,19 +357,18 @@ figcaption {
   margin-left: 1em; 
 }
 
-.newsbody {
-  background-color: rgba(176,196,222,0.4);
+.newsdescr {
   padding: 1em;
-  box-shadow: 0 1px 1px #B0C4DE;
+  
 }
 
-.newsbody a {
+.newsdescr a {
   text-decoration: none;
   color: teal;
   padding:0 0.1em;
   margin-left: 1em;
 }
-.newsbody a:hover {
+.newsdescr a:hover {
   border-bottom: 1px solid teal;
   background-color: transparent;
 }

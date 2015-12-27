@@ -148,7 +148,7 @@ Elm.Murol.make = function (_elm) {
                return A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p13._0))]),_U.list([]));
             }
       }();
-      var body = _p12.drop ? A2($Html.div,_U.list([]),_U.list([pic$,_p12.descr])) : nullTag;
+      var body = _p12.drop ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p12.descr])) : nullTag;
       var date$ = function () {
          var _p14 = _p12.date;
          if (_p14.ctor === "Err") {
@@ -161,7 +161,7 @@ Elm.Murol.make = function (_elm) {
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("news")]),
       _U.list([A2($Html.div,
-              _U.list([]),
+              _U.list([$Html$Attributes.$class("newsHeader")]),
               _U.list([A2($Html.h5,
                       _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p12.id))]),
                       _U.list([$Html.text(_p12.title)]))
@@ -280,7 +280,7 @@ Elm.Murol.make = function (_elm) {
                       {title: "L\'Auvergne dans le Best of de Lonely Planet"
                       ,date: $Date.fromString("10/29/2015")
                       ,descr: A2($Html.div,
-                      _U.list([$Html$Attributes.$class("newsbody")]),
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
                               _U.list([]),
                               _U.list([$Html.text("L\'Auvergne fait une entrée remarquée dans le Best\n                              of du voyage de Lonely Planet en 2016.\n                              En 6ème position du classement des régions\n                              à visiter dans le monde")]))
@@ -290,7 +290,7 @@ Elm.Murol.make = function (_elm) {
                       {title: "Chant de Noël à l\'église de Beaune le Froid"
                       ,date: $Date.fromString("12/15/2015")
                       ,descr: A2($Html.div,
-                      _U.list([$Html$Attributes.$class("newsbody")]),
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
                       _U.list([]),
                       _U.list([$Html.text(" Samedi 19 à 15h à l\'église de Beaune le Froid, chant de Noël\n                                 avec l\'ensemble instrumental de la vallée verte et la\n                                 chorale de Murol")]))]))})
@@ -298,7 +298,7 @@ Elm.Murol.make = function (_elm) {
                       {title: "Noël des enfants à la salle des fêtes de Murol"
                       ,date: $Date.fromString("12/15/2015")
                       ,descr: A2($Html.div,
-                      _U.list([$Html$Attributes.$class("newsbody")]),
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
                       _U.list([]),
                       _U.list([$Html.text("Dimanche 20 à 14h, Noël des enfants à la salle des fêtes de Murol.\n                                Une collecte  de denrée alimentaire sera réalisé à cette occasion\n                                au profit de la banque alimentaire.")]))]))})
@@ -306,7 +306,7 @@ Elm.Murol.make = function (_elm) {
                       {title: "Animations de Noêl "
                       ,date: $Date.fromString("12/15/2015")
                       ,descr: A2($Html.div,
-                      _U.list([$Html$Attributes.$class("newsbody")]),
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
                       _U.list([]),
                       _U.list([$Html.text("Lundi 21 toute la journée, rue G. Sand,\n                              animations de Noêl organisées par les commerçants.")]))]))})
@@ -314,19 +314,19 @@ Elm.Murol.make = function (_elm) {
                       {title: "Chasse au trésor de Noël"
                       ,date: $Date.fromString("12/15/2015")
                       ,descr: A2($Html.div,
-                      _U.list([$Html$Attributes.$class("newsbody")]),
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Lundi 21 à 15h, chasse au trésor de Noël.")]))]))})
                       ,_U.update(emptyNews,
                       {title: "3 contes de Noël"
                       ,date: $Date.fromString("12/15/2015")
                       ,descr: A2($Html.div,
-                      _U.list([$Html$Attributes.$class("newsbody")]),
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Pour Noël : 3 contes de Noël.")])),A2(link,"lien","")]))})]);
    var newsMairie = _U.list([_U.update(emptyNews,
                             {title: "Nouveaux Horaires Navette"
                             ,date: $Date.fromString("12/15/2015")
                             ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsbody")]),
+                            _U.list([$Html$Attributes.$class("newsdescr")]),
                             _U.list([A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("les nouveaux horaires de la Navette Chambon/Lac - Murol - Saint Nectaire ---- Clermont Ferrand")]))
@@ -337,7 +337,7 @@ Elm.Murol.make = function (_elm) {
                             {title: "Application vols/cambriolage"
                             ,date: $Date.fromString("12/15/2015")
                             ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsbody")]),
+                            _U.list([$Html$Attributes.$class("newsdescr")]),
                             _U.list([A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("Une application a été créée par les gendarmes \n                                pour faire l\'inventaire de biens en cas de vols\n                                 ou de cambriolages: \" Cambrio-Liste \".")]))
@@ -348,17 +348,17 @@ Elm.Murol.make = function (_elm) {
                             {title: "Permanence mission locale pour l\'emploi"
                             ,date: $Date.fromString("12/15/2015")
                             ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsbody")]),
+                            _U.list([$Html$Attributes.$class("newsdescr")]),
                             _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("1er lundi de chaque mois permanence mission locale pour l\'emploi.")]))]))})
                             ,_U.update(emptyNews,
                             {title: "Vente de terrain communaux"
                             ,date: $Date.fromString("12/15/2015")
-                            ,descr: A2($Html.div,_U.list([$Html$Attributes.$class("newsbody")]),_U.list([A2(link,"Contactez la mairie","")]))})
+                            ,descr: A2($Html.div,_U.list([$Html$Attributes.$class("newsdescr")]),_U.list([A2(link,"Contactez la mairie","")]))})
                             ,_U.update(emptyNews,
                             {title: "Simplification du système administratif français"
                             ,date: $Date.fromString("12/15/2015")
                             ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsbody")]),
+                            _U.list([$Html$Attributes.$class("newsdescr")]),
                             _U.list([A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("Le système administratif français nécessite une\n                               simplification. Un site a été créé afin de recueillir\n                               des suggestions d\'amélioration dans les\n                                démarches administratives. En savoir plus sur ")]))

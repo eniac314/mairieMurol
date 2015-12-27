@@ -210,11 +210,11 @@ renderNews address { title, date, descr, pic, drop, id} =
         Just  p -> img [src ("/images/news/" ++ p)] []
 
       body = if drop
-             then div [][ pic', descr]
+             then div [class "newsBody"][ pic', descr]
              else nullTag 
   in 
   div [class "news"]
-      [ div [] 
+      [ div [class "newsHeader"] 
             [ h5 [class "newsTitle", onClick address (Drop id)] [text title]
             , span [class "date"] [text date']
             ]
@@ -355,7 +355,7 @@ news =
   [{ emptyNews |
      title = "L'Auvergne dans le Best of de Lonely Planet"
    , date  = Date.fromString "10/29/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [p [] [text "L'Auvergne fait une entrée remarquée dans le Best
                               of du voyage de Lonely Planet en 2016.
                               En 6ème position du classement des régions
@@ -367,7 +367,7 @@ news =
   ,{ emptyNews |
      title = "Chant de Noël à l'église de Beaune le Froid"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [p [] [ text " Samedi 19 à 15h à l'église de Beaune le Froid, chant de Noël
                                  avec l'ensemble instrumental de la vallée verte et la
                                  chorale de Murol"]
@@ -376,7 +376,7 @@ news =
   ,{ emptyNews |
      title = "Noël des enfants à la salle des fêtes de Murol"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [p [] [ text "Dimanche 20 à 14h, Noël des enfants à la salle des fêtes de Murol.
                                 Une collecte  de denrée alimentaire sera réalisé à cette occasion
                                 au profit de la banque alimentaire."]
@@ -385,20 +385,20 @@ news =
   ,{ emptyNews |
      title = "Animations de Noêl "
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [p [] [text "Lundi 21 toute la journée, rue G. Sand,
                               animations de Noêl organisées par les commerçants."]]
    }
   ,{ emptyNews |
      title = "Chasse au trésor de Noël"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [p [] [text "Lundi 21 à 15h, chasse au trésor de Noël."]]
    }
   ,{ emptyNews |
      title = "3 contes de Noël"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [ p [] [text "Pour Noël : 3 contes de Noël."]
                  , link "lien" "" 
                  ]
@@ -410,7 +410,7 @@ newsMairie =
   [{ emptyNews |
      title = "Nouveaux Horaires Navette"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [ p  [] [text "les nouveaux horaires de la Navette Chambon/Lac - Murol - Saint Nectaire ---- Clermont Ferrand"]
                  , link "Télécharger les horaires" ""
                  , br [] []
@@ -421,7 +421,7 @@ newsMairie =
    { emptyNews |
      title = "Application vols/cambriolage"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [ p  [] [text "Une application a été créée par les gendarmes 
                                 pour faire l'inventaire de biens en cas de vols
                                  ou de cambriolages: \" Cambrio-Liste \"."]
@@ -434,7 +434,7 @@ newsMairie =
    { emptyNews |
      title = "Permanence mission locale pour l'emploi"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [ p  [] [text "1er lundi de chaque mois permanence mission locale pour l'emploi."]
                  ]
    }
@@ -442,7 +442,7 @@ newsMairie =
    { emptyNews |
      title = "Vente de terrain communaux"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [link "Contactez la mairie" "" 
                  ]
    }
@@ -450,7 +450,7 @@ newsMairie =
    { emptyNews |
      title = "Simplification du système administratif français"
    , date  = Date.fromString "12/15/2015"
-   , descr = div [class "newsbody"]
+   , descr = div [class "newsdescr"]
                  [ p [] [text "Le système administratif français nécessite une
                                simplification. Un site a été créé afin de recueillir
                                des suggestions d'amélioration dans les
