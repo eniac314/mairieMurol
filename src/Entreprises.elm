@@ -41,7 +41,9 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address
+                       ["Vie économique","Entreprises"]
+                       (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -75,8 +77,9 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "entreprises"]
-      [ h4 [] [ text "Etudes et conseils"]
+  div [ class "subContainerData noSubmenu", id "entreprises"]
+      [ h2 [] [ text "Les entreprises"]
+      , h4 [] [ text "Etudes et conseils"]
       , h5 [] [ text "L'expérience de l'art du bois"]
       , p  [] [ text "Agnès Bonnefoy"]
       , p  [] [ text "Consultant en batiment"]

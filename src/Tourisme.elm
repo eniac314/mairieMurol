@@ -22,12 +22,16 @@ import Murol exposing (mainMenu,
 
 --Model
 
-subMenu = [ "Accueil Tourisme"
-          , "Découvrir Murol"
-          , "Hebergements"
-          , "Restaurants"
-          , "Carte & plan"
-          , "Animation estivale" ]
+subMenu = 
+  { current =  "Accueil Tourisme"
+  , entries =
+      [ "Accueil Tourisme"
+      , "Découvrir Murol"
+      , "Hebergements"
+      , "Restaurants"
+      , "Carte & plan"
+      , "Animation estivale" ]
+  }
 
 initialContent =
   div [ class "subContainerData", id "initTourisme"]
@@ -61,7 +65,7 @@ contentMap =
 --View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Tourisme"] (.mainMenu model)
       , div [ id "subContainer"]
             [ renderSubMenu address "Tourisme:" (.subMenu model)
             , .mainContent model
@@ -171,9 +175,13 @@ update action model =
 
 changeMain model s =
     let newContent = get s contentMap
+        sb = .subMenu model
     in case newContent of
         Nothing -> model
-        Just c  -> { model | mainContent = c }
+        Just c  -> { model |
+                     mainContent = c
+                   , subMenu = { sb | current = s }
+                   }
 
 --Main
 

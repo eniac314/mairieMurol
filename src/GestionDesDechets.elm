@@ -33,7 +33,9 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address
+                      ["Vie locale", "Gestion des déchets"]
+                      (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -67,7 +69,7 @@ main =
     }
 
 initialContent = 
-  div [ class "subContainerData", id "initDechets"]
+  div [ class "subContainerData noSubmenu", id "initDechets"]
       [ h2 [] [text "La gestion des déchets"]
         , link "Informations concernant la taxe d'enlèvement des ordures ménagère"
              "http://www.murol.fr/Base_documentaire/SICTOM/Informationsaugmentationtaxes.pdf"

@@ -43,7 +43,8 @@ type alias CommerceMap = Dict String (List Commerce)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Vie économique", "Commerces"]
+                               (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -113,7 +114,7 @@ main =
     }
 
 initialContent = 
-  div [ class "subContainerData", id "commerces"]
+  div [ class "subContainerData noSubmenu", id "commerces"]
       [ h2 [] [text "Commerce"]
       , h5 [] [text "Ouvert toute l'année"]
       , renderCommerceMap comMapYearLong

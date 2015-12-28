@@ -149,19 +149,21 @@ renderContent n1 n2 address =
       , renderNewsList address "La mairie vous informe" n2
       ]
 
-renderMainMenu : Signal.Address Action -> Menu -> Html
-renderMainMenu adr m = 
+renderMainMenu : Signal.Address Action -> List String -> Menu -> Html
+renderMainMenu adr pos m  = 
   let toUrl s =
     s |> words
       |> map capitalize
       |> join ""
       |> (\s -> s ++ ".html")
+      current label = ("current", List.member label pos)
+
   in case m of
     Leaf label link -> 
       let link' = if String.isEmpty link
                   then toUrl label
                   else link
-      in  a [ href link']
+      in  a [ href link', classList [current label]]
             [ text label]
          
 
@@ -169,13 +171,15 @@ renderMainMenu adr m =
       if String.isEmpty label
       
       then div [ class "mainMenu"]
-               (List.map (renderMainMenu adr) xs)  
+               (List.map (renderMainMenu adr pos) xs)  
       else
         div [ class (label ++ "Content")]
-            ([ a [ class (label ++ "dropBtn")
+            ([ a [ classList [ ((label ++ "dropBtn"),True)
+                             , current label
+                             ]
                  ]
                  [ text label ]
-             , div [] (List.map (renderMainMenu adr) xs)
+             , div [] (List.map (renderMainMenu adr pos) xs)
              ])
 
 pageFooter = 
@@ -250,9 +254,13 @@ renderMisc misc =
       , ul [] linkList
       ]
 
-renderSubMenu address title entries =
-  let toA e = a [id e, onClick address (Entry e), href "#top"] [text e]
-      linkList = map toA entries 
+renderSubMenu address title submenu =
+  let es    = .entries submenu 
+      pos   = .current submenu
+      isCurrent e = classList [("submenuCurrent", e == pos)]
+      toA e = a [id e, onClick address (Entry e), href "#top", isCurrent e]
+                [text e]
+      linkList = map toA es
   in
   div [ class "sideMenu"]
       [ h3  [] [text (title)]
@@ -284,7 +292,7 @@ renderPlugins =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Accueil"] (.mainMenu model) 
       , div [ id "subContainer"]
             [ renderContent (.news model) (.newsMairie model) address
             , div [class "sidebar"]

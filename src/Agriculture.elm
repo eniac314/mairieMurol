@@ -33,7 +33,7 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Vie économique", "Agriculture"] (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -67,7 +67,7 @@ main =
     }
 
 initialContent = 
-  div [ class "subContainerData", id "agriculture"]
+  div [ class "subContainerData noSubmenu", id "agriculture"]
       [ h2 [] [text "Agriculture"]
       , p [] [ text "Producteur fermier"]
       , link "Saint-Nectaire AOP" "http://www.fromages-aop-auvergne.com/AOP-Saint-Nectaire"

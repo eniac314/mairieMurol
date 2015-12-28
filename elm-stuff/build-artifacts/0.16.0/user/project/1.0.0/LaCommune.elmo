@@ -17,8 +17,9 @@ Elm.LaCommune.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("laCommune")]),
-   _U.list([A2($Html.p,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("laCommune")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La commune")]))
+           ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("La population de Murol est de 555 habitants \n                   (546 + 9 comptés à part). On compte \n                   266 résidences principales, avec une augmentation de + \n                   8% en 10 ans et 424 résidences secondaires, \n                   avec une augmentation de +9% sur la même \n                   période (INSEE 2009). Le commerce et les services \n                   représentent le principal secteur d’activité de notre commune \n                   avec 67% des établissements, mais l’agriculture reste présente \n                   avec 12% des établissements. ")]))
            ,A2($Html.p,
@@ -97,7 +98,7 @@ Elm.LaCommune.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","La commune"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });

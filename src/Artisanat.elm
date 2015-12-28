@@ -43,7 +43,7 @@ type alias ArtisanMap = Dict String (List Artisan)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Vie économique","Artisanat"] (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -113,7 +113,7 @@ main =
     }
 
 initialContent = 
-  div [ class "subContainerData", id "artisanat"]
+  div [ class "subContainerData noSubmenu", id "artisanat"]
       [ h2 [] [text "Artisanat"]
       , renderArtisanMap artMap]
 

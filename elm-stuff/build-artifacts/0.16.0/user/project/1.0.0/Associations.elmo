@@ -64,7 +64,7 @@ Elm.Associations.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Culture et loisirs","Associations"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
@@ -302,7 +302,9 @@ Elm.Associations.make = function (_elm) {
       var assocs$ = A2($List.sortBy,function (_) {    return _.nom;},assocs);
       return A2($Html.div,_U.list([$Html$Attributes.$class("assocs")]),A2($List.map,renderAssoc,assocs$));
    }();
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("associations")]),_U.list([renderAssocs]));
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("associations")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Associations")])),renderAssocs]));
    var Responsable = F3(function (a,b,c) {    return {poste: a,nom: b,tel: c};});
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};

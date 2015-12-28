@@ -471,7 +471,7 @@ Elm.Tourisme.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Tourisme"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3($Murol.renderSubMenu,address,"Tourisme:",function (_) {    return _.subMenu;}(model))
@@ -496,12 +496,13 @@ Elm.Tourisme.make = function (_elm) {
                                            ,{ctor: "_Tuple2",_0: "Carte & plan",_1: carte}
                                            ,{ctor: "_Tuple2",_0: "Hebergements",_1: hebergements}]));
    var changeMain = F2(function (model,s) {
+      var sb = function (_) {    return _.subMenu;}(model);
       var newContent = A2($Dict.get,s,contentMap);
       var _p5 = newContent;
       if (_p5.ctor === "Nothing") {
             return model;
          } else {
-            return _U.update(model,{mainContent: _p5._0});
+            return _U.update(model,{mainContent: _p5._0,subMenu: _U.update(sb,{current: s})});
          }
    });
    var update = F2(function (action,model) {
@@ -511,7 +512,8 @@ Elm.Tourisme.make = function (_elm) {
          case "Entry": return A2(changeMain,model,_p6._0);
          default: return model;}
    });
-   var subMenu = _U.list(["Accueil Tourisme","Découvrir Murol","Hebergements","Restaurants","Carte & plan","Animation estivale"]);
+   var subMenu = {current: "Accueil Tourisme"
+                 ,entries: _U.list(["Accueil Tourisme","Découvrir Murol","Hebergements","Restaurants","Carte & plan","Animation estivale"])};
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Tourisme.values = {_op: _op

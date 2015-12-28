@@ -22,11 +22,16 @@ import Murol exposing (mainMenu,
                        link)
 
 -- Model
-subMenu = [ "Ecole Maternelle"
-          , "Ecole Elementaire"
-          , "Le Secondaire"
-          , "Periscolaire"
-          ]
+subMenu = 
+  { current = "Accueil Scolaire"
+  , entries =
+      [ "Accueil Scolaire"
+      , "Ecole Maternelle"
+      , "Ecole Elementaire"
+      , "Le Secondaire"
+      , "Périscolaire"
+      ]
+  }
 
 initialModel =
   { mainMenu    = mainMenu
@@ -37,7 +42,7 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Vie locale", "Vie scolaire"] (.mainMenu model)
       , div [ id "subContainer"]
             [ renderSubMenu address "Vie Scolaire:" (.subMenu model)
             , .mainContent model
@@ -48,10 +53,11 @@ view address model =
 -- Update
 
 contentMap =
- fromList [ ("Ecole Maternelle",mater)
+ fromList [ ("Accueil Scolaire", initialContent)
+          , ("Ecole Maternelle",mater)
           , ("Ecole Elementaire", elem)
           , ("Le Secondaire", second)
-          , ("Periscolaire", peri)
+          , ("Périscolaire", peri)
           ]
 
 update action model =
@@ -62,10 +68,13 @@ update action model =
 
 changeMain model s =
     let newContent = get s contentMap
+        sb = .subMenu model
     in case newContent of
         Nothing -> model
-        Just c  -> { model | mainContent = c }
-
+        Just c  -> { model |
+                     mainContent = c
+                   , subMenu = { sb | current = s }
+                   }
 --Main
 
 main =

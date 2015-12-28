@@ -33,7 +33,9 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address
+                       ["Mairie", "Gestion des risques"]
+                       (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -67,8 +69,9 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "gestionDesRisques"]
-      [ link "Télécharger le document d'information communal sur les risques majeurs \"DICRIM\"" "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf"
+  div [ class "subContainerData noSubmenu", id "gestionDesRisques"]
+      [ h2 [] [text "Gestion des Risques"]
+      , link "Télécharger le document d'information communal sur les risques majeurs \"DICRIM\"" "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf"
       , br [] []
       , link "Télécharger la brochure prise en compte du risque sismique en Auvergne" "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf"
       , br [] []

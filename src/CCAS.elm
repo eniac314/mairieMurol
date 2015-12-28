@@ -41,7 +41,8 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Mairie","CCAS"]
+                       (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -75,8 +76,8 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "ccas"]
-      [ h4 [] [text "Centre Communal d'Action Social"]
+  div [ class "subContainerData noSubmenu", id "ccas"]
+      [ h2 [] [text "Centre Communal d'Action Social"]
       , p  [] [text "Président: Sébastien GOUTTEBEL"]
       , p  [] [text "Vice-présidente: Sylvie GILLARD"]
       , p  [] [text "Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY"]

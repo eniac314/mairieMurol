@@ -55,7 +55,7 @@ emptyAssoc = Assoc "" "" "" "" "" [] [] [] ""
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Culture et loisirs","Associations"] (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -130,8 +130,10 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "associations"]
-      [renderAssocs]
+  div [ class "subContainerData noSubmenu", id "associations"]
+      [ h2 [] [text "Associations"]
+      , renderAssocs
+      ]
  
 
 -- Data

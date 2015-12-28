@@ -17,8 +17,8 @@ Elm.CMJ.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("cmj")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Présentation du Conseil municipal des jeunes (CMJ)")]))
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("cmj")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Conseil municipal des jeunes (CMJ)")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le CMJ est élu pour un mandat de \n                     2 ans.")]))
            ,A2($Html.p,
            _U.list([]),
@@ -136,7 +136,7 @@ Elm.CMJ.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","CMJ"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });

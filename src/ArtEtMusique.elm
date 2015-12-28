@@ -37,7 +37,8 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Culture et loisirs", "Art et musique"]
+                               (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -71,8 +72,9 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "artEtMusique"]
-      [ h3 [] [text "Artistes Murolais"]
+  div [ class "subContainerData noSubmenu", id "artEtMusique"]
+      [ h2 [] [text "Art et musique"]
+      , h3 [] [text "Artistes Murolais"]
       , p  [] [text "Danielle lance l'idée d'un Site Internet gratuit des \"Artistes Murolais Contemporains\""]
       , p  [] [text "Peinture, dessin, poésie, sculpture, artisanat d'art, etc....."]
       , p  [] [text "vous êtes intéressés, contactez-la en utilisant les lien ci-dessous"]

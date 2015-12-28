@@ -161,17 +161,19 @@ Elm.VieScolaire.make = function (_elm) {
                            _U.list([$Html$Attributes.href("http://www.education.gouv.fr/cid87910/calendrier-scolaire-pour-les-annees-2015-2016-2016-2017-2017-2018.html")]),
                            _U.list([$Html.text("source: education.gouv.fr")]))]))]))]));
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
-   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Ecole Maternelle",_1: mater}
+   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Accueil Scolaire",_1: initialContent}
+                                           ,{ctor: "_Tuple2",_0: "Ecole Maternelle",_1: mater}
                                            ,{ctor: "_Tuple2",_0: "Ecole Elementaire",_1: elem}
                                            ,{ctor: "_Tuple2",_0: "Le Secondaire",_1: second}
-                                           ,{ctor: "_Tuple2",_0: "Periscolaire",_1: peri}]));
+                                           ,{ctor: "_Tuple2",_0: "Périscolaire",_1: peri}]));
    var changeMain = F2(function (model,s) {
+      var sb = function (_) {    return _.subMenu;}(model);
       var newContent = A2($Dict.get,s,contentMap);
       var _p0 = newContent;
       if (_p0.ctor === "Nothing") {
             return model;
          } else {
-            return _U.update(model,{mainContent: _p0._0});
+            return _U.update(model,{mainContent: _p0._0,subMenu: _U.update(sb,{current: s})});
          }
    });
    var update = F2(function (action,model) {
@@ -184,7 +186,7 @@ Elm.VieScolaire.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie locale","Vie scolaire"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3($Murol.renderSubMenu,address,"Vie Scolaire:",function (_) {    return _.subMenu;}(model))
@@ -193,7 +195,7 @@ Elm.VieScolaire.make = function (_elm) {
                       }(model)]))
               ,$Murol.pageFooter]));
    });
-   var subMenu = _U.list(["Ecole Maternelle","Ecole Elementaire","Le Secondaire","Periscolaire"]);
+   var subMenu = {current: "Accueil Scolaire",entries: _U.list(["Accueil Scolaire","Ecole Maternelle","Ecole Elementaire","Le Secondaire","Périscolaire"])};
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.VieScolaire.values = {_op: _op

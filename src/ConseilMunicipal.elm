@@ -41,7 +41,8 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Mairie","Conseil municipal"]
+                               (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -75,8 +76,8 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "conseilMunicipal"]
-      [ h4 [] [text "Le Conseil Municipal"]
+  div [ class "subContainerData noSubmenu", id "conseilMunicipal"]
+      [ h2 [] [text "Le Conseil Municipal"]
       , p  [] [text "Le conseil municipal règle par ses délibérations les 
                      affaires de la commune : vote du budget, 
                      gestion du domaine municipal… Le nombre d’adjoints est 

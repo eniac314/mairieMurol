@@ -41,7 +41,9 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address
+                       ["Mairie", "La commune"]
+                       (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -75,8 +77,9 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "laCommune"]
-      [ p [] [text "La population de Murol est de 555 habitants 
+  div [ class "subContainerData noSubmenu", id "laCommune"]
+      [ h2 [] [text "La commune"]
+      , p [] [text "La population de Murol est de 555 habitants 
                    (546 + 9 comptés à part). On compte 
                    266 résidences principales, avec une augmentation de + 
                    8% en 10 ans et 424 résidences secondaires, 

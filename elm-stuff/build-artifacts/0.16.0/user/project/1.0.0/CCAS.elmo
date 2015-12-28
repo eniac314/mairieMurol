@@ -17,8 +17,8 @@ Elm.CCAS.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("ccas")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Centre Communal d\'Action Social")]))
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("ccas")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Centre Communal d\'Action Social")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Président: Sébastien GOUTTEBEL")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vice-présidente: Sylvie GILLARD")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY")]))
@@ -63,7 +63,7 @@ Elm.CCAS.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","CCAS"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });

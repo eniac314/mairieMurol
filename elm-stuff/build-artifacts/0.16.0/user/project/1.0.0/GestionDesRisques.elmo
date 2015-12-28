@@ -17,8 +17,9 @@ Elm.GestionDesRisques.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("gestionDesRisques")]),
-   _U.list([A2($Murol.link,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("gestionDesRisques")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Gestion des Risques")]))
+           ,A2($Murol.link,
            "Télécharger le document d\'information communal sur les risques majeurs \"DICRIM\"",
            "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf")
            ,A2($Html.br,_U.list([]),_U.list([]))
@@ -77,7 +78,7 @@ Elm.GestionDesRisques.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","Gestion des risques"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });

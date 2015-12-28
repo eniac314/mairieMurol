@@ -10704,7 +10704,8 @@ Elm.Murol.make = function (_elm) {
       },
       pics))]));
    };
-   var renderMainMenu = F2(function (adr,m) {
+   var renderMainMenu = F3(function (adr,pos,m) {
+      var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
       var toUrl = function (s) {
          return function (s) {
             return A2($Basics._op["++"],s,".html");
@@ -10715,14 +10716,18 @@ Elm.Murol.make = function (_elm) {
             var _p8 = _p6._1;
             var _p7 = _p6._0;
             var link$ = $String.isEmpty(_p8) ? toUrl(_p7) : _p8;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$)]),_U.list([$Html.text(_p7)]));
+            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p7)]))]),_U.list([$Html.text(_p7)]));
          } else {
             var _p10 = _p6._1;
             var _p9 = _p6._0;
-            return $String.isEmpty(_p9) ? A2($Html.div,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu(adr),_p10)) : A2($Html.div,
+            return $String.isEmpty(_p9) ? A2($Html.div,
+            _U.list([$Html$Attributes.$class("mainMenu")]),
+            A2($List.map,A2(renderMainMenu,adr,pos),_p10)) : A2($Html.div,
             _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p9,"Content"))]),
-            _U.list([A2($Html.a,_U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p9,"dropBtn"))]),_U.list([$Html.text(_p9)]))
-                    ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu(adr),_p10))]));
+            _U.list([A2($Html.a,
+                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p9,"dropBtn"),_1: true},current(_p9)]))]),
+                    _U.list([$Html.text(_p9)]))
+                    ,A2($Html.div,_U.list([]),A2($List.map,A2(renderMainMenu,adr,pos),_p10))]));
          }
    });
    var scrollY = Elm.Native.Port.make(_elm).outboundSignal("scrollY",function (v) {    return v;},$Signal.constant(5));
@@ -10768,11 +10773,16 @@ Elm.Murol.make = function (_elm) {
       _U.list([A3(renderNewsList,address,"Actualités de la commune",n1),A3(renderNewsList,address,"La mairie vous informe",n2)]));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
-   var renderSubMenu = F3(function (address,title,entries) {
+   var renderSubMenu = F3(function (address,title,submenu) {
+      var pos = function (_) {    return _.current;}(submenu);
+      var isCurrent = function (e) {    return $Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "submenuCurrent",_1: _U.eq(e,pos)}]));};
       var toA = function (e) {
-         return A2($Html.a,_U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#top")]),_U.list([$Html.text(e)]));
+         return A2($Html.a,
+         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#top"),isCurrent(e)]),
+         _U.list([$Html.text(e)]));
       };
-      var linkList = A2($List.map,toA,entries);
+      var es = function (_) {    return _.entries;}(submenu);
+      var linkList = A2($List.map,toA,es);
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("sideMenu")]),
       _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text(title)])),A2($Html.div,_U.list([]),linkList)]));
@@ -10790,7 +10800,7 @@ Elm.Murol.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2(renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3(renderMainMenu,address,_U.list(["Accueil"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(renderContent,function (_) {    return _.news;}(model),function (_) {    return _.newsMairie;}(model),address)
@@ -11563,12 +11573,13 @@ Elm.VosDemarches.make = function (_elm) {
                                            ,{ctor: "_Tuple2",_0: "Liste électorale",_1: listElec}
                                            ,{ctor: "_Tuple2",_0: "Service civique",_1: servCiv}]));
    var changeMain = F2(function (model,s) {
+      var sb = function (_) {    return _.subMenu;}(model);
       var newContent = A2($Dict.get,s,contentMap);
       var _p0 = newContent;
       if (_p0.ctor === "Nothing") {
             return model;
          } else {
-            return _U.update(model,{mainContent: _p0._0});
+            return _U.update(model,{mainContent: _p0._0,subMenu: _U.update(sb,{current: s})});
          }
    });
    var update = F2(function (action,model) {
@@ -11581,7 +11592,7 @@ Elm.VosDemarches.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","Vos démarches"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3($Murol.renderSubMenu,address,"Vos démarches:",function (_) {    return _.subMenu;}(model))
@@ -11590,7 +11601,8 @@ Elm.VosDemarches.make = function (_elm) {
                       }(model)]))
               ,$Murol.pageFooter]));
    });
-   var subMenu = _U.list(["Carte d\'identité","Passeport","Permis de conduire","Véhicules","Etat civil","Liste électorale","Service civique"]);
+   var subMenu = {current: "Carte d\'identité"
+                 ,entries: _U.list(["Carte d\'identité","Passeport","Permis de conduire","Véhicules","Etat civil","Liste électorale","Service civique"])};
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.VosDemarches.values = {_op: _op

@@ -68,6 +68,10 @@ header #subTitle{
   margin: 0;
   }
 
+.mainMenu .current{
+  background-color: grey;
+}
+
 .mainMenu div 
 {
   display: inline-block;
@@ -191,6 +195,10 @@ div[class*="Content"] a
   color: black;
   text-decoration: overline black;
 }
+
+.sideMenu .submenuCurrent{
+  background-color: #4d4b6d;
+}
 /*--end of code for sideMenu-----------------------------------------------------*/
 
 
@@ -205,6 +213,11 @@ div[class*="Content"] a
   padding: 0em 5% 0 5%;
   border-style: none;
   margin-left: 20%;
+}
+
+.noSubmenu {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .subContainerData a {
@@ -226,6 +239,7 @@ div[class*="Content"] a
 
 .subContainerData h2{
   text-align: center;
+  text-transform: capitalize;
   background-color: #635c8d;
   color: aliceblue;
   padding: 0.3em 0;

@@ -34,7 +34,8 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Culture et loisirs", "Sports et détente"]
+                               (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]

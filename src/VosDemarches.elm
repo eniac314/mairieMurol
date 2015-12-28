@@ -23,14 +23,18 @@ import Murol exposing (mainMenu,
 
 
 -- Model
-subMenu = [ "Carte d'identité"
-          , "Passeport"
-          , "Permis de conduire"
-          , "Véhicules"
-          , "Etat civil"
-          , "Liste électorale"
-          , "Service civique" 
-          ]
+subMenu = 
+  { current = "Carte d'identité"
+  , entries =
+      [ "Carte d'identité"
+      , "Passeport"
+      , "Permis de conduire"
+      , "Véhicules"
+      , "Etat civil"
+      , "Liste électorale"
+      , "Service civique" 
+      ]
+  } 
 
 initialModel =
   { mainMenu    = mainMenu
@@ -42,7 +46,7 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Mairie", "Vos démarches"] (.mainMenu model)
       , div [ id "subContainer"]
             [ renderSubMenu address "Vos démarches:" (.subMenu model)
             , .mainContent model
@@ -70,9 +74,13 @@ update action model =
 
 changeMain model s =
     let newContent = get s contentMap
+        sb = .subMenu model
     in case newContent of
         Nothing -> model
-        Just c  -> { model | mainContent = c }
+        Just c  -> { model |
+                     mainContent = c
+                   , subMenu = { sb | current = s }
+                   }
 
 --Main
 

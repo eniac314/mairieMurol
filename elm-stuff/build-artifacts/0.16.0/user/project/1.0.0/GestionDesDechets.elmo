@@ -17,7 +17,7 @@ Elm.GestionDesDechets.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initDechets")]),
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("initDechets")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La gestion des déchets")]))
            ,A2($Murol.link,
            "Informations concernant la taxe d\'enlèvement des ordures ménagère",
@@ -166,7 +166,7 @@ Elm.GestionDesDechets.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie locale","Gestion des déchets"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });

@@ -56,7 +56,8 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Mairie","Commissions"]
+                               (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -107,8 +108,9 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "commissions"]
-      [ p [] [text "Les commissions ci-dessous sont ouvertes aux personnes intéressées. 
+  div [ class "subContainerData noSubmenu", id "commissions"]
+      [ h2 [] [text "Les commissions"]
+      , p [] [text "Les commissions ci-dessous sont ouvertes aux personnes intéressées. 
                    Pour participer, contactez la mairie ou inscrivez-vous en 
                    ligne: "]
       , p [] [text "Inscription en ligne aux différentes", link " commissions" "https://docs.google.com/forms/d/1RzrxYsue2UqQn2VBdPK3AamNAUb1IyejhWfENwjynkA/viewform"]

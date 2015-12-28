@@ -41,7 +41,9 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address
+                       ["Vie locale", "Les séniors"]
+                       (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]

@@ -33,7 +33,9 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address
+                       ["Vie locale", "Covoiturage"]
+                       (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -67,7 +69,7 @@ main =
     }
 
 initialContent = 
-  div [ class "subContainerData", id "initCovoit"]
+  div [ class "subContainerData noSubmenu", id "initCovoit"]
       [ h2 [] [text "Le covoiturage"]
       , p  [] [ text "Le concept du covoiturage est vraiment très simple 
                       ! Au lieu que chacun utilise sa voiture 

@@ -33,7 +33,9 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address
+                       ["Mairie", "Horaires et contact"]
+                       (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -67,8 +69,8 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "horairesContact"]
-      [ h4 [] [text "Contacter la mairie"]
+  div [ class "subContainerData noSubmenu", id "horairesContact"]
+      [ h2 [] [text "Contacter la mairie"]
       , h5 [] [text "Par courrier:"]
       , p  [] [text "Mairie de Murol - Place de l'hôtel de ville - 63790 Murol"]
       , h5 [] [text "Par téléphone :"]

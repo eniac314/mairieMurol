@@ -41,7 +41,7 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address (.mainMenu model)
+      [ renderMainMenu address ["Mairie","CMJ"] (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -75,8 +75,8 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "cmj"]
-      [ h4 [] [text "Présentation du Conseil municipal des jeunes (CMJ)"]
+  div [ class "subContainerData noSubmenu", id "cmj"]
+      [ h2 [] [text "Conseil municipal des jeunes (CMJ)"]
       , p  [] [text "Le CMJ est élu pour un mandat de 
                      2 ans."]
       , p  [] [text "Rôles et objectifs du conseil municipal des jeunes 

@@ -17,8 +17,8 @@ Elm.ConseilMunicipal.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("conseilMunicipal")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Le Conseil Municipal")]))
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("conseilMunicipal")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le Conseil Municipal")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le conseil municipal règle par ses délibérations les \n                     affaires de la commune : vote du budget, \n                     gestion du domaine municipal… Le nombre d’adjoints est \n                     déterminé par le nombre d’habitants de la ville. \n                     Avec ses 500 habitants, Murol bénéficie de 4 \n                     adjoints. Le conseil se réunit généralement une fois \n                     par mois, sauf en été. Les séances sont \n                     publiques.")]))
@@ -246,7 +246,7 @@ Elm.ConseilMunicipal.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu,address,function (_) {    return _.mainMenu;}(model))
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","Conseil municipal"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
