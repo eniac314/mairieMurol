@@ -56,6 +56,7 @@ Elm.Artisanat.make = function (_elm) {
       return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
    };
    var renderArtisanMap = function (am) {
+      var col = function (ds) {    return A2($Html.div,_U.list([$Html$Attributes.$class("column")]),ds);};
       var toDiv = F3(function (k,v,acc) {
          return A2($List._op["::"],
          A2($Html.div,
@@ -64,7 +65,7 @@ Elm.Artisanat.make = function (_elm) {
          acc);
       });
       var toDivs = A3($Dict.foldr,toDiv,_U.list([]),am);
-      return A2($Html.div,_U.list([]),toDivs);
+      return A2($Html.div,_U.list([]),A2($List.map,col,$Murol.split3$(toDivs)));
    };
    var view = F2(function (address,model) {
       return A2($Html.div,

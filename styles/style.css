@@ -661,11 +661,16 @@ h5.trashCat {
  /*overflow: auto;*/
 }
 
+.column{
+  vertical-align: top;
+  display: inline-block;
+}
+
 .businesses {
   width: 300px;
   height: auto;
   vertical-align: top;
-  display: inline-block;
+  display: block;
   text-align: center;
   margin: 1em 1em;
   border: 1px solid black;

@@ -375,6 +375,21 @@ maybeElem s f =
 
 nullTag = span [style [("display","none")]] []
 
+split3 xs (xs1,xs2,xs3) = 
+        case xs of
+          [] -> (xs1,xs2,xs3)
+          (x1::[]) -> (x1::xs1,xs2,xs3)
+          (x1::x2::[]) -> (x1::xs1,x2::xs2,xs3)
+          (x1::x2::x3::xs') -> split3 xs' (x1::xs1,x2::xs2,x3::xs3)
+
+split3' xs =
+  let l = ceiling (toFloat (List.length xs) / 3)
+      chunk n xs = 
+        case xs of 
+          []  -> []
+          xs' -> (List.take n xs') :: chunk n (drop n xs')
+  in chunk l xs  
+
 -- Data
  
 news : List News

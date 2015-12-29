@@ -17,7 +17,8 @@ import Murol exposing (mainMenu,
                        logos,
                        Action (..),
                        renderSubMenu,
-                       link)
+                       link,
+                       split3')
 
 -- Model
 subMenu = []
@@ -58,7 +59,10 @@ renderCommerceMap am =
             ( [ h5 [] [text k]] ++
                 List.map renderCommerce v)) :: acc
       toDivs = Dict.foldr toDiv [] am
-  in div [] toDivs     
+
+      col ds = div [class "column"] ds
+
+  in div [] (List.map col (split3' toDivs))     
   
 
 

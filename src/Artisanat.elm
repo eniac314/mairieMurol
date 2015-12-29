@@ -17,7 +17,8 @@ import Murol exposing (mainMenu,
                        logos,
                        Action (..),
                        renderSubMenu,
-                       link)
+                       link,
+                       split3')
 
 -- Model
 subMenu = []
@@ -50,6 +51,15 @@ view address model =
       , pageFooter
       ]
 
+--renderArtisanMap : ArtisanMap -> Html
+--renderArtisanMap am = 
+--  let toDiv k v acc =
+--        (div [class "businesses"]
+--            ( [ h5 [] [text k]] ++
+--                List.map renderArtisan v)) :: acc
+--      toDivs = Dict.foldr toDiv [] am
+--  in div [] toDivs     
+  
 renderArtisanMap : ArtisanMap -> Html
 renderArtisanMap am = 
   let toDiv k v acc =
@@ -57,9 +67,10 @@ renderArtisanMap am =
             ( [ h5 [] [text k]] ++
                 List.map renderArtisan v)) :: acc
       toDivs = Dict.foldr toDiv [] am
-  in div [] toDivs     
-  
 
+      col ds = div [class "column"] ds
+
+  in div [] (List.map col (split3' toDivs)) 
 
 renderArtisan : Artisan -> Html
 renderArtisan { name, descr, addr, tel, fax, mail, site} = 
