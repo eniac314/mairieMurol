@@ -10745,15 +10745,21 @@ Elm.Murol.make = function (_elm) {
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
    var renderNews = F2(function (address,_p13) {
       var _p14 = _p13;
+      var _p18 = _p14.drop;
+      var arrow = _p18 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
+      _U.list([$Html$Attributes.src("/images/dArrow.jpeg")]),
+      _U.list([]));
       var pic$ = function () {
          var _p15 = _p14.pic;
          if (_p15.ctor === "Nothing") {
                return nullTag;
             } else {
-               return A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p15._0))]),_U.list([]));
+               return A2($Html.img,
+               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p15._0)),$Html$Attributes.$class("newspic")]),
+               _U.list([]));
             }
       }();
-      var body = _p14.drop ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p14.descr])) : nullTag;
+      var body = _p18 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p14.descr])) : nullTag;
       var date$ = function () {
          var _p16 = _p14.date;
          if (_p16.ctor === "Err") {
@@ -10770,7 +10776,8 @@ Elm.Murol.make = function (_elm) {
               _U.list([A2($Html.h5,
                       _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p14.id))]),
                       _U.list([$Html.text(_p14.title)]))
-                      ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))]))
+                      ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))
+                      ,A2($Html.span,_U.list([$Html$Attributes.$class("arrow")]),_U.list([arrow]))]))
               ,body]));
    });
    var renderNewsList = F3(function (address,title,xs) {
@@ -10795,10 +10802,10 @@ Elm.Murol.make = function (_elm) {
    });
    var Hover = function (a) {    return {ctor: "Hover",_0: a};};
    var NoOp = {ctor: "NoOp"};
-   var logos = _U.list([{ctor: "_Tuple2",_0: "famillesPlus.png",_1: "http://www.familleplus.fr/fr"}
-                       ,{ctor: "_Tuple2",_0: "stationTourisme.png",_1: ""}
-                       ,{ctor: "_Tuple2",_0: "villageFleuri.png",_1: "http://www.villes-et-villages-fleuris.com/"}
-                       ,{ctor: "_Tuple2",_0: "stationVerteg.png",_1: "http://www.stationverte.com/"}]);
+   var logos = _U.list([{ctor: "_Tuple2",_0: "famillePlus.jpg",_1: "http://www.familleplus.fr/fr"}
+                       ,{ctor: "_Tuple2",_0: "Station_Tourisme_RVB.jpg",_1: "http://www.communes-touristiques.net/"}
+                       ,{ctor: "_Tuple2",_0: "Village fleuri.png",_1: "http://www.villes-et-villages-fleuris.com/"}
+                       ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}]);
    var renderContent = F3(function (n1,n2,address) {
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("index")]),
@@ -10859,33 +10866,33 @@ Elm.Murol.make = function (_elm) {
            ,A2(Leaf,"Numeros d\'urgences","")
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
-      var _p18 = function (_) {    return _.date;}(news);
-      if (_p18.ctor === "Err") {
+      var _p19 = function (_) {    return _.date;}(news);
+      if (_p19.ctor === "Err") {
             return 0;
          } else {
-            return $Date.toTime(_p18._0);
+            return $Date.toTime(_p19._0);
          }
    };
    var dropN = F2(function (id,n) {
       return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
    });
    var update = F2(function (action,model) {
-      var _p19 = action;
-      switch (_p19.ctor)
+      var _p20 = action;
+      switch (_p20.ctor)
       {case "NoOp": return model;
          case "Hover": return model;
          case "Entry": return model;
-         default: var _p20 = _p19._0;
-           var n2 = A2($List.map,dropN(_p20),function (_) {    return _.newsMairie;}(model));
-           var n1 = A2($List.map,dropN(_p20),function (_) {    return _.news;}(model));
+         default: var _p21 = _p20._0;
+           var n2 = A2($List.map,dropN(_p21),function (_) {    return _.newsMairie;}(model));
+           var n1 = A2($List.map,dropN(_p21),function (_) {    return _.news;}(model));
            return _U.update(model,{news: n1,newsMairie: n2});}
    });
    var tag = F3(function (i,n,xs) {
-      var _p21 = xs;
-      if (_p21.ctor === "[]") {
+      var _p22 = xs;
+      if (_p22.ctor === "[]") {
             return _U.list([]);
          } else {
-            return A2($List._op["::"],_U.update(_p21._0,{id: i + n}),A3(tag,i,n + 1,_p21._1));
+            return A2($List._op["::"],_U.update(_p22._0,{id: i + n}),A3(tag,i,n + 1,_p22._1));
          }
    });
    var News = F6(function (a,b,c,d,e,f) {    return {title: a,date: b,descr: c,pic: d,drop: e,id: f};});

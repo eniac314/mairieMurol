@@ -104,10 +104,10 @@ mainMenu = Node ""
 --           ,"StationVertegf2.gif"
 --           ]
 
-logos    = [("famillesPlus.png","http://www.familleplus.fr/fr")
-           ,("stationTourisme.png","")
-           ,("villageFleuri.png","http://www.villes-et-villages-fleuris.com/")
-           ,("stationVerteg.png","http://www.stationverte.com/")
+logos    = [("famillePlus.jpg","http://www.familleplus.fr/fr")
+           ,("Station_Tourisme_RVB.jpg","http://www.communes-touristiques.net/")
+           ,("Village fleuri.png","http://www.villes-et-villages-fleuris.com/")
+           ,("StationVertegf.jpg","http://www.stationverte.com/")
            ]
 
 
@@ -224,16 +224,22 @@ renderNews address { title, date, descr, pic, drop, id} =
       pic' = 
        case pic of 
         Nothing -> nullTag
-        Just  p -> img [src ("/images/news/" ++ p)] []
+        Just  p -> img [src ("/images/news/" ++ p), class "newspic"] []
 
       body = if drop
              then div [class "newsBody"][ pic', descr]
              else nullTag 
+      arrow = if drop
+              then img [src "/images/uArrow.jpeg"] []
+              else img [src "/images/dArrow.jpeg"] [] 
+
   in 
   div [class "news"]
       [ div [class "newsHeader"] 
-            [ h5 [class "newsTitle", onClick address (Drop id)] [text title]
+            [ h5 [class "newsTitle", onClick address (Drop id)]
+                 [text title]
             , span [class "date"] [text date']
+            , span [class "arrow"] [arrow]
             ]
       , body
       ]

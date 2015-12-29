@@ -346,6 +346,8 @@ figcaption {
   clear: both;
 }
 
+
+
 /*#news:after {
   content: "Foo";
   visibility: hidden;
@@ -382,7 +384,7 @@ span.date {
   padding: 0 0.5em;
 }
 
-.news img {
+.newspic {
   float: right;
   padding: 0 0.5em;
   margin-top: 1em;
@@ -404,6 +406,29 @@ span.date {
   border-bottom: 1px solid teal;
   background-color: transparent;
 }
+
+.news .arrow{
+  float: right;
+  margin-right: 2em;
+  opacity: 0;
+  -webkit-transition: all 0.75s ease-in-out;
+  -moz-transition: all 0.75s ease-in-out;
+  -ms-transition: all 0.75s ease-in-out;
+  -o-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
+}
+
+.newsTitle:hover ~ .arrow{
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+.news .arrow img{
+  max-height: 1em;
+}
+
+
 
 /*---------------------------------------
   style for sidebar
@@ -954,22 +979,18 @@ h5.trashCat {
 }
 
 #pics li { 
-  width: 15%;
   display: inline-block;
   padding: 0;
-  /*border: 1px solid black;*/
   margin-left: 2%;
   margin-right: 2%;
-  /*background-color: lightblue;*/
-
 }
 
 #pics img { 
-  width: 100%;
+  max-height: 100px;
   border-radius: 0.5em;
-  border: 0.4em solid;
-  border-color: #2F4F4F;
-  background-color: rgb(119, 136, 153);
+  border: 0.2em solid;
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
@@ -979,7 +1000,7 @@ h5.trashCat {
 }
 
 #pics img:hover{
-  border: 0.4em outset;
+  border: 0.2em outset;
   border-color: #2F4F4F;
 }
 
