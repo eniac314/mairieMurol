@@ -330,6 +330,7 @@ figcaption {
 }
 .LaMairieVousInforme {
   /*background-color: violet;*/
+  display: none;
 }
 
 .news {
@@ -934,26 +935,58 @@ h5.trashCat {
 /*--end of code for subContainerData---------------------------------------------*/
 /*--end of code fot subContainer-------------------------------------------------*/
 
-
 /*-------------------------------------------------------------------------------
-  style for footer
+  style for logo
 -------------------------------------------------------------------------------*/
 #pics{
   border-top: 1px solid #aca6a9;
   clear: left;
   text-align: center;
+  background-color: rgba(53, 39, 44, 0.8);
+  margin:0;
+  padding: 0.4em 0 0 0;
+  vertical-align: center;
+}
+
+#pics ul{
+   margin:0;
+   padding: 0; 
 }
 
 #pics li { 
+  width: 15%;
   display: inline-block;
-  width: auto; 
-  padding: 0 0.5em;
+  padding: 0;
+  /*border: 1px solid black;*/
+  margin-left: 2%;
+  margin-right: 2%;
+  /*background-color: lightblue;*/
+
 }
 
 #pics img { 
   width: 100%;
-  border-radius: 1em;
+  border-radius: 0.5em;
+  border: 0.4em solid;
+  border-color: #2F4F4F;
+  background-color: rgb(119, 136, 153);
+  cursor: pointer;
 }
+
+
+#pics a:hover{
+  background-color: initial;
+}
+
+#pics img:hover{
+  border: 0.4em outset;
+  border-color: #2F4F4F;
+}
+
+/*-------------------------------------------------------------------------------
+  style for footer
+-------------------------------------------------------------------------------*/
+
 
 footer {
   text-align: center;

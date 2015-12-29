@@ -14,7 +14,7 @@ import Date exposing (..)
 
 type alias Model = 
   { mainMenu    : Menu
-  , logos       : List  String
+  , logos       : List (String,String)
   , newsletters : List (String,String)
   , news        : List News
   , newsMairie  : List News
@@ -98,12 +98,17 @@ mainMenu = Node ""
   , Leaf "Numeros d'urgences" ""
   , Leaf "Petites annonces" ""]
 
-logos    = ["FamillePlus2.gif"
-           ,"StationTourismeRVB2.gif"
-           ,"Villagefleuri2.gif"
-           ,"StationVertegf2.gif"
-           ]
+--logos    = ["FamillePlus2.gif"
+--           ,"StationTourismeRVB2.gif"
+--           ,"Villagefleuri2.gif"
+--           ,"StationVertegf2.gif"
+--           ]
 
+logos    = [("famillesPlus.png","http://www.familleplus.fr/fr")
+           ,("stationTourisme.png","")
+           ,("villageFleuri.png","http://www.villes-et-villages-fleuris.com/")
+           ,("stationVerteg.png","http://www.stationverte.com/")
+           ]
 
 
 initialModel = 
@@ -147,6 +152,7 @@ renderContent n1 n2 address =
   div [ class "subContainerData", id "index"]
       [ renderNewsList address "Actualités de la commune" n1
       , renderNewsList address "La mairie vous informe" n2
+      , renderListImg logos
       ]
 
 renderMainMenu : Signal.Address Action -> List String -> Menu -> Html
@@ -184,8 +190,8 @@ renderMainMenu adr pos m  =
 
 pageFooter = 
   footer [ id "footer"]
-         [ renderListImg logos
-         , p [] [ text "Vous souhaitez passer une information"
+         [ --renderListImg logos
+           p [] [ text "Vous souhaitez passer une information"
                 , a [href ""] [text " contactez le webmaster"]
                 ]
          ] 
@@ -195,7 +201,7 @@ pageFooter =
 renderListImg pics =
   div [id "pics"]
       [ ul []
-           (map (\e -> li [] [img [src ("/images/" ++ e)] []]) pics)]
+           (map (\(i,l) -> li [] [a [href l] [img [src ("/images/" ++ i)] []]]) pics)]
 
 
 renderNewsList : Signal.Address Action -> String -> List News -> Html
