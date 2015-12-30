@@ -310,7 +310,7 @@ figcaption {
   /*__end_of_code_for_overall_style______*/
 
 /*-------------------------------------------------------------------------------
-  style for Accueil
+  style for Accueil and dropdown items
 -------------------------------------------------------------------------------*/
 #index {
   width: 70%;
@@ -356,7 +356,7 @@ figcaption {
   clear: both;
 }*/
 
-h5.newsTitle {
+h5.newsTitle, h5.dropTable{
   color: rgb(50, 50, 70);
   display: inline-block;
   margin: 0;
@@ -364,7 +364,7 @@ h5.newsTitle {
   border-bottom: 1px solid #778899;
 }
 
-h5.newsTitle:hover {
+h5.newsTitle:hover, h5.dropTable:hover{
   background-color: rgba(119,136,153, 0.3);
   box-shadow: 0px -1px 1px gray;
 }
@@ -407,7 +407,7 @@ span.date {
   background-color: transparent;
 }
 
-.news .arrow{
+.arrow{
   float: right;
   margin-right: 2em;
   opacity: 0;
@@ -418,13 +418,13 @@ span.date {
   transition: all 0.75s ease-in-out;
 }
 
-.newsTitle:hover ~ .arrow{
+.newsTitle:hover ~ .arrow, .dropTable:hover ~ .arrow{
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
 
-.news .arrow img{
+.arrow img{
   max-height: 1em;
 }
 

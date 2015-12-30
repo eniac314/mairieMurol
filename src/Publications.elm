@@ -109,16 +109,15 @@ main =
     , update = update
     }
 
-initialContent =
-  div [ class "subContainerData", id "publications"]
-      [delib]
-
+initialContent = delib
+  
       
 
 -- Data
 delib = 
   div [class "subContainerData", id "delibPubli"]
-      [ h5 [] [text "2014"]
+      [ h2 [] [text "Délibération conseil municipal"]
+      , h5 [] [text "2014"]
       , ul []
            [ li [] [link "19 mars" "http://www.murol.fr/Deliberations_conseil/2014/19032014.pdf"]
            , li [] [link "4 avril" "http://www.murol.fr/Deliberations_conseil/2014/04042014.pdf"]
@@ -139,7 +138,8 @@ delib =
 
 murolInf =
   div [class "subContainerData", id "murolInfPubli"]
-      [ h5 [] [text "2008"]
+      [ h2 [] [text "Murol info"]
+      , h5 [] [text "2008"]
       , ul []
            [ li [] [link "Numero 01 - Avril" "http://www.murol.fr/Murol_info/01.pdf"]
            , li [] [link "Numero 02 - Mai" "http://www.murol.fr/Murol_info/02.pdf"]
@@ -361,11 +361,13 @@ bulls = List.reverse
 
 bulletin =
   div [class "subContainerData", id "bullPubli"]
-      (List.map renderBulletin bulls)
+      ( (h2 [] [text "le bulletin municipal"]) ::
+        (List.map renderBulletin bulls)
+      )
 
 reportages = 
   div [class "subContainerData", id "repoPubli"]
-      [h4 [] [text "Reportages à Murol"]
+      [h2 [] [text "Reportages à Murol"]
       , link "JT du 19 septembre :" ""
       , text "Travail de l'équipe archéologique sur le château \"juillet-août 2008\""
       , br [] []
@@ -376,7 +378,7 @@ reportages =
 
 elections = 
   div [class "subContainerData", id "elecPubli"]
-      [ h4 [] [text "Les élections municipales"]
+      [ h2 [] [text "Les élections municipales"]
       , p  [] [text "Les élections municipales ont lieu, en principe, tous 
                      les 6 ans, au suffrage universel direct. La 
                      circonscription électorale est la commune, sauf à Paris, 
@@ -531,7 +533,8 @@ elections =
 
 resElec = 
   div [ class "subContainerData", id "resElecPubli"]
-      [ h4 [] [text "Résultats 1er tour des élections municipales"]
+      [ h2 [] [text "Résultats des élections municipales"]
+      , h4 [] [text "Résultats 1er tour"]
       , p  [] [text "Bureau de vote de Murol : votants 354, exprimés 338"]
       , p  [] [text "Bureau de vote de Beaune : votants 84, exprimés 81"] 
       , p  [] [text "Bureau de vote de Beaune : votants 84, exprimés 81"]
@@ -636,7 +639,7 @@ resElec =
                   , td [] [text "184"]
                   ]
               ]
-      , h4 [] [text "Résultats 2ème tour des élections municipales"]
+      , h4 [] [text "Résultats du 2ème tour"]
       , p  [] [text "Votants 265, exprimés 213"]
       , p  [] [text "Joséphine LANARO est élue"]
       
@@ -742,4 +745,5 @@ resElec =
       ]
 divers = 
   div [class "subContainerData", id "diversPubli"]
-      [link " Note de synthèse 2012 station classée de tourisme" ""]
+      [ h2 [] [text "Divers"]
+      , link " Note de synthèse 2012 station classée de tourisme" ""]

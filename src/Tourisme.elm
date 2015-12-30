@@ -33,7 +33,7 @@ subMenu =
       , "Animation estivale" ]
   }
 
-initialContent =
+initialContent address =
   div [ class "subContainerData", id "initTourisme"]
       [ h2 [] [ text "Office de tourisme"]
       , p []
@@ -52,6 +52,7 @@ initialModel =
   { mainMenu    = mainMenu
   , subMenu     = subMenu
   , mainContent = initialContent
+  , tableMap    = tableMap
   }
 
 contentMap =
@@ -62,13 +63,25 @@ contentMap =
           , ("Hebergements",hebergements)
           ]
 
+tableMap = 
+  fromList [ ("restosBeaunes",Table "restosBeaunes" restosBeaunes False 0)
+           , ("restosMurol", Table "restosMurol" restosMurol False 1)
+           , ("barBrasserie", Table "barBrasserie" barBrasserie False 2)
+           , ("barDeNuit", Table "barDeNuit" barDeNuit False 3)
+           , ("hotels", Table "hotels" hotels False 4)
+           , ("campings", Table "campings" campings False 5)
+           , ("chambresHotes", Table "chambresHotes" chambresHotes False 6)
+           , ("meubles", Table "meubles" meubles False 7)
+           , ("azureva", Table "azureva" azureva False 8)
+           ]
+
 --View
 view address model =
   div [ id "container"]
       [ renderMainMenu address ["Tourisme"] (.mainMenu model)
       , div [ id "subContainer"]
             [ renderSubMenu address "Tourisme:" (.subMenu model)
-            , .mainContent model
+            , (.mainContent model) (Meta address (.tableMap model))
             ]
       , pageFooter
       ]
@@ -102,17 +115,61 @@ type alias TableEntry =
    , site  : String
    , pics  : List String
    }
+
+type alias Meta =
+  { address : Signal.Address Action
+  , tables  : Dict String Table
+  }
  
 emptyTe = TableEntry "" NoLabel Nothing "" [] "" "" "" "" "" []
 
-makeTable name entries =
-  let
-  makeRows b xs =
-    case xs of
-      [] -> []
-      (e::xs') ->
-        makeRow e b :: makeRows (not b) xs'
-  in table [id name] (makeRows True entries)
+type alias Table = 
+  { name : String
+  , entries : List TableEntry
+  , drop : Bool
+  , iD : Int
+  }
+
+dropT iD s v  = if .iD v == iD
+                then {v | drop = not (.drop v)}
+                else v 
+
+--makeTable name entries =
+--  let
+--  makeRows b xs =
+--    case xs of
+--      [] -> []
+--      (e::xs') ->
+--        makeRow e b :: makeRows (not b) xs'
+--  in table [id name] (makeRows True entries)
+
+renderTable : Meta -> String -> Html
+renderTable {address, tables} s = 
+  case get s tables of 
+    Nothing -> nullTag
+    Just {name, entries, drop, iD} -> 
+
+      let makeRows b xs =
+          case xs of
+            [] -> []
+            (e::xs') ->
+              makeRow e b :: makeRows (not b) xs'
+          
+          table' = if drop
+                   then table [id name] (makeRows True entries)
+                   else nullTag
+
+          arrow = if drop
+              then img [src "/images/uArrow.jpeg"] []
+              else img [src "/images/dArrow.jpeg"] []
+
+      in div []
+             [ h5 [class "dropTable", onClick address (Drop iD)]
+                  [text "Voir la liste"]
+             , span [class "arrow"] [arrow]
+             , table'
+             ]
+
 
 
 makeRow : TableEntry -> Bool -> Html
@@ -171,6 +228,8 @@ update action model =
   case action of
     NoOp    -> model
     Entry s -> changeMain model s
+    Drop iD ->
+    { model | tableMap = Dict.map (dropT iD) (.tableMap model)}
     _       -> model
 
 changeMain model s =
@@ -194,7 +253,7 @@ main =
 
 --Data
 
-decouvrir =
+decouvrir meta =
   div [ class "subContainerData", id "decouvTourisme"]
       [ h2 [] [text "Découvrir Murol"]
       , figure []
@@ -359,7 +418,7 @@ decouvrir =
                      de rêver et d'imaginer sa propre histoire. "]
       ]
 
-restaurants =
+restaurants meta =
   div [ class "subContainerData", id "restosTourisme"]
       [ h2 [] [text "Restaurants"]
       , p [] [ text "On ne peut évoquer l’Auvergne sans parler des
@@ -383,16 +442,16 @@ restaurants =
 
       , h4 [] [ text "Nos Restaurants"]
       , h5 [] [ text "A Beaune le Froid"]
-      , makeTable "restosBeaunes" restosBeaunes
+      , renderTable meta "restosBeaunes"
 
       , h5 [] [ text "A Murol"]
-      , makeTable "restosMurol" restosMurol
+      , renderTable meta "restosMurol"
 
       , h4 [] [ text "Bar - Brasserie"]
-      , makeTable "barBrasserie" barBrasserie
+      , renderTable meta "barBrasserie"
 
       , h4 [] [ text "Bar de Nuit"]
-      , makeTable "barDeNuit" barDeNuit
+      , renderTable meta "barDeNuit"
     ]
 
 
@@ -498,7 +557,7 @@ barDeNuit =
     , mail  = "larbalete@cegetel.net"
     }]
 
-carte =
+carte address =
   div [ class "subContainerData", id "carteTourisme"]
        [ h2 [] [text "Carte & Plan"]
        , p [] [ text "Coordonnées : Latitude / longitude N 45°34'34\" / E 002°56'34\" "]
@@ -507,40 +566,41 @@ carte =
        ,  iframe [ id "map", src "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943"] []
       ]
 
-hebergements = div [ class "subContainerData", id "hebergTourisme"]
-                   [ h2 [] [ text "Hebergements"]
-                   , h4 [] [ text "Nos Hotels"]
-                   , p  [] [ text "Murol offre une grande diversité d'établissements, généralement indépendants. 
-                                   Beaucoup d'entre eux se sont engagés dans des 
-                                   démarches de qualité, symbolisées par différents labels. Certains 
-                                   sont hôtels restaurants et offrent une prestation en 
-                                   demi-pension et pension complète. "]
-                   , makeTable "hotels" hotels
-                   , h4 [] [ text "Nos Campings"]
-                   , p  [] [ text "Ils offrent de bonnes conditions de confort et 
-                                   beaucoup d'entre eux s'engagent dans des démarches de 
-                                   qualité, symbolisées par différents labels. Certains d'entre eux 
-                                   proposent également des locations de mobil-homes, chalets ou 
-                                   bungalows."]
-                   , makeTable "campings" campings
-                   , h4 [] [ text "Nos Chambres d'Hôtes"]
-                   , p  [] [ text "Elles répondent aux exigences actuelles de la clientèle, 
-                                   en proposant des prestations de très bon confort. 
-                                   Séjourner en chambre d'hôtes, c'est partager le quotidien 
-                                   de personnes passionnées par leur région et attentives 
-                                   à la qualité de l'accueil."]
-                   , makeTable "chambresHotes" chambresHotes
-                   , h4 [] [ text "Nos Meublés"]
-                   , p  [] [ text "Très répandus dans le Massif du Sancy, ils 
-                                   répondront à toutes les attentes et à tous 
-                                   les budgets. Les meublés que nous vous proposons 
-                                   sont tous classés par la préfecture. Le classement, 
-                                   en étoiles, indique le degré de confort de 
-                                   la location. Certains sont même labellisés. "]
-                   , makeTable "meubles" meubles
-                   , h4 [] [ text "Village Vacances"]
-                   , makeTable "azureva" azureva
-                   ]
+hebergements meta =
+   div [ class "subContainerData", id "hebergTourisme"]
+       [ h2 [] [ text "Hebergements"]
+       , h4 [] [ text "Nos Hotels"]
+       , p  [] [ text "Murol offre une grande diversité d'établissements, généralement indépendants. 
+                       Beaucoup d'entre eux se sont engagés dans des 
+                       démarches de qualité, symbolisées par différents labels. Certains 
+                       sont hôtels restaurants et offrent une prestation en 
+                       demi-pension et pension complète. "]
+       , renderTable meta "hotels"
+       , h4 [] [ text "Nos Campings"]
+       , p  [] [ text "Ils offrent de bonnes conditions de confort et 
+                       beaucoup d'entre eux s'engagent dans des démarches de 
+                       qualité, symbolisées par différents labels. Certains d'entre eux 
+                       proposent également des locations de mobil-homes, chalets ou 
+                       bungalows."]
+       , renderTable meta "campings"
+       , h4 [] [ text "Nos Chambres d'Hôtes"]
+       , p  [] [ text "Elles répondent aux exigences actuelles de la clientèle, 
+                       en proposant des prestations de très bon confort. 
+                       Séjourner en chambre d'hôtes, c'est partager le quotidien 
+                       de personnes passionnées par leur région et attentives 
+                       à la qualité de l'accueil."]
+       , renderTable meta "chambresHotes"
+       , h4 [] [ text "Nos Meublés"]
+       , p  [] [ text "Très répandus dans le Massif du Sancy, ils 
+                       répondront à toutes les attentes et à tous 
+                       les budgets. Les meublés que nous vous proposons 
+                       sont tous classés par la préfecture. Le classement, 
+                       en étoiles, indique le degré de confort de 
+                       la location. Certains sont même labellisés. "]
+       , renderTable meta "meubles" 
+       , h4 [] [ text "Village Vacances"]
+       , renderTable meta "azureva" 
+       ]
 
 azureva = [{ emptyTe |
              name  = "Azureva"

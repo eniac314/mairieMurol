@@ -18,10 +18,11 @@ Elm.Publications.make = function (_elm) {
    var _op = {};
    var divers = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("diversPubli")]),
-   _U.list([A2($Murol.link," Note de synthèse 2012 station classée de tourisme","")]));
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Divers")])),A2($Murol.link," Note de synthèse 2012 station classée de tourisme","")]));
    var resElec = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("resElecPubli")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Résultats 1er tour des élections municipales")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Résultats des élections municipales")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Résultats 1er tour")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Murol : votants 354, exprimés 338")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
@@ -126,7 +127,7 @@ Elm.Publications.make = function (_elm) {
                            ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("226")]))
                            ,A2($Html.td,_U.list([]),_U.list([$Html.text("Hervé de Puytorac")]))
                            ,A2($Html.td,_U.list([]),_U.list([$Html.text("184")]))]))]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Résultats 2ème tour des élections municipales")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Résultats du 2ème tour")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votants 265, exprimés 213")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Joséphine LANARO est élue")]))
            ,A2($Html.table,
@@ -229,7 +230,7 @@ Elm.Publications.make = function (_elm) {
                            ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))]))]));
    var elections = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("elecPubli")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Les élections municipales")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les élections municipales")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Les élections municipales ont lieu, en principe, tous \n                     les 6 ans, au suffrage universel direct. La \n                     circonscription électorale est la commune, sauf à Paris, \n                     Lyon et Marseille : l’élection a lieu dans \n                     le cadre de l’arrondissement pour Paris et Lyon, \n                     et par secteurs regroupant deux arrondissements pour Marseille \n                     (art. 261 du code électoral). ")]))
@@ -292,7 +293,7 @@ Elm.Publications.make = function (_elm) {
            _U.list([$Html.text("Pour la première fois en 2014, les conseillers \n                    communautaires représentant les communes de moins de 1 \n                    000 habitants au sein des organes délibérants des \n                    EPCI sont les membres du conseil municipal désignés \n                    dans l’ordre du tableau, c’est-à-dire le maire puis \n                    les adjoints puis les conseillers municipaux ayant obtenu \n                    le plus de voix lors des élections municipales")]))]));
    var reportages = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("repoPubli")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Reportages à Murol")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Reportages à Murol")]))
            ,A2($Murol.link,"JT du 19 septembre :","")
            ,$Html.text("Travail de l\'équipe archéologique sur le château \"juillet-août 2008\"")
            ,A2($Html.br,_U.list([]),_U.list([]))
@@ -301,7 +302,8 @@ Elm.Publications.make = function (_elm) {
            ,A2($Html.br,_U.list([]),_U.list([]))]));
    var murolInf = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("murolInfPubli")]),
-   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("2008")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Murol info")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2008")]))
            ,A2($Html.ul,
            _U.list([]),
            _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 01 - Avril","http://www.murol.fr/Murol_info/01.pdf")]))
@@ -351,7 +353,8 @@ Elm.Publications.make = function (_elm) {
                    ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 27 - Novembre","http://www.murol.fr/Murol_info/27.pdf")]))]))]));
    var delib = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("delibPubli")]),
-   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("2014")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Délibération conseil municipal")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2014")]))
            ,A2($Html.ul,
            _U.list([]),
            _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"19 mars","http://www.murol.fr/Deliberations_conseil/2014/19032014.pdf")]))
@@ -368,7 +371,7 @@ Elm.Publications.make = function (_elm) {
                    ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"15 avril","http://www.murol.fr/Deliberations_conseil/2015/CM15042015.pdf")]))
                    ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"2 juin","http://www.murol.fr/Deliberations_conseil/2015/CM24092015.pdf")]))
                    ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"4 novembre","http://www.murol.fr/Deliberations_conseil/2015/CM04112015.pdf")]))]))]));
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("publications")]),_U.list([delib]));
+   var initialContent = delib;
    var renderBulletin = function (_p0) {
       var _p1 = _p0;
       return A2($Html.div,
@@ -567,7 +570,9 @@ Elm.Publications.make = function (_elm) {
                                              ,"Murol en images"
                                              ,"Associations"
                                              ,"Calendrier"]))]));
-   var bulletin = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("bullPubli")]),A2($List.map,renderBulletin,bulls));
+   var bulletin = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("bullPubli")]),
+   A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));
    var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Délibération conseil municipal",_1: delib}
                                            ,{ctor: "_Tuple2",_0: "Murol info",_1: murolInf}
                                            ,{ctor: "_Tuple2",_0: "Bulletin municipal",_1: bulletin}

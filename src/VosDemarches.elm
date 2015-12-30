@@ -98,7 +98,8 @@ initialContent =
 -- Data
 carteId = 
   div [ class "subContainerData", id "idDemarches"]
-      [ h4 [] [text "Bénéficiaire"]
+      [ h2 [] [text "Carte d'identité"]
+      , h4 [] [text "Bénéficiaire"]
       , p  [] [text "Le demandeur doit être de nationalité française."]
       , h4 [] [text "Durée de validité"]
       , p  [class "important"]
@@ -218,7 +219,8 @@ justifDom =
 
 passport = 
   div [ class "subContainerData", id "passDemarches"]
-      [ h4 [] [text "Bénéficiaire"]
+      [ h2 [] [text "passeport"]
+      , h4 [] [text "Bénéficiaire"]
       , p  [] [text "Le demandeur doit être de nationalité française."]
       , p  [] [text "A noter : Il n'est plus possible d'inscrire un enfant mineur sur le passeport de l'un de ses parents."]
       , h4 [] [text "Durée de validité"]
@@ -291,7 +293,7 @@ passport =
 
 permis = 
   div [ class "subContainerData", id "permisDemarches"]
-      [ h4 [] [text "Délivrance du permis"]
+      [ h2 [] [text "Délivrance du permis"]
       , p  [] [text "Il peut être demandé que le permis soit 
                      délivré dans n'importe quelle sous-préfecture du département dont 
                      dépend le domicile du candidat reçu (par exemple 
@@ -332,7 +334,8 @@ permis =
 
 vehic = 
   div [ class "subContainerData", id "vehicDemarches"]
-      [ ul []
+      [ h2 [] [text "Véhicules"]
+      , ul []
            [ li [] [ span [] [text "Certificat "]
                    , link "d'immatriculation" "http://www.murol.fr/Base_documentaire/ddeimatcerfa10672.pdf"
                    , span [] [text " + "]
@@ -345,7 +348,8 @@ vehic =
 
 etatCiv = 
   div [ class "subContainerData", id "etatCivDemarches"]
-      [ h4 [] [text "Demande d'acte de naissance"]
+      [ h2 [] [text "Etat-Civil"]
+      , h4 [] [text "Demande d'acte de naissance"]
       , p  [] [text "Les actes d'état civil ne peuvent être délivrés 
                      que pour les personnes nées à Murol."]
       , p  [] [text "Pour adresser votre demande par courrier postal, imprimez 
@@ -408,7 +412,8 @@ etatCiv =
 
 listElec = 
   div [ class "subContainerData", id "listElecDemarches"]
-      [ p [] [text "Vous devez vous rendre à la mairie munis:"]
+      [ h2 [] [text "inscription listes électorales"]
+      , p [] [text "Vous devez vous rendre à la mairie munis:"]
       , ul []
            [ li [] [p [] [text "d'une pièce d'identité (carte nationale d'identité, passeport)"]]
            , li [] [p [] [text "et d'un justificatif d'adresse (facture de téléphone, 
@@ -517,7 +522,8 @@ listElec =
 
 servCiv = 
   div [ class "subContainerData", id "servCivDemarches"]
-      [ h4 [] [text "Comment m'engager?"]
+      [ h2 [] [text "Service civique"]
+      , h4 [] [text "Comment m'engager?"]
       , h5 [] [text "Quelles sont les conditions pour pouvoir m’engager en 
                      Service Civique ? "]
       , p  [] [text "Pour être volontaire, il faut avoir entre 16 
