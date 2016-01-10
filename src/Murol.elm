@@ -237,10 +237,13 @@ renderMainMenu' pos m  =
 
 pageFooter = 
   footer [ id "footer"]
-         [ --renderListImg logos
-           p [] [ text "Vous souhaitez passer une information"
-                , a [href ""] [text " contactez le webmaster"]
-                ]
+         [div[]
+             [p [] [ text "Vous souhaitez passer une information"
+                   , a [href ""] [text " contactez le webmaster"]
+                   ]
+             ]
+              
+          , renderCounter
          ] 
 
 
@@ -336,24 +339,32 @@ renderMeteo =
 
 renderEtatRoutes = 
   div [ id "EtatRoutes"]
-      [ a [ href ""]
+      [ a [ href "/Carte&Plan.html#infoRoute"]
           [ img [src "/images/routes.jpg"] [] 
           , figcaption [] [text "Etat des routes"] 
           ]
       ]
-      --[ iframe [ src "http://www.inforoute63.fr/index.php"]
-      --         []
-      --]
 
 
 
 renderCounter = 
   div [ id "counter"]
-      [ p [ align "center"]
-          [ script "http://www.123compteur.com/counterskinable01.php?votre_id=678591" ""
-          ]
+      [ script "" "var sc_project=10774754; var sc_invisible=0; var sc_security=\"74787ab4\"; var scJsHost = ((\"https:\" == document.location.protocol) ?\"https://secure.\" : \"http://www.\");document.write(\"<sc\"+\"ript type='text/javascript' src='\" +scJsHost+\"statcounter.com/counter/counter.js'></\"+\"script>\");"
+      , div [class "statcounter"]
+            [ text "Compteur: "
+            , a [title "web statistics"
+               , href "http://statcounter.com/free-web-stats/"
+               , target "_blank"
+               ]
+               [ img [ class "statcounter"
+                     , src "http://c.statcounter.com/10774754/0/74787ab4/0/"
+                     , alt "web statistics"
+                     ]
+                     []
+               ]
+            ]   
+      , script "" "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-72224642-1', 'auto');ga('send', 'pageview');"
       ]       
-
 
 renderPlugins =
   div [ id "plugins", class "submenu"]
@@ -363,14 +374,14 @@ renderPlugins =
       ]
 
 renderAgenda = 
-  div [id "agenda"]
+  div [id "agenda", class "submenu"]
       [ h3 [] [text "Agenda"]
       , iframe [ src "https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis"
                ] []
       , p [] [a [href "https://calendar.google.com/calendar/embed?src=uminokirinmail%40gmail.com&ctz=Europe/Paris"]
-                [text "Voir le calendrier"]
+                [text "Consulter le calendrier"]
              ]
-      , p [] [a [href "/Animation.html"] [text "Voir les animations"]]
+      , p [] [a [href "/Animation.html"] [text "Programme des manifestations"]]
       ] 
       
 
@@ -382,8 +393,8 @@ view address model =
       , div [ id "subContainer"]
             [ renderContent (.news model) (.newsMairie model) address
             , div [class "sidebar"]
-                  [ renderPlugins
-                  , renderAgenda
+                  [ renderAgenda
+                  , renderPlugins
                   , renderNewsLetter (.newsletters model)
                   , renderMisc (.misc model)
                   ]

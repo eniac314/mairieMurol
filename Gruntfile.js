@@ -33,7 +33,8 @@ module.exports = function(grunt) {
           "./js/sportEtDetentes.js": ["./src/SportEtDetentes.elm"],
           "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
           "./js/officeTourisme.js": ["./src/OfficeTourisme.elm"],
-          "./js/sante.js": ["./src/Sante.elm"]
+          "./js/sante.js": ["./src/Sante.elm"],
+          "./js/cartePlan.js": ["./src/CartePlan.elm"]
 
           
         }
@@ -70,7 +71,8 @@ module.exports = function(grunt) {
                 , "./src/SportEtDetentes.elm"
                 , "./src/DecouvrirMurol.elm"
                 , "./src/OfficeTourisme.elm"
-                , "./src/Sante.elm"],
+                , "./src/Sante.elm"
+                , "./src/CartePlan.elm"],
         tasks: ["elm"]
       }
     },

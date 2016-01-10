@@ -1,0 +1,68 @@
+Elm.CartePlan = Elm.CartePlan || {};
+Elm.CartePlan.make = function (_elm) {
+   "use strict";
+   _elm.CartePlan = _elm.CartePlan || {};
+   if (_elm.CartePlan.values) return _elm.CartePlan.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("CartePlan")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Carte & Plan")]))
+           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Accès")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
+           ,A2($Html.iframe,
+           _U.list([$Html$Attributes.id("map")
+                   ,$Html$Attributes.src("https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.828421278047!2d2.9417002157517658!3d45.57388887910252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDM0JzI2LjAiTiAywrA1NiczOC4wIkU!5e0!3m2!1szh-TW!2stw!4v1449889280943")]),
+           _U.list([]))
+           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Infos routes")]))
+           ,A2($Html.iframe,_U.list([$Html$Attributes.id("infoRoute"),$Html$Attributes.src("http://www.inforoute63.fr/index.php")]),_U.list([]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Tourisme","Carte & Plan"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.CartePlan.values = {_op: _op
+                                  ,subMenu: subMenu
+                                  ,initialModel: initialModel
+                                  ,view: view
+                                  ,contentMap: contentMap
+                                  ,update: update
+                                  ,changeMain: changeMain
+                                  ,main: main
+                                  ,initialContent: initialContent};
+};

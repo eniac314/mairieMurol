@@ -610,7 +610,6 @@ span.date {
 
 #plugins #EtatRoutes{
   padding: 0;
-  background-color: red;
 }
 
 #plugins a{
@@ -641,7 +640,8 @@ span.date {
 }
 
 #counter {
-  width: 100px;
+  margin-left: 1em;
+  display: inline-block;
 }
 
 #agenda{
@@ -649,10 +649,35 @@ span.date {
   width: 100%;
 }
 
+#agenda h3
+{
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #aca6a9;
+  font-size: 20px;
+  margin: 0;
+}
+
+#agenda a{
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  color: teal;
+  padding-right: 0.1em;
+  padding-left: 0.1em;
+  margin-left: 1em;
+}
+
+#agenda a:hover{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: teal;
+  color:white;
+  background-color: teal;
+}
+
 #agenda iframe{
   border:solid 1px #777;
-  width: 100%;
-  min-width: 300px;
+  width: 99%;
   height: 150px;
   frameborder:0;
   scrolling:0;
@@ -728,6 +753,13 @@ span.date {
 {
   width:600px;
   height:450px;
+  border-style: none;
+}
+
+#infoRoute
+{
+  width:800px;
+  height:600px;
   border-style: none;
 }
 /*--end of code for carteTourisme------------------------------------------------*/
@@ -1228,8 +1260,17 @@ h5.trashCat {
 -------------------------------------------------------------------------------*/
 
 
-footer {
+footer{
   text-align: center;
   font-size: small;
+  margin: auto;
+}
+
+footer div{
+  display: inline-block;
+}
+
+footer p {
+  display: inline-block;
 }
 /*--end of code for footer-------------------------------------------------------*/
