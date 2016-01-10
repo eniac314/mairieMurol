@@ -270,7 +270,7 @@ initialContent =
               ]
             )
             ,
-            ("Grottes de Rageat"
+            ("Grottes de Rajat"
             ,"/images/rajatTile.jpg"
             , [ p  [] [text "D'accès difficile, les falaises qui les abritent sont
                              composées d'un mélange de Bolts et argiles aux

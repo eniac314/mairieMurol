@@ -11016,7 +11016,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Programme des manifestations")]))]))]));
+           _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Programmes des manifestations")]))]))]));
    var renderCounter = A2($Html.div,
    _U.list([$Html$Attributes.id("counter")]),
    _U.list([A2(script,

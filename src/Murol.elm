@@ -381,7 +381,7 @@ renderAgenda =
       , p [] [a [href "https://calendar.google.com/calendar/embed?src=uminokirinmail%40gmail.com&ctz=Europe/Paris"]
                 [text "Consulter le calendrier"]
              ]
-      , p [] [a [href "/Animation.html"] [text "Programme des manifestations"]]
+      , p [] [a [href "/Animation.html"] [text "Programmes des manifestations"]]
       ] 
       
 
