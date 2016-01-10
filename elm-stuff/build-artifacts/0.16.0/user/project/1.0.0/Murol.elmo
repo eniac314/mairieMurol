@@ -8,6 +8,7 @@ Elm.Murol.make = function (_elm) {
    $Char = Elm.Char.make(_elm),
    $Date = Elm.Date.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Html$Events = Elm.Html.Events.make(_elm),
@@ -15,8 +16,9 @@ Elm.Murol.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $String = Elm.String.make(_elm);
+   $StartApp = Elm.StartApp.make(_elm),
+   $String = Elm.String.make(_elm),
+   $Task = Elm.Task.make(_elm);
    var _op = {};
    var misc = _U.list([{ctor: "_Tuple2",_0: "Visiter le musée des peintres de Murol",_1: "http://www.musee-murol.fr/fr"}]);
    var newsletters = _U.list([{ctor: "_Tuple2"
@@ -110,11 +112,29 @@ Elm.Murol.make = function (_elm) {
          case "Nov": return "11";
          default: return "12";}
    };
+   var renderAgenda = A2($Html.div,
+   _U.list([$Html$Attributes.id("agenda")]),
+   _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
+           ,A2($Html.iframe,
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("https://calendar.google.com/calendar/embed?src=uminokirinmail%40gmail.com&ctz=Europe/Paris")]),
+           _U.list([$Html.text("Voir le calendrier")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Voir les animations")]))]))]));
    var renderCounter = A2($Html.div,
    _U.list([$Html$Attributes.id("counter")]),
    _U.list([A2($Html.p,
    _U.list([$Html$Attributes.align("center")]),
    _U.list([A2(script,"http://www.123compteur.com/counterskinable01.php?votre_id=678591","")]))]));
+   var renderEtatRoutes = A2($Html.div,
+   _U.list([$Html$Attributes.id("EtatRoutes")]),
+   _U.list([A2($Html.a,
+   _U.list([$Html$Attributes.href("")]),
+   _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/routes.jpg")]),_U.list([]))
+           ,A2($Html.figcaption,_U.list([]),_U.list([$Html.text("Etat des routes")]))]))]));
    var renderMeteo = A2($Html.div,
    _U.list([$Html$Attributes.id("meteo")]),
    _U.list([A2($Html.a,
@@ -127,7 +147,7 @@ Elm.Murol.make = function (_elm) {
    var renderPlugins = A2($Html.div,
    _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Pratique")]))
-           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo])))]));
+           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))]));
    var renderMisc = function (misc) {
       var toLink = function (_p10) {
          var _p11 = _p10;
@@ -170,7 +190,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([]),
    _U.list([$Html.text("Vous souhaitez passer une information")
            ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text(" contactez le webmaster")]))]))]));
-   var renderMainMenu = F3(function (adr,pos,m) {
+   var renderMainMenu$ = F2(function (pos,m) {
       var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
       var toUrl = function (s) {
          return function (s) {
@@ -186,42 +206,65 @@ Elm.Murol.make = function (_elm) {
          } else {
             var _p20 = _p16._1;
             var _p19 = _p16._0;
-            return $String.isEmpty(_p19) ? A2($Html.div,
-            _U.list([$Html$Attributes.$class("mainMenu")]),
-            A2($List.map,A2(renderMainMenu,adr,pos),_p20)) : A2($Html.div,
+            return $String.isEmpty(_p19) ? A2($Html.div,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu$(pos),_p20)) : A2($Html.div,
             _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p19,"Content"))]),
             _U.list([A2($Html.a,
                     _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p19,"dropBtn"),_1: true},current(_p19)]))]),
                     _U.list([$Html.text(_p19)]))
-                    ,A2($Html.div,_U.list([]),A2($List.map,A2(renderMainMenu,adr,pos),_p20))]));
+                    ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu$(pos),_p20))]));
          }
    });
-   var scrollY = Elm.Native.Port.make(_elm).outboundSignal("scrollY",function (v) {    return v;},$Signal.constant(5));
+   var renderMainMenu = F3(function (adr,pos,m) {
+      var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
+      var toUrl = function (s) {
+         return function (s) {
+            return A2($Basics._op["++"],s,".html");
+         }(A2($String.join,"",A2($List.map,capitalize,$String.words(s))));
+      };
+      var _p21 = m;
+      if (_p21.ctor === "Leaf") {
+            var _p23 = _p21._1;
+            var _p22 = _p21._0;
+            var link$ = $String.isEmpty(_p23) ? toUrl(_p22) : _p23;
+            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p22)]))]),_U.list([$Html.text(_p22)]));
+         } else {
+            var _p25 = _p21._1;
+            var _p24 = _p21._0;
+            return $String.isEmpty(_p24) ? A2($Html.div,
+            _U.list([$Html$Attributes.$class("mainMenu")]),
+            A2($List.map,A2(renderMainMenu,adr,pos),_p25)) : A2($Html.div,
+            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p24,"Content"))]),
+            _U.list([A2($Html.a,
+                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p24,"dropBtn"),_1: true},current(_p24)]))]),
+                    _U.list([$Html.text(_p24)]))
+                    ,A2($Html.div,_U.list([]),A2($List.map,A2(renderMainMenu,adr,pos),_p25))]));
+         }
+   });
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
-   var renderNews = F2(function (address,_p21) {
-      var _p22 = _p21;
-      var _p26 = _p22.drop;
-      var arrow = _p26 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
+   var renderNews = F2(function (address,_p26) {
+      var _p27 = _p26;
+      var _p31 = _p27.drop;
+      var arrow = _p31 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
       _U.list([$Html$Attributes.src("/images/dArrow.jpeg")]),
       _U.list([]));
       var pic$ = function () {
-         var _p23 = _p22.pic;
-         if (_p23.ctor === "Nothing") {
+         var _p28 = _p27.pic;
+         if (_p28.ctor === "Nothing") {
                return nullTag;
             } else {
                return A2($Html.img,
-               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p23._0)),$Html$Attributes.$class("newspic")]),
+               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p28._0)),$Html$Attributes.$class("newspic")]),
                _U.list([]));
             }
       }();
-      var body = _p26 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p22.descr])) : nullTag;
+      var body = _p31 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p27.descr])) : nullTag;
       var date$ = function () {
-         var _p24 = _p22.date;
-         if (_p24.ctor === "Err") {
-               return _p24._0;
+         var _p29 = _p27.date;
+         if (_p29.ctor === "Err") {
+               return _p29._0;
             } else {
-               var _p25 = _p24._0;
-               return A2($Basics._op["++"],day$(_p25),A2($Basics._op["++"]," ",A2($Basics._op["++"],months$(_p25),A2($Basics._op["++"]," ",year$(_p25)))));
+               var _p30 = _p29._0;
+               return A2($Basics._op["++"],day$(_p30),A2($Basics._op["++"]," ",A2($Basics._op["++"],months$(_p30),A2($Basics._op["++"]," ",year$(_p30)))));
             }
       }();
       return A2($Html.div,
@@ -229,8 +272,8 @@ Elm.Murol.make = function (_elm) {
       _U.list([A2($Html.div,
               _U.list([$Html$Attributes.$class("newsHeader")]),
               _U.list([A2($Html.h5,
-                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p22.id))]),
-                      _U.list([$Html.text(_p22.title)]))
+                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p27.id))]),
+                      _U.list([$Html.text(_p27.title)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("arrow")]),_U.list([arrow]))]))
               ,body]));
@@ -246,7 +289,7 @@ Elm.Murol.make = function (_elm) {
       var isCurrent = function (e) {    return $Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "submenuCurrent",_1: _U.eq(e,pos)}]));};
       var toA = function (e) {
          return A2($Html.a,
-         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#top"),isCurrent(e)]),
+         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#"),isCurrent(e)]),
          _U.list([$Html.text(e)]));
       };
       var es = function (_) {    return _.entries;}(submenu);
@@ -276,6 +319,7 @@ Elm.Murol.make = function (_elm) {
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.$class("sidebar")]),
                       _U.list([renderPlugins
+                              ,renderAgenda
                               ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
                               ,renderMisc(function (_) {    return _.misc;}(model))]))]))
               ,pageFooter]));
@@ -285,17 +329,19 @@ Elm.Murol.make = function (_elm) {
    var mainMenu = A2(Node,
    "",
    _U.list([A2(Leaf,"Accueil","index.html")
-           ,A2(Leaf,"Agenda","")
-           ,A2(Leaf,"Tourisme","")
-           ,A2(Node,"Vie locale",_U.list([A2(Leaf,"Vie scolaire",""),A2(Leaf,"Les séniors",""),A2(Leaf,"Covoiturage",""),A2(Leaf,"Gestion des déchets","")]))
+           ,A2(Leaf,"Animation","")
            ,A2(Node,
-           "Vie économique",
-           _U.list([A2(Leaf,"Agriculture","")
-                   ,A2(Leaf,"Artisanat","")
-                   ,A2(Leaf,"Commerces","")
-                   ,A2(Leaf,"Entreprises","")
-                   ,A2(Leaf,"Offres d\'emploi","")
-                   ,A2(Leaf,"Quinzaine commerciale","")]))
+           "Tourisme",
+           _U.list([A2(Leaf,"Office de Tourisme","")
+                   ,A2(Leaf,"Découvrir Murol","")
+                   ,A2(Leaf,"Hébergements","")
+                   ,A2(Leaf,"Restaurants","")
+                   ,A2(Leaf,"Carte & plan","")
+                   ,A2(Leaf,"Animation estivale","")]))
+           ,A2(Node,
+           "Vie locale",
+           _U.list([A2(Leaf,"Vie scolaire",""),A2(Leaf,"Les séniors",""),A2(Leaf,"Santé",""),A2(Leaf,"Transports",""),A2(Leaf,"Gestion des déchets","")]))
+           ,A2(Node,"Vie économique",_U.list([A2(Leaf,"Agriculture",""),A2(Leaf,"Commerces",""),A2(Leaf,"Entreprises",""),A2(Leaf,"Offres d\'emploi","")]))
            ,A2(Node,
            "Mairie",
            _U.list([A2(Leaf,"La commune","")
@@ -321,35 +367,36 @@ Elm.Murol.make = function (_elm) {
            ,A2(Leaf,"Numeros d\'urgences","")
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
-      var _p27 = function (_) {    return _.date;}(news);
-      if (_p27.ctor === "Err") {
+      var _p32 = function (_) {    return _.date;}(news);
+      if (_p32.ctor === "Err") {
             return 0;
          } else {
-            return $Date.toTime(_p27._0);
+            return $Date.toTime(_p32._0);
          }
    };
    var dropN = F2(function (id,n) {
       return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
    });
    var update = F2(function (action,model) {
-      var _p28 = action;
-      switch (_p28.ctor)
-      {case "NoOp": return model;
-         case "Hover": return model;
-         case "Entry": return model;
-         default: var _p29 = _p28._0;
-           var n2 = A2($List.map,dropN(_p29),function (_) {    return _.newsMairie;}(model));
-           var n1 = A2($List.map,dropN(_p29),function (_) {    return _.news;}(model));
-           return _U.update(model,{news: n1,newsMairie: n2});}
+      var _p33 = action;
+      switch (_p33.ctor)
+      {case "NoOp": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         case "Hover": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         case "Entry": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         default: var _p34 = _p33._0;
+           var n2 = A2($List.map,dropN(_p34),function (_) {    return _.newsMairie;}(model));
+           var n1 = A2($List.map,dropN(_p34),function (_) {    return _.news;}(model));
+           return {ctor: "_Tuple2",_0: _U.update(model,{news: n1,newsMairie: n2}),_1: $Effects.none};}
    });
    var tag = F3(function (i,n,xs) {
-      var _p30 = xs;
-      if (_p30.ctor === "[]") {
+      var _p35 = xs;
+      if (_p35.ctor === "[]") {
             return _U.list([]);
          } else {
-            return A2($List._op["::"],_U.update(_p30._0,{id: i + n}),A3(tag,i,n + 1,_p30._1));
+            return A2($List._op["::"],_U.update(_p35._0,{id: i + n}),A3(tag,i,n + 1,_p35._1));
          }
    });
+   var Submenu = F2(function (a,b) {    return {current: a,entries: b};});
    var News = F6(function (a,b,c,d,e,f) {    return {title: a,date: b,descr: c,pic: d,drop: e,id: f};});
    var emptyNews = A6(News,"",$Result.Err(""),nullTag,$Maybe.Nothing,false,0);
    var news = _U.list([_U.update(emptyNews,
@@ -445,11 +492,14 @@ Elm.Murol.make = function (_elm) {
                       ,misc: misc
                       ,news: A3(tag,0,0,$List.reverse(A2($List.sortBy,newstime,news)))
                       ,newsMairie: A3(tag,0,100,$List.reverse(A2($List.sortBy,newstime,newsMairie)))};
-   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
+   var main = app.html;
+   var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
    var Model = F6(function (a,b,c,d,e,f) {    return {mainMenu: a,logos: b,newsletters: c,news: d,newsMairie: e,misc: f};});
    return _elm.Murol.values = {_op: _op
                               ,Model: Model
                               ,News: News
+                              ,Submenu: Submenu
                               ,emptyNews: emptyNews
                               ,tag: tag
                               ,dropN: dropN
@@ -466,6 +516,7 @@ Elm.Murol.make = function (_elm) {
                               ,update: update
                               ,renderContent: renderContent
                               ,renderMainMenu: renderMainMenu
+                              ,renderMainMenu$: renderMainMenu$
                               ,pageFooter: pageFooter
                               ,renderListImg: renderListImg
                               ,renderNewsList: renderNewsList
@@ -474,9 +525,12 @@ Elm.Murol.make = function (_elm) {
                               ,renderMisc: renderMisc
                               ,renderSubMenu: renderSubMenu
                               ,renderMeteo: renderMeteo
+                              ,renderEtatRoutes: renderEtatRoutes
                               ,renderCounter: renderCounter
                               ,renderPlugins: renderPlugins
+                              ,renderAgenda: renderAgenda
                               ,view: view
+                              ,app: app
                               ,main: main
                               ,months$: months$
                               ,day$: day$

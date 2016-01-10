@@ -1,0 +1,100 @@
+Elm.Sante = Elm.Sante || {};
+Elm.Sante.make = function (_elm) {
+   "use strict";
+   _elm.Sante = _elm.Sante || {};
+   if (_elm.Sante.values) return _elm.Sante.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("sante")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Santé")]))
+           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("La Maison de Santé")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Nos professionnels de santé vous accueillent à la maison de santé: ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue Maupassant- 63790 MUROL")]))
+           ,A2($Html.img,_U.list([$Html$Attributes.src("/images/maisonSante.jpg")]),_U.list([]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Cabinet médical")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 61 91")]))
+                   ,A2($Html.br,_U.list([]),_U.list([]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Florence BARRIERE")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("les lundi, mercredi, vendredi sur rendez-vous, samedi sans RDV.")]))
+                   ,A2($Html.br,_U.list([]),_U.list([]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Cécile MERITE")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("les mardi et jeudi sur rendez-vous, samedi sans RDV.")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Cabinet dentaire")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél :  04 73 88 27 96")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr JOLIVET Maud")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Lundi - Mercredi - Vendredi")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("de 9h00 à 12h00 / 14h00 à 19h00")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("3 samedis par mois de 9h00 à 12h00")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Cabinet Infirmiers")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 68 40")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mme Chauvière Marie-pierre")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr Morbin Guillaume")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mme Soulier Sandrine")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Kinésithérapeute ")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 63 46")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr Monnet Sébastien")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mme MAYER Céline")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr GARCIA Mathias")]))]))
+           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Pharmacie")]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Pharmacie BRASSIER")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 60 42")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue Estaing - 63790 MUROL")]))]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie Locale","Santé"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Sante.values = {_op: _op
+                              ,subMenu: subMenu
+                              ,initialModel: initialModel
+                              ,view: view
+                              ,contentMap: contentMap
+                              ,update: update
+                              ,changeMain: changeMain
+                              ,main: main
+                              ,initialContent: initialContent};
+};

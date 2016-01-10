@@ -55,6 +55,19 @@ header #subTitle{
     padding-bottom: 1em;
     margin-top: 10em;
   }
+
+@media screen and (max-width: 1368px) {
+    #container {
+        width: 85%;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    #container {
+        margin-top: 2em;
+    }
+}
+
 /*--end of code for overview-----------------------------------------------------*/
 
 
@@ -122,6 +135,7 @@ div[class*="Content"]:hover > div
 {
   background-color: rgba(29, 51, 162, 0.8);
   position: absolute;
+  z-index: 1;
   display: block;
 }
 
@@ -158,6 +172,16 @@ div[class*="Content"] a
   min-width: 200px;
 }
 
+@media screen and (max-width: 1200px) {
+    .sideMenu {
+        margin-left: 10%;
+        margin-right: 10%;
+        position: initial;
+        width: initial;
+        display: inline-block;
+    }
+}
+
 .sideMenu div 
 { 
   padding: 0;
@@ -190,6 +214,16 @@ div[class*="Content"] a
   padding-left: 2em;
   margin: 0.2em 0 0.2em 0;
 }
+
+@media screen and (max-width: 1200px) {
+    .sideMenu a {
+        display: inline-block;
+        margin: 0.1em;
+        padding: 0.2em;
+    }
+}
+
+
 .sideMenu a:hover, a:active {
   cursor: pointer;
   color: black;
@@ -200,7 +234,6 @@ div[class*="Content"] a
   background-color: #4d4b6d;
 }
 /*--end of code for sideMenu-----------------------------------------------------*/
-
 
 /*-------------------------------------------------------------------------------
   style for subContainerData
@@ -215,9 +248,38 @@ div[class*="Content"] a
   margin-left: 20%;
 }
 
+
+@media screen and (max-width: 1368px) {
+    .subContainerData {
+      margin-left:  15%;
+      margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .subContainerData {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .subContainerData {
+      margin 0;
+    }
+}
+
 .noSubmenu {
   margin-left: 10%;
   margin-right: 10%;
+}
+
+
+@media screen and (max-width: 1368px) {
+    .noSubmenu {
+      margin-left:  0%;
+      margin-right: 0%;
+    }
 }
 
 .subContainerData a {
@@ -308,6 +370,70 @@ figcaption {
   box-shadow: 2px 2px 2px gray;
 }
   /*__end_of_code_for_overall_style______*/
+
+
+/*-------------------------------------------------------------------------------
+  style for tiledMenu
+-------------------------------------------------------------------------------*/
+.tiledMenu {
+  margin: auto;
+}
+
+.tiledMenu .tile {
+ display: inline-block;
+ margin: 0.1em;
+ width: 31%;
+ cursor: pointer;
+ background-color: #ABB5C3;
+ vertical-align: top;
+ min-width: 220px;
+ padding: 0;
+}
+
+.tiledMenu .tile:hover{
+  background-color: #ABB5C3;
+}
+
+.tiledMenu .tile figure:hover{
+ box-shadow: 2px 2px 2px gray;
+}
+
+.tiledMenu .tile figure{
+  margin:2%;
+  position: relative;
+  padding: 0;
+  padding-bottom: 0;
+}
+
+.tiledMenu .tile img {  
+  padding: 0;
+  margin: 0;
+  width:100%;
+  border-style: none;
+  border-width: 0;
+  display: block; 
+}
+
+.tiledMenu .tile .captionWrapper {  
+  position: absolute;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  bottom: 0px;
+  margin-bottom: 0;
+}
+
+.tiledMenu .tile .captionWrapper figcaption {
+  text-align: left;
+  min-height: 50px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+/*--end of code for tiledMenu-----------------------------------------------------*/
+
 
 /*-------------------------------------------------------------------------------
   style for Accueil and dropdown items
@@ -469,15 +595,67 @@ span.date {
   text-align: center;
   padding: 0;
   padding-top: 0.5em;
+  padding-bottom: 0;
   margin: 0;
 }
 
 #plugins li {
+  vertical-align: top;
   display: inline-block;
+  background-color: green;
+  padding: 0;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+#plugins #EtatRoutes{
+  padding: 0;
+  background-color: red;
+}
+
+#plugins a{
+  display: block;
+  width: 140px;
+  position: relative;
+  padding: 0;
+  margin: 0; 
+}
+
+#plugins figcaption{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 0px;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: grey;
+  color: white;
+  padding: 0;
+  vertical-align: center;
+}
+
+#plugins img {
+  width: 100%;
+  border-style: initial;
+  display: block;
 }
 
 #counter {
   width: 100px;
+}
+
+#agenda{
+  margin: auto;
+  width: 100%;
+}
+
+#agenda iframe{
+  border:solid 1px #777;
+  width: 100%;
+  min-width: 300px;
+  height: 150px;
+  frameborder:0;
+  scrolling:0;
 }
 
 .entry {
@@ -612,6 +790,39 @@ h6.periCat {
 /*--end of code for initVieScolaire----------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
+  style for Santé
+-------------------------------------------------------------------------------*/
+
+#sante img{
+  margin: auto;
+  display: block;
+  margin-bottom: 2em;
+}
+
+.praticiens{
+  display: inline-block;
+  vertical-align: top;
+  width: 250px;
+  padding: 0.5em;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  background-color: lightgrey;
+
+}
+
+.praticiens p {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.pratiName {
+  background-color: #868686;
+  padding:0.1em;
+}
+
+/*--end of code for Santé----------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
   style for initDechets
 -------------------------------------------------------------------------------*/
 h5.trashCat {
@@ -657,7 +868,7 @@ h5.trashCat {
 /*-------------------------------------------------------------------------------
   style for artisanat and commerces
 -------------------------------------------------------------------------------*/
-#artisanat, #commerces {
+#entreprises, #commerces {
  /*overflow: auto;*/
 }
 
@@ -702,7 +913,9 @@ h5.trashCat {
 .businesses div {
   border-top: 1px solid gray;
   margin: 0.5em 0;
-  background-color: rgba(102, 205, 170, 0.6);
+  background-color: #BAADC6;
+  /*background-color: #79899F;*/
+  /*background-color: rgba(102, 205, 170, 0.6);*/
 }
 
 .businesses p {
@@ -883,7 +1096,8 @@ h5.trashCat {
 }
 
 .bulletin ul {
-  background-color: rgba(176, 196, 222, 0.5);
+  /*background-color: rgba(176, 196, 222, 0.5);*/
+  background-color: rgba(214, 140, 138, 1);
   vertical-align: top;
   /*background-color: yellow;*/
   display: inline-block;

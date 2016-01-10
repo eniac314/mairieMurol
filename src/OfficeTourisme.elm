@@ -1,4 +1,4 @@
-module QuinzaineCom where
+module OfficeTourisme where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -31,13 +31,14 @@ initialModel =
   }
 
 
+type alias Entry = (String,String)
+
+
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu
-           address
-           ["Vie économique","Quinzaine commerciale"]
-           (.mainMenu model)
+      [ renderMainMenu address ["Tourisme", "Office de Tourisme"]
+                               (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -71,8 +72,17 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData noSubmenu", id "quinzaineCom"]
-      []
-      
-
--- Data
+  div [ class "subContainerData noSubmenu", id "officeTourisme"]
+      [ h2 [] [ text "Office de tourisme"]
+      , p []
+          [ text "Rue de jassaguet - 63790 Murol"]
+      , p []
+          [ text "Tel: 04-73-88-62-62"]
+      , p []
+          [ text "Fax : 04-73-88-60-23"]
+      , mail "bt.murol-chambon@sancy.com"
+      , p []
+          [ text "Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.
+                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h."]
+      , renderListImg logos
+      ]

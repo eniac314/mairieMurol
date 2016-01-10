@@ -8395,6 +8395,203 @@ Elm.Json.Decode.make = function (_elm) {
                                     ,value: value
                                     ,customDecoder: customDecoder};
 };
+Elm.Native.Effects = {};
+Elm.Native.Effects.make = function(localRuntime) {
+
+	localRuntime.Native = localRuntime.Native || {};
+	localRuntime.Native.Effects = localRuntime.Native.Effects || {};
+	if (localRuntime.Native.Effects.values)
+	{
+		return localRuntime.Native.Effects.values;
+	}
+
+	var Task = Elm.Native.Task.make(localRuntime);
+	var Utils = Elm.Native.Utils.make(localRuntime);
+	var Signal = Elm.Signal.make(localRuntime);
+	var List = Elm.Native.List.make(localRuntime);
+
+
+	// polyfill so things will work even if rAF is not available for some reason
+	var _requestAnimationFrame =
+		typeof requestAnimationFrame !== 'undefined'
+			? requestAnimationFrame
+			: function(cb) { setTimeout(cb, 1000 / 60); }
+			;
+
+
+	// batchedSending and sendCallback implement a small state machine in order
+	// to schedule only one send(time) call per animation frame.
+	//
+	// Invariants:
+	// 1. In the NO_REQUEST state, there is never a scheduled sendCallback.
+	// 2. In the PENDING_REQUEST and EXTRA_REQUEST states, there is always exactly
+	//    one scheduled sendCallback.
+	var NO_REQUEST = 0;
+	var PENDING_REQUEST = 1;
+	var EXTRA_REQUEST = 2;
+	var state = NO_REQUEST;
+	var messageArray = [];
+
+
+	function batchedSending(address, tickMessages)
+	{
+		// insert ticks into the messageArray
+		var foundAddress = false;
+
+		for (var i = messageArray.length; i--; )
+		{
+			if (messageArray[i].address === address)
+			{
+				foundAddress = true;
+				messageArray[i].tickMessages = A3(List.foldl, List.cons, messageArray[i].tickMessages, tickMessages);
+				break;
+			}
+		}
+
+		if (!foundAddress)
+		{
+			messageArray.push({ address: address, tickMessages: tickMessages });
+		}
+
+		// do the appropriate state transition
+		switch (state)
+		{
+			case NO_REQUEST:
+				_requestAnimationFrame(sendCallback);
+				state = PENDING_REQUEST;
+				break;
+			case PENDING_REQUEST:
+				state = PENDING_REQUEST;
+				break;
+			case EXTRA_REQUEST:
+				state = PENDING_REQUEST;
+				break;
+		}
+	}
+
+
+	function sendCallback(time)
+	{
+		switch (state)
+		{
+			case NO_REQUEST:
+				// This state should not be possible. How can there be no
+				// request, yet somehow we are actively fulfilling a
+				// request?
+				throw new Error(
+					'Unexpected send callback.\n' +
+					'Please report this to <https://github.com/evancz/elm-effects/issues>.'
+				);
+
+			case PENDING_REQUEST:
+				// At this point, we do not *know* that another frame is
+				// needed, but we make an extra request to rAF just in
+				// case. It's possible to drop a frame if rAF is called
+				// too late, so we just do it preemptively.
+				_requestAnimationFrame(sendCallback);
+				state = EXTRA_REQUEST;
+
+				// There's also stuff we definitely need to send.
+				send(time);
+				return;
+
+			case EXTRA_REQUEST:
+				// Turns out the extra request was not needed, so we will
+				// stop calling rAF. No reason to call it all the time if
+				// no one needs it.
+				state = NO_REQUEST;
+				return;
+		}
+	}
+
+
+	function send(time)
+	{
+		for (var i = messageArray.length; i--; )
+		{
+			var messages = A3(
+				List.foldl,
+				F2( function(toAction, list) { return List.Cons(toAction(time), list); } ),
+				List.Nil,
+				messageArray[i].tickMessages
+			);
+			Task.perform( A2(Signal.send, messageArray[i].address, messages) );
+		}
+		messageArray = [];
+	}
+
+
+	function requestTickSending(address, tickMessages)
+	{
+		return Task.asyncFunction(function(callback) {
+			batchedSending(address, tickMessages);
+			callback(Task.succeed(Utils.Tuple0));
+		});
+	}
+
+
+	return localRuntime.Native.Effects.values = {
+		requestTickSending: F2(requestTickSending)
+	};
+
+};
+
+Elm.Effects = Elm.Effects || {};
+Elm.Effects.make = function (_elm) {
+   "use strict";
+   _elm.Effects = _elm.Effects || {};
+   if (_elm.Effects.values) return _elm.Effects.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Native$Effects = Elm.Native.Effects.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Task = Elm.Task.make(_elm),
+   $Time = Elm.Time.make(_elm);
+   var _op = {};
+   var ignore = function (task) {    return A2($Task.map,$Basics.always({ctor: "_Tuple0"}),task);};
+   var requestTickSending = $Native$Effects.requestTickSending;
+   var toTaskHelp = F3(function (address,effect,_p0) {
+      var _p1 = _p0;
+      var _p5 = _p1._1;
+      var _p4 = _p1;
+      var _p3 = _p1._0;
+      var _p2 = effect;
+      switch (_p2.ctor)
+      {case "Task": var reporter = A2($Task.andThen,_p2._0,function (answer) {    return A2($Signal.send,address,_U.list([answer]));});
+           return {ctor: "_Tuple2",_0: A2($Task.andThen,_p3,$Basics.always(ignore($Task.spawn(reporter)))),_1: _p5};
+         case "Tick": return {ctor: "_Tuple2",_0: _p3,_1: A2($List._op["::"],_p2._0,_p5)};
+         case "None": return _p4;
+         default: return A3($List.foldl,toTaskHelp(address),_p4,_p2._0);}
+   });
+   var toTask = F2(function (address,effect) {
+      var _p6 = A3(toTaskHelp,address,effect,{ctor: "_Tuple2",_0: $Task.succeed({ctor: "_Tuple0"}),_1: _U.list([])});
+      var combinedTask = _p6._0;
+      var tickMessages = _p6._1;
+      return $List.isEmpty(tickMessages) ? combinedTask : A2($Task.andThen,combinedTask,$Basics.always(A2(requestTickSending,address,tickMessages)));
+   });
+   var Never = function (a) {    return {ctor: "Never",_0: a};};
+   var Batch = function (a) {    return {ctor: "Batch",_0: a};};
+   var batch = Batch;
+   var None = {ctor: "None"};
+   var none = None;
+   var Tick = function (a) {    return {ctor: "Tick",_0: a};};
+   var tick = Tick;
+   var Task = function (a) {    return {ctor: "Task",_0: a};};
+   var task = Task;
+   var map = F2(function (func,effect) {
+      var _p7 = effect;
+      switch (_p7.ctor)
+      {case "Task": return Task(A2($Task.map,func,_p7._0));
+         case "Tick": return Tick(function (_p8) {    return func(_p7._0(_p8));});
+         case "None": return None;
+         default: return Batch(A2($List.map,map(func),_p7._0));}
+   });
+   return _elm.Effects.values = {_op: _op,none: none,task: task,tick: tick,map: map,batch: batch,toTask: toTask};
+};
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 
 },{}],2:[function(require,module,exports){
@@ -10553,37 +10750,144 @@ Elm.Html.Events.make = function (_elm) {
                                     ,Options: Options};
 };
 Elm.StartApp = Elm.StartApp || {};
-Elm.StartApp.Simple = Elm.StartApp.Simple || {};
-Elm.StartApp.Simple.make = function (_elm) {
+Elm.StartApp.make = function (_elm) {
    "use strict";
    _elm.StartApp = _elm.StartApp || {};
-   _elm.StartApp.Simple = _elm.StartApp.Simple || {};
-   if (_elm.StartApp.Simple.values) return _elm.StartApp.Simple.values;
+   if (_elm.StartApp.values) return _elm.StartApp.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
    $Html = Elm.Html.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
-   $Signal = Elm.Signal.make(_elm);
+   $Signal = Elm.Signal.make(_elm),
+   $Task = Elm.Task.make(_elm);
    var _op = {};
    var start = function (config) {
-      var update = F2(function (maybeAction,model) {
-         var _p0 = maybeAction;
-         if (_p0.ctor === "Just") {
-               return A2(config.update,_p0._0,model);
-            } else {
-               return _U.crashCase("StartApp.Simple",{start: {line: 91,column: 7},end: {line: 96,column: 52}},_p0)("This should never happen.");
-            }
+      var updateStep = F2(function (action,_p0) {
+         var _p1 = _p0;
+         var _p2 = A2(config.update,action,_p1._0);
+         var newModel = _p2._0;
+         var additionalEffects = _p2._1;
+         return {ctor: "_Tuple2",_0: newModel,_1: $Effects.batch(_U.list([_p1._1,additionalEffects]))};
       });
-      var actions = $Signal.mailbox($Maybe.Nothing);
-      var address = A2($Signal.forwardTo,actions.address,$Maybe.Just);
-      var model = A3($Signal.foldp,update,config.model,actions.signal);
-      return A2($Signal.map,config.view(address),model);
+      var update = F2(function (actions,_p3) {    var _p4 = _p3;return A3($List.foldl,updateStep,{ctor: "_Tuple2",_0: _p4._0,_1: $Effects.none},actions);});
+      var messages = $Signal.mailbox(_U.list([]));
+      var singleton = function (action) {    return _U.list([action]);};
+      var address = A2($Signal.forwardTo,messages.address,singleton);
+      var inputs = $Signal.mergeMany(A2($List._op["::"],messages.signal,A2($List.map,$Signal.map(singleton),config.inputs)));
+      var effectsAndModel = A3($Signal.foldp,update,config.init,inputs);
+      var model = A2($Signal.map,$Basics.fst,effectsAndModel);
+      return {html: A2($Signal.map,config.view(address),model)
+             ,model: model
+             ,tasks: A2($Signal.map,function (_p5) {    return A2($Effects.toTask,messages.address,$Basics.snd(_p5));},effectsAndModel)};
    };
-   var Config = F3(function (a,b,c) {    return {model: a,view: b,update: c};});
-   return _elm.StartApp.Simple.values = {_op: _op,Config: Config,start: start};
+   var App = F3(function (a,b,c) {    return {html: a,model: b,tasks: c};});
+   var Config = F4(function (a,b,c,d) {    return {init: a,update: b,view: c,inputs: d};});
+   return _elm.StartApp.values = {_op: _op,start: start,Config: Config,App: App};
+};
+Elm.TiledMenu = Elm.TiledMenu || {};
+Elm.TiledMenu.make = function (_elm) {
+   "use strict";
+   _elm.TiledMenu = _elm.TiledMenu || {};
+   if (_elm.TiledMenu.values) return _elm.TiledMenu.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var ShowMenu = {ctor: "ShowMenu"};
+   var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
+   var view = F2(function (address,model) {
+      var _p0 = model.current;
+      if (_p0.ctor === "Menu") {
+            var toDivs = F3(function (_p2,_p1,acc) {
+               var _p3 = _p1;
+               var _p4 = _p3._0;
+               var title = _p4.title;
+               var iD = _p4.iD;
+               var picture = _p4.picture;
+               var htmlTile = A2($Html.a,
+               _U.list([$Html$Attributes.$class("tile")
+                       ,$Html$Attributes.href("#")
+                       ,$Html$Attributes.id("tiledMenuTop")
+                       ,A2($Html$Events.onClick,address,ShowTile(iD))]),
+               _U.list([A2($Html.figure,
+               _U.list([]),
+               _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture)]),_U.list([]))
+                       ,A2($Html.div,
+                       _U.list([$Html$Attributes.$class("captionWrapper")]),
+                       _U.list([A2($Html.figcaption,_U.list([]),_U.list([$Html.text(title)]))]))]))]));
+               return A2($List._op["::"],htmlTile,acc);
+            });
+            var tiles = A3($Dict.foldr,toDivs,_U.list([]),model.menuData);
+            return A2($Html.div,_U.list([$Html$Attributes.$class("tiledMenu")]),tiles);
+         } else {
+            return A2($Html.div,
+            _U.list([$Html$Attributes.$class("selected")]),
+            _U.list([_p0._0
+                    ,A2($Html.a,
+                    _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu)]),
+                    _U.list([$Html.text("Revenir au menu")]))]));
+         }
+   });
+   var Content = function (a) {    return {ctor: "Content",_0: a};};
+   var Menu = {ctor: "Menu"};
+   var Tile = F3(function (a,b,c) {    return {title: a,iD: b,picture: c};});
+   var nullTile = A3(Tile,"",0,"");
+   var update = F2(function (action,model) {
+      var _p5 = action;
+      if (_p5.ctor === "ShowTile") {
+            var _p6 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p5._0,model.menuData));
+            var newContent = _p6._1;
+            return _U.update(model,{current: Content(newContent)});
+         } else {
+            return _U.update(model,{current: Menu});
+         }
+   });
+   var Model = F2(function (a,b) {    return {current: a,menuData: b};});
+   var init = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p7) {
+         var _p8 = _p7;
+         var _p10 = _p8._0._0;
+         var _p9 = _p8._1;
+         return {ctor: "_Tuple2"
+                ,_0: _p9
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A3(Tile,_p10,_p9,_p8._0._1)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p10)])),_p8._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A2(Model,Menu,$Dict.fromList(xs$));
+   };
+   return _elm.TiledMenu.values = {_op: _op
+                                  ,Model: Model
+                                  ,Tile: Tile
+                                  ,Menu: Menu
+                                  ,Content: Content
+                                  ,init: init
+                                  ,ShowTile: ShowTile
+                                  ,ShowMenu: ShowMenu
+                                  ,update: update
+                                  ,view: view
+                                  ,maybeElem: maybeElem
+                                  ,nullTile: nullTile
+                                  ,nullTag: nullTag};
 };
 Elm.Murol = Elm.Murol || {};
 Elm.Murol.make = function (_elm) {
@@ -10595,6 +10899,7 @@ Elm.Murol.make = function (_elm) {
    $Char = Elm.Char.make(_elm),
    $Date = Elm.Date.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Html$Events = Elm.Html.Events.make(_elm),
@@ -10602,8 +10907,9 @@ Elm.Murol.make = function (_elm) {
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $String = Elm.String.make(_elm);
+   $StartApp = Elm.StartApp.make(_elm),
+   $String = Elm.String.make(_elm),
+   $Task = Elm.Task.make(_elm);
    var _op = {};
    var misc = _U.list([{ctor: "_Tuple2",_0: "Visiter le musée des peintres de Murol",_1: "http://www.musee-murol.fr/fr"}]);
    var newsletters = _U.list([{ctor: "_Tuple2"
@@ -10697,11 +11003,29 @@ Elm.Murol.make = function (_elm) {
          case "Nov": return "11";
          default: return "12";}
    };
+   var renderAgenda = A2($Html.div,
+   _U.list([$Html$Attributes.id("agenda")]),
+   _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
+           ,A2($Html.iframe,
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("https://calendar.google.com/calendar/embed?src=uminokirinmail%40gmail.com&ctz=Europe/Paris")]),
+           _U.list([$Html.text("Voir le calendrier")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Voir les animations")]))]))]));
    var renderCounter = A2($Html.div,
    _U.list([$Html$Attributes.id("counter")]),
    _U.list([A2($Html.p,
    _U.list([$Html$Attributes.align("center")]),
    _U.list([A2(script,"http://www.123compteur.com/counterskinable01.php?votre_id=678591","")]))]));
+   var renderEtatRoutes = A2($Html.div,
+   _U.list([$Html$Attributes.id("EtatRoutes")]),
+   _U.list([A2($Html.a,
+   _U.list([$Html$Attributes.href("")]),
+   _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/routes.jpg")]),_U.list([]))
+           ,A2($Html.figcaption,_U.list([]),_U.list([$Html.text("Etat des routes")]))]))]));
    var renderMeteo = A2($Html.div,
    _U.list([$Html$Attributes.id("meteo")]),
    _U.list([A2($Html.a,
@@ -10714,7 +11038,7 @@ Elm.Murol.make = function (_elm) {
    var renderPlugins = A2($Html.div,
    _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Pratique")]))
-           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo])))]));
+           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))]));
    var renderMisc = function (misc) {
       var toLink = function (_p10) {
          var _p11 = _p10;
@@ -10757,7 +11081,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([]),
    _U.list([$Html.text("Vous souhaitez passer une information")
            ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text(" contactez le webmaster")]))]))]));
-   var renderMainMenu = F3(function (adr,pos,m) {
+   var renderMainMenu$ = F2(function (pos,m) {
       var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
       var toUrl = function (s) {
          return function (s) {
@@ -10773,42 +11097,65 @@ Elm.Murol.make = function (_elm) {
          } else {
             var _p20 = _p16._1;
             var _p19 = _p16._0;
-            return $String.isEmpty(_p19) ? A2($Html.div,
-            _U.list([$Html$Attributes.$class("mainMenu")]),
-            A2($List.map,A2(renderMainMenu,adr,pos),_p20)) : A2($Html.div,
+            return $String.isEmpty(_p19) ? A2($Html.div,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu$(pos),_p20)) : A2($Html.div,
             _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p19,"Content"))]),
             _U.list([A2($Html.a,
                     _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p19,"dropBtn"),_1: true},current(_p19)]))]),
                     _U.list([$Html.text(_p19)]))
-                    ,A2($Html.div,_U.list([]),A2($List.map,A2(renderMainMenu,adr,pos),_p20))]));
+                    ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu$(pos),_p20))]));
          }
    });
-   var scrollY = Elm.Native.Port.make(_elm).outboundSignal("scrollY",function (v) {    return v;},$Signal.constant(5));
+   var renderMainMenu = F3(function (adr,pos,m) {
+      var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
+      var toUrl = function (s) {
+         return function (s) {
+            return A2($Basics._op["++"],s,".html");
+         }(A2($String.join,"",A2($List.map,capitalize,$String.words(s))));
+      };
+      var _p21 = m;
+      if (_p21.ctor === "Leaf") {
+            var _p23 = _p21._1;
+            var _p22 = _p21._0;
+            var link$ = $String.isEmpty(_p23) ? toUrl(_p22) : _p23;
+            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p22)]))]),_U.list([$Html.text(_p22)]));
+         } else {
+            var _p25 = _p21._1;
+            var _p24 = _p21._0;
+            return $String.isEmpty(_p24) ? A2($Html.div,
+            _U.list([$Html$Attributes.$class("mainMenu")]),
+            A2($List.map,A2(renderMainMenu,adr,pos),_p25)) : A2($Html.div,
+            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p24,"Content"))]),
+            _U.list([A2($Html.a,
+                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p24,"dropBtn"),_1: true},current(_p24)]))]),
+                    _U.list([$Html.text(_p24)]))
+                    ,A2($Html.div,_U.list([]),A2($List.map,A2(renderMainMenu,adr,pos),_p25))]));
+         }
+   });
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
-   var renderNews = F2(function (address,_p21) {
-      var _p22 = _p21;
-      var _p26 = _p22.drop;
-      var arrow = _p26 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
+   var renderNews = F2(function (address,_p26) {
+      var _p27 = _p26;
+      var _p31 = _p27.drop;
+      var arrow = _p31 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
       _U.list([$Html$Attributes.src("/images/dArrow.jpeg")]),
       _U.list([]));
       var pic$ = function () {
-         var _p23 = _p22.pic;
-         if (_p23.ctor === "Nothing") {
+         var _p28 = _p27.pic;
+         if (_p28.ctor === "Nothing") {
                return nullTag;
             } else {
                return A2($Html.img,
-               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p23._0)),$Html$Attributes.$class("newspic")]),
+               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p28._0)),$Html$Attributes.$class("newspic")]),
                _U.list([]));
             }
       }();
-      var body = _p26 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p22.descr])) : nullTag;
+      var body = _p31 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p27.descr])) : nullTag;
       var date$ = function () {
-         var _p24 = _p22.date;
-         if (_p24.ctor === "Err") {
-               return _p24._0;
+         var _p29 = _p27.date;
+         if (_p29.ctor === "Err") {
+               return _p29._0;
             } else {
-               var _p25 = _p24._0;
-               return A2($Basics._op["++"],day$(_p25),A2($Basics._op["++"]," ",A2($Basics._op["++"],months$(_p25),A2($Basics._op["++"]," ",year$(_p25)))));
+               var _p30 = _p29._0;
+               return A2($Basics._op["++"],day$(_p30),A2($Basics._op["++"]," ",A2($Basics._op["++"],months$(_p30),A2($Basics._op["++"]," ",year$(_p30)))));
             }
       }();
       return A2($Html.div,
@@ -10816,8 +11163,8 @@ Elm.Murol.make = function (_elm) {
       _U.list([A2($Html.div,
               _U.list([$Html$Attributes.$class("newsHeader")]),
               _U.list([A2($Html.h5,
-                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p22.id))]),
-                      _U.list([$Html.text(_p22.title)]))
+                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p27.id))]),
+                      _U.list([$Html.text(_p27.title)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("arrow")]),_U.list([arrow]))]))
               ,body]));
@@ -10833,7 +11180,7 @@ Elm.Murol.make = function (_elm) {
       var isCurrent = function (e) {    return $Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "submenuCurrent",_1: _U.eq(e,pos)}]));};
       var toA = function (e) {
          return A2($Html.a,
-         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#top"),isCurrent(e)]),
+         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#"),isCurrent(e)]),
          _U.list([$Html.text(e)]));
       };
       var es = function (_) {    return _.entries;}(submenu);
@@ -10863,6 +11210,7 @@ Elm.Murol.make = function (_elm) {
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.$class("sidebar")]),
                       _U.list([renderPlugins
+                              ,renderAgenda
                               ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
                               ,renderMisc(function (_) {    return _.misc;}(model))]))]))
               ,pageFooter]));
@@ -10872,17 +11220,19 @@ Elm.Murol.make = function (_elm) {
    var mainMenu = A2(Node,
    "",
    _U.list([A2(Leaf,"Accueil","index.html")
-           ,A2(Leaf,"Agenda","")
-           ,A2(Leaf,"Tourisme","")
-           ,A2(Node,"Vie locale",_U.list([A2(Leaf,"Vie scolaire",""),A2(Leaf,"Les séniors",""),A2(Leaf,"Covoiturage",""),A2(Leaf,"Gestion des déchets","")]))
+           ,A2(Leaf,"Animation","")
            ,A2(Node,
-           "Vie économique",
-           _U.list([A2(Leaf,"Agriculture","")
-                   ,A2(Leaf,"Artisanat","")
-                   ,A2(Leaf,"Commerces","")
-                   ,A2(Leaf,"Entreprises","")
-                   ,A2(Leaf,"Offres d\'emploi","")
-                   ,A2(Leaf,"Quinzaine commerciale","")]))
+           "Tourisme",
+           _U.list([A2(Leaf,"Office de Tourisme","")
+                   ,A2(Leaf,"Découvrir Murol","")
+                   ,A2(Leaf,"Hébergements","")
+                   ,A2(Leaf,"Restaurants","")
+                   ,A2(Leaf,"Carte & plan","")
+                   ,A2(Leaf,"Animation estivale","")]))
+           ,A2(Node,
+           "Vie locale",
+           _U.list([A2(Leaf,"Vie scolaire",""),A2(Leaf,"Les séniors",""),A2(Leaf,"Santé",""),A2(Leaf,"Transports",""),A2(Leaf,"Gestion des déchets","")]))
+           ,A2(Node,"Vie économique",_U.list([A2(Leaf,"Agriculture",""),A2(Leaf,"Commerces",""),A2(Leaf,"Entreprises",""),A2(Leaf,"Offres d\'emploi","")]))
            ,A2(Node,
            "Mairie",
            _U.list([A2(Leaf,"La commune","")
@@ -10908,35 +11258,36 @@ Elm.Murol.make = function (_elm) {
            ,A2(Leaf,"Numeros d\'urgences","")
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
-      var _p27 = function (_) {    return _.date;}(news);
-      if (_p27.ctor === "Err") {
+      var _p32 = function (_) {    return _.date;}(news);
+      if (_p32.ctor === "Err") {
             return 0;
          } else {
-            return $Date.toTime(_p27._0);
+            return $Date.toTime(_p32._0);
          }
    };
    var dropN = F2(function (id,n) {
       return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
    });
    var update = F2(function (action,model) {
-      var _p28 = action;
-      switch (_p28.ctor)
-      {case "NoOp": return model;
-         case "Hover": return model;
-         case "Entry": return model;
-         default: var _p29 = _p28._0;
-           var n2 = A2($List.map,dropN(_p29),function (_) {    return _.newsMairie;}(model));
-           var n1 = A2($List.map,dropN(_p29),function (_) {    return _.news;}(model));
-           return _U.update(model,{news: n1,newsMairie: n2});}
+      var _p33 = action;
+      switch (_p33.ctor)
+      {case "NoOp": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         case "Hover": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         case "Entry": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         default: var _p34 = _p33._0;
+           var n2 = A2($List.map,dropN(_p34),function (_) {    return _.newsMairie;}(model));
+           var n1 = A2($List.map,dropN(_p34),function (_) {    return _.news;}(model));
+           return {ctor: "_Tuple2",_0: _U.update(model,{news: n1,newsMairie: n2}),_1: $Effects.none};}
    });
    var tag = F3(function (i,n,xs) {
-      var _p30 = xs;
-      if (_p30.ctor === "[]") {
+      var _p35 = xs;
+      if (_p35.ctor === "[]") {
             return _U.list([]);
          } else {
-            return A2($List._op["::"],_U.update(_p30._0,{id: i + n}),A3(tag,i,n + 1,_p30._1));
+            return A2($List._op["::"],_U.update(_p35._0,{id: i + n}),A3(tag,i,n + 1,_p35._1));
          }
    });
+   var Submenu = F2(function (a,b) {    return {current: a,entries: b};});
    var News = F6(function (a,b,c,d,e,f) {    return {title: a,date: b,descr: c,pic: d,drop: e,id: f};});
    var emptyNews = A6(News,"",$Result.Err(""),nullTag,$Maybe.Nothing,false,0);
    var news = _U.list([_U.update(emptyNews,
@@ -11032,11 +11383,14 @@ Elm.Murol.make = function (_elm) {
                       ,misc: misc
                       ,news: A3(tag,0,0,$List.reverse(A2($List.sortBy,newstime,news)))
                       ,newsMairie: A3(tag,0,100,$List.reverse(A2($List.sortBy,newstime,newsMairie)))};
-   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
+   var main = app.html;
+   var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
    var Model = F6(function (a,b,c,d,e,f) {    return {mainMenu: a,logos: b,newsletters: c,news: d,newsMairie: e,misc: f};});
    return _elm.Murol.values = {_op: _op
                               ,Model: Model
                               ,News: News
+                              ,Submenu: Submenu
                               ,emptyNews: emptyNews
                               ,tag: tag
                               ,dropN: dropN
@@ -11053,6 +11407,7 @@ Elm.Murol.make = function (_elm) {
                               ,update: update
                               ,renderContent: renderContent
                               ,renderMainMenu: renderMainMenu
+                              ,renderMainMenu$: renderMainMenu$
                               ,pageFooter: pageFooter
                               ,renderListImg: renderListImg
                               ,renderNewsList: renderNewsList
@@ -11061,9 +11416,12 @@ Elm.Murol.make = function (_elm) {
                               ,renderMisc: renderMisc
                               ,renderSubMenu: renderSubMenu
                               ,renderMeteo: renderMeteo
+                              ,renderEtatRoutes: renderEtatRoutes
                               ,renderCounter: renderCounter
                               ,renderPlugins: renderPlugins
+                              ,renderAgenda: renderAgenda
                               ,view: view
+                              ,app: app
                               ,main: main
                               ,months$: months$
                               ,day$: day$

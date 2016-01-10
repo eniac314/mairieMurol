@@ -24,9 +24,16 @@
 
 <script type="text/javascript">
   var elmDiv = document.getElementById('elm-app');
-  Elm.embed(Elm.Murol, elmDiv);
+  // var elmApp = Elm.embed(Elm.Murol, elmDiv, {scrollY: 0});
+  var elmApp = Elm.embed(Elm.Murol, elmDiv);
+  
+  window.onscroll = function(){
+  
+  elmApp.ports.scrollY.send(document.body.scrollTop)
+  
+  }
 
-  murol.ports.scrollY.send(12)
+  
 
 </script>
 

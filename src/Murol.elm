@@ -4,10 +4,13 @@ module Murol where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-import StartApp.Simple as StartApp
+import Effects exposing (..)
+import StartApp as StartApp
 import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
+import Task
+import TiledMenu
 import Date exposing (..)
 
 -- Model
@@ -30,6 +33,11 @@ type alias News =
   , id    : Int
   }
 
+
+type alias Submenu =
+  { current : String 
+  , entries : List String
+  }  
 
 emptyNews = News "" (Err "") nullTag Nothing False 0
 
@@ -57,21 +65,27 @@ type Menu = Leaf Label Link | Node Label (List Menu)
 mainMenu : Menu
 mainMenu = Node ""
   [ Leaf "Accueil" "index.html"
-  , Leaf "Agenda" ""
-  , Leaf "Tourisme" ""
+  , Leaf "Animation" ""
+  , Node "Tourisme"
+         [ Leaf "Office de Tourisme" ""
+         , Leaf "Découvrir Murol" ""
+         , Leaf "Hébergements" ""
+         , Leaf "Restaurants" ""
+         , Leaf "Carte & plan" ""
+         , Leaf "Animation estivale" "" 
+         ]
   , Node "Vie locale"
          [ Leaf "Vie scolaire" ""
          , Leaf "Les séniors" ""
-         , Leaf "Covoiturage" ""
+         , Leaf "Santé" ""
+         , Leaf "Transports" ""
          , Leaf "Gestion des déchets" ""
          ]
   , Node "Vie économique"
          [ Leaf "Agriculture" ""
-         , Leaf "Artisanat" ""
          , Leaf "Commerces" ""
          , Leaf "Entreprises" ""
          , Leaf "Offres d'emploi" ""
-         , Leaf "Quinzaine commerciale" ""
          ]
   , Node "Mairie"
          [ Leaf "La commune" ""
@@ -128,19 +142,19 @@ type Action
   | Hover String
   | Entry String
   | Drop  Int
+  --| ScrollY Int
 
-port scrollY : Signal Int
-port scrollY = Signal.constant 5
 
 update action model =
   case action of 
-    NoOp    -> model
-    Hover s -> model
-    Entry e -> model
+    NoOp    -> (model, none)
+    Hover s -> (model, none)
+    Entry e -> (model, none)
+    --ScrollY r -> (model, none)
     Drop id -> 
       let n1 = List.map (dropN id) (.news model)
           n2 = List.map (dropN id) (.newsMairie model)
-      in { model | news = n1, newsMairie = n2 }
+      in ({ model | news = n1, newsMairie = n2 }, none)
 
 
 
@@ -159,7 +173,40 @@ renderMainMenu : Signal.Address Action -> List String -> Menu -> Html
 renderMainMenu adr pos m  = 
   let toUrl s =
     s |> words
-      |> map capitalize
+      |> List.map capitalize
+      |> join ""
+      |> (\s -> s ++ ".html")
+      current label = ("current", List.member label pos)
+
+  in case m of
+    Leaf label link -> 
+      let link' = if String.isEmpty link
+                  then toUrl label
+                  else link
+      in  a [ href link', classList [current label]]
+            [ text label]
+    
+    Node label xs ->
+      if String.isEmpty label
+      
+      then div [ class "mainMenu"]
+               (List.map (renderMainMenu adr pos) xs)  
+      else
+        div [ class (label ++ "Content")]
+            ([ a [ classList [ ((label ++ "dropBtn"),True)
+                             , current label
+                             ]
+                 ]
+                 [ text label ]
+             , div [] (List.map (renderMainMenu adr pos) xs)
+             ])
+
+
+renderMainMenu' : List String -> Menu -> Html
+renderMainMenu' pos m  = 
+  let toUrl s =
+    s |> words
+      |> List.map capitalize
       |> join ""
       |> (\s -> s ++ ".html")
       current label = ("current", List.member label pos)
@@ -177,7 +224,7 @@ renderMainMenu adr pos m  =
       if String.isEmpty label
       
       then div [ class "mainMenu"]
-               (List.map (renderMainMenu adr pos) xs)  
+               (List.map (renderMainMenu' pos) xs)  
       else
         div [ class (label ++ "Content")]
             ([ a [ classList [ ((label ++ "dropBtn"),True)
@@ -185,7 +232,7 @@ renderMainMenu adr pos m  =
                              ]
                  ]
                  [ text label ]
-             , div [] (List.map (renderMainMenu adr pos) xs)
+             , div [] (List.map (renderMainMenu' pos) xs)
              ])
 
 pageFooter = 
@@ -201,12 +248,12 @@ pageFooter =
 renderListImg pics =
   div [id "pics"]
       [ ul []
-           (map (\(i,l) -> li [] [a [href l] [img [src ("/images/" ++ i)] []]]) pics)]
+           (List.map (\(i,l) -> li [] [a [href l] [img [src ("/images/" ++ i)] []]]) pics)]
 
 
 renderNewsList : Signal.Address Action -> String -> List News -> Html
 renderNewsList address title xs =
-  div [class (title |> words |> map capitalize |> join "")]
+  div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]]
       ++ (List.map (renderNews address) xs))
 
@@ -249,7 +296,7 @@ renderNews address { title, date, descr, pic, drop, id} =
 renderNewsLetter news =
   let toNews (content,address) =
         a [href address] [li [] [text content]] 
-      newsList = map toNews news
+      newsList = List.map toNews news
   in
   div [id "newsletters", class "submenu entry"]
       [ h3 [] [text "Inscrivez vous"]
@@ -259,7 +306,7 @@ renderNewsLetter news =
 renderMisc misc =
   let toLink (content,address) =
         a [href address] [li [] [text content]] 
-      linkList = map toLink misc
+      linkList = List.map toLink misc
   in
   div [id "misc", class "submenu entry"]
       [ h3 [] [text "Divers"]
@@ -270,9 +317,9 @@ renderSubMenu address title submenu =
   let es    = .entries submenu 
       pos   = .current submenu
       isCurrent e = classList [("submenuCurrent", e == pos)]
-      toA e = a [id e, onClick address (Entry e), href "#top", isCurrent e]
+      toA e = a [id e, onClick address (Entry e), href "#", isCurrent e]
                 [text e]
-      linkList = map toA es
+      linkList = List.map toA es
   in
   div [ class "sideMenu"]
       [ h3  [] [text (title)]
@@ -287,6 +334,19 @@ renderMeteo =
       , script "http://services.lachainemeteo.com/meteodirect/generationjs/javascript?type_affichage=vignette&w=140&h=175&idc=lcm2K13&entite=3657&type_entite=1&echeance=0&rand=1000" ""
       ]
 
+renderEtatRoutes = 
+  div [ id "EtatRoutes"]
+      [ a [ href ""]
+          [ img [src "/images/routes.jpg"] [] 
+          , figcaption [] [text "Etat des routes"] 
+          ]
+      ]
+      --[ iframe [ src "http://www.inforoute63.fr/index.php"]
+      --         []
+      --]
+
+
+
 renderCounter = 
   div [ id "counter"]
       [ p [ align "center"]
@@ -299,8 +359,22 @@ renderPlugins =
   div [ id "plugins", class "submenu"]
       [ h3 [] [text "Pratique"]
       , ul []
-           (map (\p -> li [] [p]) [renderMeteo])
+           (List.map (\p -> li [] [p]) [renderMeteo, renderEtatRoutes])
       ]
+
+renderAgenda = 
+  div [id "agenda"]
+      [ h3 [] [text "Agenda"]
+      , iframe [ src "https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis"
+               ] []
+      , p [] [a [href "https://calendar.google.com/calendar/embed?src=uminokirinmail%40gmail.com&ctz=Europe/Paris"]
+                [text "Voir le calendrier"]
+             ]
+      , p [] [a [href "/Animation.html"] [text "Voir les animations"]]
+      ] 
+      
+
+
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [id "container"]
@@ -309,19 +383,49 @@ view address model =
             [ renderContent (.news model) (.newsMairie model) address
             , div [class "sidebar"]
                   [ renderPlugins
+                  , renderAgenda
                   , renderNewsLetter (.newsletters model)
                   , renderMisc (.misc model)
-                  ] 
+                  ]
             ]
       , pageFooter 
       ]
 
+app =
+    StartApp.start
+          { init = (initialModel, none)
+          , view = view
+          , update = update
+          , inputs = []
+          }
+
 main =
-  StartApp.start
-    { model  = initialModel
-    , view   = view
-    , update = update
-    }
+    app.html
+
+port tasks : Signal (Task.Task Never ())
+port tasks =
+    app.tasks
+
+--main =
+--  StartApp.start
+--    { model  = initialModel
+--    , view   = view
+--    , update = update
+--    }
+
+--scrollYInbox : Signal.Mailbox String
+--scrollYInbox = Signal.mailbox "5"
+
+--scrollYEvent = on "scrollY" targetValue
+--                (\s -> Signal.message scrollYInbox.address s)
+
+--messages = scrollYInbox.signal
+
+--port scrollY : Signal Int
+
+--scrollYAct = Signal.map  ScrollY scrollY
+
+
 
 
 -- Utils

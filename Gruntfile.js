@@ -30,7 +30,11 @@ module.exports = function(grunt) {
           "./js/associations.js": ["./src/Associations.elm"],
           "./js/artisanatArt.js": ["./src/ArtisanatArt.elm"],
           "./js/cinema.js": ["./src/Cinema.elm"],
-          "./js/sportEtDetentes.js": ["./src/SportEtDetentes.elm"]
+          "./js/sportEtDetentes.js": ["./src/SportEtDetentes.elm"],
+          "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
+          "./js/officeTourisme.js": ["./src/OfficeTourisme.elm"],
+          "./js/sante.js": ["./src/Sante.elm"]
+
           
         }
       }
@@ -63,7 +67,10 @@ module.exports = function(grunt) {
                 , "./src/Associations.elm"
                 , "./src/ArtisanatArt.elm"
                 , "./src/Cinema.elm"
-                , "./src/SportEtDetentes.elm"],
+                , "./src/SportEtDetentes.elm"
+                , "./src/DecouvrirMurol.elm"
+                , "./src/OfficeTourisme.elm"
+                , "./src/Sante.elm"],
         tasks: ["elm"]
       }
     },

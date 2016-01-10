@@ -462,7 +462,7 @@ Elm.Tourisme.make = function (_elm) {
               _U.list([]),
               _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une\n                     Gentiane ou une Salers, vous apprécierez sans aucun\n                     doute de le terminer par une petite verveine. ")]))
               ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))
-              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Restaurants")]))
+              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Restaurants")]))
               ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
               ,A2(renderTable,meta,"restosBeaunes")
               ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
@@ -476,22 +476,22 @@ Elm.Tourisme.make = function (_elm) {
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("hebergTourisme")]),
       _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Hebergements")]))
-              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Hotels")]))
+              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Hotels")]))
               ,A2($Html.p,
               _U.list([]),
               _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                       Beaucoup d\'entre eux se sont engagés dans des \n                       démarches de qualité, symbolisées par différents labels. Certains \n                       sont hôtels restaurants et offrent une prestation en \n                       demi-pension et pension complète. ")]))
               ,A2(renderTable,meta,"hotels")
-              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Campings")]))
+              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Campings")]))
               ,A2($Html.p,
               _U.list([]),
               _U.list([$Html.text("Ils offrent de bonnes conditions de confort et \n                       beaucoup d\'entre eux s\'engagent dans des démarches de \n                       qualité, symbolisées par différents labels. Certains d\'entre eux \n                       proposent également des locations de mobil-homes, chalets ou \n                       bungalows.")]))
               ,A2(renderTable,meta,"campings")
-              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Chambres d\'Hôtes")]))
+              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Chambres d\'Hôtes")]))
               ,A2($Html.p,
               _U.list([]),
               _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                       en proposant des prestations de très bon confort. \n                       Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                       de personnes passionnées par leur région et attentives \n                       à la qualité de l\'accueil.")]))
               ,A2(renderTable,meta,"chambresHotes")
-              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Nos Meublés")]))
+              ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Meublés")]))
               ,A2($Html.p,
               _U.list([]),
               _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                       répondront à toutes les attentes et à tous \n                       les budgets. Les meublés que nous vous proposons \n                       sont tous classés par la préfecture. Le classement, \n                       en étoiles, indique le degré de confort de \n                       la location. Certains sont même labellisés. ")]))

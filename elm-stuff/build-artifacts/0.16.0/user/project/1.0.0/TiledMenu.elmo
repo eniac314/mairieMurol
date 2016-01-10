@@ -1,0 +1,101 @@
+Elm.TiledMenu = Elm.TiledMenu || {};
+Elm.TiledMenu.make = function (_elm) {
+   "use strict";
+   _elm.TiledMenu = _elm.TiledMenu || {};
+   if (_elm.TiledMenu.values) return _elm.TiledMenu.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var ShowMenu = {ctor: "ShowMenu"};
+   var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
+   var view = F2(function (address,model) {
+      var _p0 = model.current;
+      if (_p0.ctor === "Menu") {
+            var toDivs = F3(function (_p2,_p1,acc) {
+               var _p3 = _p1;
+               var _p4 = _p3._0;
+               var title = _p4.title;
+               var iD = _p4.iD;
+               var picture = _p4.picture;
+               var htmlTile = A2($Html.a,
+               _U.list([$Html$Attributes.$class("tile")
+                       ,$Html$Attributes.href("#")
+                       ,$Html$Attributes.id("tiledMenuTop")
+                       ,A2($Html$Events.onClick,address,ShowTile(iD))]),
+               _U.list([A2($Html.figure,
+               _U.list([]),
+               _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture)]),_U.list([]))
+                       ,A2($Html.div,
+                       _U.list([$Html$Attributes.$class("captionWrapper")]),
+                       _U.list([A2($Html.figcaption,_U.list([]),_U.list([$Html.text(title)]))]))]))]));
+               return A2($List._op["::"],htmlTile,acc);
+            });
+            var tiles = A3($Dict.foldr,toDivs,_U.list([]),model.menuData);
+            return A2($Html.div,_U.list([$Html$Attributes.$class("tiledMenu")]),tiles);
+         } else {
+            return A2($Html.div,
+            _U.list([$Html$Attributes.$class("selected")]),
+            _U.list([_p0._0
+                    ,A2($Html.a,
+                    _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu)]),
+                    _U.list([$Html.text("Revenir au menu")]))]));
+         }
+   });
+   var Content = function (a) {    return {ctor: "Content",_0: a};};
+   var Menu = {ctor: "Menu"};
+   var Tile = F3(function (a,b,c) {    return {title: a,iD: b,picture: c};});
+   var nullTile = A3(Tile,"",0,"");
+   var update = F2(function (action,model) {
+      var _p5 = action;
+      if (_p5.ctor === "ShowTile") {
+            var _p6 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p5._0,model.menuData));
+            var newContent = _p6._1;
+            return _U.update(model,{current: Content(newContent)});
+         } else {
+            return _U.update(model,{current: Menu});
+         }
+   });
+   var Model = F2(function (a,b) {    return {current: a,menuData: b};});
+   var init = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p7) {
+         var _p8 = _p7;
+         var _p10 = _p8._0._0;
+         var _p9 = _p8._1;
+         return {ctor: "_Tuple2"
+                ,_0: _p9
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A3(Tile,_p10,_p9,_p8._0._1)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p10)])),_p8._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A2(Model,Menu,$Dict.fromList(xs$));
+   };
+   return _elm.TiledMenu.values = {_op: _op
+                                  ,Model: Model
+                                  ,Tile: Tile
+                                  ,Menu: Menu
+                                  ,Content: Content
+                                  ,init: init
+                                  ,ShowTile: ShowTile
+                                  ,ShowMenu: ShowMenu
+                                  ,update: update
+                                  ,view: view
+                                  ,maybeElem: maybeElem
+                                  ,nullTile: nullTile
+                                  ,nullTag: nullTag};
+};

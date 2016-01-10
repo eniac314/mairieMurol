@@ -440,7 +440,7 @@ restaurants meta =
                      doute de le terminer par une petite verveine. "]
       , p [] [ text "Le tout avec modération."]
 
-      , h4 [] [ text "Nos Restaurants"]
+      , h4 [] [ text "Restaurants"]
       , h5 [] [ text "A Beaune le Froid"]
       , renderTable meta "restosBeaunes"
 
@@ -569,28 +569,28 @@ carte address =
 hebergements meta =
    div [ class "subContainerData", id "hebergTourisme"]
        [ h2 [] [ text "Hebergements"]
-       , h4 [] [ text "Nos Hotels"]
+       , h4 [] [ text "Hotels"]
        , p  [] [ text "Murol offre une grande diversité d'établissements, généralement indépendants. 
                        Beaucoup d'entre eux se sont engagés dans des 
                        démarches de qualité, symbolisées par différents labels. Certains 
                        sont hôtels restaurants et offrent une prestation en 
                        demi-pension et pension complète. "]
        , renderTable meta "hotels"
-       , h4 [] [ text "Nos Campings"]
+       , h4 [] [ text "Campings"]
        , p  [] [ text "Ils offrent de bonnes conditions de confort et 
                        beaucoup d'entre eux s'engagent dans des démarches de 
                        qualité, symbolisées par différents labels. Certains d'entre eux 
                        proposent également des locations de mobil-homes, chalets ou 
                        bungalows."]
        , renderTable meta "campings"
-       , h4 [] [ text "Nos Chambres d'Hôtes"]
+       , h4 [] [ text "Chambres d'Hôtes"]
        , p  [] [ text "Elles répondent aux exigences actuelles de la clientèle, 
                        en proposant des prestations de très bon confort. 
                        Séjourner en chambre d'hôtes, c'est partager le quotidien 
                        de personnes passionnées par leur région et attentives 
                        à la qualité de l'accueil."]
        , renderTable meta "chambresHotes"
-       , h4 [] [ text "Nos Meublés"]
+       , h4 [] [ text "Meublés"]
        , p  [] [ text "Très répandus dans le Massif du Sancy, ils 
                        répondront à toutes les attentes et à tous 
                        les budgets. Les meublés que nous vous proposons 
