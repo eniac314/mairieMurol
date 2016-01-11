@@ -103,7 +103,7 @@ initialContent =
            , content])
   , tiledMenu =
       init [( "Murol"
-            , "/images/murolTile.jpg"
+            , "/images/tiles/decouvrirMurol/murolTile.jpg"
             , [ p  [] [text "Le bourg de Murol est implanté dans un écrin de verdure à
                              850 mètres d'altitude, dans la vallée de la Couze Chambon,
                              sur le versant oriental du Massif de Sancy, entre le volcan
@@ -133,8 +133,8 @@ initialContent =
               ]
             )
             ,
-            ("La desserte des principaux lieux touristiques"
-            ,"/images/cheminTile.jpg"
+            ("La voie verte"
+            ,"/images/tiles/decouvrirMurol/cheminTile.jpg"
             , [  p  [] [text "Les visiteurs peuvent découvrir, sur le plan fourni
                              par l’Office de Tourisme, le tracé de la
                              « Voie Verte » , qui a nettement
@@ -180,7 +180,7 @@ initialContent =
             )
             ,
             ("Beaune le froid"
-            ,"/images/beauneTile.jpg"
+            ,"/images/tiles/decouvrirMurol/beauneTile.jpg"
             , [ p  [] [ text "Petit village de montagne, deuxième bourg de la
                              commune situé sur un haut plateau, Beaune le
                              froid est un village agricole très actif et
@@ -198,7 +198,7 @@ initialContent =
             )
             ,
             ("Chautignat"
-            ,"/images/chautignat.JPG"
+            ,"/images/tiles/decouvrirMurol/chautignat.JPG"
             , [ p  [] [ text "Le hameau de Chautignat est situé à flanc
                              de coteaux. Il bénéficie d'un ensoleillement maximum et
                              de prairies aux pentes douces favorables à l'élevage
@@ -212,7 +212,7 @@ initialContent =
             )
             ,
             ("Les hameaux des Ballats et Groire"
-            ,"/images/groireTile.jpg"
+            ,"images/tiles/decouvrirMurol/groireTile.jpg"
             , [ p  [] [ text "Ces hameaux ont une activité rurale marquée, ils
                      se situent là où le fond de la
                      vallée s'élargit pour former de petites plaines propices
@@ -225,7 +225,7 @@ initialContent =
             )
             ,
             ("La Chassagne"
-            ,"/images/chassagneTile.jpg"
+            ,"images/tiles/decouvrirMurol/chassagneTile.jpg"
             , [ p  [] [ text "Située sous le Château de Murol, La Chassagne
                               est un hameau de fermes et maisons particulières.
                               Ce lieu existait déjà sous Guillaume de Murol,
@@ -240,7 +240,7 @@ initialContent =
             )
             ,
             ("Le volcan du Tartaret"
-            ,"/images/tartaretTile.jpg"
+            ,"/images/tiles/decouvrirMurol/tartaretTile.jpg"
             , [ p  [] [text "Il est l´un des plus récents d´Auvergne. Ses
                              pentes boisées empêchent de distinguer son cratère mais
                              les sentiers qui le traverse sont des plus
@@ -250,7 +250,7 @@ initialContent =
             )
             ,
             ("Lac Chambon"
-            ,"/images/lacChambonTile.jpg"
+            ,"/images/tiles/decouvrirMurol/lacChambonTile.jpg"
             , [  p  [] [text "La partie Est du lac occupe la commune
                              de Murol pour un tiers de sa superficie.
                              Le reste du lac se trouvant sur la
@@ -271,7 +271,7 @@ initialContent =
             )
             ,
             ("Grottes de Rajat"
-            ,"/images/rajatTile.jpg"
+            ,"/images/tiles/decouvrirMurol/rajatTile.jpg"
             , [ p  [] [text "D'accès difficile, les falaises qui les abritent sont
                              composées d'un mélange de Bolts et argiles aux
                              couleurs pastel allant de l'ocre, vert ou rosé,

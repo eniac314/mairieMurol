@@ -10944,7 +10944,6 @@ Elm.Murol.make = function (_elm) {
    $String = Elm.String.make(_elm),
    $Task = Elm.Task.make(_elm);
    var _op = {};
-   var misc = _U.list([{ctor: "_Tuple2",_0: "Visiter le musée des peintres de Murol",_1: "http://www.musee-murol.fr/fr"}]);
    var newsletters = _U.list([{ctor: "_Tuple2"
                               ,_0: "Aux bulletins d\'informations de la commune"
                               ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}
@@ -11089,20 +11088,18 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Pratique")]))
            ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))]));
-   var renderMisc = function (misc) {
-      var toLink = function (_p10) {
+   var renderMisc = A2($Html.div,
+   _U.list([$Html$Attributes.id("misc"),$Html$Attributes.$class("divers")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Divers")]))
+           ,A2($Html.div,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
+           _U.list([$Html.text("Visiter le musée des peintres de Murol")]))]))]));
+   var renderNewsLetter = function (news) {
+      var toNews = function (_p10) {
          var _p11 = _p10;
          return A2($Html.a,_U.list([$Html$Attributes.href(_p11._1)]),_U.list([A2($Html.li,_U.list([]),_U.list([$Html.text(_p11._0)]))]));
-      };
-      var linkList = A2($List.map,toLink,misc);
-      return A2($Html.div,
-      _U.list([$Html$Attributes.id("misc"),$Html$Attributes.$class("submenu entry")]),
-      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Divers")])),A2($Html.ul,_U.list([]),linkList)]));
-   };
-   var renderNewsLetter = function (news) {
-      var toNews = function (_p12) {
-         var _p13 = _p12;
-         return A2($Html.a,_U.list([$Html$Attributes.href(_p13._1)]),_U.list([A2($Html.li,_U.list([]),_U.list([$Html.text(_p13._0)]))]));
       };
       var newsList = A2($List.map,toNews,news);
       return A2($Html.div,
@@ -11115,13 +11112,13 @@ Elm.Murol.make = function (_elm) {
       _U.list([A2($Html.ul,
       _U.list([]),
       A2($List.map,
-      function (_p14) {
-         var _p15 = _p14;
+      function (_p12) {
+         var _p13 = _p12;
          return A2($Html.li,
          _U.list([]),
          _U.list([A2($Html.a,
-         _U.list([$Html$Attributes.href(_p15._1)]),
-         _U.list([A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",_p15._0))]),_U.list([]))]))]));
+         _U.list([$Html$Attributes.href(_p13._1)]),
+         _U.list([A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",_p13._0))]),_U.list([]))]))]));
       },
       pics))]));
    };
@@ -11131,8 +11128,10 @@ Elm.Murol.make = function (_elm) {
            _U.list([]),
            _U.list([A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Vous souhaitez passer une information")
-                   ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text(" contactez le webmaster")]))]))]))
+           _U.list([$Html.text("Vous souhaitez passer une information: ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
+                   _U.list([$Html.text(" contactez le webmaster")]))]))]))
            ,renderCounter]));
    var renderMainMenu$ = F2(function (pos,m) {
       var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
@@ -11141,21 +11140,21 @@ Elm.Murol.make = function (_elm) {
             return A2($Basics._op["++"],s,".html");
          }(A2($String.join,"",A2($List.map,capitalize,$String.words(s))));
       };
-      var _p16 = m;
-      if (_p16.ctor === "Leaf") {
-            var _p18 = _p16._1;
-            var _p17 = _p16._0;
-            var link$ = $String.isEmpty(_p18) ? toUrl(_p17) : _p18;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p17)]))]),_U.list([$Html.text(_p17)]));
+      var _p14 = m;
+      if (_p14.ctor === "Leaf") {
+            var _p16 = _p14._1;
+            var _p15 = _p14._0;
+            var link$ = $String.isEmpty(_p16) ? toUrl(_p15) : _p16;
+            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p15)]))]),_U.list([$Html.text(_p15)]));
          } else {
-            var _p20 = _p16._1;
-            var _p19 = _p16._0;
-            return $String.isEmpty(_p19) ? A2($Html.div,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu$(pos),_p20)) : A2($Html.div,
-            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p19,"Content"))]),
+            var _p18 = _p14._1;
+            var _p17 = _p14._0;
+            return $String.isEmpty(_p17) ? A2($Html.div,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu$(pos),_p18)) : A2($Html.div,
+            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p17,"Content"))]),
             _U.list([A2($Html.a,
-                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p19,"dropBtn"),_1: true},current(_p19)]))]),
-                    _U.list([$Html.text(_p19)]))
-                    ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu$(pos),_p20))]));
+                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p17,"dropBtn"),_1: true},current(_p17)]))]),
+                    _U.list([$Html.text(_p17)]))
+                    ,A2($Html.div,_U.list([]),A2($List.map,renderMainMenu$(pos),_p18))]));
          }
    });
    var renderMainMenu = F3(function (adr,pos,m) {
@@ -11165,50 +11164,50 @@ Elm.Murol.make = function (_elm) {
             return A2($Basics._op["++"],s,".html");
          }(A2($String.join,"",A2($List.map,capitalize,$String.words(s))));
       };
-      var _p21 = m;
-      if (_p21.ctor === "Leaf") {
-            var _p23 = _p21._1;
-            var _p22 = _p21._0;
-            var link$ = $String.isEmpty(_p23) ? toUrl(_p22) : _p23;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p22)]))]),_U.list([$Html.text(_p22)]));
+      var _p19 = m;
+      if (_p19.ctor === "Leaf") {
+            var _p21 = _p19._1;
+            var _p20 = _p19._0;
+            var link$ = $String.isEmpty(_p21) ? toUrl(_p20) : _p21;
+            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)]))]),_U.list([$Html.text(_p20)]));
          } else {
-            var _p25 = _p21._1;
-            var _p24 = _p21._0;
-            return $String.isEmpty(_p24) ? A2($Html.div,
+            var _p23 = _p19._1;
+            var _p22 = _p19._0;
+            return $String.isEmpty(_p22) ? A2($Html.div,
             _U.list([$Html$Attributes.$class("mainMenu")]),
-            A2($List.map,A2(renderMainMenu,adr,pos),_p25)) : A2($Html.div,
-            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p24,"Content"))]),
+            A2($List.map,A2(renderMainMenu,adr,pos),_p23)) : A2($Html.div,
+            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p22,"Content"))]),
             _U.list([A2($Html.a,
-                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p24,"dropBtn"),_1: true},current(_p24)]))]),
-                    _U.list([$Html.text(_p24)]))
-                    ,A2($Html.div,_U.list([]),A2($List.map,A2(renderMainMenu,adr,pos),_p25))]));
+                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p22,"dropBtn"),_1: true},current(_p22)]))]),
+                    _U.list([$Html.text(_p22)]))
+                    ,A2($Html.div,_U.list([]),A2($List.map,A2(renderMainMenu,adr,pos),_p23))]));
          }
    });
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
-   var renderNews = F2(function (address,_p26) {
-      var _p27 = _p26;
-      var _p31 = _p27.drop;
-      var arrow = _p31 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
+   var renderNews = F2(function (address,_p24) {
+      var _p25 = _p24;
+      var _p29 = _p25.drop;
+      var arrow = _p29 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
       _U.list([$Html$Attributes.src("/images/dArrow.jpeg")]),
       _U.list([]));
       var pic$ = function () {
-         var _p28 = _p27.pic;
-         if (_p28.ctor === "Nothing") {
+         var _p26 = _p25.pic;
+         if (_p26.ctor === "Nothing") {
                return nullTag;
             } else {
                return A2($Html.img,
-               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p28._0)),$Html$Attributes.$class("newspic")]),
+               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p26._0)),$Html$Attributes.$class("newspic")]),
                _U.list([]));
             }
       }();
-      var body = _p31 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p27.descr])) : nullTag;
+      var body = _p29 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p25.descr])) : nullTag;
       var date$ = function () {
-         var _p29 = _p27.date;
-         if (_p29.ctor === "Err") {
-               return _p29._0;
+         var _p27 = _p25.date;
+         if (_p27.ctor === "Err") {
+               return _p27._0;
             } else {
-               var _p30 = _p29._0;
-               return A2($Basics._op["++"],day$(_p30),A2($Basics._op["++"]," ",A2($Basics._op["++"],months$(_p30),A2($Basics._op["++"]," ",year$(_p30)))));
+               var _p28 = _p27._0;
+               return A2($Basics._op["++"],day$(_p28),A2($Basics._op["++"]," ",A2($Basics._op["++"],months$(_p28),A2($Basics._op["++"]," ",year$(_p28)))));
             }
       }();
       return A2($Html.div,
@@ -11216,8 +11215,8 @@ Elm.Murol.make = function (_elm) {
       _U.list([A2($Html.div,
               _U.list([$Html$Attributes.$class("newsHeader")]),
               _U.list([A2($Html.h5,
-                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p27.id))]),
-                      _U.list([$Html.text(_p27.title)]))
+                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p25.id))]),
+                      _U.list([$Html.text(_p25.title)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("arrow")]),_U.list([arrow]))]))
               ,body]));
@@ -11225,7 +11224,10 @@ Elm.Murol.make = function (_elm) {
    var renderNewsList = F3(function (address,title,xs) {
       return A2($Html.div,
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
-      A2($Basics._op["++"],_U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))]),A2($List.map,renderNews(address),xs)));
+      A2($Basics._op["++"],
+      _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 11 janvier 2016")]))]),
+      A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
    var renderSubMenu = F3(function (address,title,submenu) {
@@ -11244,14 +11246,21 @@ Elm.Murol.make = function (_elm) {
    });
    var Hover = function (a) {    return {ctor: "Hover",_0: a};};
    var NoOp = {ctor: "NoOp"};
+   var removeOld = F2(function (today,ns) {
+      var p = function (n) {
+         var expiry$ = A2($Result.withDefault,today,function (_) {    return _.expiry;}(n));
+         return _U.cmp($Date.toTime(expiry$),$Date.toTime(today)) > -1;
+      };
+      return A2($List.filter,p,ns);
+   });
    var logos = _U.list([{ctor: "_Tuple2",_0: "famillePlus.jpg",_1: "http://www.familleplus.fr/fr"}
                        ,{ctor: "_Tuple2",_0: "Station_Tourisme_RVB.jpg",_1: "http://www.communes-touristiques.net/"}
                        ,{ctor: "_Tuple2",_0: "Village fleuri.png",_1: "http://www.villes-et-villages-fleuris.com/"}
                        ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}]);
-   var renderContent = F3(function (n1,n2,address) {
+   var renderContent = F2(function (n1,address) {
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("index")]),
-      _U.list([A3(renderNewsList,address,"Actualités de la commune",n1),A3(renderNewsList,address,"La mairie vous informe",n2),renderListImg(logos)]));
+      _U.list([A3(renderNewsList,address,"Actualités de la commune",n1),renderListImg(logos),renderMisc]));
    });
    var view = F2(function (address,model) {
       return A2($Html.div,
@@ -11259,13 +11268,10 @@ Elm.Murol.make = function (_elm) {
       _U.list([A3(renderMainMenu,address,_U.list(["Accueil"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A3(renderContent,function (_) {    return _.news;}(model),function (_) {    return _.newsMairie;}(model),address)
+              _U.list([A2(renderContent,function (_) {    return _.news;}(model),address)
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.$class("sidebar")]),
-                      _U.list([renderAgenda
-                              ,renderPlugins
-                              ,renderNewsLetter(function (_) {    return _.newsletters;}(model))
-                              ,renderMisc(function (_) {    return _.misc;}(model))]))]))
+                      _U.list([renderAgenda,renderPlugins,renderNewsLetter(function (_) {    return _.newsletters;}(model))]))]))
               ,pageFooter]));
    });
    var Node = F2(function (a,b) {    return {ctor: "Node",_0: a,_1: b};});
@@ -11311,47 +11317,50 @@ Elm.Murol.make = function (_elm) {
            ,A2(Leaf,"Numeros d\'urgences","")
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
-      var _p32 = function (_) {    return _.date;}(news);
-      if (_p32.ctor === "Err") {
+      var _p30 = function (_) {    return _.date;}(news);
+      if (_p30.ctor === "Err") {
             return 0;
          } else {
-            return $Date.toTime(_p32._0);
+            return $Date.toTime(_p30._0);
          }
    };
    var dropN = F2(function (id,n) {
       return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
    });
    var update = F2(function (action,model) {
-      var _p33 = action;
-      switch (_p33.ctor)
+      var _p31 = action;
+      switch (_p31.ctor)
       {case "NoOp": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Hover": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Entry": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
-         default: var _p34 = _p33._0;
-           var n2 = A2($List.map,dropN(_p34),function (_) {    return _.newsMairie;}(model));
-           var n1 = A2($List.map,dropN(_p34),function (_) {    return _.news;}(model));
-           return {ctor: "_Tuple2",_0: _U.update(model,{news: n1,newsMairie: n2}),_1: $Effects.none};}
+         default: var n1 = A2($List.map,dropN(_p31._0),function (_) {    return _.news;}(model));
+           return {ctor: "_Tuple2",_0: _U.update(model,{news: n1}),_1: $Effects.none};}
    });
    var tag = F3(function (i,n,xs) {
-      var _p35 = xs;
-      if (_p35.ctor === "[]") {
+      var _p32 = xs;
+      if (_p32.ctor === "[]") {
             return _U.list([]);
          } else {
-            return A2($List._op["::"],_U.update(_p35._0,{id: i + n}),A3(tag,i,n + 1,_p35._1));
+            return A2($List._op["::"],_U.update(_p32._0,{id: i + n}),A3(tag,i,n + 1,_p32._1));
          }
    });
+   var prepNews = F2(function (t,ns) {
+      var today = A2($Result.withDefault,$Date.fromTime(0),$Date.fromString(t));
+      var relevant = A2(removeOld,today,ns);
+      return A3(tag,0,0,$List.reverse(A2($List.sortBy,newstime,relevant)));
+   });
    var Submenu = F2(function (a,b) {    return {current: a,entries: b};});
-   var News = F6(function (a,b,c,d,e,f) {    return {title: a,date: b,descr: c,pic: d,drop: e,id: f};});
-   var emptyNews = A6(News,"",$Result.Err(""),nullTag,$Maybe.Nothing,false,0);
+   var News = F7(function (a,b,c,d,e,f,g) {    return {title: a,date: b,descr: c,pic: d,drop: e,id: f,expiry: g};});
+   var emptyNews = A7(News,"",$Result.Err(""),nullTag,$Maybe.Nothing,false,0,$Result.Err(""));
    var news = _U.list([_U.update(emptyNews,
                       {title: "L\'Auvergne dans le Best of de Lonely Planet"
                       ,date: $Date.fromString("10/29/2015")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
-                              _U.list([]),
-                              _U.list([$Html.text("L\'Auvergne fait une entrée remarquée dans le Best\n                              of du voyage de Lonely Planet en 2016.\n                              En 6ème position du classement des régions\n                              à visiter dans le monde")]))
-                              ,A2(link,"Source","http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016")]))
+                      _U.list([]),
+                      _U.list([$Html.text("L\'Auvergne fait une entrée remarquée dans le Best\n                              of du voyage de Lonely Planet en 2016.\n                              En 6ème position du classement des régions\n                              à visiter dans le monde: ")
+                              ,A2(link,"Source","http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016")]))]))
                       ,pic: $Maybe.Just("lonely.png")})
                       ,_U.update(emptyNews,
                       {title: "Chant de Noël à l\'église de Beaune le Froid"
@@ -11360,7 +11369,8 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
                       _U.list([]),
-                      _U.list([$Html.text(" Samedi 19 à 15h à l\'église de Beaune le Froid, chant de Noël\n                                 avec l\'ensemble instrumental de la vallée verte et la\n                                 chorale de Murol")]))]))})
+                      _U.list([$Html.text(" Samedi 19 à 15h à l\'église de Beaune le Froid, chant de Noël\n                                 avec l\'ensemble instrumental de la vallée verte et la\n                                 chorale de Murol")]))]))
+                      ,expiry: $Date.fromString("12/25/2015")})
                       ,_U.update(emptyNews,
                       {title: "Noël des enfants à la salle des fêtes de Murol"
                       ,date: $Date.fromString("12/15/2015")
@@ -11368,7 +11378,8 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
                       _U.list([]),
-                      _U.list([$Html.text("Dimanche 20 à 14h, Noël des enfants à la salle des fêtes de Murol.\n                                Une collecte  de denrée alimentaire sera réalisé à cette occasion\n                                au profit de la banque alimentaire.")]))]))})
+                      _U.list([$Html.text("Dimanche 20 à 14h, Noël des enfants à la salle des fêtes de Murol.\n                                Une collecte  de denrée alimentaire sera réalisé à cette occasion\n                                au profit de la banque alimentaire.")]))]))
+                      ,expiry: $Date.fromString("12/25/2015")})
                       ,_U.update(emptyNews,
                       {title: "Animations de Noêl "
                       ,date: $Date.fromString("12/15/2015")
@@ -11376,70 +11387,75 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,
                       _U.list([]),
-                      _U.list([$Html.text("Lundi 21 toute la journée, rue G. Sand,\n                              animations de Noêl organisées par les commerçants.")]))]))})
+                      _U.list([$Html.text("Lundi 21 toute la journée, rue G. Sand,\n                              animations de Noêl organisées par les commerçants.")]))]))
+                      ,expiry: $Date.fromString("12/25/2015")})
                       ,_U.update(emptyNews,
                       {title: "Chasse au trésor de Noël"
                       ,date: $Date.fromString("12/15/2015")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
-                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Lundi 21 à 15h, chasse au trésor de Noël.")]))]))})
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Lundi 21 à 15h, chasse au trésor de Noël.")]))]))
+                      ,expiry: $Date.fromString("12/25/2015")})
                       ,_U.update(emptyNews,
                       {title: "3 contes de Noël"
                       ,date: $Date.fromString("12/15/2015")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
-                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Pour Noël : 3 contes de Noël.")])),A2(link,"lien","")]))})]);
-   var newsMairie = _U.list([_U.update(emptyNews,
-                            {title: "Nouveaux horaires navette"
-                            ,date: $Date.fromString("12/15/2015")
-                            ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsdescr")]),
-                            _U.list([A2($Html.p,
-                                    _U.list([]),
-                                    _U.list([$Html.text("les nouveaux horaires de la Navette Chambon/Lac - Murol - Saint Nectaire ---- Clermont Ferrand")]))
-                                    ,A2(link,"Télécharger les horaires","")
-                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                    ,A2(link,"Dépliant ligne 74 navette","")]))})
-                            ,_U.update(emptyNews,
-                            {title: "Application vols/cambriolage"
-                            ,date: $Date.fromString("12/15/2015")
-                            ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsdescr")]),
-                            _U.list([A2($Html.p,
-                                    _U.list([]),
-                                    _U.list([$Html.text("Une application a été créée par les gendarmes \n                                pour faire l\'inventaire de biens en cas de vols\n                                 ou de cambriolages: \" Cambrio-Liste \".")]))
-                                    ,A2(link,"lien Apple-Store","")
-                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                    ,A2(link,"lien Google Play","")]))})
-                            ,_U.update(emptyNews,
-                            {title: "Permanence mission locale pour l\'emploi"
-                            ,date: $Date.fromString("12/15/2015")
-                            ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsdescr")]),
-                            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("1er lundi de chaque mois permanence mission locale pour l\'emploi.")]))]))})
-                            ,_U.update(emptyNews,
-                            {title: "Vente de terrain communaux"
-                            ,date: $Date.fromString("12/15/2015")
-                            ,descr: A2($Html.div,_U.list([$Html$Attributes.$class("newsdescr")]),_U.list([A2(link,"Contactez la mairie","")]))})
-                            ,_U.update(emptyNews,
-                            {title: "Simplification du système administratif français"
-                            ,date: $Date.fromString("12/15/2015")
-                            ,descr: A2($Html.div,
-                            _U.list([$Html$Attributes.$class("newsdescr")]),
-                            _U.list([A2($Html.p,
-                                    _U.list([]),
-                                    _U.list([$Html.text("Le système administratif français nécessite une\n                               simplification. Un site a été créé afin de recueillir\n                               des suggestions d\'amélioration dans les\n                                démarches administratives. En savoir plus sur ")]))
-                                    ,A2(link,"http://www.faire-simple.gouv.fr/","http://www.faire-simple.gouv.fr/")]))})]);
-   var initialModel = {mainMenu: mainMenu
-                      ,logos: logos
-                      ,newsletters: newsletters
-                      ,misc: misc
-                      ,news: A3(tag,0,0,$List.reverse(A2($List.sortBy,newstime,news)))
-                      ,newsMairie: A3(tag,0,100,$List.reverse(A2($List.sortBy,newstime,newsMairie)))};
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Pour Noël : 3 contes de Noël.")])),A2(link,"lien","")]))
+                      ,expiry: $Date.fromString("12/25/2015")})
+                      ,_U.update(emptyNews,
+                      {title: "Murol Infos 28"
+                      ,date: $Date.fromString("01/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le nouveau \"Murol Infos\" (janvier 2016) est disponible: ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("baseDocumentaire/MUROL INFOS 28.doc")]),_U.list([$Html.text("Télécharger")]))]))]))
+                      ,expiry: $Date.fromString("02/11/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Recensement de la population a murol"
+                      ,date: $Date.fromString("01/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Il aura lieu du 21 janvier au 20 février 2016.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Le recensement permet de déterminer la population officielle \n                               de chaque commune.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Il fournit également des informations sur les caractéristiques \n                               de la population : âge, profession, moyens de \n                               transport utilisés, conditions de logement... ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("De ces chiffres découle la participation de l\'État \n                               au budget des communes : plus une commune \n                               est peuplée, plus cette participation est importante.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Du nombre d\'habitants dépendent également le nombre d\'élus \n                               au conseil municipal, la détermination du mode de \n                               scrutin... ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Plus de détails dans le dernier ")
+                                      ,A2($Html.a,
+                                      _U.list([$Html$Attributes.href("baseDocumentaire/MUROL INFOS 28.doc")]),
+                                      _U.list([$Html.text("Murol Infos")]))]))]))
+                      ,expiry: $Date.fromString("02/21/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Voeux du Maire"
+                      ,date: $Date.fromString("01/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Comme chaque année, le maire, Sébastien Gouttebel,\n                           présentera ses vœux à la population murolaise. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Il dressera le bilan de l’année 2015 et \n                           vous informera sur l’avancée des projets en cours. \n                           Vous pourrez également voir le diaporama de l’année \n                           2015 réalisé à partir des photos fournies par \n                           Michel Martin, correspondant du journal la Montagne. ")]))
+                              ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous le 24 janvier à 11 heures, à la salle des fêtes de Murol.")]))]))
+                      ,expiry: $Date.fromString("01/25/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/11/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
-   var Model = F6(function (a,b,c,d,e,f) {    return {mainMenu: a,logos: b,newsletters: c,news: d,newsMairie: e,misc: f};});
+   var Model = F4(function (a,b,c,d) {    return {mainMenu: a,logos: b,newsletters: c,news: d};});
    return _elm.Murol.values = {_op: _op
                               ,Model: Model
                               ,News: News
@@ -11453,6 +11469,8 @@ Elm.Murol.make = function (_elm) {
                               ,mainMenu: mainMenu
                               ,logos: logos
                               ,initialModel: initialModel
+                              ,prepNews: prepNews
+                              ,removeOld: removeOld
                               ,NoOp: NoOp
                               ,Hover: Hover
                               ,Entry: Entry
@@ -11489,9 +11507,7 @@ Elm.Murol.make = function (_elm) {
                               ,split3: split3
                               ,split3$: split3$
                               ,news: news
-                              ,newsMairie: newsMairie
-                              ,newsletters: newsletters
-                              ,misc: misc};
+                              ,newsletters: newsletters};
 };
 Elm.DecouvrirMurol = Elm.DecouvrirMurol || {};
 Elm.DecouvrirMurol.make = function (_elm) {
@@ -11523,7 +11539,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                         }
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Murol"
-                                                             ,_1: "/images/murolTile.jpg"
+                                                             ,_1: "/images/tiles/decouvrirMurol/murolTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Le bourg de Murol est implanté dans un écrin de verdure à\n                             850 mètres d\'altitude, dans la vallée de la Couze Chambon,\n                             sur le versant oriental du Massif de Sancy, entre le volcan\n                             boisé du Tartaret, le promontoire du Château de Murol\n                             (monument historique classé) et le puy de Bessolles\n                             culminant à 1057m. d\'altitude. Il est également\n                             travérsé par le GR30. A deux pas du Lac Chambon\n                             et de la Vallée de Chaudefour (Réserve naturelle)\n                             le village vous ravira par ses sites remarquables\n                             ou pittoresques, par son parc arboré où se trouve\n                             le musée des peintres.")]))
@@ -11531,8 +11547,8 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("De nombreux vestiges\n                             témoignent d\'une occupation gauloise (dolmen)\n                             et gallo-romaine (villa et fanum). Au moyen-âge\n                             s\'élève une puissante forteresse, sa construction\n                             s\'étale du XIIème au XVIIIème siècle. Après être resté\n                             trois siècles durant dans les mains de la noble famille\n                             de Murol, le château deviendra au XV ème\n                             siècle par mariage, propriété des Estaing, lesquels y\n                             feront de nombreux travaux pour moderniser les conditions\n                             de vie et adapter aux exigences de l\'artillerie le système\n                             de défense. Délaissé par ses derniers possesseurs,\n                             le château tombe en ruines au XIX ème siècle.\n                             Il est aujourd\'hui propriété de la commune.\n                             Des animations relatant la vie au moyen-âge s\'y\n                             déroulent et attirent environ 120 000 visiteurs par an.")]))])}
                                                             ,{ctor: "_Tuple3"
-                                                             ,_0: "La desserte des principaux lieux touristiques"
-                                                             ,_1: "/images/cheminTile.jpg"
+                                                             ,_0: "La voie verte"
+                                                             ,_1: "/images/tiles/decouvrirMurol/cheminTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Les visiteurs peuvent découvrir, sur le plan fourni\n                             par l’Office de Tourisme, le tracé de la\n                             « Voie Verte » , qui a nettement\n                             amélioré la circulation des piétons et des cyclistes\n                             depuis son achèvement en 2009. Il s’agit d’un\n                             sentier fléché , accessible aux handicapés, réalisé en\n                             collaboration avec le Conseil Général, qui relie le\n                             bourg de Murol au lac Chambon, en faisant\n                             une boucle autour du volcan du Tartaret. Il\n                             permet de sécuriser le cheminement des piétons et\n                             des cyclotouristes tout en respectant l’environnement car les\n                             engins motorisés y sont proscrits. ")]))
@@ -11550,43 +11566,43 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                                           _U.list([$Html.text("En dehors du bourg, les visiteurs peuvent se\n                             promener en toute sécurité sur les chemins balisés\n                             par la communauté de communes du Massif du\n                             Sancy. Ils représentent à Murol un réseau de\n                             plusieurs dizaines de kilomètres de sentiers de PR\n                             (petites randonnées). Des cartes et des topoguides sont\n                             disponibles au bureau de l’Office de Tourisme. Ils\n                             permettent aux visiteurs de découvrir les plus beaux\n                             panoramas de notre commune, comme ci-dessous, le lac\n                             Chambon vu du sommet du volcan du Tartaret. ")]))])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Beaune le froid"
-                                                             ,_1: "/images/beauneTile.jpg"
+                                                             ,_1: "/images/tiles/decouvrirMurol/beauneTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                              _U.list([]),
                                                              _U.list([$Html.text("Petit village de montagne, deuxième bourg de la\n                             commune situé sur un haut plateau, Beaune le\n                             froid est un village agricole très actif et\n                             réputé pour ses fromages de Saint Nectaire fermier,\n                             fabriqué depuis le XVIème siècle sur la commune.\n                             C\'est un lieu de promenade et de découverte\n                             du savoir-faire local. Il a su conserver son\n                             moulin à eau et son lavoir. En 2011,\n                             son four à pain a été entièrement reconstruit\n                             par des bénévoles de l’association des « chantiers\n                             de jeunesse ». L’ hiver, l’ouverture du domaine\n                             skiable permet la pratique du ski nordique et\n                             des raquettes. ")]))])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Chautignat"
-                                                             ,_1: "/images/chautignat.JPG"
+                                                             ,_1: "/images/tiles/decouvrirMurol/chautignat.JPG"
                                                              ,_2: _U.list([A2($Html.p,
                                                              _U.list([]),
                                                              _U.list([$Html.text("Le hameau de Chautignat est situé à flanc\n                             de coteaux. Il bénéficie d\'un ensoleillement maximum et\n                             de prairies aux pentes douces favorables à l\'élevage\n                             comme aux cultures. A proximité du hameau se\n                             trouvent les grottes de Rajat et le moulin\n                             à eau de Landrode qui ont été les\n                             lieux de créations artistiques dans la cadre de\n                             la manifestation annuelle « Horizons rencontres Art et\n                             Nature ». ")]))])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Les hameaux des Ballats et Groire"
-                                                             ,_1: "/images/groireTile.jpg"
+                                                             ,_1: "images/tiles/decouvrirMurol/groireTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                              _U.list([]),
                                                              _U.list([$Html.text("Ces hameaux ont une activité rurale marquée, ils\n                     se situent là où le fond de la\n                     vallée s\'élargit pour former de petites plaines propices\n                     aux cultures. Traversés par la Couze Chambon et\n                     les sentiers de randonnées, ils se prêtent à\n                     la flânerie. A l’occasion de la fête de\n                     Groire, le four à pain revit pour le\n                     plaisir des petits et grands gourmands. ")]))])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "La Chassagne"
-                                                             ,_1: "/images/chassagneTile.jpg"
+                                                             ,_1: "images/tiles/decouvrirMurol/chassagneTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                              _U.list([]),
                                                              _U.list([$Html.text("Située sous le Château de Murol, La Chassagne\n                              est un hameau de fermes et maisons particulières.\n                              Ce lieu existait déjà sous Guillaume de Murol,\n                              seigneur du Château au début du XVème siècle.\n                              La légende raconte que Pierre Morand, \"concierge\" du\n                              château s\'est installé ici et a fondé \"la\n                              Chassagne\". L\'origine du nom vient des arbres présents\n                              à cette époque, les chênes. Aujourd\'hui, quelques-uns subsistent\n                              sur les pentes du château, entrelacés avec les\n                              pins et autres arbustes. ")]))])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Le volcan du Tartaret"
-                                                             ,_1: "/images/tartaretTile.jpg"
+                                                             ,_1: "/images/tiles/decouvrirMurol/tartaretTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                              _U.list([]),
                                                              _U.list([$Html.text("Il est l´un des plus récents d´Auvergne. Ses\n                             pentes boisées empêchent de distinguer son cratère mais\n                             les sentiers qui le traverse sont des plus\n                             agréables et accessibles. Parcours de santé et d\'orientation\n                             (cartes en vente à l\'office de tourisme). ")]))])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Lac Chambon"
-                                                             ,_1: "/images/lacChambonTile.jpg"
+                                                             ,_1: "/images/tiles/decouvrirMurol/lacChambonTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                              _U.list([]),
                                                              _U.list([$Html.text("La partie Est du lac occupe la commune\n                             de Murol pour un tiers de sa superficie.\n                             Le reste du lac se trouvant sur la\n                             commune de Chambon sur lac. Le Lac Chambon\n                             est un lac de barrage volcanique puisqu´il s´est\n                             formé à la suite de l´éruption du Tartaret\n                             il y a environ 8000 ans et de\n                             l\'effondrement de la dent du Marais , bloquant\n                             ainsi le cours de la Couze Chambon. La\n                             couze charrie une telle quantité d´alluvions que le\n                             lac se rétrécit au fil des siècles. S\'étalant\n                             aujourd\'hui sur 60 hectares, peu profond (6 m\n                             maximum) et parsemé d´îlots , il s\'ouvre largement\n                             à l\'ouest sur les paysages somptueux du massif\n                             du Sancy. Le lac est aménagé pour la\n                             baignade, les activités nautiques et la pêche. ")]))])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Grottes de Rajat"
-                                                             ,_1: "/images/rajatTile.jpg"
+                                                             ,_1: "/images/tiles/decouvrirMurol/rajatTile.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                              _U.list([]),
                                                              _U.list([$Html.text("D\'accès difficile, les falaises qui les abritent sont\n                             composées d\'un mélange de Bolts et argiles aux\n                             couleurs pastel allant de l\'ocre, vert ou rosé,\n                             au bleuté. Ces habitations troglodytes sont très anciennes,\n                             certainement antérieures à l\'époque gauloise. Toutefois leur histoire\n                             mal connue ne s\'appuie que sur des hypothèses.\n                             Ce site est un enchantement pour le promeneur\n                             attentif et permet à celui qui s\'y rend\n                             de rêver et d\'imaginer sa propre histoire. ")]))])}]))};

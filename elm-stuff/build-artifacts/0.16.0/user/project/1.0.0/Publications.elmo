@@ -350,7 +350,11 @@ Elm.Publications.make = function (_elm) {
            _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 24 - Mai","http://www.murol.fr/Murol_info/24.pdf")]))
                    ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 25 - Juin","http://www.murol.fr/Murol_info/25.pdf")]))
                    ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 26 - Septembre","http://www.murol.fr/Murol_info/26.pdf")]))
-                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 27 - Novembre","http://www.murol.fr/Murol_info/27.pdf")]))]))]));
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 27 - Novembre","http://www.murol.fr/Murol_info/27.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2016")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 28 - Janvier","baseDocumentaire/MUROL INFOS 28.doc")]))]))]));
    var delib = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("delibPubli")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Délibération conseil municipal")]))

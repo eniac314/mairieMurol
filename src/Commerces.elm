@@ -37,6 +37,7 @@ type alias Commerce =
    , fax   : String
    , mail  : String
    , site  : String
+   , pjaun : String
    }
 
 type alias CommerceMap = Dict String (List Commerce)
@@ -67,7 +68,7 @@ renderCommerceMap am =
 
 
 renderCommerce : Commerce -> Html
-renderCommerce { name, descr, addr, tel, fax, mail, site} = 
+renderCommerce { name, descr, addr, tel, fax, mail, site, pjaun} = 
   let name'  = maybeElem name (\s -> p [] [text s])
       descr' = List.map (\s -> p [] [text s]) descr
       addr'  = maybeElem addr (\s -> p [] [text s])
@@ -80,7 +81,9 @@ renderCommerce { name, descr, addr, tel, fax, mail, site} =
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
-  in div [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site'])
+      pjaun'  = maybeElem
+                 site (\s -> p [] [text "Pages Jaunes: ", a [href s] [text s]])
+  in div [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site', pjaun'])
 
 
 maybeElem : String -> ( String -> Html ) -> Html
@@ -127,7 +130,7 @@ initialContent =
       ]
 
 --Data 
-defCom = Commerce "" [] "" "" "" "" ""
+defCom = Commerce "" [] "" "" "" "" "" ""
 
 comMapYearLong = fromList
   [("Alimentation générale"

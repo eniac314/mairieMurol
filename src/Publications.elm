@@ -187,6 +187,10 @@ murolInf =
            , li [] [link "Numero 26 - Septembre" "http://www.murol.fr/Murol_info/26.pdf"]
            , li [] [link "Numero 27 - Novembre" "http://www.murol.fr/Murol_info/27.pdf"]
            ]
+      , h5 [] [text "2016"]     
+      , ul []
+           [li [] [link "Numero 28 - Janvier" "baseDocumentaire/MUROL INFOS 28.doc"]
+           ]
       ]
 
 bulls = List.reverse

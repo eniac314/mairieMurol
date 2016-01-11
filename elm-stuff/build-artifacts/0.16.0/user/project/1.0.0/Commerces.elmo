@@ -38,8 +38,14 @@ Elm.Commerces.make = function (_elm) {
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var renderCommerce = function (_p2) {
       var _p3 = _p2;
+      var _p4 = _p3.site;
+      var pjaun$ = A2(maybeElem,
+      _p4,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("Pages Jaunes: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
       var site$ = A2(maybeElem,
-      _p3.site,
+      _p4,
       function (s) {
          return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
       });
@@ -53,7 +59,7 @@ Elm.Commerces.make = function (_elm) {
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
+      return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$,pjaun$]))));
    };
    var renderCommerceMap = function (am) {
       var col = function (ds) {    return A2($Html.div,_U.list([$Html$Attributes.$class("column")]),ds);};
@@ -74,8 +80,8 @@ Elm.Commerces.make = function (_elm) {
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
-   var Commerce = F7(function (a,b,c,d,e,f,g) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g};});
-   var defCom = A7(Commerce,"",_U.list([]),"","","","","");
+   var Commerce = F8(function (a,b,c,d,e,f,g,h) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g,pjaun: h};});
+   var defCom = A8(Commerce,"",_U.list([]),"","","","","","");
    var comMapYearLong = $Dict.fromList(_U.list([{ctor: "_Tuple2"
                                                 ,_0: "Alimentation générale"
                                                 ,_1: _U.list([_U.update(defCom,

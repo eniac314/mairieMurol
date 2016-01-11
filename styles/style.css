@@ -425,8 +425,8 @@ figcaption {
 }
 
 .tiledMenu .tile .captionWrapper figcaption {
-  text-align: left;
-  min-height: 50px;
+  text-align: center;
+  min-height: 20px;
   border-radius: 0;
   box-shadow: none;
 }
@@ -444,6 +444,7 @@ figcaption {
   margin: 0;
   padding: 0;
   border-left: 1px solid #aca6a9;
+
 }
 
 #index h4{
@@ -452,11 +453,17 @@ figcaption {
 }
 
 .ActualitésDeLaCommune {
-  
+ min-height: 400px; 
 }
 .LaMairieVousInforme {
   /*background-color: violet;*/
   display: none;
+}
+
+#lastUpdate{
+  padding-left: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #aca6a9;
 }
 
 .news {
@@ -465,6 +472,7 @@ figcaption {
   padding-bottom: 0.5em;
 }
 
+
 .newsBody{
   background-color: rgba(176,196,222,0.4);
   box-shadow: 0 1px 1px #B0C4DE;
@@ -472,15 +480,6 @@ figcaption {
   clear: both;
 }
 
-
-
-/*#news:after {
-  content: "Foo";
-  visibility: hidden;
-  display: block;
-  height: 0px;
-  clear: both;
-}*/
 
 h5.newsTitle, h5.dropTable{
   color: rgb(50, 50, 70);
@@ -506,13 +505,15 @@ span.date {
 }
 
 .news p {
-  margin: 0;
-  padding: 0 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0em;
+  max-width: 800px;
+
 }
 
 .newspic {
   float: right;
-  padding: 0 0.5em;
+  padding: 0 0.5em 0 0.5em;
   margin-top: 1em;
   margin-left: 1em; 
 }
@@ -525,8 +526,6 @@ span.date {
 .newsdescr a {
   text-decoration: none;
   color: teal;
-  padding:0 0.1em;
-  margin-left: 1em;
 }
 .newsdescr a:hover {
   border-bottom: 1px solid teal;
@@ -602,7 +601,6 @@ span.date {
 #plugins li {
   vertical-align: top;
   display: inline-block;
-  background-color: green;
   padding: 0;
   margin-left: 0.5em;
   margin-bottom: 0.5em;
@@ -658,7 +656,7 @@ span.date {
   margin: 0;
 }
 
-#agenda a{
+#agenda a, .divers a{
   text-decoration-line: none;
   text-decoration-style: solid;
   color: teal;
@@ -667,7 +665,7 @@ span.date {
   margin-left: 1em;
 }
 
-#agenda a:hover{
+#agenda a:hover, .divers a:hover{
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: teal;
@@ -719,8 +717,22 @@ span.date {
 #newsletters {
 
 }
-/*--end of code fot sidebar--------------*/
+/*---------------------------------------
+  style for divers
+---------------------------------------*/
+.divers div{
+  background-image: url("/images/peintres.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  min-height:96px;
+}
 
+
+
+
+/*--end of code fot divers--------------*/
+
+/*--end of code fot sidebar--------------*/
 /*--end of code for Accueil------------------------------------------------------*/
 
 
