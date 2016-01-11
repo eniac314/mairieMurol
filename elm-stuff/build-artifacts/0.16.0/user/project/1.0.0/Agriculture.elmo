@@ -14,24 +14,9 @@ Elm.Agriculture.make = function (_elm) {
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("agriculture")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Agriculture")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Producteur fermier")]))
-           ,A2($Murol.link,"Saint-Nectaire AOP","http://www.fromages-aop-auvergne.com/AOP-Saint-Nectaire")
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("C’est dans une ferme datant de 1970 que \n                     Josette TIXIER vous accueillera pour vous faire découvrir \n                     ses secrets de fabrication du saint-Nectaire. Avec son \n                     fils David à la traite et sa belle-fille \n                     Angélique à la fromagerie, c’est une affaire de \n                     famille ! Suite à votre visite de la \n                     fromagerie, vous aurez droit bien entendu à une \n                     petite dégustation ! ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situation Beaune-le-froid, rue de Clermont")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Visite guidée")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Juillet et août : jeudi, vendredi, samedi à 9h15 (compter 1h)")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vente au détail")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Toute l’année, tous les jours (sauf le mardi) de 9h15 à 12h et de 15h à 20h")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Contactez-nous")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Josette TIXIER, son fils David et son épouse Angélique LAIR")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél./Fax. : 04.73.88.62.09")]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -49,6 +34,39 @@ Elm.Agriculture.make = function (_elm) {
          case "Entry": return A2(changeMain,model,_p1._0);
          default: return model;}
    });
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var renderAgriculteur = function (_p2) {
+      var _p3 = _p2;
+      var site$ = A2(maybeElem,
+      _p3.site,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var mail$ = A2(maybeElem,
+      _p3.mail,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
+      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
+      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
+      var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
+   };
+   var renderAgriculteurMap = function (am) {
+      var col = function (ds) {    return A2($Html.div,_U.list([$Html$Attributes.$class("column")]),ds);};
+      var toDiv = F3(function (k,v,acc) {
+         return A2($List._op["::"],
+         A2($Html.div,
+         _U.list([$Html$Attributes.$class("businesses")]),
+         A2($Basics._op["++"],_U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderAgriculteur,v))),
+         acc);
+      });
+      var toDivs = A3($Dict.foldr,toDiv,_U.list([]),am);
+      return A2($Html.div,_U.list([]),A2($List.map,col,$Murol.split3$(toDivs)));
+   };
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
@@ -56,16 +74,49 @@ Elm.Agriculture.make = function (_elm) {
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
+   var Agriculteur = F7(function (a,b,c,d,e,f,g) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g};});
+   var defAgri = A7(Agriculteur,"",_U.list([]),"","","","","");
+   var agriMap = $Dict.fromList(_U.list([{ctor: "_Tuple2"
+                                         ,_0: "Agriculteur & producteur de fromages"
+                                         ,_1: _U.list([_U.update(defAgri,{name: "GAEC de Chautignat",addr: "Chautignat - 63790 Murol",tel: "04 7388 8192"})
+                                                      ,_U.update(defAgri,
+                                                      {name: "Tourreix Pascal",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 6234 ou 09 6149 3912"})
+                                                      ,_U.update(defAgri,{name: "Tixier David",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 8110"})])}]));
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Agriculture")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Agriculture")]))
+           ,renderAgriculteurMap(agriMap)
+           ,A2($Html.div,
+           _U.list([]),
+           _U.list([A2($Murol.link,"Saint-Nectaire AOP","http://www.fromages-aop-auvergne.com/AOP-Saint-Nectaire")
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("C’est dans une ferme datant de 1970 que \n                           Josette TIXIER vous accueillera pour vous faire découvrir \n                           ses secrets de fabrication du saint-Nectaire. Avec son \n                           fils David à la traite et sa belle-fille \n                           Angélique à la fromagerie, c’est une affaire de \n                           famille ! Suite à votre visite de la \n                           fromagerie, vous aurez droit bien entendu à une \n                           petite dégustation ! ")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situation Beaune-le-froid, rue de Clermont")]))
+                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Visite guidée")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Juillet et août : jeudi, vendredi, samedi à 9h15 (compter 1h)")]))
+                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vente au détail")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Toute l’année, tous les jours (sauf le mardi) de 9h15 à 12h et de 15h à 20h")]))
+                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Contactez-nous")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Josette TIXIER, son fils David et son épouse Angélique LAIR")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél./Fax. : 04.73.88.62.09")]))]))]));
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Agriculture.values = {_op: _op
                                     ,subMenu: subMenu
                                     ,initialModel: initialModel
+                                    ,Agriculteur: Agriculteur
                                     ,view: view
+                                    ,renderAgriculteurMap: renderAgriculteurMap
+                                    ,renderAgriculteur: renderAgriculteur
+                                    ,maybeElem: maybeElem
+                                    ,nullTag: nullTag
                                     ,contentMap: contentMap
                                     ,update: update
                                     ,changeMain: changeMain
                                     ,main: main
-                                    ,initialContent: initialContent};
+                                    ,initialContent: initialContent
+                                    ,defAgri: defAgri
+                                    ,agriMap: agriMap};
 };

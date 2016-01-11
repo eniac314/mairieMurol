@@ -681,6 +681,14 @@ span.date {
   scrolling:0;
 }
 
+#bigAgenda iframe{
+  border:solid 1px #777;
+  width: 800px;
+  height: 600px;
+  frameborder:0;
+  scrolling:0;
+}
+
 .entry {
   border-top: 1px solid #aca6a9;
 }
@@ -1143,7 +1151,8 @@ h5.trashCat {
 
 .bulletin ul {
   /*background-color: rgba(176, 196, 222, 0.5);*/
-  background-color: rgba(214, 140, 138, 1);
+  /*background-color: rgba(214, 140, 138, 1);*/
+  background-color: #617C81;
   vertical-align: top;
   /*background-color: yellow;*/
   display: inline-block;

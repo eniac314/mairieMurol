@@ -116,12 +116,6 @@ Elm.Entreprises.make = function (_elm) {
                                         ,tel: "06 2451 7696"
                                         ,mail: "murol.repro@sfr.fr"})])}
                                        ,{ctor: "_Tuple2"
-                                        ,_0: "Agriculteur & producteur de fromages"
-                                        ,_1: _U.list([_U.update(defArt,{name: "GAEC de Chautignat",addr: "Chautignat - 63790 Murol",tel: "04 7388 8192"})
-                                                     ,_U.update(defArt,
-                                                     {name: "Tourreix Pascal",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 6234 ou 09 6149 3912"})
-                                                     ,_U.update(defArt,{name: "Tixier David",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 8110"})])}
-                                       ,{ctor: "_Tuple2"
                                         ,_0: "Taxi"
                                         ,_1: _U.list([_U.update(defArt,
                                                      {name: "Amblard Taxi",addr: "La Chassagne 63790 MUROL",tel: "04 7388 6937 ou 06 7455 1533"})

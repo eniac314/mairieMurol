@@ -1,4 +1,4 @@
-module OffresEmploi where
+module Animation where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -41,7 +41,7 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Vie économique", "Offres d'emploi"] (.mainMenu model)
+      [ renderMainMenu address ["Animation"] (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -75,13 +75,11 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "offresEmploi"]
-      [ h4 [] [text "Offres emploi de la mairie"]
-      , h4 [] [text "Offres emploi SIVOM"]
-      , h4 [] [text "Offres emploi professionnels"]
-      , h4 [] [text "Liens utiles"]
-      , p  [] [text "Pôle emploi: ", a [href "www.pole-emploi.fr"] [text "Lien"]]
-      , p  [] [text "Relais Saisonniers Sancy: ", a [href "www.lerelais-saisonniers-sancy.org/"] [text "Lien"]]
+  div [ class "subContainerData noSubmenu", id "animation"]
+      [ h4 [] [text "Calendrier"]
+      , div [ id "bigAgenda"] 
+            [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&amp;ctz=Europe%2FParis"] []
+            ]
       ]
       
 

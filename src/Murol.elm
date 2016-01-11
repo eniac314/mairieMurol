@@ -397,7 +397,7 @@ renderAgenda =
       [ h3 [] [text "Agenda"]
       , iframe [ src "https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis"
                ] []
-      , p [] [a [href "https://calendar.google.com/calendar/embed?src=uminokirinmail%40gmail.com&ctz=Europe/Paris"]
+      , p [] [a [href "/Animation.html"]
                 [text "Consulter le calendrier"]
              ]
       , p [] [a [href "/Animation.html"] [text "Programmes des manifestations"]]
@@ -594,7 +594,7 @@ news =
    , expiry = Date.fromString "02/11/2016"
    }
    ,{ emptyNews |
-     title = "Recensement de la population a murol"
+     title = "Recensement de la population à Murol"
    , date  = Date.fromString "01/11/2016"
    , descr = div [ class "newsdescr"]
                  [ p [] [text "Il aura lieu du 21 janvier au 20 février 2016."]

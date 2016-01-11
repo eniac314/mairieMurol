@@ -36,7 +36,9 @@ module.exports = function(grunt) {
           "./js/sante.js": ["./src/Sante.elm"],
           "./js/cartePlan.js": ["./src/CartePlan.elm"],
           "./js/hebergements.js": ["./src/Hebergements.elm"],
-          "./js/transports.js": ["./src/Transports.elm"]
+          "./js/transports.js": ["./src/Transports.elm"],
+          "./js/animation.js": ["./src/Animation.elm"]
+
 
           
         }
@@ -76,7 +78,7 @@ module.exports = function(grunt) {
                 , "./src/Sante.elm"
                 , "./src/CartePlan.elm"
                 , "./src/Hebergements.elm"
-                , "./src/Transports.elm"],
+                , "./src/Animation.elm"],
         tasks: ["elm"]
       }
     },

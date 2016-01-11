@@ -200,25 +200,6 @@ artMap = fromList
       , mail   = "murol.repro@sfr.fr"  
       }]
    )
-  ,("Agriculteur & producteur de fromages"
-   , [{ defArt |
-        name   = "GAEC de Chautignat"
-      , addr   = "Chautignat - 63790 Murol"
-      , tel    = "04 7388 8192"  
-      }
-     ,
-      { defArt |
-        name   = "Tourreix Pascal"
-      , addr   = "Beaune Le Froid 63790 MUROL"
-      , tel    = "04 7388 6234 ou 09 6149 3912" 
-      }
-     ,
-      { defArt |
-        name   = "Tixier David"
-      , addr   = "Beaune Le Froid 63790 MUROL"
-      , tel    = "04 7388 8110"  
-      }]
-   )
   ,("Taxi"
    , [{ defArt |
         name   = "Amblard Taxi"

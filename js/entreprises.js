@@ -11041,11 +11041,7 @@ Elm.Murol.make = function (_elm) {
            ,A2($Html.iframe,
            _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis")]),
            _U.list([]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("https://calendar.google.com/calendar/embed?src=uminokirinmail%40gmail.com&ctz=Europe/Paris")]),
-           _U.list([$Html.text("Consulter le calendrier")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Programmes des manifestations")]))]))]));
@@ -11414,7 +11410,7 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,_U.list([$Html$Attributes.href("baseDocumentaire/MUROL INFOS 28.doc")]),_U.list([$Html.text("Télécharger")]))]))]))
                       ,expiry: $Date.fromString("02/11/2016")})
                       ,_U.update(emptyNews,
-                      {title: "Recensement de la population a murol"
+                      {title: "Recensement de la population à Murol"
                       ,date: $Date.fromString("01/11/2016")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
@@ -11626,12 +11622,6 @@ Elm.Entreprises.make = function (_elm) {
                                         ,addr: "rue Georges Sand 63790 Murol"
                                         ,tel: "06 2451 7696"
                                         ,mail: "murol.repro@sfr.fr"})])}
-                                       ,{ctor: "_Tuple2"
-                                        ,_0: "Agriculteur & producteur de fromages"
-                                        ,_1: _U.list([_U.update(defArt,{name: "GAEC de Chautignat",addr: "Chautignat - 63790 Murol",tel: "04 7388 8192"})
-                                                     ,_U.update(defArt,
-                                                     {name: "Tourreix Pascal",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 6234 ou 09 6149 3912"})
-                                                     ,_U.update(defArt,{name: "Tixier David",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 8110"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Taxi"
                                         ,_1: _U.list([_U.update(defArt,
