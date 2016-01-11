@@ -70,24 +70,26 @@ main =
 
 initialContent =
   div [ class "subContainerData noSubmenu", id "horairesContact"]
-      [ h2 [] [text "Contacter la mairie"]
-      , h5 [] [text "Par courrier:"]
-      , p  [] [text "Mairie de Murol - Place de l'hôtel de ville - 63790 Murol"]
-      , h5 [] [text "Par téléphone :"]
-      , p  [] [text "04 73 88 60 67 / Fax : 04 73 88 65 03 "]
-      , h5 [] [text "Par mail:"]
-      , mail "mairie.murol@wanadoo.fr"
-      , h5 [] [text "Horaires d'ouverture:"]
-      , p  [] [text "du lundi au vendredi : 9h à 12h / 13h30 à 17h30"]
-      , p  [] [text "Permanence maire/adjoints samedi de 10h à 12h"]
-      
-      , h5 [] [text "Location de salles des fêtes municipales"]
-      , p  [] [text "La commune dispose de 3 salles polyvalentes.
-                     2 situés sur le bourg de Murol et la 3ème sur le bourg de Beaune le froid."]
-      , p  [] [text "Ces salles sont mises à la location au tarif de 150€ la journée pour vos évènements"]
-      , p  [] [text "Elles restent à disposition à titre gracieux pour les murolais."]
-      , figure []
-               [img [src "/images/Mairie.jpg"] []]
+      [ h2 [] [text "Contacter la mairie"]     
+      , div []
+        [ figure []
+                 [img [src "/images/Mairie.jpg"] []]
+        , h5 [] [text "Par courrier:"]
+        , p  [] [text "Mairie de Murol - Place de l'hôtel de ville - 63790 Murol"]
+        , h5 [] [text "Par téléphone :"]
+        , p  [] [text "04 73 88 60 67 / Fax : 04 73 88 65 03 "]
+        , h5 [] [text "Par mail:"]
+        , mail "mairie.murol@wanadoo.fr"
+        , h5 [] [text "Horaires d'ouverture:"]
+        , p  [] [text "du lundi au vendredi : 9h à 12h / 13h30 à 17h30"]
+        , p  [] [text "Permanence maire/adjoints samedi de 10h à 12h"]
+        
+        , h5 [] [text "Location de salles des fêtes municipales"]
+        , p  [] [text "La commune dispose de 3 salles polyvalentes.
+                       2 situés sur le bourg de Murol et la 3ème sur le bourg de Beaune le froid."]
+        , p  [] [text "Ces salles sont mises à la location au tarif de 150€ la journée pour vos évènements"]
+        , p  [] [text "Elles restent à disposition à titre gracieux pour les murolais."]
+        ]
       ]
 
       

@@ -11509,15 +11509,129 @@ Elm.Murol.make = function (_elm) {
                               ,news: news
                               ,newsletters: newsletters};
 };
-Elm.HorairesContact = Elm.HorairesContact || {};
-Elm.HorairesContact.make = function (_elm) {
+Elm.StarTable = Elm.StarTable || {};
+Elm.StarTable.make = function (_elm) {
    "use strict";
-   _elm.HorairesContact = _elm.HorairesContact || {};
-   if (_elm.HorairesContact.values) return _elm.HorairesContact.values;
+   _elm.StarTable = _elm.StarTable || {};
+   if (_elm.StarTable.values) return _elm.StarTable.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var labelToHtml = function (l) {    var _p0 = l;if (_p0.ctor === "NoLabel") {    return nullTag;} else {    return nullTag;}};
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var TableEntry = function (a) {
+      return function (b) {
+         return function (c) {
+            return function (d) {
+               return function (e) {
+                  return function (f) {
+                     return function (g) {
+                        return function (h) {
+                           return function (i) {
+                              return function (j) {
+                                 return function (k) {
+                                    return function (l) {
+                                       return {name: a,label: b,stars: c,refOt: d,descr: e,addr: f,tel: g,fax: h,mail: i,site: j,pjaun: k,pics: l};
+                                    };
+                                 };
+                              };
+                           };
+                        };
+                     };
+                  };
+               };
+            };
+         };
+      };
+   };
+   var NoLabel = {ctor: "NoLabel"};
+   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")("")(_U.list([]));
+   var FamillePlus = {ctor: "FamillePlus"};
+   var addStars = F2(function (n,s) {
+      var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
+      var _p1 = n;
+      if (_p1.ctor === "Nothing") {
+            return $Html.text(s);
+         } else {
+            return A2($Html.span,
+            _U.list([]),
+            _U.list([$Html.text(A2($Basics._op["++"],s," ")),A2($Html.span,_U.list([$Html$Attributes.$class("stars")]),_U.list([$Html.text(go(_p1._0))]))]));
+         }
+   });
+   var makeRow = F2(function (_p2,alt) {
+      var _p3 = _p2;
+      var _p4 = _p3.site;
+      var alt$ = alt ? "altLine" : "Line";
+      var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
+      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
+      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
+      var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
+      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
+      var pjaun$ = A2(maybeElem,
+      _p4,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("Pages Jaunes: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var site$ = A2(maybeElem,
+      _p4,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var mail$ = A2(maybeElem,
+      _p3.mail,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      var label$ = labelToHtml(_p3.label);
+      var name$ = A2($Html.h6,_U.list([]),_U.list([A2(addStars,_p3.stars,_p3.name)]));
+      return A2($Html.tr,
+      _U.list([$Html$Attributes.$class(alt$)]),
+      _U.list([A2($Html.td,
+              _U.list([]),
+              A2($Basics._op["++"],_U.list([name$,label$,refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$,pjaun$]))))
+              ,A2($Html.td,_U.list([]),_U.list([pics$]))]));
+   });
+   var makeTable = F2(function (name,entries) {
+      var makeRows = F2(function (b,xs) {
+         var _p5 = xs;
+         if (_p5.ctor === "[]") {
+               return _U.list([]);
+            } else {
+               return A2($List._op["::"],A2(makeRow,_p5._0,b),A2(makeRows,$Basics.not(b),_p5._1));
+            }
+      });
+      return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
+   });
+   return _elm.StarTable.values = {_op: _op
+                                  ,addStars: addStars
+                                  ,FamillePlus: FamillePlus
+                                  ,NoLabel: NoLabel
+                                  ,TableEntry: TableEntry
+                                  ,emptyTe: emptyTe
+                                  ,makeTable: makeTable
+                                  ,makeRow: makeRow
+                                  ,maybeElem: maybeElem
+                                  ,nullTag: nullTag
+                                  ,labelToHtml: labelToHtml};
+};
+Elm.Transports = Elm.Transports || {};
+Elm.Transports.make = function (_elm) {
+   "use strict";
+   _elm.Transports = _elm.Transports || {};
+   if (_elm.Transports.values) return _elm.Transports.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
@@ -11525,63 +11639,90 @@ Elm.HorairesContact.make = function (_elm) {
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("horairesContact")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Contacter la mairie")]))
-           ,A2($Html.div,
-           _U.list([]),
-           _U.list([A2($Html.figure,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/Mairie.jpg")]),_U.list([]))]))
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Par courrier:")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mairie de Murol - Place de l\'hôtel de ville - 63790 Murol")]))
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Par téléphone :")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("04 73 88 60 67 / Fax : 04 73 88 65 03 ")]))
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Par mail:")]))
-                   ,$Murol.mail("mairie.murol@wanadoo.fr")
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires d\'ouverture:")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("du lundi au vendredi : 9h à 12h / 13h30 à 17h30")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Permanence maire/adjoints samedi de 10h à 12h")]))
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Location de salles des fêtes municipales")]))
-                   ,A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("La commune dispose de 3 salles polyvalentes.\n                       2 situés sur le bourg de Murol et la 3ème sur le bourg de Beaune le froid.")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ces salles sont mises à la location au tarif de 150€ la journée pour vos évènements")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Elles restent à disposition à titre gracieux pour les murolais.")]))]))]));
-   var contentMap = $Dict.fromList(_U.list([]));
-   var changeMain = F2(function (model,s) {
-      var newContent = A2($Dict.get,s,contentMap);
-      var _p0 = newContent;
-      if (_p0.ctor === "Nothing") {
+   var initialContent = {wrapper: function (content) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Transports")]),
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Transports")])),content]));
+                        }
+                        ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
+                                                             ,_0: "Navette"
+                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_2: _U.list([$Html.text("Contenu disponible prochainement")])}
+                                                            ,{ctor: "_Tuple3"
+                                                             ,_0: "Covoiturage"
+                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_2: _U.list([A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                              ! Au lieu que chacun utilise sa voiture \n                              pour effectuer des trajets quotidiens ou ponctuels, le \n                              covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                              personnes. Cela permet évidement de réduire les coûts \n                              de transport (prix de l\'essence, usure de la \n                              voiture, ...), la pollution, les temps de transport. ")]))
+                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("En effet, le covoiturage vous permettra de diminuer \n                            largement vos frais liés à vos trajets en \n                            voiture (essence, usure de la voiture, ...). Dans \n                            le cas d\'un covoiturage alterné (plusieurs conducteurs qui \n                            conduisent par alternance) vous pourrez diviser vos frais \n                            de trajet par autant de conducteur qui participe \n                            au covoiturage. Dans le cas d\'un covoiturage avec \n                            participation (Les passagers participent financièrement aux trajets), là \n                            encore on observera une nette diminution des frais \n                            engendrés par l\'utilisation de votre voiture. ")]))
+                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Un geste pour l\'écologie")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Le covoiturage est une pratique qui permet de \n                              diminuer significativement le nombre de voiture circulant sur \n                              les routes. La première conséquence est la diminution \n                              de la pollution et de l\'émission des gaz \n                              à effet de serre. Ceci permet également la \n                              diminution de consommation d\'énergie non renouvelable comme le \n                              pétrole. ")]))
+                                                                          ,A2($Html.h5,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([A2($Murol.link,
+                                                                          "http://www.covoiturageauvergne.net",
+                                                                          "http://www.covoiturageauvergne.net")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([A2($Murol.link,
+                                                                          "http://www.covoiturage.fr/",
+                                                                          "http://www.covoiturage.fr/")]))])}]))};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
             return model;
          } else {
-            return _U.update(model,{mainContent: _p0._0});
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","Horaires et contact"]),function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie Locale","Transports"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))))]))
               ,$Murol.pageFooter]));
    });
-   var subMenu = _U.list([]);
+   var Model = F3(function (a,b,c) {    return {mainMenu: a,subMenu: b,mainContent: c};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
+   var subMenu = {current: "",entries: _U.list([])};
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
-   return _elm.HorairesContact.values = {_op: _op
-                                        ,subMenu: subMenu
-                                        ,initialModel: initialModel
-                                        ,view: view
-                                        ,contentMap: contentMap
-                                        ,update: update
-                                        ,changeMain: changeMain
-                                        ,main: main
-                                        ,initialContent: initialContent};
+   return _elm.Transports.values = {_op: _op
+                                   ,subMenu: subMenu
+                                   ,MainContent: MainContent
+                                   ,Model: Model
+                                   ,initialModel: initialModel
+                                   ,view: view
+                                   ,NoOp: NoOp
+                                   ,TiledMenuAction: TiledMenuAction
+                                   ,update: update
+                                   ,main: main
+                                   ,initialContent: initialContent};
 };

@@ -1,0 +1,102 @@
+Elm.Transports = Elm.Transports || {};
+Elm.Transports.make = function (_elm) {
+   "use strict";
+   _elm.Transports = _elm.Transports || {};
+   if (_elm.Transports.values) return _elm.Transports.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
+   var _op = {};
+   var initialContent = {wrapper: function (content) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Transports")]),
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Transports")])),content]));
+                        }
+                        ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
+                                                             ,_0: "Navette"
+                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_2: _U.list([$Html.text("Contenu disponible prochainement")])}
+                                                            ,{ctor: "_Tuple3"
+                                                             ,_0: "Covoiturage"
+                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_2: _U.list([A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                              ! Au lieu que chacun utilise sa voiture \n                              pour effectuer des trajets quotidiens ou ponctuels, le \n                              covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                              personnes. Cela permet évidement de réduire les coûts \n                              de transport (prix de l\'essence, usure de la \n                              voiture, ...), la pollution, les temps de transport. ")]))
+                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("En effet, le covoiturage vous permettra de diminuer \n                            largement vos frais liés à vos trajets en \n                            voiture (essence, usure de la voiture, ...). Dans \n                            le cas d\'un covoiturage alterné (plusieurs conducteurs qui \n                            conduisent par alternance) vous pourrez diviser vos frais \n                            de trajet par autant de conducteur qui participe \n                            au covoiturage. Dans le cas d\'un covoiturage avec \n                            participation (Les passagers participent financièrement aux trajets), là \n                            encore on observera une nette diminution des frais \n                            engendrés par l\'utilisation de votre voiture. ")]))
+                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Un geste pour l\'écologie")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Le covoiturage est une pratique qui permet de \n                              diminuer significativement le nombre de voiture circulant sur \n                              les routes. La première conséquence est la diminution \n                              de la pollution et de l\'émission des gaz \n                              à effet de serre. Ceci permet également la \n                              diminution de consommation d\'énergie non renouvelable comme le \n                              pétrole. ")]))
+                                                                          ,A2($Html.h5,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([A2($Murol.link,
+                                                                          "http://www.covoiturageauvergne.net",
+                                                                          "http://www.covoiturageauvergne.net")]))
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([A2($Murol.link,
+                                                                          "http://www.covoiturage.fr/",
+                                                                          "http://www.covoiturage.fr/")]))])}]))};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie Locale","Transports"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))))]))
+              ,$Murol.pageFooter]));
+   });
+   var Model = F3(function (a,b,c) {    return {mainMenu: a,subMenu: b,mainContent: c};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
+   var subMenu = {current: "",entries: _U.list([])};
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Transports.values = {_op: _op
+                                   ,subMenu: subMenu
+                                   ,MainContent: MainContent
+                                   ,Model: Model
+                                   ,initialModel: initialModel
+                                   ,view: view
+                                   ,NoOp: NoOp
+                                   ,TiledMenuAction: TiledMenuAction
+                                   ,update: update
+                                   ,main: main
+                                   ,initialContent: initialContent};
+};
