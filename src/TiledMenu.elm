@@ -84,7 +84,7 @@ view address model =
         Content selCont -> 
           div [ class "selected"]
               [ selCont 
-              , a [ href "#tiledMenuTop", onClick address ShowMenu ]
+              , a [ href "#tiledMenuTop", onClick address ShowMenu, id "backToTiledMenu" ]
                   [ text "Revenir au menu" ]
               ]
 

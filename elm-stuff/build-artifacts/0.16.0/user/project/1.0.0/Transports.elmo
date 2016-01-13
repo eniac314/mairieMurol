@@ -16,6 +16,56 @@ Elm.Transports.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
+   var toRow = F2(function (xs,b) {
+      var alt = b ? "row" : "rowAlt";
+      return A2($Html.tr,_U.list([$Html$Attributes.$class(alt)]),A2($List.map,function (s) {    return A2($Html.td,_U.list([]),_U.list([$Html.text(s)]));},xs));
+   });
+   var navetteHs = A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Chaque mardi toute l\'année (sauf jours fériés)")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([$Html$Attributes.colspan(2)]),_U.list([$Html.text("Aller")]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(2)]),_U.list([$Html.text("Retour")]))]))
+                   ,A2(toRow,_U.list(["Chambon village","9h15 ","Clermont-Ferrand (gare routière) ","16h09 "]),false)
+                   ,A2(toRow,_U.list(["Chambon petite plage","9h20 ","Clermont-Ferrand (gare SNCF)","16h30 "]),true)
+                   ,A2(toRow,_U.list(["Murol","9h25","Plauzat ","17h04"]),false)
+                   ,A2(toRow,_U.list(["Saint-Nectaire  (Cornadore)","9h35 ","Champeix","17h09 "]),true)
+                   ,A2(toRow,_U.list(["Saint-Nectaire (Office de tourisme)","9h40 ","Montaigut le Blanc ","17h13 "]),false)
+                   ,A2(toRow,_U.list(["Saillant","9h45 ","Le Rivalet ","17h15 "]),true)
+                   ,A2(toRow,_U.list(["Le Rivalet","10h00 ","Saillant ","17h25 "]),false)
+                   ,A2(toRow,_U.list(["Montaigut le Blanc","10h05 ","Saint-Nectaire (Office de tourisme)","17h30 "]),true)
+                   ,A2(toRow,_U.list(["Champeix","10h10 ","Saint-Nectaire  (Cornadore) ","17h40 "]),false)
+                   ,A2(toRow,_U.list(["Plauzat","10h15 ","Murol ","17h50 "]),true)
+                   ,A2(toRow,_U.list(["Clermont-Ferrand (gare SNCF)","10h35 ","Chambon petite plage ","17h55"]),false)
+                   ,A2(toRow,_U.list(["Clermont-Ferrand (gare routière)","10h45","Chambon village","18h00"]),true)]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text(" Correspondance avec FAURE AUVERGNE (ligne Besse/Clermont –Ferrand) Tél. : 04 73 39 97 15")]))]));
+   var navetteEte = A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("CHAMBON/LAC – MUROL – ST NECTAIRE ↔ CLERMONT-FERRAND")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Chaque samedi en juillet et aout")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("Aller")]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("Retour")]))]))
+                   ,A2(toRow,_U.list(["","Matin","Après-midi","","Matin","Après-midi"]),true)
+                   ,A2(toRow,_U.list(["Chambon village","8h40","15h20","Clermont-Ferrand (gare routière) ","7h15","13h00 "]),false)
+                   ,A2(toRow,_U.list(["Chambon petite plage","8h50","15h25","Clermont-Ferrand (gare SNCF)","7h25 ","13h10 "]),true)
+                   ,A2(toRow,_U.list(["Murol","8h55","15h30","Plauzat ","7h45 ","13h30 "]),false)
+                   ,A2(toRow,_U.list(["Saint-Nectaire  (Cornadore)","9h00","15h45","Champeix","7h50 ","13h35 "]),true)
+                   ,A2(toRow,_U.list(["Saint-Nectaire (Office de tourisme)","9h05","15h50","Montaigut le Blanc ","7h55 ","13h40 "]),false)
+                   ,A2(toRow,_U.list(["Saillant","9h10","16h00","Le Rivalet ","7h50","13h45"]),true)
+                   ,A2(toRow,_U.list(["Le Rivalet","9h15","16h15","Saillant ","8h05","13h55"]),false)
+                   ,A2(toRow,_U.list(["Montaigut le Blanc","9h20","16h20","Saint-Nectaire (Office de tourisme)","8h10 ","14h00 "]),true)
+                   ,A2(toRow,_U.list(["Champeix","9h25","16h25","Saint-Nectaire  (Cornadore) ","8h20 ","14h10 "]),false)
+                   ,A2(toRow,_U.list(["Plauzat","9h30","16h30","Murol ","8h30 ","14h20 "]),true)
+                   ,A2(toRow,_U.list(["Clermont-Ferrand (gare SNCF)","10h00","17h00","Chambon petite plage ","8h35 ","14h30 "]),false)
+                   ,A2(toRow,_U.list(["Clermont-Ferrand (gare routière)","10h10","17h10","Chambon village ","8h40 ","14h35 "]),true)]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text(" Correspondance avec FAURE AUVERGNE (ligne Besse/Clermont –Ferrand) Tél. : 04 73 39 97 15")]))]));
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Transports")]),
@@ -24,7 +74,7 @@ Elm.Transports.make = function (_elm) {
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Navette"
                                                              ,_1: "/images/tiles/hebergements/placeholder.jpg"
-                                                             ,_2: _U.list([$Html.text("Contenu disponible prochainement")])}
+                                                             ,_2: _U.list([navetteEte,navetteHs])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Covoiturage"
                                                              ,_1: "/images/tiles/hebergements/placeholder.jpg"
@@ -98,5 +148,8 @@ Elm.Transports.make = function (_elm) {
                                    ,TiledMenuAction: TiledMenuAction
                                    ,update: update
                                    ,main: main
-                                   ,initialContent: initialContent};
+                                   ,initialContent: initialContent
+                                   ,navetteEte: navetteEte
+                                   ,navetteHs: navetteHs
+                                   ,toRow: toRow};
 };

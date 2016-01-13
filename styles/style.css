@@ -431,6 +431,21 @@ figcaption {
   box-shadow: none;
 }
 
+#backToTiledMenu{
+  vertical-align: center;
+  text-align: center;
+  background-color: #B0C4DE; 
+  color: black;
+  width: 150px;
+  display:block;
+  padding: 1em 0 1em 0;
+}
+
+#backToTiledMenu:hover{
+  color: white;
+  background-color: teal;
+}
+
 
 /*--end of code for tiledMenu-----------------------------------------------------*/
 
@@ -1297,3 +1312,24 @@ footer p {
   display: inline-block;
 }
 /*--end of code for footer-------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------
+  style for Transports
+-------------------------------------------------------------------------------*/
+
+#Transports th{
+ background-color: lightgrey;
+ min-height: 40px;
+}
+
+#Transports td{
+  border-style: none;
+}
+
+#Transports .row{
+  background-color: #B0C4DE; 
+}
+
+
+/*--end of code for Transports-------------------------------------------------------*/

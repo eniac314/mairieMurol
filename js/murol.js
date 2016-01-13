@@ -10839,7 +10839,7 @@ Elm.TiledMenu.make = function (_elm) {
             _U.list([$Html$Attributes.$class("selected")]),
             _U.list([_p0._0
                     ,A2($Html.a,
-                    _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu)]),
+                    _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
                     _U.list([$Html.text("Revenir au menu")]))]));
          }
    });

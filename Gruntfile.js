@@ -7,7 +7,6 @@ module.exports = function(grunt) {
           "./js/murol.js": ["./src/Murol.elm"],
           "./js/tourisme.js": ["./src/Tourisme.elm"],
           "./js/vieScolaire.js": ["./src/VieScolaire.elm"],
-          "./js/covoiturage.js": ["./src/Covoiturage.elm"],
           "./js/gestionDesDechets.js": ["./src/GestionDesDechets.elm"],
           "./js/numerosUrgences.js": ["./src/NumerosUrgences.elm"],
           "./js/agriculture.js": ["./src/Agriculture.elm"],
@@ -49,7 +48,6 @@ module.exports = function(grunt) {
         files: ["./src/Murol.elm"
                 , "./src/Tourisme.elm"
                 , "./src/VieScolaire.elm"
-                , "./src/Covoiturage.elm"
                 , "./src/GestionDesDechets.elm"
                 , "./src/NumerosUrgences.elm"
                 , "./src/Agriculture.elm"
@@ -78,7 +76,8 @@ module.exports = function(grunt) {
                 , "./src/Sante.elm"
                 , "./src/CartePlan.elm"
                 , "./src/Hebergements.elm"
-                , "./src/Animation.elm"],
+                , "./src/Animation.elm"
+                , "./src/Transports.elm"],
         tasks: ["elm"]
       }
     },
