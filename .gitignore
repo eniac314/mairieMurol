@@ -2,6 +2,10 @@
 logs
 *.log
 
+# Documents
+*.doc
+*.pdf
+
 # Runtime data
 pids
 *.pid
