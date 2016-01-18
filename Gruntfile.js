@@ -25,9 +25,8 @@ module.exports = function(grunt) {
           "./js/gestionDesRisques.js": ["./src/GestionDesRisques.elm"],
           "./js/horairesContact.js": ["./src/HorairesContact.elm"],
           "./js/publications.js": ["./src/Publications.elm"],
-          "./js/artEtMusique.js": ["./src/ArtEtMusique.elm"],
+          "./js/artistes.js": ["./src/Artistes.elm"],
           "./js/associations.js": ["./src/Associations.elm"],
-          "./js/artisanatArt.js": ["./src/ArtisanatArt.elm"],
           "./js/cinema.js": ["./src/Cinema.elm"],
           "./js/sportEtDetentes.js": ["./src/SportEtDetentes.elm"],
           "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
@@ -36,7 +35,8 @@ module.exports = function(grunt) {
           "./js/cartePlan.js": ["./src/CartePlan.elm"],
           "./js/hebergements.js": ["./src/Hebergements.elm"],
           "./js/transports.js": ["./src/Transports.elm"],
-          "./js/animation.js": ["./src/Animation.elm"]
+          "./js/animation.js": ["./src/Animation.elm"],
+          "./js/documentation.js": ["./src/Documentation.elm"]
 
 
           
@@ -66,9 +66,8 @@ module.exports = function(grunt) {
                 , "./src/GestionDesRisques.elm"
                 , "./src/HorairesContact.elm"
                 , "./src/Publications.elm"
-                , "./src/ArtEtMusique.elm"
+                , "./src/Artistes.elm"
                 , "./src/Associations.elm"
-                , "./src/ArtisanatArt.elm"
                 , "./src/Cinema.elm"
                 , "./src/SportEtDetentes.elm"
                 , "./src/DecouvrirMurol.elm"
@@ -77,7 +76,8 @@ module.exports = function(grunt) {
                 , "./src/CartePlan.elm"
                 , "./src/Hebergements.elm"
                 , "./src/Animation.elm"
-                , "./src/Transports.elm"],
+                , "./src/Transports.elm"
+                , "./src/Documentation.elm"],
         tasks: ["elm"]
       }
     },

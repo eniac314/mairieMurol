@@ -23,9 +23,11 @@ Elm.OfficeTourisme.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04-73-88-60-23")]))
            ,$Murol.mail("bt.murol-chambon@sancy.com")
-           ,A2($Html.p,
+           ,A2($Html.ul,
            _U.list([]),
-           _U.list([$Html.text("Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.\n                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h.")]))
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires:")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Le reste de l’année, ouvert du lundi au samedi de 9h à 12h.")]))]))
            ,$Murol.renderListImg($Murol.logos)]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {

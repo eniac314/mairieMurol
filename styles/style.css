@@ -467,8 +467,7 @@ figcaption {
   padding-bottom: 0.5em; 
 }
 
-.ActualitésDeLaCommune {
- min-height: 400px; 
+.ActualitésDeLaCommune { 
 }
 .LaMairieVousInforme {
   /*background-color: violet;*/
@@ -594,6 +593,10 @@ span.date {
 #newsletters, #misc, #plugins {
 }
 
+#misc #contact h4{
+background-image: none;
+}
+
 #plugins {
   margin-bottom: 0.5em;
   padding-bottom: 0.2em;
@@ -625,12 +628,26 @@ span.date {
   padding: 0;
 }
 
-#plugins a{
+#lcm2K13_1000, #EtatRoutes{
   display: block;
   width: 140px;
   position: relative;
   padding: 0;
   margin: 0; 
+}
+
+#urgencesLink{
+  display: block;
+  text-decoration: none;
+  color: teal;
+  padding-right: 0.1em;
+  padding-left: 0.1em;
+  margin-left: 1em;
+}
+
+#urgencesLink:hover{
+  background-color: teal;
+  color: white;
 }
 
 #plugins figcaption{
@@ -671,6 +688,10 @@ span.date {
   margin: 0;
 }
 
+#agenda a{
+  display: block;
+}
+
 #agenda a, .divers a{
   text-decoration-line: none;
   text-decoration-style: solid;
@@ -681,8 +702,6 @@ span.date {
 }
 
 #agenda a:hover, .divers a:hover{
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
   border-bottom-color: teal;
   color:white;
   background-color: teal;
@@ -743,11 +762,59 @@ span.date {
 /*---------------------------------------
   style for divers
 ---------------------------------------*/
-.divers div{
+#horairesContact{
+  border-bottom: 1px solid #aca6a9;
+}
+
+#horairesContact div{
+  background-color: lightgrey;
+  border-radius: 0.5em;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  max-width: 45%; 
+}
+
+#horairesContact h4{
+ background-color: initial;
+ text-align: left;
+ padding-left: 0.5em;
+ margin: 0;
+ color: black;
+ text-transform: none;
+
+}
+
+#horairesContact h5{
+  margin: 0;
+  padding-left: 0.5em;
+}
+
+
+
+#horairesContact p{
+}
+
+#horaires {
+}
+
+#contact .email{
+  padding-left: 0.5em;
+}
+
+#contact .email a{
+  padding: 0;
+}
+
+.divers #peintres{
   background-image: url("/images/peintres.png");
   background-repeat: no-repeat;
   background-position: right top;
   min-height:96px;
+  border-bottom: 1px solid #aca6a9;
 }
 
 
@@ -1112,7 +1179,7 @@ h5.trashCat {
   background-size: cover;*/
 }
 
-#horairesContact figure {
+#horairesEtContact figure {
   float:right;
 }
 
@@ -1302,6 +1369,7 @@ footer{
   text-align: center;
   font-size: small;
   margin: auto;
+/*  background-color: rgba(53, 39, 44, 0.8);*/
 }
 
 footer div{
@@ -1309,6 +1377,7 @@ footer div{
 }
 
 footer p {
+  margin-left: 1em;
   display: inline-block;
 }
 /*--end of code for footer-------------------------------------------------------*/

@@ -17,7 +17,7 @@ Elm.HorairesContact.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("horairesContact")]),
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("horairesEtContact")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Contacter la mairie")]))
            ,A2($Html.div,
            _U.list([]),
@@ -29,8 +29,8 @@ Elm.HorairesContact.make = function (_elm) {
                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Par mail:")]))
                    ,$Murol.mail("mairie.murol@wanadoo.fr")
                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires d\'ouverture:")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("du lundi au vendredi : 9h à 12h / 13h30 à 17h30")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Permanence maire/adjoints samedi de 10h à 12h")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("du lundi au vendredi : 9h à 12h30 / 13h30 à 17h")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Permanence maire/adjoints samedi matin")]))
                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Location de salles des fêtes municipales")]))
                    ,A2($Html.p,
                    _U.list([]),

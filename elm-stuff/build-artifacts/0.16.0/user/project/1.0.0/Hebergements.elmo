@@ -244,14 +244,14 @@ Elm.Hebergements.make = function (_elm) {
                         }
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Hotels"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_1: "/images/tiles/hebergements/hotels.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                             Beaucoup d\'entre eux se sont engagés dans desa \n                             démarches de qualité, symbolisées par différents labels. Certains \n                             sont hôtels restaurants et offrent une prestation en \n                             demi-pension et pension complète. ")]))
                                                                           ,A2($StarTable.makeTable,"Hotels",hotels)])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Campings"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_1: "/images/tiles/hebergements/campings.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Ils offrent de bonnes conditions de confort et \n                             beaucoup d\'entre eux s\'engagent dans des démarches de \n                             qualité, symbolisées par différents labels. Certains d\'entre eux \n                             proposent également des locations de mobil-homes, chalets ou \n                             bungalows.")]))
@@ -265,14 +265,14 @@ Elm.Hebergements.make = function (_elm) {
                                                                           ,A2($StarTable.makeTable,"Chambres d\'Hôtes",chambresHotes)])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Meublés"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_1: "/images/tiles/hebergements/meuble.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                             répondront à toutes les attentes et à tous \n                             les budgets. Les meublés que nous vous proposons \n                             sont tous classés par la préfecture. Le classement, \n                             en étoiles, indique le degré de confort de \n                             la location. Certains sont même labellisés. ")]))
                                                                           ,A2($StarTable.makeTable,"Meublés",meubles)])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Village Vacances"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_1: "/images/tiles/hebergements/villageVac.jpg"
                                                              ,_2: _U.list([A2($StarTable.makeTable,"Village Vacances",azureva)])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;

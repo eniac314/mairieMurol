@@ -10839,24 +10839,86 @@ Elm.TiledMenu.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var putSpaces = function (xs) {    var xs$ = A2($String.split,"%20",xs);return A2($String.join," ",xs$);};
+   var firstOccurrence = F2(function (c,s) {
+      var _p0 = A2($String.indexes,$String.fromChar(c),s);
+      if (_p0.ctor === "[]") {
+            return $Maybe.Nothing;
+         } else {
+            return $Maybe.Just(_p0._0);
+         }
+   });
+   var splitAtFirst = F2(function (c,s) {
+      var _p1 = A2(firstOccurrence,c,s);
+      if (_p1.ctor === "Nothing") {
+            return {ctor: "_Tuple2",_0: s,_1: ""};
+         } else {
+            var _p2 = _p1._0;
+            return {ctor: "_Tuple2",_0: A2($String.left,_p2,s),_1: A2($String.dropLeft,_p2 + 1,s)};
+         }
+   });
+   var parseParams = function (stringWithAmpersands) {
+      var eachParam = A2($String.split,"&",stringWithAmpersands);
+      var eachPair = A2($List.map,splitAtFirst(_U.chr("=")),eachParam);
+      var _p3 = $List.head(eachPair);
+      if (_p3.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p3._0.ctor === "_Tuple2" && _p3._0._0 === "bloc") {
+                  return _p3._0._1;
+               } else {
+                  return "";
+               }
+         }
+   };
+   var getTitle = function (urlParams) {
+      var _p4 = $String.uncons(urlParams);
+      if (_p4.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p4._0.ctor === "_Tuple2" && _p4._0._0.valueOf() === "?") {
+                  return parseParams(putSpaces(_p4._0._1));
+               } else {
+                  return "";
+               }
+         }
+   };
+   var getByTitle = F2(function (s,m) {
+      var d$ = A2($Dict.filter,
+      F2(function (k,_p5) {    var _p6 = _p5;return _U.eq(function (_) {    return _.title;}(_p6._0),s);}),
+      function (_) {
+         return _.menuData;
+      }(m));
+      var ids = $Dict.keys(d$);
+      return $List.head(ids);
+   });
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var ShowMenu = {ctor: "ShowMenu"};
    var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
    var view = F2(function (address,model) {
-      var _p0 = model.current;
-      if (_p0.ctor === "Menu") {
-            var toDivs = F3(function (_p2,_p1,acc) {
-               var _p3 = _p1;
-               var _p4 = _p3._0;
-               var title = _p4.title;
-               var iD = _p4.iD;
-               var picture = _p4.picture;
+      var _p7 = model.current;
+      if (_p7.ctor === "Menu") {
+            var toDivs = F3(function (_p9,_p8,acc) {
+               var _p10 = _p8;
+               var _p11 = _p10._0;
+               var title = _p11.title;
+               var iD = _p11.iD;
+               var picture = _p11.picture;
+               var link = _p11.link;
+               var attr = function () {
+                  var _p12 = link;
+                  if (_p12.ctor === "Nothing") {
+                        return _U.list([$Html$Attributes.$class("tile")
+                                       ,$Html$Attributes.href("#")
+                                       ,$Html$Attributes.id("tiledMenuTop")
+                                       ,A2($Html$Events.onClick,address,ShowTile(iD))]);
+                     } else {
+                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p12._0),$Html$Attributes.id("tiledMenuTop")]);
+                     }
+               }();
                var htmlTile = A2($Html.a,
-               _U.list([$Html$Attributes.$class("tile")
-                       ,$Html$Attributes.href("#")
-                       ,$Html$Attributes.id("tiledMenuTop")
-                       ,A2($Html$Events.onClick,address,ShowTile(iD))]),
+               attr,
                _U.list([A2($Html.figure,
                _U.list([]),
                _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture)]),_U.list([]))
@@ -10870,7 +10932,7 @@ Elm.TiledMenu.make = function (_elm) {
          } else {
             return A2($Html.div,
             _U.list([$Html$Attributes.$class("selected")]),
-            _U.list([_p0._0
+            _U.list([_p7._0
                     ,A2($Html.a,
                     _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
                     _U.list([$Html.text("Revenir au menu")]))]));
@@ -10878,13 +10940,13 @@ Elm.TiledMenu.make = function (_elm) {
    });
    var Content = function (a) {    return {ctor: "Content",_0: a};};
    var Menu = {ctor: "Menu"};
-   var Tile = F3(function (a,b,c) {    return {title: a,iD: b,picture: c};});
-   var nullTile = A3(Tile,"",0,"");
+   var Tile = F4(function (a,b,c,d) {    return {title: a,iD: b,picture: c,link: d};});
+   var nullTile = A4(Tile,"",0,"",$Maybe.Nothing);
    var update = F2(function (action,model) {
-      var _p5 = action;
-      if (_p5.ctor === "ShowTile") {
-            var _p6 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p5._0,model.menuData));
-            var newContent = _p6._1;
+      var _p13 = action;
+      if (_p13.ctor === "ShowTile") {
+            var _p14 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p13._0,model.menuData));
+            var newContent = _p14._1;
             return _U.update(model,{current: Content(newContent)});
          } else {
             return _U.update(model,{current: Menu});
@@ -10895,15 +10957,45 @@ Elm.TiledMenu.make = function (_elm) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p7) {
-         var _p8 = _p7;
-         var _p10 = _p8._0._0;
-         var _p9 = _p8._1;
+      function (_p15) {
+         var _p16 = _p15;
+         var _p18 = _p16._0._0;
+         var _p17 = _p16._1;
          return {ctor: "_Tuple2"
-                ,_0: _p9
+                ,_0: _p17
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A3(Tile,_p10,_p9,_p8._0._1)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p10)])),_p8._0._2))}};
+                     ,_0: A4(Tile,_p18,_p17,_p16._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p18)])),_p16._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A2(Model,Menu,$Dict.fromList(xs$));
+   };
+   var initAt = F2(function (urlParams,xs) {
+      var model = init(xs);
+      var title = getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p19 = maybeId;
+      if (_p19.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p19._0),model);
+         }
+   });
+   var initWithLink = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p20) {
+         var _p21 = _p20;
+         var _p24 = _p21._0._0;
+         var _p23 = _p21._0._3;
+         var _p22 = _p21._1;
+         var l$ = $String.isEmpty(_p23) ? $Maybe.Nothing : $Maybe.Just(_p23);
+         return {ctor: "_Tuple2"
+                ,_0: _p22
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A4(Tile,_p24,_p22,_p21._0._1,l$)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p21._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A2(Model,Menu,$Dict.fromList(xs$));
@@ -10914,13 +11006,21 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,Menu: Menu
                                   ,Content: Content
                                   ,init: init
+                                  ,initAt: initAt
+                                  ,initWithLink: initWithLink
                                   ,ShowTile: ShowTile
                                   ,ShowMenu: ShowMenu
                                   ,update: update
                                   ,view: view
                                   ,maybeElem: maybeElem
                                   ,nullTile: nullTile
-                                  ,nullTag: nullTag};
+                                  ,nullTag: nullTag
+                                  ,getByTitle: getByTitle
+                                  ,getTitle: getTitle
+                                  ,parseParams: parseParams
+                                  ,splitAtFirst: splitAtFirst
+                                  ,firstOccurrence: firstOccurrence
+                                  ,putSpaces: putSpaces};
 };
 Elm.Murol = Elm.Murol || {};
 Elm.Murol.make = function (_elm) {
@@ -11003,7 +11103,7 @@ Elm.Murol.make = function (_elm) {
    });
    var mail = function (s) {
       return A2($Html.span,
-      _U.list([]),
+      _U.list([$Html$Attributes.$class("email")]),
       _U.list([$Html.text("Email: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
    };
    var script = F2(function (source,js) {
@@ -11083,15 +11183,32 @@ Elm.Murol.make = function (_elm) {
    var renderPlugins = A2($Html.div,
    _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Pratique")]))
-           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))]));
+           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("NumerosD\'urgences.html"),$Html$Attributes.id("urgencesLink")]),
+           _U.list([$Html.text("Numéros d\'urgences")]))]));
    var renderMisc = A2($Html.div,
    _U.list([$Html$Attributes.id("misc"),$Html$Attributes.$class("divers")]),
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Divers")]))
            ,A2($Html.div,
-           _U.list([]),
+           _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
            _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
-           _U.list([$Html.text("Visiter le musée des peintres de Murol")]))]))]));
+           _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.id("horairesContact")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Mairie pratique:")]))
+                   ,A2($Html.div,
+                   _U.list([$Html$Attributes.id("horaires")]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires d\'ouverture")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Du lundi au vendredi : 9h à 12h30 / 13h30 à 17h")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous possibles avec le maire ou les adjoints le samedi matin")]))]))
+                   ,A2($Html.div,
+                   _U.list([$Html$Attributes.id("contact")]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Contact")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mairie de Murol - Place de l\'hôtel de ville - 63790 Murol")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03 ")]))
+                           ,mail("mairie.murol@wanadoo.fr")]))]))]));
    var renderNewsLetter = function (news) {
       var toNews = function (_p10) {
          var _p11 = _p10;
@@ -11128,6 +11245,10 @@ Elm.Murol.make = function (_elm) {
                    ,A2($Html.a,
                    _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La mairie: ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
            ,renderCounter]));
    var renderMainMenu$ = F2(function (pos,m) {
       var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
@@ -11291,26 +11412,22 @@ Elm.Murol.make = function (_elm) {
            ,A2(Node,
            "Mairie",
            _U.list([A2(Leaf,"La commune","")
-                   ,A2(Leaf,"Vos démarches","")
                    ,A2(Leaf,"Conseil municipal","")
-                   ,A2(Leaf,"CMJ","")
-                   ,A2(Leaf,"CCAS","")
+                   ,A2(Leaf,"Délibérations","")
                    ,A2(Leaf,"Commissions","")
-                   ,A2(Leaf,"Gestion des risques","")
-                   ,A2(Leaf,"Horaires et contact","")
-                   ,A2(Leaf,"Publications","")]))
+                   ,A2(Leaf,"CCAS","")
+                   ,A2(Leaf,"Vos démarches","")
+                   ,A2(Leaf,"Salles municipales","")
+                   ,A2(Leaf,"Horaires et contact","")]))
            ,A2(Node,
            "Culture et loisirs",
-           _U.list([A2(Leaf,"Art et musique","")
-                   ,A2(Leaf,"Artisanat d\'art","")
+           _U.list([A2(Leaf,"Artistes","")
                    ,A2(Leaf,"Associations","")
-                   ,A2(Leaf,"Cinema","")
-                   ,A2(Leaf,"Musée des peintres","http://www.musee-murol.fr/fr")
+                   ,A2(Leaf,"Sortir","")
                    ,A2(Leaf,"Patrimoine","")
-                   ,A2(Leaf,"Phototheque","")
                    ,A2(Leaf,"Sports et détente","")
-                   ,A2(Leaf,"Village fleuri","")]))
-           ,A2(Leaf,"Numeros d\'urgences","")
+                   ,A2(Leaf,"Phototheque","")]))
+           ,A2(Leaf,"Documentation","")
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
       var _p30 = function (_) {    return _.date;}(news);
@@ -11447,7 +11564,7 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html.text("Il dressera le bilan de l’année 2015 et \n                           vous informera sur l’avancée des projets en cours. \n                           Vous pourrez également voir le diaporama de l’année \n                           2015 réalisé à partir des photos fournies par \n                           Michel Martin, correspondant du journal la Montagne. ")]))
                               ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous le 24 janvier à 11 heures, à la salle des fêtes de Murol.")]))]))
                       ,expiry: $Date.fromString("01/25/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/11/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/18/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11529,6 +11646,11 @@ Elm.CartePlan.make = function (_elm) {
            ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Accès")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/Transports.html?bloc=Dessertes de la commune")]),
+           _U.list([$Html.text("les dessertes de la commune")]))]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
            ,A2($Html.iframe,
            _U.list([$Html$Attributes.id("map")

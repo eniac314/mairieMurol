@@ -22,6 +22,11 @@ Elm.CartePlan.make = function (_elm) {
            ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Accès")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Coordonnées : Latitude / longitude N 45°34\'34\" / E 002°56\'34\" ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("UTM : 31T 0495538 5046689 ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/Transports.html?bloc=Dessertes de la commune")]),
+           _U.list([$Html.text("les dessertes de la commune")]))]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situer Murol en cliquant sur la carte")]))
            ,A2($Html.iframe,
            _U.list([$Html$Attributes.id("map")

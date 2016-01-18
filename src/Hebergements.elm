@@ -98,7 +98,7 @@ initialContent =
            , content])
   , tiledMenu =
       init [( "Hotels"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/hebergements/hotels.jpg"
             , [ p  [] [ text "Murol offre une grande diversité d'établissements, généralement indépendants. 
                              Beaucoup d'entre eux se sont engagés dans desa 
                              démarches de qualité, symbolisées par différents labels. Certains 
@@ -109,7 +109,7 @@ initialContent =
             )
             ,
             ( "Campings"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/hebergements/campings.jpg"
             , [ p  [] [ text "Ils offrent de bonnes conditions de confort et 
                              beaucoup d'entre eux s'engagent dans des démarches de 
                              qualité, symbolisées par différents labels. Certains d'entre eux 
@@ -131,7 +131,7 @@ initialContent =
             )
             ,
             ( "Meublés"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/hebergements/meuble.jpg"
             , [ p  [] [ text "Très répandus dans le Massif du Sancy, ils 
                              répondront à toutes les attentes et à tous 
                              les budgets. Les meublés que nous vous proposons 
@@ -143,7 +143,7 @@ initialContent =
             )
             ,
             ( "Village Vacances"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/hebergements/villageVac.jpg"
             , [ makeTable "Village Vacances"  azureva ]
             )
            ]

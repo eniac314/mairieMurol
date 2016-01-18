@@ -69,7 +69,7 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData noSubmenu", id "horairesContact"]
+  div [ class "subContainerData noSubmenu", id "horairesEtContact"]
       [ h2 [] [text "Contacter la mairie"]     
       , div []
         [ figure []
@@ -81,8 +81,8 @@ initialContent =
         , h5 [] [text "Par mail:"]
         , mail "mairie.murol@wanadoo.fr"
         , h5 [] [text "Horaires d'ouverture:"]
-        , p  [] [text "du lundi au vendredi : 9h à 12h / 13h30 à 17h30"]
-        , p  [] [text "Permanence maire/adjoints samedi de 10h à 12h"]
+        , p  [] [text "du lundi au vendredi : 9h à 12h30 / 13h30 à 17h"]
+        , p  [] [text "Permanence maire/adjoints samedi matin"]
         
         , h5 [] [text "Location de salles des fêtes municipales"]
         , p  [] [text "La commune dispose de 3 salles polyvalentes.

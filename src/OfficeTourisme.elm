@@ -81,8 +81,10 @@ initialContent =
       , p []
           [ text "Fax : 04-73-88-60-23"]
       , mail "bt.murol-chambon@sancy.com"
-      , p []
-          [ text "Horaires : pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.
-                  Le reste de l’année, il est ouvert du lundi au samedi de 9h à 12h."]
+      , ul []
+           [ h5 [] [text "Horaires:"]
+           , li [] [text "pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h."]
+           , li [] [text "Le reste de l’année, ouvert du lundi au samedi de 9h à 12h."]
+           ]
       , renderListImg logos
       ]

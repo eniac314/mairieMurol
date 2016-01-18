@@ -10839,24 +10839,86 @@ Elm.TiledMenu.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var putSpaces = function (xs) {    var xs$ = A2($String.split,"%20",xs);return A2($String.join," ",xs$);};
+   var firstOccurrence = F2(function (c,s) {
+      var _p0 = A2($String.indexes,$String.fromChar(c),s);
+      if (_p0.ctor === "[]") {
+            return $Maybe.Nothing;
+         } else {
+            return $Maybe.Just(_p0._0);
+         }
+   });
+   var splitAtFirst = F2(function (c,s) {
+      var _p1 = A2(firstOccurrence,c,s);
+      if (_p1.ctor === "Nothing") {
+            return {ctor: "_Tuple2",_0: s,_1: ""};
+         } else {
+            var _p2 = _p1._0;
+            return {ctor: "_Tuple2",_0: A2($String.left,_p2,s),_1: A2($String.dropLeft,_p2 + 1,s)};
+         }
+   });
+   var parseParams = function (stringWithAmpersands) {
+      var eachParam = A2($String.split,"&",stringWithAmpersands);
+      var eachPair = A2($List.map,splitAtFirst(_U.chr("=")),eachParam);
+      var _p3 = $List.head(eachPair);
+      if (_p3.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p3._0.ctor === "_Tuple2" && _p3._0._0 === "bloc") {
+                  return _p3._0._1;
+               } else {
+                  return "";
+               }
+         }
+   };
+   var getTitle = function (urlParams) {
+      var _p4 = $String.uncons(urlParams);
+      if (_p4.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p4._0.ctor === "_Tuple2" && _p4._0._0.valueOf() === "?") {
+                  return parseParams(putSpaces(_p4._0._1));
+               } else {
+                  return "";
+               }
+         }
+   };
+   var getByTitle = F2(function (s,m) {
+      var d$ = A2($Dict.filter,
+      F2(function (k,_p5) {    var _p6 = _p5;return _U.eq(function (_) {    return _.title;}(_p6._0),s);}),
+      function (_) {
+         return _.menuData;
+      }(m));
+      var ids = $Dict.keys(d$);
+      return $List.head(ids);
+   });
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var ShowMenu = {ctor: "ShowMenu"};
    var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
    var view = F2(function (address,model) {
-      var _p0 = model.current;
-      if (_p0.ctor === "Menu") {
-            var toDivs = F3(function (_p2,_p1,acc) {
-               var _p3 = _p1;
-               var _p4 = _p3._0;
-               var title = _p4.title;
-               var iD = _p4.iD;
-               var picture = _p4.picture;
+      var _p7 = model.current;
+      if (_p7.ctor === "Menu") {
+            var toDivs = F3(function (_p9,_p8,acc) {
+               var _p10 = _p8;
+               var _p11 = _p10._0;
+               var title = _p11.title;
+               var iD = _p11.iD;
+               var picture = _p11.picture;
+               var link = _p11.link;
+               var attr = function () {
+                  var _p12 = link;
+                  if (_p12.ctor === "Nothing") {
+                        return _U.list([$Html$Attributes.$class("tile")
+                                       ,$Html$Attributes.href("#")
+                                       ,$Html$Attributes.id("tiledMenuTop")
+                                       ,A2($Html$Events.onClick,address,ShowTile(iD))]);
+                     } else {
+                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p12._0),$Html$Attributes.id("tiledMenuTop")]);
+                     }
+               }();
                var htmlTile = A2($Html.a,
-               _U.list([$Html$Attributes.$class("tile")
-                       ,$Html$Attributes.href("#")
-                       ,$Html$Attributes.id("tiledMenuTop")
-                       ,A2($Html$Events.onClick,address,ShowTile(iD))]),
+               attr,
                _U.list([A2($Html.figure,
                _U.list([]),
                _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture)]),_U.list([]))
@@ -10870,7 +10932,7 @@ Elm.TiledMenu.make = function (_elm) {
          } else {
             return A2($Html.div,
             _U.list([$Html$Attributes.$class("selected")]),
-            _U.list([_p0._0
+            _U.list([_p7._0
                     ,A2($Html.a,
                     _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
                     _U.list([$Html.text("Revenir au menu")]))]));
@@ -10878,13 +10940,13 @@ Elm.TiledMenu.make = function (_elm) {
    });
    var Content = function (a) {    return {ctor: "Content",_0: a};};
    var Menu = {ctor: "Menu"};
-   var Tile = F3(function (a,b,c) {    return {title: a,iD: b,picture: c};});
-   var nullTile = A3(Tile,"",0,"");
+   var Tile = F4(function (a,b,c,d) {    return {title: a,iD: b,picture: c,link: d};});
+   var nullTile = A4(Tile,"",0,"",$Maybe.Nothing);
    var update = F2(function (action,model) {
-      var _p5 = action;
-      if (_p5.ctor === "ShowTile") {
-            var _p6 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p5._0,model.menuData));
-            var newContent = _p6._1;
+      var _p13 = action;
+      if (_p13.ctor === "ShowTile") {
+            var _p14 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p13._0,model.menuData));
+            var newContent = _p14._1;
             return _U.update(model,{current: Content(newContent)});
          } else {
             return _U.update(model,{current: Menu});
@@ -10895,15 +10957,45 @@ Elm.TiledMenu.make = function (_elm) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p7) {
-         var _p8 = _p7;
-         var _p10 = _p8._0._0;
-         var _p9 = _p8._1;
+      function (_p15) {
+         var _p16 = _p15;
+         var _p18 = _p16._0._0;
+         var _p17 = _p16._1;
          return {ctor: "_Tuple2"
-                ,_0: _p9
+                ,_0: _p17
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A3(Tile,_p10,_p9,_p8._0._1)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p10)])),_p8._0._2))}};
+                     ,_0: A4(Tile,_p18,_p17,_p16._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p18)])),_p16._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A2(Model,Menu,$Dict.fromList(xs$));
+   };
+   var initAt = F2(function (urlParams,xs) {
+      var model = init(xs);
+      var title = getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p19 = maybeId;
+      if (_p19.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p19._0),model);
+         }
+   });
+   var initWithLink = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p20) {
+         var _p21 = _p20;
+         var _p24 = _p21._0._0;
+         var _p23 = _p21._0._3;
+         var _p22 = _p21._1;
+         var l$ = $String.isEmpty(_p23) ? $Maybe.Nothing : $Maybe.Just(_p23);
+         return {ctor: "_Tuple2"
+                ,_0: _p22
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A4(Tile,_p24,_p22,_p21._0._1,l$)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p21._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A2(Model,Menu,$Dict.fromList(xs$));
@@ -10914,13 +11006,21 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,Menu: Menu
                                   ,Content: Content
                                   ,init: init
+                                  ,initAt: initAt
+                                  ,initWithLink: initWithLink
                                   ,ShowTile: ShowTile
                                   ,ShowMenu: ShowMenu
                                   ,update: update
                                   ,view: view
                                   ,maybeElem: maybeElem
                                   ,nullTile: nullTile
-                                  ,nullTag: nullTag};
+                                  ,nullTag: nullTag
+                                  ,getByTitle: getByTitle
+                                  ,getTitle: getTitle
+                                  ,parseParams: parseParams
+                                  ,splitAtFirst: splitAtFirst
+                                  ,firstOccurrence: firstOccurrence
+                                  ,putSpaces: putSpaces};
 };
 Elm.Murol = Elm.Murol || {};
 Elm.Murol.make = function (_elm) {
@@ -11003,7 +11103,7 @@ Elm.Murol.make = function (_elm) {
    });
    var mail = function (s) {
       return A2($Html.span,
-      _U.list([]),
+      _U.list([$Html$Attributes.$class("email")]),
       _U.list([$Html.text("Email: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
    };
    var script = F2(function (source,js) {
@@ -11083,15 +11183,32 @@ Elm.Murol.make = function (_elm) {
    var renderPlugins = A2($Html.div,
    _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Pratique")]))
-           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))]));
+           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("NumerosD\'urgences.html"),$Html$Attributes.id("urgencesLink")]),
+           _U.list([$Html.text("Numéros d\'urgences")]))]));
    var renderMisc = A2($Html.div,
    _U.list([$Html$Attributes.id("misc"),$Html$Attributes.$class("divers")]),
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Divers")]))
            ,A2($Html.div,
-           _U.list([]),
+           _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
            _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
-           _U.list([$Html.text("Visiter le musée des peintres de Murol")]))]))]));
+           _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.id("horairesContact")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Mairie pratique:")]))
+                   ,A2($Html.div,
+                   _U.list([$Html$Attributes.id("horaires")]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires d\'ouverture")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Du lundi au vendredi : 9h à 12h30 / 13h30 à 17h")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous possibles avec le maire ou les adjoints le samedi matin")]))]))
+                   ,A2($Html.div,
+                   _U.list([$Html$Attributes.id("contact")]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Contact")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mairie de Murol - Place de l\'hôtel de ville - 63790 Murol")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03 ")]))
+                           ,mail("mairie.murol@wanadoo.fr")]))]))]));
    var renderNewsLetter = function (news) {
       var toNews = function (_p10) {
          var _p11 = _p10;
@@ -11128,6 +11245,10 @@ Elm.Murol.make = function (_elm) {
                    ,A2($Html.a,
                    _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La mairie: ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
            ,renderCounter]));
    var renderMainMenu$ = F2(function (pos,m) {
       var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
@@ -11291,26 +11412,22 @@ Elm.Murol.make = function (_elm) {
            ,A2(Node,
            "Mairie",
            _U.list([A2(Leaf,"La commune","")
-                   ,A2(Leaf,"Vos démarches","")
                    ,A2(Leaf,"Conseil municipal","")
-                   ,A2(Leaf,"CMJ","")
-                   ,A2(Leaf,"CCAS","")
+                   ,A2(Leaf,"Délibérations","")
                    ,A2(Leaf,"Commissions","")
-                   ,A2(Leaf,"Gestion des risques","")
-                   ,A2(Leaf,"Horaires et contact","")
-                   ,A2(Leaf,"Publications","")]))
+                   ,A2(Leaf,"CCAS","")
+                   ,A2(Leaf,"Vos démarches","")
+                   ,A2(Leaf,"Salles municipales","")
+                   ,A2(Leaf,"Horaires et contact","")]))
            ,A2(Node,
            "Culture et loisirs",
-           _U.list([A2(Leaf,"Art et musique","")
-                   ,A2(Leaf,"Artisanat d\'art","")
+           _U.list([A2(Leaf,"Artistes","")
                    ,A2(Leaf,"Associations","")
-                   ,A2(Leaf,"Cinema","")
-                   ,A2(Leaf,"Musée des peintres","http://www.musee-murol.fr/fr")
+                   ,A2(Leaf,"Sortir","")
                    ,A2(Leaf,"Patrimoine","")
-                   ,A2(Leaf,"Phototheque","")
                    ,A2(Leaf,"Sports et détente","")
-                   ,A2(Leaf,"Village fleuri","")]))
-           ,A2(Leaf,"Numeros d\'urgences","")
+                   ,A2(Leaf,"Phototheque","")]))
+           ,A2(Leaf,"Documentation","")
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
       var _p30 = function (_) {    return _.date;}(news);
@@ -11447,7 +11564,7 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html.text("Il dressera le bilan de l’année 2015 et \n                           vous informera sur l’avancée des projets en cours. \n                           Vous pourrez également voir le diaporama de l’année \n                           2015 réalisé à partir des photos fournies par \n                           Michel Martin, correspondant du journal la Montagne. ")]))
                               ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous le 24 janvier à 11 heures, à la salle des fêtes de Murol.")]))]))
                       ,expiry: $Date.fromString("01/25/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/11/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/18/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11642,6 +11759,16 @@ Elm.Transports.make = function (_elm) {
       var alt = b ? "row" : "rowAlt";
       return A2($Html.tr,_U.list([$Html$Attributes.$class(alt)]),A2($List.map,function (s) {    return A2($Html.td,_U.list([]),_U.list([$Html.text(s)]));},xs));
    });
+   var deneigement = _U.list([A2($Html.p,
+                             _U.list([]),
+                             _U.list([$Html.text("En raison de la situation de moyenne montagne \n                           de la commune où l’altitude varie de 785 \n                           mètres à 1500 mètres, certains hivers nécessitent un \n                           service de déneigement performant. La période d’enneigement s’étale \n                           de novembre à fin mars.")]))
+                             ,A2($Html.p,
+                             _U.list([]),
+                             _U.list([$Html.text("Le déneigement des routes départementales situées sur la \n                           commune hors agglomération est du ressort des services \n                           du Conseil Général du Puy de Dôme. Le \n                           service est effectivement assuré, comme l’atteste le plan \n                           de viabilité hivernale fourni par le Conseil Général \n                           du Puy de Dôme.")]))
+                             ,A2($Html.p,
+                             _U.list([]),
+                             _U.list([$Html.text("En agglomération, c’est à la commune de Murol \n                           qu’échoit le déneigement. Les services techniques communaux disposent \n                           de 5 employés chargés en alternance d’effectuer le \n                           déneigement. Des astreintes sont organisées pour les weekends \n                           du 15 novembre à fin mars afin de \n                           répondre au mieux aux besoins. Les employés utilisent \n                           du matériel spécifique qui a été renouvelé en \n                           2011. ")]))
+                             ,A2($Html.a,_U.list([$Html$Attributes.href("/Carte&Plan.html#infoRoute")]),_U.list([$Html.text("Etat des routes")]))]);
    var navetteHs = A2($Html.div,
    _U.list([]),
    _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Chaque mardi toute l\'année (sauf jours fériés)")]))
@@ -11688,42 +11815,72 @@ Elm.Transports.make = function (_elm) {
                    ,A2(toRow,_U.list(["Clermont-Ferrand (gare SNCF)","10h00","17h00","Chambon petite plage ","8h35 ","14h30 "]),false)
                    ,A2(toRow,_U.list(["Clermont-Ferrand (gare routière)","10h10","17h10","Chambon village ","8h40 ","14h35 "]),true)]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text(" Correspondance avec FAURE AUVERGNE (ligne Besse/Clermont –Ferrand) Tél. : 04 73 39 97 15")]))]));
+   var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
+   "String",
+   function (v) {
+      return typeof v === "string" || typeof v === "object" && v instanceof String ? v : _U.badPort("a string",v);
+   });
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Transports")]),
                            _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Transports")])),content]));
                         }
-                        ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
-                                                             ,_0: "Navette"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
-                                                             ,_2: _U.list([navetteEte,navetteHs])}
-                                                            ,{ctor: "_Tuple3"
-                                                             ,_0: "Covoiturage"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
-                                                             ,_2: _U.list([A2($Html.p,
-                                                                          _U.list([]),
-                                                                          _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                              ! Au lieu que chacun utilise sa voiture \n                              pour effectuer des trajets quotidiens ou ponctuels, le \n                              covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                              personnes. Cela permet évidement de réduire les coûts \n                              de transport (prix de l\'essence, usure de la \n                              voiture, ...), la pollution, les temps de transport. ")]))
-                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))
-                                                                          ,A2($Html.p,
-                                                                          _U.list([]),
-                                                                          _U.list([$Html.text("En effet, le covoiturage vous permettra de diminuer \n                            largement vos frais liés à vos trajets en \n                            voiture (essence, usure de la voiture, ...). Dans \n                            le cas d\'un covoiturage alterné (plusieurs conducteurs qui \n                            conduisent par alternance) vous pourrez diviser vos frais \n                            de trajet par autant de conducteur qui participe \n                            au covoiturage. Dans le cas d\'un covoiturage avec \n                            participation (Les passagers participent financièrement aux trajets), là \n                            encore on observera une nette diminution des frais \n                            engendrés par l\'utilisation de votre voiture. ")]))
-                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Un geste pour l\'écologie")]))
-                                                                          ,A2($Html.p,
-                                                                          _U.list([]),
-                                                                          _U.list([$Html.text("Le covoiturage est une pratique qui permet de \n                              diminuer significativement le nombre de voiture circulant sur \n                              les routes. La première conséquence est la diminution \n                              de la pollution et de l\'émission des gaz \n                              à effet de serre. Ceci permet également la \n                              diminution de consommation d\'énergie non renouvelable comme le \n                              pétrole. ")]))
-                                                                          ,A2($Html.h5,
-                                                                          _U.list([]),
-                                                                          _U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
-                                                                          ,A2($Html.p,
-                                                                          _U.list([]),
-                                                                          _U.list([A2($Murol.link,
-                                                                          "http://www.covoiturageauvergne.net",
-                                                                          "http://www.covoiturageauvergne.net")]))
-                                                                          ,A2($Html.p,
-                                                                          _U.list([]),
-                                                                          _U.list([A2($Murol.link,
-                                                                          "http://www.covoiturage.fr/",
-                                                                          "http://www.covoiturage.fr/")]))])}]))};
+                        ,tiledMenu: A2($TiledMenu.initAt,
+                        locationSearch,
+                        _U.list([{ctor: "_Tuple3"
+                                 ,_0: "Dessertes de la commune"
+                                 ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("La situation géographique de notre commune est un \n                           atout considérable étant donné que celle-ci bénéficie d’une \n                           position centrale au niveau régional, mais également au \n                           niveau national , ce qui nous permet de \n                           recevoir des visiteurs venant de part et d’autres \n                           de la France.")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Au cœur du massif du Sancy, Murol se \n                           trouve effectivement à seulement 30 minutes des autoroutes \n                           A71, A72, A75 et A89 . Nous sommes \n                           donc relativement bien desservis, étant à quatre heures \n                           de Paris par l’A71 (3h10 en train) et \n                           de Montpellier (A75), à deux heures de Lyon \n                           (A72) et seulement à quatre heures de Bordeaux \n                           avec la nouvelle autoroute A89, qui permet une \n                           ouverture sur le Sud-Ouest. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Au niveau de l’accès par le train, les \n                           gares du Mont Dore, d’Issoire et de Clermont-Ferrand \n                           se situent respectivement à 25 minutes, 35 minutes \n                           et 40 minutes environ en voiture de Murol.")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Pour venir à Murol par avion, l’aéroport international \n                           de Clermont-Ferrand Aulnat est le plus proche. Il \n                           se situe à 40 minutes de voiture de \n                           Murol par l’autoroute A75. Les vols réguliers pour \n                           la France se font vers Ajaccio, Bastia, Biarritz, \n                           Bordeaux, Lille, Lyon, Marseille, Metz/Nancy, Montpellier, Nantes, Nice, \n                           Paris/Orly et Paris/Charles de Gaulle, Strasbourg, Toulouse.")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Les vols réguliers pour l’Europe, directs ou avec \n                           une correspondance, sont à destination des pays suivants \n                           : Belgique, Grande-Bretagne, Italie, Pays-Bas, Suisse, Allemagne, Espagne, \n                           Portugal, Norvège, Danemark, Suède, Finlande, Russie, Pologne, Autriche, \n                           République Tchèque, Hongrie, Serbie, Bulgarie et Grèce. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Pour un accès par le car, un service \n                           de navette permet de rejoindre Murol depuis la \n                           gare ou l’aéroport de Clermont-Ferrand. Elle effectue le \n                           trajet Chambon sur Lac - Murol - Saint-Nectaire \n                           – Champeix – Clermont-Ferrand, en service régulier tous \n                           les mardis de l’année, mais également le samedi \n                           en juillet et en août . En saison \n                           estivale l’offre de transport collectif est donc plus \n                           importante.")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Un service de réservation est disponible sur le \n                           site internet de l’Office de Tourisme du Sancy \n                           ainsi que les horaires et trajet des navettes. \n                           Les mêmes informations sont disponibles au bureau de \n                           l’Office de Tourisme de Murol ainsi qu’à la \n                           mairie.")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Un service de taxis indépendants est offert sur \n                           le territoire de la commune de Murol. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Enfin, la municipalité de Murol favorise le covoiturage \n                           en mettant à la disposition de tous, une \n                           aire de covoiturage répertoriée dans le schéma départemental \n                           du Conseil Général du Puy de Dôme .")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Ainsi, il existe de nombreuses alternatives à la \n                           voiture individuelle pour se rendre à Murol, sans \n                           oublier que le GR30 traverse la commune et \n                           que certains randonneurs viennent à pied pour une \n                           halte d’une ou plusieurs nuits dans notre station.")]))])}
+                                ,{ctor: "_Tuple3",_0: "Navette",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([navetteEte,navetteHs])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "Covoiturage"
+                                 ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                              ! Au lieu que chacun utilise sa voiture \n                              pour effectuer des trajets quotidiens ou ponctuels, le \n                              covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                              personnes. Cela permet évidement de réduire les coûts \n                              de transport (prix de l\'essence, usure de la \n                              voiture, ...), la pollution, les temps de transport. ")]))
+                                              ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L\'aspect économique")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("En effet, le covoiturage vous permettra de diminuer \n                            largement vos frais liés à vos trajets en \n                            voiture (essence, usure de la voiture, ...). Dans \n                            le cas d\'un covoiturage alterné (plusieurs conducteurs qui \n                            conduisent par alternance) vous pourrez diviser vos frais \n                            de trajet par autant de conducteur qui participe \n                            au covoiturage. Dans le cas d\'un covoiturage avec \n                            participation (Les passagers participent financièrement aux trajets), là \n                            encore on observera une nette diminution des frais \n                            engendrés par l\'utilisation de votre voiture. ")]))
+                                              ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Un geste pour l\'écologie")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Le covoiturage est une pratique qui permet de \n                              diminuer significativement le nombre de voiture circulant sur \n                              les routes. La première conséquence est la diminution \n                              de la pollution et de l\'émission des gaz \n                              à effet de serre. Ceci permet également la \n                              diminution de consommation d\'énergie non renouvelable comme le \n                              pétrole. ")]))
+                                              ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([A2($Murol.link,"http://www.covoiturageauvergne.net","http://www.covoiturageauvergne.net")]))
+                                              ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://www.covoiturage.fr/","http://www.covoiturage.fr/")]))])}
+                                ,{ctor: "_Tuple3",_0: "Déneigement",_1: "/images/tiles/hebergements/placeholder.jpg",_2: deneigement}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
@@ -11773,5 +11930,6 @@ Elm.Transports.make = function (_elm) {
                                    ,initialContent: initialContent
                                    ,navetteEte: navetteEte
                                    ,navetteHs: navetteHs
+                                   ,deneigement: deneigement
                                    ,toRow: toRow};
 };

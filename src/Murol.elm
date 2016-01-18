@@ -90,27 +90,23 @@ mainMenu = Node ""
          ]
   , Node "Mairie"
          [ Leaf "La commune" ""
-         , Leaf "Vos démarches" ""
          , Leaf "Conseil municipal" ""
-         , Leaf "CMJ" ""
-         , Leaf "CCAS" ""
+         , Leaf "Délibérations" ""
          , Leaf "Commissions" ""
-         , Leaf "Gestion des risques" ""
+         , Leaf "CCAS" ""
+         , Leaf "Vos démarches" ""
+         , Leaf "Salles municipales" ""
          , Leaf "Horaires et contact" ""
-         , Leaf "Publications" ""
          ]
   , Node "Culture et loisirs"
-         [ Leaf "Art et musique" ""
-         , Leaf "Artisanat d'art" ""
+         [ Leaf "Artistes" ""
          , Leaf "Associations" ""
-         , Leaf "Cinema" ""
-         , Leaf "Musée des peintres" "http://www.musee-murol.fr/fr"
+         , Leaf "Sortir" ""
          , Leaf "Patrimoine" ""
-         , Leaf "Phototheque" ""
          , Leaf "Sports et détente" ""
-         , Leaf "Village fleuri" ""
+         , Leaf "Phototheque" ""
          ]
-  , Leaf "Numeros d'urgences" ""
+  , Leaf "Documentation" ""
   , Leaf "Petites annonces" ""]
 
 --logos    = ["FamillePlus2.gif"
@@ -130,7 +126,7 @@ initialModel =
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "01/11/2016" news
+  , news        = prepNews "01/18/2016" news
   }
 
 
@@ -257,7 +253,10 @@ pageFooter =
                        [text " contactez le webmaster"]
                    ]
              ]
-              
+          , p [] [text "La mairie: "
+                 , a [href "HorairesEtContact.html"]
+                     [text "horaires et contact"]
+                 ]    
           , renderCounter
          ] 
 
@@ -327,10 +326,23 @@ renderNewsLetter news =
 renderMisc =
   div [ id "misc", class "divers"]
       [ h4 [] [text "Divers"]
-      , div []
+      , div [id "peintres"]
             [ a [href "http://www.musee-murol.fr/fr"]
-            [text "Visiter le musée des peintres de Murol"]]
-      --, img [src "/images/peintres.png"] [] 
+            [text "A découvrir, le musée des peintres de l’Ecole de Murols"]]
+      , div [id "horairesContact"]
+            [h4 [] [text "Mairie pratique:"]
+            , div [ id "horaires"]
+                  [ h5 [] [text "Horaires d'ouverture"]
+                  , p  [] [text "Du lundi au vendredi : 9h à 12h30 / 13h30 à 17h"]
+                  , p  [] [text "Rendez-vous possibles avec le maire ou les adjoints le samedi matin"]
+                  ]
+            , div [ id "contact"]
+                  [ h5 [] [text "Contact"]
+                  , p  [] [text "Mairie de Murol - Place de l'hôtel de ville - 63790 Murol"]
+                  , p  [] [text "Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03 "]
+                  , mail "mairie.murol@wanadoo.fr" 
+                  ]
+            ] 
       ]
 
  
@@ -390,6 +402,8 @@ renderPlugins =
       [ h3 [] [text "Pratique"]
       , ul []
            (List.map (\p -> li [] [p]) [renderMeteo, renderEtatRoutes])
+      , a [href "NumerosD'urgences.html", id "urgencesLink"]
+          [text "Numéros d'urgences"]
       ]
 
 renderAgenda = 
@@ -489,7 +503,7 @@ script source js =
   node "script" [src source, type' "text/javascript"] [text js]
 
 
-mail s  = span [] [ text "Email: "
+mail s  = span [class "email"] [ text "Email: "
          , a [href ("mailto:"++s)] [text s]
          ]
 

@@ -36,48 +36,7 @@ Elm.LaCommune.make = function (_elm) {
            _U.list([$Html.text("Par ailleurs, notre commune, qui se situe à \n                   deux pas des deux principales stations de ski \n                   alpin du Massif du Sancy, bénéficie de la \n                   présence d’un foyer de ski nordique (avec une \n                   zone de raquette) au village de Beaune-le-Froid, à \n                   1000m d’altitude. Les pistes s’étendent dans la Forêt \n                   de Beaune-leFroid (gérée par l’Office National des Forêts). \n                   Ce site engendre une certaine complémentarité dans l’offre \n                   et nous permet de compter également sur le \n                   tourisme hivernal dès le mois de décembre.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("En intersaison, nous accueillons davantage les vacanciers sans \n                   enfants, les seniors et un nombre croissant de \n                   camping-caristes, ce qui permet un allongement notable de \n                   la saison touristique.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le déneigement sur la commune ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("En raison de la situation de moyenne montagne \n                   de la commune où l’altitude varie de 785 \n                   mètres à 1500 mètres, certains hivers nécessitent un \n                   service de déneigement performant. La période d’enneigement s’étale \n                   de novembre à fin mars.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le déneigement des routes départementales situées sur la \n                   commune hors agglomération est du ressort des services \n                   du Conseil Général du Puy de Dôme. Le \n                   service est effectivement assuré, comme l’atteste le plan \n                   de viabilité hivernale fourni par le Conseil Général \n                   du Puy de Dôme.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("En agglomération, c’est à la commune de Murol \n                   qu’échoit le déneigement. Les services techniques communaux disposent \n                   de 5 employés chargés en alternance d’effectuer le \n                   déneigement. Des astreintes sont organisées pour les weekends \n                   du 15 novembre à fin mars afin de \n                   répondre au mieux aux besoins. Les employés utilisent \n                   du matériel spécifique qui a été renouvelé en \n                   2011. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les dessertes de la commune par les transports")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("La situation géographique de notre commune est un \n                   atout considérable étant donné que celle-ci bénéficie d’une \n                   position centrale au niveau régional, mais également au \n                   niveau national , ce qui nous permet de \n                   recevoir des visiteurs venant de part et d’autres \n                   de la France.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Au cœur du massif du Sancy, Murol se \n                   trouve effectivement à seulement 30 minutes des autoroutes \n                   A71, A72, A75 et A89 . Nous sommes \n                   donc relativement bien desservis, étant à quatre heures \n                   de Paris par l’A71 (3h10 en train) et \n                   de Montpellier (A75), à deux heures de Lyon \n                   (A72) et seulement à quatre heures de Bordeaux \n                   avec la nouvelle autoroute A89, qui permet une \n                   ouverture sur le Sud-Ouest. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Au niveau de l’accès par le train, les \n                   gares du Mont Dore, d’Issoire et de Clermont-Ferrand \n                   se situent respectivement à 25 minutes, 35 minutes \n                   et 40 minutes environ en voiture de Murol.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Pour venir à Murol par avion, l’aéroport international \n                   de Clermont-Ferrand Aulnat est le plus proche. Il \n                   se situe à 40 minutes de voiture de \n                   Murol par l’autoroute A75. Les vols réguliers pour \n                   la France se font vers Ajaccio, Bastia, Biarritz, \n                   Bordeaux, Lille, Lyon, Marseille, Metz/Nancy, Montpellier, Nantes, Nice, \n                   Paris/Orly et Paris/Charles de Gaulle, Strasbourg, Toulouse.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les vols réguliers pour l’Europe, directs ou avec \n                   une correspondance, sont à destination des pays suivants \n                   : Belgique, Grande-Bretagne, Italie, Pays-Bas, Suisse, Allemagne, Espagne, \n                   Portugal, Norvège, Danemark, Suède, Finlande, Russie, Pologne, Autriche, \n                   République Tchèque, Hongrie, Serbie, Bulgarie et Grèce. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Pour un accès par le car, un service \n                   de navette permet de rejoindre Murol depuis la \n                   gare ou l’aéroport de Clermont-Ferrand. Elle effectue le \n                   trajet Chambon sur Lac - Murol - Saint-Nectaire \n                   – Champeix – Clermont-Ferrand, en service régulier tous \n                   les mardis de l’année, mais également le samedi \n                   en juillet et en août . En saison \n                   estivale l’offre de transport collectif est donc plus \n                   importante.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Un service de réservation est disponible sur le \n                   site internet de l’Office de Tourisme du Sancy \n                   ainsi que les horaires et trajet des navettes. \n                   Les mêmes informations sont disponibles au bureau de \n                   l’Office de Tourisme de Murol ainsi qu’à la \n                   mairie.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Un service de taxis indépendants est offert sur \n                   le territoire de la commune de Murol. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Enfin, la municipalité de Murol favorise le covoiturage \n                   en mettant à la disposition de tous, une \n                   aire de covoiturage répertoriée dans le schéma départemental \n                   du Conseil Général du Puy de Dôme .")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Ainsi, il existe de nombreuses alternatives à la \n                   voiture individuelle pour se rendre à Murol, sans \n                   oublier que le GR30 traverse la commune et \n                   que certains randonneurs viennent à pied pour une \n                   halte d’une ou plusieurs nuits dans notre station.")]))]));
+           _U.list([$Html.text("En intersaison, nous accueillons davantage les vacanciers sans \n                   enfants, les seniors et un nombre croissant de \n                   camping-caristes, ce qui permet un allongement notable de \n                   la saison touristique.")]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

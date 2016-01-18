@@ -156,7 +156,7 @@ initialContent =
                    par le SIVU, structure porteuse du contrat de 
                    lac. Nous vous communiquerons les modalités d’inscription dès 
                    que possible."]
-      , h4 [] [text "Commissions privées"]
+      , h4 [] [text "Commissions non ouvertes au public"]
 
       , p [] [text "Ces commissions sont des groupes de travail qui 
                    permettent de préparer les éléments qui conduiront à 

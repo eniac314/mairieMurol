@@ -71,7 +71,7 @@ Elm.Commissions.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Une commission lac et rivières sera créée prochainement \n                   par le SIVU, structure porteuse du contrat de \n                   lac. Nous vous communiquerons les modalités d’inscription dès \n                   que possible.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Commissions privées")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Commissions non ouvertes au public")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Ces commissions sont des groupes de travail qui \n                   permettent de préparer les éléments qui conduiront à \n                   la prise de décisions en conseil municipal, elles \n                   ne sont pas ouvertes au public. ")]))

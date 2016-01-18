@@ -79,7 +79,7 @@ Elm.Murol.make = function (_elm) {
    });
    var mail = function (s) {
       return A2($Html.span,
-      _U.list([]),
+      _U.list([$Html$Attributes.$class("email")]),
       _U.list([$Html.text("Email: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
    };
    var script = F2(function (source,js) {
@@ -159,15 +159,32 @@ Elm.Murol.make = function (_elm) {
    var renderPlugins = A2($Html.div,
    _U.list([$Html$Attributes.id("plugins"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Pratique")]))
-           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))]));
+           ,A2($Html.ul,_U.list([]),A2($List.map,function (p) {    return A2($Html.li,_U.list([]),_U.list([p]));},_U.list([renderMeteo,renderEtatRoutes])))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("NumerosD\'urgences.html"),$Html$Attributes.id("urgencesLink")]),
+           _U.list([$Html.text("Numéros d\'urgences")]))]));
    var renderMisc = A2($Html.div,
    _U.list([$Html$Attributes.id("misc"),$Html$Attributes.$class("divers")]),
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Divers")]))
            ,A2($Html.div,
-           _U.list([]),
+           _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
            _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
-           _U.list([$Html.text("Visiter le musée des peintres de Murol")]))]))]));
+           _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.id("horairesContact")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Mairie pratique:")]))
+                   ,A2($Html.div,
+                   _U.list([$Html$Attributes.id("horaires")]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires d\'ouverture")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Du lundi au vendredi : 9h à 12h30 / 13h30 à 17h")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous possibles avec le maire ou les adjoints le samedi matin")]))]))
+                   ,A2($Html.div,
+                   _U.list([$Html$Attributes.id("contact")]),
+                   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Contact")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mairie de Murol - Place de l\'hôtel de ville - 63790 Murol")]))
+                           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03 ")]))
+                           ,mail("mairie.murol@wanadoo.fr")]))]))]));
    var renderNewsLetter = function (news) {
       var toNews = function (_p10) {
          var _p11 = _p10;
@@ -204,6 +221,10 @@ Elm.Murol.make = function (_elm) {
                    ,A2($Html.a,
                    _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La mairie: ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
            ,renderCounter]));
    var renderMainMenu$ = F2(function (pos,m) {
       var current = function (label) {    return {ctor: "_Tuple2",_0: "current",_1: A2($List.member,label,pos)};};
@@ -367,26 +388,22 @@ Elm.Murol.make = function (_elm) {
            ,A2(Node,
            "Mairie",
            _U.list([A2(Leaf,"La commune","")
-                   ,A2(Leaf,"Vos démarches","")
                    ,A2(Leaf,"Conseil municipal","")
-                   ,A2(Leaf,"CMJ","")
-                   ,A2(Leaf,"CCAS","")
+                   ,A2(Leaf,"Délibérations","")
                    ,A2(Leaf,"Commissions","")
-                   ,A2(Leaf,"Gestion des risques","")
-                   ,A2(Leaf,"Horaires et contact","")
-                   ,A2(Leaf,"Publications","")]))
+                   ,A2(Leaf,"CCAS","")
+                   ,A2(Leaf,"Vos démarches","")
+                   ,A2(Leaf,"Salles municipales","")
+                   ,A2(Leaf,"Horaires et contact","")]))
            ,A2(Node,
            "Culture et loisirs",
-           _U.list([A2(Leaf,"Art et musique","")
-                   ,A2(Leaf,"Artisanat d\'art","")
+           _U.list([A2(Leaf,"Artistes","")
                    ,A2(Leaf,"Associations","")
-                   ,A2(Leaf,"Cinema","")
-                   ,A2(Leaf,"Musée des peintres","http://www.musee-murol.fr/fr")
+                   ,A2(Leaf,"Sortir","")
                    ,A2(Leaf,"Patrimoine","")
-                   ,A2(Leaf,"Phototheque","")
                    ,A2(Leaf,"Sports et détente","")
-                   ,A2(Leaf,"Village fleuri","")]))
-           ,A2(Leaf,"Numeros d\'urgences","")
+                   ,A2(Leaf,"Phototheque","")]))
+           ,A2(Leaf,"Documentation","")
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
       var _p30 = function (_) {    return _.date;}(news);
@@ -523,7 +540,7 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html.text("Il dressera le bilan de l’année 2015 et \n                           vous informera sur l’avancée des projets en cours. \n                           Vous pourrez également voir le diaporama de l’année \n                           2015 réalisé à partir des photos fournies par \n                           Michel Martin, correspondant du journal la Montagne. ")]))
                               ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous le 24 janvier à 11 heures, à la salle des fêtes de Murol.")]))]))
                       ,expiry: $Date.fromString("01/25/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/11/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/18/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
