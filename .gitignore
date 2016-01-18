@@ -5,6 +5,7 @@ logs
 # Documents
 *.doc
 *.pdf
+*.zip
 
 # Runtime data
 pids
