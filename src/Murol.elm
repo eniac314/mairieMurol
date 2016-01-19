@@ -106,7 +106,15 @@ mainMenu = Node ""
          , Leaf "Sports et détente" ""
          , Leaf "Phototheque" ""
          ]
-  , Leaf "Documentation" ""
+  , Node "Documentation"
+         [ Leaf "Bulletins municipaux" ""
+         , Leaf "Murol Infos" ""
+         , Leaf "Délibérations" ""
+         , Leaf "Gestion des risques" ""
+         , Leaf "Elections" ""
+         , Leaf "Autres publications" ""
+         , Leaf "Service-public.fr" "https://www.service-public.fr/"
+         ]
   , Leaf "Petites annonces" ""]
 
 --logos    = ["FamillePlus2.gif"

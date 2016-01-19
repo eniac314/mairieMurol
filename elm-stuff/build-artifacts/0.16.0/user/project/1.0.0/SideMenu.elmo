@@ -1,0 +1,108 @@
+Elm.SideMenu = Elm.SideMenu || {};
+Elm.SideMenu.make = function (_elm) {
+   "use strict";
+   _elm.SideMenu = _elm.SideMenu || {};
+   if (_elm.SideMenu.values) return _elm.SideMenu.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var Entry = function (a) {    return {ctor: "Entry",_0: a};};
+   var renderSideMenu = F2(function (address,model) {
+      var pos = function (_) {    return _.current;}(model);
+      var isCurrent = function (e) {    return $Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "submenuCurrent",_1: _U.eq(e,pos)}]));};
+      var toA = function (e) {
+         return A2($Html.a,
+         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#"),isCurrent(e)]),
+         _U.list([$Html.text(e)]));
+      };
+      var es = function (_) {    return _.entries;}(model);
+      var linkList = A2($List.map,toA,es);
+      var title = function (_) {    return _.title;}(model);
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("sideMenu")]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text(title)])),A2($Html.div,_U.list([]),linkList)]));
+   });
+   var view = F2(function (address,model) {
+      var _p0 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
+      if (_p0.ctor === "Nothing") {
+            return nullTag;
+         } else {
+            if (_p0._0.ctor === "Menu") {
+                  return A2($Html.div,
+                  _U.list([$Html$Attributes.id("subContainer")]),
+                  _U.list([A2(renderSideMenu,address,model)
+                          ,A2($Html.div,
+                          _U.list([$Html$Attributes.$class("subContainerData")]),
+                          _U.list([A2($Maybe.withDefault,nullTag,_p0._0._0._0)
+                                  ,A2($TiledMenu.view,A2($Signal.forwardTo,address,TiledMenuAction),_p0._0._0._1)]))]));
+               } else {
+                  return A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([A2(renderSideMenu,address,model),_p0._0._0]));
+               }
+         }
+   });
+   var NoOp = {ctor: "NoOp"};
+   var Menu = function (a) {    return {ctor: "Menu",_0: a};};
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return _U.update(model,{current: _p1._0});
+         default: var _p2 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
+           if (_p2.ctor === "Nothing") {
+                 return model;
+              } else {
+                 if (_p2._0.ctor === "Menu" && _p2._0._0.ctor === "_Tuple2") {
+                       var newMenu = A2($TiledMenu.update,_p1._0,_p2._0._0._1);
+                       var newContentMap = A3($Dict.update,
+                       function (_) {
+                          return _.current;
+                       }(model),
+                       function (_p3) {
+                          return $Maybe.Just(Menu({ctor: "_Tuple2",_0: _p2._0._0._0,_1: newMenu}));
+                       },
+                       function (_) {
+                          return _.contentMap;
+                       }(model));
+                       return _U.update(model,{contentMap: newContentMap});
+                    } else {
+                       return model;
+                    }
+              }}
+   });
+   var menuToContent = function (m) {    return Menu({ctor: "_Tuple2",_0: $Maybe.Nothing,_1: m});};
+   var menuWithContextToContent = F2(function (m,c) {    return Menu({ctor: "_Tuple2",_0: $Maybe.Just(c),_1: m});});
+   var Doc = function (a) {    return {ctor: "Doc",_0: a};};
+   var htmlToContent = function (h) {    return Doc(h);};
+   var Model = F4(function (a,b,c,d) {    return {title: a,current: b,entries: c,contentMap: d};});
+   var init = F4(function (title,current,entries,contentList) {    return A4(Model,title,current,entries,$Dict.fromList(contentList));});
+   return _elm.SideMenu.values = {_op: _op
+                                 ,Model: Model
+                                 ,Doc: Doc
+                                 ,Menu: Menu
+                                 ,init: init
+                                 ,NoOp: NoOp
+                                 ,Entry: Entry
+                                 ,TiledMenuAction: TiledMenuAction
+                                 ,update: update
+                                 ,view: view
+                                 ,renderSideMenu: renderSideMenu
+                                 ,maybeElem: maybeElem
+                                 ,nullTag: nullTag
+                                 ,menuToContent: menuToContent
+                                 ,menuWithContextToContent: menuWithContextToContent
+                                 ,htmlToContent: htmlToContent};
+};

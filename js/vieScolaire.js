@@ -11427,7 +11427,15 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Patrimoine","")
                    ,A2(Leaf,"Sports et détente","")
                    ,A2(Leaf,"Phototheque","")]))
-           ,A2(Leaf,"Documentation","")
+           ,A2(Node,
+           "Documentation",
+           _U.list([A2(Leaf,"Bulletins municipaux","")
+                   ,A2(Leaf,"Murol Infos","")
+                   ,A2(Leaf,"Délibérations","")
+                   ,A2(Leaf,"Gestion des risques","")
+                   ,A2(Leaf,"Elections","")
+                   ,A2(Leaf,"Autres publications","")
+                   ,A2(Leaf,"Service-public.fr","https://www.service-public.fr/")]))
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
       var _p30 = function (_) {    return _.date;}(news);
@@ -11622,6 +11630,114 @@ Elm.Murol.make = function (_elm) {
                               ,news: news
                               ,newsletters: newsletters};
 };
+Elm.SideMenu = Elm.SideMenu || {};
+Elm.SideMenu.make = function (_elm) {
+   "use strict";
+   _elm.SideMenu = _elm.SideMenu || {};
+   if (_elm.SideMenu.values) return _elm.SideMenu.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var Entry = function (a) {    return {ctor: "Entry",_0: a};};
+   var renderSideMenu = F2(function (address,model) {
+      var pos = function (_) {    return _.current;}(model);
+      var isCurrent = function (e) {    return $Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "submenuCurrent",_1: _U.eq(e,pos)}]));};
+      var toA = function (e) {
+         return A2($Html.a,
+         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#"),isCurrent(e)]),
+         _U.list([$Html.text(e)]));
+      };
+      var es = function (_) {    return _.entries;}(model);
+      var linkList = A2($List.map,toA,es);
+      var title = function (_) {    return _.title;}(model);
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("sideMenu")]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text(title)])),A2($Html.div,_U.list([]),linkList)]));
+   });
+   var view = F2(function (address,model) {
+      var _p0 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
+      if (_p0.ctor === "Nothing") {
+            return nullTag;
+         } else {
+            if (_p0._0.ctor === "Menu") {
+                  return A2($Html.div,
+                  _U.list([$Html$Attributes.id("subContainer")]),
+                  _U.list([A2(renderSideMenu,address,model)
+                          ,A2($Html.div,
+                          _U.list([$Html$Attributes.$class("subContainerData")]),
+                          _U.list([A2($Maybe.withDefault,nullTag,_p0._0._0._0)
+                                  ,A2($TiledMenu.view,A2($Signal.forwardTo,address,TiledMenuAction),_p0._0._0._1)]))]));
+               } else {
+                  return A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([A2(renderSideMenu,address,model),_p0._0._0]));
+               }
+         }
+   });
+   var NoOp = {ctor: "NoOp"};
+   var Menu = function (a) {    return {ctor: "Menu",_0: a};};
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return _U.update(model,{current: _p1._0});
+         default: var _p2 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
+           if (_p2.ctor === "Nothing") {
+                 return model;
+              } else {
+                 if (_p2._0.ctor === "Menu" && _p2._0._0.ctor === "_Tuple2") {
+                       var newMenu = A2($TiledMenu.update,_p1._0,_p2._0._0._1);
+                       var newContentMap = A3($Dict.update,
+                       function (_) {
+                          return _.current;
+                       }(model),
+                       function (_p3) {
+                          return $Maybe.Just(Menu({ctor: "_Tuple2",_0: _p2._0._0._0,_1: newMenu}));
+                       },
+                       function (_) {
+                          return _.contentMap;
+                       }(model));
+                       return _U.update(model,{contentMap: newContentMap});
+                    } else {
+                       return model;
+                    }
+              }}
+   });
+   var menuToContent = function (m) {    return Menu({ctor: "_Tuple2",_0: $Maybe.Nothing,_1: m});};
+   var menuWithContextToContent = F2(function (m,c) {    return Menu({ctor: "_Tuple2",_0: $Maybe.Just(c),_1: m});});
+   var Doc = function (a) {    return {ctor: "Doc",_0: a};};
+   var htmlToContent = function (h) {    return Doc(h);};
+   var Model = F4(function (a,b,c,d) {    return {title: a,current: b,entries: c,contentMap: d};});
+   var init = F4(function (title,current,entries,contentList) {    return A4(Model,title,current,entries,$Dict.fromList(contentList));});
+   return _elm.SideMenu.values = {_op: _op
+                                 ,Model: Model
+                                 ,Doc: Doc
+                                 ,Menu: Menu
+                                 ,init: init
+                                 ,NoOp: NoOp
+                                 ,Entry: Entry
+                                 ,TiledMenuAction: TiledMenuAction
+                                 ,update: update
+                                 ,view: view
+                                 ,renderSideMenu: renderSideMenu
+                                 ,maybeElem: maybeElem
+                                 ,nullTag: nullTag
+                                 ,menuToContent: menuToContent
+                                 ,menuWithContextToContent: menuWithContextToContent
+                                 ,htmlToContent: htmlToContent};
+};
 Elm.VieScolaire = Elm.VieScolaire || {};
 Elm.VieScolaire.make = function (_elm) {
    "use strict";
@@ -11630,73 +11746,26 @@ Elm.VieScolaire.make = function (_elm) {
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
+   $SideMenu = Elm.SideMenu.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
-   var peri = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("periVieScolaire")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Périscolaire")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les Chèques Emploi Service Universel sont dorénavant acceptés pour\n                 le paiement de la garderie périscolaire.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("En dehors des heures de classe, le SIVOM de la VALLEE VERTE propose\n                 les services de garderie et de restaurant scolaire, selon les\n                 horaires et les tarifs suivants: ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Restaurant scolaire: ")]))
-                   ,A2($Murol.link,"Fiche d\'inscription","")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("ouvert de 12h00 à 13h30")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text(" Le montant de la participation des familles est fonction des revenus\n                  de celles-ci (tarification selon le quotient familial): ")]))
-           ,A2($Html.table,
-           _U.list([$Html$Attributes.id("quotient")]),
-           _U.list([A2($Html.tr,
-                   _U.list([$Html$Attributes.$class("quotLine")]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Quotient familial")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("de 0 à 350€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("de 351 à 500€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("de 501 à 600€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("plus de 600€")]))]))
-                   ,A2($Html.tr,
-                   _U.list([$Html$Attributes.$class("quotAltLine")]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Tarif maternelle")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,00€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,40€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,70€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,95€")]))]))
-                   ,A2($Html.tr,
-                   _U.list([$Html$Attributes.$class("quotLine")]),
-                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Tarif  élémentaire")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,00€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,50€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2,85€")]))
-                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("3,10€")]))]))]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Un repas « bio » sera servi aux enfants une fois par mois.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Garderie: ")])),A2($Murol.link,"Fiche d\'inscription","")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("ouverte de 7h00 à 9h00 et de 16h30 à 19h00 : 1,20€ de l’heure.")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"Charte du savoir-vivre",""),$Html.text(" en milieu scolaire et périscolaire")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"Règlement intérieur",""),$Html.text(" du restaurant scolaire et de la garderie")]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Centre de loisirs")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert pendant les vacances scolaires")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le centre de loisirs est ouvert du lundi au vendredi, dans les\n                 locaux de l\'école maternelle de Murol")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Inscription en mairie")]))
-           ,A2($Html.h6,_U.list([$Html$Attributes.$class("periCat")]),_U.list([$Html.text("Transport scolaire")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Pour le transport scolaire, la participation des familles \n                 a été fixée forfaitairement par le Conseil Général \n                 pour l’année scolaire 2008 / 2009 à 12,80€ \n                 par mois (64€ par mois pour les élèves \n                 non subventionnés).")]))]));
+   var peri = _U.list([{ctor: "_Tuple4",_0: "Restaurant scolaire",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([]),_3: ""}
+                      ,{ctor: "_Tuple4",_0: "Garderie périscolaire",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([]),_3: ""}
+                      ,{ctor: "_Tuple4",_0: "Temps d\'activités périscolaires (TAP)",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([]),_3: ""}
+                      ,{ctor: "_Tuple4",_0: "Centre de loisirs",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([]),_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Activités jeunesse de la communauté de communes"
+                       ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                       ,_2: _U.list([])
+                       ,_3: "https://fr.wikipedia.org/wiki/Communaut%C3%A9_de_communes_du_Massif_du_Sancy"}]);
    var second = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("secondVieScolaire")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le Secondaire")]))
@@ -11769,7 +11838,7 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Pause Douceur")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Des séances de contes sont proposées le temps de la pause déjeuner au sein de l\'école maternelle.")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les dates et horaires seront précisées ultérieurement (renseignement à l\'école)")]))]));
-   var initialContent = A2($Html.div,
+   var vieScolaire = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initVieScolaire")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Vie Scolaire")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Scolarisez vos enfants à Murol de la maternelle au primaire")]))
@@ -11784,54 +11853,50 @@ Elm.VieScolaire.make = function (_elm) {
                            ,A2($Html.a,
                            _U.list([$Html$Attributes.href("http://www.education.gouv.fr/cid87910/calendrier-scolaire-pour-les-annees-2015-2016-2016-2017-2017-2018.html")]),
                            _U.list([$Html.text("source: education.gouv.fr")]))]))]))]));
-   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
-   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Accueil Scolaire",_1: initialContent}
-                                           ,{ctor: "_Tuple2",_0: "Ecole Maternelle",_1: mater}
-                                           ,{ctor: "_Tuple2",_0: "Ecole Elementaire",_1: elem}
-                                           ,{ctor: "_Tuple2",_0: "Le Secondaire",_1: second}
-                                           ,{ctor: "_Tuple2",_0: "Périscolaire",_1: peri}]));
-   var changeMain = F2(function (model,s) {
-      var sb = function (_) {    return _.subMenu;}(model);
-      var newContent = A2($Dict.get,s,contentMap);
-      var _p0 = newContent;
-      if (_p0.ctor === "Nothing") {
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
             return model;
          } else {
-            return _U.update(model,{mainContent: _p0._0,subMenu: _U.update(sb,{current: s})});
+            return _U.update(model,{sideMenu: A2($SideMenu.update,_p0._0,function (_) {    return _.sideMenu;}(model))});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var SideMenuAction = function (a) {    return {ctor: "SideMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie locale","Vie scolaire"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie locale","Vie scolaire"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A3($Murol.renderSubMenu,address,"Vie Scolaire:",function (_) {    return _.subMenu;}(model))
-                      ,function (_) {
-                         return _.mainContent;
-                      }(model)]))
+              _U.list([A2($SideMenu.view,A2($Signal.forwardTo,address,SideMenuAction),function (_) {    return _.sideMenu;}(model))]))
               ,$Murol.pageFooter]));
    });
-   var subMenu = {current: "Accueil Scolaire",entries: _U.list(["Accueil Scolaire","Ecole Maternelle","Ecole Elementaire","Le Secondaire","Périscolaire"])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Murol.mainMenu
+                      ,sideMenu: A4($SideMenu.init,
+                      "Vie Scolaire:",
+                      "Accueil Scolaire",
+                      _U.list(["Accueil Scolaire","Ecole Maternelle","Ecole Elementaire","Le Secondaire","Périscolaire"]),
+                      _U.list([{ctor: "_Tuple2",_0: "Accueil Scolaire",_1: $SideMenu.htmlToContent(vieScolaire)}
+                              ,{ctor: "_Tuple2",_0: "Ecole Maternelle",_1: $SideMenu.htmlToContent(mater)}
+                              ,{ctor: "_Tuple2",_0: "Ecole Elementaire",_1: $SideMenu.htmlToContent(elem)}
+                              ,{ctor: "_Tuple2",_0: "Le Secondaire",_1: $SideMenu.htmlToContent(second)}
+                              ,{ctor: "_Tuple2"
+                               ,_0: "Périscolaire"
+                               ,_1: A2($SideMenu.menuWithContextToContent,
+                               $TiledMenu.initWithLink(peri),
+                               A2($Html.div,_U.list([]),_U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Périscolaire")]))])))}]))};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var Model = F2(function (a,b) {    return {mainMenu: a,sideMenu: b};});
    return _elm.VieScolaire.values = {_op: _op
-                                    ,subMenu: subMenu
+                                    ,Model: Model
                                     ,initialModel: initialModel
                                     ,view: view
-                                    ,contentMap: contentMap
+                                    ,NoOp: NoOp
+                                    ,SideMenuAction: SideMenuAction
                                     ,update: update
-                                    ,changeMain: changeMain
                                     ,main: main
-                                    ,nullTag: nullTag
-                                    ,initialContent: initialContent
+                                    ,vieScolaire: vieScolaire
                                     ,mater: mater
                                     ,elem: elem
                                     ,second: second

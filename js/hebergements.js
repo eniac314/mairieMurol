@@ -11542,7 +11542,15 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Patrimoine","")
                    ,A2(Leaf,"Sports et détente","")
                    ,A2(Leaf,"Phototheque","")]))
-           ,A2(Leaf,"Documentation","")
+           ,A2(Node,
+           "Documentation",
+           _U.list([A2(Leaf,"Bulletins municipaux","")
+                   ,A2(Leaf,"Murol Infos","")
+                   ,A2(Leaf,"Délibérations","")
+                   ,A2(Leaf,"Gestion des risques","")
+                   ,A2(Leaf,"Elections","")
+                   ,A2(Leaf,"Autres publications","")
+                   ,A2(Leaf,"Service-public.fr","https://www.service-public.fr/")]))
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
       var _p30 = function (_) {    return _.date;}(news);
