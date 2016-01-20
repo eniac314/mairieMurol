@@ -67,7 +67,7 @@ makeRow { name, label, stars, refOt, descr,
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
 
       pjaun'  = maybeElem
-                 site (\s -> p [] [text "Pages Jaunes: ", a [href s] [text s]])
+                 pjaun (\s -> p [] [text "Pages Jaunes: ", a [href s] [text s]])
 
       descr' = List.map (\s -> p [] [text s]) descr
 

@@ -10821,18 +10821,14 @@ Elm.StartApp.Simple.make = function (_elm) {
    var Config = F3(function (a,b,c) {    return {model: a,view: b,update: c};});
    return _elm.StartApp.Simple.values = {_op: _op,Config: Config,start: start};
 };
-Elm.TiledMenu = Elm.TiledMenu || {};
-Elm.TiledMenu.make = function (_elm) {
+Elm.UrlParsing = Elm.UrlParsing || {};
+Elm.UrlParsing.make = function (_elm) {
    "use strict";
-   _elm.TiledMenu = _elm.TiledMenu || {};
-   if (_elm.TiledMenu.values) return _elm.TiledMenu.values;
+   _elm.UrlParsing = _elm.UrlParsing || {};
+   if (_elm.UrlParsing.values) return _elm.UrlParsing.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
@@ -10883,9 +10879,35 @@ Elm.TiledMenu.make = function (_elm) {
                }
          }
    };
+   return _elm.UrlParsing.values = {_op: _op
+                                   ,getTitle: getTitle
+                                   ,parseParams: parseParams
+                                   ,splitAtFirst: splitAtFirst
+                                   ,firstOccurrence: firstOccurrence
+                                   ,putSpaces: putSpaces};
+};
+Elm.TiledMenu = Elm.TiledMenu || {};
+Elm.TiledMenu.make = function (_elm) {
+   "use strict";
+   _elm.TiledMenu = _elm.TiledMenu || {};
+   if (_elm.TiledMenu.values) return _elm.TiledMenu.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm),
+   $UrlParsing = Elm.UrlParsing.make(_elm);
+   var _op = {};
    var getByTitle = F2(function (s,m) {
       var d$ = A2($Dict.filter,
-      F2(function (k,_p5) {    var _p6 = _p5;return _U.eq(function (_) {    return _.title;}(_p6._0),s);}),
+      F2(function (k,_p0) {    var _p1 = _p0;return _U.eq(function (_) {    return _.title;}(_p1._0),s);}),
       function (_) {
          return _.menuData;
       }(m));
@@ -10897,24 +10919,24 @@ Elm.TiledMenu.make = function (_elm) {
    var ShowMenu = {ctor: "ShowMenu"};
    var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
    var view = F2(function (address,model) {
-      var _p7 = model.current;
-      if (_p7.ctor === "Menu") {
-            var toDivs = F3(function (_p9,_p8,acc) {
-               var _p10 = _p8;
-               var _p11 = _p10._0;
-               var title = _p11.title;
-               var iD = _p11.iD;
-               var picture = _p11.picture;
-               var link = _p11.link;
+      var _p2 = model.current;
+      if (_p2.ctor === "Menu") {
+            var toDivs = F3(function (_p4,_p3,acc) {
+               var _p5 = _p3;
+               var _p6 = _p5._0;
+               var title = _p6.title;
+               var iD = _p6.iD;
+               var picture = _p6.picture;
+               var link = _p6.link;
                var attr = function () {
-                  var _p12 = link;
-                  if (_p12.ctor === "Nothing") {
+                  var _p7 = link;
+                  if (_p7.ctor === "Nothing") {
                         return _U.list([$Html$Attributes.$class("tile")
                                        ,$Html$Attributes.href("#")
                                        ,$Html$Attributes.id("tiledMenuTop")
                                        ,A2($Html$Events.onClick,address,ShowTile(iD))]);
                      } else {
-                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p12._0),$Html$Attributes.id("tiledMenuTop")]);
+                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p7._0),$Html$Attributes.id("tiledMenuTop")]);
                      }
                }();
                var htmlTile = A2($Html.a,
@@ -10932,7 +10954,7 @@ Elm.TiledMenu.make = function (_elm) {
          } else {
             return A2($Html.div,
             _U.list([$Html$Attributes.$class("selected")]),
-            _U.list([_p7._0
+            _U.list([_p2._0
                     ,A2($Html.a,
                     _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
                     _U.list([$Html.text("Revenir au menu")]))]));
@@ -10943,10 +10965,10 @@ Elm.TiledMenu.make = function (_elm) {
    var Tile = F4(function (a,b,c,d) {    return {title: a,iD: b,picture: c,link: d};});
    var nullTile = A4(Tile,"",0,"",$Maybe.Nothing);
    var update = F2(function (action,model) {
-      var _p13 = action;
-      if (_p13.ctor === "ShowTile") {
-            var _p14 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p13._0,model.menuData));
-            var newContent = _p14._1;
+      var _p8 = action;
+      if (_p8.ctor === "ShowTile") {
+            var _p9 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p8._0,model.menuData));
+            var newContent = _p9._1;
             return _U.update(model,{current: Content(newContent)});
          } else {
             return _U.update(model,{current: Menu});
@@ -10957,45 +10979,45 @@ Elm.TiledMenu.make = function (_elm) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p15) {
-         var _p16 = _p15;
-         var _p18 = _p16._0._0;
-         var _p17 = _p16._1;
+      function (_p10) {
+         var _p11 = _p10;
+         var _p13 = _p11._0._0;
+         var _p12 = _p11._1;
          return {ctor: "_Tuple2"
-                ,_0: _p17
+                ,_0: _p12
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p18,_p17,_p16._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p18)])),_p16._0._2))}};
+                     ,_0: A4(Tile,_p13,_p12,_p11._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p13)])),_p11._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A2(Model,Menu,$Dict.fromList(xs$));
    };
    var initAt = F2(function (urlParams,xs) {
       var model = init(xs);
-      var title = getTitle(urlParams);
+      var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p19 = maybeId;
-      if (_p19.ctor === "Nothing") {
+      var _p14 = maybeId;
+      if (_p14.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p19._0),model);
+            return A2(update,ShowTile(_p14._0),model);
          }
    });
    var initWithLink = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p20) {
-         var _p21 = _p20;
-         var _p24 = _p21._0._0;
-         var _p23 = _p21._0._3;
-         var _p22 = _p21._1;
-         var l$ = $String.isEmpty(_p23) ? $Maybe.Nothing : $Maybe.Just(_p23);
+      function (_p15) {
+         var _p16 = _p15;
+         var _p19 = _p16._0._0;
+         var _p18 = _p16._0._3;
+         var _p17 = _p16._1;
+         var l$ = $String.isEmpty(_p18) ? $Maybe.Nothing : $Maybe.Just(_p18);
          return {ctor: "_Tuple2"
-                ,_0: _p22
+                ,_0: _p17
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p24,_p22,_p21._0._1,l$)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p21._0._2))}};
+                     ,_0: A4(Tile,_p19,_p17,_p16._0._1,l$)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p19)])),_p16._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A2(Model,Menu,$Dict.fromList(xs$));
@@ -11015,12 +11037,7 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,maybeElem: maybeElem
                                   ,nullTile: nullTile
                                   ,nullTag: nullTag
-                                  ,getByTitle: getByTitle
-                                  ,getTitle: getTitle
-                                  ,parseParams: parseParams
-                                  ,splitAtFirst: splitAtFirst
-                                  ,firstOccurrence: firstOccurrence
-                                  ,putSpaces: putSpaces};
+                                  ,getByTitle: getByTitle};
 };
 Elm.StarTable = Elm.StarTable || {};
 Elm.StarTable.make = function (_elm) {
@@ -11082,7 +11099,6 @@ Elm.StarTable.make = function (_elm) {
    });
    var makeRow = F2(function (_p2,alt) {
       var _p3 = _p2;
-      var _p4 = _p3.site;
       var alt$ = alt ? "altLine" : "Line";
       var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
       var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
@@ -11090,12 +11106,12 @@ Elm.StarTable.make = function (_elm) {
       var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var pjaun$ = A2(maybeElem,
-      _p4,
+      _p3.pjaun,
       function (s) {
          return A2($Html.p,_U.list([]),_U.list([$Html.text("Pages Jaunes: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
       });
       var site$ = A2(maybeElem,
-      _p4,
+      _p3.site,
       function (s) {
          return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
       });
@@ -11116,11 +11132,11 @@ Elm.StarTable.make = function (_elm) {
    });
    var makeTable = F2(function (name,entries) {
       var makeRows = F2(function (b,xs) {
-         var _p5 = xs;
-         if (_p5.ctor === "[]") {
+         var _p4 = xs;
+         if (_p4.ctor === "[]") {
                return _U.list([]);
             } else {
-               return A2($List._op["::"],A2(makeRow,_p5._0,b),A2(makeRows,$Basics.not(b),_p5._1));
+               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
             }
       });
       return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
@@ -12005,7 +12021,7 @@ Elm.Hebergements.make = function (_elm) {
                                                                           ,A2($StarTable.makeTable,"Campings",campings)])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Chambres d\'Hôtes"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_1: "/images/tiles/hebergements/chambresHotes.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                             en proposant des prestations de très bon confort. \n                             Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                             de personnes passionnées par leur région et attentives \n                             à la qualité de l\'accueil.")]))

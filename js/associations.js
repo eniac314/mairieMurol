@@ -10821,18 +10821,14 @@ Elm.StartApp.Simple.make = function (_elm) {
    var Config = F3(function (a,b,c) {    return {model: a,view: b,update: c};});
    return _elm.StartApp.Simple.values = {_op: _op,Config: Config,start: start};
 };
-Elm.TiledMenu = Elm.TiledMenu || {};
-Elm.TiledMenu.make = function (_elm) {
+Elm.UrlParsing = Elm.UrlParsing || {};
+Elm.UrlParsing.make = function (_elm) {
    "use strict";
-   _elm.TiledMenu = _elm.TiledMenu || {};
-   if (_elm.TiledMenu.values) return _elm.TiledMenu.values;
+   _elm.UrlParsing = _elm.UrlParsing || {};
+   if (_elm.UrlParsing.values) return _elm.UrlParsing.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
-   $Html = Elm.Html.make(_elm),
-   $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
@@ -10883,9 +10879,35 @@ Elm.TiledMenu.make = function (_elm) {
                }
          }
    };
+   return _elm.UrlParsing.values = {_op: _op
+                                   ,getTitle: getTitle
+                                   ,parseParams: parseParams
+                                   ,splitAtFirst: splitAtFirst
+                                   ,firstOccurrence: firstOccurrence
+                                   ,putSpaces: putSpaces};
+};
+Elm.TiledMenu = Elm.TiledMenu || {};
+Elm.TiledMenu.make = function (_elm) {
+   "use strict";
+   _elm.TiledMenu = _elm.TiledMenu || {};
+   if (_elm.TiledMenu.values) return _elm.TiledMenu.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm),
+   $UrlParsing = Elm.UrlParsing.make(_elm);
+   var _op = {};
    var getByTitle = F2(function (s,m) {
       var d$ = A2($Dict.filter,
-      F2(function (k,_p5) {    var _p6 = _p5;return _U.eq(function (_) {    return _.title;}(_p6._0),s);}),
+      F2(function (k,_p0) {    var _p1 = _p0;return _U.eq(function (_) {    return _.title;}(_p1._0),s);}),
       function (_) {
          return _.menuData;
       }(m));
@@ -10897,24 +10919,24 @@ Elm.TiledMenu.make = function (_elm) {
    var ShowMenu = {ctor: "ShowMenu"};
    var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
    var view = F2(function (address,model) {
-      var _p7 = model.current;
-      if (_p7.ctor === "Menu") {
-            var toDivs = F3(function (_p9,_p8,acc) {
-               var _p10 = _p8;
-               var _p11 = _p10._0;
-               var title = _p11.title;
-               var iD = _p11.iD;
-               var picture = _p11.picture;
-               var link = _p11.link;
+      var _p2 = model.current;
+      if (_p2.ctor === "Menu") {
+            var toDivs = F3(function (_p4,_p3,acc) {
+               var _p5 = _p3;
+               var _p6 = _p5._0;
+               var title = _p6.title;
+               var iD = _p6.iD;
+               var picture = _p6.picture;
+               var link = _p6.link;
                var attr = function () {
-                  var _p12 = link;
-                  if (_p12.ctor === "Nothing") {
+                  var _p7 = link;
+                  if (_p7.ctor === "Nothing") {
                         return _U.list([$Html$Attributes.$class("tile")
                                        ,$Html$Attributes.href("#")
                                        ,$Html$Attributes.id("tiledMenuTop")
                                        ,A2($Html$Events.onClick,address,ShowTile(iD))]);
                      } else {
-                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p12._0),$Html$Attributes.id("tiledMenuTop")]);
+                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p7._0),$Html$Attributes.id("tiledMenuTop")]);
                      }
                }();
                var htmlTile = A2($Html.a,
@@ -10932,7 +10954,7 @@ Elm.TiledMenu.make = function (_elm) {
          } else {
             return A2($Html.div,
             _U.list([$Html$Attributes.$class("selected")]),
-            _U.list([_p7._0
+            _U.list([_p2._0
                     ,A2($Html.a,
                     _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
                     _U.list([$Html.text("Revenir au menu")]))]));
@@ -10943,10 +10965,10 @@ Elm.TiledMenu.make = function (_elm) {
    var Tile = F4(function (a,b,c,d) {    return {title: a,iD: b,picture: c,link: d};});
    var nullTile = A4(Tile,"",0,"",$Maybe.Nothing);
    var update = F2(function (action,model) {
-      var _p13 = action;
-      if (_p13.ctor === "ShowTile") {
-            var _p14 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p13._0,model.menuData));
-            var newContent = _p14._1;
+      var _p8 = action;
+      if (_p8.ctor === "ShowTile") {
+            var _p9 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p8._0,model.menuData));
+            var newContent = _p9._1;
             return _U.update(model,{current: Content(newContent)});
          } else {
             return _U.update(model,{current: Menu});
@@ -10957,45 +10979,45 @@ Elm.TiledMenu.make = function (_elm) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p15) {
-         var _p16 = _p15;
-         var _p18 = _p16._0._0;
-         var _p17 = _p16._1;
+      function (_p10) {
+         var _p11 = _p10;
+         var _p13 = _p11._0._0;
+         var _p12 = _p11._1;
          return {ctor: "_Tuple2"
-                ,_0: _p17
+                ,_0: _p12
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p18,_p17,_p16._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p18)])),_p16._0._2))}};
+                     ,_0: A4(Tile,_p13,_p12,_p11._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p13)])),_p11._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A2(Model,Menu,$Dict.fromList(xs$));
    };
    var initAt = F2(function (urlParams,xs) {
       var model = init(xs);
-      var title = getTitle(urlParams);
+      var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p19 = maybeId;
-      if (_p19.ctor === "Nothing") {
+      var _p14 = maybeId;
+      if (_p14.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p19._0),model);
+            return A2(update,ShowTile(_p14._0),model);
          }
    });
    var initWithLink = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p20) {
-         var _p21 = _p20;
-         var _p24 = _p21._0._0;
-         var _p23 = _p21._0._3;
-         var _p22 = _p21._1;
-         var l$ = $String.isEmpty(_p23) ? $Maybe.Nothing : $Maybe.Just(_p23);
+      function (_p15) {
+         var _p16 = _p15;
+         var _p19 = _p16._0._0;
+         var _p18 = _p16._0._3;
+         var _p17 = _p16._1;
+         var l$ = $String.isEmpty(_p18) ? $Maybe.Nothing : $Maybe.Just(_p18);
          return {ctor: "_Tuple2"
-                ,_0: _p22
+                ,_0: _p17
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p24,_p22,_p21._0._1,l$)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p21._0._2))}};
+                     ,_0: A4(Tile,_p19,_p17,_p16._0._1,l$)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p19)])),_p16._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A2(Model,Menu,$Dict.fromList(xs$));
@@ -11015,12 +11037,121 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,maybeElem: maybeElem
                                   ,nullTile: nullTile
                                   ,nullTag: nullTag
-                                  ,getByTitle: getByTitle
-                                  ,getTitle: getTitle
-                                  ,parseParams: parseParams
-                                  ,splitAtFirst: splitAtFirst
-                                  ,firstOccurrence: firstOccurrence
-                                  ,putSpaces: putSpaces};
+                                  ,getByTitle: getByTitle};
+};
+Elm.StarTable = Elm.StarTable || {};
+Elm.StarTable.make = function (_elm) {
+   "use strict";
+   _elm.StarTable = _elm.StarTable || {};
+   if (_elm.StarTable.values) return _elm.StarTable.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var labelToHtml = function (l) {    var _p0 = l;if (_p0.ctor === "NoLabel") {    return nullTag;} else {    return nullTag;}};
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var TableEntry = function (a) {
+      return function (b) {
+         return function (c) {
+            return function (d) {
+               return function (e) {
+                  return function (f) {
+                     return function (g) {
+                        return function (h) {
+                           return function (i) {
+                              return function (j) {
+                                 return function (k) {
+                                    return function (l) {
+                                       return {name: a,label: b,stars: c,refOt: d,descr: e,addr: f,tel: g,fax: h,mail: i,site: j,pjaun: k,pics: l};
+                                    };
+                                 };
+                              };
+                           };
+                        };
+                     };
+                  };
+               };
+            };
+         };
+      };
+   };
+   var NoLabel = {ctor: "NoLabel"};
+   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")("")(_U.list([]));
+   var FamillePlus = {ctor: "FamillePlus"};
+   var addStars = F2(function (n,s) {
+      var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
+      var _p1 = n;
+      if (_p1.ctor === "Nothing") {
+            return $Html.text(s);
+         } else {
+            return A2($Html.span,
+            _U.list([]),
+            _U.list([$Html.text(A2($Basics._op["++"],s," ")),A2($Html.span,_U.list([$Html$Attributes.$class("stars")]),_U.list([$Html.text(go(_p1._0))]))]));
+         }
+   });
+   var makeRow = F2(function (_p2,alt) {
+      var _p3 = _p2;
+      var alt$ = alt ? "altLine" : "Line";
+      var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
+      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
+      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
+      var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
+      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
+      var pjaun$ = A2(maybeElem,
+      _p3.pjaun,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("Pages Jaunes: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var site$ = A2(maybeElem,
+      _p3.site,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var mail$ = A2(maybeElem,
+      _p3.mail,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      var label$ = labelToHtml(_p3.label);
+      var name$ = A2($Html.h6,_U.list([]),_U.list([A2(addStars,_p3.stars,_p3.name)]));
+      return A2($Html.tr,
+      _U.list([$Html$Attributes.$class(alt$)]),
+      _U.list([A2($Html.td,
+              _U.list([]),
+              A2($Basics._op["++"],_U.list([name$,label$,refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$,pjaun$]))))
+              ,A2($Html.td,_U.list([]),_U.list([pics$]))]));
+   });
+   var makeTable = F2(function (name,entries) {
+      var makeRows = F2(function (b,xs) {
+         var _p4 = xs;
+         if (_p4.ctor === "[]") {
+               return _U.list([]);
+            } else {
+               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
+            }
+      });
+      return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
+   });
+   return _elm.StarTable.values = {_op: _op
+                                  ,addStars: addStars
+                                  ,FamillePlus: FamillePlus
+                                  ,NoLabel: NoLabel
+                                  ,TableEntry: TableEntry
+                                  ,emptyTe: emptyTe
+                                  ,makeTable: makeTable
+                                  ,makeRow: makeRow
+                                  ,maybeElem: maybeElem
+                                  ,nullTag: nullTag
+                                  ,labelToHtml: labelToHtml};
 };
 Elm.Murol = Elm.Murol || {};
 Elm.Murol.make = function (_elm) {
@@ -11630,15 +11761,14 @@ Elm.Murol.make = function (_elm) {
                               ,news: news
                               ,newsletters: newsletters};
 };
-Elm.Associations = Elm.Associations || {};
-Elm.Associations.make = function (_elm) {
+Elm.AssociationsList = Elm.AssociationsList || {};
+Elm.AssociationsList.make = function (_elm) {
    "use strict";
-   _elm.Associations = _elm.Associations || {};
-   if (_elm.Associations.values) return _elm.Associations.values;
+   _elm.AssociationsList = _elm.AssociationsList || {};
+   if (_elm.AssociationsList.values) return _elm.AssociationsList.values;
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
@@ -11646,69 +11776,123 @@ Elm.Associations.make = function (_elm) {
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
-   var contentMap = $Dict.fromList(_U.list([]));
-   var changeMain = F2(function (model,s) {
-      var newContent = A2($Dict.get,s,contentMap);
-      var _p0 = newContent;
-      if (_p0.ctor === "Nothing") {
-            return model;
-         } else {
-            return _U.update(model,{mainContent: _p0._0});
-         }
-   });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var mailsToHtml = function (mails) {
+      var _p0 = mails;
+      if (_p0.ctor === "[]") {
+            return nullTag;
+         } else {
+            return A2($Html.div,
+            _U.list([$Html$Attributes.$class("mailsAssoc")]),
+            A2($Basics._op["++"],
+            _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Email(s): ")]))]),
+            A2($List.map,
+            function (m) {
+               return A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",m))]),_U.list([$Html.text(m)]));
+            },
+            mails)));
+         }
+   };
+   var sitesToHtml = function (sites) {
+      var _p1 = sites;
+      if (_p1.ctor === "[]") {
+            return nullTag;
+         } else {
+            return A2($Html.div,
+            _U.list([$Html$Attributes.$class("sitesAssoc")]),
+            A2($Basics._op["++"],
+            _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Site(s): ")]))]),
+            A2($List.map,function (s) {    return A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]));},sites)));
+         }
+   };
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var renderResp = function (_p2) {
       var _p3 = _p2;
-      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.span,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"]," - Tel. ",s))]));});
-      var nom$ = A2(maybeElem,_p3.nom,function (s) {    return A2($Html.span,_U.list([]),_U.list([$Html.text(s)]));});
-      var poste$ = A2(maybeElem,_p3.poste,function (s) {    return A2($Html.span,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],s,": "))]));});
-      return A2($Html.div,_U.list([$Html$Attributes.$class("responsable")]),_U.list([poste$,nom$,tel$]));
+      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"]," Tel: ",s))]));});
+      var poste$ = A2(maybeElem,
+      _p3.poste,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],s,A2($Basics._op["++"],": ",_p3.nom)))]));
+      });
+      return _U.list([poste$,tel$]);
    };
    var renderAssoc = function (_p4) {
       var _p5 = _p4;
-      var sites$ = A2($List.map,function (s) {    return A2($Murol.link,s,s);},_p5.sites);
-      var mails$ = A2($List.map,$Murol.mail,_p5.mails);
-      var resp$ = A2($List.map,renderResp,_p5.resp);
-      var affil$ = A2(maybeElem,_p5.affil,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Affiliation: ",s))]));});
-      var siege$ = A2(maybeElem,_p5.siege,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Siège social: ",s))]));});
+      var _p6 = _p5.resp;
+      var sites$ = sitesToHtml(_p5.sites);
+      var mails$ = mailsToHtml(_p5.mails);
+      var resp$ = $List.isEmpty(_p6) ? nullTag : A2($Html.div,
+      _U.list([$Html$Attributes.$class("resps")]),
+      A2($Basics._op["++"],
+      _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Responsable(s): ")]))]),
+      $List.concat(A2($List.intersperse,_U.list([A2($Html.br,_U.list([]),_U.list([]))]),A2($List.map,renderResp,_p6)))));
+      var affil$ = A2(maybeElem,
+      _p5.affil,
+      function (s) {
+         return A2($Html.div,
+         _U.list([$Html$Attributes.$class("affil")]),
+         _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Affiliation: ")])),A2($Html.p,_U.list([]),_U.list([$Html.text(s)]))]));
+      });
+      var siege$ = A2(maybeElem,
+      _p5.siege,
+      function (s) {
+         return A2($Html.div,
+         _U.list([$Html$Attributes.$class("siege")]),
+         _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Siège social: ")])),A2($Html.p,_U.list([]),_U.list([$Html.text(s)]))]));
+      });
       var dom$ = A2(maybeElem,
       _p5.domaine,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Domaine de compétences: ",s))]));
+         return A2($Html.div,
+         _U.list([$Html$Attributes.$class("domaine")]),
+         _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Domaine de compétences: ")]))
+                 ,A2($Html.p,_U.list([]),_U.list([$Html.text($Murol.capitalize(s))]))]));
       });
       var preci$ = A2(maybeElem,_p5.preci,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      var nom$ = A2(maybeElem,_p5.nom,function (s) {    return A2($Html.h6,_U.list([]),_U.list([$Html.text(s)]));});
-      return A2($Html.div,
-      _U.list([$Html$Attributes.$class("assoc")]),
-      A2($Basics._op["++"],_U.list([nom$,preci$,dom$,siege$,affil$]),A2($Basics._op["++"],resp$,A2($Basics._op["++"],mails$,sites$))));
+      var nom$ = A2(maybeElem,_p5.nom,function (s) {    return A2($Html.h5,_U.list([]),_U.list([$Html.text(s)]));});
+      return A2($Html.div,_U.list([$Html$Attributes.$class("assoc")]),_U.list([nom$,preci$,dom$,siege$,affil$,resp$,mails$,sites$]));
    };
-   var view = F2(function (address,model) {
-      return A2($Html.div,
-      _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Culture et loisirs","Associations"]),function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
-   });
-   var Assoc = F9(function (a,b,c,d,e,f,g,h,i) {    return {nom: a,preci: b,domaine: c,siege: d,affil: e,resp: f,mails: g,sites: h,logo: i};});
-   var emptyAssoc = A9(Assoc,"","","","","",_U.list([]),_U.list([]),_U.list([]),"");
+   var renderAssocs = function (assocs) {
+      var col = function (ds) {    return A2($Html.div,_U.list([$Html$Attributes.$class("column")]),ds);};
+      var assocs$ = A2($List.sortBy,function (_) {    return _.nom;},assocs);
+      var toDivs = A2($List.map,renderAssoc,assocs$);
+      return A2($Html.div,_U.list([]),A2($List.map,col,$Murol.split3$(toDivs)));
+   };
+   var Pro = {ctor: "Pro"};
+   var Sport = {ctor: "Sport"};
+   var Culture = {ctor: "Culture"};
+   var Assoc = function (a) {
+      return function (b) {
+         return function (c) {
+            return function (d) {
+               return function (e) {
+                  return function (f) {
+                     return function (g) {
+                        return function (h) {
+                           return function (i) {
+                              return function (j) {
+                                 return {nom: a,preci: b,domaine: c,siege: d,affil: e,resp: f,mails: g,sites: h,logo: i,cat: j};
+                              };
+                           };
+                        };
+                     };
+                  };
+               };
+            };
+         };
+      };
+   };
+   var emptyAssoc = Assoc("")("")("")("")("")(_U.list([]))(_U.list([]))(_U.list([]))("")(Culture);
    var assocs = _U.list([_U.update(emptyAssoc,
                         {nom: "Amicale des chasseurs murolais"
                         ,domaine: "société de chasse"
                         ,siege: "mairie de Murol 63790 MUROL"
                         ,affil: "Fédération départementale des chasseurs du Puy-de-Dôme"
                         ,resp: _U.list([{poste: "Président",nom: "Laurent GASCHON",tel: "06 8667 1322"}])
-                        ,mails: _U.list(["laurent.gaschon@laposte.net"])})
+                        ,mails: _U.list(["laurent.gaschon@laposte.net"])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Amicale des Sapeurs Pompiers"
                         ,domaine: "actions en faveur des sapeurs pompiers, organisation de festivités sur la commune"
@@ -11738,7 +11922,8 @@ Elm.Associations.make = function (_elm) {
                         ,domaine: "activité ski de fond"
                         ,siege: "Beaune-le-Froid 63790 MUROL"
                         ,resp: _U.list([{poste: "Président",nom: "Yannick LATREILLE",tel: "04 7388 8118"}])
-                        ,mails: _U.list(["yannick-latreille@hotmail.fr"])})
+                        ,mails: _U.list(["yannick-latreille@hotmail.fr"])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Association de la Foire du Saint Nectaire de Beaune le Froid"
                         ,domaine: "organisation de manifestations agricoles, promotion du \n                 Saint Nectaire fermier et des produits régionaux, activités d’animation dans la commune"
@@ -11786,7 +11971,8 @@ Elm.Associations.make = function (_elm) {
                         ,siege: "école primaire de Chambon sur Lac"
                         ,affil: "USEP Sancy, les Hermines"
                         ,resp: _U.list([{poste: "Présidente",nom: "Carine BABUT",tel: "04 7388 6816"}])
-                        ,mails: _U.list(["ecole.chambon-sur-lac.63@ac-clermont.fr"])})
+                        ,mails: _U.list(["ecole.chambon-sur-lac.63@ac-clermont.fr"])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Bureau Montagne Auvergne Sancy Volcans"
                         ,domaine: "activités sportives de pleine nature grand public"
@@ -11794,7 +11980,8 @@ Elm.Associations.make = function (_elm) {
                         ,resp: _U.list([{poste: "Présidente",nom: "Arlette GOIMARD",tel: "06 2275 4237"}
                                        ,{poste: "Coordinateur activités hiver printemps",nom: "Romain Mezonnet",tel: "06 7524 1504"}
                                        ,{poste: "Coordinateur activités estivales",nom: "Ernesto RUIZ",tel: "06 8423 8728"}])
-                        ,mails: _U.list(["bertrandgoimard@hotmail.com","contact@guides-asv.com"])})
+                        ,mails: _U.list(["bertrandgoimard@hotmail.com","contact@guides-asv.com"])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Chambre syndicale des commerçants des marchés du Puy de Dôme (CSCM du 63)"
                         ,domaine: "organisation de la Foire du Terroir de Murol"
@@ -11807,7 +11994,8 @@ Elm.Associations.make = function (_elm) {
                         ,domaine: "développement de l\'activité commerciale"
                         ,siege: "rue Georges Sand - 63790 MUROL"
                         ,resp: _U.list([{poste: "Président",nom: "jean-Jacques ROUCHVARGER",tel: "06 3297 0219"}])
-                        ,mails: _U.list(["njrorganisation@orange.fr"])})
+                        ,mails: _U.list(["njrorganisation@orange.fr"])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "COSA63"
                         ,domaine: "organisation de forums associatifs"
@@ -11818,7 +12006,8 @@ Elm.Associations.make = function (_elm) {
                         {nom: "Don de Sang bénévole du Canton de Besse"
                         ,domaine: "organiser les collectes de sang sur le canton"
                         ,siege: "3, cour des miracles 63610 BESSE"
-                        ,resp: _U.list([{poste: "Président",nom: "Pierre SOULIER ",tel: "04 7379 5070"}])})
+                        ,resp: _U.list([{poste: "Président",nom: "Pierre SOULIER ",tel: "04 7379 5070"}])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "EIVV"
                         ,siege: "Lac Chambon - 63790 Chambon sur lac"
@@ -11835,7 +12024,8 @@ Elm.Associations.make = function (_elm) {
                         {nom: "Groupement de défense contre les ennemis des cultures"
                         ,domaine: "lutte contre les nuisibles"
                         ,siege: "Chautignat - 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "Jean-Marie PEROL",tel: "04 7388 6890"}])})
+                        ,resp: _U.list([{poste: "Président",nom: "Jean-Marie PEROL",tel: "04 7388 6890"}])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Groupement pastorale de la Couialle"
                         ,siege: "mairie de Murol - 63 790 MUROL"
@@ -11852,18 +12042,21 @@ Elm.Associations.make = function (_elm) {
                         ,domaine: "société de Pêche"
                         ,siege: "Les rives - lac Chambon 63790 Chambon sur lac"
                         ,affil: "fédération de pêche du Puy de Dôme et du milieu aquatique (LEMPDES)"
-                        ,resp: _U.list([{poste: "Président",nom: "Bernard LABASSE",tel: "04 7388 6409 / 09 6147 6717"}])})
+                        ,resp: _U.list([{poste: "Président",nom: "Bernard LABASSE",tel: "04 7388 6409 / 09 6147 6717"}])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "La Main Gauche"
                         ,domaine: "club sportif de pétanque"
                         ,siege: "bar Intimyté, route de Besse, 63790 MUROL "
-                        ,resp: _U.list([{poste: "Président",nom: "Christophe GUITTARD",tel: "06 2851 2802"}])})
+                        ,resp: _U.list([{poste: "Président",nom: "Christophe GUITTARD",tel: "06 2851 2802"}])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Le XV de la Vallée Verte"
                         ,domaine: "rugby"
                         ,siege: "bar « Les Baladins », 63790 St Nectaire"
                         ,resp: _U.list([{poste: "Président",nom: "Bruno SERRE",tel: "04 7388 5135"}])
-                        ,mails: _U.list(["lexvdelavalleeverte@hotmail.fr","julien.boucheix@orange.fr","contact@stephane-cregut.fr"])})
+                        ,mails: _U.list(["lexvdelavalleeverte@hotmail.fr","julien.boucheix@orange.fr","contact@stephane-cregut.fr"])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Les Amis du Vieux Murol"
                         ,domaine: "association des personnes du troisième âge"
@@ -11889,28 +12082,33 @@ Elm.Associations.make = function (_elm) {
                         ,domaine: "Activité de pleine nature, tout public\n                 Protection du patrimoine naturel en milieu montagnard,\n                 activités lié à la découverte du patrimoine."
                         ,siege: "route de Besse, 63790 MUROL"
                         ,resp: _U.list([{poste: "Présidente",nom: "Véronique DEBOUT",tel: "04 7388 6756 ou – Tél : 06 2806 8177"}])
-                        ,mails: _U.list(["natur.sancy@gmail.com","http://natursancy.blogspot.fr/"])})
+                        ,mails: _U.list(["natur.sancy@gmail.com","http://natursancy.blogspot.fr/"])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Rencontre et détente"
                         ,domaine: "activités gymniques"
                         ,siege: "rue du Tartaret 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Sylvie BEAL",tel: "04 73 88 66 21"}])})
+                        ,resp: _U.list([{poste: "Présidente",nom: "Sylvie BEAL",tel: "04 73 88 66 21"}])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Société de Chasse"
                         ,domaine: "société de chasse"
                         ,siege: "Beaune le Froid 63790 MUROL"
                         ,affil: "Fédération départementale des chasseurs du Puy-de-Dôme"
-                        ,resp: _U.list([{poste: "Président",nom: "Laurent PLANEIX",tel: "04 73 88 60 74"}])})
+                        ,resp: _U.list([{poste: "Président",nom: "Laurent PLANEIX",tel: "04 73 88 60 74"}])
+                        ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Syndicat agricole"
                         ,domaine: "syndicat professionnel"
                         ,siege: "mairie de Murol 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Angélique LAIR",tel: "04 7388 8110"}])})
+                        ,resp: _U.list([{poste: "Présidente",nom: "Angélique LAIR",tel: "04 7388 8110"}])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Syndicat hôtelier"
                         ,domaine: "syndicat professionnel"
                         ,siege: "rue de la Vieille Tour 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Amélie DABERT",tel: "04 7388 6106 "}])})
+                        ,resp: _U.list([{poste: "Présidente",nom: "Amélie DABERT",tel: "04 7388 6106 "}])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Système d\'Echange Local \"S.SancyEL\""
                         ,domaine: "association à caractère social permettant à leur membres de procéder\n                 à des échanges de biens, de services et de savoirs, sans avoir recours à la monnaie. "
@@ -11929,34 +12127,103 @@ Elm.Associations.make = function (_elm) {
                         ,domaine: "charte professionnelle de qualité"
                         ,affil: "Camping Qualité national"
                         ,siege: "Jassat 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Sylvie JORY",tel: ""}])})]);
-   var renderAssocs = function () {
-      var assocs$ = A2($List.sortBy,function (_) {    return _.nom;},assocs);
-      return A2($Html.div,_U.list([$Html$Attributes.$class("assocs")]),A2($List.map,renderAssoc,assocs$));
-   }();
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("associations")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Associations")])),renderAssocs]));
+                        ,resp: _U.list([{poste: "Présidente",nom: "Sylvie JORY",tel: ""}])
+                        ,cat: Pro})]);
+   var culture = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Culture);},assocs));
+   var sport = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Sport);},assocs));
+   var pro = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Pro);},assocs));
+   var associations = _U.list([{ctor: "_Tuple3",_0: "Culture et événementiel",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([culture])}
+                              ,{ctor: "_Tuple3",_0: "Sport",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([sport])}
+                              ,{ctor: "_Tuple3",_0: "Professionnel",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([pro])}]);
    var Responsable = F3(function (a,b,c) {    return {poste: a,nom: b,tel: c};});
-   var subMenu = _U.list([]);
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   return _elm.AssociationsList.values = {_op: _op
+                                         ,Responsable: Responsable
+                                         ,Assoc: Assoc
+                                         ,Culture: Culture
+                                         ,Sport: Sport
+                                         ,Pro: Pro
+                                         ,emptyAssoc: emptyAssoc
+                                         ,renderAssocs: renderAssocs
+                                         ,renderAssoc: renderAssoc
+                                         ,renderResp: renderResp
+                                         ,maybeElem: maybeElem
+                                         ,nullTag: nullTag
+                                         ,mailsToHtml: mailsToHtml
+                                         ,sitesToHtml: sitesToHtml
+                                         ,associations: associations
+                                         ,culture: culture
+                                         ,sport: sport
+                                         ,pro: pro
+                                         ,assocs: assocs};
+};
+Elm.Associations = Elm.Associations || {};
+Elm.Associations.make = function (_elm) {
+   "use strict";
+   _elm.Associations = _elm.Associations || {};
+   if (_elm.Associations.values) return _elm.Associations.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $AssociationsList = Elm.AssociationsList.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
+   var _op = {};
+   var initialContent = {wrapper: function (content) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("associations")]),
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Associations")])),content]));
+                        }
+                        ,tiledMenu: A2($TiledMenu.initAt,"",$AssociationsList.associations)};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Associations"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))))]))
+              ,$Murol.pageFooter]));
+   });
+   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var Model = F2(function (a,b) {    return {mainMenu: a,mainContent: b};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    return _elm.Associations.values = {_op: _op
-                                     ,subMenu: subMenu
+                                     ,MainContent: MainContent
+                                     ,Model: Model
                                      ,initialModel: initialModel
-                                     ,Responsable: Responsable
-                                     ,Assoc: Assoc
-                                     ,emptyAssoc: emptyAssoc
                                      ,view: view
-                                     ,renderAssocs: renderAssocs
-                                     ,renderAssoc: renderAssoc
-                                     ,renderResp: renderResp
-                                     ,maybeElem: maybeElem
-                                     ,nullTag: nullTag
-                                     ,contentMap: contentMap
+                                     ,NoOp: NoOp
+                                     ,TiledMenuAction: TiledMenuAction
                                      ,update: update
-                                     ,changeMain: changeMain
                                      ,main: main
-                                     ,initialContent: initialContent
-                                     ,assocs: assocs};
+                                     ,initialContent: initialContent};
 };

@@ -23,26 +23,8 @@ Elm.CCAS.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vice-présidente: Sylvie GILLARD")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Régie : Joséphine LANARO")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("+ cinq membres non élus à désigner par le maire parmi les Murolais.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Mutuelle municipale")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votre avis compte !")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Lors des élections, vous avez soutenu l’élaboration d’un \n                     projet concret pour améliorer votre pouvoir d’achat :")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("la création d’une complémentaire santé communale avec un \n                     tarif unique et accessible à tous. Une complémentaire \n                     santé, rappelons-le, sert à couvrir partiellement ou en \n                     totalité les frais médicaux non remboursés par votre \n                     assurance maladie. Nous sollicitons aujourd’hui un peu de \n                     votre temps pour répondre à quelques questions qui \n                     permettront de créer une offre adaptée à vos \n                     besoins. Grâce au questionnaire ci-dessous les tarifs des \n                     différentes mutuelles seront mis en concurrence. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("La commune lance une consultation pour proposer une \n                     complémentaire santé à des tarifs négociés à ses \n                     habitants. Proposé aux murolais de se regrouper pour \n                     négocier une complémentaire santé à des tarifs préférentiels")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Vous recevrez dans le bulletin municipal un questionnaire \n                     à remplir et à retourner pour cerner les \n                     besoins et les personnes concernées par ce dispositif, \n                     vous pouvez également répondre en ligne au questionnaire \n                     en suivant le lien ci-dessous.. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Une fois les réponses des murolais compilées par \n                    la mairie, les élus passeront ensuite à la \n                    phase de négociation avec les organismes de santé. \n                    \" Plus nous serons nombreux, plus les tarifs \n                    seront intéressants.\"")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Questionnaire Mutuelle municipale")]))
-           ,A2($Murol.link,"Remplir en ligne","https://docs.google.com/forms/d/179U2zTrhm6usamB724BMlI197oXq58-TS-3sIi933wM/viewform?usp=send_form")]));
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres non élus désignés par le maire parmi les Murolais:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Paulette Benatek, Floriane Chazet-Fillon, Olivier Dhainaut, Monique Picot et Monique Planeix")]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

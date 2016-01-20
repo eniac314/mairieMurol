@@ -120,7 +120,7 @@ initialContent =
             )
             ,
             ( "Chambres d'Hôtes"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/hebergements/chambresHotes.jpg"
             , [ p  [] [ text "Elles répondent aux exigences actuelles de la clientèle, 
                              en proposant des prestations de très bon confort. 
                              Séjourner en chambre d'hôtes, c'est partager le quotidien 

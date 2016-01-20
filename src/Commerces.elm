@@ -82,7 +82,7 @@ renderCommerce { name, descr, addr, tel, fax, mail, site, pjaun} =
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
       pjaun'  = maybeElem
-                 site (\s -> p [] [text "Pages Jaunes: ", a [href s] [text s]])
+                 pjaun (\s -> p [] [text "Pages Jaunes: ", a [href s] [text s]])
   in div [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site', pjaun'])
 
 

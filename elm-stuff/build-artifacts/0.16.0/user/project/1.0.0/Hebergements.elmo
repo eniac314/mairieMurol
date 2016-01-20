@@ -258,7 +258,7 @@ Elm.Hebergements.make = function (_elm) {
                                                                           ,A2($StarTable.makeTable,"Campings",campings)])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Chambres d\'Hôtes"
-                                                             ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                                             ,_1: "/images/tiles/hebergements/chambresHotes.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                             en proposant des prestations de très bon confort. \n                             Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                             de personnes passionnées par leur région et attentives \n                             à la qualité de l\'accueil.")]))

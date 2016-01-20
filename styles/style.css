@@ -1274,6 +1274,79 @@ h5.trashCat {
 /*--end of code for Mairie-------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
+  style fot Associations
+-------------------------------------------------------------------------------*/
+.assoc {
+  background: linear-gradient(to top, rgba(97,124,129,0.2), rgba(110,117,142,0.9));
+  width: 300px;
+  height: auto;
+  vertical-align: top;
+  display: block;
+  text-align: center;
+  margin: 1em 1em;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px gray;
+}
+
+.assoc h5 {
+  background-color: rgba(255,255,255,0.8);
+  text-align: center;
+  color: black;
+  border-top: 1px double black;
+  border-bottom: 1px double black;
+  clear: left;
+}
+ 
+.assoc h5 {
+  border: 1px double black;
+  color: black;
+  font-size: 17px;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.assoc div {
+  border-top: 1px solid gray;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
+.assoc h6{
+ border-style: none;
+ background-color: lightgrey;
+ width: auto;
+ text-align: left;
+
+}
+
+.assoc p {
+  text-align: left;
+  margin: 0;
+}
+
+.mailsAssoc{
+  text-align: left;
+}
+
+.mailsAssoc a {
+  display: block;
+  
+}
+.sitesAssoc{
+ text-align: left;
+}
+
+.sitesAssoc a {
+ display: block;
+}
+
+/*--end of code for Associations-------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------------------
   style for Numeros D'urgence
 -------------------------------------------------------------------------------*/
 #urgence {

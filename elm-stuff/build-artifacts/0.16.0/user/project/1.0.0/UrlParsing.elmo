@@ -1,0 +1,65 @@
+Elm.UrlParsing = Elm.UrlParsing || {};
+Elm.UrlParsing.make = function (_elm) {
+   "use strict";
+   _elm.UrlParsing = _elm.UrlParsing || {};
+   if (_elm.UrlParsing.values) return _elm.UrlParsing.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var putSpaces = function (xs) {    var xs$ = A2($String.split,"%20",xs);return A2($String.join," ",xs$);};
+   var firstOccurrence = F2(function (c,s) {
+      var _p0 = A2($String.indexes,$String.fromChar(c),s);
+      if (_p0.ctor === "[]") {
+            return $Maybe.Nothing;
+         } else {
+            return $Maybe.Just(_p0._0);
+         }
+   });
+   var splitAtFirst = F2(function (c,s) {
+      var _p1 = A2(firstOccurrence,c,s);
+      if (_p1.ctor === "Nothing") {
+            return {ctor: "_Tuple2",_0: s,_1: ""};
+         } else {
+            var _p2 = _p1._0;
+            return {ctor: "_Tuple2",_0: A2($String.left,_p2,s),_1: A2($String.dropLeft,_p2 + 1,s)};
+         }
+   });
+   var parseParams = function (stringWithAmpersands) {
+      var eachParam = A2($String.split,"&",stringWithAmpersands);
+      var eachPair = A2($List.map,splitAtFirst(_U.chr("=")),eachParam);
+      var _p3 = $List.head(eachPair);
+      if (_p3.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p3._0.ctor === "_Tuple2" && _p3._0._0 === "bloc") {
+                  return _p3._0._1;
+               } else {
+                  return "";
+               }
+         }
+   };
+   var getTitle = function (urlParams) {
+      var _p4 = $String.uncons(urlParams);
+      if (_p4.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p4._0.ctor === "_Tuple2" && _p4._0._0.valueOf() === "?") {
+                  return parseParams(putSpaces(_p4._0._1));
+               } else {
+                  return "";
+               }
+         }
+   };
+   return _elm.UrlParsing.values = {_op: _op
+                                   ,getTitle: getTitle
+                                   ,parseParams: parseParams
+                                   ,splitAtFirst: splitAtFirst
+                                   ,firstOccurrence: firstOccurrence
+                                   ,putSpaces: putSpaces};
+};

@@ -38,14 +38,13 @@ Elm.Commerces.make = function (_elm) {
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var renderCommerce = function (_p2) {
       var _p3 = _p2;
-      var _p4 = _p3.site;
       var pjaun$ = A2(maybeElem,
-      _p4,
+      _p3.pjaun,
       function (s) {
          return A2($Html.p,_U.list([]),_U.list([$Html.text("Pages Jaunes: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
       });
       var site$ = A2(maybeElem,
-      _p4,
+      _p3.site,
       function (s) {
          return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
       });

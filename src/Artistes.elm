@@ -1,4 +1,4 @@
-module ArtEtMusique where
+module Artistes where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -37,7 +37,7 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Culture et loisirs", "Art et musique"]
+      [ renderMainMenu address ["Culture et loisirs", "Artistes"]
                                (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
@@ -72,15 +72,21 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData noSubmenu", id "artEtMusique"]
-      [ h2 [] [text "Art et musique"]
-      , h3 [] [text "Artistes Murolais"]
+  div [ class "subContainerData noSubmenu", id "artistes"]
+      [ h2 [] [text "Artistes Murolais"]
+      , h5 [] [text "Site Internet gratuit des \"Artistes Murolais Contemporains\":" ]
       , p  [] [text "Danielle lance l'idée d'un Site Internet gratuit des \"Artistes Murolais Contemporains\""]
       , p  [] [text "Peinture, dessin, poésie, sculpture, artisanat d'art, etc....."]
       , p  [] [text "vous êtes intéressés, contactez-la en utilisant les lien ci-dessous"]
       , p  [] [link "http://murol-terre-des-arts.wifeo.com" " http://murol-terre-des-arts.wifeo.com"]
       , p  [] [link "http://murolpoesicales.wifeo.com" "http://murolpoesicales.wifeo.com"]
       , p  [] [link "http://daniellaero.wifeo.com" "http://daniellaero.wifeo.com"]
+
+
+      , h5 [] [text "Cath Cuir: "]
+      , p  [] [text "Rue de Chabrol 63790 MUROL"]
+      , p  [] [text "Tel: 0611891452"]
+      , p  [] [text "Ouvert de juin à août"] 
 
       , h4 [] [text "Création d'un orchestre"]
       , p  [] [text "Madame Marie-Laure Franc, chef d'orchestre, cherche des musiciens pour créer un orchestre dans notre région."]
