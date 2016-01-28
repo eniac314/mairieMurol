@@ -1,0 +1,114 @@
+Elm.MurolInfos = Elm.MurolInfos || {};
+Elm.MurolInfos.make = function (_elm) {
+   "use strict";
+   _elm.MurolInfos = _elm.MurolInfos || {};
+   if (_elm.MurolInfos.values) return _elm.MurolInfos.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var murolInf = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("murolInfPubli")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Murol info")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2008")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 01 - Avril","http://www.murol.fr/Murol_info/01.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 02 - Mai","http://www.murol.fr/Murol_info/02.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 03 - Juin","http://www.murol.fr/Murol_info/03.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 04 - Septembre","http://www.murol.fr/Murol_info/04.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 05 - Décembre","http://www.murol.fr/Murol_info/05.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2009")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 05 - Février","http://www.murol.fr/Murol_info/06.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 07 - Mai","http://www.murol.fr/Murol_info/07.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 08 - Septembre","http://www.murol.fr/Murol_info/08.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 09 - Décembre","http://www.murol.fr/Murol_info/09.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2010")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 10 - Août","http://www.murol.fr/Murol_info/10.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 11 - Octobre","http://www.murol.fr/Murol_info/11.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 12 - Décembre","http://www.murol.fr/Murol_info/12.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2011")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 13 - Avril","http://www.murol.fr/Murol_info/13.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 14 - Mai","http://www.murol.fr/Murol_info/14.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 15 - Août","http://www.murol.fr/Murol_info/15.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 16 - Octobre","http://www.murol.fr/Murol_info/16.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2013")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 17 - Juin","http://www.murol.fr/Murol_info/17.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 18 - Novembre","http://www.murol.fr/Murol_info/18.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2014")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 19 - Avril","http://www.murol.fr/Murol_info/19.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 20 - Mai","http://www.murol.fr/Murol_info/20.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 21 - Juin","http://www.murol.fr/Murol_info/21.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 22 - Octobre","http://www.murol.fr/Murol_info/22.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 23 - Décembre","http://www.murol.fr/Murol_info/23.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2015")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 24 - Mai","http://www.murol.fr/Murol_info/24.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 25 - Juin","http://www.murol.fr/Murol_info/25.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 26 - Septembre","http://www.murol.fr/Murol_info/26.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 27 - Novembre","http://www.murol.fr/Murol_info/27.pdf")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2016")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 28 - Janvier","baseDocumentaire/MUROL INFOS 28.doc")]))]))]));
+   var initialContent = murolInf;
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Documentation","Murol Infos"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var Category = F2(function (a,b) {    return {title: a,entries: b};});
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.MurolInfos.values = {_op: _op
+                                   ,subMenu: subMenu
+                                   ,initialModel: initialModel
+                                   ,Category: Category
+                                   ,view: view
+                                   ,contentMap: contentMap
+                                   ,update: update
+                                   ,changeMain: changeMain
+                                   ,main: main
+                                   ,initialContent: initialContent
+                                   ,murolInf: murolInf};
+};

@@ -1,4 +1,4 @@
-module SportEtDetentes where
+module Phototheque where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -22,19 +22,16 @@ import Murol exposing (mainMenu,
                        link)
 
 -- Model
-subMenu = []
 
 initialModel =
   { mainMenu    = mainMenu
-  , subMenu     = subMenu
   , mainContent = initialContent
   }
-
 
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Culture et loisirs", "Sports et détente"]
+      [ renderMainMenu address ["Culture et loisirs","Phototheque"]
                                (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
@@ -42,7 +39,7 @@ view address model =
       , pageFooter
       ]
 
-
+-- Update
 
 contentMap =
  fromList []
@@ -50,14 +47,9 @@ contentMap =
 update action model =
   case action of
     NoOp    -> model
-    Entry s -> changeMain model s
     _       -> model
 
-changeMain model s =
-    let newContent = get s contentMap
-    in case newContent of
-        Nothing -> model
-        Just c  -> { model | mainContent = c }
+
 
 --Main
 
@@ -69,8 +61,6 @@ main =
     }
 
 initialContent =
-  div [ class "subContainerData", id "sportEtDetentes"]
-      []
-      
-
--- Data
+  div [ class "subContainerData noSubmenu", id "phototheque"]
+      [ 
+      ]

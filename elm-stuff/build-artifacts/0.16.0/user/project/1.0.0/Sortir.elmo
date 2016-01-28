@@ -1,0 +1,81 @@
+Elm.Sortir = Elm.Sortir || {};
+Elm.Sortir.make = function (_elm) {
+   "use strict";
+   _elm.Sortir = _elm.Sortir || {};
+   if (_elm.Sortir.values) return _elm.Sortir.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
+   var _op = {};
+   var initialContent = {wrapper: function (content) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Sortir")]),
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Sortir")])),content]));
+                        }
+                        ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4"
+                                                                     ,_0: "Musée des peintres"
+                                                                     ,_1: ""
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "http://www.musee-murol.fr/fr"}
+                                                                    ,{ctor: "_Tuple4",_0: "Château de Murol",_1: "",_2: _U.list([]),_3: "www.chateaudemurol.fr"}
+                                                                    ,{ctor: "_Tuple4",_0: "Dans les environs",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Cinéma"
+                                                                     ,_1: ""
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "http://www.besse-superbesse.fr/fr/information/72830/cinemas"}]))};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","Sortir"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))))]))
+              ,$Murol.pageFooter]));
+   });
+   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var Model = F2(function (a,b) {    return {mainMenu: a,mainContent: b};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
+   return _elm.Sortir.values = {_op: _op
+                               ,MainContent: MainContent
+                               ,Model: Model
+                               ,initialModel: initialModel
+                               ,view: view
+                               ,NoOp: NoOp
+                               ,TiledMenuAction: TiledMenuAction
+                               ,update: update
+                               ,main: main
+                               ,initialContent: initialContent};
+};

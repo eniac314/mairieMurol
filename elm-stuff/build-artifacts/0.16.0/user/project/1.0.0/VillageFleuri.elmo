@@ -1,0 +1,103 @@
+Elm.VillageFleuri = Elm.VillageFleuri || {};
+Elm.VillageFleuri.make = function (_elm) {
+   "use strict";
+   _elm.VillageFleuri = _elm.VillageFleuri || {};
+   if (_elm.VillageFleuri.values) return _elm.VillageFleuri.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("villageFleuri")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le concours des villes et villages fleuris")]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.id("compteRendu")]),
+           _U.list([A2($Murol.link,"Compte rendu visite du jury en 2014","/baseDocumentaire/villageFleuri/compteRenduJury2014.pdf")
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/Village fleuri.jpg")]),_U.list([]))
+                   ,A2($Html.br,_U.list([]),_U.list([]))
+                   ,A2($Murol.link," Téléchargez la fiche de présentation (PDF)","/baseDocumentaire/villageFleuri/presentationFR.pdf")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("L\'organisation")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le concours, qui a pour vocation de promouvoir \n                     et d\'encourager toute action en faveur du développement \n                     des espaces verts et de l\'amélioration du cadre \n                     de vie, consiste à attribuer une série de \n                     Fleurs (de une à quatre) correspondant au label \n                     ou à la marque \"Villes et Villages Fleuris \n                     \". ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un Grand Prix est attribué par le Jury \n                   National afin de distinguer les communes proposant des \n                   aménagements exceptionnels.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ces Fleurs sont apposées sur une signalétique spécifique \n                   représentée par un panneau à l\'entrée de la \n                   commune. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text(" National, gratuit et ouvert à toutes les communes,\n                     le concours se déroule à plusieurs échelons (voir schéma ci-contre):")]))
+           ,A2($Html.img,_U.list([$Html$Attributes.src("schema")]),_U.list([]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Dans le cadre de la loi de décentralisation et à partir de 1988,\n                    le concours est organisé avec le soutien des départements et des régions.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("L\'inscription")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Elle se fait auprès de la structure départementale \n                     chargée de recueillir les inscriptions des communes, et \n                     d\'organiser le concours départemental à l\'issu duquel une \n                     sélection sera proposée à la région pour l\'attribution \n                     de la première fleur. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le règlement")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le règlement du concours est édité par le \n                     Conseil National des Villes et Villages Fleuris et \n                     diffusé sur l\'ensemble des communes du territoire national \n                     et des DOM / TOM par les structures \n                     départementales chargées du concours.")]))
+           ,A2($Murol.link,"Règlement (pdf)","/baseDocumentaire/villageFleuri/reglement.pdf")
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les évolutions du concours")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Durant les quarantes dernières années, le concours n\'a \n                     cessé d\'évoluer : ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Tout d\'abord, une évolution quantitative, avec une progression \n                     très importante du nombre de communes inscrites, et \n                     du nombre de communes labellisées. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Lors de sa création en 1959, 600 communes \n                     s\'engagent dans le démarche.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("En 1972, 5300 communes sont inscrites au concours, \n                     la barre des 10 000 est passée en \n                     1993 pour atteindre les 12 000 en 2005. \n                     ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Évolution également qualitative en ce qui concerne les \n                     critères d\'évaluation. Depuis les assises de Bourges, en \n                     novembre 1996, les critères se sont élargis à \n                     l\'ensemble des domaines qui s\'inscrivent dans une politique \n                     globale d\'aménagement. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Cette évolution a suivi celle des espaces verts \n                   qui ont également pris une place de plus \n                   en plus importante dans la gestion des territoires \n                   communaux. Dorénavant, les projets d\'aménagement sur les communes \n                   qui pourraient servir de référence en la matière \n                   se font dans un souci de cohésion et \n                   de coordination de l\'ensemble des services concernés. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Évolution importante enfin dans le domaine de la \n                   communication, peu connu du grand public en dehors \n                   du panneau d\'entrée de commune, le concours avait \n                   besoin de réels outils de promotion. A tous \n                   les niveaux du concours, une communication efficace se \n                   met en place sur les différents territoires (communes, \n                   départements, régions, état). ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ces évolutions répondaient réellement à un besoin de \n                   changement de la société. L\'engouement pour la nature \n                   et l\'environnement place la démarche d\'aménagement des espaces \n                   verts et tout ce qui s\'y rapporte dans \n                   un contexte de développement durable. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le concours en chiffre")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le concours des Villes et Villages Fleuris concerne \n                     près d\'une commune française sur trois. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("En 2008, près de 12 000 communes y \n                     ont participé, 60% d\'entre elles étant peuplées de \n                     moins de 1000 habitants. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("3 468 communes ont été labellisées et peuvent \n                     apposer à leur entrée le panneau Ville Fleurie \n                     ou Village Fleuri. 205 sont classées 4 Fleurs. ")]))]));
+   var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
+   var contentMap = $Dict.fromList(_U.list([]));
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Documentation","Village fleuri"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.VillageFleuri.values = {_op: _op
+                                      ,initialModel: initialModel
+                                      ,view: view
+                                      ,contentMap: contentMap
+                                      ,update: update
+                                      ,main: main
+                                      ,initialContent: initialContent};
+};

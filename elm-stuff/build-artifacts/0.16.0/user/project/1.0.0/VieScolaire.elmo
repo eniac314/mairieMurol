@@ -19,7 +19,7 @@ Elm.VieScolaire.make = function (_elm) {
    var _op = {};
    var peri = _U.list([{ctor: "_Tuple4"
                        ,_0: "Restaurant scolaire"
-                       ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                       ,_1: ""
                        ,_2: _U.list([A2($Murol.link,"Fiche d\'inscription","")
                                     ,A2($Html.p,_U.list([]),_U.list([$Html.text("ouvert de 12h00 à 13h30")]))
                                     ,A2($Html.p,
@@ -52,7 +52,7 @@ Elm.VieScolaire.make = function (_elm) {
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Garderie périscolaire"
-                       ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                       ,_1: ""
                        ,_2: _U.list([A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("Les Chèques Emploi Service Universel sont dorénavant acceptés pour\n                    le paiement de la garderie périscolaire.")]))
@@ -65,10 +65,10 @@ Elm.VieScolaire.make = function (_elm) {
                                     _U.list([]),
                                     _U.list([A2($Murol.link,"Règlement intérieur",""),$Html.text(" du restaurant scolaire et de la garderie")]))])
                        ,_3: ""}
-                      ,{ctor: "_Tuple4",_0: "Temps d\'activités périscolaires (TAP)",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([]),_3: ""}
+                      ,{ctor: "_Tuple4",_0: "Temps d\'activités périscolaires (TAP)",_1: "",_2: _U.list([]),_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Centre de loisirs"
-                       ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                       ,_1: ""
                        ,_2: _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert pendant les vacances scolaires")]))
                                     ,A2($Html.p,
                                     _U.list([]),
@@ -77,16 +77,12 @@ Elm.VieScolaire.make = function (_elm) {
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Transport scolaire"
-                       ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                       ,_1: ""
                        ,_2: _U.list([A2($Html.p,
                        _U.list([]),
                        _U.list([$Html.text("Pour le transport scolaire, la participation des familles \n                   a été fixée forfaitairement par le Conseil Général \n                   pour l’année scolaire 2008 / 2009 à 12,80€ \n                   par mois (64€ par mois pour les élèves \n                   non subventionnés).")]))])
                        ,_3: ""}
-                      ,{ctor: "_Tuple4"
-                       ,_0: "Activités jeunesse de la communauté de communes"
-                       ,_1: "/images/tiles/hebergements/placeholder.jpg"
-                       ,_2: _U.list([])
-                       ,_3: " http://www.cc-massifdusancy.fr/"}]);
+                      ,{ctor: "_Tuple4",_0: "Activités jeunesse de la communauté de communes",_1: "",_2: _U.list([]),_3: " http://www.cc-massifdusancy.fr/"}]);
    var second = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("secondVieScolaire")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le Secondaire")]))

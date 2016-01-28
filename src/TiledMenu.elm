@@ -96,10 +96,13 @@ view address model =
                                  , href l
                                  , id "tiledMenuTop"
                                  ]
+                    picture' = if String.isEmpty picture
+                               then "/images/tiles/hebergements/placeholder.jpg"
+                               else picture
                     htmlTile = 
                       a attr
                         [ figure []
-                                 [ img [src picture] []
+                                 [ img [src picture'] []
                                  , div [class "captionWrapper"]
                                        [figcaption [] [text title]]
                                  ]

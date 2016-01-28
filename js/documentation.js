@@ -10939,11 +10939,12 @@ Elm.TiledMenu.make = function (_elm) {
                         return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p7._0),$Html$Attributes.id("tiledMenuTop")]);
                      }
                }();
+               var picture$ = $String.isEmpty(picture) ? "/images/tiles/hebergements/placeholder.jpg" : picture;
                var htmlTile = A2($Html.a,
                attr,
                _U.list([A2($Html.figure,
                _U.list([]),
-               _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture)]),_U.list([]))
+               _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture$)]),_U.list([]))
                        ,A2($Html.div,
                        _U.list([$Html$Attributes.$class("captionWrapper")]),
                        _U.list([A2($Html.figcaption,_U.list([]),_U.list([$Html.text(title)]))]))]))]));
@@ -11474,7 +11475,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 11 janvier 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 24 janvier 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11566,6 +11567,7 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Gestion des risques","")
                    ,A2(Leaf,"Elections","")
                    ,A2(Leaf,"Autres publications","")
+                   ,A2(Leaf,"Village fleuri","")
                    ,A2(Leaf,"Service-public.fr","https://www.service-public.fr/")]))
            ,A2(Leaf,"Petites annonces","")]));
    var newstime = function (news) {
@@ -11703,7 +11705,7 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html.text("Il dressera le bilan de l’année 2015 et \n                           vous informera sur l’avancée des projets en cours. \n                           Vous pourrez également voir le diaporama de l’année \n                           2015 réalisé à partir des photos fournies par \n                           Michel Martin, correspondant du journal la Montagne. ")]))
                               ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous le 24 janvier à 11 heures, à la salle des fêtes de Murol.")]))]))
                       ,expiry: $Date.fromString("01/25/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/18/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/26/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);

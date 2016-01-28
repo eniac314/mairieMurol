@@ -113,6 +113,7 @@ mainMenu = Node ""
          , Leaf "Gestion des risques" ""
          , Leaf "Elections" ""
          , Leaf "Autres publications" ""
+         , Leaf "Village fleuri" ""
          , Leaf "Service-public.fr" "https://www.service-public.fr/"
          ]
   , Leaf "Petites annonces" ""]
@@ -134,7 +135,7 @@ initialModel =
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "01/18/2016" news
+  , news        = prepNews "01/26/2016" news
   }
 
 
@@ -281,7 +282,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 11 janvier 2016"]
+            [text "Dernière mise à jour le dimanche 24 janvier 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 

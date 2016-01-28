@@ -1,0 +1,103 @@
+Elm.Patrimoine = Elm.Patrimoine || {};
+Elm.Patrimoine.make = function (_elm) {
+   "use strict";
+   _elm.Patrimoine = _elm.Patrimoine || {};
+   if (_elm.Patrimoine.values) return _elm.Patrimoine.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("patrimoine")]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Château de Murol")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Edifié à l\'emplacement probable d\'un ancien camp romain, \n                     sa construction s\'étale du XIIème au XVIIIe siècle. \n                     Le Château de Murol appartint successivement aux seigneurs \n                     d´Apchon, aux comtes de Murol et enfin aux \n                     d´Estaing. Ces derniers feront de nombreux travaux pour \n                     moderniser les conditions de vie et adapter le \n                     système de défense aux exigences de l´artillerie. Grâce \n                     à la ferveur dont jouissaient les d´Estaing à \n                     la Cour, la forteresse fut épargnée par Richelieu. \n                     Elle le fut aussi à la Révolution. Mais \n                     ensuite abandonnée par son propriétaire, elle servit de \n                     carrière de pierres. Son classement comme Monument Historique \n                     mit un terme aux déprédations. Il est aujourd´hui \n                     propriété de la commune. Son architecture médiévale reste \n                     en partie conservée. C\'est le château le plus \n                     visité de notre région et donne à Murol \n                     une notoriété dépassant largement les limites de l\'Auvergne. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Des animations en costumes du Moyen-Âge sont proposées \n                   par les \"Paladins du Sancy\" de l\'agence Organicom. \n                   Aux travers d´histoires et de démonstrations (combat à \n                   l\'épée), des paysans, hommes d´armes, gentes dames et \n                   chevaliers font découvrir la vie d´une châtellenie au \n                   XIIIe siècle. ")]))
+           ,A2($Murol.link,"Site officiel","www.chateaudemurol.fr")
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée des Peintres de l´Ecole de Murol(s)")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Présentation d´une vidéo retraçant l´histoire de l´école et \n                    visite des collections de peintures. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Tableaux réalisés durant les deux premiers tiers du \n                     XXe siècle autour de l´Abbé Boudal et des \n                     maîtres Victor Charreton et Wladimir de Terlikowski.")]))
+           ,A2($Murol.link,"Site officiel","http://www.musee-murol.fr/")
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée archéologique ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Situé dans le parc du Prélong, ce petit \n                     édifice est couvert d\'un toit de chaume. Ses \n                     collections de poteries sigillées, pièces de monnaie, céramiques \n                     proviennent des fouilles de Jassat réalisées par l\'abbé \n                     Boudal vers 1895 et de Rageat réalisées par \n                     Mr Verdier vers 1950. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("L\'Eglise ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("De style gothique, construite en 1888. Le porche \n                     est surmonté d´une pierre sculptée représentant armes et \n                     devise des d´Estaing. L´intérieur de l´église a été \n                     peint par l´Abbé Boudal, curé de Murol, au \n                     cours du XIXe siècle. Ces décors se présentent \n                     sous forme de motifs ornementaux, représentations de Saints \n                     et apôtres, et surtout neuf grandes compositions murales, \n                     de 12m² chacune, retraçant des épisodes du nouveau \n                     testament. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le Parc du Prélong ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Cette ancienne propriété familiale d´Achille Boyer, notable et \n                     maire de Murol, fut remodelée en parc d´agrément \n                     vers 1860. Un jardin à la française vient \n                     contraster avec l´apparente liberté du parc à l´anglaise. \n                     Il comporte des arbustes ornementaux (magnolias, rhododendrons, kalmias, \n                     azalées…) et deux types d´arbres : les essences \n                     locales et les essences encore nouvelles au milieu \n                     du XIXe siècle (séquoias, douglas, chênes rouges d´Amérique, \n                     cyprès de Lawson…). D\'une grande richesse botanique, il \n                     abrite 714 arbres recensés dont 34% de feuillus \n                     pour 26 espèces et 66% de résineux pour \n                     31 espèces. A noter quelques essences rares telles \n                     sciadopidis verticalis et stewartia cimensis, ainsi qu\'une allée \n                     de charmes, rares à cette altitude, où il \n                     fait bon flâner. Le plus gros arbre est \n                     un séquoia de 7,85m. de circonférence. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Cueillette interdite, accès libre et gratuit. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Monument Charreton ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Victor Charreton fait partie de cette génération d\'artistes \n                     de l\'école française qui s’est consacrée totalement au \n                     paysage après les impressionnistes. Il peint sur le \n                     motif retenant les lieux qui lui parlent en \n                     fonction des saisons, de la lumière et des \n                     couleurs. L\'Auvergne, la Bretagne et la Provence lui \n                     sont ainsi tout particulièrement chères sans oublier le \n                     sud de l\'Europe et le Maghreb où il \n                     eut l\'occasion de séjourner. Il manifeste une véritable \n                     prédilection pour les paysages d\'hiver auvergnats. Ses paysages \n                     printaniers et automnaux explosent quant à eux de \n                     couleurs. L\'Église de Murol et le givre, De \n                     la terrasse de Saint-Amand-Tallende en automne, Les champs \n                     vus du jardin d\'Eugénie, Neige sur le bassin, \n                     sont quelques titres de ses toiles significatifs de \n                     sa recherche picturale. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Victor Charreton a conseillé et influencé de nombreux \n                   peintres dont René Monteix. L\'Auvergne le séduit par \n                   l\'apreté de ses paysages et la luminosité de \n                   ses couleurs. Avec le peintre Léon Boudal, curé \n                   de Murol, il fonde l\'École de Murol qui \n                   attire de nombreux artistes de tous horizons, séduits \n                   par ce néo-impressionnisme qui exprime si bien la \n                   simplicité crue et la lumière des paysages auvergnats. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Rendez-vous au Musée de l’Ecole des peintres que \n                    vous pouvez visiter, il se trouve à côté \n                    du Parc municipal du Prélong à Murol ! \n                    ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La vieille tour")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Cette maison, située rue de la vieille tour, \n                   date du XVème siècle et est l\'édifice le \n                   plus ancien du village. Elle aurait été occupée \n                   par un officier de rang élevé de la \n                   seigneurie de Murol.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le moulin à Beaune le froid ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Découvrir le moulin à eau de beaune en \n                   compagnie de Michel Tardif est un vrai plaisir. \n                   Vous racontant tout à la fois l\'histoire du \n                   village et du moulin. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le moulin de beaune a entre 2 et \n                   3 siècles et a été exploité jusqu\'en 1949. \n                   La restauration a débuté il y a 5 \n                   ans. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Moulin banal, ce sont les villageois qui l\'exploitaient \n                    pour produire leur farine.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Visite de ferme ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Issus d´un terroir très riche, nos produits ont \n                   su garder le goût du passé. Le Saint \n                   Nectaire, fromage d´Appelation d´Origine Contrôlée (AOC), fabriqué au \n                   coeur du Sancy et jusque dans le Cantal \n                   n´échappe pas à la règle. Ainsi le saint \n                   nectaire fermier, dont la fabrication encore artisanale dans \n                   de nombreuses fermes garantit une saveur exceptionnelle et \n                   changeante au gré des saisons. Il témoigne du \n                   savoir-faire de chacun, transmis à travers les âges. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Beaune le froid est fortement lié à la \n                   tradition agropastorale. Ce n´est donc pas un hasard \n                   si nombre de fermes spécialisées dans la fabrication \n                   artisanale de ce fromage jalonnent le village. Partez \n                   à la découverte de ce fromage mais respectez \n                   les horaires indiqués. Avant, le lait ne sera \n                   pas trait et après, le fromage sera déjà \n                   fait.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les Caves à Beaune-le-Froid")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Grottes naturelles aménagées pour \n                   l´affinage du saint-nectaire. Vous pourrez les découvrir après \n                   la visite du moulin.")]))]));
+   var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
+   var contentMap = $Dict.fromList(_U.list([]));
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Culture et loisirs","Patrimoine"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Patrimoine.values = {_op: _op
+                                   ,initialModel: initialModel
+                                   ,view: view
+                                   ,contentMap: contentMap
+                                   ,update: update
+                                   ,main: main
+                                   ,initialContent: initialContent};
+};

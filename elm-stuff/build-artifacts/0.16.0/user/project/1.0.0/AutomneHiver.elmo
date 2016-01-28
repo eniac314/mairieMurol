@@ -1,0 +1,81 @@
+Elm.AutomneHiver = Elm.AutomneHiver || {};
+Elm.AutomneHiver.make = function (_elm) {
+   "use strict";
+   _elm.AutomneHiver = _elm.AutomneHiver || {};
+   if (_elm.AutomneHiver.values) return _elm.AutomneHiver.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Lightbox = Elm.Lightbox.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var updateWithId = function (g) {
+               return _U.eq(function (_) {    return _.id;}(g),_p0._0) ? _U.update(g,
+               {lightbox: A2($Lightbox.update,_p0._1,function (_) {    return _.lightbox;}(g))}) : g;
+            };
+            return _U.update(model,{galleries: A2($List.map,updateWithId,function (_) {    return _.galleries;}(model))});
+         }
+   });
+   var LightboxAction = F2(function (a,b) {    return {ctor: "LightboxAction",_0: a,_1: b};});
+   var viewGallery = F2(function (address,_p1) {
+      var _p2 = _p1;
+      return A2($Lightbox.view,A2($Signal.forwardTo,address,LightboxAction(_p2.id)),_p2.lightbox);
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","Phototheque"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)))
+              ,$Murol.pageFooter]));
+   });
+   var NoOp = {ctor: "NoOp"};
+   var defPic = A4($Lightbox.Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
+   var Gallery = F2(function (a,b) {    return {lightbox: a,id: b};});
+   var automne = function () {
+      var lb = A2($Lightbox.init,
+      _U.list([_U.update(defPic,{filename: "001.jpg",legend: $Maybe.Just("So very pretty")})
+              ,_U.update(defPic,{filename: "002.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "003.jpg",legend: $Maybe.Just("")})]),
+      "automne");
+      return A2(Gallery,lb,1);
+   }();
+   var hiver = function () {
+      var lb = A2($Lightbox.init,
+      _U.list([_U.update(defPic,{filename: "100_8732.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "100_8733.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "100_8734.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "100_8742.jpg",legend: $Maybe.Just("")})]),
+      "hiver");
+      return A2(Gallery,lb,0);
+   }();
+   var galleries = _U.list([hiver,automne]);
+   var initialModel = {mainMenu: $Murol.mainMenu,galleries: galleries};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var Model = F2(function (a,b) {    return {mainMenu: a,galleries: b};});
+   return _elm.AutomneHiver.values = {_op: _op
+                                     ,Model: Model
+                                     ,Gallery: Gallery
+                                     ,defPic: defPic
+                                     ,initialModel: initialModel
+                                     ,NoOp: NoOp
+                                     ,LightboxAction: LightboxAction
+                                     ,update: update
+                                     ,viewGallery: viewGallery
+                                     ,view: view
+                                     ,main: main
+                                     ,galleries: galleries
+                                     ,automne: automne
+                                     ,hiver: hiver};
+};

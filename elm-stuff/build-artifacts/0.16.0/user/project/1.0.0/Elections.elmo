@@ -1,0 +1,345 @@
+Elm.Elections = Elm.Elections || {};
+Elm.Elections.make = function (_elm) {
+   "use strict";
+   _elm.Elections = _elm.Elections || {};
+   if (_elm.Elections.values) return _elm.Elections.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
+   var _op = {};
+   var resElec = A2($Html.div,
+   _U.list([$Html$Attributes.id("resElecPubli")]),
+   _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Résultats 1er tour")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Murol : votants 354, exprimés 338")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Suffrages total exprimés : 419")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Pour être élu au 1er tour les candidats doivent avoir recueillis 210 voix.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("14 candidats sont élus au 1er tour")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([]),_U.list([$Html.text("Candidats par liste")]))
+                           ,A2($Html.th,_U.list([]),_U.list([$Html.text("Voix")]))
+                           ,A2($Html.th,_U.list([]),_U.list([$Html.text("Candidats par liste")]))
+                           ,A2($Html.th,_U.list([]),_U.list([$Html.text("Voix")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Sébastien GOUTTEBEL")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("238")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Colette ARVEUF")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("213")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Francois AUBERTY")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("222")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Philippe AUSERVE")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("193")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Etel BOUCHE")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("251")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Brigitte BERTAUD")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("178")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Yvan CATTARELLI")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("236")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Michelle PLANEIX")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("200")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Gilles COMPAGNON")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("219")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Isabelle ANGIBAUD")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("183")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Véronique DEBOUT")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("212")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Catherine JUSSAUME")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("163")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Olivier DHAINAUT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("204")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Benédicte MEYER")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("158")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Anne-Marie DOTTE")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("210")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Henri LEGRAND")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("178")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Roger DUMONTEL")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("239")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Aline REVELLAT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("188")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Sylvie GILLARD")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("230")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Michel MONTAL")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("197")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Angélique LAIR")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("224")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Michel TARDIF")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("197")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Joséphine LANARO")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("205")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Marie ABDESSELAM")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("167")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Catherine MAURY")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("226")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Patrice DABERT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("202")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Cristelle ROUX")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("222")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Etienne SALA")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("197")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Séverine PEROL")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("226")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Hervé de Puytorac")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("184")]))]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Résultats du 2ème tour")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Votants 265, exprimés 213")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Joséphine LANARO est élue")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([]),_U.list([$Html.text("Candidats par liste")]))
+                           ,A2($Html.th,_U.list([]),_U.list([$Html.text("Voix")]))
+                           ,A2($Html.th,_U.list([]),_U.list([$Html.text("Candidats par liste")]))
+                           ,A2($Html.th,_U.list([]),_U.list([$Html.text("Voix")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Sébastien GOUTTEBEL")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Colette ARVEUF")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Francois AUBERTY")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Philippe AUSERVE")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Etel BOUCHE")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Brigitte BERTAUD")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("1")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Yvan CATTARELLI")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Michelle PLANEIX")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Gilles COMPAGNON")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Isabelle ANGIBAUD")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Véronique DEBOUT")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Catherine JUSSAUME")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Olivier DHAINAUT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Benédicte MEYER")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Anne-Marie DOTTE")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Henri LEGRAND")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Roger DUMONTEL")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Aline REVELLAT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Sylvie GILLARD")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Michel MONTAL")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Angélique LAIR")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Michel TARDIF")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Joséphine LANARO")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("204")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Marie ABDESSELAM")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Catherine MAURY")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Patrice DABERT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("4")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Cristelle ROUX")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Etienne SALA")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("2")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("Séverine PEROL")]))
+                           ,A2($Html.td,_U.list([$Html$Attributes.$class("win")]),_U.list([$Html.text("")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Hervé de Puytorac")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("")]))]))]))]));
+   var elections = A2($Html.div,
+   _U.list([$Html$Attributes.id("elecPubli")]),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les élections municipales ont lieu, en principe, tous \n                     les 6 ans, au suffrage universel direct. La \n                     circonscription électorale est la commune, sauf à Paris, \n                     Lyon et Marseille : l’élection a lieu dans \n                     le cadre de l’arrondissement pour Paris et Lyon, \n                     et par secteurs regroupant deux arrondissements pour Marseille \n                     (art. 261 du code électoral). ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le nombre de conseillers municipaux varie selon la \n                     taille de la commune : de 7 conseillers \n                     pour les communes de moins de 100 habitants \n                     (avant la loi du 17 mai 2013, ce \n                     nombre était de 9), à 69 pour les \n                     communes de 300 000 habitants ou plus (art. \n                     L2121-2 du code général des collectivités territoriales - \n                     CGCT).")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le mode de scrutin municipal étant globalement un \n                     scrutin majoritaire de liste, il convient de l’adapter \n                     à la situation des communes les plus petites \n                     où il serait difficile de constituer des listes \n                     complètes, ainsi qu’à la situation des communes les \n                     plus peuplées pour lesquelles il est important de \n                     dégager une majorité municipale. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le mode de scrutin varie selon le nombre \n                     d’habitants de la commune. Cherchant à concilier ces \n                     impératifs avec ceux de la parité et de \n                     l’élection d’une majorité municipale porteuse d’un projet, la \n                     loi du 17 mai 2013 a abaissé de \n                     3 500 à 1 000 habitants le seuil \n                     pour l’application du scrutin à la proportionnelle. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les conseillers municipaux sont élus pour six ans, \n                     et sont renouvelés intégralement au mois de mars \n                     de l’année électorale concernée (art. L227 du code \n                     électoral).")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le maire est élu par et au sein \n                     du conseil municipal, au scrutin secret et à \n                     la majorité absolue pour les deux premiers tours \n                     de scrutin, et à la majorité relative si \n                     un troisième tour est nécessaire (art. L2122-1 et \n                     L2122-4 CGCT).")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le nombre d’adjoints est fixé par le conseil \n                     municipal mais ne peut cependant excéder 30% de \n                     l’effectif légal du conseil municipal (art. L2122-2 CGCT). \n                     La loi du 27 février 2002 relative à \n                     la démocratie de proximité autorise toutefois à dépasser \n                     cette limite dans les communes de 80 000 \n                     habitants par la création de postes d’adjoints chargés \n                     de quartiers, dans une limite de 10% de \n                     l’effectif du conseil municipal (art. L2122-2-1 CGCT). L’article \n                     L2122-10 lie la durée des fonctions des adjoints \n                     à celle des fonctions du maire.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Enfin, la loi du 31 janvier 2007 tendant \n                     à promouvoir l’égal accès des femmes et des \n                     hommes aux mandats électoraux et fonctions électives avait \n                     instauré l’obligation de parité pour les exécutifs des \n                     communes de 3 500 habitants et plus, cette \n                     obligation concernant les adjoints au maire. Depuis la \n                     loi du 17 mai 2013, c’est dans toutes \n                     les communes de plus de 1 000 habitants \n                     que doit être respecté le principe de la \n                     parité.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les lois du 16 décembre 2010 de réforme \n                     territoriale et la loi électorale du 17 mai \n                     2013 posent le principe de l’élection au suffrage \n                     universel des assemblées des établissements publics de coopération \n                     intercommunale à fiscalité propre (cf. Chapitre 5). Cette \n                     innovation a entraîné des modifications sur les modes \n                     de scrutin applicables aux élections municipales ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les modes de scrutins")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les conseillers municipaux seront élus les 23 et \n                     30 mars 2014. Les élections municipales ont lieu, \n                     en principe, tous les six ans. Le mode \n                     de scrutin varie selon le nombre d’habitants de \n                     la commune. Au plus tôt le vendredi et \n                     au plus tard le dimanche suivant le scrutin, \n                     le conseil municipal nouvellement élu se réunit pour \n                     procéder à l’élection du maire et de ses \n                     adjoints.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Deux grandes innovations en 2014")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les élections municipales des 23 et 30 mars \n                     2014 seront marquées par deux grandes innovations :")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les électeurs de toutes les communes de plus \n                     de 1000 habitants éliront leurs conseillers municipaux selon \n                     le même mode scrutin. Ce mode de scrutin, \n                     qui impose le respect du principe de parité \n                     aux listes de candidats, était jusqu’alors réservé aux \n                     seules communes de plus de 3500 habitants. Cette \n                     modification, introduite par les lois organique et ordinaire \n                     du 17 mai 2013, concerne 6 550 communes. \n                     Elle devrait entraîner, selon les estimations du gouvernement, \n                     l’élection dans les conseils municipaux de près de \n                     16 000 conseillères supplémentaires (les conseils municipaux devraient \n                     à terme compter environ 87 000 élues). ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les électeurs désigneront, à l’aide d’un seul bulletin \n                     de vote, leurs conseillers municipaux et les conseillers \n                     communautaires. Les conseillers communautaires sont les représentants de \n                     la commune au sein de la structure intercommunale \n                     dont elle est membre. Prévue par la loi \n                     du 16 décembre 2010, cette réforme est destinée \n                     à conférer une véritable légitimité démocratique aux établissements \n                     publics de coopération intercommunale (EPCI) à fiscalité propre \n                     (communautés de communes, communautés d’agglomération, communautés urbaines, métropoles). \n                     Jusqu’alors, les représentants des communes au sein de \n                     ces EPCI étaient élus par les membres du \n                     conseil municipal. Les lois organique et ordinaire du \n                     17 mai 2013 ont déterminé deux modes de \n                     scrutin, selon que la commune compte moins de \n                     1 000 habitants, ou 1 000 habitants et \n                     plus. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les communes de moins de 1 000 habitants ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Dans les communes de moins de 1 000 \n                     habitants, les conseillers municipaux sont élus au scrutin \n                     majoritaire, plurinominal, à deux tours. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le nombre de conseillers municipaux à élire varie \n                     selon la taille de la commune (article L. \n                     2121-2 du Code général des collectivités territoriales). En \n                     2014, le nombre de conseillers municipaux des communes \n                     de moins de 100 habitants est modifié, il \n                     passe de 9 à 7.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le dépôt d’une déclaration de candidature est désormais \n                     obligatoire, quelle que soit la taille de la \n                     commune. L’obligation de la parité femmes hommes n’est \n                     pas requise pour les communes de moins de \n                     1 000 habitants. Les candidats se présentent sur \n                     une liste, mais les bulletins de vote peuvent \n                     être modifiés par les électeurs (panachage). En 2014, \n                     les modalités de panachage sont toutefois différentes de \n                     celles appliquées lors des précédents scrutins, il n’est \n                     plus possible d’élire une personne qui ne s’est \n                     pas déclarée candidate.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les suffrages sont décomptés individuellement par candidat et \n                     non par liste. Pour obtenir un siège au \n                     conseil municipal dès le premier tour, le candidat \n                     doit avoir obtenu la majorité absolue des suffrages \n                     exprimés et recueilli au moins un quart des \n                     suffrages des électeurs inscrits.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un second tour est organisé pour les sièges \n                     restant à pourvoir : l’élection a lieu à \n                     la majorité relative et, en cas d’égalité du \n                     nombre des suffrages entre plusieurs candidats, l’élection est \n                     acquise pour le plus âgé. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour la première fois en 2014, les conseillers \n                    communautaires représentant les communes de moins de 1 \n                    000 habitants au sein des organes délibérants des \n                    EPCI sont les membres du conseil municipal désignés \n                    dans l’ordre du tableau, c’est-à-dire le maire puis \n                    les adjoints puis les conseillers municipaux ayant obtenu \n                    le plus de voix lors des élections municipales")]))]));
+   var initialContent = {wrapper: function (content) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Elections")]),
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Elections")])),content]));
+                        }
+                        ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4",_0: "Les élections municipales",_1: "",_2: _U.list([elections]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "Résultats des élections",_1: "",_2: _U.list([resElec]),_3: ""}]))};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Documentation","Elections"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))))]))
+              ,$Murol.pageFooter]));
+   });
+   var Model = F3(function (a,b,c) {    return {mainMenu: a,subMenu: b,mainContent: c};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
+   var subMenu = {current: "",entries: _U.list([])};
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Elections.values = {_op: _op
+                                  ,subMenu: subMenu
+                                  ,MainContent: MainContent
+                                  ,Model: Model
+                                  ,initialModel: initialModel
+                                  ,view: view
+                                  ,NoOp: NoOp
+                                  ,TiledMenuAction: TiledMenuAction
+                                  ,update: update
+                                  ,main: main
+                                  ,initialContent: initialContent
+                                  ,elections: elections
+                                  ,resElec: resElec};
+};

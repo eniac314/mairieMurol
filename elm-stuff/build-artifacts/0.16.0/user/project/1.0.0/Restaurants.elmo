@@ -1,0 +1,138 @@
+Elm.Restaurants = Elm.Restaurants || {};
+Elm.Restaurants.make = function (_elm) {
+   "use strict";
+   _elm.Restaurants = _elm.Restaurants || {};
+   if (_elm.Restaurants.values) return _elm.Restaurants.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StarTable = Elm.StarTable.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
+   var _op = {};
+   var barDeNuit = _U.list([_U.update($StarTable.emptyTe,
+   {name: "Cubana café",addr: "Place de la poste - 63790 Murol",tel: "04 73 88 85 79",mail: "larbalete@cegetel.net"})]);
+   var barBrasserie = _U.list([_U.update($StarTable.emptyTe,{name: "A Jour et Nuit",addr: "Rue Estaing - 63790 Murol",tel: "04 73 88 64 82"})
+                              ,_U.update($StarTable.emptyTe,{name: "Auberge de la plage",addr: "La plage - 63790 Murol",tel: "04 73 88 67 90"})
+                              ,_U.update($StarTable.emptyTe,
+                              {name: "L\'Arbalète",addr: "Rue Georges Sand - 63790 Murol",tel: "04 73 88 85 79",mail: "restaurantlarbalete@gmail.com"})
+                              ,_U.update($StarTable.emptyTe,
+                              {name: "Le café de la côte"
+                              ,addr: "Rue Chabrol - 63790 MUROL"
+                              ,descr: _U.list(["café- restaurant- herboristerie- salle de concert\n                - atelier de confection de bougies\n                en cire d\'abeille, etc."
+                                              ,"Bière locale, hypocras (entendez par là :\n                  vin aux épices médiéval), barbecue ."
+                                              ,"L\'ambiance ici est à la détente, et parfois à la\n                 fête puisque des concerts y sont\n                 organisés sporadiquement."])
+                              ,tel: "06 7941 0811"})]);
+   var restosMurol = _U.list([_U.update($StarTable.emptyTe,
+                             {name: "Au Montagnard"
+                             ,addr: "Rue d\'Estaing - 63790 MUROL"
+                             ,descr: _U.list(["Plat à emporter au restaurant"])
+                             ,tel: "04 73 88 61 52"
+                             ,mail: "restaurant.aumontagnard@orange.fr"
+                             ,site: "http://restaurantaumontagnard.wifeo.com/"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Chez Dame Galinette",addr: "Rue d\'Estaing - 63790 MUROL",tel: "04 73 88 61 52",site: "murol@azureva-vacances.com"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Le chalet de la plage",addr: "lac Chambon - 63790 MUROL",tel: "04 73 88 82 31",mail: "hotel@lac-chambon-plage.fr"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Le Parc",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 88 60 08",fax: "04 73 88 64 44",mail: "info@hotel-parc.com"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Le Paris"
+                             ,addr: "Pace de la mairie - 63790 MUROL"
+                             ,tel: "04 73 88 60 09"
+                             ,fax: "04 73 88 69 82"
+                             ,mail: "info@hoteldeparis-murol.com"})
+                             ,_U.update($StarTable.emptyTe,{name: "Le Piccotin \"Pizzéria\"",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 62 37 10"})]);
+   var restosBeaunes = _U.list([_U.update($StarTable.emptyTe,
+   {name: "Les Sancy\'Elles",addr: "63790 Beaune le Froid -MUROL",descr: _U.list(["Crèperie, petite restauration"]),tel: "04 7388 8118"})]);
+   var restaurants = A2($Html.div,
+   _U.list([$Html$Attributes.id("restosTourisme")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Restaurants")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des\n                     produits du terroir qui font sa réputation :\n                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme\n                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh !\n                     le bon jambon d’Auvergne, les saucisses et les\n                     saucissons), le tout arrosé, avec modération, de vins\n                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,\n                     Boudes ou Corent. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le tableau ne serait pas complet, si nous\n                     ne citions quelques autres spécialités régionales comme la\n                     truffade, l\'aligot, la potée auvergnate, les tripoux ou\n                     encore les lentilles du Puy que vous dégusterez\n                     chaudes, agrémentées d\'oignons et de quelques lardons ou,\n                     en été, froides en salade... un délice... ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une\n                     Gentiane ou une Salers, vous apprécierez sans aucun\n                     doute de le terminer par une petite verveine. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))]));
+   var initialContent = {wrapper: function (content) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("restaurants")]),
+                           _U.list([restaurants,content]));
+                        }
+                        ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
+                                                             ,_0: "Restaurants"
+                                                             ,_1: ""
+                                                             ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
+                                                                          ,A2($StarTable.makeTable,"aBeauneLeFroid",restosBeaunes)
+                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
+                                                                          ,A2($StarTable.makeTable,"aMurol",restosMurol)])}
+                                                            ,{ctor: "_Tuple3"
+                                                             ,_0: "Bar brasserie"
+                                                             ,_1: ""
+                                                             ,_2: _U.list([A2($StarTable.makeTable,"barBrasserie",barBrasserie)
+                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
+                                                                          ,A2($StarTable.makeTable,"barDeNuit",barDeNuit)])}]))};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Tourisme","Restaurants"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))))]))
+              ,$Murol.pageFooter]));
+   });
+   var Model = F3(function (a,b,c) {    return {mainMenu: a,subMenu: b,mainContent: c};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
+   var subMenu = {current: "",entries: _U.list([])};
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Restaurants.values = {_op: _op
+                                    ,subMenu: subMenu
+                                    ,MainContent: MainContent
+                                    ,Model: Model
+                                    ,initialModel: initialModel
+                                    ,view: view
+                                    ,NoOp: NoOp
+                                    ,TiledMenuAction: TiledMenuAction
+                                    ,update: update
+                                    ,main: main
+                                    ,initialContent: initialContent
+                                    ,restaurants: restaurants
+                                    ,restosBeaunes: restosBeaunes
+                                    ,restosMurol: restosMurol
+                                    ,barBrasserie: barBrasserie
+                                    ,barDeNuit: barDeNuit};
+};

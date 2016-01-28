@@ -51,11 +51,12 @@ Elm.TiledMenu.make = function (_elm) {
                         return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p7._0),$Html$Attributes.id("tiledMenuTop")]);
                      }
                }();
+               var picture$ = $String.isEmpty(picture) ? "/images/tiles/hebergements/placeholder.jpg" : picture;
                var htmlTile = A2($Html.a,
                attr,
                _U.list([A2($Html.figure,
                _U.list([]),
-               _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture)]),_U.list([]))
+               _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture$)]),_U.list([]))
                        ,A2($Html.div,
                        _U.list([$Html$Attributes.$class("captionWrapper")]),
                        _U.list([A2($Html.figcaption,_U.list([]),_U.list([$Html.text(title)]))]))]))]));

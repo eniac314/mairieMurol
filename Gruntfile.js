@@ -5,6 +5,7 @@ module.exports = function(grunt) {
       compile: {
         files: {
           "./js/murol.js": ["./src/Murol.elm"],
+          "./js/automneHiver.js": ["./src/AutomneHiver.elm"],
           "./js/tourisme.js": ["./src/Tourisme.elm"],
           "./js/vieScolaire.js": ["./src/VieScolaire.elm"],
           "./js/gestionDesDechets.js": ["./src/GestionDesDechets.elm"],
@@ -28,17 +29,28 @@ module.exports = function(grunt) {
           "./js/artistes.js": ["./src/Artistes.elm"],
           "./js/associations.js": ["./src/Associations.elm"],
           "./js/cinema.js": ["./src/Cinema.elm"],
-          "./js/sportEtDetentes.js": ["./src/SportEtDetentes.elm"],
+          "./js/sportsDetente.js": ["./src/SportsDetente.elm"],
           "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
           "./js/officeTourisme.js": ["./src/OfficeTourisme.elm"],
           "./js/sante.js": ["./src/Sante.elm"],
           "./js/cartePlan.js": ["./src/CartePlan.elm"],
+          "./js/restaurants.js": ["./src/Restaurants.elm"],
           "./js/hebergements.js": ["./src/Hebergements.elm"],
           "./js/transports.js": ["./src/Transports.elm"],
           "./js/animation.js": ["./src/Animation.elm"],
+          "./js/murolInfos.js": ["./src/MurolInfos.elm"],
+          "./js/deliberations.js": ["./src/Deliberations.elm"],
+          "./js/bulletinsMunicipaux.js": ["./src/BulletinsMunicipaux.elm"],
+          "./js/elections.js": ["./src/Elections.elm"],
+          "./js/autresPublications.js": ["./src/AutresPublications.elm"],
+          "./js/villageFleuri.js": ["./src/VillageFleuri.elm"],
+          "./js/sortir.js": ["./src/Sortir.elm"],
+          "./js/patrimoine.js": ["./src/Patrimoine.elm"],
+          "./js/phototheque.js": ["./src/Phototheque.elm"],
+          "./js/petitesAnnonces.js": ["./src/PetitesAnnonces.elm"],
+          "./js/animationEstivale.js": ["./src/AnimationEstivale.elm"],
+          "./js/sallesFetes.js": ["./src/SallesFetes.elm"],
           "./js/documentation.js": ["./src/Documentation.elm"]
-
-
           
         }
       }
@@ -46,6 +58,7 @@ module.exports = function(grunt) {
     watch: {
       elm: {
         files: ["./src/Murol.elm"
+                , "./src/AutomneHiver.elm"
                 , "./src/Tourisme.elm"
                 , "./src/VieScolaire.elm"
                 , "./src/GestionDesDechets.elm"
@@ -69,14 +82,27 @@ module.exports = function(grunt) {
                 , "./src/Artistes.elm"
                 , "./src/Associations.elm"
                 , "./src/Cinema.elm"
-                , "./src/SportEtDetentes.elm"
+                , "./src/SportsDetente.elm"
                 , "./src/DecouvrirMurol.elm"
                 , "./src/OfficeTourisme.elm"
                 , "./src/Sante.elm"
                 , "./src/CartePlan.elm"
                 , "./src/Hebergements.elm"
+                , "./src/Restaurants.elm"
                 , "./src/Animation.elm"
                 , "./src/Transports.elm"
+                , "./src/MurolInfos.elm"
+                , "./src/Deliberations.elm"
+                , "./src/BulletinsMunicipaux.elm"
+                , "./src/Elections.elm"
+                , "./src/AutresPublications.elm"
+                , "./src/VillageFleuri.elm"
+                , "./src/Sortir.elm"
+                , "./src/Patrimoine.elm"
+                , "./src/Phototheque.elm"
+                , "./src/PetitesAnnonces.elm"
+                , "./src/AnimationEstivale.elm"
+                , "./src/SallesFetes.elm"
                 , "./src/Documentation.elm"],
         tasks: ["elm"]
       }

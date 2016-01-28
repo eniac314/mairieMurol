@@ -1,0 +1,249 @@
+Elm.BulletinsMunicipaux = Elm.BulletinsMunicipaux || {};
+Elm.BulletinsMunicipaux.make = function (_elm) {
+   "use strict";
+   _elm.BulletinsMunicipaux = _elm.BulletinsMunicipaux || {};
+   if (_elm.BulletinsMunicipaux.values) return _elm.BulletinsMunicipaux.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var renderBulletin = function (_p2) {
+      var _p3 = _p2;
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("bulletin")]),
+      _U.list([A2($Html.figure,
+              _U.list([$Html$Attributes.$class("cover")]),
+              _U.list([A2($Html.figcaption,_U.list([]),_U.list([$Html.text(_p3.date)]))
+                      ,A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/bulletin/",_p3.cover))]),_U.list([]))]))
+              ,A2($Html.ul,
+              _U.list([]),
+              A2($Basics._op["++"],
+              A2($List._op["::"],
+              A2($Html.h6,_U.list([]),_U.list([$Html.text("Dans ce numéro:")])),
+              A2($List.map,function (e) {    return A2($Html.li,_U.list([]),_U.list([$Html.text(e)]));},_p3.index)),
+              _U.list([A2($Murol.link,"Téléchargez ici","")])))]));
+   };
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Documentation","Bulletins municipaux"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var Bulletin = F3(function (a,b,c) {    return {cover: a,date: b,index: c};});
+   var bulls = $List.reverse(_U.list([A3(Bulletin,
+                                     "cover0.png",
+                                     "Janvier 2009",
+                                     _U.list(["La maison médicale"
+                                             ,"La sécurité : Pompiers et Maîtres Nageurs Sauveteurs"
+                                             ,"Murol en chiffres: Les employés communaux"
+                                             ,"Le château : travail des archéologues"
+                                             ,"Les écoles maternelles et élémentaires"
+                                             ,"Murol en images"
+                                             ,"Le tri des déchets"
+                                             ,"L’animation estivale"
+                                             ,"L’embellissement"
+                                             ,"Les commissions"
+                                             ,"Les opérations 2008"
+                                             ,"L’intercommunalité"
+                                             ,"L’état civil"
+                                             ,"Le site internet"]))
+                                     ,A3(Bulletin,
+                                     "cover1.png",
+                                     "Janvier 2011",
+                                     _U.list(["Etat civil 2010"
+                                             ,"Horaires des services"
+                                             ,"Recensement 2011"
+                                             ,"Travaux en cours"
+                                             ,"Urbanisme"
+                                             ,"Budget et fiscalité"
+                                             ,"Archéologie"
+                                             ,"Ecoles"
+                                             ,"SIVOM de la Vallée Verte"
+                                             ,"Animation estivale"
+                                             ,"Musée"
+                                             ,"Ski de fond"
+                                             ,"Embellissement"
+                                             ,"Lac Chambon"
+                                             ,"Création du SIVU"
+                                             ,"Employés communaux"
+                                             ,"Propreté"
+                                             ,"SIVOM de Besse"
+                                             ,"Sécurité: pompiers MNS, gendarmerie"
+                                             ,"CCAS services sociaux"
+                                             ,"Relais bibliothèque"
+                                             ,"TNT"
+                                             ,"Murol en images"
+                                             ,"Associations"
+                                             ,"Calendrier des diverses\n               manifestations du\n               1er semestre 2011"]))
+                                     ,A3(Bulletin,
+                                     "cover2.png",
+                                     "Février 2012",
+                                     _U.list(["Etat civil 2011"
+                                             ,"Horaires des services"
+                                             ,"Urbanisme"
+                                             ,"SIVU assainissement"
+                                             ,"Travaux et investissements"
+                                             ,"Chantier de jeunesse"
+                                             ,"Archéologie"
+                                             ,"Musée des peintres"
+                                             ,"Ecoles"
+                                             ,"Sivom de la Vallée Verte"
+                                             ,"Maison médicale"
+                                             ,"Communauté de Communes du Massif du Sancy"
+                                             ,"Animation estivale"
+                                             ,"Sécurité : pompiers, gendarmerie et MNS"
+                                             ,"CCAS et services sociaux"
+                                             ,"SIVOM de Besse"
+                                             ,"Exposition: « la mairie de Murol a 100 ans »"
+                                             ,"Elections 2012"
+                                             ,"Murol en images"
+                                             ,"Associations"
+                                             ,"Calendrier des\n               manifestations du\n               1er semestre 2012"]))
+                                     ,A3(Bulletin,
+                                     "cover3.png",
+                                     "Mars 2013",
+                                     _U.list(["Etat civil"
+                                             ,"Urbanisme"
+                                             ,"Transports"
+                                             ,"Services"
+                                             ,"Recyclage"
+                                             ,"Sports"
+                                             ,"Parcours sportif"
+                                             ,"Activités jeunesse"
+                                             ,"Eléments budgétaires"
+                                             ,"Travaux"
+                                             ,"Projets en cours"
+                                             ,"SIVU"
+                                             ,"Personnel"
+                                             ,"Embellissement"
+                                             ,"Archéologie"
+                                             ,"Musée"
+                                             ,"Pompiers"
+                                             ,"Plage"
+                                             ,"DICRIM cahier détachable"
+                                             ,"Murol en images"
+                                             ,"Station de tourisme"
+                                             ,"ONF"
+                                             ,"Animation"
+                                             ,"Ecoles"
+                                             ,"CCAS"
+                                             ,"SIVOM de Besse"
+                                             ,"Services sociaux"
+                                             ,"Associations"
+                                             ,"Calendrier"]))
+                                     ,A3(Bulletin,
+                                     "cover4.png",
+                                     "Janvier 2014",
+                                     _U.list(["Etat civil"
+                                             ,"Elections"
+                                             ,"Services"
+                                             ,"Chiens et chats"
+                                             ,"Personnel"
+                                             ,"Eléments budgétaires"
+                                             ,"Rue George Sand"
+                                             ,"Circulation bourg"
+                                             ,"Travaux"
+                                             ,"Maison médicale"
+                                             ,"Sécurité / Pompiers"
+                                             ,"Urbanisme"
+                                             ,"Agriculture - Forêts"
+                                             ,"Embellissement"
+                                             ,"Musée des peintres"
+                                             ,"Tourisme"
+                                             ,"Murol en images"
+                                             ,"Station de tourisme"
+                                             ,"Archéologie"
+                                             ,"Ecoles"
+                                             ,"Réforme des rythmes scolaires"
+                                             ,"Jeunesse et sports"
+                                             ,"Lac Chambon"
+                                             ,"CCAS Social"
+                                             ,"Atelier couture"
+                                             ,"Balades du journal"
+                                             ,"Informatique et sites"
+                                             ,"Associations"
+                                             ,"Calendrier"]))
+                                     ,A3(Bulletin,
+                                     "cover5.png",
+                                     "Mars 2015",
+                                     _U.list(["Equipe municipale"
+                                             ,"Intercommunalité"
+                                             ,"Réforme territoriale"
+                                             ,"Elections régionales"
+                                             ,"Etat civil"
+                                             ,"Conseil des jeunes"
+                                             ,"Services"
+                                             ,"Ordures ménagères"
+                                             ,"ADIL (énergie, habitat)"
+                                             ,"Personnel"
+                                             ,"Chantier de jeunesse"
+                                             ,"Travaux 2014"
+                                             ,"Maison de santé"
+                                             ,"Pompiers"
+                                             ,"Eclairage public"
+                                             ,"Tourisme"
+                                             ,"Festival d\'art"
+                                             ,"Embellissement"
+                                             ,"Archéologie"
+                                             ,"Mutuelle"
+                                             ,"CCAS"
+                                             ,"Ecoles"
+                                             ,"SIVOM de la Vallée Verte"
+                                             ,"Activités jeunesse"
+                                             ,"Eléments budgétaires"
+                                             ,"Accessibilité"
+                                             ,"Abords du chateau"
+                                             ,"Musée des peintres"
+                                             ,"Lac Chambon"
+                                             ,"Autres projets en cours"
+                                             ,"Murol en images"
+                                             ,"Associations"
+                                             ,"Calendrier"]))]));
+   var bulletin = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubMenu"),$Html$Attributes.id("bullPubli")]),
+   A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));
+   var initialContent = bulletin;
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.BulletinsMunicipaux.values = {_op: _op
+                                            ,subMenu: subMenu
+                                            ,initialModel: initialModel
+                                            ,Bulletin: Bulletin
+                                            ,view: view
+                                            ,renderBulletin: renderBulletin
+                                            ,contentMap: contentMap
+                                            ,update: update
+                                            ,changeMain: changeMain
+                                            ,main: main
+                                            ,initialContent: initialContent
+                                            ,bulletin: bulletin
+                                            ,bulls: bulls};
+};

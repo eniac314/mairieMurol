@@ -29,7 +29,7 @@ Elm.Artistes.make = function (_elm) {
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Cath Cuir: ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de Chabrol 63790 MUROL")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 0611891452")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert de juin à août")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert de juin à août ")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Création d\'un orchestre")]))
            ,A2($Html.p,
            _U.list([]),

@@ -1,0 +1,38 @@
+Elm.AnimationEstivale = Elm.AnimationEstivale || {};
+Elm.AnimationEstivale.make = function (_elm) {
+   "use strict";
+   _elm.AnimationEstivale = _elm.AnimationEstivale || {};
+   if (_elm.AnimationEstivale.values) return _elm.AnimationEstivale.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animationEstivale")]),_U.list([]));
+   var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
+   var contentMap = $Dict.fromList(_U.list([]));
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Tourisme","Animation estivale"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.AnimationEstivale.values = {_op: _op
+                                          ,initialModel: initialModel
+                                          ,view: view
+                                          ,contentMap: contentMap
+                                          ,update: update
+                                          ,main: main
+                                          ,initialContent: initialContent};
+};

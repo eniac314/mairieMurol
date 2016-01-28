@@ -1455,6 +1455,25 @@ footer p {
 }
 /*--end of code for footer-------------------------------------------------------*/
 
+/*-------------------------------------------------------------------------------
+  style for Village fleuri
+-------------------------------------------------------------------------------*/
+#villageFleuri #compteRendu{
+  margin-bottom: 1em;
+}
+
+#villageFleuri #compteRendu img{
+  float: right;
+  margin-bottom: 1em;
+
+}
+
+#villageFleuri h4 {
+  clear: both;
+}
+
+/*--end of code for village fleuri-------------------------------------------------------*/
+
 
 /*-------------------------------------------------------------------------------
   style for Transports
@@ -1475,3 +1494,171 @@ footer p {
 
 
 /*--end of code for Transports-------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for LightBox
+-------------------------------------------------------------------------------*/
+
+.lightbox {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 1110px;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.lightbox:target {
+  display: block;
+  position: absolute;
+}
+
+.lightBoxlegend{
+  display: inline-block;
+  background-color: white;
+  width: 100%;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  z-index: 3;
+  box-shadow: 2px 2px 2px gray;
+  text-align: left;
+  font-family: 'PT Serif', verdana, serif;
+}
+
+.lightbox-content{
+  padding-bottom: 10%;
+  padding-top: 5%;
+  width: auto;
+  display: inline-block;
+  margin: auto;
+  outline: none;
+}
+
+@media screen and (max-width: 1368px) {
+    .lightbox-content{
+     padding: 15px 0 0 0;
+    }
+}
+
+.picContainer{
+  width: 100%;
+  position: relative;
+  background-color: white;
+  margin: 0;
+  padding: 0.5em;
+  box-shadow: 2px 2px 2px gray;
+  z-index: 2;
+}
+
+.picContainer img{
+  width: 100%;  
+}
+
+.halfPic{
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.halfPic span{
+  display: block;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-size: 18px;
+  background-color: white;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  position: absolute;
+  top:10%;
+}
+
+.halfPic:hover span{
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;  
+}
+
+#halfPicleft{
+  left: 0;
+}
+
+#halfPicright{
+  right: 0;
+}
+
+#halfPicleft:hover{
+/*  background: linear-gradient(to left, rgba(0,0,0,0), rgba(110,117,142,0.3));
+*/}
+
+#halfPicleft span{
+  left: 0; 
+}
+
+#halfPicright span{
+  right:0;
+}
+
+#halfPicright:hover{
+ /* background: linear-gradient(to right, rgba(0,0,0,0), rgba(110,117,142,0.3));*/
+}
+
+.lightboxNav{
+ display: inline-block;
+ width: 100%; 
+}
+
+.lightboxNav .navBtnLeft{
+  display: block;
+  background-color: #B0C4DE;
+  float: left;
+  text-decoration: none;
+}
+
+.lightboxNav .navBtnRight:hover, .lightboxNav .navBtnLeft:hover{
+  cursor: pointer;
+  color: white;
+  background-color: teal;
+}
+
+.lightboxNav .navBtnRight {
+  display: block;
+  background-color: #B0C4DE;
+  float: right;
+  text-decoration: none;
+}
+
+#closebtn{
+  text-decoration: none;
+  float: right;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+#closebtn:hover{
+  color: grey;
+}
+
+/*--end of code for LightBox-------------------------------------------------------*/
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}

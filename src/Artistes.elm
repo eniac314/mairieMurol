@@ -86,7 +86,7 @@ initialContent =
       , h5 [] [text "Cath Cuir: "]
       , p  [] [text "Rue de Chabrol 63790 MUROL"]
       , p  [] [text "Tel: 0611891452"]
-      , p  [] [text "Ouvert de juin à août"] 
+      , p  [] [text "Ouvert de juin à août "] 
 
       , h4 [] [text "Création d'un orchestre"]
       , p  [] [text "Madame Marie-Laure Franc, chef d'orchestre, cherche des musiciens pour créer un orchestre dans notre région."]
