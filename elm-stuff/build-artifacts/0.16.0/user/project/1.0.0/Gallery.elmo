@@ -1,0 +1,18 @@
+Elm.Gallery = Elm.Gallery || {};
+Elm.Gallery.make = function (_elm) {
+   "use strict";
+   _elm.Gallery = _elm.Gallery || {};
+   if (_elm.Gallery.values) return _elm.Gallery.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Lightbox = Elm.Lightbox.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $Streams = Elm.Streams.make(_elm);
+   var _op = {};
+   var Model = F3(function (a,b,c) {    return {pictures: a,nameList: b,folder: c};});
+   return _elm.Gallery.values = {_op: _op};
+};

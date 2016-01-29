@@ -6,6 +6,7 @@ Elm.AutomneHiver.make = function (_elm) {
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Lightbox = Elm.Lightbox.make(_elm),
@@ -14,40 +15,60 @@ Elm.AutomneHiver.make = function (_elm) {
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp = Elm.StartApp.make(_elm),
+   $Time = Elm.Time.make(_elm);
    var _op = {};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
-            return model;
+            return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          } else {
             var updateWithId = function (g) {
                return _U.eq(function (_) {    return _.id;}(g),_p0._0) ? _U.update(g,
                {lightbox: A2($Lightbox.update,_p0._1,function (_) {    return _.lightbox;}(g))}) : g;
             };
-            return _U.update(model,{galleries: A2($List.map,updateWithId,function (_) {    return _.galleries;}(model))});
+            return {ctor: "_Tuple2"
+                   ,_0: _U.update(model,{galleries: A2($List.map,updateWithId,function (_) {    return _.galleries;}(model))})
+                   ,_1: $Effects.none};
          }
    });
    var LightboxAction = F2(function (a,b) {    return {ctor: "LightboxAction",_0: a,_1: b};});
    var viewGallery = F2(function (address,_p1) {
       var _p2 = _p1;
-      return A2($Lightbox.view,A2($Signal.forwardTo,address,LightboxAction(_p2.id)),_p2.lightbox);
+      var lightboxHtml = A2($Lightbox.view,A2($Signal.forwardTo,address,LightboxAction(_p2.id)),_p2.lightbox);
+      return A2($Html.div,_U.list([$Html$Attributes.$class("gallery")]),_U.list([lightboxHtml]));
    });
    var view = F2(function (address,model) {
+      var galleriesHtml = A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model));
+      var subContainerData = A2($Html.div,
+      _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("automneHiver")]),
+      A2($Basics._op["++"],
+      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Paysages, automne, hiver")]))]),
+      A2($Basics._op["++"],
+      galleriesHtml,
+      _U.list([A2($Html.a,
+      _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("backToTiledMenu")]),
+      _U.list([$Html.text("Revenir au menu")]))]))));
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
       _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","Phototheque"]),function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([subContainerData]))
               ,$Murol.pageFooter]));
    });
+   var timer = A2($Signal.map,function (_p3) {    return A2(LightboxAction,0,$Lightbox.Right);},$Time.every(3 * $Time.second));
    var NoOp = {ctor: "NoOp"};
    var defPic = A4($Lightbox.Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
    var Gallery = F2(function (a,b) {    return {lightbox: a,id: b};});
    var automne = function () {
       var lb = A2($Lightbox.init,
-      _U.list([_U.update(defPic,{filename: "001.jpg",legend: $Maybe.Just("So very pretty")})
-              ,_U.update(defPic,{filename: "002.jpg",legend: $Maybe.Just("")})
-              ,_U.update(defPic,{filename: "003.jpg",legend: $Maybe.Just("")})]),
+      _U.list([_U.update(defPic,{filename: "002.jpg",legend: $Maybe.Just("Test légende: Paysage d\'automne")})
+              ,_U.update(defPic,{filename: "003.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "Couzes.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "001.jpg",legend: $Maybe.Just("So very pretty")})
+              ,_U.update(defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "lacAut01.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "lacAut02.jpg",legend: $Maybe.Just("")})]),
       "automne");
       return A2(Gallery,lb,1);
    }();
@@ -56,13 +77,18 @@ Elm.AutomneHiver.make = function (_elm) {
       _U.list([_U.update(defPic,{filename: "100_8732.jpg",legend: $Maybe.Just("")})
               ,_U.update(defPic,{filename: "100_8733.jpg",legend: $Maybe.Just("")})
               ,_U.update(defPic,{filename: "100_8734.jpg",legend: $Maybe.Just("")})
-              ,_U.update(defPic,{filename: "100_8742.jpg",legend: $Maybe.Just("")})]),
+              ,_U.update(defPic,{filename: "100_8742.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "1670-8.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "32285740.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "©-azureva_murol-tourisme-hiver.jpg",legend: $Maybe.Just("")})
+              ,_U.update(defPic,{filename: "pt12969.jpg",legend: $Maybe.Just("")})]),
       "hiver");
       return A2(Gallery,lb,0);
    }();
-   var galleries = _U.list([hiver,automne]);
+   var galleries = _U.list([automne,hiver]);
    var initialModel = {mainMenu: $Murol.mainMenu,galleries: galleries};
-   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([timer])});
+   var main = app.html;
    var Model = F2(function (a,b) {    return {mainMenu: a,galleries: b};});
    return _elm.AutomneHiver.values = {_op: _op
                                      ,Model: Model
@@ -74,6 +100,8 @@ Elm.AutomneHiver.make = function (_elm) {
                                      ,update: update
                                      ,viewGallery: viewGallery
                                      ,view: view
+                                     ,timer: timer
+                                     ,app: app
                                      ,main: main
                                      ,galleries: galleries
                                      ,automne: automne

@@ -6,7 +6,6 @@ Elm.Phototheque.make = function (_elm) {
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
@@ -14,25 +13,81 @@ Elm.Phototheque.make = function (_elm) {
    $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("phototheque")]),_U.list([]));
-   var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
-   var contentMap = $Dict.fromList(_U.list([]));
+   var phototheque = A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La Phototheque")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Vous souhaitez partager vos plus belles photos de Murol ?\n                     Transmettez-les au webmaster, elles doivent être libres de\n                     droit. Le webmaster se réserve le droit d’accepter ou non les\n                     photos proposées selon les règles de parution en vigueur*")]))]));
+   var initialContent = {wrapper: function (content) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("phototheque")]),
+                           _U.list([phototheque,content]));
+                        }
+                        ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4"
+                                                                     ,_0: "Paysages, automne, hiver"
+                                                                     ,_1: ""
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "/AutomneHiver.html"}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Paysages, printemps, été"
+                                                                     ,_1: ""
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "/PrintempsEte.html"}
+                                                                    ,{ctor: "_Tuple4",_0: "Patrimoine",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "Les Médiévales",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "La journée des Murolais",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "Murol fait sa révolution",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "Le Festival d\'Art",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "Animations estivales",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "Autres animations de l\'année",_1: "",_2: _U.list([]),_3: ""}]))};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Culture et loisirs","Phototheque"]),function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","Phototheque"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))))]))
               ,$Murol.pageFooter]));
    });
    var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var Model = F2(function (a,b) {    return {mainMenu: a,mainContent: b};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    return _elm.Phototheque.values = {_op: _op
+                                    ,MainContent: MainContent
+                                    ,Model: Model
                                     ,initialModel: initialModel
                                     ,view: view
-                                    ,contentMap: contentMap
+                                    ,NoOp: NoOp
+                                    ,TiledMenuAction: TiledMenuAction
                                     ,update: update
                                     ,main: main
-                                    ,initialContent: initialContent};
+                                    ,initialContent: initialContent
+                                    ,phototheque: phototheque};
 };

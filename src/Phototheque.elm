@@ -8,48 +8,72 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
+import TiledMenu exposing (initWithLink,view,update,Action)
+import StarTable exposing (makeTable, emptyTe, Label(..))
 import Murol exposing (mainMenu,
-                       renderMainMenu,
+                       renderMainMenu',
                        pageFooter,
                        renderMisc,
                        capitalize,
                        renderListImg,
                        logos,
-                       Action (..),
-                       renderSubMenu,
                        mail,
                        site,
                        link)
 
+
 -- Model
+
+type alias MainContent = 
+  { wrapper : (Html -> Html)
+  , tiledMenu :  TiledMenu.Model
+  } 
+
+type alias Model = 
+  { mainMenu    : Murol.Menu
+  , mainContent : MainContent
+  }  
 
 initialModel =
   { mainMenu    = mainMenu
   , mainContent = initialContent
   }
 
+
+
 -- View
+view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Culture et loisirs","Phototheque"]
-                               (.mainMenu model)
+      [ renderMainMenu' ["Culture et loisirs", "Phototheque"]
+                        (.mainMenu model)
       , div [ id "subContainer"]
-            [ .mainContent model
+            [ (.wrapper (.mainContent model))
+               (TiledMenu.view (Signal.forwardTo address TiledMenuAction) (.tiledMenu (.mainContent model)))
             ]
       , pageFooter
       ]
 
+
+
 -- Update
 
-contentMap =
- fromList []
+type Action =
+    NoOp
+  | TiledMenuAction (TiledMenu.Action)
 
+update : Action -> Model -> Model
 update action model =
   case action of
     NoOp    -> model
-    _       -> model
-
-
+    TiledMenuAction act ->
+      let mc = (.mainContent model)
+          tm = (.tiledMenu (.mainContent model))
+      in
+          { model | 
+            mainContent = 
+             { mc | tiledMenu = TiledMenu.update act tm }
+          }
 
 --Main
 
@@ -60,7 +84,79 @@ main =
     , update = update
     }
 
+
 initialContent =
-  div [ class "subContainerData noSubmenu", id "phototheque"]
-      [ 
+  { wrapper = 
+    (\content ->
+       div [ class "subContainerData noSubmenu", id "phototheque"]
+           [ phototheque
+           , content])
+  , tiledMenu = initWithLink 
+    [( "Paysages, automne, hiver"
+      , ""
+      , [ 
+        ]
+      , "/AutomneHiver.html"
+      )
+    ,( "Paysages, printemps, été"
+      , ""
+      , [ 
+        ]
+      , "/PrintempsEte.html"
+      )
+    ,( "Patrimoine"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+    ,( "Les Médiévales"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+    ,( "La journée des Murolais"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+    ,( "Murol fait sa révolution"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+    ,( "Le Festival d'Art"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+    ,( "Animations estivales"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+    ,( "Autres animations de l'année"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+     ]
+  }
+
+-- Data
+
+phototheque = 
+  div []
+      [ h2 [] [text "La Phototheque"]
+      , p  [] [text "Vous souhaitez partager vos plus belles photos de Murol ?
+                     Transmettez-les au webmaster, elles doivent être libres de
+                     droit. Le webmaster se réserve le droit d’accepter ou non les
+                     photos proposées selon les règles de parution en vigueur*"
+              ]
       ]

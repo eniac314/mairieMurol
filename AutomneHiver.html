@@ -24,11 +24,20 @@
 <script type="text/javascript">
   var elmDiv = document.getElementById('elm-app');
   var elmApp = Elm.embed(Elm.AutomneHiver, elmDiv);
-  //elmApp.ports.focus.subscribe(setFocus);
+  
+  document.body.onload = function () {
+    var body = document.body,
+    html = document.documentElement;
 
-  // function setFocus(){
-  //   document.getElementById("hiddenBtn").focus()
-  // }
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                           html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+    var textcontrol = document.getElementsByClassName("lightbox")
+    for (var i=0; i < textcontrol.length; i++){
+        textcontrol[i].style.height = height + 'px';
+    }
+  }
+
 </script>
 </body>
 </html>

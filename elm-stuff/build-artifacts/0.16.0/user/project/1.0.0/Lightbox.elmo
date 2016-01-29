@@ -22,6 +22,8 @@ Elm.Lightbox.make = function (_elm) {
       {case "NoOp": return model;
          case "Left": return _U.update(model,{pictures: $Streams.left(function (_) {    return _.pictures;}(model))});
          case "Right": return _U.update(model,{pictures: $Streams.right(function (_) {    return _.pictures;}(model))});
+         case "Display": return _U.update(model,{display: $Basics.not(function (_) {    return _.display;}(model))});
+         case "Close": return _U.update(model,{display: $Basics.not(function (_) {    return _.display;}(model))});
          default: return _U.update(model,
            {pictures: A2($Streams.goTo,
            function (_) {
@@ -29,14 +31,14 @@ Elm.Lightbox.make = function (_elm) {
            }(model),
            function (p) {
               return _U.eq(function (_) {    return _.filename;}(p),_p0._0);
-           })});}
+           })
+           ,display: $Basics.not(function (_) {    return _.display;}(model))});}
    });
    var GoTo = function (a) {    return {ctor: "GoTo",_0: a};};
    var thumbs = F2(function (address,model) {
       var thumb = function (n) {
          return A2($Html.a,
-         _U.list([$Html$Attributes.href(A2($Basics._op["++"],"#openLightbox-",function (_) {    return _.folder;}(model)))
-                 ,A2($Html$Events.onClick,address,GoTo(n))]),
+         _U.list([A2($Html$Events.onClick,address,GoTo(n))]),
          _U.list([A2($Html.img,
          _U.list([$Html$Attributes.src(A2($Basics._op["++"],
          "images/phototheque/",
@@ -46,17 +48,23 @@ Elm.Lightbox.make = function (_elm) {
       var nameList = function (_) {    return _.nameList;}(model);
       return A2($Html.div,_U.list([$Html$Attributes.$class("thumbs")]),A2($List.map,thumb,nameList));
    });
+   var Close = {ctor: "Close"};
+   var Display = {ctor: "Display"};
    var Right = {ctor: "Right"};
    var Left = {ctor: "Left"};
    var NoOp = {ctor: "NoOp"};
    var onKey = function (address) {
-      var keyToAct = function (key) {    return _U.eq(key,13) || _U.eq(key,39) ? Right : _U.eq(key,37) ? Left : NoOp;};
+      var keyToAct = function (key) {    return _U.eq(key,13) || _U.eq(key,39) ? Right : _U.eq(key,37) ? Left : _U.eq(key,27) ? Close : NoOp;};
       return A2($Html$Events.onKeyDown,address,keyToAct);
    };
    var lightbox = F2(function (address,model) {
       var currentPic = $Streams.current(function (_) {    return _.pictures;}(model));
       return A2($Html.div,
-      _U.list([$Html$Attributes.id(A2($Basics._op["++"],"openLightbox-",function (_) {    return _.folder;}(model))),$Html$Attributes.$class("lightbox")]),
+      _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "lightbox",_1: true}
+                                                  ,{ctor: "_Tuple2",_0: "display",_1: function (_) {    return _.display;}(model)}]))
+              ,onKey(address)
+              ,$Html$Attributes.tabindex(0)
+              ,$Html$Attributes.autofocus(true)]),
       _U.list([A2($Html.div,
       _U.list([$Html$Attributes.$class("lightbox-content"),onKey(address),$Html$Attributes.tabindex(0),$Html$Attributes.autofocus(true)]),
       _U.list([A2($Html.div,
@@ -80,16 +88,27 @@ Elm.Lightbox.make = function (_elm) {
               _U.list([$Html$Attributes.$class("lightBoxlegend")]),
               _U.list([$Html.text(A2($Maybe.withDefault,"",function (_) {    return _.legend;}(currentPic)))
                       ,A2($Html.a,
-                      _U.list([$Html$Attributes.href("#"),$Html$Attributes.id("closebtn"),$Html$Attributes.$class("noselect")]),
+                      _U.list([$Html$Attributes.id("closebtn"),$Html$Attributes.$class("noselect"),A2($Html$Events.onClick,address,Display)]),
                       _U.list([$Html.text("x")]))]))]))]));
    });
    var view = F2(function (address,model) {    return A2($Html.div,_U.list([]),_U.list([A2(thumbs,address,model),A2(lightbox,address,model)]));});
    var Picture = F4(function (a,b,c,d) {    return {filename: a,author: b,date: c,legend: d};});
    var defPic = A4(Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
-   var Model = F3(function (a,b,c) {    return {pictures: a,nameList: b,folder: c};});
+   var Model = F4(function (a,b,c,d) {    return {pictures: a,nameList: b,folder: c,display: d};});
    var init = F2(function (pics,folder) {
       var nameList = A2($List.map,function (_) {    return _.filename;},pics);
-      return A3(Model,A2($Streams.biStream,pics,defPic),nameList,folder);
+      return A4(Model,A2($Streams.biStream,pics,defPic),nameList,folder,false);
    });
-   return _elm.Lightbox.values = {_op: _op,init: init,update: update,view: view,Picture: Picture,Model: Model};
+   return _elm.Lightbox.values = {_op: _op
+                                 ,init: init
+                                 ,update: update
+                                 ,view: view
+                                 ,Picture: Picture
+                                 ,Model: Model
+                                 ,NoOp: NoOp
+                                 ,Left: Left
+                                 ,Right: Right
+                                 ,Display: Display
+                                 ,Close: Close
+                                 ,GoTo: GoTo};
 };

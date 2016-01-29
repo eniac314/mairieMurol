@@ -1,4 +1,4 @@
-module Lightbox (Picture, Model, Action, init, update, view)where
+module Lightbox (Picture, Model, Action(..), init, update, view)where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -15,6 +15,7 @@ type alias Model =
      { pictures : BiStream Picture
      , nameList : List String
      , folder : String
+     , display : Bool
      }
 
 type alias Picture = 
@@ -30,22 +31,29 @@ defPic = Picture "" Nothing Nothing Nothing
 init : List Picture -> String -> Model
 init pics folder = 
   let nameList = List.map .filename pics
-  in Model (biStream pics defPic) nameList folder
+  in Model (biStream pics defPic) nameList folder False
 
 -- Update
 type Action = 
    NoOp
  | Left
  | Right
+ | Display
+ | Close
  | GoTo String
 
 update : Action -> Model -> Model
 update action model =
   case action of 
-    NoOp -> model
-    Left  -> { model | pictures = left (.pictures model) }
-    Right -> { model | pictures = right (.pictures model) }
-    GoTo n -> { model | pictures = goTo (.pictures model) (\p -> (.filename p) == n) } 
+    NoOp    -> model
+    Left    -> { model | pictures = left (.pictures model) }
+    Right   -> { model | pictures = right (.pictures model) }
+    Display -> { model | display  = not (.display model) }
+    Close   -> { model | display  = False } 
+    GoTo n  -> { model |
+                 pictures = goTo (.pictures model) (\p -> (.filename p) == n)
+               , display = not (.display model)
+               } 
 
 
 -- View
@@ -54,8 +62,7 @@ thumbs address model =
   let nameList = .nameList model
 
       thumb n  =
-        a [ href ("#openLightbox-" ++ (.folder model))
-          , onClick address (GoTo n)
+        a [ onClick address (GoTo n)
           ]
           [ img [src ("images/phototheque/" 
                        ++ (.folder model)
@@ -69,8 +76,12 @@ lightbox : Signal.Address Action -> Model -> Html
 lightbox address model = 
   let currentPic = current (.pictures model)
   in 
-  div [id ("openLightbox-" ++ (.folder model)), class "lightbox"]
-      [ div [class "lightbox-content", onKey address, tabindex 0, autofocus True]
+  div [ classList [("lightbox",True),("display",(.display model))]
+      , onKey address, tabindex 0, autofocus True
+      ]
+      [ div [ class "lightbox-content"
+            , onKey address, tabindex 0, autofocus True
+            ]
             [ div [ class "picContainer"]
                   [ img [src ("images/phototheque/" 
                              ++ (.folder model) ++ "/"
@@ -89,8 +100,18 @@ lightbox address model =
             , div [ class "lightBoxlegend"]
                   [ --text "photo " ++ () ++ " sur " () ++ ""
                     text (Maybe.withDefault "" (.legend currentPic))
-                  , a [href "#", id "closebtn", class "noselect"] [text "x"]
+                  , a [ id "closebtn"
+                      , class "noselect"
+                      , onClick address Display
+                      ] [text "x"]
                   ]
+            --, input  [ onKey address
+            --         , tabindex 0
+            --         , autofocus True
+            --         , classList [ ("display",(.display model))
+            --                     , ("hiddenBtn",True)
+            --                     ]
+            --         ] []
             ]
       ]
 
@@ -101,6 +122,8 @@ onKey address =
         then Right
         else if key == 37
         then Left
+        else if key == 27
+        then Close
         else NoOp
   in onKeyDown address keyToAct
 
