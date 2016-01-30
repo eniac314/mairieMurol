@@ -6,6 +6,9 @@ Elm.Gallery.make = function (_elm) {
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
    $Lightbox = Elm.Lightbox.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
@@ -13,6 +16,79 @@ Elm.Gallery.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $Streams = Elm.Streams.make(_elm);
    var _op = {};
-   var Model = F3(function (a,b,c) {    return {pictures: a,nameList: b,folder: c};});
-   return _elm.Gallery.values = {_op: _op};
+   var chunk = F2(function (n,xs) {
+      var _p0 = xs;
+      if (_p0.ctor === "[]") {
+            return _U.list([]);
+         } else {
+            var _p1 = _p0;
+            return A2($List._op["::"],A2($List.take,n,_p1),A2(chunk,n,A2($List.drop,n,_p1)));
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p2 = action;
+      switch (_p2.ctor)
+      {case "Up": return _U.update(model,{pictures: $Streams.left(function (_) {    return _.pictures;}(model))});
+         case "Down": return _U.update(model,{pictures: $Streams.right(function (_) {    return _.pictures;}(model))});
+         case "Unfold": return _U.update(model,{unfold: $Basics.not(function (_) {    return _.unfold;}(model))});
+         case "Diaporama": return _U.update(model,{diaporama: $Basics.not(function (_) {    return _.diaporama;}(model))});
+         case "TimeStep": return _U.update(model,
+           {pictures: function (_) {
+              return _.diaporama;
+           }(model) ? $Streams.right(function (_) {    return _.pictures;}(model)) : function (_) {
+              return _.pictures;
+           }(model)
+           ,lightbox: A2($Lightbox.update,$Lightbox.TimeStep,function (_) {    return _.lightbox;}(model))});
+         default: return _U.update(model,{lightbox: A2($Lightbox.update,_p2._0,function (_) {    return _.lightbox;}(model))});}
+   });
+   var LightboxAction = function (a) {    return {ctor: "LightboxAction",_0: a};};
+   var TimeStep = {ctor: "TimeStep"};
+   var Diaporama = {ctor: "Diaporama"};
+   var Unfold = {ctor: "Unfold"};
+   var Down = {ctor: "Down"};
+   var Up = {ctor: "Up"};
+   var renderPreview = F2(function (address,model) {
+      var thumb = function (p) {
+         return A2($Html.a,
+         _U.list([A2($Html$Events.onClick,address,LightboxAction($Lightbox.GoTo(function (_) {    return _.filename;}(p))))]),
+         _U.list([A2($Html.img,
+         _U.list([$Html$Attributes.src(A2($Basics._op["++"],
+         "images/phototheque/",
+         A2($Basics._op["++"],function (_) {    return _.folder;}(model),A2($Basics._op["++"],"/thumbs/",function (_) {    return _.filename;}(p)))))]),
+         _U.list([]))]));
+      };
+      var thumbs = A2($List.map,thumb,$Streams.current(function (_) {    return _.pictures;}(model)));
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("previewPanel")]),
+      _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("previewThumbs")]),thumbs)
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("galleryButtons")]),
+              _U.list([A2($Html.button,_U.list([A2($Html$Events.onClick,address,Up)]),_U.list([$Html.text("Suivant")]))
+                      ,A2($Html.button,_U.list([A2($Html$Events.onClick,address,Down)]),_U.list([$Html.text("Précédent")]))
+                      ,A2($Html.button,
+                      _U.list([A2($Html$Events.onClick,address,Diaporama)]),
+                      _U.list([function (_) {    return _.diaporama;}(model) ? $Html.text("Arret") : $Html.text("Défiler")]))]))]));
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("gallery")]),
+      _U.list([A2(renderPreview,address,model)
+              ,A2($Html.button,
+              _U.list([A2($Html$Events.onClick,address,Unfold),$Html$Attributes.$class("seeAll")]),
+              _U.list([$Html.text("Voir toutes les photos")]))
+              ,A2($Html.div,_U.list([$Html$Attributes.$class("galleryDescr")]),_U.list([$Html.text(function (_) {    return _.descr;}(model))]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "galleryLightbox",_1: true}
+                                                          ,{ctor: "_Tuple2",_0: "display",_1: function (_) {    return _.unfold;}(model)}]))]),
+              _U.list([A2($Lightbox.view,A2($Signal.forwardTo,address,LightboxAction),function (_) {    return _.lightbox;}(model))]))]));
+   });
+   var Model = F6(function (a,b,c,d,e,f) {    return {pictures: a,lightbox: b,diaporama: c,unfold: d,folder: e,descr: f};});
+   var init = F3(function (pics,folder,descr) {
+      var unfold = false;
+      var diaporama = false;
+      var lightbox = A2($Lightbox.init,pics,folder);
+      var pictures = A2($Streams.biStream,A2(chunk,4,pics),_U.list([]));
+      return A6(Model,pictures,lightbox,diaporama,unfold,folder,descr);
+   });
+   return _elm.Gallery.values = {_op: _op,init: init,update: update,view: view,Model: Model,TimeStep: TimeStep};
 };

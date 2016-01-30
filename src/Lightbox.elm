@@ -16,6 +16,7 @@ type alias Model =
      , nameList : List String
      , folder : String
      , display : Bool
+     , diaporama : Bool
      }
 
 type alias Picture = 
@@ -31,7 +32,7 @@ defPic = Picture "" Nothing Nothing Nothing
 init : List Picture -> String -> Model
 init pics folder = 
   let nameList = List.map .filename pics
-  in Model (biStream pics defPic) nameList folder False
+  in Model (biStream pics defPic) nameList folder False False
 
 -- Update
 type Action = 
@@ -41,19 +42,27 @@ type Action =
  | Display
  | Close
  | GoTo String
+ | TimeStep
+ | Diaporama
 
 update : Action -> Model -> Model
 update action model =
   case action of 
-    NoOp    -> model
-    Left    -> { model | pictures = left (.pictures model) }
-    Right   -> { model | pictures = right (.pictures model) }
-    Display -> { model | display  = not (.display model) }
-    Close   -> { model | display  = False } 
-    GoTo n  -> { model |
-                 pictures = goTo (.pictures model) (\p -> (.filename p) == n)
-               , display = not (.display model)
-               } 
+    NoOp      -> model
+    Left      -> { model | pictures  = left (.pictures model) }
+    Right     -> { model | pictures  = right (.pictures model) }
+    Display   -> { model | display   = not (.display model) }
+    Close     -> { model | display   = False } 
+    Diaporama -> { model | diaporama = not (.diaporama model) }
+    GoTo n    -> { model |
+                   pictures = goTo (.pictures model) (\p -> (.filename p) == n)
+                 , display  = True
+                 }
+    TimeStep   -> { model | pictures = if (.diaporama model)
+                                       then right (.pictures model)
+                                       else (.pictures model)
+                  }
+
 
 
 -- View
@@ -104,6 +113,13 @@ lightbox address model =
                       , class "noselect"
                       , onClick address Display
                       ] [text "x"]
+                  , a [ id "closebtn"
+                      , class "noselect"
+                      , onClick address Diaporama
+                      ] [ (if (.diaporama model)
+                          then text "||"
+                          else text "->")
+                         ]
                   ]
             --, input  [ onKey address
             --         , tabindex 0

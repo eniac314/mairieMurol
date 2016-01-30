@@ -23,8 +23,9 @@ Elm.Lightbox.make = function (_elm) {
          case "Left": return _U.update(model,{pictures: $Streams.left(function (_) {    return _.pictures;}(model))});
          case "Right": return _U.update(model,{pictures: $Streams.right(function (_) {    return _.pictures;}(model))});
          case "Display": return _U.update(model,{display: $Basics.not(function (_) {    return _.display;}(model))});
-         case "Close": return _U.update(model,{display: $Basics.not(function (_) {    return _.display;}(model))});
-         default: return _U.update(model,
+         case "Close": return _U.update(model,{display: false});
+         case "Diaporama": return _U.update(model,{diaporama: $Basics.not(function (_) {    return _.diaporama;}(model))});
+         case "GoTo": return _U.update(model,
            {pictures: A2($Streams.goTo,
            function (_) {
               return _.pictures;
@@ -32,8 +33,16 @@ Elm.Lightbox.make = function (_elm) {
            function (p) {
               return _U.eq(function (_) {    return _.filename;}(p),_p0._0);
            })
-           ,display: $Basics.not(function (_) {    return _.display;}(model))});}
+           ,display: true});
+         default: return _U.update(model,
+           {pictures: function (_) {
+              return _.diaporama;
+           }(model) ? $Streams.right(function (_) {    return _.pictures;}(model)) : function (_) {
+              return _.pictures;
+           }(model)});}
    });
+   var Diaporama = {ctor: "Diaporama"};
+   var TimeStep = {ctor: "TimeStep"};
    var GoTo = function (a) {    return {ctor: "GoTo",_0: a};};
    var thumbs = F2(function (address,model) {
       var thumb = function (n) {
@@ -89,15 +98,18 @@ Elm.Lightbox.make = function (_elm) {
               _U.list([$Html.text(A2($Maybe.withDefault,"",function (_) {    return _.legend;}(currentPic)))
                       ,A2($Html.a,
                       _U.list([$Html$Attributes.id("closebtn"),$Html$Attributes.$class("noselect"),A2($Html$Events.onClick,address,Display)]),
-                      _U.list([$Html.text("x")]))]))]))]));
+                      _U.list([$Html.text("x")]))
+                      ,A2($Html.a,
+                      _U.list([$Html$Attributes.id("closebtn"),$Html$Attributes.$class("noselect"),A2($Html$Events.onClick,address,Diaporama)]),
+                      _U.list([function (_) {    return _.diaporama;}(model) ? $Html.text("||") : $Html.text("->")]))]))]))]));
    });
    var view = F2(function (address,model) {    return A2($Html.div,_U.list([]),_U.list([A2(thumbs,address,model),A2(lightbox,address,model)]));});
    var Picture = F4(function (a,b,c,d) {    return {filename: a,author: b,date: c,legend: d};});
    var defPic = A4(Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
-   var Model = F4(function (a,b,c,d) {    return {pictures: a,nameList: b,folder: c,display: d};});
+   var Model = F5(function (a,b,c,d,e) {    return {pictures: a,nameList: b,folder: c,display: d,diaporama: e};});
    var init = F2(function (pics,folder) {
       var nameList = A2($List.map,function (_) {    return _.filename;},pics);
-      return A4(Model,A2($Streams.biStream,pics,defPic),nameList,folder,false);
+      return A5(Model,A2($Streams.biStream,pics,defPic),nameList,folder,false,false);
    });
    return _elm.Lightbox.values = {_op: _op
                                  ,init: init
@@ -110,5 +122,7 @@ Elm.Lightbox.make = function (_elm) {
                                  ,Right: Right
                                  ,Display: Display
                                  ,Close: Close
-                                 ,GoTo: GoTo};
+                                 ,GoTo: GoTo
+                                 ,TimeStep: TimeStep
+                                 ,Diaporama: Diaporama};
 };
