@@ -16,6 +16,7 @@ Elm.Lightbox.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $Streams = Elm.Streams.make(_elm);
    var _op = {};
+   var myStyle = $Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "animation",_1: "fadein 2s"}]));
    var update = F2(function (action,model) {
       var _p0 = action;
       switch (_p0.ctor)
@@ -25,6 +26,7 @@ Elm.Lightbox.make = function (_elm) {
          case "Display": return _U.update(model,{display: $Basics.not(function (_) {    return _.display;}(model))});
          case "Close": return _U.update(model,{display: false});
          case "Diaporama": return _U.update(model,{diaporama: $Basics.not(function (_) {    return _.diaporama;}(model))});
+         case "OpenDiapo": return _U.update(model,{diaporama: true,display: true});
          case "GoTo": return _U.update(model,
            {pictures: A2($Streams.goTo,
            function (_) {
@@ -41,6 +43,7 @@ Elm.Lightbox.make = function (_elm) {
               return _.pictures;
            }(model)});}
    });
+   var OpenDiapo = {ctor: "OpenDiapo"};
    var Diaporama = {ctor: "Diaporama"};
    var TimeStep = {ctor: "TimeStep"};
    var GoTo = function (a) {    return {ctor: "GoTo",_0: a};};
@@ -98,10 +101,14 @@ Elm.Lightbox.make = function (_elm) {
               _U.list([$Html.text(A2($Maybe.withDefault,"",function (_) {    return _.legend;}(currentPic)))
                       ,A2($Html.a,
                       _U.list([$Html$Attributes.id("closebtn"),$Html$Attributes.$class("noselect"),A2($Html$Events.onClick,address,Display)]),
-                      _U.list([$Html.text("x")]))
+                      _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-times")]),_U.list([]))]))
                       ,A2($Html.a,
-                      _U.list([$Html$Attributes.id("closebtn"),$Html$Attributes.$class("noselect"),A2($Html$Events.onClick,address,Diaporama)]),
-                      _U.list([function (_) {    return _.diaporama;}(model) ? $Html.text("||") : $Html.text("->")]))]))]))]));
+                      _U.list([$Html$Attributes.id("diapoLightbox"),$Html$Attributes.$class("noselect"),A2($Html$Events.onClick,address,Diaporama)]),
+                      _U.list([function (_) {
+                         return _.diaporama;
+                      }(model) ? A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-pause")]),_U.list([])) : A2($Html.i,
+                      _U.list([$Html$Attributes.$class("fa fa-play")]),
+                      _U.list([]))]))]))]))]));
    });
    var view = F2(function (address,model) {    return A2($Html.div,_U.list([]),_U.list([A2(thumbs,address,model),A2(lightbox,address,model)]));});
    var Picture = F4(function (a,b,c,d) {    return {filename: a,author: b,date: c,legend: d};});
@@ -124,5 +131,6 @@ Elm.Lightbox.make = function (_elm) {
                                  ,Close: Close
                                  ,GoTo: GoTo
                                  ,TimeStep: TimeStep
-                                 ,Diaporama: Diaporama};
+                                 ,Diaporama: Diaporama
+                                 ,OpenDiapo: OpenDiapo};
 };

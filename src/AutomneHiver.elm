@@ -12,6 +12,7 @@ import Dict exposing (..)
 import Lightbox exposing (Picture)
 import Gallery exposing (..)
 import Time exposing (..)
+import Task exposing (..)
 import Murol exposing (mainMenu,
                        renderMainMenu',
                        pageFooter,
@@ -29,18 +30,15 @@ import Murol exposing (mainMenu,
 type alias Model = 
   { mainMenu    : Murol.Menu
   , galleries   : List (Gallery.Model,String)
+  , debug : String
   }
-
---type alias Gallery =
---  { lightbox : Lightbox.Model
---  , id : Int
---  }
 
 defPic = Lightbox.Picture "" Nothing Nothing Nothing
 
 initialModel =
   { mainMenu  = mainMenu
   , galleries = galleries
+  , debug = ""
   }
 
 -- Update
@@ -49,7 +47,7 @@ type Action =
    NoOp 
  | GalleryAction String (Gallery.Action)
 
---update : Action -> Model -> Model
+update : Action -> Model -> (Model, Effects Action)
 update action model =
   case action of 
     NoOp -> (model,none)
@@ -57,8 +55,17 @@ update action model =
       let updateWithId (g,folder) =
             if (folder == name)
             then (Gallery.update act g, folder)
-            else (g,folder)  
-      in ({ model | galleries = List.map updateWithId (.galleries model) },none)
+            else ((g,none),folder)
+
+          (ng,effs) = List.foldl (\((g,e),f) (gs,ef) ->
+                                   ((g,f)::gs,(Effects.map (GalleryAction f) e)::ef))
+                                 ([],[])
+                                 (List.map updateWithId (.galleries model))
+
+
+      in ({ model | galleries = List.reverse ng}
+          , Effects.batch effs)
+
 
 -- View
 
@@ -74,7 +81,7 @@ view address model =
         div [ class "subContainerData noSubmenu", id "automneHiver"]
             (
             [ h2 [] [text "Paysages, automne, hiver"] ]
-            ++ galleriesHtml ++
+             ++ galleriesHtml ++
             [ a [ href "/Phototheque.html", id "backToTiledMenu"]
                 [ text "Revenir au menu" ]
             ]
@@ -91,21 +98,9 @@ view address model =
 
 --Main
 
---focusBox = Signal.mailbox ()
-
---port focus : Signal ()
---port focus = Signal.constant ()
-
 timer g = Signal.map (\_ -> GalleryAction (snd g) Gallery.TimeStep) (every (3*second))
 
 timers = List.map timer galleries
-
---main =
---  StartApp.start
---    { model  = initialModel
---    , view   = view
---    , update = update
---    }
 
 
 app =
@@ -119,12 +114,16 @@ app =
 main =
     app.html
 
+port tasks : Signal (Task.Task Effects.Never ())
+port tasks =
+  app.tasks
+
 -- Data
 
 --galleries : List Gallery
-galleries = [(automne, "automne") ,(hiver, "hiver")]
+galleries = [(automne, "automne"), (hiver, "hiver")]
 
-automne = 
+(automne, automneFx) = 
   Gallery.init 
     [ { defPic |
         filename = "002.jpg"
@@ -165,10 +164,9 @@ automne =
         filename = "lacAut02.jpg"
       ,  legend = Just ""
       }
-      
-    ] "automne" "Gallerie automne"
+    ] "automne" "Galerie automne"
 
-hiver = 
+(hiver,hiverFx) = 
   Gallery.init
     [ { defPic |
         filename = "100_8732.jpg"
@@ -209,4 +207,4 @@ hiver =
         filename = "pt12969.jpg"
       ,  legend = Just ""
       }
-    ] "hiver" "gallerie hiver"
+    ] "hiver" "Galerie hiver"

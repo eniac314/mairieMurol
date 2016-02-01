@@ -92,17 +92,17 @@ initialContent =
            [ phototheque
            , content])
   , tiledMenu = initWithLink 
-    [( "Paysages, automne, hiver"
-      , ""
-      , [ 
-        ]
-      , "/AutomneHiver.html"
-      )
-    ,( "Paysages, printemps, été"
+    [( "Paysages, printemps, été"
       , ""
       , [ 
         ]
       , "/PrintempsEte.html"
+      )
+    ,( "Paysages, automne, hiver"
+      , ""
+      , [ 
+        ]
+      , "/AutomneHiver.html"
       )
     ,( "Patrimoine"
       , ""
@@ -110,18 +110,14 @@ initialContent =
         ]
       , ""
       )
+
     ,( "Les Médiévales"
       , ""
       , [ 
         ]
       , ""
       )
-    ,( "La journée des Murolais"
-      , ""
-      , [ 
-        ]
-      , ""
-      )
+    
     ,( "Murol fait sa révolution"
       , ""
       , [ 
@@ -134,13 +130,20 @@ initialContent =
         ]
       , ""
       )
-    ,( "Animations estivales"
+
+    ,( "La journée des Murolais"
       , ""
       , [ 
         ]
       , ""
       )
-    ,( "Autres animations de l'année"
+    ,( "Diaporama 2015"
+      , ""
+      , [ 
+        ]
+      , ""
+      )
+    ,( "Année 2016"
       , ""
       , [ 
         ]

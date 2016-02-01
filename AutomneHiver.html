@@ -6,6 +6,7 @@
   <title>La commune de Murol</title>
   <script type="text/javascript" src="./js/automneHiver.js"></script>
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -25,18 +26,18 @@
   var elmDiv = document.getElementById('elm-app');
   var elmApp = Elm.embed(Elm.AutomneHiver, elmDiv);
   
-  document.body.onload = function () {
-    var body = document.body,
-    html = document.documentElement;
+  // document.body.onload = function () {
+  //   var body = document.body,
+  //   html = document.documentElement;
 
-    var height = Math.max( body.scrollHeight, body.offsetHeight, 
-                           html.clientHeight, html.scrollHeight, html.offsetHeight );
+  //   var height = Math.max( body.scrollHeight, body.offsetHeight, 
+  //                          html.clientHeight, html.scrollHeight, html.offsetHeight );
 
-    var textcontrol = document.getElementsByClassName("lightbox")
-    for (var i=0; i < textcontrol.length; i++){
-        textcontrol[i].style.height = height + 'px';
-    }
-  }
+  //   var textcontrol = document.getElementsByClassName("lightbox")
+  //   for (var i=0; i < textcontrol.length; i++){
+  //       textcontrol[i].style.height = height + 'px'; 
+  //   }
+  // }
 
 </script>
 </body>

@@ -44,6 +44,7 @@ type Action =
  | GoTo String
  | TimeStep
  | Diaporama
+ | OpenDiapo
 
 update : Action -> Model -> Model
 update action model =
@@ -54,6 +55,7 @@ update action model =
     Display   -> { model | display   = not (.display model) }
     Close     -> { model | display   = False } 
     Diaporama -> { model | diaporama = not (.diaporama model) }
+    OpenDiapo -> { model | diaporama = True, display = True }
     GoTo n    -> { model |
                    pictures = goTo (.pictures model) (\p -> (.filename p) == n)
                  , display  = True
@@ -112,22 +114,15 @@ lightbox address model =
                   , a [ id "closebtn"
                       , class "noselect"
                       , onClick address Display
-                      ] [text "x"]
-                  , a [ id "closebtn"
+                      ] [i [class "fa fa-times"] []]
+                  , a [ id "diapoLightbox"
                       , class "noselect"
                       , onClick address Diaporama
                       ] [ (if (.diaporama model)
-                          then text "||"
-                          else text "->")
+                          then i [class "fa fa-pause"] []
+                          else i [class "fa fa-play" ] [])
                          ]
                   ]
-            --, input  [ onKey address
-            --         , tabindex 0
-            --         , autofocus True
-            --         , classList [ ("display",(.display model))
-            --                     , ("hiddenBtn",True)
-            --                     ]
-            --         ] []
             ]
       ]
 
@@ -152,6 +147,6 @@ view address model =
       ]
 
 
-
-
-
+myStyle = 
+  style [ ("animation", "fadein 2s")
+        ] 
