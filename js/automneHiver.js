@@ -11071,16 +11071,21 @@ Elm.Lightbox.make = function (_elm) {
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Html$Events = Elm.Html.Events.make(_elm),
+   $Json$Decode = Elm.Json.Decode.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Streams = Elm.Streams.make(_elm);
    var _op = {};
+   var messageOn = F3(function (name,addr,msg) {
+      return A3($Html$Events.on,name,$Json$Decode.value,function (_p0) {    return A2($Signal.message,addr,msg);});
+   });
+   var onLoad = messageOn("load");
    var myStyle = $Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "animation",_1: "fadein 2s"}]));
    var update = F2(function (action,model) {
-      var _p0 = action;
-      switch (_p0.ctor)
+      var _p1 = action;
+      switch (_p1.ctor)
       {case "NoOp": return model;
          case "Left": return _U.update(model,{pictures: $Streams.left(function (_) {    return _.pictures;}(model))});
          case "Right": return _U.update(model,{pictures: $Streams.right(function (_) {    return _.pictures;}(model))});
@@ -11094,7 +11099,7 @@ Elm.Lightbox.make = function (_elm) {
               return _.pictures;
            }(model),
            function (p) {
-              return _U.eq(function (_) {    return _.filename;}(p),_p0._0);
+              return _U.eq(function (_) {    return _.filename;}(p),_p1._0);
            })
            ,display: true});
          default: return _U.update(model,
@@ -11169,11 +11174,29 @@ Elm.Lightbox.make = function (_elm) {
                          return _.diaporama;
                       }(model) ? A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-pause")]),_U.list([])) : A2($Html.i,
                       _U.list([$Html$Attributes.$class("fa fa-play")]),
-                      _U.list([]))]))]))]))]));
+                      _U.list([]))]))
+                      ,A2($Html.a,
+                      _U.list([$Html$Attributes.downloadAs(function (_) {    return _.filename;}(currentPic))
+                              ,$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "downloadHDPic",_1: true}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: "displayHDLink"
+                                                                   ,_1: function (_) {
+                                                                      return _.linkHD;
+                                                                   }(currentPic) && function (_) {
+                                                                      return _.display;
+                                                                   }(model)}]))
+                              ,$Html$Attributes.href(A2($Basics._op["++"],
+                              "images/phototheque/",
+                              A2($Basics._op["++"],
+                              function (_) {
+                                 return _.folder;
+                              }(model),
+                              A2($Basics._op["++"],"/hd/",function (_) {    return _.filename;}(currentPic)))))]),
+                      _U.list([$Html.text("Télécharger photo HD")]))]))]))]));
    });
    var view = F2(function (address,model) {    return A2($Html.div,_U.list([]),_U.list([A2(thumbs,address,model),A2(lightbox,address,model)]));});
-   var Picture = F4(function (a,b,c,d) {    return {filename: a,author: b,date: c,legend: d};});
-   var defPic = A4(Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
+   var Picture = F5(function (a,b,c,d,e) {    return {filename: a,author: b,date: c,legend: d,linkHD: e};});
+   var defPic = A5(Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing,false);
    var Model = F5(function (a,b,c,d,e) {    return {pictures: a,nameList: b,folder: c,display: d,diaporama: e};});
    var init = F2(function (pics,folder) {
       var nameList = A2($List.map,function (_) {    return _.filename;},pics);
@@ -11183,6 +11206,7 @@ Elm.Lightbox.make = function (_elm) {
                                  ,init: init
                                  ,update: update
                                  ,view: view
+                                 ,defPic: defPic
                                  ,Picture: Picture
                                  ,Model: Model
                                  ,NoOp: NoOp
@@ -11216,7 +11240,6 @@ Elm.Gallery.make = function (_elm) {
    $Streams = Elm.Streams.make(_elm),
    $Time = Elm.Time.make(_elm);
    var _op = {};
-   var defPic = A4($Lightbox.Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
    var offset = function (x) {
       return $Html$Attributes.style(_U.list([{ctor: "_Tuple2"
                                              ,_0: "transform"
@@ -11394,7 +11417,7 @@ Elm.Gallery.make = function (_elm) {
       var unfold = false;
       var moving = false;
       var lightbox = A2($Lightbox.init,pics,folder);
-      var pictures = A2($Streams.biStream,A3(chunk3,6,pics,defPic),_U.list([]));
+      var pictures = A2($Streams.biStream,A3(chunk3,6,pics,$Lightbox.defPic),_U.list([]));
       return {ctor: "_Tuple2",_0: A9(Model,pictures,lightbox,Left,moving,unfold,diaporama,folder,descr,$Maybe.Nothing),_1: $Effects.none};
    });
    return _elm.Gallery.values = {_op: _op,init: init,update: update,view: view,Model: Model,TimeStep: TimeStep};
@@ -12249,37 +12272,64 @@ Elm.AutomneHiver.make = function (_elm) {
    $Task = Elm.Task.make(_elm),
    $Time = Elm.Time.make(_elm);
    var _op = {};
+   var _p0 = A3($Gallery.init,
+   _U.list([_U.update($Lightbox.defPic,{filename: "100_8732.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "100_8733.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "100_8734.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "100_8742.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "1670-8.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "32285740.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "©-azureva_murol-tourisme-hiver.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "pt12969.jpg",legend: $Maybe.Just("")})]),
+   "hiver",
+   "Galerie hiver");
+   var hiver = _p0._0;
+   var hiverFx = _p0._1;
+   var _p1 = A3($Gallery.init,
+   _U.list([_U.update($Lightbox.defPic,{filename: "002.jpg",legend: $Maybe.Just("Test légende: Paysage d\'automne")})
+           ,_U.update($Lightbox.defPic,{filename: "003.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "Couzes.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "001.jpg",legend: $Maybe.Just("So very pretty")})
+           ,_U.update($Lightbox.defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "lacAut01.jpg",legend: $Maybe.Just("")})
+           ,_U.update($Lightbox.defPic,{filename: "lacAut02.jpg",legend: $Maybe.Just("")})]),
+   "automne",
+   "Galerie automne");
+   var automne = _p1._0;
+   var automneFx = _p1._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: automne,_1: "automne"},{ctor: "_Tuple2",_0: hiver,_1: "hiver"}]);
    var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
    var update = F2(function (action,model) {
-      var _p0 = action;
-      if (_p0.ctor === "NoOp") {
+      var _p2 = action;
+      if (_p2.ctor === "NoOp") {
             return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          } else {
-            var updateWithId = function (_p1) {
-               var _p2 = _p1;
-               var _p4 = _p2._0;
-               var _p3 = _p2._1;
-               return _U.eq(_p3,_p0._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p0._1,_p4),_1: _p3} : {ctor: "_Tuple2"
-                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p4,_1: $Effects.none}
-                                                                                                         ,_1: _p3};
+            var updateWithId = function (_p3) {
+               var _p4 = _p3;
+               var _p6 = _p4._0;
+               var _p5 = _p4._1;
+               return _U.eq(_p5,_p2._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p2._1,_p6),_1: _p5} : {ctor: "_Tuple2"
+                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p6,_1: $Effects.none}
+                                                                                                         ,_1: _p5};
             };
-            var _p5 = A3($List.foldl,
-            F2(function (_p7,_p6) {
-               var _p8 = _p7;
-               var _p10 = _p8._1;
-               var _p9 = _p6;
+            var _p7 = A3($List.foldl,
+            F2(function (_p9,_p8) {
+               var _p10 = _p9;
+               var _p12 = _p10._1;
+               var _p11 = _p8;
                return {ctor: "_Tuple2"
-                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p8._0._0,_1: _p10},_p9._0)
-                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p10),_p8._0._1),_p9._1)};
+                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p10._0._0,_1: _p12},_p11._0)
+                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p12),_p10._0._1),_p11._1)};
             }),
             {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
             A2($List.map,updateWithId,function (_) {    return _.galleries;}(model)));
-            var ng = _p5._0;
-            var effs = _p5._1;
+            var ng = _p7._0;
+            var effs = _p7._1;
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p11) {    var _p12 = _p11;return A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p12._1)),_p12._0);});
+   var viewGallery = F2(function (address,_p13) {    var _p14 = _p13;return A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p14._1)),_p14._0);});
    var view = F2(function (address,model) {
       var galleriesHtml = A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model));
       var subContainerData = A2($Html.div,
@@ -12298,46 +12348,17 @@ Elm.AutomneHiver.make = function (_elm) {
               ,$Murol.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p13) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p15) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
-   var NoOp = {ctor: "NoOp"};
-   var defPic = A4($Lightbox.Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
-   var _p14 = A3($Gallery.init,
-   _U.list([_U.update(defPic,{filename: "002.jpg",legend: $Maybe.Just("Test légende: Paysage d\'automne")})
-           ,_U.update(defPic,{filename: "003.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "Couzes.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "001.jpg",legend: $Maybe.Just("So very pretty")})
-           ,_U.update(defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "lacAut01.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "lacAut02.jpg",legend: $Maybe.Just("")})]),
-   "automne",
-   "Galerie automne");
-   var automne = _p14._0;
-   var automneFx = _p14._1;
-   var _p15 = A3($Gallery.init,
-   _U.list([_U.update(defPic,{filename: "100_8732.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "100_8733.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "100_8734.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "100_8742.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "1670-8.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "32285740.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "©-azureva_murol-tourisme-hiver.jpg",legend: $Maybe.Just("")})
-           ,_U.update(defPic,{filename: "pt12969.jpg",legend: $Maybe.Just("")})]),
-   "hiver",
-   "Galerie hiver");
-   var hiver = _p15._0;
-   var hiverFx = _p15._1;
-   var galleries = _U.list([{ctor: "_Tuple2",_0: automne,_1: "automne"},{ctor: "_Tuple2",_0: hiver,_1: "hiver"}]);
-   var initialModel = {mainMenu: $Murol.mainMenu,galleries: galleries,debug: ""};
    var timers = A2($List.map,timer,galleries);
+   var NoOp = {ctor: "NoOp"};
+   var initialModel = {mainMenu: $Murol.mainMenu,galleries: galleries,debug: ""};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: timers});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
    var Model = F3(function (a,b,c) {    return {mainMenu: a,galleries: b,debug: c};});
    return _elm.AutomneHiver.values = {_op: _op
                                      ,Model: Model
-                                     ,defPic: defPic
                                      ,initialModel: initialModel
                                      ,NoOp: NoOp
                                      ,GalleryAction: GalleryAction

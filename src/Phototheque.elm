@@ -128,14 +128,14 @@ initialContent =
       , ""
       , [ 
         ]
-      , ""
+      , "/FestivalArt.html"
       )
 
     ,( "La journée des Murolais"
       , ""
       , [ 
         ]
-      , ""
+      , "/JourneeMurolais.html"
       )
     ,( "Diaporama 2015"
       , ""

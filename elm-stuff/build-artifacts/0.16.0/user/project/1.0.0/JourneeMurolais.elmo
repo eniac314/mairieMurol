@@ -1,0 +1,117 @@
+Elm.JourneeMurolais = Elm.JourneeMurolais || {};
+Elm.JourneeMurolais.make = function (_elm) {
+   "use strict";
+   _elm.JourneeMurolais = _elm.JourneeMurolais || {};
+   if (_elm.JourneeMurolais.values) return _elm.JourneeMurolais.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Effects = Elm.Effects.make(_elm),
+   $Gallery = Elm.Gallery.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Lightbox = Elm.Lightbox.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp = Elm.StartApp.make(_elm),
+   $Task = Elm.Task.make(_elm),
+   $Time = Elm.Time.make(_elm);
+   var _op = {};
+   var _p0 = A3($Gallery.init,
+   _U.list([_U.update($Lightbox.defPic,{filename: "escalier 1.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "escalier 2.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "escalier 3.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "escalier 4.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "panorama 1.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "panorama 2.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "panorama 3.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "panorama  4.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "panorama 5.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "panorama 6.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "tribune 1.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "tribune 2.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "tribune 3.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "tribune 4.jpg",legend: $Maybe.Just(""),linkHD: true})
+           ,_U.update($Lightbox.defPic,{filename: "tribune 5.jpg",legend: $Maybe.Just(""),linkHD: true})]),
+   "journeeMurolais",
+   "");
+   var festival = _p0._0;
+   var festivalFx = _p0._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: festival,_1: "festival"}]);
+   var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      if (_p1.ctor === "NoOp") {
+            return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         } else {
+            var updateWithId = function (_p2) {
+               var _p3 = _p2;
+               var _p5 = _p3._0;
+               var _p4 = _p3._1;
+               return _U.eq(_p4,_p1._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p1._1,_p5),_1: _p4} : {ctor: "_Tuple2"
+                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p5,_1: $Effects.none}
+                                                                                                         ,_1: _p4};
+            };
+            var _p6 = A3($List.foldl,
+            F2(function (_p8,_p7) {
+               var _p9 = _p8;
+               var _p11 = _p9._1;
+               var _p10 = _p7;
+               return {ctor: "_Tuple2"
+                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p9._0._0,_1: _p11},_p10._0)
+                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p11),_p9._0._1),_p10._1)};
+            }),
+            {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
+            A2($List.map,updateWithId,function (_) {    return _.galleries;}(model)));
+            var ng = _p6._0;
+            var effs = _p6._1;
+            return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
+         }
+   });
+   var viewGallery = F2(function (address,_p12) {    var _p13 = _p12;return A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p13._1)),_p13._0);});
+   var view = F2(function (address,model) {
+      var galleriesHtml = A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model));
+      var subContainerData = A2($Html.div,
+      _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("journeeMurolais")]),
+      A2($Basics._op["++"],
+      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La journée des murolais")]))]),
+      A2($Basics._op["++"],
+      galleriesHtml,
+      _U.list([A2($Html.a,
+      _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("backToTiledMenu")]),
+      _U.list([$Html.text("Revenir au menu")]))]))));
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","Phototheque"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([subContainerData]))
+              ,$Murol.pageFooter]));
+   });
+   var timer = function (g) {
+      return A2($Signal.map,function (_p14) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+   };
+   var timers = A2($List.map,timer,galleries);
+   var NoOp = {ctor: "NoOp"};
+   var initialModel = {mainMenu: $Murol.mainMenu,galleries: galleries,debug: ""};
+   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: timers});
+   var main = app.html;
+   var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
+   var Model = F3(function (a,b,c) {    return {mainMenu: a,galleries: b,debug: c};});
+   return _elm.JourneeMurolais.values = {_op: _op
+                                        ,Model: Model
+                                        ,initialModel: initialModel
+                                        ,NoOp: NoOp
+                                        ,GalleryAction: GalleryAction
+                                        ,update: update
+                                        ,viewGallery: viewGallery
+                                        ,view: view
+                                        ,timer: timer
+                                        ,timers: timers
+                                        ,app: app
+                                        ,main: main
+                                        ,galleries: galleries
+                                        ,festival: festival
+                                        ,festivalFx: festivalFx};
+};

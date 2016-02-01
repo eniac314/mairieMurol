@@ -19,7 +19,6 @@ Elm.Gallery.make = function (_elm) {
    $Streams = Elm.Streams.make(_elm),
    $Time = Elm.Time.make(_elm);
    var _op = {};
-   var defPic = A4($Lightbox.Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
    var offset = function (x) {
       return $Html$Attributes.style(_U.list([{ctor: "_Tuple2"
                                              ,_0: "transform"
@@ -197,7 +196,7 @@ Elm.Gallery.make = function (_elm) {
       var unfold = false;
       var moving = false;
       var lightbox = A2($Lightbox.init,pics,folder);
-      var pictures = A2($Streams.biStream,A3(chunk3,6,pics,defPic),_U.list([]));
+      var pictures = A2($Streams.biStream,A3(chunk3,6,pics,$Lightbox.defPic),_U.list([]));
       return {ctor: "_Tuple2",_0: A9(Model,pictures,lightbox,Left,moving,unfold,diaporama,folder,descr,$Maybe.Nothing),_1: $Effects.none};
    });
    return _elm.Gallery.values = {_op: _op,init: init,update: update,view: view,Model: Model,TimeStep: TimeStep};

@@ -43,7 +43,7 @@ type alias AnimationState =
 
 init : List Picture -> String -> String -> (Model, Effects Action)
 init pics folder descr = 
-  let pictures  = biStream (chunk3 6 pics defPic) []
+  let pictures  = biStream (chunk3 6 pics Lightbox.defPic) []
       lightbox  = Lightbox.init pics folder
       moving    = False
       unfold    = False
@@ -236,6 +236,4 @@ myStyle =
 offset x = 
   style [ ("transform", "translateX(" ++ toString x ++ "px)")
         ]
-
-defPic = Lightbox.Picture "" Nothing Nothing Nothing
 

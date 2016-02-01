@@ -9,7 +9,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Lightbox exposing (Picture)
+import Lightbox exposing (Picture, defPic)
 import Gallery exposing (..)
 import Time exposing (..)
 import Task exposing (..)
@@ -33,7 +33,7 @@ type alias Model =
   , debug : String
   }
 
-defPic = Lightbox.Picture "" Nothing Nothing Nothing
+--defPic = Lightbox.Picture "" Nothing Nothing Nothing
 
 initialModel =
   { mainMenu  = mainMenu
@@ -46,6 +46,7 @@ initialModel =
 type Action = 
    NoOp 
  | GalleryAction String (Gallery.Action)
+
 
 update : Action -> Model -> (Model, Effects Action)
 update action model =

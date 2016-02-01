@@ -1,4 +1,4 @@
-module Lightbox (Picture, Model, Action(..), init, update, view)where
+module Lightbox (Picture, Model, Action(..), init, update, view, defPic) where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -19,20 +19,25 @@ type alias Model =
      , diaporama : Bool
      }
 
+--, button [ ] [i [class "fa fa-spinner fa-spin"] []]
+
 type alias Picture = 
     { filename : String
     , author : Maybe String
     , date : Maybe Date  
     , legend : Maybe String
+    , linkHD : Bool
     }
 
 defPic : Picture
-defPic = Picture "" Nothing Nothing Nothing
+defPic = Picture "" Nothing Nothing Nothing False
 
 init : List Picture -> String -> Model
 init pics folder = 
   let nameList = List.map .filename pics
+  --in Model (goTo (biStream pics defPic) (\p -> (.filename p) == "waiting.gif")) nameList folder False False
   in Model (biStream pics defPic) nameList folder False False
+
 
 -- Update
 type Action = 
@@ -53,7 +58,10 @@ update action model =
     Left      -> { model | pictures  = left (.pictures model) }
     Right     -> { model | pictures  = right (.pictures model) }
     Display   -> { model | display   = not (.display model) }
-    Close     -> { model | display   = False } 
+    Close     -> { model | display   = False }
+                         --, pictures  = goTo (.pictures model)
+                         --                   (\p -> (.filename p) == "waiting.gif")
+                 --} 
     Diaporama -> { model | diaporama = not (.diaporama model) }
     OpenDiapo -> { model | diaporama = True, display = True }
     GoTo n    -> { model |
@@ -94,10 +102,20 @@ lightbox address model =
             , onKey address, tabindex 0, autofocus True
             ]
             [ div [ class "picContainer"]
+                  
                   [ img [src ("images/phototheque/" 
                              ++ (.folder model) ++ "/"
                              ++ (.filename currentPic))
                         ] []
+
+                  --[ if (.loading model)
+                  --  then div [ class "loader" ]
+                  --           [ i [class "fa fa-spinner fa-spin"] []
+                  --           ]
+                  --  else img [src ("images/phototheque/" 
+                  --                ++ (.folder model) ++ "/"
+                  --                ++ (.filename currentPic))
+                  --           ] []
                   , div [ class "halfPic"
                         , id "halfPicleft"
                         , onClick address Left
@@ -111,6 +129,7 @@ lightbox address model =
             , div [ class "lightBoxlegend"]
                   [ --text "photo " ++ () ++ " sur " () ++ ""
                     text (Maybe.withDefault "" (.legend currentPic))
+                  --, div [ onLoad address Loaded ] [text (toString (.loading model))]
                   , a [ id "closebtn"
                       , class "noselect"
                       , onClick address Display
@@ -118,10 +137,20 @@ lightbox address model =
                   , a [ id "diapoLightbox"
                       , class "noselect"
                       , onClick address Diaporama
-                      ] [ (if (.diaporama model)
-                          then i [class "fa fa-pause"] []
-                          else i [class "fa fa-play" ] [])
-                         ]
+                      ]
+                      [ (if (.diaporama model)
+                        then i [class "fa fa-pause"] []
+                        else i [class "fa fa-play" ] [])
+                      ]
+                   , a [ downloadAs (.filename currentPic)
+                       , classList 
+                          [ ("downloadHDPic", True)
+                          , ("displayHDLink", (.linkHD currentPic && .display model))
+                          ]
+                       , href ("images/phototheque/" 
+                             ++ (.folder model) ++ "/hd/"
+                             ++ (.filename currentPic))
+                       ] [text "Télécharger photo HD"]    
                   ]
             ]
       ]
@@ -150,3 +179,11 @@ view address model =
 myStyle = 
   style [ ("animation", "fadein 2s")
         ] 
+
+onLoad : Signal.Address a -> a -> Attribute
+onLoad =
+  messageOn "load"
+
+messageOn : String -> Signal.Address a -> a -> Attribute
+messageOn name addr msg =
+  on name Json.value (\_ -> Signal.message addr msg)

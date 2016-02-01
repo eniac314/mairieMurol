@@ -5,7 +5,9 @@ module.exports = function(grunt) {
       compile: {
         files: {
           "./js/murol.js": ["./src/Murol.elm"],
+          "./js/journeeMurolais.js": ["./src/JourneeMurolais.elm"],
           "./js/automneHiver.js": ["./src/AutomneHiver.elm"],
+          "./js/festivalArt.js": ["./src/FestivalArt.elm"],
           "./js/tourisme.js": ["./src/Tourisme.elm"],
           "./js/vieScolaire.js": ["./src/VieScolaire.elm"],
           "./js/gestionDesDechets.js": ["./src/GestionDesDechets.elm"],
@@ -58,7 +60,9 @@ module.exports = function(grunt) {
     watch: {
       elm: {
         files: ["./src/Murol.elm"
+                , "./src/JourneeMurolais.elm"
                 , "./src/AutomneHiver.elm"
+                , "./src/FestivalArt.elm"
                 , "./src/Tourisme.elm"
                 , "./src/VieScolaire.elm"
                 , "./src/GestionDesDechets.elm"

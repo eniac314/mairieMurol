@@ -10,16 +10,21 @@ Elm.Lightbox.make = function (_elm) {
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Html$Events = Elm.Html.Events.make(_elm),
+   $Json$Decode = Elm.Json.Decode.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Streams = Elm.Streams.make(_elm);
    var _op = {};
+   var messageOn = F3(function (name,addr,msg) {
+      return A3($Html$Events.on,name,$Json$Decode.value,function (_p0) {    return A2($Signal.message,addr,msg);});
+   });
+   var onLoad = messageOn("load");
    var myStyle = $Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "animation",_1: "fadein 2s"}]));
    var update = F2(function (action,model) {
-      var _p0 = action;
-      switch (_p0.ctor)
+      var _p1 = action;
+      switch (_p1.ctor)
       {case "NoOp": return model;
          case "Left": return _U.update(model,{pictures: $Streams.left(function (_) {    return _.pictures;}(model))});
          case "Right": return _U.update(model,{pictures: $Streams.right(function (_) {    return _.pictures;}(model))});
@@ -33,7 +38,7 @@ Elm.Lightbox.make = function (_elm) {
               return _.pictures;
            }(model),
            function (p) {
-              return _U.eq(function (_) {    return _.filename;}(p),_p0._0);
+              return _U.eq(function (_) {    return _.filename;}(p),_p1._0);
            })
            ,display: true});
          default: return _U.update(model,
@@ -108,11 +113,29 @@ Elm.Lightbox.make = function (_elm) {
                          return _.diaporama;
                       }(model) ? A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-pause")]),_U.list([])) : A2($Html.i,
                       _U.list([$Html$Attributes.$class("fa fa-play")]),
-                      _U.list([]))]))]))]))]));
+                      _U.list([]))]))
+                      ,A2($Html.a,
+                      _U.list([$Html$Attributes.downloadAs(function (_) {    return _.filename;}(currentPic))
+                              ,$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "downloadHDPic",_1: true}
+                                                                  ,{ctor: "_Tuple2"
+                                                                   ,_0: "displayHDLink"
+                                                                   ,_1: function (_) {
+                                                                      return _.linkHD;
+                                                                   }(currentPic) && function (_) {
+                                                                      return _.display;
+                                                                   }(model)}]))
+                              ,$Html$Attributes.href(A2($Basics._op["++"],
+                              "images/phototheque/",
+                              A2($Basics._op["++"],
+                              function (_) {
+                                 return _.folder;
+                              }(model),
+                              A2($Basics._op["++"],"/hd/",function (_) {    return _.filename;}(currentPic)))))]),
+                      _U.list([$Html.text("Télécharger photo HD")]))]))]))]));
    });
    var view = F2(function (address,model) {    return A2($Html.div,_U.list([]),_U.list([A2(thumbs,address,model),A2(lightbox,address,model)]));});
-   var Picture = F4(function (a,b,c,d) {    return {filename: a,author: b,date: c,legend: d};});
-   var defPic = A4(Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing);
+   var Picture = F5(function (a,b,c,d,e) {    return {filename: a,author: b,date: c,legend: d,linkHD: e};});
+   var defPic = A5(Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing,false);
    var Model = F5(function (a,b,c,d,e) {    return {pictures: a,nameList: b,folder: c,display: d,diaporama: e};});
    var init = F2(function (pics,folder) {
       var nameList = A2($List.map,function (_) {    return _.filename;},pics);
@@ -122,6 +145,7 @@ Elm.Lightbox.make = function (_elm) {
                                  ,init: init
                                  ,update: update
                                  ,view: view
+                                 ,defPic: defPic
                                  ,Picture: Picture
                                  ,Model: Model
                                  ,NoOp: NoOp

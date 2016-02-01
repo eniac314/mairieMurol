@@ -40,8 +40,12 @@ Elm.Phototheque.make = function (_elm) {
                                                                     ,{ctor: "_Tuple4",_0: "Patrimoine",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4",_0: "Les Médiévales",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4",_0: "Murol fait sa révolution",_1: "",_2: _U.list([]),_3: ""}
-                                                                    ,{ctor: "_Tuple4",_0: "Le Festival d\'Art",_1: "",_2: _U.list([]),_3: ""}
-                                                                    ,{ctor: "_Tuple4",_0: "La journée des Murolais",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4",_0: "Le Festival d\'Art",_1: "",_2: _U.list([]),_3: "/FestivalArt.html"}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "La journée des Murolais"
+                                                                     ,_1: ""
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "/JourneeMurolais.html"}
                                                                     ,{ctor: "_Tuple4",_0: "Diaporama 2015",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4",_0: "Année 2016",_1: "",_2: _U.list([]),_3: ""}]))};
    var update = F2(function (action,model) {
