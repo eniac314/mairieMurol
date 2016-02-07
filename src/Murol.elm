@@ -77,10 +77,12 @@ mainMenu = Node ""
          ]
   , Node "Vie locale"
          [ Leaf "Vie scolaire" ""
+         , Leaf "Péri et extra-scolaire" ""
          , Leaf "Les séniors" ""
          , Leaf "Santé" ""
          , Leaf "Transports" ""
          , Leaf "Gestion des déchets" ""
+         , Leaf "Animaux" ""
          ]
   , Node "Vie économique"
          [ Leaf "Agriculture" ""
@@ -657,6 +659,17 @@ news =
                  ]
    , expiry = Date.fromString "01/25/2016"
    }    
+   ,{ emptyNews |
+     title = "Le diaporama 2015 est disponible"
+   , date  = Date.fromString "04/02/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [ text "Le diaporama de la commune pour l'année 2015 est disponible."]
+                 , a [ download True, href "/baseDocumentaire/DIAPORAMA MUROL 2015.pdf"]
+                     [ text "Télécharger"]
+                 ]
+   , expiry = Date.fromString ""
+   } 
    --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

@@ -65,6 +65,10 @@ Elm.Restaurants.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une\n                     Gentiane ou une Salers, vous apprécierez sans aucun\n                     doute de le terminer par une petite verveine. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))]));
+   var famillePlus = function () {
+      var tables = A2($Basics._op["++"],restosMurol,A2($Basics._op["++"],restosBeaunes,A2($Basics._op["++"],barBrasserie,barDeNuit)));
+      return A2($List.filter,function (e) {    return _U.eq(function (_) {    return _.label;}(e),$StarTable.FamillePlus);},tables);
+   }();
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("restaurants")]),
@@ -72,17 +76,21 @@ Elm.Restaurants.make = function (_elm) {
                         }
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Restaurants"
-                                                             ,_1: ""
+                                                             ,_1: "/images/tiles/restaurants/restaurants.jpg"
                                                              ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
                                                                           ,A2($StarTable.makeTable,"aBeauneLeFroid",restosBeaunes)
                                                                           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
                                                                           ,A2($StarTable.makeTable,"aMurol",restosMurol)])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Bar brasserie"
-                                                             ,_1: ""
+                                                             ,_1: "/images/tiles/restaurants/drinks.jpg"
                                                              ,_2: _U.list([A2($StarTable.makeTable,"barBrasserie",barBrasserie)
                                                                           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
-                                                                          ,A2($StarTable.makeTable,"barDeNuit",barDeNuit)])}]))};
+                                                                          ,A2($StarTable.makeTable,"barDeNuit",barDeNuit)])}
+                                                            ,{ctor: "_Tuple3"
+                                                             ,_0: "Famille plus"
+                                                             ,_1: "/images/tiles/hebergements/famillePlus.jpg"
+                                                             ,_2: _U.list([A2($StarTable.makeTable,"famillePlus",famillePlus)])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
@@ -130,6 +138,7 @@ Elm.Restaurants.make = function (_elm) {
                                     ,update: update
                                     ,main: main
                                     ,initialContent: initialContent
+                                    ,famillePlus: famillePlus
                                     ,restaurants: restaurants
                                     ,restosBeaunes: restosBeaunes
                                     ,restosMurol: restosMurol

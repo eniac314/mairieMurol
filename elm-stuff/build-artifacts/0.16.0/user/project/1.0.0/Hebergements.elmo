@@ -237,13 +237,17 @@ Elm.Hebergements.make = function (_elm) {
    ,fax: "04 73 88 58 00"
    ,mail: "murol@azureva-vacances.com"
    ,site: "http://www.azureva-vacances.com/Individuel/Village/Murol"})]);
+   var famillePlus = function () {
+      var tables = A2($Basics._op["++"],azureva,A2($Basics._op["++"],hotels,A2($Basics._op["++"],campings,A2($Basics._op["++"],meubles,chambresHotes))));
+      return A2($List.filter,function (e) {    return _U.eq(function (_) {    return _.label;}(e),$StarTable.FamillePlus);},tables);
+   }();
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Hébergements")]),
                            _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Hébergements")])),content]));
                         }
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
-                                                             ,_0: "Hotels"
+                                                             ,_0: "Hôtels"
                                                              ,_1: "/images/tiles/hebergements/hotels.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
@@ -271,9 +275,13 @@ Elm.Hebergements.make = function (_elm) {
                                                                           _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                             répondront à toutes les attentes et à tous \n                             les budgets. Les meublés que nous vous proposons \n                             sont tous classés par la préfecture. Le classement, \n                             en étoiles, indique le degré de confort de \n                             la location. Certains sont même labellisés. ")]))
                                                                           ,A2($StarTable.makeTable,"Meublés",meubles)])}
                                                             ,{ctor: "_Tuple3"
-                                                             ,_0: "Village Vacances"
+                                                             ,_0: "Villages Vacances"
                                                              ,_1: "/images/tiles/hebergements/villageVac.jpg"
-                                                             ,_2: _U.list([A2($StarTable.makeTable,"Village Vacances",azureva)])}]))};
+                                                             ,_2: _U.list([A2($StarTable.makeTable,"Village Vacances",azureva)])}
+                                                            ,{ctor: "_Tuple3"
+                                                             ,_0: "Famille plus"
+                                                             ,_1: "/images/tiles/hebergements/famillePlus.jpg"
+                                                             ,_2: _U.list([A2($StarTable.makeTable,"famillePlus",famillePlus)])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
@@ -321,6 +329,7 @@ Elm.Hebergements.make = function (_elm) {
                                      ,update: update
                                      ,main: main
                                      ,initialContent: initialContent
+                                     ,famillePlus: famillePlus
                                      ,azureva: azureva
                                      ,hotels: hotels
                                      ,campings: campings

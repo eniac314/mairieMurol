@@ -11389,7 +11389,7 @@ Elm.Gallery.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("seeAll")]),
                       _U.list([A2($Html.button,_U.list([A2($Html$Events.onClick,address,Unfold)]),_U.list([$Html.text("Voir toutes les photos")]))]))
                       ,A2($Html.button,
-                      _U.list([A2($Html$Events.onClick,address,MoveRight)]),
+                      _U.list([A2($Html$Events.onClick,address,MoveLeft)]),
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-backward")]),_U.list([]))]))
                       ,A2($Html.button,
                       _U.list([A2($Html$Events.onClick,address,Move)]),
@@ -11399,7 +11399,7 @@ Elm.Gallery.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("fa fa-play")]),
                       _U.list([]))]))
                       ,A2($Html.button,
-                      _U.list([A2($Html$Events.onClick,address,MoveLeft)]),
+                      _U.list([A2($Html$Events.onClick,address,MoveRight)]),
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-forward")]),_U.list([]))]))
                       ,A2($Html.button,
                       _U.list([A2($Html$Events.onClick,address,Diaporama),$Html$Attributes.$class("diapoButton")]),
@@ -11559,7 +11559,12 @@ Elm.TiledMenu.make = function (_elm) {
             _U.list([_p2._0
                     ,A2($Html.a,
                     _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
-                    _U.list([$Html.text("Revenir au menu")]))]));
+                    _U.list([$Html.text("Revenir au menu")]))
+                    ,function (_) {
+                       return _.photoLink;
+                    }(model) ? A2($Html.a,
+                    _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("photoLink")]),
+                    _U.list([$Html.text("Phototheque")])) : nullTag]));
          }
    });
    var Content = function (a) {    return {ctor: "Content",_0: a};};
@@ -11576,7 +11581,7 @@ Elm.TiledMenu.make = function (_elm) {
             return _U.update(model,{current: Menu});
          }
    });
-   var Model = F2(function (a,b) {    return {current: a,menuData: b};});
+   var Model = F3(function (a,b,c) {    return {current: a,menuData: b,photoLink: c};});
    var init = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
@@ -11592,7 +11597,7 @@ Elm.TiledMenu.make = function (_elm) {
                      ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p13)])),_p11._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
-      return A2(Model,Menu,$Dict.fromList(xs$));
+      return A3(Model,Menu,$Dict.fromList(xs$),false);
    };
    var initAt = F2(function (urlParams,xs) {
       var model = init(xs);
@@ -11622,7 +11627,24 @@ Elm.TiledMenu.make = function (_elm) {
                      ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p19)])),_p16._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
-      return A2(Model,Menu,$Dict.fromList(xs$));
+      return A3(Model,Menu,$Dict.fromList(xs$),false);
+   };
+   var initPhoto = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p20) {
+         var _p21 = _p20;
+         var _p23 = _p21._0._0;
+         var _p22 = _p21._1;
+         return {ctor: "_Tuple2"
+                ,_0: _p22
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A4(Tile,_p23,_p22,_p21._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p23)])),_p21._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A3(Model,Menu,$Dict.fromList(xs$),true);
    };
    return _elm.TiledMenu.values = {_op: _op
                                   ,Model: Model
@@ -11632,6 +11654,7 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,init: init
                                   ,initAt: initAt
                                   ,initWithLink: initWithLink
+                                  ,initPhoto: initPhoto
                                   ,ShowTile: ShowTile
                                   ,ShowMenu: ShowMenu
                                   ,update: update
@@ -12026,7 +12049,13 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Animation estivale","")]))
            ,A2(Node,
            "Vie locale",
-           _U.list([A2(Leaf,"Vie scolaire",""),A2(Leaf,"Les séniors",""),A2(Leaf,"Santé",""),A2(Leaf,"Transports",""),A2(Leaf,"Gestion des déchets","")]))
+           _U.list([A2(Leaf,"Vie scolaire","")
+                   ,A2(Leaf,"Péri et extra-scolaire","")
+                   ,A2(Leaf,"Les séniors","")
+                   ,A2(Leaf,"Santé","")
+                   ,A2(Leaf,"Transports","")
+                   ,A2(Leaf,"Gestion des déchets","")
+                   ,A2(Leaf,"Animaux","")]))
            ,A2(Node,"Vie économique",_U.list([A2(Leaf,"Agriculture",""),A2(Leaf,"Commerces",""),A2(Leaf,"Entreprises",""),A2(Leaf,"Offres d\'emploi","")]))
            ,A2(Node,
            "Mairie",
@@ -12191,7 +12220,17 @@ Elm.Murol.make = function (_elm) {
                               _U.list([]),
                               _U.list([$Html.text("Il dressera le bilan de l’année 2015 et \n                           vous informera sur l’avancée des projets en cours. \n                           Vous pourrez également voir le diaporama de l’année \n                           2015 réalisé à partir des photos fournies par \n                           Michel Martin, correspondant du journal la Montagne. ")]))
                               ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rendez-vous le 24 janvier à 11 heures, à la salle des fêtes de Murol.")]))]))
-                      ,expiry: $Date.fromString("01/25/2016")})]);
+                      ,expiry: $Date.fromString("01/25/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Le diaporama 2015 est disponible"
+                      ,date: $Date.fromString("04/02/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
+                              _U.list([$Html.text("Télécharger")]))]))
+                      ,expiry: $Date.fromString("")})]);
    var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/26/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;

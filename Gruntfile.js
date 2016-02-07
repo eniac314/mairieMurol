@@ -5,10 +5,13 @@ module.exports = function(grunt) {
       compile: {
         files: {
           "./js/murol.js": ["./src/Murol.elm"],
+          "./js/periscolaire.js": ["./src/Periscolaire.elm"],
+          "./js/annee2016.js": ["./src/Annee2016.elm"],
           "./js/journeeMurolais.js": ["./src/JourneeMurolais.elm"],
           "./js/automneHiver.js": ["./src/AutomneHiver.elm"],
           "./js/festivalArt.js": ["./src/FestivalArt.elm"],
           "./js/tourisme.js": ["./src/Tourisme.elm"],
+          "./js/animaux.js": ["./src/Animaux.elm"],
           "./js/vieScolaire.js": ["./src/VieScolaire.elm"],
           "./js/gestionDesDechets.js": ["./src/GestionDesDechets.elm"],
           "./js/numerosUrgences.js": ["./src/NumerosUrgences.elm"],
@@ -60,10 +63,13 @@ module.exports = function(grunt) {
     watch: {
       elm: {
         files: ["./src/Murol.elm"
+                , "./src/Annee2016.elm"
+                , "./src/Periscolaire.elm"
                 , "./src/JourneeMurolais.elm"
                 , "./src/AutomneHiver.elm"
                 , "./src/FestivalArt.elm"
                 , "./src/Tourisme.elm"
+                , "./src/Animaux.elm"
                 , "./src/VieScolaire.elm"
                 , "./src/GestionDesDechets.elm"
                 , "./src/NumerosUrgences.elm"

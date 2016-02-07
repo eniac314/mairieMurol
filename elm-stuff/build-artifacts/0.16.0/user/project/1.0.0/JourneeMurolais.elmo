@@ -38,9 +38,9 @@ Elm.JourneeMurolais.make = function (_elm) {
            ,_U.update($Lightbox.defPic,{filename: "tribune 5.jpg",legend: $Maybe.Just(""),linkHD: true})]),
    "journeeMurolais",
    "");
-   var festival = _p0._0;
-   var festivalFx = _p0._1;
-   var galleries = _U.list([{ctor: "_Tuple2",_0: festival,_1: "festival"}]);
+   var journeeMurolais = _p0._0;
+   var journeeMurolaisFx = _p0._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: journeeMurolais,_1: "journeeMurolais"}]);
    var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
    var update = F2(function (action,model) {
       var _p1 = action;
@@ -112,6 +112,6 @@ Elm.JourneeMurolais.make = function (_elm) {
                                         ,app: app
                                         ,main: main
                                         ,galleries: galleries
-                                        ,festival: festival
-                                        ,festivalFx: festivalFx};
+                                        ,journeeMurolais: journeeMurolais
+                                        ,journeeMurolaisFx: journeeMurolaisFx};
 };

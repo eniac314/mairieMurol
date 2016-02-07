@@ -4,6 +4,7 @@ hd
 *.log
 
 # Documents
+baseDocumentaire
 *.doc
 *.pdf
 *.zip

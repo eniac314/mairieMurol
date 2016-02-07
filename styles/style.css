@@ -431,17 +431,23 @@ figcaption {
   box-shadow: none;
 }
 
-#backToTiledMenu{
+#photoLink{
+
+  float: right;
+}
+
+
+#backToTiledMenu, #photoLink{
   vertical-align: center;
   text-align: center;
   background-color: #B0C4DE; 
   color: black;
   width: 150px;
-  display:block;
+  display: inline-block;
   padding: 1em 0 1em 0;
 }
 
-#backToTiledMenu:hover{
+#backToTiledMenu:hover, #photoLink:hover{
   color: white;
   background-color: teal;
 }
@@ -568,7 +574,6 @@ span.date {
 }
 
 
-
 /*---------------------------------------
   style for sidebar
 ---------------------------------------*/
@@ -639,14 +644,14 @@ background-image: none;
 #urgencesLink{
   display: block;
   text-decoration: none;
-  color: teal;
+  color: red;
   padding-right: 0.1em;
   padding-left: 0.1em;
   margin-left: 1em;
 }
 
 #urgencesLink:hover{
-  background-color: teal;
+  background-color: red;
   color: white;
 }
 
@@ -829,6 +834,13 @@ background-image: none;
 /*-------------------------------------------------------------------------------
   style for Tourisme
 -------------------------------------------------------------------------------*/
+.intro{
+  display: none;
+}
+.displayIntro {
+  display: block;
+}
+
 /*-------------------------------------------------------------------------------
   style for hebergTourisme
 -------------------------------------------------------------------------------*/

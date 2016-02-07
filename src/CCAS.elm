@@ -83,7 +83,7 @@ initialContent =
       , p  [] [text "Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY"]
       , p  [] [text "Régie : Joséphine LANARO"]
       , p  [] [text "Membres non élus désignés par le maire parmi les Murolais:"]
-      , p  [] [text "Paulette Benatek, Floriane Chazet-Fillon, Olivier Dhainaut, Monique Picot et Monique Planeix"]
+      , p  [] [text "Paulette Benatek, Floriane Chazet-Fillon, Olivier Dhainaut, Monique Picot et Suzanne Planeix"]
       --, p  [] [text "+ cinq membres non élus à désigner par le maire parmi les Murolais."]
       --, h4 [] [text "Mutuelle municipale"]
       --, p  [] [text "Votre avis compte !"]

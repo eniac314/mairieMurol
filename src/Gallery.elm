@@ -183,13 +183,13 @@ view address model =
                      [button [ onClick address Unfold]
                              [ text "Voir toutes les photos"]
                      ]               
-               , button [ onClick address MoveRight] [i [class "fa fa-backward"] []]
+               , button [ onClick address MoveLeft] [i [class "fa fa-backward"] []]
                , button [ onClick address Move]
                         [ if (.moving model)
                           then i [class "fa fa-pause"] []
                           else i [class "fa fa-play" ] [] 
                         ]
-               , button [ onClick address MoveLeft] [i [class "fa fa-forward"] []]
+               , button [ onClick address MoveRight] [i [class "fa fa-forward"] []]
                
                , button [ onClick address Diaporama
                         , class "diapoButton"

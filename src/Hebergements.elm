@@ -97,7 +97,7 @@ initialContent =
            [ h2 [] [text "Hébergements"]
            , content])
   , tiledMenu =
-      init [( "Hotels"
+      init [( "Hôtels"
             , "/images/tiles/hebergements/hotels.jpg"
             , [ p  [] [ text "Murol offre une grande diversité d'établissements, généralement indépendants. 
                              Beaucoup d'entre eux se sont engagés dans desa 
@@ -142,15 +142,24 @@ initialContent =
               ]
             )
             ,
-            ( "Village Vacances"
+            ( "Villages Vacances"
             , "/images/tiles/hebergements/villageVac.jpg"
             , [ makeTable "Village Vacances"  azureva ]
+            )
+            ,
+            ( "Famille plus"
+            , "/images/tiles/hebergements/famillePlus.jpg"
+            , [ makeTable "famillePlus"  famillePlus ]
             )
            ]
   }
 
 
 -- Data
+
+famillePlus = 
+  let tables = azureva ++ hotels ++ campings ++ meubles ++ chambresHotes
+  in List.filter (\e ->  (.label e) == FamillePlus) tables
 
 azureva = [{ emptyTe |
              name  = "Azureva"

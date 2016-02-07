@@ -12,8 +12,9 @@ import Dict exposing (..)
 -- Model
 
 type alias Model = 
-  { current  : ContentType
-  , menuData : Dict ID (Tile,Html)
+  { current   : ContentType
+  , menuData  : Dict ID (Tile,Html)
+  , photoLink : Bool
   }
 
 type alias Tile =
@@ -35,7 +36,7 @@ init xs =
                        , (Tile t id p Nothing,div [] (h4 [] [text t]::c))
                        )
                      ) (zip xs [0..n])
-  in Model Menu (Dict.fromList xs')
+  in Model Menu (Dict.fromList xs') False
 
 initAt : String -> List (String,String,List Html) -> Model
 initAt urlParams xs = 
@@ -57,7 +58,18 @@ initWithLink xs =
                        , (Tile t id p l',div [] (h4 [] [text t]::c))
                        )
                      ) (zip xs [0..n])
-  in Model Menu (Dict.fromList xs')
+  in Model Menu (Dict.fromList xs') False
+
+initPhoto : List (String,String,List Html) -> Model
+initPhoto xs =
+  let n = List.length xs
+      zip = List.map2 (,)
+      xs' = List.map (\((t,p,c),id) ->
+                       (id
+                       , (Tile t id p Nothing,div [] (h4 [] [text t]::c))
+                       )
+                     ) (zip xs [0..n])
+  in Model Menu (Dict.fromList xs') True
 
 -- Update
 type Action = 
@@ -120,6 +132,10 @@ view address model =
               [ selCont 
               , a [ href "#tiledMenuTop", onClick address ShowMenu, id "backToTiledMenu" ]
                   [ text "Revenir au menu" ]
+              , if (.photoLink model)
+                then a [ href "/Phototheque.html", id "photoLink" ]
+                       [ text "Phototheque"]
+                else nullTag
               ]
 
 

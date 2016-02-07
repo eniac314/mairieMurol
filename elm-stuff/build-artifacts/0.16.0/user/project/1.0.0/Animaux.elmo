@@ -1,0 +1,65 @@
+Elm.Animaux = Elm.Animaux || {};
+Elm.Animaux.make = function (_elm) {
+   "use strict";
+   _elm.Animaux = _elm.Animaux || {};
+   if (_elm.Animaux.values) return _elm.Animaux.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Murol = Elm.Murol.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animaux")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Animaux")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vous avez trouvé ou perdu un animal, contacter")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("SOS Animaux")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La Prade 63500 Le Broc")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél :04 7371 6243 ou 06 1328 0895")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Heures d\'ouverture:")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("14h00 à 17h00 du lundi au samedi inclus sauf jours fériés")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Référent local : Anne-Marie DOTTE tél : 06 8100 2032")]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {
+      var _p1 = action;
+      switch (_p1.ctor)
+      {case "NoOp": return model;
+         case "Entry": return A2(changeMain,model,_p1._0);
+         default: return model;}
+   });
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie locale","Animaux"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Murol.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Animaux.values = {_op: _op
+                                ,subMenu: subMenu
+                                ,initialModel: initialModel
+                                ,view: view
+                                ,contentMap: contentMap
+                                ,update: update
+                                ,changeMain: changeMain
+                                ,main: main
+                                ,initialContent: initialContent};
+};

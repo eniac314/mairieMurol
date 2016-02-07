@@ -168,7 +168,7 @@ Elm.Gallery.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("seeAll")]),
                       _U.list([A2($Html.button,_U.list([A2($Html$Events.onClick,address,Unfold)]),_U.list([$Html.text("Voir toutes les photos")]))]))
                       ,A2($Html.button,
-                      _U.list([A2($Html$Events.onClick,address,MoveRight)]),
+                      _U.list([A2($Html$Events.onClick,address,MoveLeft)]),
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-backward")]),_U.list([]))]))
                       ,A2($Html.button,
                       _U.list([A2($Html$Events.onClick,address,Move)]),
@@ -178,7 +178,7 @@ Elm.Gallery.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("fa fa-play")]),
                       _U.list([]))]))
                       ,A2($Html.button,
-                      _U.list([A2($Html$Events.onClick,address,MoveLeft)]),
+                      _U.list([A2($Html$Events.onClick,address,MoveRight)]),
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-forward")]),_U.list([]))]))
                       ,A2($Html.button,
                       _U.list([A2($Html$Events.onClick,address,Diaporama),$Html$Attributes.$class("diapoButton")]),

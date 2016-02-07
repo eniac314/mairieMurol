@@ -119,9 +119,9 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(festival, "festival")]
+galleries = [(journeeMurolais, "journeeMurolais")]
 
-(festival, festivalFx) = 
+(journeeMurolais, journeeMurolaisFx) = 
   Gallery.init 
     [ { defPic |
         filename = "escalier 1.jpg"

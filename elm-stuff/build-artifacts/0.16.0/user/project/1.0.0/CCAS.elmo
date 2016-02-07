@@ -24,7 +24,7 @@ Elm.CCAS.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Régie : Joséphine LANARO")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres non élus désignés par le maire parmi les Murolais:")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Paulette Benatek, Floriane Chazet-Fillon, Olivier Dhainaut, Monique Picot et Monique Planeix")]))]));
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Paulette Benatek, Floriane Chazet-Fillon, Olivier Dhainaut, Monique Picot et Suzanne Planeix")]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

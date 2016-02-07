@@ -36,7 +36,10 @@ Elm.LaCommune.make = function (_elm) {
            _U.list([$Html.text("Par ailleurs, notre commune, qui se situe à \n                   deux pas des deux principales stations de ski \n                   alpin du Massif du Sancy, bénéficie de la \n                   présence d’un foyer de ski nordique (avec une \n                   zone de raquette) au village de Beaune-le-Froid, à \n                   1000m d’altitude. Les pistes s’étendent dans la Forêt \n                   de Beaune-leFroid (gérée par l’Office National des Forêts). \n                   Ce site engendre une certaine complémentarité dans l’offre \n                   et nous permet de compter également sur le \n                   tourisme hivernal dès le mois de décembre.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("En intersaison, nous accueillons davantage les vacanciers sans \n                   enfants, les seniors et un nombre croissant de \n                   camping-caristes, ce qui permet un allongement notable de \n                   la saison touristique.")]))]));
+           _U.list([$Html.text("En intersaison, nous accueillons davantage les vacanciers sans \n                   enfants, les seniors et un nombre croissant de \n                   camping-caristes, ce qui permet un allongement notable de \n                   la saison touristique.")]))
+           ,A2($Html.a,_U.list([$Html$Attributes.href("/Phototheque.html")]),_U.list([$Html.text("La phototheque")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,_U.list([$Html$Attributes.href("/VillageFleuri.html")]),_U.list([$Html.text("Murol village fleuri")]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

@@ -8,7 +8,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import TiledMenu exposing (init,view,update,Action)
+import TiledMenu exposing (initPhoto,view,update,Action)
 import Murol exposing (mainMenu,
                        renderMainMenu',
                        pageFooter,
@@ -27,7 +27,7 @@ subMenu : Murol.Submenu
 subMenu = { current = "", entries = []}
 
 type alias MainContent = 
-  { wrapper : (Html -> Html)
+  { wrapper : (Html -> Bool -> Html)
   , tiledMenu :  TiledMenu.Model
   } 
 
@@ -35,12 +35,14 @@ type alias Model =
   { mainMenu    : Murol.Menu
   , subMenu     : Murol.Submenu
   , mainContent : MainContent
+  , showIntro   : Bool
   }  
 
 initialModel =
   { mainMenu    = mainMenu
   , subMenu     = subMenu
   , mainContent = initialContent
+  , showIntro   = True
   }
 
 
@@ -54,6 +56,7 @@ view address model =
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
                (TiledMenu.view (Signal.forwardTo address TiledMenuAction) (.tiledMenu (.mainContent model)))
+               (.showIntro model)
             ]
       , pageFooter
       ]
@@ -75,8 +78,9 @@ update action model =
           tm = (.tiledMenu (.mainContent model))
       in
           { model | 
-            mainContent = 
-             { mc | tiledMenu = TiledMenu.update act tm }
+            showIntro = not (.showIntro model)
+            , mainContent = 
+               { mc | tiledMenu = TiledMenu.update act tm }
           }
 
 --Main
@@ -89,20 +93,28 @@ main =
     }
 
 
-initialContent =
-  { wrapper = 
-    (\content ->
-       div [ class "subContainerData noSubmenu", id "Découvrir Murol"]
+initialWrapper : Html -> Bool -> Html
+initialWrapper = 
+  (\content showIntro ->
+       div [ class "subContainerData noSubmenu", id "decouvrirMurol"]
            [ h2 [] [text "Découvrir Murol"]
-           , p [] [ text "La commune appartient au canton de
-                          Besse-et-Saint-Anastaise et est composée
-                          de quatre villages, Murol, Beaune le froid,
-                          Groire et Chautignat. Elle s'étend sur une
-                          superficie de 15 km² à une altitude de 785m à 1500m."]
-           , h3 [] [text "Les villages et hameaux"]
+           , p  [ classList [("intro",True),("displayIntro", showIntro)]]
+                [ text "La commune appartient au canton de
+                        Besse-et-Saint-Anastaise et est composée
+                        de quatre villages, Murol, Beaune le froid,
+                        Groire et Chautignat. Elle s'étend sur une
+                        superficie de 15 km² à une altitude de 785m à 1500m."]
+           , h3 [classList [("intro",True),("display", showIntro)]]
+                [text "Les villages et hameaux"]
            , content])
+
+
+initialContent =
+  { wrapper = initialWrapper
+    
   , tiledMenu =
-      init [( "Murol"
+      initPhoto
+            [( "Murol"
             , "/images/tiles/decouvrirMurol/murolTile.jpg"
             , [ p  [] [text "Le bourg de Murol est implanté dans un écrin de verdure à
                              850 mètres d'altitude, dans la vallée de la Couze Chambon,

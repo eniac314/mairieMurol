@@ -98,7 +98,7 @@ initialContent =
            , content])
   , tiledMenu =
       init [( "Restaurants"
-            , ""
+            , "/images/tiles/restaurants/restaurants.jpg"
             , [ h5 [] [ text "A Beaune le Froid"]
               , makeTable "aBeauneLeFroid" restosBeaunes
               , h5 [] [ text "A Murol"]
@@ -107,17 +107,26 @@ initialContent =
             )
             ,
             ( "Bar brasserie"
-            , ""
+            , "/images/tiles/restaurants/drinks.jpg"
             , [ makeTable "barBrasserie" barBrasserie
               , h5 [] [ text "Bar de Nuit"]
               , makeTable "barDeNuit" barDeNuit
               ]
+            )
+            ,
+            ( "Famille plus"
+            , "/images/tiles/hebergements/famillePlus.jpg"
+            , [ makeTable "famillePlus"  famillePlus ]
             )
            ]
   }
 
 
 -- Data
+famillePlus = 
+  let tables = restosMurol ++ restosBeaunes ++ barBrasserie ++ barDeNuit
+  in List.filter (\e ->  (.label e) == FamillePlus) tables
+
 restaurants =
   div [ id "restosTourisme"]
       [ h2 [] [text "Restaurants"]
