@@ -99,7 +99,12 @@ initialContent =
   , tiledMenu =
       init [( "Salle des fêtes de Murol"
             , ""
-            , [ 
+            , [ div [ class "subContainerData noSubmenu", id "calSalleFete"]
+                    [ h4 [] [text "Calendrier"]
+                    , div [ id "bigAgenda"] 
+                          [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=r46rbonnui234n2b2glau5btoo%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis"] []
+            ]             
+      ]
               ]
             )
             ,

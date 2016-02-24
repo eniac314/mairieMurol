@@ -78,7 +78,7 @@ initialContent =
   div [ class "subContainerData noSubmenu", id "animation"]
       [ h4 [] [text "Calendrier"]
       , div [ id "bigAgenda"] 
-            [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&amp;ctz=Europe%2FParis"] []
+            [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis"] []
             ]
       ]
       

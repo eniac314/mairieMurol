@@ -11180,7 +11180,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("agenda"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
            ,A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis")]),
            _U.list([]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
@@ -11827,10 +11827,14 @@ Elm.Sortir.make = function (_elm) {
                         }
                         ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4"
                                                                      ,_0: "Musée des peintres"
-                                                                     ,_1: ""
+                                                                     ,_1: "/images/tiles/sortir/musee.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "http://www.musee-murol.fr/fr"}
-                                                                    ,{ctor: "_Tuple4",_0: "Château de Murol",_1: "",_2: _U.list([]),_3: "www.chateaudemurol.fr"}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Château de Murol"
+                                                                     ,_1: "/images/tiles/sortir/chateau.jpg"
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "www.chateaudemurol.fr"}
                                                                     ,{ctor: "_Tuple4",_0: "Dans les environs",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Cinéma"

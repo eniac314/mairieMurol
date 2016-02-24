@@ -71,4 +71,11 @@ initialContent =
       , p [] [text "Tél : 06 86 325 346 "]
       , p [] [text "Mail  : isavey@wanadoo.fr"]
       , p [] [text "Professeur : Isabelle Chassaniol"]
+
+      
+      , h4 [] [text "Rugby tennis de table"]
+      , h4 [] [text "Qi gong gymnastique"]
+      , h4 [] [text "Ski de fond et raquettes"]
+      , h4 [] [text "Tennis multisports"]
+      , h4 [] [text "terrain de pétanque"]
       ]

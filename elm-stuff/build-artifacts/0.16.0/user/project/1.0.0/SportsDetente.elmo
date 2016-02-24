@@ -27,7 +27,12 @@ Elm.SportsDetente.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Contact : ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 06 86 325 346 ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mail  : isavey@wanadoo.fr")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Professeur : Isabelle Chassaniol")]))]));
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Professeur : Isabelle Chassaniol")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Rugby tennis de table")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Qi gong gymnastique")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Ski de fond et raquettes")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Tennis multisports")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("terrain de pétanque")]))]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {

@@ -11180,7 +11180,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("agenda"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
            ,A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis")]),
            _U.list([]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
@@ -11894,7 +11894,7 @@ Elm.Transports.make = function (_elm) {
                         locationSearch,
                         _U.list([{ctor: "_Tuple3"
                                  ,_0: "Dessertes de la commune"
-                                 ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                 ,_1: "/images/tiles/transports/les dessertes.jpg"
                                  ,_2: _U.list([A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("La situation géographique de notre commune est un \n                           atout considérable étant donné que celle-ci bénéficie d’une \n                           position centrale au niveau régional, mais également au \n                           niveau national , ce qui nous permet de \n                           recevoir des visiteurs venant de part et d’autres \n                           de la France.")]))
@@ -11925,10 +11925,10 @@ Elm.Transports.make = function (_elm) {
                                               ,A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("Ainsi, il existe de nombreuses alternatives à la \n                           voiture individuelle pour se rendre à Murol, sans \n                           oublier que le GR30 traverse la commune et \n                           que certains randonneurs viennent à pied pour une \n                           halte d’une ou plusieurs nuits dans notre station.")]))])}
-                                ,{ctor: "_Tuple3",_0: "Navette",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([navetteEte,navetteHs])}
+                                ,{ctor: "_Tuple3",_0: "Navette",_1: "/images/tiles/transports/navette.jpg",_2: _U.list([navetteEte,navetteHs])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Covoiturage"
-                                 ,_1: "/images/tiles/hebergements/placeholder.jpg"
+                                 ,_1: "/images/tiles/transports/logo-covoiturage.jpg"
                                  ,_2: _U.list([A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("Le concept du covoiturage est vraiment très simple \n                              ! Au lieu que chacun utilise sa voiture \n                              pour effectuer des trajets quotidiens ou ponctuels, le \n                              covoiturage vous permet d\'utiliser une voiture pour plusieurs \n                              personnes. Cela permet évidement de réduire les coûts \n                              de transport (prix de l\'essence, usure de la \n                              voiture, ...), la pollution, les temps de transport. ")]))
@@ -11945,7 +11945,7 @@ Elm.Transports.make = function (_elm) {
                                               _U.list([]),
                                               _U.list([A2($Murol.link,"http://www.covoiturageauvergne.net","http://www.covoiturageauvergne.net")]))
                                               ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://www.covoiturage.fr/","http://www.covoiturage.fr/")]))])}
-                                ,{ctor: "_Tuple3",_0: "Déneigement",_1: "/images/tiles/hebergements/placeholder.jpg",_2: deneigement}]))};
+                                ,{ctor: "_Tuple3",_0: "Déneigement",_1: "/images/tiles/transports/déneigement.jpg",_2: deneigement}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

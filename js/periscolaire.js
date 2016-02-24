@@ -11180,7 +11180,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("agenda"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
            ,A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis")]),
            _U.list([]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
@@ -11822,7 +11822,7 @@ Elm.Periscolaire.make = function (_elm) {
    var _op = {};
    var peri = _U.list([{ctor: "_Tuple4"
                        ,_0: "Restaurant scolaire"
-                       ,_1: ""
+                       ,_1: "/images/tiles/periscolaire/restaurant scolaire.jpg"
                        ,_2: _U.list([A2($Murol.link,"Fiche d\'inscription","")
                                     ,A2($Html.p,_U.list([]),_U.list([$Html.text("ouvert de 12h00 à 13h30")]))
                                     ,A2($Html.p,
@@ -11855,7 +11855,7 @@ Elm.Periscolaire.make = function (_elm) {
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Garderie périscolaire"
-                       ,_1: ""
+                       ,_1: "/images/tiles/periscolaire/garderie.jpg"
                        ,_2: _U.list([A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("Les Chèques Emploi Service Universel sont dorénavant acceptés pour\n                    le paiement de la garderie périscolaire.")]))
@@ -11871,7 +11871,7 @@ Elm.Periscolaire.make = function (_elm) {
                       ,{ctor: "_Tuple4",_0: "Temps d\'activités périscolaires (TAP)",_1: "",_2: _U.list([]),_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Centre de loisirs"
-                       ,_1: ""
+                       ,_1: "/images/tiles/periscolaire/centre de loisirs.jpg"
                        ,_2: _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert pendant les vacances scolaires")]))
                                     ,A2($Html.p,
                                     _U.list([]),
@@ -11880,7 +11880,7 @@ Elm.Periscolaire.make = function (_elm) {
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Transport scolaire"
-                       ,_1: ""
+                       ,_1: "/images/tiles/periscolaire/navette.jpg"
                        ,_2: _U.list([A2($Html.p,
                        _U.list([]),
                        _U.list([$Html.text("Pour le transport scolaire, la participation des familles \n                   a été fixée forfaitairement par le Conseil Général \n                   pour l’année scolaire 2008 / 2009 à 12,80€ \n                   par mois (64€ par mois pour les élèves \n                   non subventionnés).")]))])

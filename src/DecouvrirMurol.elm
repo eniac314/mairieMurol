@@ -210,7 +210,7 @@ initialContent =
             )
             ,
             ("Chautignat"
-            ,"/images/tiles/decouvrirMurol/chautignat.JPG"
+            ,"/images/tiles/decouvrirMurol/chautignatTile.jpg"
             , [ p  [] [ text "Le hameau de Chautignat est situé à flanc
                              de coteaux. Il bénéficie d'un ensoleillement maximum et
                              de prairies aux pentes douces favorables à l'élevage

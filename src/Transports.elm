@@ -101,7 +101,7 @@ initialContent =
   , tiledMenu =
       initAt locationSearch
             [("Dessertes de la commune"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/transports/les dessertes.jpg"
             , [ p [] [text "La situation géographique de notre commune est un 
                            atout considérable étant donné que celle-ci bénéficie d’une 
                            position centrale au niveau régional, mais également au 
@@ -163,12 +163,12 @@ initialContent =
             )
             ,
             ( "Navette"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/transports/navette.jpg"
             , [ navetteEte, navetteHs]
             )
             ,
             ( "Covoiturage"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/transports/logo-covoiturage.jpg"
             , [ p  [] [ text "Le concept du covoiturage est vraiment très simple 
                               ! Au lieu que chacun utilise sa voiture 
                               pour effectuer des trajets quotidiens ou ponctuels, le 
@@ -202,7 +202,7 @@ initialContent =
             )
            , 
             ( "Déneigement"
-            , "/images/tiles/hebergements/placeholder.jpg"
+            , "/images/tiles/transports/déneigement.jpg"
             , deneigement
             )
            ]

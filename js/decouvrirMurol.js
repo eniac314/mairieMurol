@@ -11180,7 +11180,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("agenda"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
            ,A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=uminokirinmail%40gmail.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis")]),
            _U.list([]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
@@ -11754,7 +11754,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                                   _U.list([$Html.text("Petit village de montagne, deuxième bourg de la\n                             commune situé sur un haut plateau, Beaune le\n                             froid est un village agricole très actif et\n                             réputé pour ses fromages de Saint Nectaire fermier,\n                             fabriqué depuis le XVIème siècle sur la commune.\n                             C\'est un lieu de promenade et de découverte\n                             du savoir-faire local. Il a su conserver son\n                             moulin à eau et son lavoir. En 2011,\n                             son four à pain a été entièrement reconstruit\n                             par des bénévoles de l’association des « chantiers\n                             de jeunesse ». L’ hiver, l’ouverture du domaine\n                             skiable permet la pratique du ski nordique et\n                             des raquettes. ")]))])}
                                                                  ,{ctor: "_Tuple3"
                                                                   ,_0: "Chautignat"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/chautignat.JPG"
+                                                                  ,_1: "/images/tiles/decouvrirMurol/chautignatTile.jpg"
                                                                   ,_2: _U.list([A2($Html.p,
                                                                   _U.list([]),
                                                                   _U.list([$Html.text("Le hameau de Chautignat est situé à flanc\n                             de coteaux. Il bénéficie d\'un ensoleillement maximum et\n                             de prairies aux pentes douces favorables à l\'élevage\n                             comme aux cultures. A proximité du hameau se\n                             trouvent les grottes de Rajat et le moulin\n                             à eau de Landrode qui ont été les\n                             lieux de créations artistiques dans la cadre de\n                             la manifestation annuelle « Horizons rencontres Art et\n                             Nature ». ")]))])}

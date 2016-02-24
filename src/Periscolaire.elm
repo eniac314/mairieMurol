@@ -104,7 +104,7 @@ initialContent =
 -- Data
 peri =
   [ ("Restaurant scolaire"
-    ,""
+    ,"/images/tiles/periscolaire/restaurant scolaire.jpg"
     , [ link "Fiche d'inscription" ""
       , p [] [ text "ouvert de 12h00 à 13h30"]
       , p [] [ text " Le montant de la participation des familles est fonction des revenus
@@ -136,7 +136,7 @@ peri =
       ]
     ,"")
   , ("Garderie périscolaire"
-    ,""
+    ,"/images/tiles/periscolaire/garderie.jpg"
     , [  p [] [ text "Les Chèques Emploi Service Universel sont dorénavant acceptés pour
                     le paiement de la garderie périscolaire."]
       , link "Fiche d'inscription" ""
@@ -154,7 +154,7 @@ peri =
     ,""
     )
   , ("Centre de loisirs"
-    ,""
+    ,"/images/tiles/periscolaire/centre de loisirs.jpg"
     , [ p [] [ text "Ouvert pendant les vacances scolaires"]
       , p [] [ text "Le centre de loisirs est ouvert du lundi au vendredi, dans les
                      locaux de l'école maternelle de Murol"]
@@ -163,7 +163,7 @@ peri =
     ,""
     )
   , ("Transport scolaire"
-    ,""
+    ,"/images/tiles/periscolaire/navette.jpg"
     , [ p [] [ text "Pour le transport scolaire, la participation des familles 
                    a été fixée forfaitairement par le Conseil Général 
                    pour l’année scolaire 2008 / 2009 à 12,80€ 

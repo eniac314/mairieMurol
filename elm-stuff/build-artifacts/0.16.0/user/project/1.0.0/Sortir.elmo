@@ -23,10 +23,14 @@ Elm.Sortir.make = function (_elm) {
                         }
                         ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4"
                                                                      ,_0: "Musée des peintres"
-                                                                     ,_1: ""
+                                                                     ,_1: "/images/tiles/sortir/musee.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "http://www.musee-murol.fr/fr"}
-                                                                    ,{ctor: "_Tuple4",_0: "Château de Murol",_1: "",_2: _U.list([]),_3: "www.chateaudemurol.fr"}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Château de Murol"
+                                                                     ,_1: "/images/tiles/sortir/chateau.jpg"
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "www.chateaudemurol.fr"}
                                                                     ,{ctor: "_Tuple4",_0: "Dans les environs",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Cinéma"

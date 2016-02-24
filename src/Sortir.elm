@@ -95,14 +95,14 @@ initialContent =
   , tiledMenu =
       initWithLink
             [("Musée des peintres"
-            ,""
+            ,"/images/tiles/sortir/musee.jpg"
             ,[ 
              ]
             ,"http://www.musee-murol.fr/fr"
              )
             ,
             ("Château de Murol"
-            ,""
+            ,"/images/tiles/sortir/chateau.jpg"
             ,[
              ]
             ,"www.chateaudemurol.fr"
