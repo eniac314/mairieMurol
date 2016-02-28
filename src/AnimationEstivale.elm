@@ -62,5 +62,7 @@ main =
 
 initialContent =
   div [ class "subContainerData noSubmenu", id "animationEstivale"]
-      [ 
+      [ p [] [text "Le programme des animations estivales 2016 est
+                    en cours d'élaboration et sera mis en ligne prochainement."]
+      , img [src "/images/illustration animations estivales.jpg"] []
       ]

@@ -43,7 +43,11 @@ Elm.Phototheque.make = function (_elm) {
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/AutomneHiver.html"}
                                                                     ,{ctor: "_Tuple4",_0: "Patrimoine",_1: "",_2: _U.list([]),_3: ""}
-                                                                    ,{ctor: "_Tuple4",_0: "Les Médiévales",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Les Médiévales"
+                                                                     ,_1: "/images/tiles/phototheque/medievales.jpg"
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "/Medievales.html"}
                                                                     ,{ctor: "_Tuple4",_0: "Murol fait sa révolution",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Le Festival d\'Art"

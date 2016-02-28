@@ -125,122 +125,122 @@ galleries = [(veuxMaireRepasCCAS, "veuxMaireRepasCCAS")]
   Gallery.init 
     [ { defPic |
         filename = "IMGP5755.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5757.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5758.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5759.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5760.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5761.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5763.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5764.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5766.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5767.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5768.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5769.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5770.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5771.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5772.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5773.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5774.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5777.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5778.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5779.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5780.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5781.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5782.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
       ,
       { defPic |
         filename = "IMGP5783.jpg"
-      , legend = Just ""
+      , caption = Just ""
       }
     ] "veuxMaireRepasCCAS" ""
 

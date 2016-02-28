@@ -79,10 +79,18 @@ main =
 initialContent = murolInf
 
 -- Data
+
+chunk n xs = 
+  case xs of 
+    []  -> []
+    xs' -> (List.take n xs') :: chunk n (drop n xs')
+
+sortDate xs = concat (reverse (chunk 2 xs)) 
+
 murolInf =
   div [class "subContainerData noSubmenu", id "murolInfPubli"]
-      [ h2 [] [text "Murol info"]
-      , h5 [] [text "2008"]
+      ([ h2 [] [text "Murol info"]] ++ sortDate 
+      [ h5 [] [text "2008"]
       , ul []
            [ li [] [link "Numero 01 - Avril" "http://www.murol.fr/Murol_info/01.pdf"]
            , li [] [link "Numero 02 - Mai" "http://www.murol.fr/Murol_info/02.pdf"]
@@ -134,4 +142,4 @@ murolInf =
       , ul []
            [li [] [link "Numero 28 - Janvier" "baseDocumentaire/MUROL INFOS 28.doc"]
            ]
-      ]
+      ])

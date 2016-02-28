@@ -71,10 +71,11 @@ main =
 initialContent =
   div [ class "subContainerData noSubmenu", id "gestionDesRisques"]
       [ h2 [] [text "Gestion des Risques"]
-      , link "Télécharger le document d'information communal sur les risques majeurs \"DICRIM\"" "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf"
-      , br [] []
-      , link "Télécharger la brochure prise en compte du risque sismique en Auvergne" "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf"
-      , br [] []
+      , div [class "DICRIM"] 
+        [ img [src "/images/dicrim.png"] [] 
+        , link "Télécharger le document d'information communal sur les risques majeurs \"DICRIM\"" "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf"
+        , link "Télécharger la brochure prise en compte du risque sismique en Auvergne" "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf"
+        ]
       , h4 [] [text "Réévaluation des risques sismiques de la région Auvergne"]
       , p  [] [text "Les séismes font partie des aléas naturels majeurs, 
                      au même titre que les inondations, les mouvements 
@@ -128,7 +129,7 @@ initialContent =
                      zones de sismicité faible (845 communes) ou modérée 
                      (390 communes) disposent d’une réglementation spécifique."]
 
-      , figure []
+      , figure [class "quakePic"]
                [img [src "/images/seismes.gif"] []]
       ]
 

@@ -11163,8 +11163,8 @@ Elm.Lightbox.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("halfPic"),$Html$Attributes.id("halfPicright"),A2($Html$Events.onClick,address,Right)]),
                       _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("noselect")]),_U.list([$Html.text(">>")]))]))]))
               ,A2($Html.div,
-              _U.list([$Html$Attributes.$class("lightBoxlegend")]),
-              _U.list([$Html.text(A2($Maybe.withDefault,"",function (_) {    return _.legend;}(currentPic)))
+              _U.list([$Html$Attributes.$class("lightBoxcaption")]),
+              _U.list([$Html.text(A2($Maybe.withDefault,"",function (_) {    return _.caption;}(currentPic)))
                       ,A2($Html.a,
                       _U.list([$Html$Attributes.id("closebtn"),$Html$Attributes.$class("noselect"),A2($Html$Events.onClick,address,Display)]),
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-times")]),_U.list([]))]))
@@ -11195,8 +11195,32 @@ Elm.Lightbox.make = function (_elm) {
                       _U.list([$Html.text("Télécharger photo HD")]))]))]))]));
    });
    var view = F2(function (address,model) {    return A2($Html.div,_U.list([]),_U.list([A2(thumbs,address,model),A2(lightbox,address,model)]));});
-   var Picture = F5(function (a,b,c,d,e) {    return {filename: a,author: b,date: c,legend: d,linkHD: e};});
+   var picCaption = F2(function (cs,ps) {
+      var addCaption = function (p) {
+         var caption = function () {
+            var _p4 = $List.head(A2($List.filter,function (_p2) {    var _p3 = _p2;return _U.eq(function (_) {    return _.filename;}(p),_p3._0);},cs));
+            if (_p4.ctor === "Nothing") {
+                  return $Maybe.Nothing;
+               } else {
+                  return $Maybe.Just(_p4._0._1);
+               }
+         }();
+         return _U.update(p,{caption: caption});
+      };
+      return A2($List.map,addCaption,ps);
+   });
+   var Picture = F5(function (a,b,c,d,e) {    return {filename: a,author: b,date: c,caption: d,linkHD: e};});
    var defPic = A5(Picture,"",$Maybe.Nothing,$Maybe.Nothing,$Maybe.Nothing,false);
+   var picList = function (n) {
+      var go = function (m) {
+         var filename = _U.cmp(n - m,10) < 0 ? A2($Basics._op["++"],"0",A2($Basics._op["++"],$Basics.toString(n - m),".jpg")) : A2($Basics._op["++"],
+         $Basics.toString(n - m),
+         ".jpg");
+         var pic = _U.update(defPic,{filename: filename,caption: $Maybe.Just("")});
+         return _U.eq(m,-1) ? _U.list([]) : A2($List._op["::"],pic,go(m - 1));
+      };
+      return go(n - 1);
+   };
    var Model = F5(function (a,b,c,d,e) {    return {pictures: a,nameList: b,folder: c,display: d,diaporama: e};});
    var init = F2(function (pics,folder) {
       var nameList = A2($List.map,function (_) {    return _.filename;},pics);
@@ -11207,6 +11231,8 @@ Elm.Lightbox.make = function (_elm) {
                                  ,update: update
                                  ,view: view
                                  ,defPic: defPic
+                                 ,picList: picList
+                                 ,picCaption: picCaption
                                  ,Picture: Picture
                                  ,Model: Model
                                  ,NoOp: NoOp
@@ -12311,30 +12337,10 @@ Elm.AutomneHiver.make = function (_elm) {
    $Task = Elm.Task.make(_elm),
    $Time = Elm.Time.make(_elm);
    var _op = {};
-   var _p0 = A3($Gallery.init,
-   _U.list([_U.update($Lightbox.defPic,{filename: "100_8732.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "100_8733.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "100_8734.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "100_8742.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "1670-8.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "32285740.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "©-azureva_murol-tourisme-hiver.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "pt12969.jpg",legend: $Maybe.Just("")})]),
-   "hiver",
-   "Galerie hiver");
+   var _p0 = A3($Gallery.init,$Lightbox.picList(22),"hiver","Galerie hiver");
    var hiver = _p0._0;
    var hiverFx = _p0._1;
-   var _p1 = A3($Gallery.init,
-   _U.list([_U.update($Lightbox.defPic,{filename: "002.jpg",legend: $Maybe.Just("Test légende: Paysage d\'automne")})
-           ,_U.update($Lightbox.defPic,{filename: "003.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "Couzes.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "001.jpg",legend: $Maybe.Just("So very pretty")})
-           ,_U.update($Lightbox.defPic,{filename: "19097479.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "lacAut01.jpg",legend: $Maybe.Just("")})
-           ,_U.update($Lightbox.defPic,{filename: "lacAut02.jpg",legend: $Maybe.Just("")})]),
-   "automne",
-   "Galerie automne");
+   var _p1 = A3($Gallery.init,$Lightbox.picList(15),"automne","Galerie automne");
    var automne = _p1._0;
    var automneFx = _p1._1;
    var galleries = _U.list([{ctor: "_Tuple2",_0: automne,_1: "automne"},{ctor: "_Tuple2",_0: hiver,_1: "hiver"}]);

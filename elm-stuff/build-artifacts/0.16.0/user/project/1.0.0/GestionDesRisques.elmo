@@ -19,14 +19,15 @@ Elm.GestionDesRisques.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("gestionDesRisques")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Gestion des Risques")]))
-           ,A2($Murol.link,
-           "Télécharger le document d\'information communal sur les risques majeurs \"DICRIM\"",
-           "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf")
-           ,A2($Html.br,_U.list([]),_U.list([]))
-           ,A2($Murol.link,
-           "Télécharger la brochure prise en compte du risque sismique en Auvergne",
-           "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf")
-           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("DICRIM")]),
+           _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/dicrim.png")]),_U.list([]))
+                   ,A2($Murol.link,
+                   "Télécharger le document d\'information communal sur les risques majeurs \"DICRIM\"",
+                   "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf")
+                   ,A2($Murol.link,
+                   "Télécharger la brochure prise en compte du risque sismique en Auvergne",
+                   "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Réévaluation des risques sismiques de la région Auvergne")]))
            ,A2($Html.p,
            _U.list([]),
@@ -57,7 +58,9 @@ Elm.GestionDesRisques.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("La région Auvergne est aujourd’hui concernée pour la \n                     totalité de ses communes par des zonages de \n                     sismicité très faible, faible ou modérée. Seules les \n                     zones de sismicité faible (845 communes) ou modérée \n                     (390 communes) disposent d’une réglementation spécifique.")]))
-           ,A2($Html.figure,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/seismes.gif")]),_U.list([]))]))]));
+           ,A2($Html.figure,
+           _U.list([$Html$Attributes.$class("quakePic")]),
+           _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/seismes.gif")]),_U.list([]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

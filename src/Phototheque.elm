@@ -116,10 +116,10 @@ initialContent =
       )
 
     ,( "Les Médiévales"
-      , ""
+      , "/images/tiles/phototheque/medievales.jpg"
       , [ 
         ]
-      , ""
+      , "/Medievales.html"
       )
     
     ,( "Murol fait sa révolution"

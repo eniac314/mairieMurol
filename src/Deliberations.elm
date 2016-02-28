@@ -60,10 +60,17 @@ main =
 initialContent = delib
   
 -- Data
+chunk n xs = 
+  case xs of 
+    []  -> []
+    xs' -> (List.take n xs') :: chunk n (drop n xs')
+
+sortDate xs = concat (reverse (chunk 2 xs)) 
+
 delib = 
   div [class "subContainerData noSubmenu", id "delibPubli"]
-      [ h2 [] [text "Délibération conseil municipal"]
-      , h5 [] [text "2014"]
+      ([ h2 [] [text "Délibération conseil municipal"]] ++ sortDate
+      [ h5 [] [text "2014"]
       , ul []
            [ li [] [link "19 mars" "http://www.murol.fr/Deliberations_conseil/2014/19032014.pdf"]
            , li [] [link "4 avril" "http://www.murol.fr/Deliberations_conseil/2014/04042014.pdf"]
@@ -80,4 +87,4 @@ delib =
            , li [] [link "2 juin" "http://www.murol.fr/Deliberations_conseil/2015/CM24092015.pdf"]
            , li [] [link "4 novembre" "http://www.murol.fr/Deliberations_conseil/2015/CM04112015.pdf"]
            ]
-      ]
+      ])

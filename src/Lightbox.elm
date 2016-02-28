@@ -1,4 +1,10 @@
-module Lightbox (Picture, Model, Action(..), init, update, view, defPic) where
+module Lightbox (Picture, Model, Action(..)
+                , init
+                , update
+                , view
+                , defPic
+                , picList
+                , picCaption) where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -25,12 +31,38 @@ type alias Picture =
     { filename : String
     , author : Maybe String
     , date : Maybe Date  
-    , legend : Maybe String
+    , caption : Maybe String
     , linkHD : Bool
     }
 
 defPic : Picture
 defPic = Picture "" Nothing Nothing Nothing False
+
+picList : Int -> List Picture
+picList n = 
+  let go m = 
+          let filename = if ( n - m ) < 10 
+                         then "0" ++ toString (n - m) ++ ".jpg"
+                         else toString (n - m) ++ ".jpg"  
+              pic = 
+                { defPic |
+                  filename = filename
+                , caption = Just ""
+                }
+          in if m == -1 then [] else pic :: go (m - 1)
+  in go (n-1)  
+
+picCaption : List (String,String) -> List Picture -> List Picture
+picCaption cs ps = 
+  let addCaption p = 
+        let caption = 
+          case List.head (List.filter (\(f,c) -> .filename p == f) cs) of
+            Nothing -> Nothing
+            Just (filename,caption) -> Just caption
+        
+        in { p | caption = caption }
+        
+  in List.map addCaption ps
 
 init : List Picture -> String -> Model
 init pics folder = 
@@ -126,9 +158,9 @@ lightbox address model =
                         ] [span [class "noselect"] [text ">>"]]
                   ]
 
-            , div [ class "lightBoxlegend"]
+            , div [ class "lightBoxcaption"]
                   [ --text "photo " ++ () ++ " sur " () ++ ""
-                    text (Maybe.withDefault "" (.legend currentPic))
+                    text (Maybe.withDefault "" (.caption currentPic))
                   --, div [ onLoad address Loaded ] [text (toString (.loading model))]
                   , a [ id "closebtn"
                       , class "noselect"

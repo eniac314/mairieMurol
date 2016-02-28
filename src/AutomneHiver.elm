@@ -9,7 +9,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Lightbox exposing (Picture, defPic)
+import Lightbox exposing (Picture, defPic, picList)
 import Gallery exposing (..)
 import Time exposing (..)
 import Task exposing (..)
@@ -125,87 +125,7 @@ port tasks =
 galleries = [(automne, "automne"), (hiver, "hiver")]
 
 (automne, automneFx) = 
-  Gallery.init 
-    [ { defPic |
-        filename = "002.jpg"
-      , legend = Just "Test légende: Paysage d'automne"
-      }
-      ,
-      { defPic |
-        filename = "003.jpg"
-      , legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "19097479.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "Couzes.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "001.jpg"
-      , legend = Just "So very pretty"
-      }
-      ,
-      { defPic |
-        filename = "19097479.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "lacAut01.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "lacAut02.jpg"
-      ,  legend = Just ""
-      }
-    ] "automne" "Galerie automne"
+  Gallery.init (picList 15) "automne" "Galerie automne"
 
 (hiver,hiverFx) = 
-  Gallery.init
-    [ { defPic |
-        filename = "100_8732.jpg"
-      , legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "100_8733.jpg"
-      , legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "100_8734.jpg"
-      , legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "100_8742.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "1670-8.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "32285740.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "©-azureva_murol-tourisme-hiver.jpg"
-      ,  legend = Just ""
-      }
-      ,
-      { defPic |
-        filename = "pt12969.jpg"
-      ,  legend = Just ""
-      }
-    ] "hiver" "Galerie hiver"
+  Gallery.init (picList 22) "hiver" "Galerie hiver"

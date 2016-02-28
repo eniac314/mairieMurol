@@ -34,7 +34,8 @@ header{
 }
 
 header #pageTitle{
-  background-color: #cfff4f;
+  /*background-color: #cfff4f;*/
+  background-color: #91bd19;
   font-style: italic;
   font-size: 45px;
   margin-bottom: 0;
@@ -113,7 +114,7 @@ input::-moz-focus-inner {
   text-transform: capitalize;
   text-decoration: none;
   font-family: 'PT Serif', verdana, serif;
-  color: black;
+  color: white;
   }
 
 .mainMenu a:hover {
@@ -319,7 +320,7 @@ div[class*="Content"] a
   margin-top: 0.5em;
   text-transform: uppercase;
   font-size: 100%;
-  color: white;
+  color: black;
   text-align: center;
   background-color: #91bd19;/*green*/
 }
@@ -1178,9 +1179,24 @@ h5.trashCat {
 /*-------------------------------------------------------------------------------
   style for gestionDesRisques
 -------------------------------------------------------------------------------*/
-#gestionDesRisques img {
+#quakePic img {
   width: 95%;
 }
+
+.DICRIM img{
+  float: right;
+  margin-bottom: 1em;
+}
+
+.DICRIM a{
+  display: block;
+  /*padding-bottom: 0.5em;*/
+}
+
+#gestionDesRisques h4{
+  clear: both;
+}
+
 /*--end of code for gestionDesRisques--------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
@@ -1707,7 +1723,7 @@ footer p {
   visibility: visible;
 }
 
-.lightBoxlegend{
+.lightBoxcaption{
   display: inline-block;
   background-color: white;
   width: 100%;

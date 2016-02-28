@@ -1176,9 +1176,24 @@ h5.trashCat {
 /*-------------------------------------------------------------------------------
   style for gestionDesRisques
 -------------------------------------------------------------------------------*/
-#gestionDesRisques img {
+#quakePic img {
   width: 95%;
 }
+
+.DICRIM img{
+  float: right;
+  margin-bottom: 1em;
+}
+
+.DICRIM a{
+  display: block;
+  /*padding-bottom: 0.5em;*/
+}
+
+#gestionDesRisques h4{
+  clear: both;
+}
+
 /*--end of code for gestionDesRisques--------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
@@ -1470,6 +1485,10 @@ footer p {
 /*-------------------------------------------------------------------------------
   style for Village fleuri
 -------------------------------------------------------------------------------*/
+#villageFleuri a{
+  display: block;
+}
+
 #villageFleuri #compteRendu{
   margin-bottom: 1em;
 }
@@ -1705,7 +1724,7 @@ footer p {
   visibility: visible;
 }
 
-.lightBoxlegend{
+.lightBoxcaption{
   display: inline-block;
   background-color: white;
   width: 100%;
@@ -1715,6 +1734,7 @@ footer p {
   box-shadow: 2px 2px 2px gray;
   text-align: left;
   font-family: 'PT Serif', verdana, serif;
+  color: black;
 }
 
 .lightbox-content{

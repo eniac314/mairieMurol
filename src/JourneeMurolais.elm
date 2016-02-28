@@ -125,91 +125,91 @@ galleries = [(journeeMurolais, "journeeMurolais")]
   Gallery.init 
     [ { defPic |
         filename = "escalier 1.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "escalier 2.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "escalier 3.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "escalier 4.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "panorama 1.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "panorama 2.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "panorama 3.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "panorama  4.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "panorama 5.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "panorama 6.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "tribune 1.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "tribune 2.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "tribune 3.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "tribune 4.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
       ,
       { defPic |
         filename = "tribune 5.jpg"
-      , legend = Just ""
+      , caption = Just ""
       , linkHD = True
       }
     ] "journeeMurolais" ""

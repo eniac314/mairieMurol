@@ -11706,7 +11706,12 @@ Elm.AnimationEstivale.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,_U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animationEstivale")]),_U.list([]));
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animationEstivale")]),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le programme des animations estivales 2016 est\n                    en cours d\'élaboration et sera mis en ligne prochainement.")]))
+           ,A2($Html.img,_U.list([$Html$Attributes.src("/images/illustration animations estivales.jpg")]),_U.list([]))]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {

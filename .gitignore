@@ -1,6 +1,7 @@
 # Logs
 logs
 hd
+assets
 *.log
 
 # Documents

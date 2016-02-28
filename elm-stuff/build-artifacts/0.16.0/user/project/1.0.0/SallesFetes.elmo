@@ -24,15 +24,19 @@ Elm.SallesFetes.make = function (_elm) {
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Salle des fêtes de Murol"
                                                              ,_1: ""
-                                                             ,_2: _U.list([A2($Html.div,
-                                                             _U.list([$Html$Attributes.$class("subContainerData noSubmenu")
-                                                                     ,$Html$Attributes.id("calSalleFete")]),
-                                                             _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Calendrier")]))
-                                                                     ,A2($Html.div,
-                                                                     _U.list([$Html$Attributes.id("bigAgenda")]),
-                                                                     _U.list([A2($Html.iframe,
-                                                                     _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=r46rbonnui234n2b2glau5btoo%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis")]),
-                                                                     _U.list([]))]))]))])}
+                                                             ,_2: _U.list([A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Pour réserver un créneau horaire, contactez nous:")]))
+                                                                          ,$Murol.mail("murolanimation@orange.fr")
+                                                                          ,A2($Html.p,
+                                                                          _U.list([]),
+                                                                          _U.list([$Html.text("Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03")]))
+                                                                          ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Calendrier disponibilités")]))
+                                                                          ,A2($Html.div,
+                                                                          _U.list([$Html$Attributes.id("bigAgenda")]),
+                                                                          _U.list([A2($Html.iframe,
+                                                                          _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=r46rbonnui234n2b2glau5btoo%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis")]),
+                                                                          _U.list([]))]))])}
                                                             ,{ctor: "_Tuple3",_0: "Salle des fêtes de Beaune",_1: "",_2: _U.list([])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
