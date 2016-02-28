@@ -1,4 +1,4 @@
-/*spring.css*/
+
 /*-------------------------------------------------------------------------------
   import google fonts
 -------------------------------------------------------------------------------*/
@@ -20,10 +20,10 @@ html{
 }
 
 body {
-  background-color: #cbdff3;
+  background-color: #d3d3d3; /*lightgrey*/
   background-position: center top, center bottom;
-  background-image: url(/images/bannerS.jpg), url(/images/Cloth.jpg);
-  background-repeat: repeat-x, repeat;
+  background-image: url(/images/bannerbgf.jpg), url(/images/lake.jpg);
+  background-repeat: repeat-x;
   margin: 0;
   min-height: 1080px;
 }
@@ -34,8 +34,7 @@ header{
 }
 
 header #pageTitle{
-  /*background-color: #cfff4f;*/
-  background-color: #91bd19;
+  background-color: gray;
   font-style: italic;
   font-size: 45px;
   margin-bottom: 0;
@@ -43,7 +42,7 @@ header #pageTitle{
 
 header #subTitle{
   margin-top: 0;
-  background-color: gold;
+  background-color: white;
   font-weight: normal;
   }
 
@@ -77,7 +76,7 @@ header #subTitle{
 -------------------------------------------------------------------------------*/
 .mainMenu
   {
-  background-color: rgba(96, 117, 38, 0.8);
+  background-color: rgba(53, 39, 44, 0.8);
   text-align: center;
   margin: 0;
   }
@@ -108,9 +107,7 @@ input::-moz-focus-inner {
   margin-top: 0.2em;
   margin-right: 0.2em;
   margin-bottom: 0.2em;
-  /*background-color: saddlebrown;*/
-  background-image: url(/images/menubg.gif);
-  /*background: -moz-linear-gradient(saddlebrown, peru, sienna);*/
+  background-color: #4d4b6d;
   text-transform: capitalize;
   text-decoration: none;
   font-family: 'PT Serif', verdana, serif;
@@ -136,7 +133,7 @@ div[class*="Content"] div div
 
 div[class*="Content"]:hover > div
 {
-  background-color: rgba(96, 117, 38, 0.8);
+  background-color: rgba(29, 51, 162, 0.8);
   position: absolute;
   z-index: 1;
   display: block;
@@ -305,7 +302,7 @@ div[class*="Content"] a
 .subContainerData h2{
   text-align: center;
   text-transform: capitalize;
-  background-color: rgba(53, 100, 44, 0.9); /*green*/
+  background-color: #635c8d;
   color: aliceblue;
   padding: 0.3em 0;
   margin-top: 0.4em;
@@ -320,9 +317,9 @@ div[class*="Content"] a
   margin-top: 0.5em;
   text-transform: uppercase;
   font-size: 100%;
-  color: black;
+  color: white;
   text-align: center;
-  background-color: #91bd19;/*green*/
+  background-color: #2F4F4F;/*darkslategray*/
 }
 .subContainerData h5 {
   color: green;
@@ -592,7 +589,7 @@ span.date {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   text-transform: uppercase;
-  background-color: rgba(53, 100, 44, 1);
+  background-color: #4d4b6d;
   color: white;
   padding-left: 0.5em;
 
@@ -1426,7 +1423,7 @@ h5.trashCat {
   border-top: 1px solid #aca6a9;
   clear: left;
   text-align: center;
-  background-color: rgba(53, 100, 44, 0.8);
+  background-color: rgba(53, 39, 44, 0.8);
   margin:0;
   padding: 0.4em 0 0 0;
   vertical-align: center;
@@ -1488,6 +1485,10 @@ footer p {
 /*-------------------------------------------------------------------------------
   style for Village fleuri
 -------------------------------------------------------------------------------*/
+#villageFleuri a{
+  display: block;
+}
+
 #villageFleuri #compteRendu{
   margin-bottom: 1em;
 }
@@ -1733,6 +1734,7 @@ footer p {
   box-shadow: 2px 2px 2px gray;
   text-align: left;
   font-family: 'PT Serif', verdana, serif;
+  color: black;
 }
 
 .lightbox-content{
