@@ -52,28 +52,34 @@ Elm.Restaurants.make = function (_elm) {
                              ,_U.update($StarTable.emptyTe,{name: "Le Piccotin \"Pizzéria\"",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 62 37 10"})]);
    var restosBeaunes = _U.list([_U.update($StarTable.emptyTe,
    {name: "Les Sancy\'Elles",addr: "63790 Beaune le Froid -MUROL",descr: _U.list(["Crèperie, petite restauration"]),tel: "04 7388 8118"})]);
-   var restaurants = A2($Html.div,
-   _U.list([$Html$Attributes.id("restosTourisme")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Restaurants")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des\n                     produits du terroir qui font sa réputation :\n                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme\n                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh !\n                     le bon jambon d’Auvergne, les saucisses et les\n                     saucissons), le tout arrosé, avec modération, de vins\n                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,\n                     Boudes ou Corent. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le tableau ne serait pas complet, si nous\n                     ne citions quelques autres spécialités régionales comme la\n                     truffade, l\'aligot, la potée auvergnate, les tripoux ou\n                     encore les lentilles du Puy que vous dégusterez\n                     chaudes, agrémentées d\'oignons et de quelques lardons ou,\n                     en été, froides en salade... un délice... ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une\n                     Gentiane ou une Salers, vous apprécierez sans aucun\n                     doute de le terminer par une petite verveine. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le tout avec modération.")]))]));
+   var restaurants = function (showIntro) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("restosTourisme")]),
+      _U.list([A2($Html.h2,
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+              _U.list([$Html.text("Restaurants")]))
+              ,A2($Html.p,
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+              _U.list([$Html.text("On ne peut évoquer l’Auvergne sans parler des\n                 produits du terroir qui font sa réputation :\n                 les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme\n                 d’Ambert et Bleu d’Auvergne). Les salaisons (oh !\n                 le bon jambon d’Auvergne, les saucisses et les\n                 saucissons), le tout arrosé, avec modération, de vins\n                 non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,\n                 Boudes ou Corent. ")]))
+              ,A2($Html.p,
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+              _U.list([$Html.text("Le tableau ne serait pas complet, si nous\n                 ne citions quelques autres spécialités régionales comme la\n                 truffade, l\'aligot, la potée auvergnate, les tripoux ou\n                 encore les lentilles du Puy que vous dégusterez\n                 chaudes, agrémentées d\'oignons et de quelques lardons ou,\n                 en été, froides en salade... un délice... ")]))
+              ,A2($Html.p,
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+              _U.list([$Html.text("Après avoir débuté votre repas auvergnat par une\n                 Gentiane ou une Salers, vous apprécierez sans aucun\n                 doute de le terminer par une petite verveine. ")]))
+              ,A2($Html.p,
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+              _U.list([$Html.text("Le tout avec modération.")]))]));
+   };
    var famillePlus = function () {
       var tables = A2($Basics._op["++"],restosMurol,A2($Basics._op["++"],restosBeaunes,A2($Basics._op["++"],barBrasserie,barDeNuit)));
       return A2($List.filter,function (e) {    return _U.eq(function (_) {    return _.label;}(e),$StarTable.FamillePlus);},tables);
    }();
-   var initialContent = {wrapper: function (content) {
+   var initialContent = {wrapper: F2(function (content,showIntro) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("restaurants")]),
-                           _U.list([restaurants,content]));
-                        }
+                           _U.list([restaurants(showIntro),content]));
+                        })
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Restaurants"
                                                              ,_1: "/images/tiles/restaurants/restaurants.jpg"
@@ -98,7 +104,8 @@ Elm.Restaurants.make = function (_elm) {
          } else {
             var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
             var mc = function (_) {    return _.mainContent;}(model);
-            return _U.update(model,{mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+            return _U.update(model,
+            {showIntro: $Basics.not(function (_) {    return _.showIntro;}(model)),mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
          }
    });
    var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
@@ -109,7 +116,7 @@ Elm.Restaurants.make = function (_elm) {
       _U.list([A2($Murol.renderMainMenu$,_U.list(["Tourisme","Restaurants"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A2(function (_) {
+              _U.list([A3(function (_) {
                  return _.wrapper;
               },
               function (_) {
@@ -119,13 +126,16 @@ Elm.Restaurants.make = function (_elm) {
               A2($Signal.forwardTo,address,TiledMenuAction),
               function (_) {
                  return _.tiledMenu;
-              }(function (_) {    return _.mainContent;}(model))))]))
+              }(function (_) {    return _.mainContent;}(model))),
+              function (_) {
+                 return _.showIntro;
+              }(model))]))
               ,$Murol.pageFooter]));
    });
-   var Model = F3(function (a,b,c) {    return {mainMenu: a,subMenu: b,mainContent: c};});
+   var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: true};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Restaurants.values = {_op: _op
                                     ,subMenu: subMenu

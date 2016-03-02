@@ -10912,31 +10912,36 @@ Elm.TiledMenu.make = function (_elm) {
          return _.menuData;
       }(m));
       var ids = $Dict.keys(d$);
-      return $List.head(ids);
+      var _p2 = $List.head(ids);
+      if (_p2.ctor === "Nothing") {
+            return $Result.toMaybe($String.toInt(s));
+         } else {
+            return $Maybe.Just(_p2._0);
+         }
    });
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var ShowMenu = {ctor: "ShowMenu"};
    var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
    var view = F2(function (address,model) {
-      var _p2 = model.current;
-      if (_p2.ctor === "Menu") {
-            var toDivs = F3(function (_p4,_p3,acc) {
-               var _p5 = _p3;
-               var _p6 = _p5._0;
-               var title = _p6.title;
-               var iD = _p6.iD;
-               var picture = _p6.picture;
-               var link = _p6.link;
+      var _p3 = model.current;
+      if (_p3.ctor === "Menu") {
+            var toDivs = F3(function (_p5,_p4,acc) {
+               var _p6 = _p4;
+               var _p7 = _p6._0;
+               var title = _p7.title;
+               var iD = _p7.iD;
+               var picture = _p7.picture;
+               var link = _p7.link;
                var attr = function () {
-                  var _p7 = link;
-                  if (_p7.ctor === "Nothing") {
+                  var _p8 = link;
+                  if (_p8.ctor === "Nothing") {
                         return _U.list([$Html$Attributes.$class("tile")
                                        ,$Html$Attributes.href("#")
                                        ,$Html$Attributes.id("tiledMenuTop")
                                        ,A2($Html$Events.onClick,address,ShowTile(iD))]);
                      } else {
-                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p7._0),$Html$Attributes.id("tiledMenuTop")]);
+                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p8._0),$Html$Attributes.id("tiledMenuTop")]);
                      }
                }();
                var picture$ = $String.isEmpty(picture) ? "/images/tiles/hebergements/placeholder.jpg" : picture;
@@ -10955,7 +10960,7 @@ Elm.TiledMenu.make = function (_elm) {
          } else {
             return A2($Html.div,
             _U.list([$Html$Attributes.$class("selected")]),
-            _U.list([_p2._0
+            _U.list([_p3._0
                     ,A2($Html.a,
                     _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
                     _U.list([$Html.text("Revenir au menu")]))
@@ -10971,10 +10976,10 @@ Elm.TiledMenu.make = function (_elm) {
    var Tile = F4(function (a,b,c,d) {    return {title: a,iD: b,picture: c,link: d};});
    var nullTile = A4(Tile,"",0,"",$Maybe.Nothing);
    var update = F2(function (action,model) {
-      var _p8 = action;
-      if (_p8.ctor === "ShowTile") {
-            var _p9 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p8._0,model.menuData));
-            var newContent = _p9._1;
+      var _p9 = action;
+      if (_p9.ctor === "ShowTile") {
+            var _p10 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p9._0,model.menuData));
+            var newContent = _p10._1;
             return _U.update(model,{current: Content(newContent)});
          } else {
             return _U.update(model,{current: Menu});
@@ -10985,15 +10990,15 @@ Elm.TiledMenu.make = function (_elm) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p10) {
-         var _p11 = _p10;
-         var _p13 = _p11._0._0;
-         var _p12 = _p11._1;
+      function (_p11) {
+         var _p12 = _p11;
+         var _p14 = _p12._0._0;
+         var _p13 = _p12._1;
          return {ctor: "_Tuple2"
-                ,_0: _p12
+                ,_0: _p13
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p13,_p12,_p11._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p13)])),_p11._0._2))}};
+                     ,_0: A4(Tile,_p14,_p13,_p12._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p14)])),_p12._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),false);
@@ -11002,28 +11007,28 @@ Elm.TiledMenu.make = function (_elm) {
       var model = init(xs);
       var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p14 = maybeId;
-      if (_p14.ctor === "Nothing") {
+      var _p15 = maybeId;
+      if (_p15.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p14._0),model);
+            return A2(update,ShowTile(_p15._0),model);
          }
    });
    var initWithLink = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p15) {
-         var _p16 = _p15;
-         var _p19 = _p16._0._0;
-         var _p18 = _p16._0._3;
-         var _p17 = _p16._1;
-         var l$ = $String.isEmpty(_p18) ? $Maybe.Nothing : $Maybe.Just(_p18);
+      function (_p16) {
+         var _p17 = _p16;
+         var _p20 = _p17._0._0;
+         var _p19 = _p17._0._3;
+         var _p18 = _p17._1;
+         var l$ = $String.isEmpty(_p19) ? $Maybe.Nothing : $Maybe.Just(_p19);
          return {ctor: "_Tuple2"
-                ,_0: _p17
+                ,_0: _p18
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p19,_p17,_p16._0._1,l$)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p19)])),_p16._0._2))}};
+                     ,_0: A4(Tile,_p20,_p18,_p17._0._1,l$)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p20)])),_p17._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),false);
@@ -11032,19 +11037,30 @@ Elm.TiledMenu.make = function (_elm) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p20) {
-         var _p21 = _p20;
-         var _p23 = _p21._0._0;
-         var _p22 = _p21._1;
+      function (_p21) {
+         var _p22 = _p21;
+         var _p24 = _p22._0._0;
+         var _p23 = _p22._1;
          return {ctor: "_Tuple2"
-                ,_0: _p22
+                ,_0: _p23
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p23,_p22,_p21._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p23)])),_p21._0._2))}};
+                     ,_0: A4(Tile,_p24,_p23,_p22._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p22._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),true);
    };
+   var initAtPhoto = F2(function (urlParams,xs) {
+      var model = initPhoto(xs);
+      var title = $UrlParsing.getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p25 = maybeId;
+      if (_p25.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p25._0),model);
+         }
+   });
    return _elm.TiledMenu.values = {_op: _op
                                   ,Model: Model
                                   ,Tile: Tile
@@ -11052,6 +11068,7 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,Content: Content
                                   ,init: init
                                   ,initAt: initAt
+                                  ,initAtPhoto: initAtPhoto
                                   ,initWithLink: initWithLink
                                   ,initPhoto: initPhoto
                                   ,ShowTile: ShowTile
@@ -11138,9 +11155,13 @@ Elm.Murol.make = function (_elm) {
    });
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
-   var link = F2(function (tex,addr) {    return A2($Html.a,_U.list([$Html$Attributes.href(addr)]),_U.list([$Html.text(tex)]));});
+   var link = F2(function (tex,addr) {
+      return A2($Html.a,_U.list([$Html$Attributes.href(addr),$Html$Attributes.target("_blank")]),_U.list([$Html.text(tex)]));
+   });
    var site = F2(function (tex,addr) {
-      return A2($Html.span,_U.list([]),_U.list([$Html.text("Site: "),A2($Html.a,_U.list([$Html$Attributes.href(addr)]),_U.list([$Html.text(tex)]))]));
+      return A2($Html.span,
+      _U.list([]),
+      _U.list([$Html.text("Site: "),A2($Html.a,_U.list([$Html$Attributes.href(addr),$Html$Attributes.target("_blank")]),_U.list([$Html.text(tex)]))]));
    });
    var mail = function (s) {
       return A2($Html.span,
@@ -11271,7 +11292,7 @@ Elm.Murol.make = function (_elm) {
          return A2($Html.li,
          _U.list([]),
          _U.list([A2($Html.a,
-         _U.list([$Html$Attributes.href(_p13._1)]),
+         _U.list([$Html$Attributes.href(_p13._1),$Html$Attributes.target("_blank")]),
          _U.list([A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",_p13._0))]),_U.list([]))]))]));
       },
       pics))]));
@@ -11384,7 +11405,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 24 janvier 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mardi 01 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11412,7 +11433,9 @@ Elm.Murol.make = function (_elm) {
       return A2($List.filter,p,ns);
    });
    var logos = _U.list([{ctor: "_Tuple2",_0: "famillePlus.jpg",_1: "http://www.familleplus.fr/fr"}
-                       ,{ctor: "_Tuple2",_0: "Station_Tourisme_RVB.jpg",_1: "http://www.communes-touristiques.net/"}
+                       ,{ctor: "_Tuple2"
+                        ,_0: "Station_Tourisme_RVB.jpg"
+                        ,_1: "http://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme"}
                        ,{ctor: "_Tuple2",_0: "Village fleuri.png",_1: "http://www.villes-et-villages-fleuris.com/"}
                        ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}]);
    var renderContent = F2(function (n1,address) {
@@ -11630,7 +11653,7 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
                       ,expiry: $Date.fromString("")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"01/26/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/01/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11704,6 +11727,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm),
    $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
    var initialWrapper = F2(function (content,showIntro) {
@@ -11712,82 +11736,184 @@ Elm.DecouvrirMurol.make = function (_elm) {
       _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Découvrir Murol")]))
               ,A2($Html.p,
               _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
-              _U.list([$Html.text("La commune appartient au canton de\n                        Besse-et-Saint-Anastaise et est composée\n                        de quatre villages, Murol, Beaune le froid,\n                        Groire et Chautignat. Elle s\'étend sur une\n                        superficie de 15 km² à une altitude de 785m à 1500m.")]))
+              _U.list([$Html.text("La commune de Murol, située au cœur du \n                       Parc des Volcans d’Auvergne, fait partie du canton \n                       du Sancy. Elle est composée de plusieurs villages \n                       et couvre une superficie de 15 km² avec \n                       une altitude qui varie de 785m à 1500m. ")]))
+              ,A2($Html.p,
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+              _U.list([$Html.text("Renommée depuis le début du XXème siècle, Murol \n                       est une station classée de tourisme aux nombreux \n                       attraits : beauté des paysages préservés, richesse historique, \n                       culturelle et patrimoniale, animations diversifiées et familiales tout \n                       au long de l’année… ")]))
               ,A2($Html.h3,
-              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "display",_1: showIntro}]))]),
+              _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
               _U.list([$Html.text("Les villages et hameaux")]))
               ,content]));
    });
+   var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
+   "String",
+   function (v) {
+      return typeof v === "string" || typeof v === "object" && v instanceof String ? v : _U.badPort("a string",v);
+   });
    var initialContent = {wrapper: initialWrapper
-                        ,tiledMenu: $TiledMenu.initPhoto(_U.list([{ctor: "_Tuple3"
-                                                                  ,_0: "Murol"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/murolTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                               _U.list([]),
-                                                                               _U.list([$Html.text("Le bourg de Murol est implanté dans un écrin de verdure à\n                             850 mètres d\'altitude, dans la vallée de la Couze Chambon,\n                             sur le versant oriental du Massif de Sancy, entre le volcan\n                             boisé du Tartaret, le promontoire du Château de Murol\n                             (monument historique classé) et le puy de Bessolles\n                             culminant à 1057m. d\'altitude. Il est également\n                             travérsé par le GR30. A deux pas du Lac Chambon\n                             et de la Vallée de Chaudefour (Réserve naturelle)\n                             le village vous ravira par ses sites remarquables\n                             ou pittoresques, par son parc arboré où se trouve\n                             le musée des peintres.")]))
-                                                                               ,A2($Html.p,
-                                                                               _U.list([]),
-                                                                               _U.list([$Html.text("De nombreux vestiges\n                             témoignent d\'une occupation gauloise (dolmen)\n                             et gallo-romaine (villa et fanum). Au moyen-âge\n                             s\'élève une puissante forteresse, sa construction\n                             s\'étale du XIIème au XVIIIème siècle. Après être resté\n                             trois siècles durant dans les mains de la noble famille\n                             de Murol, le château deviendra au XV ème\n                             siècle par mariage, propriété des Estaing, lesquels y\n                             feront de nombreux travaux pour moderniser les conditions\n                             de vie et adapter aux exigences de l\'artillerie le système\n                             de défense. Délaissé par ses derniers possesseurs,\n                             le château tombe en ruines au XIX ème siècle.\n                             Il est aujourd\'hui propriété de la commune.\n                             Des animations relatant la vie au moyen-âge s\'y\n                             déroulent et attirent environ 120 000 visiteurs par an.")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "La voie verte"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/cheminTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                               _U.list([]),
-                                                                               _U.list([$Html.text("Les visiteurs peuvent découvrir, sur le plan fourni\n                             par l’Office de Tourisme, le tracé de la\n                             « Voie Verte » , qui a nettement\n                             amélioré la circulation des piétons et des cyclistes\n                             depuis son achèvement en 2009. Il s’agit d’un\n                             sentier fléché , accessible aux handicapés, réalisé en\n                             collaboration avec le Conseil Général, qui relie le\n                             bourg de Murol au lac Chambon, en faisant\n                             une boucle autour du volcan du Tartaret. Il\n                             permet de sécuriser le cheminement des piétons et\n                             des cyclotouristes tout en respectant l’environnement car les\n                             engins motorisés y sont proscrits. ")]))
-                                                                               ,A2($Html.p,
-                                                                               _U.list([]),
-                                                                               _U.list([$Html.text("L’accès piéton au château de Murol est lui aussi sécurisé :")]))
-                                                                               ,A2($Html.p,
-                                                                               _U.list([]),
-                                                                               _U.list([$Html.text("Les visiteurs qui partent du bourg peuvent le\n                            rejoindre en empruntant un cheminement piéton qui longe\n                            le mur du parc du Prélong. Le parc\n                            animalier situé sur les pentes du château est\n                            ceint d’un sentier également piéton, bordé d’une barrière\n                            de bois, ce qui permet aux plus jeunes\n                            de le suivre sans danger. Le retour au\n                            bourg de Murol peut se faire en traversant\n                            le Parc du Prélong, ce qui offre aux\n                            visiteurs la possibilité de découvrir l’Arborétum, la serre,\n                            mais aussi le musée archéologique et le musée\n                            des Peintres. ")]))
-                                                                               ,A2($Html.p,
-                                                                               _U.list([]),
-                                                                               _U.list([$Html.text("La place de l’Abbé Boudal, où se trouve\n                            l’église, est un lieu au cœur du bourg\n                            de Murol, où la circulation automobile est réglementée,\n                            ce qui permet aux piétons de profiter pleinement\n                            de l’endroit et de la vue du château\n                            que l’on y découvre. ")]))
-                                                                               ,A2($Html.p,
-                                                                               _U.list([]),
-                                                                               _U.list([$Html.text("En dehors du bourg, les visiteurs peuvent se\n                             promener en toute sécurité sur les chemins balisés\n                             par la communauté de communes du Massif du\n                             Sancy. Ils représentent à Murol un réseau de\n                             plusieurs dizaines de kilomètres de sentiers de PR\n                             (petites randonnées). Des cartes et des topoguides sont\n                             disponibles au bureau de l’Office de Tourisme. Ils\n                             permettent aux visiteurs de découvrir les plus beaux\n                             panoramas de notre commune, comme ci-dessous, le lac\n                             Chambon vu du sommet du volcan du Tartaret. ")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "Beaune le froid"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/beauneTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                  _U.list([]),
-                                                                  _U.list([$Html.text("Petit village de montagne, deuxième bourg de la\n                             commune situé sur un haut plateau, Beaune le\n                             froid est un village agricole très actif et\n                             réputé pour ses fromages de Saint Nectaire fermier,\n                             fabriqué depuis le XVIème siècle sur la commune.\n                             C\'est un lieu de promenade et de découverte\n                             du savoir-faire local. Il a su conserver son\n                             moulin à eau et son lavoir. En 2011,\n                             son four à pain a été entièrement reconstruit\n                             par des bénévoles de l’association des « chantiers\n                             de jeunesse ». L’ hiver, l’ouverture du domaine\n                             skiable permet la pratique du ski nordique et\n                             des raquettes. ")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "Chautignat"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/chautignatTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                  _U.list([]),
-                                                                  _U.list([$Html.text("Le hameau de Chautignat est situé à flanc\n                             de coteaux. Il bénéficie d\'un ensoleillement maximum et\n                             de prairies aux pentes douces favorables à l\'élevage\n                             comme aux cultures. A proximité du hameau se\n                             trouvent les grottes de Rajat et le moulin\n                             à eau de Landrode qui ont été les\n                             lieux de créations artistiques dans la cadre de\n                             la manifestation annuelle « Horizons rencontres Art et\n                             Nature ». ")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "Les hameaux des Ballats et Groire"
-                                                                  ,_1: "images/tiles/decouvrirMurol/groireTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                  _U.list([]),
-                                                                  _U.list([$Html.text("Ces hameaux ont une activité rurale marquée, ils\n                     se situent là où le fond de la\n                     vallée s\'élargit pour former de petites plaines propices\n                     aux cultures. Traversés par la Couze Chambon et\n                     les sentiers de randonnées, ils se prêtent à\n                     la flânerie. A l’occasion de la fête de\n                     Groire, le four à pain revit pour le\n                     plaisir des petits et grands gourmands. ")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "La Chassagne"
-                                                                  ,_1: "images/tiles/decouvrirMurol/chassagneTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                  _U.list([]),
-                                                                  _U.list([$Html.text("Située sous le Château de Murol, La Chassagne\n                              est un hameau de fermes et maisons particulières.\n                              Ce lieu existait déjà sous Guillaume de Murol,\n                              seigneur du Château au début du XVème siècle.\n                              La légende raconte que Pierre Morand, \"concierge\" du\n                              château s\'est installé ici et a fondé \"la\n                              Chassagne\". L\'origine du nom vient des arbres présents\n                              à cette époque, les chênes. Aujourd\'hui, quelques-uns subsistent\n                              sur les pentes du château, entrelacés avec les\n                              pins et autres arbustes. ")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "Le volcan du Tartaret"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/tartaretTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                  _U.list([]),
-                                                                  _U.list([$Html.text("Il est l´un des plus récents d´Auvergne. Ses\n                             pentes boisées empêchent de distinguer son cratère mais\n                             les sentiers qui le traverse sont des plus\n                             agréables et accessibles. Parcours de santé et d\'orientation\n                             (cartes en vente à l\'office de tourisme). ")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "Lac Chambon"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/lacChambonTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                  _U.list([]),
-                                                                  _U.list([$Html.text("La partie Est du lac occupe la commune\n                             de Murol pour un tiers de sa superficie.\n                             Le reste du lac se trouvant sur la\n                             commune de Chambon sur lac. Le Lac Chambon\n                             est un lac de barrage volcanique puisqu´il s´est\n                             formé à la suite de l´éruption du Tartaret\n                             il y a environ 8000 ans et de\n                             l\'effondrement de la dent du Marais , bloquant\n                             ainsi le cours de la Couze Chambon. La\n                             couze charrie une telle quantité d´alluvions que le\n                             lac se rétrécit au fil des siècles. S\'étalant\n                             aujourd\'hui sur 60 hectares, peu profond (6 m\n                             maximum) et parsemé d´îlots , il s\'ouvre largement\n                             à l\'ouest sur les paysages somptueux du massif\n                             du Sancy. Le lac est aménagé pour la\n                             baignade, les activités nautiques et la pêche. ")]))])}
-                                                                 ,{ctor: "_Tuple3"
-                                                                  ,_0: "Grottes de Rajat"
-                                                                  ,_1: "/images/tiles/decouvrirMurol/rajatTile.jpg"
-                                                                  ,_2: _U.list([A2($Html.p,
-                                                                  _U.list([]),
-                                                                  _U.list([$Html.text("D\'accès difficile, les falaises qui les abritent sont\n                             composées d\'un mélange de Bolts et argiles aux\n                             couleurs pastel allant de l\'ocre, vert ou rosé,\n                             au bleuté. Ces habitations troglodytes sont très anciennes,\n                             certainement antérieures à l\'époque gauloise. Toutefois leur histoire\n                             mal connue ne s\'appuie que sur des hypothèses.\n                             Ce site est un enchantement pour le promeneur\n                             attentif et permet à celui qui s\'y rend\n                             de rêver et d\'imaginer sa propre histoire. ")]))])}]))};
+                        ,tiledMenu: A2($TiledMenu.initAtPhoto,
+                        locationSearch,
+                        _U.list([{ctor: "_Tuple3"
+                                 ,_0: "Le bourg de Murol"
+                                 ,_1: "/images/tiles/decouvrirMurol/murolTile.jpg"
+                                 ,_2: _U.list([A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/2 Murol, le bourg.JPG"),$Html$Attributes.id("bourg1")]),
+                                              _U.list([]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Le bourg de Murol est implanté dans un \n                             écrin de verdure à 850 mètres d\'altitude, dans \n                             la vallée de la Couze Chambon, sur le \n                             versant Est du massif du Sancy.")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Enchâssé entre le volcan boisé du ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=Le volcan du Tartaret")]),
+                                                      _U.list([$Html.text("Tartaret")]))
+                                                      ,$Html.text(" le promontoire du ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=01")]),
+                                                      _U.list([$Html.text("château de Murol")]))
+                                                      ,$Html.text(" et le puy \n                           de Bessolles, le village vous ravira par ses \n                           sites remarquables et pittoresques. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Au pied du château, vous découvrirez le parc \n                            arboré du Prélong où se trouvent le ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
+                                                      _U.list([$Html.text("musée des Peintres de l’Ecole de Murols")]))
+                                                      ,$Html.text(" et le musée archéologique. Depuis le bourg, vous pourrez rejoindre \n                             la plage de Murol, au bord du ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=Lac Chambon")]),
+                                                      _U.list([$Html.text("lac Chambon")]))
+                                                      ,$Html.text(" en empruntant ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=La voie verte")]),
+                                                      _U.list([$Html.text("la voie verte")]))
+                                                      ,$Html.text(".")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Le bourg de Murol offre de nombreux ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/Commerces.html")]),
+                                                      _U.list([$Html.text("commerces et services")]))
+                                                      ,$Html.text(". Le marché hebdomadaire a lieu chaque \n                            mercredi matin. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([$Html$Attributes.$class("toClear")]),
+                                              _U.list([$Html.text("Murol est animé tout au long de l’année par de ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/Animation.html")]),
+                                                      _U.list([$Html.text("grandes manifestations")]))
+                                                      ,$Html.text(" à destination d’un public \n                             familial. Chaque dimanche de la saison estivale vous \n                             pourrez participez à une visite insolite du bourg \n                             en suivant Monsieur Alphonse…")]))
+                                              ,A2($Html.img,_U.list([$Html$Attributes.src("/images/prélong.JPG"),$Html$Attributes.id("bourg2")]),_U.list([]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/museePeintre.jpeg"),$Html$Attributes.id("bourg3")]),
+                                              _U.list([]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "Le château"
+                                 ,_1: "/images/tiles/decouvrirMurol/chateauTile.jpg"
+                                 ,_2: _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/chateau1.jpg"),$Html$Attributes.id("chateau1")]),_U.list([]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Edifié à l\'emplacement probable d\'un ancien camp romain, \n                             la construction de cette puissante forteresse médiévale s\'étale \n                             du XIIème au XVIIIe siècle. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Après être resté trois siècles dans les mains \n                             de la noble famille de Murol, le château \n                             deviendra, au XVème siècle, propriété des Estaing. De \n                             nombreux travaux seront alors entrepris pour moderniser les \n                             conditions de vie et adapter le système de \n                             défense du château aux exigences de l\'artillerie. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Délaissé par ses derniers possesseurs, le château tombe \n                            en ruines au XIXème siècle. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Depuis près d’un siècle, en étroite collaboration avec \n                           les Monuments Historiques, le château a été activement \n                           rénové, ce qui a permis l’accueil du public. \n                           Son architecture médiévale reste conservée. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Il est aujourd´hui propriété de la commune et \n                            est géré par un délégataire. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("C\'est le château le plus visité d’Auvergne. Il \n                           attire plus de 100 000 visiteurs par an \n                           qui peuvent profiter de ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("www.chateaudemurol.fr")]),
+                                                      _U.list([$Html.text("visites simples ou animées")]))
+                                                      ,$Html.text(", de saynètes et de démonstrations. Paysans, hommes d´armes, \n                           gentes dames et chevaliers vous font découvrir la \n                           vie d´une châtellenie au XIIIe siècle! ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Depuis plusieurs années, des ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.target("_blank")
+                                                              ,$Html$Attributes.href("https://sites.google.com/site/murolarcheoancien")]),
+                                                      _U.list([$Html.text("recherches archéologiques")]))
+                                                      ,$Html.text(" sont conduites \n                           au château et sur l’ensemble de la commune \n                           afin de retracer l’histoire de ce territoire dont \n                           de nombreux vestiges témoignent d’une occupation gauloise (dolmen) \n                           et gallo-romaine (villa et fanum). Elles sont menées \n                           par Dominique Allios, maître de conférences en archéologie \n                           et histoire de l’Art, et son équipe d’étudiants. \n                           Chaque vendredi soir du mois de juillet, ils \n                           animent des conférences archéologiques riches en rebondissements et \n                           font ainsi partager aux murolais et aux visiteurs \n                           les découvertes et avancées réalisées dans la semaine. \n                           (voir ")
+                                                      ,A2($Html.a,_U.list([]),_U.list([$Html.text("présentation de Dominique Allios")]))
+                                                      ,$Html.text(")")]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "Beaune le froid"
+                                 ,_1: "/images/tiles/decouvrirMurol/beauneTile.jpg"
+                                 ,_2: _U.list([A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/four à pain Beaune.jpg"),$Html$Attributes.id("chateau1")]),
+                                              _U.list([]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Petit village de montagne, deuxième bourg de la \n                             commune situé sur un haut plateau, Beaune-le-Froid est \n                             un village agricole très actif et réputé pour \n                             ses ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/Agriculture.html")]),
+                                                      _U.list([$Html.text("fromages de Saint-Nectaire fermier AOP")]))
+                                                      ,$Html.text(", fabriqué depuis \n                             le XVIème siècle sur la commune. C\'est un \n                             lieu de promenade et de découverte du savoir-faire \n                             local. Il a su conserver son moulin à \n                             eau et son lavoir. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("En 2011, son four à pain a été \n                           entièrement reconstruit par des bénévoles de l’association des \n                           « chantiers de jeunesse ». En 2014, d’autres \n                           jeunes de cette association ont permis de remettre \n                           en état le « chemin des caves » \n                           où les agriculteurs affinent leurs Saint-Nectaire. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Chaque lundi de la saison estivale, vous pourrez \n                           découvrir le patrimoine et les savoir-faire de ce \n                           village grâce à Michel Tardif. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Début juillet, une grande foire du Saint-Nectaire vous \n                           permettra de rencontrer les producteurs de fromage et \n                           d’autres produits du terroir. Bonne dégustation! ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("L’hiver, si les conditions climatiques sont favorables, vous \n                           pourrez pratiquez le ski de fond ou la \n                           randonnée en raquettes sur les pistes du domaine \n                           nordique de la forêt de Beaune-le-Froid. ")]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "Le volcan du Tartaret"
+                                 ,_1: "/images/tiles/decouvrirMurol/tartaretTile.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                 _U.list([]),
+                                 _U.list([$Html.text("Le volcan du Tartaret est l’un des plus \n                             récents d’Auvergne. Il est à l’origine de la \n                             formation du lac Chambon, avec l’effondrement de l’ancien \n                             volcan de la Dent du Marais. (voir ")
+                                         ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text("historique de Pierre Lavina")]))]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "Lac Chambon"
+                                 ,_1: "/images/tiles/decouvrirMurol/lacChambonTile.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                 _U.list([]),
+                                 _U.list([$Html.text("La partie Est du lac occupe la commune\n                             de Murol pour un tiers de sa superficie.\n                             Le reste du lac se trouvant sur la\n                             commune de Chambon sur lac. Le Lac Chambon\n                             est un lac de barrage volcanique puisqu´il s´est\n                             formé à la suite de l´éruption du Tartaret\n                             il y a environ 8000 ans et de\n                             l\'effondrement de la dent du Marais , bloquant\n                             ainsi le cours de la Couze Chambon. La\n                             couze charrie une telle quantité d´alluvions que le\n                             lac se rétrécit au fil des siècles. S\'étalant\n                             aujourd\'hui sur 60 hectares, peu profond (6 m\n                             maximum) et parsemé d´îlots , il s\'ouvre largement\n                             à l\'ouest sur les paysages somptueux du massif\n                             du Sancy. Le lac est aménagé pour la\n                             baignade, les activités nautiques et la pêche. ")]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "La voie verte"
+                                 ,_1: "/images/tiles/decouvrirMurol/cheminTile.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Les visiteurs peuvent découvrir, sur le plan fourni\n                             par l’Office de Tourisme, le tracé de la\n                             « Voie Verte » , qui a nettement\n                             amélioré la circulation des piétons et des cyclistes\n                             depuis son achèvement en 2009. Il s’agit d’un\n                             sentier fléché , accessible aux handicapés, réalisé en\n                             collaboration avec le Conseil Général, qui relie le\n                             bourg de Murol au lac Chambon, en faisant\n                             une boucle autour du volcan du Tartaret. Il\n                             permet de sécuriser le cheminement des piétons et\n                             des cyclotouristes tout en respectant l’environnement car les\n                             engins motorisés y sont proscrits. ")]))
+                                              ,A2($Html.p,_U.list([]),_U.list([$Html.text("L’accès piéton au château de Murol est lui aussi sécurisé :")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Les visiteurs qui partent du bourg peuvent le\n                            rejoindre en empruntant un cheminement piéton qui longe\n                            le mur du parc du Prélong. Le parc\n                            animalier situé sur les pentes du château est\n                            ceint d’un sentier également piéton, bordé d’une barrière\n                            de bois, ce qui permet aux plus jeunes\n                            de le suivre sans danger. Le retour au\n                            bourg de Murol peut se faire en traversant\n                            le Parc du Prélong, ce qui offre aux\n                            visiteurs la possibilité de découvrir l’Arborétum, la serre,\n                            mais aussi le musée archéologique et le musée\n                            des Peintres. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("La place de l’Abbé Boudal, où se trouve\n                            l’église, est un lieu au cœur du bourg\n                            de Murol, où la circulation automobile est réglementée,\n                            ce qui permet aux piétons de profiter pleinement\n                            de l’endroit et de la vue du château\n                            que l’on y découvre. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("En dehors du bourg, les visiteurs peuvent se\n                             promener en toute sécurité sur les chemins balisés\n                             par la communauté de communes du Massif du\n                             Sancy. Ils représentent à Murol un réseau de\n                             plusieurs dizaines de kilomètres de sentiers de PR\n                             (petites randonnées). Des cartes et des topoguides sont\n                             disponibles au bureau de l’Office de Tourisme. Ils\n                             permettent aux visiteurs de découvrir les plus beaux\n                             panoramas de notre commune, comme ci-dessous, le lac\n                             Chambon vu du sommet du volcan du Tartaret. ")]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "Chautignat"
+                                 ,_1: "/images/tiles/decouvrirMurol/chautignatTile.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                 _U.list([]),
+                                 _U.list([$Html.text("Le hameau de Chautignat est situé à flanc\n                             de coteaux. Il bénéficie d\'un ensoleillement maximum et\n                             de prairies aux pentes douces favorables à l\'élevage\n                             comme aux cultures. A proximité du hameau se\n                             trouvent les grottes de Rajat et le moulin\n                             à eau de Landrode qui ont été les\n                             lieux de créations artistiques dans la cadre de\n                             la manifestation annuelle « Horizons rencontres Art et\n                             Nature ». ")]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "Groire"
+                                 ,_1: "images/tiles/decouvrirMurol/groireTile.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                 _U.list([]),
+                                 _U.list([$Html.text("Ces hameaux ont une activité rurale marquée, ils\n                     se situent là où le fond de la\n                     vallée s\'élargit pour former de petites plaines propices\n                     aux cultures. Traversés par la Couze Chambon et\n                     les sentiers de randonnées, ils se prêtent à\n                     la flânerie. A l’occasion de la fête de\n                     Groire, le four à pain revit pour le\n                     plaisir des petits et grands gourmands. ")]))])}
+                                ,{ctor: "_Tuple3"
+                                 ,_0: "La Chassagne et les Ballats"
+                                 ,_1: "images/tiles/decouvrirMurol/chassagneTile.jpg"
+                                 ,_2: _U.list([A2($Html.p,
+                                 _U.list([]),
+                                 _U.list([$Html.text("Située sous le Château de Murol, La Chassagne\n                              est un hameau de fermes et maisons particulières.\n                              Ce lieu existait déjà sous Guillaume de Murol,\n                              seigneur du Château au début du XVème siècle.\n                              La légende raconte que Pierre Morand, \"concierge\" du\n                              château s\'est installé ici et a fondé \"la\n                              Chassagne\". L\'origine du nom vient des arbres présents\n                              à cette époque, les chênes. Aujourd\'hui, quelques-uns subsistent\n                              sur les pentes du château, entrelacés avec les\n                              pins et autres arbustes. ")]))])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
@@ -11826,7 +11952,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
    var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: true};
+   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.DecouvrirMurol.values = {_op: _op
                                        ,subMenu: subMenu

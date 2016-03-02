@@ -28,7 +28,7 @@ subMenu : Murol.Submenu
 subMenu = { current = "", entries = []}
 
 type alias MainContent = 
-  { wrapper : (Html -> Html)
+  { wrapper : (Html -> Bool -> Html)
   , tiledMenu :  TiledMenu.Model
   } 
 
@@ -36,12 +36,14 @@ type alias Model =
   { mainMenu    : Murol.Menu
   , subMenu     : Murol.Submenu
   , mainContent : MainContent
+  , showIntro   : Bool
   }  
 
 initialModel =
   { mainMenu    = mainMenu
   , subMenu     = subMenu
   , mainContent = initialContent
+  , showIntro   = True
   }
 
 
@@ -55,6 +57,7 @@ view address model =
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
                (TiledMenu.view (Signal.forwardTo address TiledMenuAction) (.tiledMenu (.mainContent model)))
+               (.showIntro model)
             ]
       , pageFooter
       ]
@@ -76,9 +79,11 @@ update action model =
           tm = (.tiledMenu (.mainContent model))
       in
           { model | 
-            mainContent = 
-             { mc | tiledMenu = TiledMenu.update act tm }
+            showIntro = not (.showIntro model)
+            , mainContent = 
+               { mc | tiledMenu = TiledMenu.update act tm }
           }
+
 
 --Main
 
@@ -92,9 +97,9 @@ main =
 
 initialContent =
   { wrapper = 
-    (\content ->
+    (\content showIntro ->
        div [ class "subContainerData noSubmenu", id "restaurants"]
-           [ restaurants
+           [ restaurants showIntro
            , content])
   , tiledMenu =
       init [( "Restaurants"
@@ -127,27 +132,32 @@ famillePlus =
   let tables = restosMurol ++ restosBeaunes ++ barBrasserie ++ barDeNuit
   in List.filter (\e ->  (.label e) == FamillePlus) tables
 
-restaurants =
+restaurants showIntro=
   div [ id "restosTourisme"]
-      [ h2 [] [text "Restaurants"]
-      , p [] [ text "On ne peut évoquer l’Auvergne sans parler des
-                     produits du terroir qui font sa réputation :
-                     les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme
-                     d’Ambert et Bleu d’Auvergne). Les salaisons (oh !
-                     le bon jambon d’Auvergne, les saucisses et les
-                     saucissons), le tout arrosé, avec modération, de vins
-                     non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,
-                     Boudes ou Corent. "]
-      , p [] [ text "Le tableau ne serait pas complet, si nous
-                     ne citions quelques autres spécialités régionales comme la
-                     truffade, l'aligot, la potée auvergnate, les tripoux ou
-                     encore les lentilles du Puy que vous dégusterez
-                     chaudes, agrémentées d'oignons et de quelques lardons ou,
-                     en été, froides en salade... un délice... "]
-      , p [] [ text "Après avoir débuté votre repas auvergnat par une
-                     Gentiane ou une Salers, vous apprécierez sans aucun
-                     doute de le terminer par une petite verveine. "]
-      , p [] [ text "Le tout avec modération."]
+      [ h2 [classList [("intro",True),("displayIntro", showIntro)]]
+           [text "Restaurants"]
+      , p [classList [("intro",True),("displayIntro", showIntro)]]
+          [ text "On ne peut évoquer l’Auvergne sans parler des
+                 produits du terroir qui font sa réputation :
+                 les cinq fromages AOC (Saint-Nectaire, Cantal, Salers, Fourme
+                 d’Ambert et Bleu d’Auvergne). Les salaisons (oh !
+                 le bon jambon d’Auvergne, les saucisses et les
+                 saucissons), le tout arrosé, avec modération, de vins
+                 non dénués de qualité : Saint-Pourçain, Châteaugay, Madargues,
+                 Boudes ou Corent. "]
+      , p [classList [("intro",True),("displayIntro", showIntro)]]
+          [ text "Le tableau ne serait pas complet, si nous
+                 ne citions quelques autres spécialités régionales comme la
+                 truffade, l'aligot, la potée auvergnate, les tripoux ou
+                 encore les lentilles du Puy que vous dégusterez
+                 chaudes, agrémentées d'oignons et de quelques lardons ou,
+                 en été, froides en salade... un délice... "]
+      , p [classList [("intro",True),("displayIntro", showIntro)]]
+          [ text "Après avoir débuté votre repas auvergnat par une
+                 Gentiane ou une Salers, vous apprécierez sans aucun
+                 doute de le terminer par une petite verveine. "]
+      , p [classList [("intro",True),("displayIntro", showIntro)]]
+          [ text "Le tout avec modération."]
     ]
 
 restosBeaunes =

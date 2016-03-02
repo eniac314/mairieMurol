@@ -18,16 +18,61 @@ Elm.OfficeTourisme.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("officeTourisme")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Office de tourisme")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04-73-88-62-62")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04-73-88-60-23")]))
-           ,$Murol.mail("bt.murol-chambon@sancy.com")
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Office de tourisme communautaire")]))
+           ,A2($Html.img,_U.list([$Html$Attributes.src("/images/OT.JPG")]),_U.list([]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.id("infoOfficeTourisme")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Adresse:")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04 73 88 62 62")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04 73 88 60 23")]))
+                   ,$Murol.mail("bt.murol-chambon@sancy.com")
+                   ,A2($Html.br,_U.list([]),_U.list([]))
+                   ,A2($Murol.site,"www.sancy.com","www.sancy.com")
+                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires:")]))
+                   ,A2($Html.ul,
+                   _U.list([]),
+                   _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h.")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("le reste de l’année, ouvert du lundi au samedi de 9h à 12h.")]))]))]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.id("officeDescr")]),
+           _U.list([A2($Html.b,
+           _U.list([]),
+           _U.list([$Html.text("Murol bénéficie des services de l’Office de Tourisme communautaire\n                       de la communauté de communes du Massif du Sancy.")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Le bureau de Murol propose :")]))
            ,A2($Html.ul,
            _U.list([]),
-           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires:")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("pendant les vacances, ouvert du lundi au samedi de 9h à 12 et de 14h à 18h.")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Le reste de l’année, ouvert du lundi au samedi de 9h à 12h.")]))]))
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("un "),A2($Html.b,_U.list([]),_U.list([$Html.text("accueil multilingue")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("des ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("documentations")]))
+                           ,$Html.text(" en libre-service sur les visites,\n                     activités et les hébergements dans le massif du Sancy et au-delà.")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("un ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("coin enfant")]))
+                           ,$Html.text(" pour faire patienter\n                     les bambins (label Famille Plus).")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Une connexion "),A2($Html.b,_U.list([]),_U.list([$Html.text("internet en wifi")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Un service ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("boutique")]))
+                           ,$Html.text(" avec les cartes\n                           et topoguides de randonnées")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Un service de "),A2($Html.b,_U.list([]),_U.list([$Html.text("billetterie")]))]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("un ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("accueil adapté aux personnes handicapées : ")]))
+                           ,$Html.text("le bureau de tourisme est équipé d\'un ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("Kit Accueil Comfort Duett ")]))
+                           ,$Html.text("(amplificateur de sons individuels adapté à toutes\n                           personnes malentendantes). Il dispose d\'une ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("documentation en caractères agrandis ")]))
+                           ,$Html.text("pour les personnes malvoyantes et ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("en braille ")]))
+                           ,$Html.text("pour les personnes aveugles, ainsi que d’un ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("micro ")]))
+                           ,$Html.text("pour enregistrer la conversation. Au moins un membre du personnel\n                           d’accueil a suivi une formation spécifique à l’accueil des personnes\n                           handicapées (label Tourisme et Handicap).")]))]))
            ,$Murol.renderListImg($Murol.logos)]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {

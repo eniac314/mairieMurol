@@ -91,7 +91,7 @@ initialContent = bulletin
 
 -- Data
 bulletin =
-  div [class "subContainerData noSubMenu", id "bullPubli"]
+  div [class "subContainerData noSubmenu", id "bullPubli"]
       ( (h2 [] [text "le bulletin municipal"]) ::
         (List.map renderBulletin bulls)
       )

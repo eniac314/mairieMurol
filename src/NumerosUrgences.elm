@@ -126,7 +126,6 @@ secours =
       [ ("Pompiers","18")
       , ("Gendarmerie","17")
       , ("Gendarmerie de Besse","04 73 79 50 02")
-      , ("Gendarmerie de Murol (Poste saisonnier juillet-août)","04 73 88 61 53")
       ]
   }
 

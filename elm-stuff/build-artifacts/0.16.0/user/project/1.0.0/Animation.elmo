@@ -6,9 +6,9 @@ Elm.Animation.make = function (_elm) {
    var _U = Elm.Native.Utils.make(_elm),
    $Basics = Elm.Basics.make(_elm),
    $Debug = Elm.Debug.make(_elm),
-   $Dict = Elm.Dict.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Murol = Elm.Murol.make(_elm),
@@ -16,50 +16,167 @@ Elm.Animation.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
-   var initialContent = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animation")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Calendrier")]))
-           ,A2($Html.div,
-           _U.list([$Html$Attributes.id("bigAgenda")]),
-           _U.list([A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis")]),
-           _U.list([]))]))]));
-   var contentMap = $Dict.fromList(_U.list([]));
-   var changeMain = F2(function (model,s) {
-      var newContent = A2($Dict.get,s,contentMap);
-      var _p0 = newContent;
-      if (_p0.ctor === "Nothing") {
-            return model;
-         } else {
-            return _U.update(model,{mainContent: _p0._0});
-         }
-   });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
+   var Drop = function (a) {    return {ctor: "Drop",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var insertDrop = F3(function (address,ds,n) {
+      var drop$ = $List.head(A2($List.filter,function (d) {    return _U.eq(function (_) {    return _.id;}(d),n);},ds));
+      var content = function () {
+         var _p0 = drop$;
+         if (_p0.ctor === "Nothing") {
+               return nullTag;
+            } else {
+               var _p1 = _p0._0.drop;
+               var arrow = _p1 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
+               _U.list([$Html$Attributes.src("/images/dArrow.jpeg")]),
+               _U.list([]));
+               var body$ = _p1 ? A2($Html.div,_U.list([$Html$Attributes.$class("dropBody")]),_p0._0.body) : nullTag;
+               return A2($Html.div,
+               _U.list([$Html$Attributes.$class("dropable")]),
+               _U.list([A2($Html.div,
+                       _U.list([$Html$Attributes.$class("dropHeader")]),
+                       _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("arrow")]),_U.list([arrow])),_p0._0.intro(address)]))
+                       ,body$]));
+            }
+      }();
+      return content;
    });
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Animation"]),function (_) {    return _.mainMenu;}(model))
-              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Animation"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A2($Html.div,
+              _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animation")]),
+              _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("animation")]))
+                      ,A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("La commune de Murol, riche d’un service animation \n                               municipal et d’une trentaine d’associations dynamiques, offre diverses \n                               animations à sa population locale et à ses \n                               visiteurs tout au long de l’année. Voir le \n                               calendrier ci-dessous.")]))
+                      ,A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent \n                               de mai à octobre à Murol. Dans l’ordre \n                               du calendrier, on voit apparaître : ")]))
+                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),0)
+                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),1)
+                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),2)
+                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),3)
+                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),4)
+                      ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Calendrier")]))
+                      ,A2($Html.div,
+                      _U.list([$Html$Attributes.id("bigAgenda")]),
+                      _U.list([A2($Html.iframe,
+                      _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis")]),
+                      _U.list([]))]))]))]))
               ,$Murol.pageFooter]));
    });
-   var Category = F2(function (a,b) {    return {title: a,entries: b};});
-   var subMenu = _U.list([]);
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var dropN = F2(function (id,n) {
+      return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
+   });
+   var update = F2(function (action,model) {
+      var _p2 = action;
+      if (_p2.ctor === "NoOp") {
+            return model;
+         } else {
+            var n1 = A2($List.map,dropN(_p2._0),function (_) {    return _.drops;}(model));
+            return _U.update(model,{drops: n1});
+         }
+   });
+   var tag = F3(function (i,n,xs) {
+      var _p3 = xs;
+      if (_p3.ctor === "[]") {
+            return _U.list([]);
+         } else {
+            return A2($List._op["::"],_U.update(_p3._0,{id: i + n}),A3(tag,i,n + 1,_p3._1));
+         }
+   });
+   var Dropable = F4(function (a,b,c,d) {    return {intro: a,body: b,drop: c,id: d};});
+   var initDropable = F4(function (id,title,extra,body) {
+      var intro = function (a) {
+         return A2($Html.div,
+         _U.list([$Html$Attributes.$class("dropIntro")]),
+         _U.list([A2($Html.h5,_U.list([$Html$Attributes.$class("dropTitle"),A2($Html$Events.onClick,a,Drop(id))]),_U.list([$Html.text(title)]))
+                 ,A2($Html.br,_U.list([]),_U.list([]))
+                 ,A2($Maybe.withDefault,nullTag,extra)]));
+      };
+      return A4(Dropable,intro,body,false,id);
+   });
+   var medievales = A4(initDropable,
+   0,
+   "Les Médiévales de Murol",
+   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Cette manifestation est organisée par la mairie de \n                               Murol, l’association AMMA et d’autres associations partenaires. Elle \n                               a lieu chaque année durant le week-end de \n                               l’Ascension.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge.")]))]));
+   var musee = A4(initDropable,
+   1,
+   "L’exposition temporaire au musée des Peintres de l’Ecole de Murols",
+   $Maybe.Just(A2($Html.a,
+   _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
+   _U.list([$Html.text("site officiel")]))),
+   _U.list([A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Chaque année, la commune organise le vernissage d’une \n                               exposition temporaire différente au musée des Peintres de \n                               l’Ecole de Murols, le dernier week-end de mai. \n                               L’exposition reste en place jusqu’au 31 octobre. L’objectif \n                               est de regrouper et de présenter pendant quelques \n                               mois les œuvres de l’un des peintres majeurs \n                               de l’Ecole de Murols.")]))]));
+   var horizon = A4(initDropable,
+   2,
+   "Horizon, rencontres Art et Nature",
+   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),_U.list([$Html.text("site officiel")]))),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Cette manifestation culturelle est organisée par la communauté \n                               de communes du massif du Sancy. La commune \n                               de Murol soutient cet événement en tant que \n                               membre de la communauté de communes et a \n                               déjà accueilli de nombreuses œuvres sur son territoire")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les œuvres éphémères sont installées de juin à \n                               septembre sur des sites naturels. Cette manifestation prend \n                               une ampleur considérable qui dépasse le cadre régional \n                               et même national. ")]))]));
+   var revolution = A4(initDropable,
+   3,
+   "La fête de la Révolution",
+   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/Revolution.html")]),_U.list([$Html.text("lien photothèque")]))),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Profitant de la présence du château de Murol, \n                               la municipalité de Murol en partenariat avec différentes \n                               associations de la commune organise une fête historique \n                               dans les rues de Murol. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("En journée : reconstitution de la Révolution française, \n                               animations de rues, cavalcade, et taverne révolutionnaire. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le soir : défilé costumé suivi du feu \n                               d’artifice tiré du château de Murol et du \n                               bal des pompiers. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Vous souhaitez prendre part activement à la fête \n                               ? Louez un costume ! Renseignement à la \n                               mairie de Murol")]))]));
+   var festivalArt = A4(initDropable,
+   4,
+   "Le festival d’Art",
+   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/FestivalArt.html")]),_U.list([$Html.text("lien photothèque")]))),
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le service animation de la mairie organise chaque \n                               été le festival d’Art.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ce festival regroupe de très nombreux artistes et \n                               artisans d’art venus de tous horizons dont les \n                               œuvres envahissent les rues et places de Murol \n                               durant une journée d’été riche en couleurs. Petits \n                               et grands déambulent accompagnés par les animations de \n                               rue jusqu’au soir où ils peuvent partager l’ambiance \n                               festive du concert de clôture.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Vous voulez venir présenter vos œuvres ? Contactez \n                               la mairie au 04 73 88 60 67 \n                               ou par mail à ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("mailto:murolanimation@orange.fr")]),_U.list([$Html.text("murolanimation@orange.fr")]))]))]));
+   var initialModel = {mainMenu: $Murol.mainMenu,drops: _U.list([medievales,musee,horizon,revolution,festivalArt])};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Animation.values = {_op: _op
-                                  ,subMenu: subMenu
                                   ,initialModel: initialModel
-                                  ,Category: Category
+                                  ,Dropable: Dropable
+                                  ,tag: tag
+                                  ,dropN: dropN
+                                  ,nullTag: nullTag
+                                  ,insertDrop: insertDrop
+                                  ,initDropable: initDropable
                                   ,view: view
-                                  ,contentMap: contentMap
+                                  ,NoOp: NoOp
+                                  ,Drop: Drop
                                   ,update: update
-                                  ,changeMain: changeMain
                                   ,main: main
-                                  ,initialContent: initialContent};
+                                  ,medievales: medievales
+                                  ,musee: musee
+                                  ,horizon: horizon
+                                  ,revolution: revolution
+                                  ,festivalArt: festivalArt};
 };

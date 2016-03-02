@@ -6,6 +6,7 @@ module.exports = function(grunt) {
         files: {
           "./js/murol.js": ["./src/Murol.elm"],
           "./js/periscolaire.js": ["./src/Periscolaire.elm"],
+          "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
           "./js/medievales.js": ["./src/Medievales.elm"],
           "./js/annee2016.js": ["./src/Annee2016.elm"],
           "./js/journeeMurolais.js": ["./src/JourneeMurolais.elm"],
@@ -36,8 +37,7 @@ module.exports = function(grunt) {
           "./js/artistes.js": ["./src/Artistes.elm"],
           "./js/associations.js": ["./src/Associations.elm"],
           "./js/cinema.js": ["./src/Cinema.elm"],
-          "./js/sportsDetente.js": ["./src/SportsDetente.elm"],
-          "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
+          "./js/sportsDetente.js": ["./src/SportsDetente.elm"],        
           "./js/officeTourisme.js": ["./src/OfficeTourisme.elm"],
           "./js/sante.js": ["./src/Sante.elm"],
           "./js/cartePlan.js": ["./src/CartePlan.elm"],
@@ -68,6 +68,7 @@ module.exports = function(grunt) {
                 , "./src/Medievales.elm"
                 , "./src/Annee2016.elm"
                 , "./src/Periscolaire.elm"
+                , "./src/DecouvrirMurol.elm"
                 , "./src/PrintempsEte.elm"
                 , "./src/JourneeMurolais.elm"
                 , "./src/AutomneHiver.elm"
@@ -96,8 +97,7 @@ module.exports = function(grunt) {
                 , "./src/Artistes.elm"
                 , "./src/Associations.elm"
                 , "./src/Cinema.elm"
-                , "./src/SportsDetente.elm"
-                , "./src/DecouvrirMurol.elm"
+                , "./src/SportsDetente.elm"                
                 , "./src/OfficeTourisme.elm"
                 , "./src/Sante.elm"
                 , "./src/CartePlan.elm"

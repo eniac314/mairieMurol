@@ -26,6 +26,8 @@ body {
   background-repeat: repeat-x;
   margin: 0;
   min-height: 1080px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 header{ 
@@ -486,22 +488,31 @@ figcaption {
   border-bottom: 1px solid #aca6a9;
 }
 
-.news {
+.news{
   margin-left: 0.5em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
 
+.dropable{
+  margin-bottom: 1em;
+}
 
-.newsBody{
+.newsBody, .dropBody{
   background-color: rgba(176,196,222,0.4);
   box-shadow: 0 1px 1px #B0C4DE;
   overflow: hidden;
   clear: both;
 }
 
+.dropBody{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 
-h5.newsTitle, h5.dropTable{
+
+
+h5.newsTitle, h5.dropTitle{
   color: rgb(50, 50, 70);
   display: inline-block;
   margin: 0;
@@ -509,7 +520,7 @@ h5.newsTitle, h5.dropTable{
   border-bottom: 1px solid #778899;
 }
 
-h5.newsTitle:hover, h5.dropTable:hover{
+h5.newsTitle:hover, h5.dropTitle:hover{
   background-color: rgba(119,136,153, 0.3);
   box-shadow: 0px -1px 1px gray;
 }
@@ -547,6 +558,12 @@ span.date {
   text-decoration: none;
   color: teal;
 }
+
+.dropIntro a{
+ display: inline-block;
+ width: auto;
+}
+
 .newsdescr a:hover {
   border-bottom: 1px solid teal;
   background-color: transparent;
@@ -563,7 +580,13 @@ span.date {
   transition: all 0.75s ease-in-out;
 }
 
-.newsTitle:hover ~ .arrow, .dropTable:hover ~ .arrow{
+.dropTitle ~ .arrow{
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.newsTitle:hover ~ .arrow, .dropHeader:hover > .arrow{
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
@@ -572,8 +595,6 @@ span.date {
 .arrow img{
   max-height: 1em;
 }
-
-
 /*---------------------------------------
   style for sidebar
 ---------------------------------------*/
@@ -829,8 +850,6 @@ background-image: none;
 
 /*--end of code fot sidebar--------------*/
 /*--end of code for Accueil------------------------------------------------------*/
-
-
 /*-------------------------------------------------------------------------------
   style for Tourisme
 -------------------------------------------------------------------------------*/
@@ -841,6 +860,31 @@ background-image: none;
   display: block;
 }
 
+/*-------------------------------------------------------------------------------
+  style for officeTourisme
+-------------------------------------------------------------------------------*/
+#infoOfficeTourisme{
+  float: left;
+}
+
+#officeTourisme img{
+  float: left;
+  margin-right: 1em;
+  width: 35%;
+}
+
+#officeTourisme ul{
+
+}
+
+#officeTourisme h5{
+  margin-top:0.5em; 
+  margin-bottom: 0.5em;
+}
+
+#officeDescr{
+  clear: both;
+}
 /*-------------------------------------------------------------------------------
   style for hebergTourisme
 -------------------------------------------------------------------------------*/
@@ -1229,10 +1273,10 @@ h5.trashCat {
 /*-------------------------------------------------------------------------------
   style fot Publications
 -------------------------------------------------------------------------------*/
-#bullPubli {
+/*#bullPubli {
   padding-right: 0;
   margin-right: 0;
-}
+}*/
 
 .bulletin {
   /*background-color: blue;*/

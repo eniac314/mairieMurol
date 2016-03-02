@@ -47,6 +47,15 @@ initAt urlParams xs =
     Nothing -> model
     Just id -> update (ShowTile id) model 
 
+initAtPhoto : String -> List (String,String,List Html) -> Model
+initAtPhoto urlParams xs = 
+  let title =  getTitle urlParams
+      model = initPhoto xs
+      maybeId = getByTitle title model
+  in case maybeId of 
+    Nothing -> model
+    Just id -> update (ShowTile id) model 
+
 initWithLink : List (String,String,List Html,String) -> Model
 initWithLink xs = 
   let n = List.length xs
@@ -154,5 +163,7 @@ getByTitle : String -> Model -> Maybe ID
 getByTitle s m = 
   let d' = Dict.filter (\k (t,_) -> .title t == s)  (.menuData m)
       ids = Dict.keys d'
-  in List.head ids
+  in case List.head ids of 
+       Nothing  -> Result.toMaybe (String.toInt s) 
+       Just res -> Just res
   

@@ -8,7 +8,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import TiledMenu exposing (initPhoto,view,update,Action)
+import TiledMenu exposing (initAtPhoto,view,update,Action)
 import Murol exposing (mainMenu,
                        renderMainMenu',
                        pageFooter,
@@ -42,7 +42,9 @@ initialModel =
   { mainMenu    = mainMenu
   , subMenu     = subMenu
   , mainContent = initialContent
-  , showIntro   = True
+  , showIntro   = if String.isEmpty locationSearch
+                  then True
+                  else False
   }
 
 
@@ -85,6 +87,8 @@ update action model =
 
 --Main
 
+port locationSearch : String
+
 main =
   StartApp.start
     { model  = initialModel
@@ -99,49 +103,197 @@ initialWrapper =
        div [ class "subContainerData noSubmenu", id "decouvrirMurol"]
            [ h2 [] [text "Découvrir Murol"]
            , p  [ classList [("intro",True),("displayIntro", showIntro)]]
-                [ text "La commune appartient au canton de
-                        Besse-et-Saint-Anastaise et est composée
-                        de quatre villages, Murol, Beaune le froid,
-                        Groire et Chautignat. Elle s'étend sur une
-                        superficie de 15 km² à une altitude de 785m à 1500m."]
-           , h3 [classList [("intro",True),("display", showIntro)]]
+                [ text "La commune de Murol, située au cœur du 
+                       Parc des Volcans d’Auvergne, fait partie du canton 
+                       du Sancy. Elle est composée de plusieurs villages 
+                       et couvre une superficie de 15 km² avec 
+                       une altitude qui varie de 785m à 1500m. "]
+           , p  [ classList [("intro",True),("displayIntro", showIntro)]]
+                [ text "Renommée depuis le début du XXème siècle, Murol 
+                       est une station classée de tourisme aux nombreux 
+                       attraits : beauté des paysages préservés, richesse historique, 
+                       culturelle et patrimoniale, animations diversifiées et familiales tout 
+                       au long de l’année… "]
+           , h3 [classList [("intro",True),("displayIntro", showIntro)]]
                 [text "Les villages et hameaux"]
            , content])
+
+
+
 
 
 initialContent =
   { wrapper = initialWrapper
     
   , tiledMenu =
-      initPhoto
-            [( "Murol"
+      initAtPhoto locationSearch
+            [( "Le bourg de Murol"
             , "/images/tiles/decouvrirMurol/murolTile.jpg"
-            , [ p  [] [text "Le bourg de Murol est implanté dans un écrin de verdure à
-                             850 mètres d'altitude, dans la vallée de la Couze Chambon,
-                             sur le versant oriental du Massif de Sancy, entre le volcan
-                             boisé du Tartaret, le promontoire du Château de Murol
-                             (monument historique classé) et le puy de Bessolles
-                             culminant à 1057m. d'altitude. Il est également
-                             travérsé par le GR30. A deux pas du Lac Chambon
-                             et de la Vallée de Chaudefour (Réserve naturelle)
-                             le village vous ravira par ses sites remarquables
-                             ou pittoresques, par son parc arboré où se trouve
-                             le musée des peintres."]
-              , p [] [ text "De nombreux vestiges
-                             témoignent d'une occupation gauloise (dolmen)
-                             et gallo-romaine (villa et fanum). Au moyen-âge
-                             s'élève une puissante forteresse, sa construction
-                             s'étale du XIIème au XVIIIème siècle. Après être resté
-                             trois siècles durant dans les mains de la noble famille
-                             de Murol, le château deviendra au XV ème
-                             siècle par mariage, propriété des Estaing, lesquels y
-                             feront de nombreux travaux pour moderniser les conditions
-                             de vie et adapter aux exigences de l'artillerie le système
-                             de défense. Délaissé par ses derniers possesseurs,
-                             le château tombe en ruines au XIX ème siècle.
-                             Il est aujourd'hui propriété de la commune.
-                             Des animations relatant la vie au moyen-âge s'y
-                             déroulent et attirent environ 120 000 visiteurs par an."]
+            , [ img [src "/images/2 Murol, le bourg.JPG", id "bourg1"] [] 
+              , p  [] [text "Le bourg de Murol est implanté dans un 
+                             écrin de verdure à 850 mètres d'altitude, dans 
+                             la vallée de la Couze Chambon, sur le 
+                             versant Est du massif du Sancy."]
+              , p [] [ text "Enchâssé entre le volcan boisé du "
+                     , a [href "/DécouvrirMurol.html?bloc=Le volcan du Tartaret"]
+                         [text "Tartaret"]
+                     , text " le promontoire du "
+                     , a [href "/DécouvrirMurol.html?bloc=01"]
+                         [text "château de Murol"]
+                     , text " et le puy 
+                           de Bessolles, le village vous ravira par ses 
+                           sites remarquables et pittoresques. "
+                     ]
+              
+              , p []
+                     [ text "Au pied du château, vous découvrirez le parc 
+                            arboré du Prélong où se trouvent le "
+                     , a [ target "_blank", href "http://www.musee-murol.fr/fr"]
+                         [ text "musée des Peintres de l’Ecole de Murols"]
+                     , text " et le musée archéologique. Depuis le bourg, vous pourrez rejoindre 
+                             la plage de Murol, au bord du "
+                     , a [href "/DécouvrirMurol.html?bloc=Lac Chambon"]
+                         [text "lac Chambon"]
+                     , text " en empruntant "
+                     , a [href "/DécouvrirMurol.html?bloc=La voie verte"]
+                         [text "la voie verte"]
+                     , text "."
+                     ]
+              , p [] [ text "Le bourg de Murol offre de nombreux "
+                     , a [href "/Commerces.html"] [text "commerces et services"]
+                     , text ". Le marché hebdomadaire a lieu chaque 
+                            mercredi matin. " 
+                     ]
+              , p [class "toClear"] [ text "Murol est animé tout au long de l’année par de "
+                     , a [href "/Animation.html"]
+                         [text "grandes manifestations"]
+                     , text " à destination d’un public 
+                             familial. Chaque dimanche de la saison estivale vous 
+                             pourrez participez à une visite insolite du bourg 
+                             en suivant Monsieur Alphonse…"
+                     ]
+              , img [src "/images/prélong.JPG", id "bourg2"] []
+              , img [src "/images/museePeintre.jpeg", id "bourg3"] [] 
+
+              ]
+            )
+            ,
+            ( "Le château"
+            , "/images/tiles/decouvrirMurol/chateauTile.jpg"
+            , [ img [src "/images/chateau1.jpg", id "chateau1"] []
+              , p [] [ text "Edifié à l'emplacement probable d'un ancien camp romain, 
+                             la construction de cette puissante forteresse médiévale s'étale 
+                             du XIIème au XVIIIe siècle. "]
+              , p [] [ text "Après être resté trois siècles dans les mains 
+                             de la noble famille de Murol, le château 
+                             deviendra, au XVème siècle, propriété des Estaing. De 
+                             nombreux travaux seront alors entrepris pour moderniser les 
+                             conditions de vie et adapter le système de 
+                             défense du château aux exigences de l'artillerie. "]
+              , p [] [text "Délaissé par ses derniers possesseurs, le château tombe 
+                            en ruines au XIXème siècle. "]
+
+              , p [] [text "Depuis près d’un siècle, en étroite collaboration avec 
+                           les Monuments Historiques, le château a été activement 
+                           rénové, ce qui a permis l’accueil du public. 
+                           Son architecture médiévale reste conservée. "]
+              , p [] [text "Il est aujourd´hui propriété de la commune et 
+                            est géré par un délégataire. "]
+              , p [] [text "C'est le château le plus visité d’Auvergne. Il 
+                           attire plus de 100 000 visiteurs par an 
+                           qui peuvent profiter de "
+                     , a [target "_blank", href "www.chateaudemurol.fr"]
+                         [text "visites simples ou animées"]  
+                     ,text ", de saynètes et de démonstrations. Paysans, hommes d´armes, 
+                           gentes dames et chevaliers vous font découvrir la 
+                           vie d´une châtellenie au XIIIe siècle! "
+                     ]
+              , p [] [text "Depuis plusieurs années, des "
+                     ,a [target "_blank", href "https://sites.google.com/site/murolarcheoancien"]
+                        [text "recherches archéologiques"] 
+                     ,text " sont conduites 
+                           au château et sur l’ensemble de la commune 
+                           afin de retracer l’histoire de ce territoire dont 
+                           de nombreux vestiges témoignent d’une occupation gauloise (dolmen) 
+                           et gallo-romaine (villa et fanum). Elles sont menées 
+                           par Dominique Allios, maître de conférences en archéologie 
+                           et histoire de l’Art, et son équipe d’étudiants. 
+                           Chaque vendredi soir du mois de juillet, ils 
+                           animent des conférences archéologiques riches en rebondissements et 
+                           font ainsi partager aux murolais et aux visiteurs 
+                           les découvertes et avancées réalisées dans la semaine. 
+                           (voir "
+                     , a [] [text "présentation de Dominique Allios"]
+                     , text ")"
+                     ]
+              ]
+            )
+            ,
+            ("Beaune le froid"
+            ,"/images/tiles/decouvrirMurol/beauneTile.jpg"
+            , [ img [src "/images/four à pain Beaune.jpg", id "chateau1"] []
+              , p  [] [ text "Petit village de montagne, deuxième bourg de la 
+                             commune situé sur un haut plateau, Beaune-le-Froid est 
+                             un village agricole très actif et réputé pour 
+                             ses "
+                      , a [href "/Agriculture.html"]
+                          [text "fromages de Saint-Nectaire fermier AOP"]
+                      , text ", fabriqué depuis 
+                             le XVIème siècle sur la commune. C'est un 
+                             lieu de promenade et de découverte du savoir-faire 
+                             local. Il a su conserver son moulin à 
+                             eau et son lavoir. "
+                      ]
+              , p [] [text "En 2011, son four à pain a été 
+                           entièrement reconstruit par des bénévoles de l’association des 
+                           « chantiers de jeunesse ». En 2014, d’autres 
+                           jeunes de cette association ont permis de remettre 
+                           en état le « chemin des caves » 
+                           où les agriculteurs affinent leurs Saint-Nectaire. "]
+              , p [] [text "Chaque lundi de la saison estivale, vous pourrez 
+                           découvrir le patrimoine et les savoir-faire de ce 
+                           village grâce à Michel Tardif. "]
+              , p [] [text "Début juillet, une grande foire du Saint-Nectaire vous 
+                           permettra de rencontrer les producteurs de fromage et 
+                           d’autres produits du terroir. Bonne dégustation! "]
+              , p [] [text "L’hiver, si les conditions climatiques sont favorables, vous 
+                           pourrez pratiquez le ski de fond ou la 
+                           randonnée en raquettes sur les pistes du domaine 
+                           nordique de la forêt de Beaune-le-Froid. "] 
+              ]
+            )
+            ,
+            ("Le volcan du Tartaret"
+            ,"/images/tiles/decouvrirMurol/tartaretTile.jpg"
+            , [ p  [] [text "Le volcan du Tartaret est l’un des plus 
+                             récents d’Auvergne. Il est à l’origine de la 
+                             formation du lac Chambon, avec l’effondrement de l’ancien 
+                             volcan de la Dent du Marais. (voir "
+                      ,a [href ""]
+                         [text "historique de Pierre Lavina"]
+                      
+                      ]
+              ]
+            )
+            ,
+            ("Lac Chambon"
+            ,"/images/tiles/decouvrirMurol/lacChambonTile.jpg"
+            , [  p  [] [text "La partie Est du lac occupe la commune
+                             de Murol pour un tiers de sa superficie.
+                             Le reste du lac se trouvant sur la
+                             commune de Chambon sur lac. Le Lac Chambon
+                             est un lac de barrage volcanique puisqu´il s´est
+                             formé à la suite de l´éruption du Tartaret
+                             il y a environ 8000 ans et de
+                             l'effondrement de la dent du Marais , bloquant
+                             ainsi le cours de la Couze Chambon. La
+                             couze charrie une telle quantité d´alluvions que le
+                             lac se rétrécit au fil des siècles. S'étalant
+                             aujourd'hui sur 60 hectares, peu profond (6 m
+                             maximum) et parsemé d´îlots , il s'ouvre largement
+                             à l'ouest sur les paysages somptueux du massif
+                             du Sancy. Le lac est aménagé pour la
+                             baignade, les activités nautiques et la pêche. "]
               ]
             )
             ,
@@ -191,24 +343,7 @@ initialContent =
               ]
             )
             ,
-            ("Beaune le froid"
-            ,"/images/tiles/decouvrirMurol/beauneTile.jpg"
-            , [ p  [] [ text "Petit village de montagne, deuxième bourg de la
-                             commune situé sur un haut plateau, Beaune le
-                             froid est un village agricole très actif et
-                             réputé pour ses fromages de Saint Nectaire fermier,
-                             fabriqué depuis le XVIème siècle sur la commune.
-                             C'est un lieu de promenade et de découverte
-                             du savoir-faire local. Il a su conserver son
-                             moulin à eau et son lavoir. En 2011,
-                             son four à pain a été entièrement reconstruit
-                             par des bénévoles de l’association des « chantiers
-                             de jeunesse ». L’ hiver, l’ouverture du domaine
-                             skiable permet la pratique du ski nordique et
-                             des raquettes. "]
-              ]
-            )
-            ,
+            
             ("Chautignat"
             ,"/images/tiles/decouvrirMurol/chautignatTile.jpg"
             , [ p  [] [ text "Le hameau de Chautignat est situé à flanc
@@ -223,7 +358,7 @@ initialContent =
               ]
             )
             ,
-            ("Les hameaux des Ballats et Groire"
+            ("Groire"
             ,"images/tiles/decouvrirMurol/groireTile.jpg"
             , [ p  [] [ text "Ces hameaux ont une activité rurale marquée, ils
                      se situent là où le fond de la
@@ -236,7 +371,7 @@ initialContent =
               ]
             )
             ,
-            ("La Chassagne"
+            ("La Chassagne et les Ballats"
             ,"images/tiles/decouvrirMurol/chassagneTile.jpg"
             , [ p  [] [ text "Située sous le Château de Murol, La Chassagne
                               est un hameau de fermes et maisons particulières.
@@ -250,52 +385,6 @@ initialContent =
                               pins et autres arbustes. "]
               ]
             )
-            ,
-            ("Le volcan du Tartaret"
-            ,"/images/tiles/decouvrirMurol/tartaretTile.jpg"
-            , [ p  [] [text "Il est l´un des plus récents d´Auvergne. Ses
-                             pentes boisées empêchent de distinguer son cratère mais
-                             les sentiers qui le traverse sont des plus
-                             agréables et accessibles. Parcours de santé et d'orientation
-                             (cartes en vente à l'office de tourisme). "]
-              ]
-            )
-            ,
-            ("Lac Chambon"
-            ,"/images/tiles/decouvrirMurol/lacChambonTile.jpg"
-            , [  p  [] [text "La partie Est du lac occupe la commune
-                             de Murol pour un tiers de sa superficie.
-                             Le reste du lac se trouvant sur la
-                             commune de Chambon sur lac. Le Lac Chambon
-                             est un lac de barrage volcanique puisqu´il s´est
-                             formé à la suite de l´éruption du Tartaret
-                             il y a environ 8000 ans et de
-                             l'effondrement de la dent du Marais , bloquant
-                             ainsi le cours de la Couze Chambon. La
-                             couze charrie une telle quantité d´alluvions que le
-                             lac se rétrécit au fil des siècles. S'étalant
-                             aujourd'hui sur 60 hectares, peu profond (6 m
-                             maximum) et parsemé d´îlots , il s'ouvre largement
-                             à l'ouest sur les paysages somptueux du massif
-                             du Sancy. Le lac est aménagé pour la
-                             baignade, les activités nautiques et la pêche. "]
-              ]
-            )
-            ,
-            ("Grottes de Rajat"
-            ,"/images/tiles/decouvrirMurol/rajatTile.jpg"
-            , [ p  [] [text "D'accès difficile, les falaises qui les abritent sont
-                             composées d'un mélange de Bolts et argiles aux
-                             couleurs pastel allant de l'ocre, vert ou rosé,
-                             au bleuté. Ces habitations troglodytes sont très anciennes,
-                             certainement antérieures à l'époque gauloise. Toutefois leur histoire
-                             mal connue ne s'appuie que sur des hypothèses.
-                             Ce site est un enchantement pour le promeneur
-                             attentif et permet à celui qui s'y rend
-                             de rêver et d'imaginer sa propre histoire. "]
-              ]
-            )
            ]
   }
-
  

@@ -127,7 +127,7 @@ mainMenu = Node ""
 --           ]
 
 logos    = [("famillePlus.jpg","http://www.familleplus.fr/fr")
-           ,("Station_Tourisme_RVB.jpg","http://www.communes-touristiques.net/")
+           ,("Station_Tourisme_RVB.jpg","http://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme")
            ,("Village fleuri.png","http://www.villes-et-villages-fleuris.com/")
            ,("StationVertegf.jpg","http://www.stationverte.com/")
            ]
@@ -137,7 +137,7 @@ initialModel =
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "01/26/2016" news
+  , news        = prepNews "03/01/2016" news
   }
 
 
@@ -276,7 +276,7 @@ pageFooter =
 renderListImg pics =
   div [id "pics"]
       [ ul []
-           (List.map (\(i,l) -> li [] [a [href l] [img [src ("/images/" ++ i)] []]]) pics)]
+           (List.map (\(i,l) -> li [] [a [href l, target "_blank"] [img [src ("/images/" ++ i)] []]]) pics)]
 
 
 renderNewsList : Signal.Address Action -> String -> List News -> Html
@@ -284,7 +284,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le dimanche 24 janvier 2016"]
+            [text "Dernière mise à jour le mardi 01 mars 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -520,10 +520,10 @@ mail s  = span [class "email"] [ text "Email: "
 
 site tex addr =
  span [] [ text "Site: "
-         , a [href addr] [text tex]
+         , a [href addr, target "_blank"] [text tex]
          ]
 
-link tex addr = a [href addr] [text tex]
+link tex addr = a [href addr, target "_blank"] [text tex]
 
 maybeElem : String -> ( String -> Html ) -> Html
 maybeElem s f =

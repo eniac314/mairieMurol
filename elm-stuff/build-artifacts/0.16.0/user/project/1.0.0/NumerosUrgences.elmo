@@ -61,8 +61,7 @@ Elm.NumerosUrgences.make = function (_elm) {
    var secours = {title: "Secours"
                  ,entries: _U.list([{ctor: "_Tuple2",_0: "Pompiers",_1: "18"}
                                    ,{ctor: "_Tuple2",_0: "Gendarmerie",_1: "17"}
-                                   ,{ctor: "_Tuple2",_0: "Gendarmerie de Besse",_1: "04 73 79 50 02"}
-                                   ,{ctor: "_Tuple2",_0: "Gendarmerie de Murol (Poste saisonnier juillet-août)",_1: "04 73 88 61 53"}])};
+                                   ,{ctor: "_Tuple2",_0: "Gendarmerie de Besse",_1: "04 73 79 50 02"}])};
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

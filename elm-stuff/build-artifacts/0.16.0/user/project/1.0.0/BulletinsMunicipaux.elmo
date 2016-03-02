@@ -227,7 +227,7 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Associations"
                                              ,"Calendrier"]))]));
    var bulletin = A2($Html.div,
-   _U.list([$Html$Attributes.$class("subContainerData noSubMenu"),$Html$Attributes.id("bullPubli")]),
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("bullPubli")]),
    A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));
    var initialContent = bulletin;
    var subMenu = _U.list([]);
