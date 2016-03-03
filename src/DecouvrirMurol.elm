@@ -115,7 +115,7 @@ initialWrapper =
                        culturelle et patrimoniale, animations diversifiées et familiales tout 
                        au long de l’année… "]
            , h3 [classList [("intro",True),("displayIntro", showIntro)]]
-                [text "Les villages et hameaux"]
+                [text "Villages et sites"]
            , content])
 
 
@@ -146,11 +146,11 @@ initialContent =
                      ]
               
               , p []
-                     [ text "Au pied du château, vous découvrirez le parc 
+                     [ text "Au pied du château, découvrez le parc 
                             arboré du Prélong où se trouvent le "
                      , a [ target "_blank", href "http://www.musee-murol.fr/fr"]
                          [ text "musée des Peintres de l’Ecole de Murols"]
-                     , text " et le musée archéologique. Depuis le bourg, vous pourrez rejoindre 
+                     , text " et le musée archéologique. Depuis le bourg, rejoignez
                              la plage de Murol, au bord du "
                      , a [href "/DécouvrirMurol.html?bloc=Lac Chambon"]
                          [text "lac Chambon"]
@@ -168,8 +168,7 @@ initialContent =
                      , a [href "/Animation.html"]
                          [text "grandes manifestations"]
                      , text " à destination d’un public 
-                             familial. Chaque dimanche de la saison estivale vous 
-                             pourrez participez à une visite insolite du bourg 
+                             familial. Chaque dimanche de la saison estivale, participez à une visite insolite du bourg 
                              en suivant Monsieur Alphonse…"
                      ]
               , img [src "/images/prélong.JPG", id "bourg2"] []
@@ -186,12 +185,12 @@ initialContent =
                              du XIIème au XVIIIe siècle. "]
               , p [] [ text "Après être resté trois siècles dans les mains 
                              de la noble famille de Murol, le château 
-                             deviendra, au XVème siècle, propriété des Estaing. De 
+                             deviendra, au XVème siècle, propriété d'Estaing. De 
                              nombreux travaux seront alors entrepris pour moderniser les 
                              conditions de vie et adapter le système de 
                              défense du château aux exigences de l'artillerie. "]
               , p [] [text "Délaissé par ses derniers possesseurs, le château tombe 
-                            en ruines au XIXème siècle. "]
+                            en ruine au XIXème siècle. "]
 
               , p [] [text "Depuis près d’un siècle, en étroite collaboration avec 
                            les Monuments Historiques, le château a été activement 
@@ -214,7 +213,9 @@ initialContent =
                      ,text " sont conduites 
                            au château et sur l’ensemble de la commune 
                            afin de retracer l’histoire de ce territoire dont 
-                           de nombreux vestiges témoignent d’une occupation gauloise (dolmen) 
+                           de "
+                     ,a [href "", target "_blank"] [text "nombreux vestiges"]
+                     ,text " témoignent d’une occupation gauloise (dolmen) 
                            et gallo-romaine (villa et fanum). Elles sont menées 
                            par Dominique Allios, maître de conférences en archéologie 
                            et histoire de l’Art, et son équipe d’étudiants. 
@@ -223,7 +224,8 @@ initialContent =
                            font ainsi partager aux murolais et aux visiteurs 
                            les découvertes et avancées réalisées dans la semaine. 
                            (voir "
-                     , a [] [text "présentation de Dominique Allios"]
+                     , a [href "/baseDocumentaire/presentationAllios.pdf", target "_blank"]
+                         [text "présentation de Dominique Allios"]
                      , text ")"
                      ]
               ]
@@ -237,7 +239,7 @@ initialContent =
                              un village agricole très actif et réputé pour 
                              ses "
                       , a [href "/Agriculture.html"]
-                          [text "fromages de Saint-Nectaire fermier AOP"]
+                          [text "fromages Saint-Nectaire fermier AOP"]
                       , text ", fabriqué depuis 
                              le XVIème siècle sur la commune. C'est un 
                              lieu de promenade et de découverte du savoir-faire 
@@ -246,18 +248,17 @@ initialContent =
                       ]
               , p [] [text "En 2011, son four à pain a été 
                            entièrement reconstruit par des bénévoles de l’association des 
-                           « chantiers de jeunesse ». En 2014, d’autres 
+                           «chantiers de jeunesse». En 2014, d’autres 
                            jeunes de cette association ont permis de remettre 
                            en état le « chemin des caves » 
-                           où les agriculteurs affinent leurs Saint-Nectaire. "]
-              , p [] [text "Chaque lundi de la saison estivale, vous pourrez 
-                           découvrir le patrimoine et les savoir-faire de ce 
-                           village grâce à Michel Tardif. "]
-              , p [] [text "Début juillet, une grande foire du Saint-Nectaire vous 
+                           où les agriculteurs affinent le Saint-Nectaire. "]
+              , p [] [text "Chaque lundi de la saison estivale, 
+                           découvrez le patrimoine et les savoir-faire de ce 
+                           village avec Michel Tardif. "]
+              , p [] [text "Début juillet, la foire du Saint-Nectaire vous 
                            permettra de rencontrer les producteurs de fromage et 
                            d’autres produits du terroir. Bonne dégustation! "]
-              , p [] [text "L’hiver, si les conditions climatiques sont favorables, vous 
-                           pourrez pratiquez le ski de fond ou la 
+              , p [] [text "L’hiver, pratiquez le ski de fond ou la 
                            randonnée en raquettes sur les pistes du domaine 
                            nordique de la forêt de Beaune-le-Froid. "] 
               ]
@@ -269,31 +270,65 @@ initialContent =
                              récents d’Auvergne. Il est à l’origine de la 
                              formation du lac Chambon, avec l’effondrement de l’ancien 
                              volcan de la Dent du Marais. (voir "
-                      ,a [href ""]
+                      ,a [href "/baseDocumentaire/tartaretLavina.pdf", target "_blank"]
                          [text "historique de Pierre Lavina"]
-                      
+
+                      , text ")"
                       ]
+              , p [] [text "Il est sillonné de sentiers balisés qui incitent 
+                           à la promenade en forêt. A la lisière du bois profitez
+                           de l’aire de pique-nique et admirez le paysage sur le bourg et son château.
+                           Au sommet, vous pourrez découvrir un panorama exceptionnel sur 
+                           le lac et les Monts Dore en profitant 
+                           d’un repos bien mérité! En redescendant, vous pourrez emprunter le tronçon
+                           de la voie verte qui vous mènera au lac. Les plus courageux 
+                           pourront s’exercer sur les différents agrès du parcours 
+                           sportifs du Tartaret (12 stations)."]
+              , div [id "tartaretPics"] 
+                   [ img [src "/images/panoTartaret.jpg", id "tartaret1"] []
+                   , img [src "/images/trail.jpg", id "tartaret2"] []
+                   ]
               ]
             )
             ,
-            ("Lac Chambon"
+            ("Le lac Chambon"
             ,"/images/tiles/decouvrirMurol/lacChambonTile.jpg"
-            , [  p  [] [text "La partie Est du lac occupe la commune
-                             de Murol pour un tiers de sa superficie.
-                             Le reste du lac se trouvant sur la
-                             commune de Chambon sur lac. Le Lac Chambon
-                             est un lac de barrage volcanique puisqu´il s´est
-                             formé à la suite de l´éruption du Tartaret
-                             il y a environ 8000 ans et de
-                             l'effondrement de la dent du Marais , bloquant
-                             ainsi le cours de la Couze Chambon. La
-                             couze charrie une telle quantité d´alluvions que le
-                             lac se rétrécit au fil des siècles. S'étalant
-                             aujourd'hui sur 60 hectares, peu profond (6 m
-                             maximum) et parsemé d´îlots , il s'ouvre largement
-                             à l'ouest sur les paysages somptueux du massif
-                             du Sancy. Le lac est aménagé pour la
-                             baignade, les activités nautiques et la pêche. "]
+            , [ p [] [ text "Le lac Chambon est un lac de barrage 
+                             naturel issu des éruptions du "
+                     , a [href "/DécouvrirMurol.html?bloc=Le volcan du Tartaret"]
+                         [text "Tartaret"]
+                     , text " et de 
+                           l’effondrement du volcan de la Dent du Marais 
+                           qui ont détourné le cours de la Couze  Chambon."
+                     ]
+              , p [] [ text "Le lac Chambon, propriété du conseil départemental, se 
+                             trouve à cheval sur les communes de Chambon 
+                             sur Lac à l’ouest et Murol à l’est. 
+                             La plage de Murol offre un panorama somptueux 
+                             sur la vallée de Chaudefour et les crêtes 
+                             du massif du Sancy. Elle est fréquentée en 
+                             toute saison. "]
+              , p [] [ text "L’été, la plage de sable et la zone 
+                             de baignade surveillée en juillet août vous
+                             offrent une plage à la montagne ! 
+                             Vous pourrez aussi pratiquer diverses activités en famille 
+                             : pédalos, mini-golf, jeux pour enfants, pêche (site 
+                             de deuxième catégorie), promenades… "]
+              , p [] [ text "Le complexe touristique est également équipé de deux "
+                     , a [href "/Restaurants.html"] [ text "bars restaurants"]
+                     , text " qui vous proposeront rafraîchissements et spécialités 
+                              locales. "
+                     ]
+              , p [] [ text "En toute saison, le tour du lac sur 
+                             le sentier réaménagé en "
+                     , a [href "/DécouvrirMurol.html?bloc=La voie verte"]
+                         [text "voie verte"]
+
+                     , text " est très 
+                            prisé. Il est accessible aux piétons, aux 
+                            poussettes, aux personnes à mobilité réduite, aux VTT 
+                            et même aux cavaliers sur sa partie sud. "
+                     ]
               ]
             )
             ,

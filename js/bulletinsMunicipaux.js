@@ -10967,8 +10967,8 @@ Elm.TiledMenu.make = function (_elm) {
                     ,function (_) {
                        return _.photoLink;
                     }(model) ? A2($Html.a,
-                    _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("photoLink")]),
-                    _U.list([$Html.text("Phototheque")])) : nullTag]));
+                    _U.list([$Html$Attributes.href("/Photothèque.html"),$Html$Attributes.id("photoLink")]),
+                    _U.list([$Html.text("Photothèque")])) : nullTag]));
          }
    });
    var Content = function (a) {    return {ctor: "Content",_0: a};};
@@ -11496,7 +11496,7 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Sortir","")
                    ,A2(Leaf,"Patrimoine","")
                    ,A2(Leaf,"Sports et détente","")
-                   ,A2(Leaf,"Phototheque","")]))
+                   ,A2(Leaf,"Photothèque","")]))
            ,A2(Node,
            "Documentation",
            _U.list([A2(Leaf,"Bulletins municipaux","")
@@ -11645,15 +11645,22 @@ Elm.Murol.make = function (_elm) {
                       ,expiry: $Date.fromString("01/25/2016")})
                       ,_U.update(emptyNews,
                       {title: "Le diaporama 2015 est disponible"
-                      ,date: $Date.fromString("04/02/2016")
+                      ,date: $Date.fromString("01/01/2016")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
-                      ,expiry: $Date.fromString("")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/01/2016",news)};
+                      ,expiry: $Date.fromString("04/02/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Le bulletin municipal n°7 est disponible"
+                      ,date: $Date.fromString("03/01/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
+                      ,expiry: $Date.fromString("09/11/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/03/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11938,10 +11945,41 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Autres projets en cours"
                                              ,"Murol en images"
                                              ,"Associations"
+                                             ,"Calendrier"]))
+                                     ,A3(Bulletin,
+                                     "cover6.jpg",
+                                     "Janvier 2016",
+                                     _U.list(["Conseil regional"
+                                             ,"Communaute de communes"
+                                             ,"Sapeurs pompiers"
+                                             ,"SIVOM de besse"
+                                             ,"CCAS"
+                                             ,"Organicite ®"
+                                             ,"Tri des dechets "
+                                             ,"Travaux realises"
+                                             ,"Embellissement et fleurissement"
+                                             ,"Château et archeologie"
+                                             ,"Prélong"
+                                             ,"Congres national des maires ruraux"
+                                             ,"Murol en images"
+                                             ,"Plan local d’urbanisme"
+                                             ,"Pavillon bleu"
+                                             ,"Ecoles"
+                                             ,"SIVOM de la vallee verte"
+                                             ,"Activites jeunesse"
+                                             ,"Animation estivale"
+                                             ,"Grandes manifestations"
+                                             ,"Associations"
+                                             ,"Musee des peintres"
+                                             ,"Investissements"
+                                             ,"Etat civil"
+                                             ,"Services"
+                                             ,"Site municipal"
+                                             ,"Maison de sante"
                                              ,"Calendrier"]))]));
    var bulletin = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("bullPubli")]),
-   A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));
+   A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("Le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));
    var initialContent = bulletin;
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};

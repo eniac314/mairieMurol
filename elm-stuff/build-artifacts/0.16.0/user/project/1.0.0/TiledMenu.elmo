@@ -79,8 +79,8 @@ Elm.TiledMenu.make = function (_elm) {
                     ,function (_) {
                        return _.photoLink;
                     }(model) ? A2($Html.a,
-                    _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("photoLink")]),
-                    _U.list([$Html.text("Phototheque")])) : nullTag]));
+                    _U.list([$Html$Attributes.href("/Photothèque.html"),$Html$Attributes.id("photoLink")]),
+                    _U.list([$Html.text("Photothèque")])) : nullTag]));
          }
    });
    var Content = function (a) {    return {ctor: "Content",_0: a};};

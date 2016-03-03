@@ -96,14 +96,14 @@ view address model =
       [ renderMainMenu' ["Animation"] (.mainMenu model)
       , div [ id "subContainer"]
             [ div [ class "subContainerData noSubmenu", id "animation"]
-                  [ h2 [] [text "animation"]
+                  [ h2 [] [text "Animation"]
                   , p [] [text "La commune de Murol, riche d’un service animation 
                                municipal et d’une trentaine d’associations dynamiques, offre diverses 
                                animations à sa population locale et à ses 
                                visiteurs tout au long de l’année. Voir le 
                                calendrier ci-dessous."]
                   , p [] [text "De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent 
-                               de mai à octobre à Murol. Dans l’ordre 
+                               au cours de l’année à Murol. Dans l’ordre 
                                du calendrier, on voit apparaître : "]
 
                   , insertDrop address (.drops model) 0
@@ -155,15 +155,15 @@ medievales =
                "Les Médiévales de Murol"
                (Just ( a [ href "/Medievales.html"]
                          [ text "lien photothèque"] ))
-               ( [ p [] [text "Cette manifestation est organisée par la mairie de 
-                               Murol, l’association AMMA et d’autres associations partenaires. Elle 
+               ( [ p [] [text "Cette manifestation, organisée par la mairie de 
+                               Murol, l’association AMMA et d’autres associations partenaires, 
                                a lieu chaque année durant le week-end de 
                                l’Ascension." ]
                  , p [] [text "Au pied du château du XIIIème siècle, les 
                                rues de Murol vivent au rythme du Moyen-âge 
                                avec pour décor un campement médiéval, des danses, 
                                des spectacles médiévaux, ainsi que des artisans tout 
-                               droit sortis du Moyen-âge."]
+                               droit sortis du Moyen-âge. Immersion garantie !"]
                  ]
                )
 
@@ -172,9 +172,10 @@ musee =
                "L’exposition temporaire au musée des Peintres de l’Ecole de Murols"
                (Just ( a [ href "http://www.musee-murol.fr/fr", target "_blank"]
                          [ text "site officiel"] ))
-               ( [ p [] [text "Chaque année, la commune organise le vernissage d’une 
-                               exposition temporaire différente au musée des Peintres de 
-                               l’Ecole de Murols, le dernier week-end de mai. 
+               ( [ p [] [text "Chaque année, le dernier week-end de mai,
+                               la commune organise le vernissage d’une 
+                               exposition temporaire inédite au musée des Peintres de 
+                               l’Ecole de Murols. 
                                L’exposition reste en place jusqu’au 31 octobre. L’objectif 
                                est de regrouper et de présenter pendant quelques 
                                mois les œuvres de l’un des peintres majeurs 
@@ -191,7 +192,7 @@ horizon =
                                de communes du massif du Sancy. La commune 
                                de Murol soutient cet événement en tant que 
                                membre de la communauté de communes et a 
-                               déjà accueilli de nombreuses œuvres sur son territoire" ]
+                               déjà accueilli de nombreuses œuvres sur son territoire." ]
                  , p [] [text "Les œuvres éphémères sont installées de juin à 
                                septembre sur des sites naturels. Cette manifestation prend 
                                une ampleur considérable qui dépasse le cadre régional 
@@ -204,11 +205,10 @@ revolution =
                "La fête de la Révolution"
                (Just ( a [ href "/Revolution.html" ]
                          [ text "lien photothèque"] ))
-               ( [ p [] [text "Profitant de la présence du château de Murol, 
-                               la municipalité de Murol en partenariat avec différentes 
-                               associations de la commune organise une fête historique 
+               ( [ p [] [text "La municipalité de Murol, en partenariat avec différentes 
+                               associations de la commune, organise le 14 juillet 
                                dans les rues de Murol. " ]
-                 , p [] [text "En journée : reconstitution de la Révolution française, 
+                 , p [] [text "En journée : reconstitution en costumes d’époque de la Révolution française, 
                                animations de rues, cavalcade, et taverne révolutionnaire. "]
                  , p [] [text "Le soir : défilé costumé suivi du feu 
                                d’artifice tiré du château de Murol et du 
@@ -227,7 +227,7 @@ festivalArt =
                ( [ p [] [text "Le service animation de la mairie organise chaque 
                                été le festival d’Art." ]
                  , p [] [text "Ce festival regroupe de très nombreux artistes et 
-                               artisans d’art venus de tous horizons dont les 
+                               artisans d’art venus de tous horizons. Leurs 
                                œuvres envahissent les rues et places de Murol 
                                durant une journée d’été riche en couleurs. Petits 
                                et grands déambulent accompagnés par les animations de 

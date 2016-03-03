@@ -147,7 +147,7 @@ Elm.Gallery.make = function (_elm) {
                  ,offset((_U.eq(function (_) {    return _.direct;}(model),Left) ? 1 : -1) * toOffset(function (_) {    return _.animationState;}(model)))]),
          _U.list([A2($Html.img,
          _U.list([$Html$Attributes.src(A2($Basics._op["++"],
-         "images/phototheque/",
+         "images/photothèque/",
          A2($Basics._op["++"],function (_) {    return _.folder;}(model),A2($Basics._op["++"],"/thumbs/",function (_) {    return _.filename;}(p)))))]),
          _U.list([]))]));
       };

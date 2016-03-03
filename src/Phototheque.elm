@@ -47,7 +47,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Culture et loisirs", "Phototheque"]
+      [ renderMainMenu' ["Culture et loisirs", "photothèque"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
@@ -92,18 +92,18 @@ main =
 initialContent =
   { wrapper = 
     (\content showIntro ->
-       div [ class "subContainerData noSubmenu", id "phototheque"]
-           [ phototheque showIntro
+       div [ class "subContainerData noSubmenu", id "photothèque"]
+           [ photothèque showIntro
            , content])
   , tiledMenu = initWithLink 
     [( "Paysages, printemps, été"
-      , "/images/tiles/phototheque/printempsEte.jpg"
+      , "/images/tiles/photothèque/printempsEte.jpg"
       , [ 
         ]
       , "/PrintempsEte.html"
       )
     ,( "Paysages, automne, hiver"
-      , "/images/tiles/phototheque/automneHiver.jpg"
+      , "/images/tiles/photothèque/automneHiver.jpg"
       , [ 
         ]
       , "/AutomneHiver.html"
@@ -116,7 +116,7 @@ initialContent =
       )
 
     ,( "Les Médiévales"
-      , "/images/tiles/phototheque/medievales.jpg"
+      , "/images/tiles/photothèque/medievales.jpg"
       , [ 
         ]
       , "/Medievales.html"
@@ -129,20 +129,20 @@ initialContent =
       , ""
       )
     ,( "Le Festival d'Art"
-      , "/images/tiles/phototheque/festivalArt.jpg"
+      , "/images/tiles/photothèque/festivalArt.jpg"
       , [ 
         ]
       , "/FestivalArt.html"
       )
 
     ,( "La journée des Murolais"
-      , "/images/tiles/phototheque/journeeMurolais.jpg"
+      , "/images/tiles/photothèque/journeeMurolais.jpg"
       , [ 
         ]
       , "/JourneeMurolais.html"
       )
     ,( "Diaporama 2015"
-      , "/images/tiles/phototheque/diaporama2015.jpg"
+      , "/images/tiles/photothèque/diaporama2015.jpg"
       , [ a [ download True
             , href "/baseDocumentaire/DIAPORAMA MUROL 2015.pdf"
             ]
@@ -152,7 +152,7 @@ initialContent =
       , ""
       )
     ,( "Année 2016"
-      , "/images/tiles/phototheque/annee2016.jpg"
+      , "/images/tiles/photothèque/annee2016.jpg"
       , [ 
         ]
       , "/Annee2016.html"
@@ -162,9 +162,9 @@ initialContent =
 
 -- Data
 
-phototheque showIntro = 
+photothèque showIntro = 
   div []
-      [ h2 [] [ text "La Phototheque" ]
+      [ h2 [] [ text "La photothèque" ]
         , div [ classList [("intro",True),("displayIntro", showIntro)] ]
               [ p  []
                    [text "Vous souhaitez partager vos plus belles photos de Murol ?

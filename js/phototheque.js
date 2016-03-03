@@ -10967,8 +10967,8 @@ Elm.TiledMenu.make = function (_elm) {
                     ,function (_) {
                        return _.photoLink;
                     }(model) ? A2($Html.a,
-                    _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("photoLink")]),
-                    _U.list([$Html.text("Phototheque")])) : nullTag]));
+                    _U.list([$Html$Attributes.href("/Photothèque.html"),$Html$Attributes.id("photoLink")]),
+                    _U.list([$Html.text("Photothèque")])) : nullTag]));
          }
    });
    var Content = function (a) {    return {ctor: "Content",_0: a};};
@@ -11496,7 +11496,7 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Sortir","")
                    ,A2(Leaf,"Patrimoine","")
                    ,A2(Leaf,"Sports et détente","")
-                   ,A2(Leaf,"Phototheque","")]))
+                   ,A2(Leaf,"Photothèque","")]))
            ,A2(Node,
            "Documentation",
            _U.list([A2(Leaf,"Bulletins municipaux","")
@@ -11645,15 +11645,22 @@ Elm.Murol.make = function (_elm) {
                       ,expiry: $Date.fromString("01/25/2016")})
                       ,_U.update(emptyNews,
                       {title: "Le diaporama 2015 est disponible"
-                      ,date: $Date.fromString("04/02/2016")
+                      ,date: $Date.fromString("01/01/2016")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
-                      ,expiry: $Date.fromString("")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/01/2016",news)};
+                      ,expiry: $Date.fromString("04/02/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Le bulletin municipal n°7 est disponible"
+                      ,date: $Date.fromString("03/01/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
+                      ,expiry: $Date.fromString("09/11/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/03/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11843,10 +11850,10 @@ Elm.Phototheque.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
-   var phototheque = function (showIntro) {
+   var photothèque = function (showIntro) {
       return A2($Html.div,
       _U.list([]),
-      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La Phototheque")]))
+      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La photothèque")]))
               ,A2($Html.div,
               _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true},{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
               _U.list([A2($Html.p,
@@ -11856,39 +11863,39 @@ Elm.Phototheque.make = function (_elm) {
    };
    var initialContent = {wrapper: F2(function (content,showIntro) {
                            return A2($Html.div,
-                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("phototheque")]),
-                           _U.list([phototheque(showIntro),content]));
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("photothèque")]),
+                           _U.list([photothèque(showIntro),content]));
                         })
                         ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4"
                                                                      ,_0: "Paysages, printemps, été"
-                                                                     ,_1: "/images/tiles/phototheque/printempsEte.jpg"
+                                                                     ,_1: "/images/tiles/photothèque/printempsEte.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/PrintempsEte.html"}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Paysages, automne, hiver"
-                                                                     ,_1: "/images/tiles/phototheque/automneHiver.jpg"
+                                                                     ,_1: "/images/tiles/photothèque/automneHiver.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/AutomneHiver.html"}
                                                                     ,{ctor: "_Tuple4",_0: "Patrimoine",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Les Médiévales"
-                                                                     ,_1: "/images/tiles/phototheque/medievales.jpg"
+                                                                     ,_1: "/images/tiles/photothèque/medievales.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/Medievales.html"}
                                                                     ,{ctor: "_Tuple4",_0: "Murol fait sa révolution",_1: "",_2: _U.list([]),_3: ""}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Le Festival d\'Art"
-                                                                     ,_1: "/images/tiles/phototheque/festivalArt.jpg"
+                                                                     ,_1: "/images/tiles/photothèque/festivalArt.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/FestivalArt.html"}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "La journée des Murolais"
-                                                                     ,_1: "/images/tiles/phototheque/journeeMurolais.jpg"
+                                                                     ,_1: "/images/tiles/photothèque/journeeMurolais.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/JourneeMurolais.html"}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Diaporama 2015"
-                                                                     ,_1: "/images/tiles/phototheque/diaporama2015.jpg"
+                                                                     ,_1: "/images/tiles/photothèque/diaporama2015.jpg"
                                                                      ,_2: _U.list([A2($Html.a,
                                                                                   _U.list([$Html$Attributes.download(true)
                                                                                           ,$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
@@ -11897,7 +11904,7 @@ Elm.Phototheque.make = function (_elm) {
                                                                      ,_3: ""}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Année 2016"
-                                                                     ,_1: "/images/tiles/phototheque/annee2016.jpg"
+                                                                     ,_1: "/images/tiles/photothèque/annee2016.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/Annee2016.html"}]))};
    var update = F2(function (action,model) {
@@ -11916,7 +11923,7 @@ Elm.Phototheque.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","Phototheque"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","photothèque"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(function (_) {
@@ -11949,5 +11956,5 @@ Elm.Phototheque.make = function (_elm) {
                                     ,update: update
                                     ,main: main
                                     ,initialContent: initialContent
-                                    ,phototheque: phototheque};
+                                    ,photothèque: photothèque};
 };

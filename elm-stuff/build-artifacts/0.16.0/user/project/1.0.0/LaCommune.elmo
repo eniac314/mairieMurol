@@ -37,7 +37,7 @@ Elm.LaCommune.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("En intersaison, nous accueillons davantage les vacanciers sans \n                   enfants, les seniors et un nombre croissant de \n                   camping-caristes, ce qui permet un allongement notable de \n                   la saison touristique.")]))
-           ,A2($Html.a,_U.list([$Html$Attributes.href("/Phototheque.html")]),_U.list([$Html.text("La phototheque")]))
+           ,A2($Html.a,_U.list([$Html$Attributes.href("/Photothèque.html")]),_U.list([$Html.text("La photothèque")]))
            ,A2($Html.br,_U.list([]),_U.list([]))
            ,A2($Html.a,_U.list([$Html$Attributes.href("/VillageFleuri.html")]),_U.list([$Html.text("Murol village fleuri")]))]));
    var contentMap = $Dict.fromList(_U.list([]));

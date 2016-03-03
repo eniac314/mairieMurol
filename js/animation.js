@@ -10967,8 +10967,8 @@ Elm.TiledMenu.make = function (_elm) {
                     ,function (_) {
                        return _.photoLink;
                     }(model) ? A2($Html.a,
-                    _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("photoLink")]),
-                    _U.list([$Html.text("Phototheque")])) : nullTag]));
+                    _U.list([$Html$Attributes.href("/Photothèque.html"),$Html$Attributes.id("photoLink")]),
+                    _U.list([$Html.text("Photothèque")])) : nullTag]));
          }
    });
    var Content = function (a) {    return {ctor: "Content",_0: a};};
@@ -11496,7 +11496,7 @@ Elm.Murol.make = function (_elm) {
                    ,A2(Leaf,"Sortir","")
                    ,A2(Leaf,"Patrimoine","")
                    ,A2(Leaf,"Sports et détente","")
-                   ,A2(Leaf,"Phototheque","")]))
+                   ,A2(Leaf,"Photothèque","")]))
            ,A2(Node,
            "Documentation",
            _U.list([A2(Leaf,"Bulletins municipaux","")
@@ -11645,15 +11645,22 @@ Elm.Murol.make = function (_elm) {
                       ,expiry: $Date.fromString("01/25/2016")})
                       ,_U.update(emptyNews,
                       {title: "Le diaporama 2015 est disponible"
-                      ,date: $Date.fromString("04/02/2016")
+                      ,date: $Date.fromString("01/01/2016")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
-                      ,expiry: $Date.fromString("")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/01/2016",news)};
+                      ,expiry: $Date.fromString("04/02/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Le bulletin municipal n°7 est disponible"
+                      ,date: $Date.fromString("03/01/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
+                      ,expiry: $Date.fromString("09/11/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/03/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11762,13 +11769,13 @@ Elm.Animation.make = function (_elm) {
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A2($Html.div,
               _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animation")]),
-              _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("animation")]))
+              _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Animation")]))
                       ,A2($Html.p,
                       _U.list([]),
                       _U.list([$Html.text("La commune de Murol, riche d’un service animation \n                               municipal et d’une trentaine d’associations dynamiques, offre diverses \n                               animations à sa population locale et à ses \n                               visiteurs tout au long de l’année. Voir le \n                               calendrier ci-dessous.")]))
                       ,A2($Html.p,
                       _U.list([]),
-                      _U.list([$Html.text("De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent \n                               de mai à octobre à Murol. Dans l’ordre \n                               du calendrier, on voit apparaître : ")]))
+                      _U.list([$Html.text("De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent \n                               au cours de l’année à Murol. Dans l’ordre \n                               du calendrier, on voit apparaître : ")]))
                       ,A3(insertDrop,address,function (_) {    return _.drops;}(model),0)
                       ,A3(insertDrop,address,function (_) {    return _.drops;}(model),1)
                       ,A3(insertDrop,address,function (_) {    return _.drops;}(model),2)
@@ -11819,10 +11826,10 @@ Elm.Animation.make = function (_elm) {
    $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))),
    _U.list([A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Cette manifestation est organisée par la mairie de \n                               Murol, l’association AMMA et d’autres associations partenaires. Elle \n                               a lieu chaque année durant le week-end de \n                               l’Ascension.")]))
+           _U.list([$Html.text("Cette manifestation, organisée par la mairie de \n                               Murol, l’association AMMA et d’autres associations partenaires, \n                               a lieu chaque année durant le week-end de \n                               l’Ascension.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge.")]))]));
+           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge. Immersion garantie !")]))]));
    var musee = A4(initDropable,
    1,
    "L’exposition temporaire au musée des Peintres de l’Ecole de Murols",
@@ -11831,14 +11838,14 @@ Elm.Animation.make = function (_elm) {
    _U.list([$Html.text("site officiel")]))),
    _U.list([A2($Html.p,
    _U.list([]),
-   _U.list([$Html.text("Chaque année, la commune organise le vernissage d’une \n                               exposition temporaire différente au musée des Peintres de \n                               l’Ecole de Murols, le dernier week-end de mai. \n                               L’exposition reste en place jusqu’au 31 octobre. L’objectif \n                               est de regrouper et de présenter pendant quelques \n                               mois les œuvres de l’un des peintres majeurs \n                               de l’Ecole de Murols.")]))]));
+   _U.list([$Html.text("Chaque année, le dernier week-end de mai,\n                               la commune organise le vernissage d’une \n                               exposition temporaire inédite au musée des Peintres de \n                               l’Ecole de Murols. \n                               L’exposition reste en place jusqu’au 31 octobre. L’objectif \n                               est de regrouper et de présenter pendant quelques \n                               mois les œuvres de l’un des peintres majeurs \n                               de l’Ecole de Murols.")]))]));
    var horizon = A4(initDropable,
    2,
    "Horizon, rencontres Art et Nature",
    $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),_U.list([$Html.text("site officiel")]))),
    _U.list([A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Cette manifestation culturelle est organisée par la communauté \n                               de communes du massif du Sancy. La commune \n                               de Murol soutient cet événement en tant que \n                               membre de la communauté de communes et a \n                               déjà accueilli de nombreuses œuvres sur son territoire")]))
+           _U.list([$Html.text("Cette manifestation culturelle est organisée par la communauté \n                               de communes du massif du Sancy. La commune \n                               de Murol soutient cet événement en tant que \n                               membre de la communauté de communes et a \n                               déjà accueilli de nombreuses œuvres sur son territoire.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Les œuvres éphémères sont installées de juin à \n                               septembre sur des sites naturels. Cette manifestation prend \n                               une ampleur considérable qui dépasse le cadre régional \n                               et même national. ")]))]));
@@ -11848,10 +11855,10 @@ Elm.Animation.make = function (_elm) {
    $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/Revolution.html")]),_U.list([$Html.text("lien photothèque")]))),
    _U.list([A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Profitant de la présence du château de Murol, \n                               la municipalité de Murol en partenariat avec différentes \n                               associations de la commune organise une fête historique \n                               dans les rues de Murol. ")]))
+           _U.list([$Html.text("La municipalité de Murol, en partenariat avec différentes \n                               associations de la commune, organise le 14 juillet \n                               dans les rues de Murol. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("En journée : reconstitution de la Révolution française, \n                               animations de rues, cavalcade, et taverne révolutionnaire. ")]))
+           _U.list([$Html.text("En journée : reconstitution en costumes d’époque de la Révolution française, \n                               animations de rues, cavalcade, et taverne révolutionnaire. ")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le soir : défilé costumé suivi du feu \n                               d’artifice tiré du château de Murol et du \n                               bal des pompiers. ")]))
@@ -11867,7 +11874,7 @@ Elm.Animation.make = function (_elm) {
            _U.list([$Html.text("Le service animation de la mairie organise chaque \n                               été le festival d’Art.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Ce festival regroupe de très nombreux artistes et \n                               artisans d’art venus de tous horizons dont les \n                               œuvres envahissent les rues et places de Murol \n                               durant une journée d’été riche en couleurs. Petits \n                               et grands déambulent accompagnés par les animations de \n                               rue jusqu’au soir où ils peuvent partager l’ambiance \n                               festive du concert de clôture.")]))
+           _U.list([$Html.text("Ce festival regroupe de très nombreux artistes et \n                               artisans d’art venus de tous horizons. Leurs \n                               œuvres envahissent les rues et places de Murol \n                               durant une journée d’été riche en couleurs. Petits \n                               et grands déambulent accompagnés par les animations de \n                               rue jusqu’au soir où ils peuvent partager l’ambiance \n                               festive du concert de clôture.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Vous voulez venir présenter vos œuvres ? Contactez \n                               la mairie au 04 73 88 60 67 \n                               ou par mail à ")

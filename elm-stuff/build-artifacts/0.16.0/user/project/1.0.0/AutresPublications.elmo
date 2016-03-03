@@ -18,7 +18,10 @@ Elm.AutresPublications.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("autresPubli")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Autres publications")])),A2($Murol.link," Note de synthèse 2012 station classée de tourisme","")]));
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Autres publications")]))
+           ,A2($Murol.link,"Note de synthèse 2012 station classée de tourisme","")
+           ,A2($Murol.link,"Présention du chateau de Murol par Dominique Allios","/baseDocumentaire/presentationAllios.pdf")
+           ,A2($Murol.link,"Les volcans du Tartaret - Pierre Lavina","/baseDocumentaire/tartaretLavina.pdf")]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {

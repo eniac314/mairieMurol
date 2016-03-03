@@ -18,8 +18,8 @@ Elm.OfficeTourisme.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("officeTourisme")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Office de tourisme communautaire")]))
-           ,A2($Html.img,_U.list([$Html$Attributes.src("/images/OT.JPG")]),_U.list([]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Office de Tourisme communautaire du massif du Sancy")]))
+           ,A2($Html.img,_U.list([$Html$Attributes.src("/images/OT.JPG"),$Html$Attributes.id("officePic")]),_U.list([]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("infoOfficeTourisme")]),
            _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Adresse:")]))
@@ -32,14 +32,9 @@ Elm.OfficeTourisme.make = function (_elm) {
                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires:")]))
                    ,A2($Html.ul,
                    _U.list([]),
-                   _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h.")]))
+                   _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h")]))
                            ,A2($Html.li,_U.list([]),_U.list([$Html.text("le reste de l’année, ouvert du lundi au samedi de 9h à 12h.")]))]))]))
-           ,A2($Html.p,
-           _U.list([$Html$Attributes.id("officeDescr")]),
-           _U.list([A2($Html.b,
-           _U.list([]),
-           _U.list([$Html.text("Murol bénéficie des services de l’Office de Tourisme communautaire\n                       de la communauté de communes du Massif du Sancy.")]))]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Le bureau de Murol propose :")]))
+           ,A2($Html.h5,_U.list([$Html$Attributes.id("officeDescr")]),_U.list([$Html.text("Le bureau de Murol propose :")]))
            ,A2($Html.ul,
            _U.list([]),
            _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("un "),A2($Html.b,_U.list([]),_U.list([$Html.text("accueil multilingue")]))]))
@@ -47,12 +42,12 @@ Elm.OfficeTourisme.make = function (_elm) {
                    _U.list([]),
                    _U.list([$Html.text("des ")
                            ,A2($Html.b,_U.list([]),_U.list([$Html.text("documentations")]))
-                           ,$Html.text(" en libre-service sur les visites,\n                     activités et les hébergements dans le massif du Sancy et au-delà.")]))
+                           ,$Html.text(" en libre-service sur les visites,\n                     activités et les hébergements dans le massif du Sancy et au-delà")]))
                    ,A2($Html.li,
                    _U.list([]),
                    _U.list([$Html.text("un ")
                            ,A2($Html.b,_U.list([]),_U.list([$Html.text("coin enfant")]))
-                           ,$Html.text(" pour faire patienter\n                     les bambins (label Famille Plus).")]))
+                           ,$Html.text(" pour faire patienter\n                     les bambins (label Famille Plus)")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("Une connexion "),A2($Html.b,_U.list([]),_U.list([$Html.text("internet en wifi")]))]))
                    ,A2($Html.li,
                    _U.list([]),

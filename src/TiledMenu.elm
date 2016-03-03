@@ -142,8 +142,8 @@ view address model =
               , a [ href "#tiledMenuTop", onClick address ShowMenu, id "backToTiledMenu" ]
                   [ text "Revenir au menu" ]
               , if (.photoLink model)
-                then a [ href "/Phototheque.html", id "photoLink" ]
-                       [ text "Phototheque"]
+                then a [ href "/Photothèque.html", id "photoLink" ]
+                       [ text "Photothèque"]
                 else nullTag
               ]
 

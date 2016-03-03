@@ -142,7 +142,7 @@ input::-moz-focus-inner {
   /*background-color: saddlebrown;*/
   background-image: url(/images/menubg.gif);
   /*background: -moz-linear-gradient(saddlebrown, peru, sienna);*/
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   text-decoration: none;
   font-family: 'PT Serif', verdana, serif;
   color: white;
@@ -342,7 +342,7 @@ div[class*="Content"] a
 
 .subContainerData h2{
   text-align: center;
-  text-transform: capitalize;
+  /*text-transform: capitalize;*/
   background-color: rgba(53, 100, 44, 0.9); /*green*/
   color: aliceblue;
   padding: 0.3em 0;
@@ -910,7 +910,7 @@ background-image: none;
   float: left;
 }
 
-#officeTourisme img{
+#officePic{
   float: left;
   margin-right: 1em;
   width: 35%;
@@ -953,6 +953,18 @@ background-image: none;
 #chateau1{
   float: right;
   margin-left: 1em;
+}
+
+#tartaretPics img{
+  vertical-align: top;
+}
+
+#tartaret1, #tartaret2{
+  display: inline-block;
+}
+
+#tartaret2{
+  margin-left: 1em; 
 }
 
 /*--end of code for decouvrirMurol----------------------------------------------*/
@@ -1412,6 +1424,10 @@ h5.trashCat {
   padding: 0.8em;
 }
 
+#autresPubli a{
+  display: block;
+}
+
 /*--end of code for Publications-------------------------------------------------------*/
 
 /*--end of code for Mairie-------------------------------------------------------*/
@@ -1846,6 +1862,7 @@ footer p {
   box-shadow: 2px 2px 2px gray;
   text-align: left;
   font-family: 'PT Serif', verdana, serif;
+  color: black;
 }
 
 .lightbox-content{
@@ -2039,6 +2056,8 @@ footer p {
 
 
 /*--end of code for LightBox-------------------------------------------------------*/
+
+
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

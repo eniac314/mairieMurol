@@ -106,7 +106,7 @@ mainMenu = Node ""
          , Leaf "Sortir" ""
          , Leaf "Patrimoine" ""
          , Leaf "Sports et détente" ""
-         , Leaf "Phototheque" ""
+         , Leaf "Photothèque" ""
          ]
   , Node "Documentation"
          [ Leaf "Bulletins municipaux" ""
@@ -137,7 +137,7 @@ initialModel =
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "03/01/2016" news
+  , news        = prepNews "03/03/2016" news
   }
 
 
@@ -661,15 +661,24 @@ news =
    }    
    ,{ emptyNews |
      title = "Le diaporama 2015 est disponible"
-   , date  = Date.fromString "04/02/2016"
+   , date  = Date.fromString "01/01/2016"
    , descr = div [class "newsdescr"]
                  [ p []
                      [ text "Le diaporama de la commune pour l'année 2015 est disponible."]
                  , a [ download True, href "/baseDocumentaire/DIAPORAMA MUROL 2015.pdf"]
                      [ text "Télécharger"]
                  ]
-   , expiry = Date.fromString ""
+   , expiry = Date.fromString "04/02/2016"
    } 
+   ,{ emptyNews |
+     title = "Le bulletin municipal n°7 est disponible"
+   , date  = Date.fromString "03/01/2016"
+   , descr = div [class "newsdescr"]
+                 [ a [ href "/BulletinsMunicipaux.html"]
+                     [ text "lien"]
+                 ]
+   , expiry = Date.fromString "09/11/2016"
+   }
    --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

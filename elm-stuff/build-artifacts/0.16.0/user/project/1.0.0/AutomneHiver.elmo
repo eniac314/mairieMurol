@@ -67,11 +67,11 @@ Elm.AutomneHiver.make = function (_elm) {
       A2($Basics._op["++"],
       galleriesHtml,
       _U.list([A2($Html.a,
-      _U.list([$Html$Attributes.href("/Phototheque.html"),$Html$Attributes.id("backToTiledMenu")]),
+      _U.list([$Html$Attributes.href("/Photothèque.html"),$Html$Attributes.id("backToTiledMenu")]),
       _U.list([$Html.text("Revenir au menu")]))]))));
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","Phototheque"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","photothèque"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([subContainerData]))
               ,$Murol.pageFooter]));
    });

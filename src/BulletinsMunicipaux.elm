@@ -92,7 +92,7 @@ initialContent = bulletin
 -- Data
 bulletin =
   div [class "subContainerData noSubmenu", id "bullPubli"]
-      ( (h2 [] [text "le bulletin municipal"]) ::
+      ( (h2 [] [text "Le bulletin municipal"]) ::
         (List.map renderBulletin bulls)
       )
 
@@ -264,4 +264,35 @@ bulls = List.reverse
             , "Associations"
             , "Calendrier"
             ]
+ , Bulletin "cover6.jpg" "Janvier 2016"
+            [ "Conseil regional"
+            , "Communaute de communes"
+            , "Sapeurs pompiers"
+            , "SIVOM de besse"
+            , "CCAS"
+            , "Organicite ®"
+            , "Tri des dechets "
+            , "Travaux realises"
+            , "Embellissement et fleurissement"
+            , "Château et archeologie"
+            , "Prélong"
+            , "Congres national des maires ruraux"
+            , "Murol en images"
+            , "Plan local d’urbanisme"
+            , "Pavillon bleu"
+            , "Ecoles"
+            , "SIVOM de la vallee verte"
+            , "Activites jeunesse"
+            , "Animation estivale"
+            , "Grandes manifestations"
+            , "Associations"
+            , "Musee des peintres"
+            , "Investissements"
+            , "Etat civil"
+            , "Services"
+            , "Site municipal"
+            , "Maison de sante"
+            , "Calendrier"
+            ]
  ]
+

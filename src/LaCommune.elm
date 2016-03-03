@@ -139,7 +139,7 @@ initialContent =
                    camping-caristes, ce qui permet un allongement notable de 
                    la saison touristique."]
       
-      , a  [ href "/Phototheque.html"] [ text "La phototheque"]
+      , a  [ href "/Photothèque.html"] [ text "La photothèque"]
       , br [] []
       , a  [ href "/VillageFleuri.html"] [ text "Murol village fleuri"] 
       ]

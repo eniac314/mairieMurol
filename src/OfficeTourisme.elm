@@ -73,8 +73,8 @@ main =
 
 initialContent =
   div [ class "subContainerData noSubmenu", id "officeTourisme"]
-      [ h2 [] [ text "Office de tourisme communautaire"]
-      , img [src "/images/OT.JPG"] []
+      [ h2 [] [ text "Office de Tourisme communautaire du massif du Sancy"]
+      , img [src "/images/OT.JPG", id "officePic"] []
       , div [ id "infoOfficeTourisme"]
             [ h5 [] [text "Adresse:"]
             , p []
@@ -88,20 +88,20 @@ initialContent =
             , site "www.sancy.com" "www.sancy.com"
             , h5 [] [text "Horaires:"]
             , ul []
-                 [ li [] [text "pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h."]
+                 [ li [] [text "pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h"]
                  , li [] [text "le reste de l’année, ouvert du lundi au samedi de 9h à 12h."]
                  ]
             ]
-      , p [id "officeDescr"] 
-          [b [] [text "Murol bénéficie des services de l’Office de Tourisme communautaire
-                       de la communauté de communes du Massif du Sancy."]]      
-      , h5 [] [text "Le bureau de Murol propose :"]
+      --, p [id "officeDescr"] 
+      --    [b [] [text "Murol bénéficie des services de l’Office de Tourisme communautaire
+      --                 de la communauté de communes du Massif du Sancy."]]      
+      , h5 [id "officeDescr"] [text "Le bureau de Murol propose :"]
       , ul []
            [ li [] [ text "un ", b [] [text "accueil multilingue"] ]
            , li [] [ text "des ", b [] [text "documentations"], text " en libre-service sur les visites,
-                     activités et les hébergements dans le massif du Sancy et au-delà."]
+                     activités et les hébergements dans le massif du Sancy et au-delà"]
            , li [] [ text "un ", b [] [text "coin enfant"], text " pour faire patienter
-                     les bambins (label Famille Plus)." ]
+                     les bambins (label Famille Plus)" ]
            , li [] [ text "Une connexion ", b [] [text "internet en wifi"]]
            , li [] [ text "Un service ", b [] [text "boutique"], text " avec les cartes
                            et topoguides de randonnées"]

@@ -160,7 +160,7 @@ renderPreview address model =
         a [ onClick address (LightboxAction (Lightbox.GoTo (.filename p)))
           , offset ((if (.direct model) == Left then 1 else -1) * toOffset (.animationState model))
           ]
-          [ img [src ("images/phototheque/" 
+          [ img [src ("images/photothèque/" 
                        ++ (.folder model)
                        ++ "/thumbs/"
                        ++ (.filename p))

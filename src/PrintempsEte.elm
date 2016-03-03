@@ -83,14 +83,14 @@ view address model =
             (
             [ h2 [] [text "Paysages, printemps, été"] ]
              ++ galleriesHtml ++
-            [ a [ href "/Phototheque.html", id "backToTiledMenu"]
+            [ a [ href "/Photothèque.html", id "backToTiledMenu"]
                 [ text "Revenir au menu" ]
             ]
             )
 
   in
   div [ id "container"]
-      [ renderMainMenu' ["Culture et loisirs", "Phototheque"]
+      [ renderMainMenu' ["Culture et loisirs", "photothèque"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ subContainerData ]
