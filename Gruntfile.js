@@ -7,7 +7,9 @@ module.exports = function(grunt) {
           "./js/murol.js": ["./src/Murol.elm"],
           "./js/periscolaire.js": ["./src/Periscolaire.elm"],
           "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
+          "./js/14Juillet.js": ["./src/14Juillet.elm"],
           "./js/medievales.js": ["./src/Medievales.elm"],
+          "./js/patrimoinePhoto.js": ["./src/PatrimoinePhoto.elm"],
           "./js/annee2016.js": ["./src/Annee2016.elm"],
           "./js/journeeMurolais.js": ["./src/JourneeMurolais.elm"],
           "./js/printempsEte.js": ["./src/PrintempsEte.elm"],
@@ -66,7 +68,9 @@ module.exports = function(grunt) {
       elm: {
         files: ["./src/Murol.elm"
                 , "./src/Medievales.elm"
+                , "./src/14Juillet.elm"
                 , "./src/Annee2016.elm"
+                , "./src/PatrimoinePhoto.elm"
                 , "./src/Periscolaire.elm"
                 , "./src/DecouvrirMurol.elm"
                 , "./src/PrintempsEte.elm"

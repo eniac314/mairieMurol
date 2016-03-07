@@ -42,13 +42,21 @@ Elm.Phototheque.make = function (_elm) {
                                                                      ,_1: "/images/tiles/photothèque/automneHiver.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/AutomneHiver.html"}
-                                                                    ,{ctor: "_Tuple4",_0: "Patrimoine",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Patrimoine"
+                                                                     ,_1: "/images/tiles/photothèque/patrimoine.jpg"
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "/PatrimoinePhoto.html"}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Les Médiévales"
                                                                      ,_1: "/images/tiles/photothèque/medievales.jpg"
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/Medievales.html"}
-                                                                    ,{ctor: "_Tuple4",_0: "Murol fait sa révolution",_1: "",_2: _U.list([]),_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Murol fait sa révolution"
+                                                                     ,_1: "/images/tiles/photothèque/revolution.jpg"
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "/14Juillet.html"}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Le Festival d\'Art"
                                                                      ,_1: "/images/tiles/photothèque/festivalArt.jpg"

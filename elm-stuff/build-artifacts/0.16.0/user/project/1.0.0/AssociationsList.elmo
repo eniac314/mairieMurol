@@ -369,9 +369,9 @@ Elm.AssociationsList.make = function (_elm) {
    var culture = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Culture);},assocs));
    var sport = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Sport);},assocs));
    var pro = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Pro);},assocs));
-   var associations = _U.list([{ctor: "_Tuple3",_0: "Culture et événementiel",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([culture])}
-                              ,{ctor: "_Tuple3",_0: "Sport",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([sport])}
-                              ,{ctor: "_Tuple3",_0: "Professionnel",_1: "/images/tiles/hebergements/placeholder.jpg",_2: _U.list([pro])}]);
+   var associations = _U.list([{ctor: "_Tuple3",_0: "Culture et événementiel",_1: "/images/tiles/misc/ASSOC CULTURE.jpg",_2: _U.list([culture])}
+                              ,{ctor: "_Tuple3",_0: "Sport",_1: "/images/tiles/misc/ASSOC SPORT.jpg",_2: _U.list([sport])}
+                              ,{ctor: "_Tuple3",_0: "Professionnel",_1: "/images/tiles/misc/ASSOC PRO.jpg",_2: _U.list([pro])}]);
    var Responsable = F3(function (a,b,c) {    return {poste: a,nom: b,tel: c};});
    return _elm.AssociationsList.values = {_op: _op
                                          ,Responsable: Responsable

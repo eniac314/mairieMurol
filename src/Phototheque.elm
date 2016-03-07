@@ -109,10 +109,10 @@ initialContent =
       , "/AutomneHiver.html"
       )
     ,( "Patrimoine"
-      , ""
+      , "/images/tiles/photothèque/patrimoine.jpg"
       , [ 
         ]
-      , ""
+      , "/PatrimoinePhoto.html"
       )
 
     ,( "Les Médiévales"
@@ -123,10 +123,10 @@ initialContent =
       )
     
     ,( "Murol fait sa révolution"
-      , ""
+      , "/images/tiles/photothèque/revolution.jpg"
       , [ 
         ]
-      , ""
+      , "/14Juillet.html"
       )
     ,( "Le Festival d'Art"
       , "/images/tiles/photothèque/festivalArt.jpg"

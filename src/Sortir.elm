@@ -109,17 +109,17 @@ initialContent =
              )
             ,
             ("Dans les environs"
-            ,""
+            ,"/images/tiles/sortir/sortir environs.jpg"
             ,[
              ]
             ,""
              )
             ,
             ("Cinéma"
-            ,""
+            ,"/images/tiles/sortir/salle cinema.jpg"
             ,[
              ]
-            ,"http://www.besse-superbesse.fr/fr/information/72830/cinemas"
+            ,"http://www.sancy.com/agenda/cinema/besse-superbesse"
              )
             ]
   }

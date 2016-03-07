@@ -19,7 +19,8 @@ import Murol exposing (mainMenu,
                        renderSubMenu,
                        mail,
                        site,
-                       link)
+                       link,
+                       miniLightBox)
 
 
 -- Model
@@ -152,7 +153,7 @@ initialContent =
                          [ text "musée des Peintres de l’Ecole de Murols"]
                      , text " et le musée archéologique. Depuis le bourg, rejoignez
                              la plage de Murol, au bord du "
-                     , a [href "/DécouvrirMurol.html?bloc=Lac Chambon"]
+                     , a [href "/DécouvrirMurol.html?bloc=Le lac Chambon"]
                          [text "lac Chambon"]
                      , text " en empruntant "
                      , a [href "/DécouvrirMurol.html?bloc=La voie verte"]
@@ -172,7 +173,8 @@ initialContent =
                              en suivant Monsieur Alphonse…"
                      ]
               , img [src "/images/prélong.JPG", id "bourg2"] []
-              , img [src "/images/museePeintre.jpeg", id "bourg3"] [] 
+              , img [src "/images/museePeintre.jpeg", id "bourg3"] []
+              , img [src "/images/bourgHiver.jpg", id "bourg4"] []  
 
               ]
             )
@@ -286,7 +288,7 @@ initialContent =
                            sportifs du Tartaret (12 stations)."]
               , div [id "tartaretPics"] 
                    [ img [src "/images/panoTartaret.jpg", id "tartaret1"] []
-                   , img [src "/images/trail.jpg", id "tartaret2"] []
+                   , miniLightBox "parcoursSport"
                    ]
               ]
             )
@@ -334,90 +336,257 @@ initialContent =
             ,
             ("La voie verte"
             ,"/images/tiles/decouvrirMurol/cheminTile.jpg"
-            , [  p  [] [text "Les visiteurs peuvent découvrir, sur le plan fourni
-                             par l’Office de Tourisme, le tracé de la
-                             « Voie Verte » , qui a nettement
-                             amélioré la circulation des piétons et des cyclistes
-                             depuis son achèvement en 2009. Il s’agit d’un
-                             sentier fléché , accessible aux handicapés, réalisé en
-                             collaboration avec le Conseil Général, qui relie le
-                             bourg de Murol au lac Chambon, en faisant
-                             une boucle autour du volcan du Tartaret. Il
-                             permet de sécuriser le cheminement des piétons et
-                             des cyclotouristes tout en respectant l’environnement car les
-                             engins motorisés y sont proscrits. "]
-              , p [] [ text "L’accès piéton au château de Murol est lui aussi sécurisé :"]
-              , p [] [ text "Les visiteurs qui partent du bourg peuvent le
-                            rejoindre en empruntant un cheminement piéton qui longe
-                            le mur du parc du Prélong. Le parc
-                            animalier situé sur les pentes du château est
-                            ceint d’un sentier également piéton, bordé d’une barrière
-                            de bois, ce qui permet aux plus jeunes
-                            de le suivre sans danger. Le retour au
-                            bourg de Murol peut se faire en traversant
-                            le Parc du Prélong, ce qui offre aux
-                            visiteurs la possibilité de découvrir l’Arborétum, la serre,
-                            mais aussi le musée archéologique et le musée
-                            des Peintres. "]
-              , p [] [ text "La place de l’Abbé Boudal, où se trouve
-                            l’église, est un lieu au cœur du bourg
-                            de Murol, où la circulation automobile est réglementée,
-                            ce qui permet aux piétons de profiter pleinement
-                            de l’endroit et de la vue du château
-                            que l’on y découvre. "]
-              , p [] [ text "En dehors du bourg, les visiteurs peuvent se
-                             promener en toute sécurité sur les chemins balisés
-                             par la communauté de communes du Massif du
-                             Sancy. Ils représentent à Murol un réseau de
-                             plusieurs dizaines de kilomètres de sentiers de PR
-                             (petites randonnées). Des cartes et des topoguides sont
-                             disponibles au bureau de l’Office de Tourisme. Ils
-                             permettent aux visiteurs de découvrir les plus beaux
-                             panoramas de notre commune, comme ci-dessous, le lac
-                             Chambon vu du sommet du volcan du Tartaret. "]
+            , [ 
+               --img [src "/images/voie1.jpg", id "voie1"] []
+              --,
+                p  []
+                   [ text "Piétons, cyclistes soyez les bienvenus à Murol ! "]
+              ,  p []
+                   [ text "De nombreux aménagements sont à votre disposition pour 
+                           vous permettre de découvrir la commune et ses 
+                           environs à pied ou à vélo en toute 
+                           sécurité. "]
+              , div [ id "divVoie1"]
+                    [  img [src "/images/voie1.jpg", id "voie1"] []
+                    ,  p []
+                         [ text "La voie verte, sentier fléché qui 
+                                 relie le bourg de Murol au lac Chambon, 
+                                 fait une boucle autour du volcan du "
+                         , a [href "/DécouvrirMurol.html?bloc=Le volcan du Tartaret"]
+                             [text "Tartaret"]
+                         , text ". Une partie est accessible aux personnes à 
+                                   mobilité réduites. (voir "
+                         , a [href "", target "_blank"]
+                             [text "document de présentation du conseil 
+                                    départemental"]
+                         , text ") Les engins motorisés y sont proscrits."
+                         ]
+                    , ul []
+                         [ li []
+                              [ p []
+                                  [ text "Vous souhaitez vous rendre du bourg de Murol 
+                                          au "
+                                  , a [href "/DécouvrirMurol.html?bloc=Le lac Chambon"]
+                                      [text "lac Chambon"]
+                                  , text "?"
+                                  ] 
+                             ,  p []
+                                  [ text "Empruntez la voie verte au bout de la 
+                                          rue du Levat et profitez d’une agréable promenade 
+                                          en toute sécurité. "]
+                              ]
+                        , li [] 
+                             [ p []
+                                 [text "Le soleil est trop fort ? "] 
+                             , p []
+                                 [ text "Vous pouvez 
+                                         aussi choisir de passer à travers bois pour 
+                                         aller au lac en suivant le chemin du 
+                                         Tartaret qui commence derrière l’école maternelle."]
+                            ]
+                        , li []
+                             [ p []
+                                 [ text "Et pourquoi ne pas continuer?"]
+                             ,  p []
+                                  [ text " La voie 
+                                          verte se poursuit et fait le tour du 
+                                          lac Chambon. "]
+                             ] 
+                        ]
+                    ]
+              --, img [src "/images/voie2.jpg", id "voie2"] []
+              
+              , div [id "divVoie2"]
+                    [ img [src "/images/voie2.jpg", id "voie2"] []
+                    , p []
+                         [ text "D’autres aménagements protègent vos déambulations dans le bourg: "]
+                    ,
+                    ul []
+                       [ li []
+                            [ p []
+                                [ text "Une visite au "
+                                , a [href "/DécouvrirMurol.html?bloc=01"]
+                                    [text "château"]
+                                 , text "?"
+                                 ]
+                           , p []
+                               [ text "Du centre bourg, 
+                                       empruntez le cheminement piéton qui longe le mur 
+                                       du parc du Prélong, vous arriverez au pied 
+                                       de la forteresse."
+                               ]
+                            ]
+                       , li []
+                            [ p []
+                               [ text "Vous souhaitez redescendre dans le bourg?" 
+                               ]
+                            ,  p []
+                                 [ text "Suivez le sentier piéton qui longe le parc animalier. 
+                                         Traversez le parc du Prélong. Vous arrivez 
+                                         aux portes du "
+                                 , a [href "http://www.musee-murol.fr/fr", target "_blank"]
+                                     [text "musée des Peintres de l’Ecole de Murols"]
+                                 , text ", à l’entrée du centre bourg. "        
+                                 ]
+                            ]
+                       , li []
+                            [ p []
+                                [ text "Au cœur de Murol,  la circulation automobile est
+                                       réglementée sur la place de l’Abbé Boudal, où se situe
+                                       l’église. Venez profiter de 
+                                       cette esplanade et de la vue  
+                                       qu’elle offre sur le château! "]
+                            ]
+                       , li [] 
+                            [ p []
+                                [ text "Envie d’une balade un peu plus longue ?"]
+                            , p [] 
+                                [ text " Partez sur les chemins de petites randonnées et 
+                                         les circuits VTT balisés par la communauté de 
+                                         communes du Massif du Sancy. Ils relient tous 
+                                         les villages et les sites de la commune 
+                                         et représentent à Murol un réseau de plusieurs 
+                                         dizaines de kilomètres."]
+                            ]
+                       ]
+                    ]
+              , p []
+                  [ text "Des plans, cartes et topoguides sont disponibles au 
+                          bureau de l’"
+                  , a [ href "/OfficeDeTourisme.html"]
+                      [ text "Office de Tourisme"]
+                  , text "."
+                  ]
+              , miniLightBox "map"
+              
+              , p [class "toClear"] [text " "]
               ]
             )
             ,
             
             ("Chautignat"
             ,"/images/tiles/decouvrirMurol/chautignatTile.jpg"
-            , [ p  [] [ text "Le hameau de Chautignat est situé à flanc
-                             de coteaux. Il bénéficie d'un ensoleillement maximum et
-                             de prairies aux pentes douces favorables à l'élevage
-                             comme aux cultures. A proximité du hameau se
-                             trouvent les grottes de Rajat et le moulin
-                             à eau de Landrode qui ont été les
-                             lieux de créations artistiques dans la cadre de
-                             la manifestation annuelle « Horizons rencontres Art et
-                             Nature ». "]
+            , [ img [src "/images/horizon3.jpg", id "hori3"] [] 
+              , p  [] [ text "Chautignat, village agricole situé à
+                              flanc de coteaux, bénéficie d’une vue
+                              imprenable sur le "
+                      , a [href "/DécouvrirMurol.html?bloc=01"]
+                          [text "château"]
+                      , text ". L’ensoleillement et les prairies aux pentes
+                             douces sont favorables à l'élevage comme aux cultures. " 
+                      ]
+              , p []
+                  [text "A proximité du village, le moulin à eau 
+                         de Landrode est accessible à pied depuis le 
+                         parking du château. Venez le découvrir et profiter 
+                         d’une halte ombragée au bord du ruisseau! "]
+              , p []
+                  [text "Au nord, les grottes de Rajat creusées dans 
+                         la falaise qui surplombe le village sont des 
+                         ruines d’habitations troglodytes très anciennes, peut-être antérieures à 
+                         l'époque gauloise. Leur histoire mal connue ne s'appuie 
+                         à ce jour que sur des hypothèses. Ce 
+                         site, difficile d’accès, propose un panorama exceptionnel sur 
+                         le château et le massif du Sancy. Promeneurs 
+                         soyez attentif à rester sur le sentier pour 
+                         votre sécurité et le préservation du patrimoine naturel 
+                         (pas de cueillette!). "]
+              , p []
+                  [ text "La magie des sites du moulin de Landrode 
+                         et des grottes de Rajat a inspiré des 
+                         artistes contemporains qui ont réalisés des œuvres majestueuses 
+                         et éphémères dans la cadre de la manifestation 
+                         annuelle « "
+                  , a [href "www.horizons-sancy.com", target "_blank"]
+                      [ text "Horizons rencontres Art et Nature"]
+                  , text "»."
+                  ]
+              , img [src "/images/rajat.jpg", id "rajatPic"] []
+              , img [src "/images/hori2.jpg", id "hori2"] []
+              , p [class "toClear"] [text " "]
               ]
             )
             ,
             ("Groire"
             ,"images/tiles/decouvrirMurol/groireTile.jpg"
-            , [ p  [] [ text "Ces hameaux ont une activité rurale marquée, ils
-                     se situent là où le fond de la
-                     vallée s'élargit pour former de petites plaines propices
-                     aux cultures. Traversés par la Couze Chambon et
-                     les sentiers de randonnées, ils se prêtent à
-                     la flânerie. A l’occasion de la fête de
-                     Groire, le four à pain revit pour le
-                     plaisir des petits et grands gourmands. "]
+            , [ p []
+                  [ text "Le village de Groire se situe à l’est 
+                          du bourg, au pied du Puy de Bessolles. "]
+              , p []
+                  [ text "Traversé par un ruisseau, la Planchette, 
+                         il est le point de départ de nombreuses 
+                         promenades (Roche Romaine sur le Puy de Bessolles, "
+                  , a [ href "/DécouvrirMurol.html?bloc=La Chassagne et les Ballats"]
+                      [ text "les Ballats, la Chassagne"]
+                  , text " et le "
+                  , a [href "/DécouvrirMurol.html?bloc=01"]
+                      [text "château"]
+                  , text ", Jassat, le "
+                  , a [href "/DécouvrirMurol.html?bloc=0"]
+                      [text "bourg de Murol"]
+                  , text "…). Renseignements à l’"
+                  , a [ href "/OfficeDeTourisme.html"]
+                      [ text "Office de Tourisme"]
+                  , text "."
+                  ]
+              , p []
+                  [ text "Riches en hébergements touristiques, il a su 
+                          conserver son petit "
+                  , a [ href "/Patrimoine.html"] 
+                      [ text "patrimoine"]
+                  , text " local, notamment un four 
+                           à pain. Ce dernier revit chaque été à l’occasion 
+                           de la fête du pain, pour le plaisir 
+                           des petits et grands gourmands. "
+                  ]
+              , p []
+                  [ text "Cette fête campagnarde, 
+                         organisée par une association locale, vous feras découvrir 
+                         les savoir-faire de nombreux artisans de nombreux artisans, des 
+                         produits du terroir et le folklore auvergnat. "]
+              , img [src "/images/groire1.jpg", id "groire1"] []
+              , img [src "/images/groire2.jpg", id "groire2"] []
+              , img [src "/images/groire3.jpg", id "groire3"] []
               ]
             )
             ,
             ("La Chassagne et les Ballats"
             ,"images/tiles/decouvrirMurol/chassagneTile.jpg"
-            , [ p  [] [ text "Située sous le Château de Murol, La Chassagne
-                              est un hameau de fermes et maisons particulières.
-                              Ce lieu existait déjà sous Guillaume de Murol,
-                              seigneur du Château au début du XVème siècle.
-                              La légende raconte que Pierre Morand, \"concierge\" du
-                              château s'est installé ici et a fondé \"la
-                              Chassagne\". L'origine du nom vient des arbres présents
-                              à cette époque, les chênes. Aujourd'hui, quelques-uns subsistent
-                              sur les pentes du château, entrelacés avec les
-                              pins et autres arbustes. "]
+            , [ p []
+                  [ text "Située sous le "
+                  , a [href "/DécouvrirMurol.html?bloc=01"]
+                      [text "château"]
+                  , text " de Murol, La Chassagne 
+                         existait déjà sous Guillaume de Murol, seigneur du 
+                         château au début du XVème siècle. La légende 
+                         raconte que Pierre Morand, concierge du château, a 
+                         choisi ce lieu pour s’y installer. L'origine du nom \"la Chassagne\" provient 
+                         des chênes qui étaient nombreux sur le site 
+                         à cette époque."
+                  ]
+              , p []
+                  [ text "Plus au sud,  la Couze 
+                         Chambon traverse les Ballats et vous incite à une promenade bucolique.
+                         Le pont de pierre a été source 
+                         d’inspiration pour les "
+                  , a [href "http://www.musee-murol.fr/fr", target "_blank"]
+                      [text "peintres de l’Ecole de Murols"]
+                  , text "."
+                  ]
+              , p []
+                  [ text "Une autre façon de parcourir Murol, 
+                         le circuit de la «Promenade à Murols en 
+                         1900» voyagez dans le temps à l'aide des
+                         reproductions de cartes postales anciennes
+                         et comparez Murols en 1900 au Murol d’aujourd’hui. 
+                         Circuit disponible à l’"
+                  , a [ href "/OfficeDeTourisme.html"]
+                      [ text "Office de Tourisme"]
+                  , text "."
+                  ]
+              , img [src "/images/chassagne1.jpg", id "chassagne1"] []
+              , img [src "/images/chassagne2.jpg", id "chassagne2"] []
+              , img [src "/images/chassagne3.jpg", id "chassagne3"] []  
               ]
             )
            ]

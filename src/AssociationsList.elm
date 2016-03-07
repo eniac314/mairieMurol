@@ -121,9 +121,9 @@ sitesToHtml sites =
               ( [h6 [] [text "Site(s): "]]
                 ++ (List.map  (\s-> a [href  s] [text s]) sites))
 -- Data
-associations = [("Culture et événementiel","/images/tiles/hebergements/placeholder.jpg",[culture])
-               ,("Sport","/images/tiles/hebergements/placeholder.jpg",[sport])
-               ,("Professionnel","/images/tiles/hebergements/placeholder.jpg",[pro])
+associations = [("Culture et événementiel","/images/tiles/misc/ASSOC CULTURE.jpg",[culture])
+               ,("Sport","/images/tiles/misc/ASSOC SPORT.jpg",[sport])
+               ,("Professionnel","/images/tiles/misc/ASSOC PRO.jpg",[pro])
                ]
 
 culture = renderAssocs (List.filter (\a -> a.cat == Culture) assocs)

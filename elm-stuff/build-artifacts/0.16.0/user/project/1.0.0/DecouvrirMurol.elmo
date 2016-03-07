@@ -68,7 +68,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       _U.list([$Html.text("musée des Peintres de l’Ecole de Murols")]))
                                                       ,$Html.text(" et le musée archéologique. Depuis le bourg, rejoignez\n                             la plage de Murol, au bord du ")
                                                       ,A2($Html.a,
-                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=Lac Chambon")]),
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=Le lac Chambon")]),
                                                       _U.list([$Html.text("lac Chambon")]))
                                                       ,$Html.text(" en empruntant ")
                                                       ,A2($Html.a,
@@ -92,6 +92,9 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               ,A2($Html.img,_U.list([$Html$Attributes.src("/images/prélong.JPG"),$Html$Attributes.id("bourg2")]),_U.list([]))
                                               ,A2($Html.img,
                                               _U.list([$Html$Attributes.src("/images/museePeintre.jpeg"),$Html$Attributes.id("bourg3")]),
+                                              _U.list([]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/bourgHiver.jpg"),$Html$Attributes.id("bourg4")]),
                                               _U.list([]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Le château"
@@ -180,9 +183,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([A2($Html.img,
                                                       _U.list([$Html$Attributes.src("/images/panoTartaret.jpg"),$Html$Attributes.id("tartaret1")]),
                                                       _U.list([]))
-                                                      ,A2($Html.img,
-                                                      _U.list([$Html$Attributes.src("/images/trail.jpg"),$Html$Attributes.id("tartaret2")]),
-                                                      _U.list([]))]))])}
+                                                      ,$Murol.miniLightBox("parcoursSport")]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Le lac Chambon"
                                  ,_1: "/images/tiles/decouvrirMurol/lacChambonTile.jpg"
@@ -216,37 +217,205 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                 ,{ctor: "_Tuple3"
                                  ,_0: "La voie verte"
                                  ,_1: "/images/tiles/decouvrirMurol/cheminTile.jpg"
-                                 ,_2: _U.list([A2($Html.p,
-                                              _U.list([]),
-                                              _U.list([$Html.text("Les visiteurs peuvent découvrir, sur le plan fourni\n                             par l’Office de Tourisme, le tracé de la\n                             « Voie Verte » , qui a nettement\n                             amélioré la circulation des piétons et des cyclistes\n                             depuis son achèvement en 2009. Il s’agit d’un\n                             sentier fléché , accessible aux handicapés, réalisé en\n                             collaboration avec le Conseil Général, qui relie le\n                             bourg de Murol au lac Chambon, en faisant\n                             une boucle autour du volcan du Tartaret. Il\n                             permet de sécuriser le cheminement des piétons et\n                             des cyclotouristes tout en respectant l’environnement car les\n                             engins motorisés y sont proscrits. ")]))
-                                              ,A2($Html.p,_U.list([]),_U.list([$Html.text("L’accès piéton au château de Murol est lui aussi sécurisé :")]))
+                                 ,_2: _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Piétons, cyclistes soyez les bienvenus à Murol ! ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([$Html.text("Les visiteurs qui partent du bourg peuvent le\n                            rejoindre en empruntant un cheminement piéton qui longe\n                            le mur du parc du Prélong. Le parc\n                            animalier situé sur les pentes du château est\n                            ceint d’un sentier également piéton, bordé d’une barrière\n                            de bois, ce qui permet aux plus jeunes\n                            de le suivre sans danger. Le retour au\n                            bourg de Murol peut se faire en traversant\n                            le Parc du Prélong, ce qui offre aux\n                            visiteurs la possibilité de découvrir l’Arborétum, la serre,\n                            mais aussi le musée archéologique et le musée\n                            des Peintres. ")]))
+                                              _U.list([$Html.text("De nombreux aménagements sont à votre disposition pour \n                           vous permettre de découvrir la commune et ses \n                           environs à pied ou à vélo en toute \n                           sécurité. ")]))
+                                              ,A2($Html.div,
+                                              _U.list([$Html$Attributes.id("divVoie1")]),
+                                              _U.list([A2($Html.img,
+                                                      _U.list([$Html$Attributes.src("/images/voie1.jpg"),$Html$Attributes.id("voie1")]),
+                                                      _U.list([]))
+                                                      ,A2($Html.p,
+                                                      _U.list([]),
+                                                      _U.list([$Html.text("La voie verte, sentier fléché qui \n                                 relie le bourg de Murol au lac Chambon, \n                                 fait une boucle autour du volcan du ")
+                                                              ,A2($Html.a,
+                                                              _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=Le volcan du Tartaret")]),
+                                                              _U.list([$Html.text("Tartaret")]))
+                                                              ,$Html.text(". Une partie est accessible aux personnes à \n                                   mobilité réduites. (voir ")
+                                                              ,A2($Html.a,
+                                                              _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                                              _U.list([$Html.text("document de présentation du conseil \n                                    départemental")]))
+                                                              ,$Html.text(") Les engins motorisés y sont proscrits.")]))
+                                                      ,A2($Html.ul,
+                                                      _U.list([]),
+                                                      _U.list([A2($Html.li,
+                                                              _U.list([]),
+                                                              _U.list([A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text("Vous souhaitez vous rendre du bourg de Murol \n                                          au ")
+                                                                              ,A2($Html.a,
+                                                                              _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=Le lac Chambon")]),
+                                                                              _U.list([$Html.text("lac Chambon")]))
+                                                                              ,$Html.text("?")]))
+                                                                      ,A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text("Empruntez la voie verte au bout de la \n                                          rue du Levat et profitez d’une agréable promenade \n                                          en toute sécurité. ")]))]))
+                                                              ,A2($Html.li,
+                                                              _U.list([]),
+                                                              _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le soleil est trop fort ? ")]))
+                                                                      ,A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text("Vous pouvez \n                                         aussi choisir de passer à travers bois pour \n                                         aller au lac en suivant le chemin du \n                                         Tartaret qui commence derrière l’école maternelle.")]))]))
+                                                              ,A2($Html.li,
+                                                              _U.list([]),
+                                                              _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Et pourquoi ne pas continuer?")]))
+                                                                      ,A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text(" La voie \n                                          verte se poursuit et fait le tour du \n                                          lac Chambon. ")]))]))]))]))
+                                              ,A2($Html.div,
+                                              _U.list([$Html$Attributes.id("divVoie2")]),
+                                              _U.list([A2($Html.img,
+                                                      _U.list([$Html$Attributes.src("/images/voie2.jpg"),$Html$Attributes.id("voie2")]),
+                                                      _U.list([]))
+                                                      ,A2($Html.p,
+                                                      _U.list([]),
+                                                      _U.list([$Html.text("D’autres aménagements protègent vos déambulations dans le bourg: ")]))
+                                                      ,A2($Html.ul,
+                                                      _U.list([]),
+                                                      _U.list([A2($Html.li,
+                                                              _U.list([]),
+                                                              _U.list([A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text("Une visite au ")
+                                                                              ,A2($Html.a,
+                                                                              _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=01")]),
+                                                                              _U.list([$Html.text("château")]))
+                                                                              ,$Html.text("?")]))
+                                                                      ,A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text("Du centre bourg, \n                                       empruntez le cheminement piéton qui longe le mur \n                                       du parc du Prélong, vous arriverez au pied \n                                       de la forteresse.")]))]))
+                                                              ,A2($Html.li,
+                                                              _U.list([]),
+                                                              _U.list([A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text("Vous souhaitez redescendre dans le bourg?")]))
+                                                                      ,A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text("Suivez le sentier piéton qui longe le parc animalier. \n                                         Traversez le parc du Prélong. Vous arrivez \n                                         aux portes du ")
+                                                                              ,A2($Html.a,
+                                                                              _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")
+                                                                                      ,$Html$Attributes.target("_blank")]),
+                                                                              _U.list([$Html.text("musée des Peintres de l’Ecole de Murols")]))
+                                                                              ,$Html.text(", à l’entrée du centre bourg. ")]))]))
+                                                              ,A2($Html.li,
+                                                              _U.list([]),
+                                                              _U.list([A2($Html.p,
+                                                              _U.list([]),
+                                                              _U.list([$Html.text("Au cœur de Murol,  la circulation automobile est\n                                       réglementée sur la place de l’Abbé Boudal, où se situe\n                                       l’église. Venez profiter de \n                                       cette esplanade et de la vue  \n                                       qu’elle offre sur le château! ")]))]))
+                                                              ,A2($Html.li,
+                                                              _U.list([]),
+                                                              _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Envie d’une balade un peu plus longue ?")]))
+                                                                      ,A2($Html.p,
+                                                                      _U.list([]),
+                                                                      _U.list([$Html.text(" Partez sur les chemins de petites randonnées et \n                                         les circuits VTT balisés par la communauté de \n                                         communes du Massif du Sancy. Ils relient tous \n                                         les villages et les sites de la commune \n                                         et représentent à Murol un réseau de plusieurs \n                                         dizaines de kilomètres.")]))]))]))]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([$Html.text("La place de l’Abbé Boudal, où se trouve\n                            l’église, est un lieu au cœur du bourg\n                            de Murol, où la circulation automobile est réglementée,\n                            ce qui permet aux piétons de profiter pleinement\n                            de l’endroit et de la vue du château\n                            que l’on y découvre. ")]))
-                                              ,A2($Html.p,
-                                              _U.list([]),
-                                              _U.list([$Html.text("En dehors du bourg, les visiteurs peuvent se\n                             promener en toute sécurité sur les chemins balisés\n                             par la communauté de communes du Massif du\n                             Sancy. Ils représentent à Murol un réseau de\n                             plusieurs dizaines de kilomètres de sentiers de PR\n                             (petites randonnées). Des cartes et des topoguides sont\n                             disponibles au bureau de l’Office de Tourisme. Ils\n                             permettent aux visiteurs de découvrir les plus beaux\n                             panoramas de notre commune, comme ci-dessous, le lac\n                             Chambon vu du sommet du volcan du Tartaret. ")]))])}
+                                              _U.list([$Html.text("Des plans, cartes et topoguides sont disponibles au \n                          bureau de l’")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/OfficeDeTourisme.html")]),
+                                                      _U.list([$Html.text("Office de Tourisme")]))
+                                                      ,$Html.text(".")]))
+                                              ,$Murol.miniLightBox("map")
+                                              ,A2($Html.p,_U.list([$Html$Attributes.$class("toClear")]),_U.list([$Html.text(" ")]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Chautignat"
                                  ,_1: "/images/tiles/decouvrirMurol/chautignatTile.jpg"
-                                 ,_2: _U.list([A2($Html.p,
-                                 _U.list([]),
-                                 _U.list([$Html.text("Le hameau de Chautignat est situé à flanc\n                             de coteaux. Il bénéficie d\'un ensoleillement maximum et\n                             de prairies aux pentes douces favorables à l\'élevage\n                             comme aux cultures. A proximité du hameau se\n                             trouvent les grottes de Rajat et le moulin\n                             à eau de Landrode qui ont été les\n                             lieux de créations artistiques dans la cadre de\n                             la manifestation annuelle « Horizons rencontres Art et\n                             Nature ». ")]))])}
+                                 ,_2: _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/horizon3.jpg"),$Html$Attributes.id("hori3")]),_U.list([]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Chautignat, village agricole situé à\n                              flanc de coteaux, bénéficie d’une vue\n                              imprenable sur le ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=01")]),
+                                                      _U.list([$Html.text("château")]))
+                                                      ,$Html.text(". L’ensoleillement et les prairies aux pentes\n                             douces sont favorables à l\'élevage comme aux cultures. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("A proximité du village, le moulin à eau \n                         de Landrode est accessible à pied depuis le \n                         parking du château. Venez le découvrir et profiter \n                         d’une halte ombragée au bord du ruisseau! ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Au nord, les grottes de Rajat creusées dans \n                         la falaise qui surplombe le village sont des \n                         ruines d’habitations troglodytes très anciennes, peut-être antérieures à \n                         l\'époque gauloise. Leur histoire mal connue ne s\'appuie \n                         à ce jour que sur des hypothèses. Ce \n                         site, difficile d’accès, propose un panorama exceptionnel sur \n                         le château et le massif du Sancy. Promeneurs \n                         soyez attentif à rester sur le sentier pour \n                         votre sécurité et le préservation du patrimoine naturel \n                         (pas de cueillette!). ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("La magie des sites du moulin de Landrode \n                         et des grottes de Rajat a inspiré des \n                         artistes contemporains qui ont réalisés des œuvres majestueuses \n                         et éphémères dans la cadre de la manifestation \n                         annuelle « ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),
+                                                      _U.list([$Html.text("Horizons rencontres Art et Nature")]))
+                                                      ,$Html.text("».")]))
+                                              ,A2($Html.img,_U.list([$Html$Attributes.src("/images/rajat.jpg"),$Html$Attributes.id("rajatPic")]),_U.list([]))
+                                              ,A2($Html.img,_U.list([$Html$Attributes.src("/images/hori2.jpg"),$Html$Attributes.id("hori2")]),_U.list([]))
+                                              ,A2($Html.p,_U.list([$Html$Attributes.$class("toClear")]),_U.list([$Html.text(" ")]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Groire"
                                  ,_1: "images/tiles/decouvrirMurol/groireTile.jpg"
                                  ,_2: _U.list([A2($Html.p,
-                                 _U.list([]),
-                                 _U.list([$Html.text("Ces hameaux ont une activité rurale marquée, ils\n                     se situent là où le fond de la\n                     vallée s\'élargit pour former de petites plaines propices\n                     aux cultures. Traversés par la Couze Chambon et\n                     les sentiers de randonnées, ils se prêtent à\n                     la flânerie. A l’occasion de la fête de\n                     Groire, le four à pain revit pour le\n                     plaisir des petits et grands gourmands. ")]))])}
+                                              _U.list([]),
+                                              _U.list([$Html.text("Le village de Groire se situe à l’est \n                          du bourg, au pied du Puy de Bessolles. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Traversé par un ruisseau, la Planchette, \n                         il est le point de départ de nombreuses \n                         promenades (Roche Romaine sur le Puy de Bessolles, ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=La Chassagne et les Ballats")]),
+                                                      _U.list([$Html.text("les Ballats, la Chassagne")]))
+                                                      ,$Html.text(" et le ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=01")]),
+                                                      _U.list([$Html.text("château")]))
+                                                      ,$Html.text(", Jassat, le ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=0")]),
+                                                      _U.list([$Html.text("bourg de Murol")]))
+                                                      ,$Html.text("…). Renseignements à l’")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/OfficeDeTourisme.html")]),
+                                                      _U.list([$Html.text("Office de Tourisme")]))
+                                                      ,$Html.text(".")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Riches en hébergements touristiques, il a su \n                          conserver son petit ")
+                                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/Patrimoine.html")]),_U.list([$Html.text("patrimoine")]))
+                                                      ,$Html.text(" local, notamment un four \n                           à pain. Ce dernier revit chaque été à l’occasion \n                           de la fête du pain, pour le plaisir \n                           des petits et grands gourmands. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Cette fête campagnarde, \n                         organisée par une association locale, vous feras découvrir \n                         les savoir-faire de nombreux artisans de nombreux artisans, des \n                         produits du terroir et le folklore auvergnat. ")]))
+                                              ,A2($Html.img,_U.list([$Html$Attributes.src("/images/groire1.jpg"),$Html$Attributes.id("groire1")]),_U.list([]))
+                                              ,A2($Html.img,_U.list([$Html$Attributes.src("/images/groire2.jpg"),$Html$Attributes.id("groire2")]),_U.list([]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/groire3.jpg"),$Html$Attributes.id("groire3")]),
+                                              _U.list([]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "La Chassagne et les Ballats"
                                  ,_1: "images/tiles/decouvrirMurol/chassagneTile.jpg"
                                  ,_2: _U.list([A2($Html.p,
-                                 _U.list([]),
-                                 _U.list([$Html.text("Située sous le Château de Murol, La Chassagne\n                              est un hameau de fermes et maisons particulières.\n                              Ce lieu existait déjà sous Guillaume de Murol,\n                              seigneur du Château au début du XVème siècle.\n                              La légende raconte que Pierre Morand, \"concierge\" du\n                              château s\'est installé ici et a fondé \"la\n                              Chassagne\". L\'origine du nom vient des arbres présents\n                              à cette époque, les chênes. Aujourd\'hui, quelques-uns subsistent\n                              sur les pentes du château, entrelacés avec les\n                              pins et autres arbustes. ")]))])}]))};
+                                              _U.list([]),
+                                              _U.list([$Html.text("Située sous le ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=01")]),
+                                                      _U.list([$Html.text("château")]))
+                                                      ,$Html.text(" de Murol, La Chassagne \n                         existait déjà sous Guillaume de Murol, seigneur du \n                         château au début du XVème siècle. La légende \n                         raconte que Pierre Morand, concierge du château, a \n                         choisi ce lieu pour s’y installer. L\'origine du nom \"la Chassagne\" provient \n                         des chênes qui étaient nombreux sur le site \n                         à cette époque.")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Plus au sud,  la Couze \n                         Chambon traverse les Ballats et vous incite à une promenade bucolique.\n                         Le pont de pierre a été source \n                         d’inspiration pour les ")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
+                                                      _U.list([$Html.text("peintres de l’Ecole de Murols")]))
+                                                      ,$Html.text(".")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Une autre façon de parcourir Murol, \n                         le circuit de la «Promenade à Murols en \n                         1900» voyagez dans le temps à l\'aide des\n                         reproductions de cartes postales anciennes\n                         et comparez Murols en 1900 au Murol d’aujourd’hui. \n                         Circuit disponible à l’")
+                                                      ,A2($Html.a,
+                                                      _U.list([$Html$Attributes.href("/OfficeDeTourisme.html")]),
+                                                      _U.list([$Html.text("Office de Tourisme")]))
+                                                      ,$Html.text(".")]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/chassagne1.jpg"),$Html$Attributes.id("chassagne1")]),
+                                              _U.list([]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/chassagne2.jpg"),$Html$Attributes.id("chassagne2")]),
+                                              _U.list([]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/chassagne3.jpg"),$Html$Attributes.id("chassagne3")]),
+                                              _U.list([]))])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

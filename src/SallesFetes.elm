@@ -98,7 +98,7 @@ initialContent =
            , content])
   , tiledMenu =
       init [( "Salle des fêtes de Murol"
-            , ""
+            , "/images/tiles/misc/salle des fêtes Murol.jpg"
             , [ p [] [text "Pour réserver un créneau horaire, contactez nous:"]
               , mail "murolanimation@orange.fr"
               , p [] [text "Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03"]
@@ -110,7 +110,7 @@ initialContent =
             )
             ,
             ( "Salle des fêtes de Beaune"
-            , ""
+            , "/images/tiles/misc/salle de Beaune.jpg"
             , [
               ]
             )

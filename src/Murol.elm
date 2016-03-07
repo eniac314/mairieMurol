@@ -137,7 +137,7 @@ initialModel =
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "03/03/2016" news
+  , news        = prepNews "03/05/2016" news
   }
 
 
@@ -284,7 +284,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le mardi 01 mars 2016"]
+            [text "Dernière mise à jour le vendredi 05 mars 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -547,6 +547,27 @@ split3' xs =
           []  -> []
           xs' -> (List.take n xs') :: chunk n (drop n xs')
   in chunk l xs  
+
+miniLightBox : String -> Html
+miniLightBox name = 
+  div [ class ("miniLightboxWrapper" ++ name)]
+      [ a [ href ("#"++ name ++"Big")
+          , id (name ++ "Small")
+          , class "thumbAnchor"
+          , title "Cliquez sur l'image pour agrandir"] 
+          
+          [ img [ src ("/images/"++name ++"Small.jpg")
+                , id (name ++ "Small")] []
+                , i   [class "fa fa-expand"] []
+                ]
+              
+      , a [ href "#_"
+          , class "miniLightbox"
+          , id (name ++ "Big")] 
+          [ img [src ("/images/"++name ++"Big.jpg")]
+                []
+          ]
+      ]
 
 -- Data
  

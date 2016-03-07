@@ -11738,6 +11738,23 @@ Elm.Murol.make = function (_elm) {
                              ,{ctor: "_Tuple2"
                               ,_0: "Recevoir une alerte mise à jour site"
                               ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}]);
+   var miniLightBox = function (name) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class(A2($Basics._op["++"],"miniLightboxWrapper",name))]),
+      _U.list([A2($Html.a,
+              _U.list([$Html$Attributes.href(A2($Basics._op["++"],"#",A2($Basics._op["++"],name,"Big")))
+                      ,$Html$Attributes.id(A2($Basics._op["++"],name,"Small"))
+                      ,$Html$Attributes.$class("thumbAnchor")
+                      ,$Html$Attributes.title("Cliquez sur l\'image pour agrandir")]),
+              _U.list([A2($Html.img,
+                      _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",A2($Basics._op["++"],name,"Small.jpg")))
+                              ,$Html$Attributes.id(A2($Basics._op["++"],name,"Small"))]),
+                      _U.list([]))
+                      ,A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-expand")]),_U.list([]))]))
+              ,A2($Html.a,
+              _U.list([$Html$Attributes.href("#_"),$Html$Attributes.$class("miniLightbox"),$Html$Attributes.id(A2($Basics._op["++"],name,"Big"))]),
+              _U.list([A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",A2($Basics._op["++"],name,"Big.jpg")))]),_U.list([]))]))]));
+   };
    var split3$ = function (xs) {
       var chunk = F2(function (n,xs) {
          var _p0 = xs;
@@ -12032,7 +12049,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mardi 01 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 05 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -12287,7 +12304,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
                       ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/03/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/05/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -12342,6 +12359,7 @@ Elm.Murol.make = function (_elm) {
                               ,nullTag: nullTag
                               ,split3: split3
                               ,split3$: split3$
+                              ,miniLightBox: miniLightBox
                               ,news: news
                               ,newsletters: newsletters};
 };
