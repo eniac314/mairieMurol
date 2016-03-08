@@ -174,7 +174,7 @@ initialContent =
                      ]
               , img [src "/images/prélong.JPG", id "bourg2"] []
               , img [src "/images/museePeintre.jpeg", id "bourg3"] []
-              , img [src "/images/bourgHiver.jpg", id "bourg4"] []  
+              , img [src "/images/bourg2.jpg", id "bourg4"] []  
 
               ]
             )
@@ -288,6 +288,7 @@ initialContent =
                            sportifs du Tartaret (12 stations)."]
               , div [id "tartaretPics"] 
                    [ img [src "/images/panoTartaret.jpg", id "tartaret1"] []
+                   , img [src "/images/tartaretBois.jpg", id "tartaretBois"] []
                    , miniLightBox "parcoursSport"
                    ]
               ]
@@ -331,6 +332,10 @@ initialContent =
                             poussettes, aux personnes à mobilité réduite, aux VTT 
                             et même aux cavaliers sur sa partie sud. "
                      ]
+              
+              , img [src "/images/lac1.jpg", id "lac1"] []
+              , img [src "/images/lac2.jpg", id "lac2"] []
+              , img [src "/images/lac3.jpg", id "lac3"] []
               ]
             )
             ,
@@ -347,8 +352,7 @@ initialContent =
                            environs à pied ou à vélo en toute 
                            sécurité. "]
               , div [ id "divVoie1"]
-                    [  img [src "/images/voie1.jpg", id "voie1"] []
-                    ,  p []
+                    [  p []
                          [ text "La voie verte, sentier fléché qui 
                                  relie le bourg de Murol au lac Chambon, 
                                  fait une boucle autour du volcan du "
@@ -393,12 +397,12 @@ initialContent =
                                           lac Chambon. "]
                              ] 
                         ]
+                    , miniLightBox "map"
                     ]
               --, img [src "/images/voie2.jpg", id "voie2"] []
               
               , div [id "divVoie2"]
-                    [ img [src "/images/voie2.jpg", id "voie2"] []
-                    , p []
+                    [ p []
                          [ text "D’autres aménagements protègent vos déambulations dans le bourg: "]
                     ,
                     ul []
@@ -457,7 +461,9 @@ initialContent =
                       [ text "Office de Tourisme"]
                   , text "."
                   ]
-              , miniLightBox "map"
+              , img [src "/images/voie1.jpg", id "voie1"] []
+              , img [src "/images/voie2.jpg", id "voie2"] []  
+              
               
               , p [class "toClear"] [text " "]
               ]
@@ -466,8 +472,8 @@ initialContent =
             
             ("Chautignat"
             ,"/images/tiles/decouvrirMurol/chautignatTile.jpg"
-            , [ img [src "/images/horizon3.jpg", id "hori3"] [] 
-              , p  [] [ text "Chautignat, village agricole situé à
+            , [ div [ id "chautignatPics"]
+              [ p  [] [ text "Chautignat, village agricole situé à
                               flanc de coteaux, bénéficie d’une vue
                               imprenable sur le "
                       , a [href "/DécouvrirMurol.html?bloc=01"]
@@ -501,8 +507,14 @@ initialContent =
                       [ text "Horizons rencontres Art et Nature"]
                   , text "»."
                   ]
-              , img [src "/images/rajat.jpg", id "rajatPic"] []
-              , img [src "/images/hori2.jpg", id "hori2"] []
+              
+                  , div [id "bottomPics"]
+                        [ img [src "/images/rajat.jpg", id "rajatPic"] [] 
+                        , img [src "/images/hori2.jpg", id "hori2"] []
+                        , img [src "/images/horizon3.jpg", id "hori3"] []
+                        ]
+                     
+                    ]
               , p [class "toClear"] [text " "]
               ]
             )
