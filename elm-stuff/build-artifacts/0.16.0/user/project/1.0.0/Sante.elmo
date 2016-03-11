@@ -19,42 +19,57 @@ Elm.Sante.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("sante")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Santé")]))
-           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("La Maison de Santé")]))
+           ,A2($Html.h3,_U.list([]),_U.list([$Html.text("MAISON DE SANTE PLURIDISCIPLINAIRE")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Nos professionnels de santé vous accueillent à la maison de santé: ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue Maupassant- 63790 MUROL")]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Secretariat")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mallory ROIRON")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("04 73 88 28 00")]))]))
            ,A2($Html.img,_U.list([$Html$Attributes.src("/images/maisonSante.jpg")]),_U.list([]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),
-           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Cabinet médical")]))
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE MEDECINE GENERALE")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 61 91")]))
                    ,A2($Html.br,_U.list([]),_U.list([]))
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Florence BARRIERE")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("les lundi, mercredi, vendredi sur rendez-vous, samedi sans RDV.")]))
                    ,A2($Html.br,_U.list([]),_U.list([]))
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Cécile MERITE")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("les mardi et jeudi sur rendez-vous, samedi sans RDV.")]))]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Claire-Marine HENRY")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),
-           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Cabinet dentaire")]))
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE CHIRURGIE DENTAIRE")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél :  04 73 88 27 96")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr JOLIVET Maud")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Lundi - Mercredi - Vendredi")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("de 9h00 à 12h00 / 14h00 à 19h00")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("3 samedis par mois de 9h00 à 12h00")]))]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Maud JOLIVET")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Elise COLAS")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),
-           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Cabinet Infirmiers")]))
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE SOINS INFIRMIERS")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 68 40")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mme Chauvière Marie-pierre")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr Morbin Guillaume")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mme Soulier Sandrine")]))]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mme Marie-Pierre CHAUVIÈRE")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr Guillaume MORBIN")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Sandrine SOULIER")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),
-           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Kinésithérapeute ")]))
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE KINESITHERAPIE")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 63 46")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr Monnet Sébastien")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mme MAYER Céline")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr GARCIA Mathias")]))]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr Sébastien MONNET")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Céline MAYER")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mathias GARCIA")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Clotilde BAHIN")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET MÉDICAL POLYVALENT")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 55 30 59 ")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Permanences régulières")]))
+                   ,A2($Html.h4,_U.list([]),_U.list([$Html.text("DIÉTÉTICIENNE ")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Marion MONGHAL")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("praticiens")]),
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE PEDICURIE PODOLOGIE")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 06 78 31 48 21")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Michel DESPALLE")]))]))
            ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Pharmacie")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),

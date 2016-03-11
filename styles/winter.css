@@ -898,14 +898,20 @@ background-image: none;
 }
 
 .toClear{
-  clear: left;
+  clear: both;
 }
 
 
-#bourg2, #bourg3{
+#bourg2, #bourg3, #bourg4{
  margin-right: 1em;
+ margin-bottom: 1em;
+ max-width: 29%;
  display: inline-block;
 } 
+
+#bourg4{
+  max-width: 32.76%;
+}
 
 #chateau1{
   float: right;
@@ -920,9 +926,169 @@ background-image: none;
   display: inline-block;
 }
 
-#tartaret2{
+#tartaretBois{
   margin-left: 1em; 
 }
+
+#parcoursSportSmall{
+  margin-left: 0.5em;
+}
+
+.miniLightboxWrapperparcoursSport .thumbAnchor i{
+  color: grey;
+}
+
+.miniLightboxWrappermap{
+  margin-left:calc(50% - 200px); 
+  /*margin: auto;*/
+}
+
+#mapSmall img{
+  box-shadow: 0px 0px 5px olive;
+}
+
+#divVoie1, #divVoie2{
+  /*height:400px;*/
+  margin-bottom: 1em;
+  clear: both;
+  /*background-color: red;*/
+  padding: 0.5em;
+}
+
+#divVoie1 ul, #divVoie2 ul{
+  list-style-type: square;
+  /*border-top: 1px solid darkolivegreen;*/
+  /*border-bottom: 1px solid darkolivegreen;*/
+  padding: 1em 5em;
+}
+
+#divVoie1 li p:nth-child(1), #divVoie2 li p:nth-child(1){
+  color: darkolivegreen;
+  text-shadow: 1px 1px 15px greenyellow;
+  width: 80%;
+}
+
+#divVoie1 li p:nth-child(2), #divVoie2 li p:nth-child(2) {
+  color: black;
+  width: 80%;
+}
+
+
+#divVoie2 ul li:nth-child(3) p {
+ color: black;
+ text-shadow: none;
+}
+
+#voie2{
+  clear: both;
+  max-width:48%; 
+  /*float: right;*/
+  margin-left: 1em;
+  /*height: 100%;*/
+}
+
+#voie1{
+  clear: both;
+  max-width:48%;
+  /*height: 100%;*/
+  /*float: right;*/
+  /*margin-left: 1em;*/
+}
+
+#chautignatPics{
+  position: relative;
+  height: 600px;
+  margin:0;
+  padding: 0;
+  /*height: calc(300px * 0.5 * 1.77);*/
+  /*height: calc(531px);*/
+  /*background-color: red;*/
+}
+
+#bottomPics{
+  /*position: absolute;*/
+  /*bottom:0;*/
+  /*width:calc(100% - 300px);*/
+  /*font-size: 0px;*/
+  /*letter-spacing: 0px;*/
+  /*word-spacing: 0px;*/
+  /*width: 80%;*/
+  /*background-color: blue;*/
+}
+
+#hori3{
+  display: inline-block;
+  /*float: right;*/
+  margin-left: 1em;
+  
+  /*width: 20%;*/
+
+  /*margin-top: 69px;*/
+  /*position: absolute;*/
+  /*bottom: 0px;*/
+  /*vertical-align: bottom;*/
+}
+
+#hori2{
+  display: inline-block;
+  /*width: 45%;*/
+  /*margin-bottom: 0;*/
+  /*padding-bottom: 0;*/
+  /*height: 35%;*/
+  /*position: absolute;*/
+  /*bottom:0; */
+}
+
+#rajatPic{
+  display: inline-block;
+  margin-right: 15px;
+  /*width: 45%;*/
+  /*margin-bottom: 0;*/
+  /*padding-bottom: 0;*/
+  /*position: absolute;*/
+  /*height: 35%;*/
+  /*left:250px;*/
+  /*bottom:0;*/
+}
+
+#groire1, #groire2, #groire3{
+  display: inline-block;
+  max-width: 31%;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+#lac1, #lac2, #lac3{
+  display: inline-block;
+  max-width: 29%;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+#lac3{
+  max-width: 32.76%;
+}
+
+#chassagne1, #chassagne2, #chassagne3{
+  display: inline-block;
+  max-width: 31%;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+/*#mapSmall{
+  clear:both;
+  text-align: center;
+}*/
+
+
+
+
+
+
+
+
+
 
 /*--end of code for decouvrirMurol----------------------------------------------*/
 
@@ -939,7 +1105,7 @@ background-image: none;
   background-color: lightslategray;
 }
 
-.stars {
+.stars, epis {
   text-shadow: 1px 1px 1px olive;
   color: gold;
 }
@@ -1019,6 +1185,23 @@ h6.periCat {
   background-color: antiquewhite;
 }
 /*--end of code for initVieScolaire----------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for periscolaire
+-------------------------------------------------------------------------------*/
+
+#tableTAP th{
+  text-align: left;
+}
+
+#tableTAP tr:nth-child(even){
+  background-color: lightgrey;
+}
+/*--end of code for periscolaire----------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for Santé
+-------------------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
   style for Santé
@@ -2018,6 +2201,83 @@ footer p {
 
 /*--end of code for LightBox-------------------------------------------------------*/
 
+div[class*="miniLightboxWrapper"]{
+  display: inline-block;
+}
+
+.miniLightbox {
+  /** Default lightbox to hidden */
+  display: none;
+
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.miniLightbox img {
+  /** Pad the lightbox image */
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 2%;
+
+}
+
+.miniLightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+
+  /** Unhide lightbox **/
+  display: block;
+}
+
+.thumbAnchor{
+  display: inline-block;
+  position: relative;
+}
+
+.thumbAnchor img{
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.thumbAnchor i{
+ opacity: 0;
+ position: absolute;
+ top:3px;
+ right:8px;
+ color: rgba(255,255,255,0.8);
+ font-size: 35px;
+}
+
+.thumbAnchor:hover i{
+ opacity: 1;
+}
+
+.oblique{
+  font-style: oblique;
+}
+
+a[id*="Small"]{
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+}
+
+a[id*="Small"]:hover{
+  background-color: initial;
+}
+a[id*="Big"]:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+/*--------------------------------------------------------------------------------------*/
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */

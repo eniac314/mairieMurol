@@ -1000,12 +1000,12 @@ background-image: none;
 
 #divVoie1 ul, #divVoie2 ul{
   list-style-type: square;
-  border-top: 1px solid darkolivegreen;
-  border-bottom: 1px solid darkolivegreen;
+  /*border-top: 1px solid darkolivegreen;*/
+  /*border-bottom: 1px solid darkolivegreen;*/
   padding: 1em 5em;
 }
 
-#divVoie1 li, #divVoie2 li{
+#divVoie1 li p:nth-child(1), #divVoie2 li p:nth-child(1){
   color: darkolivegreen;
   text-shadow: 1px 1px 15px greenyellow;
   width: 80%;
@@ -1013,6 +1013,13 @@ background-image: none;
 
 #divVoie1 li p:nth-child(2), #divVoie2 li p:nth-child(2) {
   color: black;
+  width: 80%;
+}
+
+
+#divVoie2 ul li:nth-child(3) p {
+ color: black;
+ text-shadow: none;
 }
 
 #voie2{
@@ -1119,81 +1126,7 @@ background-image: none;
 
 
 
-div[class*="miniLightboxWrapper"]{
-  display: inline-block;
-}
 
-.miniLightbox {
-  /** Default lightbox to hidden */
-  display: none;
-
-  /** Position and style */
-  position: fixed;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  top: 0;
-  left: 0;
-  background: rgba(0,0,0,0.8);
-}
-
-.miniLightbox img {
-  /** Pad the lightbox image */
-  max-width: 90%;
-  max-height: 80%;
-  margin-top: 2%;
-
-}
-
-.miniLightbox:target {
-  /** Remove default browser outline */
-  outline: none;
-
-  /** Unhide lightbox **/
-  display: block;
-}
-
-.thumbAnchor{
-  display: inline-block;
-  position: relative;
-}
-
-.thumbAnchor img{
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px black;
-}
-
-.thumbAnchor i{
- opacity: 0;
- position: absolute;
- top:3px;
- right:8px;
- color: rgba(255,255,255,0.8);
- font-size: 35px;
-}
-
-.thumbAnchor:hover i{
- opacity: 1;
-}
-
-.oblique{
-  font-style: oblique;
-}
-
-a[id*="Small"]{
-  margin-left: 0;
-  padding-left: 0;
-  margin-bottom: 0.5em;
-  margin-right: 0.5em;
-}
-
-a[id*="Small"]:hover{
-  background-color: initial;
-}
-a[id*="Big"]:hover{
-  background-color: rgba(0,0,0,0.8);
-}
 
 
 
@@ -1211,10 +1144,11 @@ a[id*="Big"]:hover{
 
 .altLine td{
   border-radius: 0 0 0.5em 0.5em;
-  background-color: lightslategray;
+  /*background-color: lightslategray;*/
+  background-color: lightgrey;
 }
 
-.stars {
+.stars, .epis {
   text-shadow: 1px 1px 1px olive;
   color: gold;
 }
@@ -1294,6 +1228,56 @@ h6.periCat {
   background-color: antiquewhite;
 }
 /*--end of code for initVieScolaire----------------------------------------------*/
+/*-------------------------------------------------------------------------------
+  style for Les Seniors
+-------------------------------------------------------------------------------*/
+
+#SIVOMAddress {
+  margin: auto;
+  width: 40%;
+  padding: 0.5em;
+  background-color: lightslategray;
+  border-top: 0.5em ridge darkslateblue;
+  box-shadow: 2px 2px gray;
+  border-radius: 0.1em 1em;
+}
+#SIVOMAddress p{
+  color: rgb(10, 10, 50);
+  text-shadow: 1px 1px 0 lightgray;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0;
+  /*padding: 0;*/
+}
+
+/*#lesSeniors h4{
+  font-size: 150%;
+  color: #2F4F4F;
+}
+
+#lesSeniors h5{
+  margin-top: 0.5em;
+  text-transform: uppercase;
+  font-size: 100%;
+  color: black;
+  text-align: center;
+  background-color: #91bd19;
+}*/
+
+/*--end of code for Les Seniors----------------------------------------------*/
+/*-------------------------------------------------------------------------------
+  style for periscolaire
+-------------------------------------------------------------------------------*/
+
+#tableTAP th{
+  text-align: left;
+}
+
+#tableTAP tr:nth-child(even){
+  background-color: lightgrey;
+}
+/*--end of code for periscolaire----------------------------------------------*/
 
 /*-------------------------------------------------------------------------------
   style for Santé
@@ -2289,7 +2273,83 @@ footer p {
 
 /*--end of code for LightBox-------------------------------------------------------*/
 
+div[class*="miniLightboxWrapper"]{
+  display: inline-block;
+}
 
+.miniLightbox {
+  /** Default lightbox to hidden */
+  display: none;
+
+  /** Position and style */
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.miniLightbox img {
+  /** Pad the lightbox image */
+  max-width: 90%;
+  max-height: 80%;
+  margin-top: 2%;
+
+}
+
+.miniLightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+
+  /** Unhide lightbox **/
+  display: block;
+}
+
+.thumbAnchor{
+  display: inline-block;
+  position: relative;
+}
+
+.thumbAnchor img{
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px black;
+}
+
+.thumbAnchor i{
+ opacity: 0;
+ position: absolute;
+ top:3px;
+ right:8px;
+ color: rgba(255,255,255,0.8);
+ font-size: 35px;
+}
+
+.thumbAnchor:hover i{
+ opacity: 1;
+}
+
+.oblique{
+  font-style: oblique;
+}
+
+a[id*="Small"]{
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+}
+
+a[id*="Small"]:hover{
+  background-color: initial;
+}
+a[id*="Big"]:hover{
+  background-color: rgba(0,0,0,0.8);
+}
+
+/*--------------------------------------------------------------------------------------*/
 
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */

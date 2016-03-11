@@ -7,3 +7,6 @@ mogrify -resize 80x80 -background black -gravity center -extent 80x80 -format jp
 
 800x600 phototheque boxes
 mogrify -resize 800x600 -gravity center -format jpg -quality 90 *.jpg
+
+images from docx:
+unzip foo.docx "word/media/*"

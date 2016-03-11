@@ -56,6 +56,15 @@ initAtPhoto urlParams xs =
     Nothing -> model
     Just id -> update (ShowTile id) model 
 
+initAtWithLink : String -> List (String,String,List Html,String) -> Model
+initAtWithLink urlParams xs = 
+  let title =  getTitle urlParams
+      model = initWithLink xs
+      maybeId = getByTitle title model
+  in case maybeId of 
+    Nothing -> model
+    Just id -> update (ShowTile id) model
+
 initWithLink : List (String,String,List Html,String) -> Model
 initWithLink xs = 
   let n = List.length xs

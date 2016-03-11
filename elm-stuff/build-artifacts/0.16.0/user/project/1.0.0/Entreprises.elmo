@@ -78,66 +78,40 @@ Elm.Entreprises.make = function (_elm) {
    var defArt = A7(Entreprise,"",_U.list([]),"","","","","");
    var artMap = $Dict.fromList(_U.list([{ctor: "_Tuple2"
                                         ,_0: "Electricité générale"
-                                        ,_1: _U.list([_U.update(defArt,{name: "Boulhol Cougoul (Sarl)",addr: "Groire 63790 MUROL",tel: "04 7388 6733"})
+                                        ,_1: _U.list([_U.update(defArt,{name: "Boulhol Cougoul (Sarl)",addr: "Groire 63790 MUROL",tel: "04 73 88 67 33"})
                                                      ,_U.update(defArt,
                                                      {name: "Cattarelli Rémi"
                                                      ,addr: "route de Besse - 63790 Murol"
-                                                     ,tel: "06 8618 1654"
+                                                     ,tel: "06 86 18 16 54"
                                                      ,mail: "remi.cattarelli@orange.fr"
                                                      ,site: "http://electymurol.wifeo.com"})
-                                                     ,_U.update(defArt,{name: "Sancy Electricité",addr: "chemin des sables 63790 MUROL",tel: "04 7388 6716"})])}
+                                                     ,_U.update(defArt,
+                                                     {name: "Sancy Electricité",addr: "chemin des sables 63790 MUROL",tel: "04 73 88 67 16"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Electricité et petits travaux du bâtiment"
                                         ,_1: _U.list([_U.update(defArt,
                                         {name: "Olivier Dhainaut"
                                         ,addr: "Groire 63790 MUROL"
-                                        ,tel: "04 7388 6633 ou 06 99 40 17 08"
+                                        ,tel: "04 73 88 66 33 ou 06 99 40 17 08"
                                         ,mail: "ace.dhainaut@neuf.fr"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Maçonnerie"
-                                        ,_1: _U.list([_U.update(defArt,{name: "Bouche (SARL)",addr: "Beaune Le Froid 63790 MUROL",tel: "04 7388 8072"})])}
+                                        ,_1: _U.list([_U.update(defArt,
+                                        {name: "Bouche Benoît (SARL)",addr: "Beaune Le Froid 63790 MUROL",tel: "04 73 88 80 72"})])}
                                        ,{ctor: "_Tuple2"
-                                        ,_0: "Peintre en bâtiment"
-                                        ,_1: _U.list([_U.update(defArt,{name: "Peuch Gérard",addr: "rue de Groire 63790 MUROL",tel: "04 7388 6033"})])}
+                                        ,_0: "Plomberie"
+                                        ,_1: _U.list([_U.update(defArt,{name: "BOUCHE Nicolas",addr: "Rue George Sand 63790 MUROL",tel: "06 64 10 74 78"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Marché de gros et demi-gros"
                                         ,_1: _U.list([_U.update(defArt,
-                                        {name: "Jallet Fruits et légumes",addr: "route de Besse 63790 MUROL",tel: "04 7388 6682",fax: "04 73 88 64 88"})])}
+                                        {name: "Jallet Fruits et légumes",addr: "route de Besse 63790 MUROL",tel: "04 73 88 66 82",fax: "04 73 88 64 88"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Quincaillerie"
                                         ,_1: _U.list([_U.update(defArt,
-                                        {name: "Legoueix Père et Fils (SARL)",addr: "rue du Tartaret 63790 MUROL",tel: "04 7388 6621",fax: "04 73 88 80 39"})])}
-                                       ,{ctor: "_Tuple2"
-                                        ,_0: "Reprographie"
-                                        ,_1: _U.list([_U.update(defArt,
-                                        {name: "Chazay Yvon"
-                                        ,descr: _U.list(["création - impression - dépannage informatique"])
-                                        ,addr: "rue Georges Sand 63790 Murol"
-                                        ,tel: "06 2451 7696"
-                                        ,mail: "murol.repro@sfr.fr"})])}
-                                       ,{ctor: "_Tuple2"
-                                        ,_0: "Taxi"
-                                        ,_1: _U.list([_U.update(defArt,
-                                                     {name: "Amblard Taxi",addr: "La Chassagne 63790 MUROL",tel: "04 7388 6937 ou 06 7455 1533"})
-                                                     ,_U.update(defArt,
-                                                     {name: "Miseroux Taxi",addr: "Groire 63790 MUROL",tel: "04 7388 8112",site: "www.taxi-murol.com"})])}
-                                       ,{ctor: "_Tuple2"
-                                        ,_0: "Boulanger"
-                                        ,_1: _U.list([_U.update(defArt,{name: "Bigand Michel",addr: "Rue Chabrol - 63790 MUROL",tel: "04 7388 6024"})])}
-                                       ,{ctor: "_Tuple2"
-                                        ,_0: "Boucherie"
-                                        ,_1: _U.list([_U.update(defArt,{addr: "Rue Chabrol - 63790 MUROL",tel: "04 7388 6905"})])}
-                                       ,{ctor: "_Tuple2"
-                                        ,_0: "Coiffure"
-                                        ,_1: _U.list([_U.update(defArt,{name: "Béal Patricia",addr: "rue Estaing 63790 MUROL",tel: "04 7388 6059"})])}
-                                       ,{ctor: "_Tuple2"
-                                        ,_0: "Création et travail du cuir"
-                                        ,_1: _U.list([_U.update(defArt,
-                                        {name: "Peaux de vaches création"
-                                        ,addr: "Rue de Chabrol 63790 MUROL"
-                                        ,tel: "047378 1653"
-                                        ,mail: "marc.humbert.cuir@orange.fr"
-                                        ,site: "http://www.peaux-de-vaches-creation.com"})])}]));
+                                        {name: "Legoueix Père et Fils (SARL)"
+                                        ,addr: "rue du Tartaret 63790 MUROL"
+                                        ,tel: "04 7388 6621"
+                                        ,fax: "04 73 88 80 39"})])}]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("entreprises")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les Entreprises")])),renderEntrepriseMap(artMap)]));

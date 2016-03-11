@@ -11033,19 +11033,30 @@ Elm.TiledMenu.make = function (_elm) {
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),false);
    };
+   var initAtWithLink = F2(function (urlParams,xs) {
+      var model = initWithLink(xs);
+      var title = $UrlParsing.getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p21 = maybeId;
+      if (_p21.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p21._0),model);
+         }
+   });
    var initPhoto = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p21) {
-         var _p22 = _p21;
-         var _p24 = _p22._0._0;
-         var _p23 = _p22._1;
+      function (_p22) {
+         var _p23 = _p22;
+         var _p25 = _p23._0._0;
+         var _p24 = _p23._1;
          return {ctor: "_Tuple2"
-                ,_0: _p23
+                ,_0: _p24
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p24,_p23,_p22._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p22._0._2))}};
+                     ,_0: A4(Tile,_p25,_p24,_p23._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p25)])),_p23._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),true);
@@ -11054,11 +11065,11 @@ Elm.TiledMenu.make = function (_elm) {
       var model = initPhoto(xs);
       var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p25 = maybeId;
-      if (_p25.ctor === "Nothing") {
+      var _p26 = maybeId;
+      if (_p26.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p25._0),model);
+            return A2(update,ShowTile(_p26._0),model);
          }
    });
    return _elm.TiledMenu.values = {_op: _op
@@ -11069,6 +11080,7 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,init: init
                                   ,initAt: initAt
                                   ,initAtPhoto: initAtPhoto
+                                  ,initAtWithLink: initAtWithLink
                                   ,initWithLink: initWithLink
                                   ,initPhoto: initPhoto
                                   ,ShowTile: ShowTile
@@ -11218,7 +11230,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("agenda"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
            ,A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis")]),
            _U.list([]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
@@ -11422,7 +11434,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 05 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11677,7 +11689,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
                       ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/05/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11753,8 +11765,22 @@ Elm.SideMenu.make = function (_elm) {
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $UrlParsing = Elm.UrlParsing.make(_elm);
    var _op = {};
+   var removeSpecialChars = function (input) {
+      var replacements = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: _U.chr("é"),_1: _U.chr("e")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("è"),_1: _U.chr("e")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("ç"),_1: _U.chr("c")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("à"),_1: _U.chr("a")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("â"),_1: _U.chr("a")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("û"),_1: _U.chr("u")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("ê"),_1: _U.chr("e")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("ô"),_1: _U.chr("o")}
+                                                ,{ctor: "_Tuple2",_0: _U.chr("î"),_1: _U.chr("i")}]));
+      var replace = function (c) {    var _p0 = A2($Dict.get,c,replacements);if (_p0.ctor === "Nothing") {    return c;} else {    return _p0._0;}};
+      return A2($String.map,replace,input);
+   };
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
@@ -11764,7 +11790,7 @@ Elm.SideMenu.make = function (_elm) {
       var isCurrent = function (e) {    return $Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "submenuCurrent",_1: _U.eq(e,pos)}]));};
       var toA = function (e) {
          return A2($Html.a,
-         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(e)),$Html$Attributes.href("#"),isCurrent(e)]),
+         _U.list([$Html$Attributes.id(e),A2($Html$Events.onClick,address,Entry(removeSpecialChars(e))),$Html$Attributes.href("#"),isCurrent(e)]),
          _U.list([$Html.text(e)]));
       };
       var es = function (_) {    return _.entries;}(model);
@@ -11775,42 +11801,42 @@ Elm.SideMenu.make = function (_elm) {
       _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text(title)])),A2($Html.div,_U.list([]),linkList)]));
    });
    var view = F2(function (address,model) {
-      var _p0 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
-      if (_p0.ctor === "Nothing") {
+      var _p1 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
+      if (_p1.ctor === "Nothing") {
             return nullTag;
          } else {
-            if (_p0._0.ctor === "Menu") {
+            if (_p1._0.ctor === "Menu") {
                   return A2($Html.div,
                   _U.list([$Html$Attributes.id("subContainer")]),
                   _U.list([A2(renderSideMenu,address,model)
                           ,A2($Html.div,
                           _U.list([$Html$Attributes.$class("subContainerData")]),
-                          _U.list([A2($Maybe.withDefault,nullTag,_p0._0._0._0)
-                                  ,A2($TiledMenu.view,A2($Signal.forwardTo,address,TiledMenuAction),_p0._0._0._1)]))]));
+                          _U.list([A2($Maybe.withDefault,nullTag,_p1._0._0._0)
+                                  ,A2($TiledMenu.view,A2($Signal.forwardTo,address,TiledMenuAction),_p1._0._0._1)]))]));
                } else {
-                  return A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([A2(renderSideMenu,address,model),_p0._0._0]));
+                  return A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([A2(renderSideMenu,address,model),_p1._0._0]));
                }
          }
    });
    var NoOp = {ctor: "NoOp"};
    var Menu = function (a) {    return {ctor: "Menu",_0: a};};
    var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
+      var _p2 = action;
+      switch (_p2.ctor)
       {case "NoOp": return model;
-         case "Entry": return _U.update(model,{current: _p1._0});
-         default: var _p2 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
-           if (_p2.ctor === "Nothing") {
+         case "Entry": return _U.update(model,{current: _p2._0});
+         default: var _p3 = A2($Dict.get,function (_) {    return _.current;}(model),function (_) {    return _.contentMap;}(model));
+           if (_p3.ctor === "Nothing") {
                  return model;
               } else {
-                 if (_p2._0.ctor === "Menu" && _p2._0._0.ctor === "_Tuple2") {
-                       var newMenu = A2($TiledMenu.update,_p1._0,_p2._0._0._1);
+                 if (_p3._0.ctor === "Menu" && _p3._0._0.ctor === "_Tuple2") {
+                       var newMenu = A2($TiledMenu.update,_p2._0,_p3._0._0._1);
                        var newContentMap = A3($Dict.update,
                        function (_) {
                           return _.current;
                        }(model),
-                       function (_p3) {
-                          return $Maybe.Just(Menu({ctor: "_Tuple2",_0: _p2._0._0._0,_1: newMenu}));
+                       function (_p4) {
+                          return $Maybe.Just(Menu({ctor: "_Tuple2",_0: _p3._0._0._0,_1: newMenu}));
                        },
                        function (_) {
                           return _.contentMap;
@@ -11827,11 +11853,22 @@ Elm.SideMenu.make = function (_elm) {
    var htmlToContent = function (h) {    return Doc(h);};
    var Model = F4(function (a,b,c,d) {    return {title: a,current: b,entries: c,contentMap: d};});
    var init = F4(function (title,current,entries,contentList) {    return A4(Model,title,current,entries,$Dict.fromList(contentList));});
+   var initAt = F5(function (title,current,urlParams,entries,contentList) {
+      var altCurrent = $UrlParsing.getTitle(urlParams);
+      var contentMap = $Dict.fromList(contentList);
+      var _p5 = A2($Dict.get,altCurrent,contentMap);
+      if (_p5.ctor === "Nothing") {
+            return A4(Model,title,current,entries,contentMap);
+         } else {
+            return A4(Model,title,altCurrent,entries,contentMap);
+         }
+   });
    return _elm.SideMenu.values = {_op: _op
                                  ,Model: Model
                                  ,Doc: Doc
                                  ,Menu: Menu
                                  ,init: init
+                                 ,initAt: initAt
                                  ,NoOp: NoOp
                                  ,Entry: Entry
                                  ,TiledMenuAction: TiledMenuAction
@@ -11842,7 +11879,8 @@ Elm.SideMenu.make = function (_elm) {
                                  ,nullTag: nullTag
                                  ,menuToContent: menuToContent
                                  ,menuWithContextToContent: menuWithContextToContent
-                                 ,htmlToContent: htmlToContent};
+                                 ,htmlToContent: htmlToContent
+                                 ,removeSpecialChars: removeSpecialChars};
 };
 Elm.VieScolaire = Elm.VieScolaire || {};
 Elm.VieScolaire.make = function (_elm) {
@@ -11864,7 +11902,7 @@ Elm.VieScolaire.make = function (_elm) {
    var _op = {};
    var second = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("secondVieScolaire")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le Secondaire")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le secondaire")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Collège du Pavin")]))
@@ -11879,30 +11917,193 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Murol.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
    var elem = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("elemVieScolaire")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole Elémentaire")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de l\'hôtel de ville - 63790 Murol")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 62 91")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("L’école élémentaire de Murol fonctionne en RPI avec \n                   l’école de Chambon sur Lac. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("A Murol, sont accueillis les enfants de Chambon \n                   sur Lac, Murol et Saint-Victor la Rivière du \n                   CP au CE2 inclus. La directrice de l’école \n                   élémentaire de Murol se nomme Corinne AUBERTY. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les enfants de CM1 et CM2 sont accueillis \n                   à l’école de Chambon sur Lac. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le directeur de l’école de Chambon sur Lac \n                    se nomme Claude BOURRET.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2015 2016 ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Répartition des classes : ")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CP: Marion VERDE et Elisabeth \n                          TAMET")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CE1 / CE2: Corinne AUBERTY ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CM1 / CM2 (Chambon sur Lac):\n                          Claude BOURRET")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Horaires de classe à l’école de Murol (suite \n                   à la réforme des rythmes scolaires) :")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([]),_U.list([]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("MATIN")]))
+                           ,A2($Html.th,
+                           _U.list([$Html$Attributes.rowspan(7),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "3em"}]))]),
+                           _U.list([]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("APRES-MIDI")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Jours")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Accueil")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Début de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Fin de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Accueil")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Début de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Fin de la classe")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("LUNDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("15h00*")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("MARDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("16h30")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("MERCREDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("JEUDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("15h00*")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("VENDREDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("16h30")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("*Des ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
+                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM pour les enfants.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Horaires de classe à l’école de Chambon\n                    sur Lac (suite à la réforme des rythmes scolaires) :")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([]),_U.list([]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("MATIN")]))
+                           ,A2($Html.th,
+                           _U.list([$Html$Attributes.rowspan(7),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "3em"}]))]),
+                           _U.list([]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("APRES-MIDI")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Jours")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Accueil")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Début de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Fin de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Accueil")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Début de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Fin de la classe")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("LUNDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h15")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h25")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h35")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("15h15*")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("MARDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h15")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h25")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h35")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("16h45")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("MERCREDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h15")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h15")]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("JEUDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h15")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h25")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h35")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("15h15*")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("VENDREDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h15")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h05")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h25")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h35")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("16h45")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("*Des ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
+                   ,$Html.text("(TAP) sont organisés de 15h15 à 16h45 par le\n                   SIVOM pour les enfants.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Projet d’écoles : les axes prioritaires sont\n                   l’orthographe, le vocabulaire, la production d’écrits,\n                   la lecture oralisée, la compréhension de textes\n                   et la résolution de problèmes.")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vous êtes nouveaux sur la commune:")]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Vous êtes nouveaux sur la commune:")]))]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Allez à la mairie avec les documents suivants: ")]))
            ,A2($Html.ul,
            _U.list([]),
            _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("le livret de famille")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("une carte d\'identité ou une copie d\'extrait d\'acte de naissance")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("un justificatif de domicile")]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([$Html.text("un document attestant que l\'enfant a subi les \n                              vaccinations obligatoires pour son âge\n                              (antidiphtérique, antitétanique, antipoliomyélitique)")]))]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants déjà scolarisés à Murol, Chambon et Saint Victor")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("le carnet de santé de l’enfant (vaccinations obligatoires)")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Enfants déjà scolarisés à Murol, Chambon et Saint Victor:")]))]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                      votre enfant est déjà scolarisé au sein du \n                      SIVOM de la Vallée Verte soit, de Murol, \n                      Chambon et Saint Victor la Rivière;. L\'école se \n                      charge de l\' inscription de votre enfant pour \n                      la poursuite de sa scolarité dans le cadre \n                      du regroupement pédagogique intercommunal (RPI), du CP au \n                      CM2.")]))]));
+           _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                     votre enfant est déjà scolarisé à la maternelle \n                     de Murol ou dans les écoles élémentaires de \n                     Murol et de Chambon sur Lac : les \n                     directeurs des écoles se chargent de l\'inscription automatique \n                     de votre enfant pour la poursuite de sa \n                     scolarité de la maternelle au CM2 au sein \n                     du Regroupement Pédagogique Intercommunal (RPI). ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("NB : Si vous habitez Saint-Nectaire et que \n                   votre enfant est scolarisé à la maternelle de \n                   Murol, il poursuivra sa scolarité à l’école primaire \n                   de Saint-Nectaire. Dans ce cas, prendre contact avec \n                   la directrice de l’école de Saint-Nectaire avant le \n                   passage au CP. ")]))]));
    var mater = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("materVieScolaire")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole maternelle")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
@@ -11910,34 +12111,144 @@ Elm.VieScolaire.make = function (_elm) {
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 64 70")]))]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les enfants peuvent y être accueillis à 3 \n                    ans. Ils peuvent également être admis dans la \n                    limite des places disponibles s\'ils ont atteint l\'âge \n                    de 2 ans au jour de la rentrée \n                    scolaire, à condition qu\'ils soient physiquement et psychologiquement \n                    prêts à la fréquenter.")]))
+           _U.list([$Html.text("Les locaux de la maternelle de Murol appartiennent \n                   au SIVOM de la Vallée Verte de la \n                   Couze Chambon, qui regroupe les communes de Chambon \n                   sur Lac, Murol, Saint-Nectaire et Saint-Victor-la-Rivière. Sébastien GOUTTEBEL, \n                   le maire de Murol, est le président du \n                   SIVOM. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Ils y restent jusqu\'à la rentrée scolaire de l\'année civile\n                    au cours de laquelle ils atteignent l\'âge de 6 ans.")]))
+           _U.list([$Html.text("La maternelle accueille les enfants des quatre communes \n                   du SIVOM dès l’âge de 2 ans, en \n                   fonction des places disponibles. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("La directrice de l’école maternelle se nomme Séverine \n                   AUBOUIN. ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2015 - 2016")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Répartition des classes : ")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des petits et moyens : Sandrine Gidon et Céline GAILLARD")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des moyens et grands : Séverine AUBOUIN.")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Horaires de classe (suite à la réforme des rythmes scolaires):")]))
+           ,A2($Html.table,
+           _U.list([]),
+           _U.list([A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.th,_U.list([]),_U.list([]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("MATIN")]))
+                           ,A2($Html.th,
+                           _U.list([$Html$Attributes.rowspan(7),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "3em"}]))]),
+                           _U.list([]))
+                           ,A2($Html.th,_U.list([$Html$Attributes.colspan(3)]),_U.list([$Html.text("APRES-MIDI")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Jours")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Accueil")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Début de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Fin de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Accueil")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Début de la classe")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Fin de la classe")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("LUNDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("16h30")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("MARDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("15h00*")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("MERCREDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))
+                           ,A2($Html.td,_U.list([]),_U.list([]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("JEUDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("16h30")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("VENDREDI")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("8h50")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("9h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("12h00")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h20")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("13h30")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("15h00*")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("*Des ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
+                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM pour les enfants.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le projet d’école : il se poursuit avec, comme axes prioritaires,\n                   la maîtrise de la langue, l’apprentissage du vivre\n                   ensemble et de l’autonomie, ainsi que l’ouverture culturelle.")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Prenez rendez-vous auprès de la directrice de la \n                     maternelle. Vos enfants seront inscrits directement par la \n                     directrice à l\'école qui en profitera pour faire \n                     connaissance avec les parents et faire visiter l\'école. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Munissez vous des documents suivants :")]))
+           _U.list([$Html.text("Les inscriptions pour la rentrée de septembre 2016 \n                     sont possibles dès maintenant. Prenez rendez-vous auprès de \n                     la directrice Séverine AUBOUIN au 04 73 88 \n                     64 70. ")]))
+           ,$Html.text("Pour inscrire votre enfant à la maternelle vous \n              aurez besoin: ")
            ,A2($Html.ul,
            _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("le livret de famille")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("une carte d\'identité ou une copie d\'extrait d\'acte de naissance")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("un justificatif de domicile")]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([$Html.text("un document attestant que l\'enfant a subi les \n                             vaccinations obligatoires pour son âge\n                             (antidiphtérique, antitétanique, antipoliomyélitique)")]))]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Enfants déjà scolarisés à Murol, Chambon, Saint Victor et Saint Nectaire:")]))
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("du livret de famille")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("du carnet de santé de l’enfant (vaccinations obligatoires)")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("d’un justificatif de domicile récent")]))]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "font-style",_1: "oblique"}]))]),
+           _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Attention! ")]))
+                   ,$Html.text("En raison de la forte fréquentation \n                     de la maternelle, les enfants de 2 ans \n                     seront inscrits sur liste d’attente. Ils seront accueillis \n                     en fonction des places disponibles. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("OPERATION « UN FRUIT POUR LA RECRE»")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Vous n\'avez pas de démarches à effectuer si \n                     votre enfant est déjà scolarisé au sein du \n                     SIVOM de la Vallée Verte soit, de Murol, \n                     Chambon, Saint Victor la Rivière et Saint Nectaire;. \n                     L\'école se charge de l\' inscription de votre \n                     enfant pour la poursuite de sa scolarité dans \n                     le cadre du regroupement pédagogique intercommunal (RPI), de \n                     la Petite Section de maternelle au CM2.")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Pause Douceur")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Des séances de contes sont proposées le temps de la pause déjeuner au sein de l\'école maternelle.")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les dates et horaires seront précisées ultérieurement (renseignement à l\'école)")]))]));
+           _U.list([$Html.text("Depuis la rentrée de septembre 2012, les deux \n                   classes de maternelle participent au projet « un \n                   fruit pour la récré ». ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Chaque semaine, les enfants dégustent un fruit de \n                   saison ou exotique dans le cadre d’un atelier \n                   d’éveil au goût organisé en classe. Des activités \n                   pédagogiques diversifiées accompagnent cette action. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Cette opération, générée par le ministère de l’agriculture, \n                   est financée par le SIVOM de la Vallée \n                   Verte et des subventions européennes.")]))]));
    var vieScolaire = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("initVieScolaire")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Vie Scolaire")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Scolarisez vos enfants à Murol de la maternelle au primaire")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Vie scolaire")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Scolarisez vos enfants à Murol!")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les enfants de 3 à 6 ans (dès \n                       2 ans si les effectifs le permettent) sont \n                       accueillis à la ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("/VieScolaire.html?bloc=Ecole maternelle")]),
+                   _U.list([$Html.text("maternelle intercommunale de Murol")]))
+                   ,$Html.text(", rue du Tartaret, 63 790 MUROL.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Cette maternelle de deux classes accueille les enfants \n                     de Chambon sur Lac, Murol, Saint-Nectaire\n                     et Saint-Victor-la-Rivière.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les enfants poursuivent leur scolarité à ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("/VieScolaire.html?bloc=Ecole elementaire")]),
+                   _U.list([$Html.text("l’école élémentaire de Murol")]))
+                   ,$Html.text(", place de l’Hôtel de Ville 63790 \n                     MUROL, jusqu’à la fin du CE2. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les enfants de CM1 et CM2 sont scolarisés \n                     à l’école de Chambon sur Lac. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les écoles élémentaires de Murol et de Chambon \n                     sur Lac fonctionnent en Regroupement Pédagogique Intercommunal (RPI) \n                     et accueillent les enfants de Chambon sur Lac, \n                     Murol et Saint-Victor-la-Rivière. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/VieScolaire.html?bloc=Le secondaire")]),_U.list([$Html.text("collège")]))
+                   ,$Html.text(" du secteur se trouve à Besse \n                      et Saint-Anastaise.")]))
            ,A2($Html.figure,
            _U.list([$Html$Attributes.$class("imgHolydays")]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/carteZones.jpg")]),_U.list([]))
@@ -11949,6 +12260,11 @@ Elm.VieScolaire.make = function (_elm) {
                            ,A2($Html.a,
                            _U.list([$Html$Attributes.href("http://www.education.gouv.fr/cid87910/calendrier-scolaire-pour-les-annees-2015-2016-2016-2017-2017-2018.html")]),
                            _U.list([$Html.text("source: education.gouv.fr")]))]))]))]));
+   var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
+   "String",
+   function (v) {
+      return typeof v === "string" || typeof v === "object" && v instanceof String ? v : _U.badPort("a string",v);
+   });
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
@@ -11969,14 +12285,15 @@ Elm.VieScolaire.make = function (_elm) {
               ,$Murol.pageFooter]));
    });
    var initialModel = {mainMenu: $Murol.mainMenu
-                      ,sideMenu: A4($SideMenu.init,
-                      "Vie Scolaire:",
-                      "Accueil Scolaire",
-                      _U.list(["Accueil Scolaire","Ecole Maternelle","Ecole Elementaire","Le Secondaire"]),
-                      _U.list([{ctor: "_Tuple2",_0: "Accueil Scolaire",_1: $SideMenu.htmlToContent(vieScolaire)}
-                              ,{ctor: "_Tuple2",_0: "Ecole Maternelle",_1: $SideMenu.htmlToContent(mater)}
-                              ,{ctor: "_Tuple2",_0: "Ecole Elementaire",_1: $SideMenu.htmlToContent(elem)}
-                              ,{ctor: "_Tuple2",_0: "Le Secondaire",_1: $SideMenu.htmlToContent(second)}]))};
+                      ,sideMenu: A5($SideMenu.initAt,
+                      "Vie scolaire:",
+                      "Accueil scolaire",
+                      locationSearch,
+                      _U.list(["Accueil scolaire","Ecole maternelle","Ecole élémentaire","Le secondaire"]),
+                      _U.list([{ctor: "_Tuple2",_0: "Accueil scolaire",_1: $SideMenu.htmlToContent(vieScolaire)}
+                              ,{ctor: "_Tuple2",_0: "Ecole maternelle",_1: $SideMenu.htmlToContent(mater)}
+                              ,{ctor: "_Tuple2",_0: "Ecole elementaire",_1: $SideMenu.htmlToContent(elem)}
+                              ,{ctor: "_Tuple2",_0: "Le secondaire",_1: $SideMenu.htmlToContent(second)}]))};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    var Model = F2(function (a,b) {    return {mainMenu: a,sideMenu: b};});
    return _elm.VieScolaire.values = {_op: _op

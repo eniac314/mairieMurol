@@ -114,8 +114,7 @@ view address model =
                   
                   , h4 [] [text "Calendrier"]
                   , div [ id "bigAgenda"] 
-                        [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis"] []
-                        ]
+                        [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis"] []                        ]
                   ]
             ]
       , pageFooter
@@ -203,7 +202,7 @@ horizon =
 revolution = 
   initDropable 3
                "La fête de la Révolution"
-               (Just ( a [ href "/Revolution.html" ]
+               (Just ( a [ href "/14Juillet.html" ]
                          [ text "lien photothèque"] ))
                ( [ p [] [text "La municipalité de Murol, en partenariat avec différentes 
                                associations de la commune, organise le 14 juillet 

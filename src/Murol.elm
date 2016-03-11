@@ -137,7 +137,7 @@ initialModel =
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "03/05/2016" news
+  , news        = prepNews "03/09/2016" news
   }
 
 
@@ -284,7 +284,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le vendredi 05 mars 2016"]
+            [text "Dernière mise à jour le mercredi 09 mars 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -420,7 +420,7 @@ renderPlugins =
 renderAgenda = 
   div [id "agenda", class "submenu"]
       [ h3 [] [text "Agenda"]
-      , iframe [ src "https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis"
+      , iframe [ src "https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis"
                ] []
       , p [] [a [href "/Animation.html"]
                 [text "Consulter le calendrier"]

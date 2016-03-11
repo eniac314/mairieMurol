@@ -11033,19 +11033,30 @@ Elm.TiledMenu.make = function (_elm) {
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),false);
    };
+   var initAtWithLink = F2(function (urlParams,xs) {
+      var model = initWithLink(xs);
+      var title = $UrlParsing.getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p21 = maybeId;
+      if (_p21.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p21._0),model);
+         }
+   });
    var initPhoto = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p21) {
-         var _p22 = _p21;
-         var _p24 = _p22._0._0;
-         var _p23 = _p22._1;
+      function (_p22) {
+         var _p23 = _p22;
+         var _p25 = _p23._0._0;
+         var _p24 = _p23._1;
          return {ctor: "_Tuple2"
-                ,_0: _p23
+                ,_0: _p24
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p24,_p23,_p22._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p22._0._2))}};
+                     ,_0: A4(Tile,_p25,_p24,_p23._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p25)])),_p23._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),true);
@@ -11054,11 +11065,11 @@ Elm.TiledMenu.make = function (_elm) {
       var model = initPhoto(xs);
       var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p25 = maybeId;
-      if (_p25.ctor === "Nothing") {
+      var _p26 = maybeId;
+      if (_p26.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p25._0),model);
+            return A2(update,ShowTile(_p26._0),model);
          }
    });
    return _elm.TiledMenu.values = {_op: _op
@@ -11069,6 +11080,7 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,init: init
                                   ,initAt: initAt
                                   ,initAtPhoto: initAtPhoto
+                                  ,initAtWithLink: initAtWithLink
                                   ,initWithLink: initWithLink
                                   ,initPhoto: initPhoto
                                   ,ShowTile: ShowTile
@@ -11218,7 +11230,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("agenda"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
            ,A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis")]),
            _U.list([]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
@@ -11422,7 +11434,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 05 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11677,7 +11689,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
                       ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/05/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11767,7 +11779,9 @@ Elm.StarTable.make = function (_elm) {
                               return function (j) {
                                  return function (k) {
                                     return function (l) {
-                                       return {name: a,label: b,stars: c,refOt: d,descr: e,addr: f,tel: g,fax: h,mail: i,site: j,pjaun: k,pics: l};
+                                       return function (m) {
+                                          return {name: a,label: b,stars: c,epis: d,refOt: e,descr: f,addr: g,tel: h,fax: i,mail: j,site: k,pjaun: l,pics: m};
+                                       };
                                     };
                                  };
                               };
@@ -11781,13 +11795,15 @@ Elm.StarTable.make = function (_elm) {
       };
    };
    var NoLabel = {ctor: "NoLabel"};
-   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")("")(_U.list([]));
+   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")($Maybe.Nothing)(_U.list([]))("")("")("")("")("")("")(_U.list([]));
    var FamillePlus = {ctor: "FamillePlus"};
-   var addStars = F2(function (n,s) {
+   var addStars = F3(function (n,e,s) {
       var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
       var _p1 = n;
       if (_p1.ctor === "Nothing") {
-            return $Html.text(s);
+            return $String.isEmpty(e) ? $Html.text(s) : A2($Html.span,
+            _U.list([]),
+            _U.list([$Html.text(A2($Basics._op["++"],s," - ")),A2($Html.span,_U.list([$Html$Attributes.$class("epis")]),_U.list([$Html.text(e)]))]));
          } else {
             return A2($Html.span,
             _U.list([]),
@@ -11800,7 +11816,17 @@ Elm.StarTable.make = function (_elm) {
       var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
       var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
       var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
-      var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
+      var refOt$ = function () {
+         var _p4 = _p3.refOt;
+         if (_p4.ctor === "Nothing") {
+               return nullTag;
+            } else {
+               return A2($Html.p,
+               _U.list([]),
+               _U.list([$Html.text("Référence OT: ")
+                       ,A2($Html.a,_U.list([$Html$Attributes.href(_p4._0._1),$Html$Attributes.target("_blank")]),_U.list([$Html.text(_p4._0._0)]))]));
+            }
+      }();
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var pjaun$ = A2(maybeElem,
       _p3.pjaun,
@@ -11819,7 +11845,7 @@ Elm.StarTable.make = function (_elm) {
       });
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var label$ = labelToHtml(_p3.label);
-      var name$ = A2($Html.h6,_U.list([]),_U.list([A2(addStars,_p3.stars,_p3.name)]));
+      var name$ = A2($Html.h6,_U.list([]),_U.list([A3(addStars,_p3.stars,_p3.epis,_p3.name)]));
       return A2($Html.tr,
       _U.list([$Html$Attributes.$class(alt$)]),
       _U.list([A2($Html.td,
@@ -11829,11 +11855,11 @@ Elm.StarTable.make = function (_elm) {
    });
    var makeTable = F2(function (name,entries) {
       var makeRows = F2(function (b,xs) {
-         var _p4 = xs;
-         if (_p4.ctor === "[]") {
+         var _p5 = xs;
+         if (_p5.ctor === "[]") {
                return _U.list([]);
             } else {
-               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
+               return A2($List._op["::"],A2(makeRow,_p5._0,b),A2(makeRows,$Basics.not(b),_p5._1));
             }
       });
       return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
@@ -11869,41 +11895,74 @@ Elm.Restaurants.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
-   var barDeNuit = _U.list([_U.update($StarTable.emptyTe,
-   {name: "Cubana café",addr: "Place de la poste - 63790 Murol",tel: "04 73 88 85 79",mail: "larbalete@cegetel.net"})]);
-   var barBrasserie = _U.list([_U.update($StarTable.emptyTe,{name: "A Jour et Nuit",addr: "Rue Estaing - 63790 Murol",tel: "04 73 88 64 82"})
-                              ,_U.update($StarTable.emptyTe,{name: "Auberge de la plage",addr: "La plage - 63790 Murol",tel: "04 73 88 67 90"})
-                              ,_U.update($StarTable.emptyTe,
-                              {name: "L\'Arbalète",addr: "Rue Georges Sand - 63790 Murol",tel: "04 73 88 85 79",mail: "restaurantlarbalete@gmail.com"})
-                              ,_U.update($StarTable.emptyTe,
-                              {name: "Le café de la côte"
-                              ,addr: "Rue Chabrol - 63790 MUROL"
-                              ,descr: _U.list(["café- restaurant- herboristerie- salle de concert\n                - atelier de confection de bougies\n                en cire d\'abeille, etc."
-                                              ,"Bière locale, hypocras (entendez par là :\n                  vin aux épices médiéval), barbecue ."
-                                              ,"L\'ambiance ici est à la détente, et parfois à la\n                 fête puisque des concerts y sont\n                 organisés sporadiquement."])
-                              ,tel: "06 7941 0811"})]);
    var restosMurol = _U.list([_U.update($StarTable.emptyTe,
-                             {name: "Au Montagnard"
-                             ,addr: "Rue d\'Estaing - 63790 MUROL"
-                             ,descr: _U.list(["Plat à emporter au restaurant"])
-                             ,tel: "04 73 88 61 52"
-                             ,mail: "restaurant.aumontagnard@orange.fr"
-                             ,site: "http://restaurantaumontagnard.wifeo.com/"})
+                             {name: "A jour et nuit",addr: "Rue d\'Estaing - 63790 MUROL",descr: _U.list(["Bar brasserie restaurant"]),tel: "04 73 88 64 82"})
                              ,_U.update($StarTable.emptyTe,
-                             {name: "Chez Dame Galinette",addr: "Rue d\'Estaing - 63790 MUROL",tel: "04 73 88 61 52",site: "murol@azureva-vacances.com"})
+                             {name: "les Pins"
+                             ,descr: _U.list(["Restaurant"])
+                             ,addr: "Rue du Levat 63790 MUROL"
+                             ,tel: "04 73 88 60 50"
+                             ,mail: "http://www.hoteldespins-murol.com"})
                              ,_U.update($StarTable.emptyTe,
-                             {name: "Le chalet de la plage",addr: "lac Chambon - 63790 MUROL",tel: "04 73 88 82 31",mail: "hotel@lac-chambon-plage.fr"})
+                             {name: "T-Me"
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4080",_1: "http://www.sancy.com/activites/detail/4080/murol/t-me"})
+                             ,descr: _U.list(["Bar/bistrot restaurant pizzeria brasserie pub/bar de nuit"])
+                             ,addr: "route de Besse 63790 MUROL"
+                             ,tel: "09 81 36 69 58 / 06 68 48 00 04"
+                             ,mail: "t-me@hotmail.fr"})
                              ,_U.update($StarTable.emptyTe,
-                             {name: "Le Parc",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 88 60 08",fax: "04 73 88 64 44",mail: "info@hotel-parc.com"})
+                             {name: "L\'imprevu",descr: _U.list(["Bureau de tabac bar"]),addr: "Rue Pierre Céleirol 63790 MUROL",tel: "04 73 87 99 61"})
                              ,_U.update($StarTable.emptyTe,
-                             {name: "Le Paris"
-                             ,addr: "Pace de la mairie - 63790 MUROL"
-                             ,tel: "04 73 88 60 09"
-                             ,fax: "04 73 88 69 82"
-                             ,mail: "info@hoteldeparis-murol.com"})
-                             ,_U.update($StarTable.emptyTe,{name: "Le Piccotin \"Pizzéria\"",addr: "Rue Georges Sand - 63790 MUROL",tel: "04 73 62 37 10"})]);
+                             {name: "Snack pizzeria  les Fougères le Domaine du Marais"
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                 ,_0: "7640"
+                                                 ,_1: "http://www.sancy.com/activites/detail/7640/murol/snack-pizzeria-les-fougeres-domaine-du-marais"})
+                             ,descr: _U.list(["restaurant pizzeria sandwicherie snack"])
+                             ,addr: "Le Marais, 63790 MUROL"
+                             ,tel: "04 73 88 67 08 "})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Crêperie Le George Sand"
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4050",_1: ""})
+                             ,descr: _U.list(["Restaurant crêperie"])
+                             ,addr: "Rue George Sand 63790 MUROL"
+                             ,tel: "06 28 29 55 99"
+                             ,mail: "http://www.sancy.com/activites/detail/4050/murol/creperie-le-george-sand"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Auberge de la Plage"
+                             ,descr: _U.list(["bar brasserie restaurant"])
+                             ,addr: "La Plage de Murol 63790 MUROL"
+                             ,tel: "04 73 88 67 90"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "le Domaine du Lac"
+                             ,label: $StarTable.FamillePlus
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                 ,_0: "4041"
+                                                 ,_1: "http://www.sancy.com/activites/detail/4041/murol/le-restaurant-du-domaine-du-lac"})
+                             ,descr: _U.list(["Bar/bistrot brasserie restaurant"])
+                             ,addr: "Plage de Murol 63790 MUROL"
+                             ,tel: "04 44 05 21 58"
+                             ,mail: "lac.chambon@wanadoo.fr"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Cubana café",descr: _U.list(["Bar de nuit"]),addr: "Place de la poste 63790 MUROL",tel: "04 73 88 85 79"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "Le Piccotin"
+                             ,descr: _U.list(["Restaurant pizzeria"])
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4075",_1: "http://www.sancy.com/activites/detail/4075/murol/le-picotin"})
+                             ,label: $StarTable.FamillePlus
+                             ,addr: "Rue Georges Sand - 63790 MUROL"
+                             ,tel: "04 73 62 37 10 / 06 83 00 11 85"})
+                             ,_U.update($StarTable.emptyTe,
+                             {name: "L\'Arbalète"
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4034",_1: "http://www.sancy.com/activites/detail/4034/murol/l-arbalete"})
+                             ,addr: "Rue Georges Sand - 63790 Murol"
+                             ,tel: "04 73 88 85 79"
+                             ,mail: "restaurantlarbalete@gmail.com"})]);
    var restosBeaunes = _U.list([_U.update($StarTable.emptyTe,
-   {name: "Les Sancy\'Elles",addr: "63790 Beaune le Froid -MUROL",descr: _U.list(["Crèperie, petite restauration"]),tel: "04 7388 8118"})]);
+   {name: "Les Sancy\'Elles"
+   ,addr: "63790 Beaune le Froid -MUROL"
+   ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "7980",_1: "http://www.sancy.com/activites/detail/7980/murol/les-sancy-elles"})
+   ,descr: _U.list(["Restaurant crêperie"])
+   ,tel: "04 73 88 81 18 / 06 29 39 04 77"})]);
    var restaurants = function (showIntro) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("restosTourisme")]),
@@ -11924,7 +11983,7 @@ Elm.Restaurants.make = function (_elm) {
               _U.list([$Html.text("Le tout avec modération.")]))]));
    };
    var famillePlus = function () {
-      var tables = A2($Basics._op["++"],restosMurol,A2($Basics._op["++"],restosBeaunes,A2($Basics._op["++"],barBrasserie,barDeNuit)));
+      var tables = A2($Basics._op["++"],restosMurol,restosBeaunes);
       return A2($List.filter,function (e) {    return _U.eq(function (_) {    return _.label;}(e),$StarTable.FamillePlus);},tables);
    }();
    var initialContent = {wrapper: F2(function (content,showIntro) {
@@ -11939,12 +11998,6 @@ Elm.Restaurants.make = function (_elm) {
                                                                           ,A2($StarTable.makeTable,"aBeauneLeFroid",restosBeaunes)
                                                                           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
                                                                           ,A2($StarTable.makeTable,"aMurol",restosMurol)])}
-                                                            ,{ctor: "_Tuple3"
-                                                             ,_0: "Bar brasserie"
-                                                             ,_1: "/images/tiles/restaurants/drinks.jpg"
-                                                             ,_2: _U.list([A2($StarTable.makeTable,"barBrasserie",barBrasserie)
-                                                                          ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Bar de Nuit")]))
-                                                                          ,A2($StarTable.makeTable,"barDeNuit",barDeNuit)])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Famille plus"
                                                              ,_1: "/images/tiles/hebergements/famillePlus.jpg"
@@ -12003,7 +12056,5 @@ Elm.Restaurants.make = function (_elm) {
                                     ,famillePlus: famillePlus
                                     ,restaurants: restaurants
                                     ,restosBeaunes: restosBeaunes
-                                    ,restosMurol: restosMurol
-                                    ,barBrasserie: barBrasserie
-                                    ,barDeNuit: barDeNuit};
+                                    ,restosMurol: restosMurol};
 };

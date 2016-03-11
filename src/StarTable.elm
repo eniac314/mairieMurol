@@ -5,13 +5,20 @@ import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import String exposing (words, join, cons, uncons)
 
-addStars : Maybe Int -> String -> Html
-addStars n s =
+addStars : Maybe Int -> String -> String ->  Html
+addStars n e s =
   let go n = if n == 0
              then ""
              else  "★" ++ go (n-1)
   in case n of
-       Nothing -> text s
+       Nothing -> 
+        if String.isEmpty e 
+        then text s
+        else  span []
+                   [text (s ++ " - ")
+                   , span [ class "epis"]
+                          [ text e]
+                   ]
        Just n' ->
          span []
               [ text ( s ++ " ")
@@ -25,7 +32,8 @@ type alias TableEntry =
    { name  : String
    , label : Label
    , stars : Maybe Int
-   , refOt : String
+   , epis  : String
+   , refOt : Maybe (String,String)
    , descr : List String
    , addr  : String
    , tel   : String
@@ -37,7 +45,7 @@ type alias TableEntry =
    }
 
  
-emptyTe = TableEntry "" NoLabel Nothing "" [] "" "" "" "" "" "" []
+emptyTe = TableEntry "" NoLabel Nothing "" Nothing [] "" "" "" "" "" "" []
 
 makeTable : String -> List TableEntry -> Html
 makeTable name entries =
@@ -51,9 +59,9 @@ makeTable name entries =
 
 
 makeRow : TableEntry -> Bool -> Html
-makeRow { name, label, stars, refOt, descr,
+makeRow { name, label, stars, epis, refOt, descr,
            addr, tel, fax, mail, site, pjaun, pics } alt =
-  let name'  = h6 [] [addStars stars name]
+  let name'  = h6 [] [addStars stars epis name]
 
       label' = labelToHtml label
 
@@ -71,8 +79,12 @@ makeRow { name, label, stars, refOt, descr,
 
       descr' = List.map (\s -> p [] [text s]) descr
 
-      refOt' = maybeElem
-                refOt (\s -> p [] [text ("Référence OT: " ++ s)])
+      refOt' = case refOt of
+                 Nothing ->  nullTag
+                 Just (n,ad) -> p [] [ text ("Référence OT: ")
+                                     , a [href ad, target "_blank"]
+                                         [text n]
+                                     ] 
 
       tel'   = maybeElem
                 tel (\s -> p [] [text ("Tel. " ++ s)])

@@ -8,7 +8,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import TiledMenu exposing (initWithLink,view,update,Action)
+import TiledMenu exposing (initAtWithLink,view,update,Action)
 import StarTable exposing (makeTable, emptyTe, Label(..))
 import Murol exposing (mainMenu,
                        renderMainMenu',
@@ -28,7 +28,7 @@ subMenu : Murol.Submenu
 subMenu = { current = "", entries = []}
 
 type alias MainContent = 
-  { wrapper : (Html -> Html)
+  { wrapper : (Html -> Bool -> Html)
   , tiledMenu :  TiledMenu.Model
   } 
 
@@ -36,12 +36,16 @@ type alias Model =
   { mainMenu    : Murol.Menu
   , subMenu     : Murol.Submenu
   , mainContent : MainContent
+  , showIntro   : Bool
   }  
 
 initialModel =
   { mainMenu    = mainMenu
   , subMenu     = subMenu
   , mainContent = initialContent
+  , showIntro   = if String.isEmpty locationSearch
+                  then True
+                  else False
   }
 
 
@@ -50,11 +54,12 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Vie Loale", "Péri et extra-scolaire"]
+      [ renderMainMenu' ["Vie Locale", "Péri et extra-scolaire"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
                (TiledMenu.view (Signal.forwardTo address TiledMenuAction) (.tiledMenu (.mainContent model)))
+               (.showIntro model)
             ]
       , pageFooter
       ]
@@ -76,8 +81,9 @@ update action model =
           tm = (.tiledMenu (.mainContent model))
       in
           { model | 
-            mainContent = 
-             { mc | tiledMenu = TiledMenu.update act tm }
+            showIntro = not (.showIntro model)
+            , mainContent = 
+               { mc | tiledMenu = TiledMenu.update act tm }
           }
 
 --Main
@@ -89,15 +95,43 @@ main =
     , update = update
     }
 
+port locationSearch : String
 
 initialContent =
   { wrapper = 
-    (\content ->
+    (\content showIntro ->
        div [ class "subContainerData noSubmenu", id "periscolaire"]
-           [ h2 [] [ text "péri et extra-scolaire"]
+           [ h2 [] [ text "Péri et extra-scolaire"]
+           , p  [classList [("intro",True),("displayIntro", showIntro)]] 
+                [text "Les compétences péri et extrascolaires sont portées par 
+                       le SIVOM de la Vallée Verte de la 
+                       Couze Chambon qui regroupe les communes de Chambon 
+                       sur Lac, Murol, Saint-Nectaire et Saint-Victor-la-Rivière. Sébastien GOUTTEBEL, 
+                       le maire de Murol, est le président du 
+                       SIVOM. "]
+           , p [classList [("intro",True),("displayIntro", showIntro)]] 
+               [text "Le secrétariat du SIVOM est assuré par Frédérique 
+                     Heitz, dans les locaux de la mairie de 
+                     Murol. Elle vous accueille les lundis, mardis et 
+                     jeudis de 9h30 à 12h30 dans son bureau 
+                     au 1er étage ou par téléphone au 04 
+                     73 88 60 67. "]
+           , p [ classList [("intro",True),("displayIntro", showIntro)]]
+               [ a [ href "", target "_blank"]
+                   [ text "fiche d’inscription"]
+               ]
+           , p [ classList [("intro",True),("displayIntro", showIntro)]]
+               [ a [ href "", target "_blank"]
+                   [ text "règlement intérieur"]
+               ]
+           , p [ classList [("intro",True),("displayIntro", showIntro)]]
+               [ a [ href "", target "_blank"]
+                   [ text "charte du savoir vivre"]
+               ]
+
            , content])
   , tiledMenu =
-      initWithLink peri
+      initAtWithLink locationSearch peri
   }
 
 
@@ -106,9 +140,28 @@ peri =
   [ ("Restaurant scolaire"
     ,"/images/tiles/periscolaire/restaurant scolaire.jpg"
     , [ link "Fiche d'inscription" ""
-      , p [] [ text "ouvert de 12h00 à 13h30"]
-      , p [] [ text " Le montant de la participation des familles est fonction des revenus
-                      de celles-ci (tarification selon le quotient familial): "]
+      , p [] [ text "Le restaurant scolaire est un service non obligatoire 
+                     assuré par le SIVOM de la Vallée Verte. 
+                     Il accueille les enfants de la maternelle et 
+                     de l’école élémentaire de Murol les lundis, mardis, 
+                     jeudis et vendredis de 12h à 13h30. "]
+      , p [] [ text "Les enfants déjeunent en deux services (petits puis 
+                     grands) pour limiter le bruit dans le réfectoire. "]
+      , p [] [ text "Les repas sont préparés sur place par la 
+                     cuisinière du SIVOM, Monique Picot. Un repas «bio» 
+                     est servi aux enfants une fois par mois. "]
+      , p [] [ text "La surveillance est assurée par les personnels du 
+                     SIVOM, Karine Fouquet, Emmanuelle Delorme et Florence Planeix. "]
+      , p [] [ text "Les enfants sont tenus de se comporter correctement, 
+                     selon les préconisations détaillées dans la charte du 
+                     savoir-vivre et le règlement intérieur. En cas de 
+                     problème de discipline, les parents sont informés par 
+                     le biais d’avertissements remis aux enfants."]
+      , p [] [ text "Si votre enfant présente des allergies alimentaires, un 
+                     protocole devra être établi avant qu’il ne soit 
+                     accueilli au restaurant scolaire (PAI). "]
+      , p [] [ text "Le montant de la participation des familles est fonction des revenus
+                     de celles-ci (tarification selon le quotient familial): "]
       , table [ id "quotient"]
               [ tr [ class "quotLine"]
                    [ td [] [ text "Quotient familial"]
@@ -132,48 +185,163 @@ peri =
                    , td [] [ text "3,10€"]
                    ]
               ]
-      , p [] [ text "Un repas « bio » sera servi aux enfants une fois par mois."]
+      , p []
+          [ a [ href "", target "_blank"]
+              [ text "fiche d’inscription"]
+          ]
+      , p []
+          [ a [ href "", target "_blank"]
+              [ text "règlement intérieur"]
+          ]
+      , p []
+          [ a [ href "", target "_blank"]
+              [ text "charte du savoir vivre"]
+          ]
       ]
     ,"")
   , ("Garderie périscolaire"
     ,"/images/tiles/periscolaire/garderie.jpg"
-    , [  p [] [ text "Les Chèques Emploi Service Universel sont dorénavant acceptés pour
-                    le paiement de la garderie périscolaire."]
-      , link "Fiche d'inscription" ""
-      , p [] [ text "ouverte de 7h00 à 9h00 et de 16h30 à 19h00 : 1,20€ de l’heure."]
-      , p [] [ link "Charte du savoir-vivre" ""
-             , text " en milieu scolaire et périscolaire"]
-      , p [] [ link "Règlement intérieur" ""
-             , text " du restaurant scolaire et de la garderie"] 
-     ]
+    , [ p [] [text "La garderie périscolaire est un service non obligatoire 
+                   assuré par le SIVOM de la Vallée Verte. 
+                   Ce service est subventionné par la CAF et 
+                   la MSA. "]
+      , text "La garderie est ouverte: "
+      , ul []
+           [ li [] [text "le matin de 7h à 9h les lundis, 
+                          mardis, mercredis, jeudis et vendredis"]
+           , li [] [text "le soir de 16h30 à 19h les lundis, 
+                          mardis, jeudis et vendredis. "]
+           ]
+      , p [] [text "La garderie accueille les enfants de la maternelle 
+                   de Murol ainsi que des écoles élémentaires de 
+                   Murol et de Chambon sur Lac. "]
+      , p [] [text "Ils sont surveillés par Karine Fouquet (et Frédérique 
+                    Heitz sur les créneaux de plus forte affluence). "]
+      , p [] [text "La garderie est un temps de détente et 
+                   de jeux libres. Mais pour le bien-être de 
+                   tous, les enfants sont tenus de se comporter 
+                   correctement, selon les préconisations détaillées dans la charte 
+                   du savoir-vivre et le règlement intérieur. En cas 
+                   de problème de discipline, les parents sont informés 
+                   par le biais d’avertissements remis aux enfants. "]
+      , text "La participation des familles est fonction des revenus 
+              de celles-ci : "
+      , ul []
+           [ li [] [text "Familles non-imposables : 1,15€ de l’heure "]
+           , li [] [text "Familles imposables : 1,35€ de l’heure "]
+           ]
+      , p [] [text "NB : le créneau 16h30/18h est facturé comme 
+                    1 heure. "]
+      ]
     ,""
     )
   , ("Temps d'activités périscolaires (TAP)"
-    ,""
-    ,[]
+    ,"/images/tiles/periscolaire/TAP.jpg"
+    ,[ p [] [text "L’organisation des activités périscolaires dans les quatre écoles 
+                   de la vallée est réalisée par le SIVOM 
+                   dans le cadre d’un projet éducatif territorial qui 
+                   garantit un encadrement de qualité pour les enfants 
+                   et une programmation qui répond à des objectifs 
+                   éducatifs. Le financement est assuré par le SIVOM, 
+                   l’Etat, la CAF et la participation des parents."]
+     , p [] [text "Les enfants inscrits bénéficient de deux séances d’activités 
+                   hebdomadaires: "]
+     , table [ id "tableTAP"]
+             [ tr []
+                  [ th [] [text "ECOLE"]
+                  , th [] [text "JOURS DE TAP"]
+                  , th [] [text "HORAIRES DE TAP"]
+                  , th [] [text "DIRECTION"]
+                  , th [] [text "PROGRAMMES"]
+                  ]
+             , tr []
+                  [ td [] [text "Maternelle de Murol"]
+                  , td [] [text "Mardi et vendredi"]
+                  , td [] [text "15h00 à 16h30"]
+                  , td [] [text "Karine Fouquet"]
+                  , td [] [a [href "", target "_blank"] [text "maternelle"]]
+                  ]
+             , tr []
+                  [ td [] [text "Elémentaire de Murol"]
+                  , td [] [text "Lundi et jeudi"]
+                  , td [] [text "15h00 à 16h30"]
+                  , td [] [text "Frédérique Heitz"]
+                  , td [] [a [href "", target "_blank"] [text "Murol"]]
+                  ]
+             , tr []
+                  [ td [] [text "Elémentaire du Chambon"]
+                  , td [] [text "Lundi et jeudi"]
+                  , td [] [text "15h15 à 16h45"]
+                  , td [] [text "Karine Fouquet"]
+                  , td [] [a [href "", target "_blank"] [text "Chambon"]]
+                  ]
+             , tr []
+                  [ td [] [text "Primaire de St Nectaire"]
+                  , td [] [text "Mardi et vendredi"]
+                  , td [] [text "15h00 à 16h30"]
+                  , td [] [text "Frédérique Heitz"]
+                  , td [] [a [href "", target "_blank"] [text "Saint-Nectaire"]]
+                  ]  
+             ]
+     , p [] [text "L’inscription est annuelle et la participation
+                   des familles est de 12€ par trimestre et par enfant."]   
+     ]
     ,""
     )
   , ("Centre de loisirs"
     ,"/images/tiles/periscolaire/centre de loisirs.jpg"
-    , [ p [] [ text "Ouvert pendant les vacances scolaires"]
-      , p [] [ text "Le centre de loisirs est ouvert du lundi au vendredi, dans les
-                     locaux de l'école maternelle de Murol"]
-      , p [] [ text "Inscription en mairie"]
+    , [ p [] [text "Le Centre de Loisirs du SIVOM de la 
+                   Vallée Verte propose d’accueillir les enfants des communes 
+                   de Chambon sur Lac, Murol, Saint-Nectaire et Saint-Victor-la-Rivière, 
+                   nés après le 01/01/2005, ayant 3 ans révolus 
+                   et déjà inscrits dans un établissement scolaire."]
+      , text "Il sera ouvert dans les locaux de l’école 
+             maternelle de Murol du lundi au vendredi de 
+             8h à 18h:"
+      , ul []
+           [ li [] [text "Du 15 au 26 février 2016 "]
+           , li [] [text "Du 11 au 22 avril 2016"]
+           , li [] [text "Du 7 juillet au 23 août 2016 "]
+           ]
+      , p [] [text "Des enfants d’autres communes d’origine, de la population 
+                   touristique notamment, pourront être également accueillis, dans la 
+                   limite des places disponibles. "]
+      , p [] [text "Les familles pourront inscrire leurs enfants à la 
+                   semaine, à la journée ou à la demi-journée 
+                   avec ou sans repas. Un service de ramassage 
+                   est assuré matin et soir. "]
+      , p [] [text "Ce service est subventionné par la CAF et 
+                   la MSA. La participation des familles est fonction 
+                   des revenus de celles-ci ("
+             ,a [href "", target "_blank"]
+                [text "tarifs selon le quotient 
+                      familial"]
+             ,text ")"    
+             ]
+      , p [] [ text "Les "
+             , a [href "", target "_blank"]
+                 [text "dossiers d’inscriptions"]
+             , text " sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
+             ]
+      , text "Liens:"
+      , p [] [a [href "", target "_blank"] [text "projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
+      , p [] [a [href "", target "_blank"] [text "Projet pédagogique vacances de printemps "]]
       ]
     ,""
     )
   , ("Transport scolaire"
     ,"/images/tiles/periscolaire/navette.jpg"
-    , [ p [] [ text "Pour le transport scolaire, la participation des familles 
-                   a été fixée forfaitairement par le Conseil Général 
-                   pour l’année scolaire 2008 / 2009 à 12,80€ 
-                   par mois (64€ par mois pour les élèves 
-                   non subventionnés)."] 
+    , [ 
+      --p [] [ text "Pour le transport scolaire, la participation des familles 
+      --             a été fixée forfaitairement par le Conseil Général 
+      --             pour l’année scolaire 2008 / 2009 à 12,80€ 
+      --             par mois (64€ par mois pour les élèves 
+      --             non subventionnés)."] 
       ]
-    ,""
+    ,"http://www.puydedome.com/Colleges/Transport_scolaire-46427_67331.html?1=1"
     )
   , ("Activités jeunesse de la communauté de communes"
-    ,""
+    ,"/images/tiles/periscolaire/actiJeunesse.jpg"
     ,[]
     ," http://www.cc-massifdusancy.fr/"
     )

@@ -11033,19 +11033,30 @@ Elm.TiledMenu.make = function (_elm) {
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),false);
    };
+   var initAtWithLink = F2(function (urlParams,xs) {
+      var model = initWithLink(xs);
+      var title = $UrlParsing.getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p21 = maybeId;
+      if (_p21.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p21._0),model);
+         }
+   });
    var initPhoto = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p21) {
-         var _p22 = _p21;
-         var _p24 = _p22._0._0;
-         var _p23 = _p22._1;
+      function (_p22) {
+         var _p23 = _p22;
+         var _p25 = _p23._0._0;
+         var _p24 = _p23._1;
          return {ctor: "_Tuple2"
-                ,_0: _p23
+                ,_0: _p24
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p24,_p23,_p22._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p24)])),_p22._0._2))}};
+                     ,_0: A4(Tile,_p25,_p24,_p23._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p25)])),_p23._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),true);
@@ -11054,11 +11065,11 @@ Elm.TiledMenu.make = function (_elm) {
       var model = initPhoto(xs);
       var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p25 = maybeId;
-      if (_p25.ctor === "Nothing") {
+      var _p26 = maybeId;
+      if (_p26.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p25._0),model);
+            return A2(update,ShowTile(_p26._0),model);
          }
    });
    return _elm.TiledMenu.values = {_op: _op
@@ -11069,6 +11080,7 @@ Elm.TiledMenu.make = function (_elm) {
                                   ,init: init
                                   ,initAt: initAt
                                   ,initAtPhoto: initAtPhoto
+                                  ,initAtWithLink: initAtWithLink
                                   ,initWithLink: initWithLink
                                   ,initPhoto: initPhoto
                                   ,ShowTile: ShowTile
@@ -11111,7 +11123,9 @@ Elm.StarTable.make = function (_elm) {
                               return function (j) {
                                  return function (k) {
                                     return function (l) {
-                                       return {name: a,label: b,stars: c,refOt: d,descr: e,addr: f,tel: g,fax: h,mail: i,site: j,pjaun: k,pics: l};
+                                       return function (m) {
+                                          return {name: a,label: b,stars: c,epis: d,refOt: e,descr: f,addr: g,tel: h,fax: i,mail: j,site: k,pjaun: l,pics: m};
+                                       };
                                     };
                                  };
                               };
@@ -11125,13 +11139,15 @@ Elm.StarTable.make = function (_elm) {
       };
    };
    var NoLabel = {ctor: "NoLabel"};
-   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")("")(_U.list([]));
+   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")($Maybe.Nothing)(_U.list([]))("")("")("")("")("")("")(_U.list([]));
    var FamillePlus = {ctor: "FamillePlus"};
-   var addStars = F2(function (n,s) {
+   var addStars = F3(function (n,e,s) {
       var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
       var _p1 = n;
       if (_p1.ctor === "Nothing") {
-            return $Html.text(s);
+            return $String.isEmpty(e) ? $Html.text(s) : A2($Html.span,
+            _U.list([]),
+            _U.list([$Html.text(A2($Basics._op["++"],s," - ")),A2($Html.span,_U.list([$Html$Attributes.$class("epis")]),_U.list([$Html.text(e)]))]));
          } else {
             return A2($Html.span,
             _U.list([]),
@@ -11144,7 +11160,17 @@ Elm.StarTable.make = function (_elm) {
       var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
       var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
       var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
-      var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
+      var refOt$ = function () {
+         var _p4 = _p3.refOt;
+         if (_p4.ctor === "Nothing") {
+               return nullTag;
+            } else {
+               return A2($Html.p,
+               _U.list([]),
+               _U.list([$Html.text("Référence OT: ")
+                       ,A2($Html.a,_U.list([$Html$Attributes.href(_p4._0._1),$Html$Attributes.target("_blank")]),_U.list([$Html.text(_p4._0._0)]))]));
+            }
+      }();
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var pjaun$ = A2(maybeElem,
       _p3.pjaun,
@@ -11163,7 +11189,7 @@ Elm.StarTable.make = function (_elm) {
       });
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var label$ = labelToHtml(_p3.label);
-      var name$ = A2($Html.h6,_U.list([]),_U.list([A2(addStars,_p3.stars,_p3.name)]));
+      var name$ = A2($Html.h6,_U.list([]),_U.list([A3(addStars,_p3.stars,_p3.epis,_p3.name)]));
       return A2($Html.tr,
       _U.list([$Html$Attributes.$class(alt$)]),
       _U.list([A2($Html.td,
@@ -11173,11 +11199,11 @@ Elm.StarTable.make = function (_elm) {
    });
    var makeTable = F2(function (name,entries) {
       var makeRows = F2(function (b,xs) {
-         var _p4 = xs;
-         if (_p4.ctor === "[]") {
+         var _p5 = xs;
+         if (_p5.ctor === "[]") {
                return _U.list([]);
             } else {
-               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
+               return A2($List._op["::"],A2(makeRow,_p5._0,b),A2(makeRows,$Basics.not(b),_p5._1));
             }
       });
       return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
@@ -11332,7 +11358,7 @@ Elm.Murol.make = function (_elm) {
    _U.list([$Html$Attributes.id("agenda"),$Html$Attributes.$class("submenu")]),
    _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Agenda")]))
            ,A2($Html.iframe,
-           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1fjlvjccl360lavomr84oglecc%40group.calendar.google.com&color=%231B887A&ctz=Europe%2FParis")]),
+           _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis")]),
            _U.list([]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Animation.html")]),_U.list([$Html.text("Consulter le calendrier")]))]))
            ,A2($Html.p,
@@ -11536,7 +11562,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 05 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11791,7 +11817,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
                       ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/05/2016",news)};
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11979,110 +12005,113 @@ Elm.AssociationsList.make = function (_elm) {
                         ,domaine: "société de chasse"
                         ,siege: "mairie de Murol 63790 MUROL"
                         ,affil: "Fédération départementale des chasseurs du Puy-de-Dôme"
-                        ,resp: _U.list([{poste: "Président",nom: "Laurent GASCHON",tel: "06 8667 1322"}])
-                        ,mails: _U.list(["laurent.gaschon@laposte.net"])
+                        ,resp: _U.list([{poste: "Coprésident",nom: "Laurent GASCHON",tel: "06 45 28 96 84"}
+                                       ,{poste: "Coprésident",nom: "Guy Roche",tel: "04 73 88 65 99"}])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Amicale des Sapeurs Pompiers"
                         ,domaine: "actions en faveur des sapeurs pompiers, organisation de festivités sur la commune"
-                        ,siege: "rue Guy de Maupassant 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "Yannick COHERIER",tel: "04 4330 6596"}])
+                        ,siege: "Mairie de Murol"
+                        ,resp: _U.list([{poste: "Président",nom: "Yannick COHERIER",tel: "04 73 88 64 38"}])
                         ,mails: _U.list(["yannick632009@live.fr"])
                         ,sites: _U.list(["http://pompiersdemurol.wifeo.com"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Bougn’Arts"
                         ,domaine: "organiser des festivals et des manifestations culturelles\n                - créer, organiser et promouvoir des animations et spectacles\n                de rues ainsi que des animations pédagogiques\n                - rassembler des artisans et des artistes à l’occasion de fêtes,\n                foires, marchés artisanaux et marchés à thèmes."
                         ,siege: "« Les Aloès » Rue chabrol – 63790 Murol"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Bénédicte Manfri-Humbert",tel: "06 7216 7846"}])
+                        ,resp: _U.list([{poste: "Présidente",nom: "Bénédicte Manfri",tel: "06 72 16 78 46"}])
                         ,mails: _U.list(["associationbougnarts@orange.fr"])})
                         ,_U.update(emptyAssoc,
-                        {nom: "Association Chambon Murol Evénements (ACME)"
+                        {nom: "Association Culture et Patrimoine de la Vallée Verte ACPVV"
                         ,domaine: "organisation de manifestations sur le massif du Sancy\n                 (fêtes de villages, Sancy Deuch…)"
-                        ,resp: _U.list([{poste: "Président",nom: "Henri-Frédéric LEGRAND",tel: "06 0868 6545"}])
-                        ,mails: _U.list(["hfl63@orange.fr"])
-                        ,sites: _U.list(["http://www.acme63.com"])})
+                        ,resp: _U.list([{poste: "Président",nom: "Henri-Frédéric LEGRAND",tel: "06 08 68 65 45"}])
+                        ,mails: _U.list(["hfl63@orange.fr"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Couleurs et motifs"
-                        ,siege: "rue du lac - 63790 CHAMBON SUR LAC"
+                        ,siege: "Allée de laPlage  Murol"
                         ,resp: _U.list([{poste: "Présidente",nom: "Jacqueline GODARD",tel: ""}])
                         ,mails: _U.list(["jacqueline.godard@free.fr"])})
                         ,_U.update(emptyAssoc,
-                        {nom: "Association culturelle et sportive de Beaune_le froid"
+                        {nom: "Association culturelle et sportive de Beaunele froid"
                         ,domaine: "activité ski de fond"
                         ,siege: "Beaune-le-Froid 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "Yannick LATREILLE",tel: "04 7388 8118"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Yannick LATREILLE",tel: "04 73 88 81 18"}])
+                        ,mails: _U.list(["yannick-latreille@hotmail.fr"])})
+                        ,_U.update(emptyAssoc,
+                        {nom: "Association culturelle et sportive de Beaune le froid"
+                        ,domaine: "activité ski de fond"
+                        ,siege: "Beaune-le-Froid 63790 MUROL"
+                        ,resp: _U.list([{poste: "Président",nom: "Yannick LATREILLE",tel: "04 73 88 81 18"}])
                         ,mails: _U.list(["yannick-latreille@hotmail.fr"])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Association de la Foire du Saint Nectaire de Beaune le Froid"
                         ,domaine: "organisation de manifestations agricoles, promotion du \n                 Saint Nectaire fermier et des produits régionaux, activités d’animation dans la commune"
-                        ,siege: "mairie de Murol, 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Pierrette TOURREIX",tel: "04 7335 9771"}])
+                        ,siege: "Mairie de Murol"
+                        ,resp: _U.list([{poste: "Présidente",nom: "Pierrette TOURREIX",tel: "04 73 35 97 71"}])
                         ,mails: _U.list(["pierrette.tourreix@orange.fr"])})
                         ,_U.update(emptyAssoc,
-                        {nom: "Association de parents d’élèves des écoles Murol-Chambon"
+                        {nom: "Association de parents d\'élèves des écoles de Murol et de Chambon sur Lac"
                         ,domaine: "contribuer et favoriser les activités scolaires et extra- scolaires"
-                        ,siege: "Mairie de Murol - 63790 Murol"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Dominique BIGAND",tel: "04 7388 6846 - Portable : 06 3213 0725"}])
+                        ,siege: "Mairie de Murol"
+                        ,resp: _U.list([{poste: "Présidente",nom: "Dominique BIGAND",tel: "06 89 59 22 94"}])
                         ,mails: _U.list(["ape.murolchambon@laposte.net"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association des Amis du Musée de Murol (AAMM)"
                         ,domaine: "soutenir, faire connaître et promouvoir le musée des peintres de l’Ecole de Murol"
                         ,siege: "rue de Chabrol, 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "Dr Bernard LAPALUS",tel: "04 7337 1088"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Dr Bernard LAPALUS",tel: "04 73 37 10 88"}])
                         ,mails: _U.list([])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association des jeunes de Murol"
-                        ,siege: "Chautignat 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Manon PEROL",tel: ""},{poste: "Contact",nom: "Victor LAGEIX",tel: "06 8159 3353"}])
+                        ,siege: "La chassagne Murol"
+                        ,resp: _U.list([{poste: "Président",nom: "Victor LAGEIX",tel: ""}])
                         ,mails: _U.list(["victor.lageix@laposte.net"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Intercommunale des Anciens Combattants"
                         ,preci: "Section de Chambon sur Lac, Murol, Saint Nectaire"
                         ,domaine: "transmettre le devoir de mémoire aux jeunes générations, assurer la solidarité"
                         ,siege: "rue Chareton, 63790 MUROL"
-                        ,resp: _U.list([{poste: "Vice Président pour Murol",nom: "Georges GAUFFIER",tel: "04 7383 6202"}])})
+                        ,resp: _U.list([{poste: "Vice Président pour Murol",nom: "Georges GAUFFIER",tel: "04 73 83 62 02"}])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Médiévale de Murol - Auvergne (AMMA)"
                         ,domaine: "promouvoir et sauvegarder le patrimoine médiéval de la commune de Murol"
-                        ,siege: "63790 Murol"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Jacqueline COUDERT",tel: ""},{poste: "Contact",nom: "Vincent Salesse",tel: "04 7326 0200"}])
+                        ,siege: "La rivière Murol"
+                        ,resp: _U.list([{poste: "Président",nom: "Vincent Salesse",tel: "06 09 04 67 92"}])
                         ,mails: _U.list(["amma.murol@laposte.net"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Sancy Celtique"
                         ,domaine: "organisation de festival"
-                        ,siege: "Maison du Prélong - 63790 Murol"
-                        ,resp: _U.list([{poste: "Président",nom: "Gérôme GODARD",tel: ""},{poste: "Contact",nom: "Vincent Salesse",tel: "04 73 26 02 00"}])
+                        ,siege: "La rivière Murol"
+                        ,resp: _U.list([{poste: "Président",nom: "Gérôme GODARD",tel: "04 73 26 02 00"}])
                         ,mails: _U.list(["amma.murol@laposte.net"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Sportive des écoles de Murol et de Chambon sur Lac (A.S.E.M.C.)"
                         ,domaine: "contribuer à l’éducation des enfants par la pratique d’activités physiques et sportives"
                         ,siege: "école primaire de Chambon sur Lac"
                         ,affil: "USEP Sancy, les Hermines"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Carine BABUT",tel: "04 7388 6816"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Claude Bourret",tel: "04 73 88 68 16"}])
                         ,mails: _U.list(["ecole.chambon-sur-lac.63@ac-clermont.fr"])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Bureau Montagne Auvergne Sancy Volcans"
                         ,domaine: "activités sportives de pleine nature grand public"
                         ,siege: "mairie de Murol Adresse : BP11 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Arlette GOIMARD",tel: "06 2275 4237"}
-                                       ,{poste: "Coordinateur activités hiver printemps",nom: "Romain Mezonnet",tel: "06 7524 1504"}
-                                       ,{poste: "Coordinateur activités estivales",nom: "Ernesto RUIZ",tel: "06 8423 8728"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Alexandre PRUNYI",tel: ""}])
                         ,mails: _U.list(["bertrandgoimard@hotmail.com","contact@guides-asv.com"])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
-                        {nom: "Chambre syndicale des commerçants des marchés du Puy de Dôme (CSCM du 63)"
-                        ,domaine: "organisation de la Foire du Terroir de Murol"
-                        ,siege: "BP 30016 63401 CHAMALIERES"
-                        ,affil: ""
-                        ,resp: _U.list([{poste: "Vice-Président",nom: "Rémy VALLAT",tel: "04 7173 6263"}])
-                        ,mails: _U.list(["remy.vallat@wanadoo.fr"])})
+                        {nom: "Bureau Montagne Auvergne Sancy Volcans"
+                        ,domaine: "activités sportives de pleine nature grand public"
+                        ,siege: "mairie de Murol Adresse : BP11 63790 MUROL"
+                        ,resp: _U.list([{poste: "Président",nom: "Alexandre PRUNYI",tel: ""}])
+                        ,mails: _U.list(["bertrandgoimard@hotmail.com","contact@guides-asv.com"])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Collectif développement des commerçants Murolais 63"
                         ,domaine: "développement de l\'activité commerciale"
                         ,siege: "rue Georges Sand - 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "jean-Jacques ROUCHVARGER",tel: "06 3297 0219"}])
+                        ,resp: _U.list([{poste: "Président",nom: "jean-Jacques ROUCHVARGER",tel: "06 32 97 02 19"}])
                         ,mails: _U.list(["njrorganisation@orange.fr"])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
@@ -12092,58 +12121,68 @@ Elm.AssociationsList.make = function (_elm) {
                                        ,{poste: "Contact",nom: "Elisabeth CROZET",tel: "06 30 03 80 69"}])
                         ,mails: _U.list(["lecosa63@gmail.com"])})
                         ,_U.update(emptyAssoc,
+                        {nom: "COSA63"
+                        ,domaine: "organisation de forums associatifs"
+                        ,resp: _U.list([{poste: "Contact",nom: "Anne-marie DOTTE",tel: "06 81 00 20 32"}
+                                       ,{poste: "Contact",nom: "Elisabeth CROZET",tel: "06 30 03 80 69"}])
+                        ,mails: _U.list(["lecosa63@gmail.com"])
+                        ,cat: Sport})
+                        ,_U.update(emptyAssoc,
                         {nom: "Don de Sang bénévole du Canton de Besse"
                         ,domaine: "organiser les collectes de sang sur le canton"
                         ,siege: "3, cour des miracles 63610 BESSE"
-                        ,resp: _U.list([{poste: "Président",nom: "Pierre SOULIER ",tel: "04 7379 5070"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Pierre SOULIER ",tel: "04 73 79 50 70"}])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
-                        {nom: "EIVV"
+                        {nom: "Ensemble Instrumental de la Vallée Verte (EIVV)"
                         ,siege: "Lac Chambon - 63790 Chambon sur lac"
-                        ,resp: _U.list([{poste: "Président",nom: "Jean-louis REBOUFFAT",tel: "04 7388 6308"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Jean-louis REBOUFFAT",tel: "04 73 88 63 08"}])
                         ,mails: _U.list(["jeanlouis.rebouffat@sfr.fr"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Elément Terre"
                         ,domaine: "éducation à l’environnement des scolaires, organisation de classes de découvertes"
-                        ,siege: "mairie de Murol BP 11- 63 790 MUROL "
-                        ,resp: _U.list([{poste: "Président",nom: "Bernard BOURGEOIS",tel: "04 7379 3523"}])
+                        ,siege: "Mairie de Murol BP 11- 63 790 MUROL "
+                        ,resp: _U.list([{poste: "Présidente",nom: "Claire FAYE",tel: ""}])
                         ,mails: _U.list(["element.terre@laposte.net"])
                         ,sites: _U.list(["www.element-terre.org"])})
+                        ,_U.update(emptyAssoc,
+                        {nom: "Elément Terre"
+                        ,domaine: "éducation à l’environnement des scolaires, organisation de classes de découvertes"
+                        ,siege: "Mairie de Murol BP 11- 63 790 MUROL "
+                        ,resp: _U.list([{poste: "Présidente",nom: "Claire FAYE",tel: ""}])
+                        ,mails: _U.list(["element.terre@laposte.net"])
+                        ,sites: _U.list(["www.element-terre.org"])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Groupement de défense contre les ennemis des cultures"
                         ,domaine: "lutte contre les nuisibles"
                         ,siege: "Chautignat - 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "Jean-Marie PEROL",tel: "04 7388 6890"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Jean-Marie PEROL",tel: "04 73 88 68 90"}])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Groupement pastorale de la Couialle"
-                        ,siege: "mairie de Murol - 63 790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "Laurent PLANEIX",tel: ""}])})
+                        ,siege: "Mairie de Murol - 63 790 MUROL"
+                        ,resp: _U.list([{poste: "Président",nom: "Angélique Lair",tel: "04 73 88 81 10"}])
+                        ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "JEEP Appellation Origine Contrôlée (JEEP AOC)"
                         ,domaine: "rassembler les amateurs de Jeep et véhicules assimilés"
                         ,siege: "Groire - 63790 MUROL"
                         ,resp: _U.list([{poste: "Président",nom: "Bruno CATTARELLI ",tel: "06 70 02 06 28"}])
-                        ,mails: _U.list(["jeepaoc@gmail.com"])
-                        ,sites: _U.list(["www.jeepaoc.com","http://jeepaoc.over-blog.com"])})
+                        ,mails: _U.list(["jeepaoc@gmail.com, info@jeepaoc.com, jeepaoc.infoclub@orange.fr"])
+                        ,sites: _U.list(["www.jeepaoc.com"])})
                         ,_U.update(emptyAssoc,
                         {nom: "La Gaule Murolaise"
                         ,domaine: "société de Pêche"
                         ,siege: "Les rives - lac Chambon 63790 Chambon sur lac"
                         ,affil: "fédération de pêche du Puy de Dôme et du milieu aquatique (LEMPDES)"
-                        ,resp: _U.list([{poste: "Président",nom: "Bernard LABASSE",tel: "04 7388 6409 / 09 6147 6717"}])
-                        ,cat: Sport})
-                        ,_U.update(emptyAssoc,
-                        {nom: "La Main Gauche"
-                        ,domaine: "club sportif de pétanque"
-                        ,siege: "bar Intimyté, route de Besse, 63790 MUROL "
-                        ,resp: _U.list([{poste: "Président",nom: "Christophe GUITTARD",tel: "06 2851 2802"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Emmanuel LABASSE",tel: "04 73 88 64 09"}])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Le XV de la Vallée Verte"
                         ,domaine: "rugby"
-                        ,siege: "bar « Les Baladins », 63790 St Nectaire"
-                        ,resp: _U.list([{poste: "Président",nom: "Bruno SERRE",tel: "04 7388 5135"}])
+                        ,siege: "Restaurant « Les Baladins », 63790 St Nectaire"
+                        ,resp: _U.list([{poste: "Président",nom: "Stéphane Crégut",tel: "06 12 56 30 47"}])
                         ,mails: _U.list(["lexvdelavalleeverte@hotmail.fr","julien.boucheix@orange.fr","contact@stephane-cregut.fr"])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
@@ -12151,33 +12190,25 @@ Elm.AssociationsList.make = function (_elm) {
                         ,domaine: "association des personnes du troisième âge"
                         ,affil: "fédération « les Aînés Ruraux » Clermont-Ferrand"
                         ,siege: "mairie de Murol, 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "Pierrette TOURREIX",tel: "04 7335 9771"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Pierrette TOURREIX",tel: "04 73 35 97 71"}])
                         ,mails: _U.list(["pierrette.tourreix@orange.fr"])})
-                        ,_U.update(emptyAssoc,
-                        {nom: "Les Chevaucheurs"
-                        ,domaine: "organisation de manifestations culturelles (reconstitution historique, combats, spectacle équestre…)"
-                        ,siege: "18 rue Guyot Dessaigne 63114 AUTHEZAT"
-                        ,resp: _U.list([{poste: "Président",nom: "Pascal BONY",tel: "07 7792 1530"}])
-                        ,mails: _U.list(["hagranyms@hotmail.fr"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Murol Remparts du Sancy"
                         ,domaine: "organisation de festivals et de manifestations culturelles (fête du 14 juillet)"
                         ,siege: "mairie, 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Bénédicte MANFRI ",tel: "06 72 16 78 46"}
-                                       ,{poste: "Secrétaire-Trésorière",nom: "Joëlle LIOUX",tel: "06 52 43 52 52"}])
+                        ,resp: _U.list([{poste: "Présidente",nom: "Bénédicte MANFRI ",tel: "06 72 16 78 46"}])
                         ,mails: _U.list(["assmurolrempart@gmail.com"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Natur ’ Sancy"
                         ,domaine: "Activité de pleine nature, tout public\n                 Protection du patrimoine naturel en milieu montagnard,\n                 activités lié à la découverte du patrimoine."
                         ,siege: "route de Besse, 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Véronique DEBOUT",tel: "04 7388 6756 ou – Tél : 06 2806 8177"}])
-                        ,mails: _U.list(["natur.sancy@gmail.com","http://natursancy.blogspot.fr/"])
-                        ,cat: Sport})
+                        ,resp: _U.list([{poste: "Présidente",nom: "Véronique DEBOUT",tel: "04 73 88 67 56"}])
+                        ,mails: _U.list(["natur.sancy@gmail.com","http://natursancy.blogspot.fr/"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Rencontre et détente"
                         ,domaine: "activités gymniques"
                         ,siege: "rue du Tartaret 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Sylvie BEAL",tel: "04 73 88 66 21"}])
+                        ,resp: _U.list([{poste: "Présidente",nom: "Sylvie Legoueix",tel: "04 73 88 66 21"}])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
                         {nom: "Société de Chasse"
@@ -12190,27 +12221,23 @@ Elm.AssociationsList.make = function (_elm) {
                         {nom: "Syndicat agricole"
                         ,domaine: "syndicat professionnel"
                         ,siege: "mairie de Murol 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Angélique LAIR",tel: "04 7388 8110"}])
+                        ,resp: _U.list([{poste: "Présidente",nom: "Angélique LAIR",tel: "04 73 88 81 10"}])
+                        ,mails: _U.list(["angelique.lair84@orange.fr"])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Syndicat hôtelier"
                         ,domaine: "syndicat professionnel"
                         ,siege: "rue de la Vieille Tour 63790 MUROL"
-                        ,resp: _U.list([{poste: "Présidente",nom: "Amélie DABERT",tel: "04 7388 6106 "}])
+                        ,resp: _U.list([{poste: "Présidente",nom: "Amélie DABERT",tel: "04 73 88 61 06 "}])
+                        ,mails: _U.list(["amelie.dabert@wanadoo.FR"])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Système d\'Echange Local \"S.SancyEL\""
                         ,domaine: "association à caractère social permettant à leur membres de procéder\n                 à des échanges de biens, de services et de savoirs, sans avoir recours à la monnaie. "
                         ,siege: "3 impasse de la Vernoze - Champeix"
-                        ,resp: _U.list([{poste: "Contact",nom: "Annie JONCOUX",tel: "04 4312 6198 ou 06 9850 4297"}
-                                       ,{poste: "Contact",nom: "Livia VAN EIJLE",tel: "04 7388 6489"}])
-                        ,mails: _U.list(["annie.joncoux@sfr.fr"," Livia.vaneijle@wanadoo.fr"])})
-                        ,_U.update(emptyAssoc,
-                        {nom: "Les Scieurs d’Antan des Monts des Dômes"
-                        ,domaine: "organisation de manifestations culturelles,\n                 faire revivre les vieux métiers de la terre"
-                        ,siege: "6, allée de Rivassol 63 830 NOHANENT"
-                        ,resp: _U.list([{poste: "Président",nom: "Maurice BARD",tel: "04 7362 8487"}])})
-                        ,_U.update(emptyAssoc,{nom: "Académie de la Gentiane",mails: _U.list(["academiegentiane@orange.fr"])})
+                        ,resp: _U.list([{poste: "Coprésidente",nom: "Annie JONCOUX",tel: "04 43 12 61 98 ou 06 9850 4297"}
+                                       ,{poste: "Coprésidente",nom: "Livia VAN EIJLE",tel: "04 7388 6489"}])
+                        ,mails: _U.list(["annie.joncoux@sfr.fr"," Livia.vaneijle@wanadoo.fr","j-p.lanaro@orange.fr"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Camping qualité Auvergne"
                         ,domaine: "charte professionnelle de qualité"
@@ -12221,7 +12248,7 @@ Elm.AssociationsList.make = function (_elm) {
    var culture = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Culture);},assocs));
    var sport = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Sport);},assocs));
    var pro = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Pro);},assocs));
-   var associations = _U.list([{ctor: "_Tuple3",_0: "Culture et événementiel",_1: "/images/tiles/misc/ASSOC CULTURE.jpg",_2: _U.list([culture])}
+   var associations = _U.list([{ctor: "_Tuple3",_0: "Culture, Evénementiel, Solidarité",_1: "/images/tiles/misc/ASSOC CULTURE.jpg",_2: _U.list([culture])}
                               ,{ctor: "_Tuple3",_0: "Sport",_1: "/images/tiles/misc/ASSOC SPORT.jpg",_2: _U.list([sport])}
                               ,{ctor: "_Tuple3",_0: "Professionnel",_1: "/images/tiles/misc/ASSOC PRO.jpg",_2: _U.list([pro])}]);
    var Responsable = F3(function (a,b,c) {    return {poste: a,nom: b,tel: c};});

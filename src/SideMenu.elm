@@ -6,6 +6,7 @@ import Html.Events exposing (..)
 import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Dict exposing (..)
+import UrlParsing exposing (getTitle)
 import TiledMenu exposing (init,view,update,Action)
 
 -- Model
@@ -23,6 +24,15 @@ init : String -> String -> List String -> List (String,Content) -> Model
 init title current entries contentList = 
     Model title current entries (Dict.fromList contentList)
 
+initAt : String -> String -> String -> List String -> List (String,Content) -> Model
+initAt title current urlParams entries contentList =
+  let contentMap = Dict.fromList contentList
+      altCurrent = (getTitle urlParams)
+       
+  in case (Dict.get altCurrent contentMap) of
+      Nothing -> Model title current entries contentMap
+      Just _ ->
+        Model title altCurrent entries contentMap
 
 -- Update
 type Action = 
@@ -78,7 +88,7 @@ renderSideMenu address model =
       es    = .entries model 
       pos   = .current model
       isCurrent e = classList [("submenuCurrent", e == pos)]
-      toA e = a [id e, onClick address (Entry e), href "#", isCurrent e]
+      toA e = a [id e, onClick address (Entry ( removeSpecialChars e)), href "#", isCurrent e]
                 [text e]
       linkList = List.map toA es
   in
@@ -104,3 +114,24 @@ menuWithContextToContent m c = Menu (Just c,m)
 
 htmlToContent : Html -> Content
 htmlToContent h = Doc h
+
+removeSpecialChars : String -> String
+removeSpecialChars input =
+  let replacements = 
+        Dict.fromList
+          [('é','e')
+          ,('è','e')
+          ,('ç','c')
+          ,('à','a')
+          ,('â','a')
+          ,('û','u')
+          ,('ê','e')
+          ,('ô','o')
+          ,('î','i')
+          ]
+      replace c = 
+        case (Dict.get c replacements) of
+          Nothing -> c
+          Just c' -> c'
+  in String.map replace input      
+

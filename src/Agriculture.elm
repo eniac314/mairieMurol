@@ -37,6 +37,7 @@ type alias Agriculteur =
    , fax   : String
    , mail  : String
    , site  : String
+   , refOt : Maybe (String,String)
    }
 
 type alias AgriculteurMap = Dict String (List Agriculteur)
@@ -67,13 +68,17 @@ renderAgriculteurMap am =
             ( [ h5 [] [text k]] ++
                 List.map renderAgriculteur v)) :: acc
       toDivs = Dict.foldr toDiv [] am
-
+      agri   = List.map renderAgriculteur (Maybe.withDefault [] (Dict.get "Agriculteur & producteur de fromages" am))
       col ds = div [class "column"] ds
 
-  in div [] (List.map col (split3' toDivs)) 
+  --in div [] (List.map col (split3' toDivs))
+  in div [] 
+         ([h5 [] [text "Agriculteur & producteur de fromages: "]] ++ 
+         (List.map col (split3' agri)))
+  --in div [] toDivs 
 
 renderAgriculteur : Agriculteur -> Html
-renderAgriculteur { name, descr, addr, tel, fax, mail, site} = 
+renderAgriculteur { name, descr, addr, tel, fax, mail, site, refOt} = 
   let name'  = maybeElem name (\s -> p [] [text s])
       descr' = List.map (\s -> p [] [text s]) descr
       addr'  = maybeElem addr (\s -> p [] [text s])
@@ -86,7 +91,13 @@ renderAgriculteur { name, descr, addr, tel, fax, mail, site} =
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
-  in div [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site'])
+      refOt' = case refOt of
+                 Nothing ->  nullTag
+                 Just (n,ad) -> p [] [ text ("Référence OT: ")
+                                     , a [href ad, target "_blank"]
+                                         [text n]
+                                     ] 
+  in div [class "businesses"] ([name', div [] ([refOt'] ++ descr' ++ [addr', tel', fax', mail', site'])])
 
 
 maybeElem : String -> ( String -> Html ) -> Html
@@ -149,26 +160,66 @@ initialContent =
       ] 
 
 --Data 
-defAgri = Agriculteur "" [] "" "" "" "" ""
+defAgri = Agriculteur "" [] "" "" "" "" "" Nothing
 
 agriMap = fromList
   [("Agriculteur & producteur de fromages"
    , [{ defAgri |
         name   = "GAEC de Chautignat"
-      , addr   = "Chautignat - 63790 Murol"
-      , tel    = "04 7388 8192"  
+      , addr   = "Chautignat 63790 Murol"
+      , tel    = "04 73 88 81 92"  
       }
      ,
       { defAgri |
         name   = "Tourreix Pascal"
-      , addr   = "Beaune Le Froid 63790 MUROL"
-      , tel    = "04 7388 6234 ou 09 6149 3912" 
+      , addr   = "Beaune Le Froid 63790 Murol"
+      , tel    = "04 73 88 62 34" 
       }
      ,
       { defAgri |
-        name   = "Tixier David"
-      , addr   = "Beaune Le Froid 63790 MUROL"
-      , tel    = "04 7388 8110"  
-      }]
+        name   = "GAEC Tixier"
+      , addr   = "Beaune Le Froid 63790 Murol"
+      , tel    = "04 73 88 81 10"
+      , refOt  = Just ("4500","http://www.sancy.com/activites/detail/4500/murol/gaec-tixier")
+      }
+      ,
+      { defAgri |
+        name   = "GAEC des Monts Dores"
+      , addr   = "Beaune le Froid 63790 Murol "
+      , tel    = "04 73 88 64 75 "
+      , refOt  = Just ("4179","http://www.sancy.com/activites/detail/4179/murol/gaec-des-monts-dore")
+      }
+      ,
+      { defAgri |
+        name   = "GAEC des Noisetiers"
+      , addr   = "Beaune le Froid 63790 Murol"
+      , tel    = "04 73 88 66 32 "
+      }
+      ,
+      { defAgri |
+        name   = "GAEC de la route des caves"
+      , addr   = "Beaune le Froid 63790 Murol "
+      , tel    = "04 73 88 65 85"
+      , refOt  = Just ("4181","http://www.sancy.com/activites/detail/4181/murol/gaec-de-la-route-des-caves-ferme-roux")
+      }
+      ,
+      { defAgri |
+        name   = "Laurent PLANEIX"
+      , addr   = "Beaune le Froid 63790 Murol"
+      , tel    = "04 73 88 60 74 "
+      }
+      ,
+      { defAgri |
+        name   = "Philippe BEAL"
+      , addr   = "Les Ballats 63790 Murol"
+      , tel    = "04 73 88 60 47 "
+      }
+      ,
+      { defAgri |
+        name   = "Daniel BOUCHE"
+      , addr   = "Beaune le Froid 63790 Murol"
+      , tel    = "04 73 88 67 28 "
+      }
+      ]
    ) 
   ]

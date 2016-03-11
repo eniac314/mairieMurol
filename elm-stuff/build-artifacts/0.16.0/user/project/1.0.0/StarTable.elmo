@@ -29,7 +29,9 @@ Elm.StarTable.make = function (_elm) {
                               return function (j) {
                                  return function (k) {
                                     return function (l) {
-                                       return {name: a,label: b,stars: c,refOt: d,descr: e,addr: f,tel: g,fax: h,mail: i,site: j,pjaun: k,pics: l};
+                                       return function (m) {
+                                          return {name: a,label: b,stars: c,epis: d,refOt: e,descr: f,addr: g,tel: h,fax: i,mail: j,site: k,pjaun: l,pics: m};
+                                       };
                                     };
                                  };
                               };
@@ -43,13 +45,15 @@ Elm.StarTable.make = function (_elm) {
       };
    };
    var NoLabel = {ctor: "NoLabel"};
-   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")(_U.list([]))("")("")("")("")("")("")(_U.list([]));
+   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")($Maybe.Nothing)(_U.list([]))("")("")("")("")("")("")(_U.list([]));
    var FamillePlus = {ctor: "FamillePlus"};
-   var addStars = F2(function (n,s) {
+   var addStars = F3(function (n,e,s) {
       var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
       var _p1 = n;
       if (_p1.ctor === "Nothing") {
-            return $Html.text(s);
+            return $String.isEmpty(e) ? $Html.text(s) : A2($Html.span,
+            _U.list([]),
+            _U.list([$Html.text(A2($Basics._op["++"],s," - ")),A2($Html.span,_U.list([$Html$Attributes.$class("epis")]),_U.list([$Html.text(e)]))]));
          } else {
             return A2($Html.span,
             _U.list([]),
@@ -62,7 +66,17 @@ Elm.StarTable.make = function (_elm) {
       var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
       var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
       var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
-      var refOt$ = A2(maybeElem,_p3.refOt,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Référence OT: ",s))]));});
+      var refOt$ = function () {
+         var _p4 = _p3.refOt;
+         if (_p4.ctor === "Nothing") {
+               return nullTag;
+            } else {
+               return A2($Html.p,
+               _U.list([]),
+               _U.list([$Html.text("Référence OT: ")
+                       ,A2($Html.a,_U.list([$Html$Attributes.href(_p4._0._1),$Html$Attributes.target("_blank")]),_U.list([$Html.text(_p4._0._0)]))]));
+            }
+      }();
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var pjaun$ = A2(maybeElem,
       _p3.pjaun,
@@ -81,7 +95,7 @@ Elm.StarTable.make = function (_elm) {
       });
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var label$ = labelToHtml(_p3.label);
-      var name$ = A2($Html.h6,_U.list([]),_U.list([A2(addStars,_p3.stars,_p3.name)]));
+      var name$ = A2($Html.h6,_U.list([]),_U.list([A3(addStars,_p3.stars,_p3.epis,_p3.name)]));
       return A2($Html.tr,
       _U.list([$Html$Attributes.$class(alt$)]),
       _U.list([A2($Html.td,
@@ -91,11 +105,11 @@ Elm.StarTable.make = function (_elm) {
    });
    var makeTable = F2(function (name,entries) {
       var makeRows = F2(function (b,xs) {
-         var _p4 = xs;
-         if (_p4.ctor === "[]") {
+         var _p5 = xs;
+         if (_p5.ctor === "[]") {
                return _U.list([]);
             } else {
-               return A2($List._op["::"],A2(makeRow,_p4._0,b),A2(makeRows,$Basics.not(b),_p4._1));
+               return A2($List._op["::"],A2(makeRow,_p5._0,b),A2(makeRows,$Basics.not(b),_p5._1));
             }
       });
       return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));

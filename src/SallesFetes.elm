@@ -104,14 +104,20 @@ initialContent =
               , p [] [text "Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03"]
               , h4 [] [text "Calendrier disponibilités"]
               , div [ id "bigAgenda"] 
-                    [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=r46rbonnui234n2b2glau5btoo%40group.calendar.google.com&color=%231B887A&amp;ctz=Europe%2FParis"] []
+                    [ iframe [src "https://calendar.google.com/calendar/embed?mode=WEEK&showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=r46rbonnui234n2b2glau5btoo%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=Europe%2FParis"] []
                     ]             
               ]
             )
             ,
             ( "Salle des fêtes de Beaune"
             , "/images/tiles/misc/salle de Beaune.jpg"
-            , [
+            , [ p [] [text "Pour réserver un créneau horaire, contactez nous:"]
+              , mail "murolanimation@orange.fr"
+              , p [] [text "Tel: 04 73 88 60 67 / Fax : 04 73 88 65 03"]
+              , h4 [] [text "Calendrier disponibilités"]
+              , div [ id "bigAgenda"] 
+                    [ iframe [src "https://calendar.google.com/calendar/embed?mode=WEEK&showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=n1jce3hgvarkt6n3o69c6nl66g%40group.calendar.google.com&amp;color=%231B887A&amp;ctz=Europe%2FParis"] []
+                    ]             
               ]
             )
            ]
