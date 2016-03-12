@@ -1648,8 +1648,52 @@ h5.trashCat {
 
 /*--end of code for Mairie-------------------------------------------------------*/
 
+
+
 /*-------------------------------------------------------------------------------
-  style fot Associations
+style for Culture et loisirs
+-------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for Artiste
+-------------------------------------------------------------------------------*/
+
+.artiste {
+  width: 600px;
+  margin: auto;
+  margin-bottom: 1em;
+  padding: 1em 0; 
+  text-align: center;
+  border: 1px solid black;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.artiste h5 {
+  width: 500px;
+  color: black;
+  border-bottom: 4px double black;
+  margin: auto;
+  margin-bottom: 0.5em;
+}
+
+.artiste img {
+  width: 500px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px dimgray;
+  max-width: 100%;
+  display: block;
+  clear: right;
+  margin: auto;
+}
+
+.artiste a {
+}
+
+/*--end of code for Artiste------------------------------------------------------*/
+
+/*-------------------------------------------------------------------------------
+  style for Associations
 -------------------------------------------------------------------------------*/
 .assoc {
   background: linear-gradient(to top, rgba(97,124,129,0.2), rgba(110,117,142,0.9));
