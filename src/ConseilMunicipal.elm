@@ -82,18 +82,30 @@ initialContent =
                      affaires de la commune : vote du budget, 
                      gestion du domaine municipal… Le nombre d’adjoints est 
                      déterminé par le nombre d’habitants de la ville. 
-                     Avec ses 500 habitants, Murol bénéficie de 4 
+                     Avec plus de 500 habitants, Murol bénéficie de 4 
                      adjoints. Le conseil se réunit généralement une fois 
                      par mois, sauf en été. Les séances sont 
                      publiques."]
-      , p  [] [text "Dans un souci de transparence et de participation 
-                     des citoyens à la démocratie locale, les projets 
-                     de délibération soumis au vote du Conseil Municipal 
-                     sont diffusés avant chaque séance."]
-      , p  [] [text "Les comptes-rendus des débats et les délibérations sont 
-                     publiés à l’issue des séances sur la page 
-                     compte rendu, vous les trouverez également sur les 
-                     panneaux d'informations de la mairie. "]
+      --, p  [] [text "Dans un souci de transparence et de participation 
+      --               des citoyens à la démocratie locale, les projets 
+      --               de délibération soumis au vote du Conseil Municipal 
+      --               sont diffusés avant chaque séance."]
+      --, p  [] [text "Les comptes-rendus des débats et les délibérations sont 
+      --               publiés à l’issue des séances sur la page 
+      --               compte rendu, vous les trouverez également sur les 
+      --               panneaux d'informations de la mairie. "]
+      , p []
+          [ text "Dans un souci de transparence et de participation 
+                 des citoyens à la démocratie locale l’ordre du 
+                 jour des réunions du conseil municipal est affiché 
+                 sur les panneaux d’informations de la mairie et 
+                 les délibérations sont publiées à l’issue des séances 
+                 sur la page «"
+          , a [href "/Délibérations.html"]
+              [text "délibérations"]
+          , text "» du site."
+          ]
+
       , h4 [] [text "Rôles et missions des élus"]
       , h5 [] [text "Le Maire"]
       , p  [] [text "Le Maire est le représentant de l’Etat dans la commune. "]
@@ -134,10 +146,21 @@ initialContent =
                      motivations : finances, habitat, culture, environnement, etc. "]
 
       , h5 [] [text "Les conseillers municipaux"]
-      , p  [] [text "Quant aux Conseillers municipaux , ils ont reçu 
-                     une délégation pour exercer une mission précise auprès 
-                     des adjoints ou du Maire."]
+      --, p  [] [text "Quant aux Conseillers municipaux , ils ont reçu 
+      --               une délégation pour exercer une mission précise auprès 
+      --               des adjoints ou du Maire."]
       
+      , p []
+          [ text "Les conseillers municipaux participent et votent les délibérations 
+                 lors des réunions du conseil municipal. De plus, 
+                 ils travaillent dans le cadre des commissions communales 
+                 et représentent la commune au sein des intercommunalités 
+                 en tant que délégués. (cf document "
+          , a [href "", target "_blank"]
+              [text "commissions et 
+                     délégations"]
+          , text ")"
+          ]
       , h4 [] [text "Vos élus"]
       , table [] 
               [ tr [] [ td [] [img [src "/images/elus/GOUTTEBEL.jpg"] []]

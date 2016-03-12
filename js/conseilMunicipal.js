@@ -11771,13 +11771,12 @@ Elm.ConseilMunicipal.make = function (_elm) {
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le Conseil Municipal")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le conseil municipal règle par ses délibérations les \n                     affaires de la commune : vote du budget, \n                     gestion du domaine municipal… Le nombre d’adjoints est \n                     déterminé par le nombre d’habitants de la ville. \n                     Avec ses 500 habitants, Murol bénéficie de 4 \n                     adjoints. Le conseil se réunit généralement une fois \n                     par mois, sauf en été. Les séances sont \n                     publiques.")]))
+           _U.list([$Html.text("Le conseil municipal règle par ses délibérations les \n                     affaires de la commune : vote du budget, \n                     gestion du domaine municipal… Le nombre d’adjoints est \n                     déterminé par le nombre d’habitants de la ville. \n                     Avec plus de 500 habitants, Murol bénéficie de 4 \n                     adjoints. Le conseil se réunit généralement une fois \n                     par mois, sauf en été. Les séances sont \n                     publiques.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Dans un souci de transparence et de participation \n                     des citoyens à la démocratie locale, les projets \n                     de délibération soumis au vote du Conseil Municipal \n                     sont diffusés avant chaque séance.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les comptes-rendus des débats et les délibérations sont \n                     publiés à l’issue des séances sur la page \n                     compte rendu, vous les trouverez également sur les \n                     panneaux d\'informations de la mairie. ")]))
+           _U.list([$Html.text("Dans un souci de transparence et de participation \n                 des citoyens à la démocratie locale l’ordre du \n                 jour des réunions du conseil municipal est affiché \n                 sur les panneaux d’informations de la mairie et \n                 les délibérations sont publiées à l’issue des séances \n                 sur la page «")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/Délibérations.html")]),_U.list([$Html.text("délibérations")]))
+                   ,$Html.text("» du site.")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Rôles et missions des élus")]))
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Le Maire")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le Maire est le représentant de l’Etat dans la commune. ")]))
@@ -11820,7 +11819,11 @@ Elm.ConseilMunicipal.make = function (_elm) {
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les conseillers municipaux")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Quant aux Conseillers municipaux , ils ont reçu \n                     une délégation pour exercer une mission précise auprès \n                     des adjoints ou du Maire.")]))
+           _U.list([$Html.text("Les conseillers municipaux participent et votent les délibérations \n                 lors des réunions du conseil municipal. De plus, \n                 ils travaillent dans le cadre des commissions communales \n                 et représentent la commune au sein des intercommunalités \n                 en tant que délégués. (cf document ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("commissions et \n                     délégations")]))
+                   ,$Html.text(")")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Vos élus")]))
            ,A2($Html.table,
            _U.list([]),

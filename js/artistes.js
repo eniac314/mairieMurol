@@ -11769,27 +11769,126 @@ Elm.Artistes.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("artistes")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Artistes Murolais")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Site Internet gratuit des \"Artistes Murolais Contemporains\":")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Danielle lance l\'idée d\'un Site Internet gratuit des \"Artistes Murolais Contemporains\"")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Peinture, dessin, poésie, sculpture, artisanat d\'art, etc.....")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("vous êtes intéressés, contactez-la en utilisant les lien ci-dessous")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://murol-terre-des-arts.wifeo.com"," http://murol-terre-des-arts.wifeo.com")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://murolpoesicales.wifeo.com","http://murolpoesicales.wifeo.com")]))
-           ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://daniellaero.wifeo.com","http://daniellaero.wifeo.com")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Cath Cuir: ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de Chabrol 63790 MUROL")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 0611891452")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert de juin à août ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Création d\'un orchestre")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Murol est source d’inspiration ! ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Madame Marie-Laure Franc, chef d\'orchestre, cherche des musiciens pour créer un orchestre dans notre région.")]))
+           _U.list([$Html.text("De nombreux artistes et artisans d’art y sont \n                     nés ou s’y sont installés. Leurs passions sont \n                     très diverses : peinture, sculpture, musique, couture, littérature… \n                     Ils travaillent le cuir, le fer, le bois… ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Je suis chef d\'orchestre et je cherche des \n                     musiciens pour créer un orchestre dans notre région. \n                     Le projet est de faire quelques concerts par \n                     an en soutien aux associations humanitaires. Je fais \n                     ça à titre bénévole, ne demande aucune participation \n                     financière, mais simplement musicale dans une ambiance conviviale, \n                     pour développer les activités artistiques dans notre région. \n                     N\'hésitez pas à me contacter quel que soit \n                     votre instrument et niveau. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Contact :")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 06 13 39 33 01")]))
-           ,$Murol.mail("mariefranc@orange.fr")]));
+           _U.list([$Html.text("Pour les découvrir, suivez les liens en cliquant \n                     sur leurs noms. La plupart des liens conduit \n                     sur le site ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("www.murol-terre-des-arts.wifeo.com"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("www.murol-terre-des-arts.wifeo.com")]))
+                   ,$Html.text("qui présente également des \n                      artistes des environs de Murol. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Allez le voir ! ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les artistes de Murol et d’ailleurs ont maintenant \n                    leur festival à Murol : ")]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+           _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Le festival d’Art ")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ce festival regroupe de très nombreux artistes et \n                   artisans d’art venus de tous horizons dont les \n                   œuvres envahissent les rues et places de Murol \n                   durant une journée d’été riche en couleurs. Petits \n                   et grands déambulent accompagnés par les animations de \n                   rue jusqu’au soir où ils peuvent partager l’ambiance \n                   festive du concert de clôture. ")]))
+           ,A2($Html.div,
+           _U.list([]),
+           _U.list([A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+                   _U.list([$Html.text("Festival d’Art 2016 : dimanche 31 juillet ")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+                   _U.list([$Html.text("Pour vous inscrire, contactez la mairie au 04 \n                          73 88 60 67 ou par mail à ")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+                   _U.list([$Html.text("murolanimation@orange.fr")]))]))
+           ,A2($Html.a,_U.list([$Html$Attributes.href("/FestivalArt.html")]),_U.list([$Html.text("Lien avec la photothèque!")]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Marie ABDESSELAM : création de figurines…")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/Entete-Marie.jpg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/marie-magnaval.php")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Danielle BESSE : aérographe, dessin, peinture…")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/FresqueA-2012.jpg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://daniellaero.wifeo.com/")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Fabienne LAVEDRINE (atelier HOTANTIK BY FAB) : ferronnerie d’Art, sculpture")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/lavedrine1.jpg")]),_U.list([]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/lavedrine2.jpg")]),_U.list([]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/lavedrine3.jpg")]),_U.list([]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/lavedrine4.jpg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.hotantikbyfab.fr/")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Annie DUMONTEL : couture, création de costumes")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image3.jpeg")]),_U.list([]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image4.jpeg")]),_U.list([]))
+                   ,A2($Html.a,_U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("")]),_U.list([$Html.text("l’atelier couture")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Claire GOUTTEBEL : création de mini vitrines artisanales")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/Claire-Gouttebel.jpeg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/claire-gouttebel.php")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Marc HUMBERT : artisan d’Art, travaille le cuir")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image7.jpeg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/marc-humbert.php")]),
+                   _U.list([$Html.text("site officiel 1")]))
+                   ,A2($Html.br,_U.list([]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.marc-humbert-cuir.com/acc")]),
+                   _U.list([$Html.text("site officiel 2")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Alice JUAN : peinture")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image8.jpeg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/alice-juan.php")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Cathy MAURY : peinture, sculpture…")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image9.jpeg")]),_U.list([]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image10.jpeg")]),_U.list([]))
+                   ,A2($Html.a,_U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("")]),_U.list([$Html.text("")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Berny MEALLET : sculpture sur bois")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image11.jpeg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/berny-meallet.php")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Gérard PEUCH :  poésie, peinture…")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image12.jpeg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/gerard-peuch.php")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Rudolf SCHÖN : violoniste, pianiste….")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image13.jpeg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/rudolf-schon.php")]),
+                   _U.list([$Html.text("site officiel")]))]))
+           ,A2($Html.div,
+           _U.list([$Html$Attributes.$class("artiste")]),
+           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Olivier SIMON : sculpture sur bois")]))
+                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image14.jpeg")]),_U.list([]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/olivier-simon.php")]),
+                   _U.list([$Html.text("site officiel")]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

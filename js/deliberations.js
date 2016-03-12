@@ -11795,9 +11795,8 @@ Elm.Deliberations.make = function (_elm) {
                             ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"19 mars","http://www.murol.fr/Deliberations_conseil/2015/CM19032015.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"15 avril","http://www.murol.fr/Deliberations_conseil/2015/CM15042015.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"2 juin","http://www.murol.fr/Deliberations_conseil/2015/CM24092015.pdf")]))
-                            ,A2($Html.li,
-                            _U.list([]),
-                            _U.list([A2($Murol.link,"4 novembre","http://www.murol.fr/Deliberations_conseil/2015/CM04112015.pdf")]))]))]))));
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"4 novembre","http://www.murol.fr/Deliberations_conseil/2015/CM04112015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"3 décembre","")]))]))]))));
    var initialContent = delib;
    var update = F2(function (action,model) {    var _p2 = action;return model;});
    var view = F2(function (address,model) {

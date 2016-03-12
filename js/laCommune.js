@@ -11771,22 +11771,45 @@ Elm.LaCommune.make = function (_elm) {
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La commune")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("La population de Murol est de 555 habitants \n                   (546 + 9 comptés à part). On compte \n                   266 résidences principales, avec une augmentation de + \n                   8% en 10 ans et 424 résidences secondaires, \n                   avec une augmentation de +9% sur la même \n                   période (INSEE 2009). Le commerce et les services \n                   représentent le principal secteur d’activité de notre commune \n                   avec 67% des établissements, mais l’agriculture reste présente \n                   avec 12% des établissements. ")]))
+           _U.list([$Html.text("La commune de Murol, s\'étend sur une superficie \n                 de 15 km² à une altitude de 785m \n                 à 1500m, au cœur du ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.parcdesvolcans.fr"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text(" Parc Naturel Régional \n                      des Volcans d’Auvergne")]))
+                   ,$Html.text(" et au pied du Massif \n                 du Sancy. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le territoire du Parc Naturel Régional des Volcans \n                   d’Auvergne est la première destination touristique de la \n                   région. Il propose les sites emblématiques les plus \n                   fréquentés de la région Auvergne. Or, Murol, au \n                   cœur du Parc, se trouve cerné par les \n                   volcans de la Chaîne des Puys et les \n                   sommets du Sancy, surplombé par le château de \n                   Murol (deuxième site sur Sancy-Volcan) qui attire 100 \n                   000 visiteurs payants par an. Le nombre de \n                   personnes passant au pied du château ne peut \n                   être quantifié avec exactitude, mais il est estimé \n                   à 300 000. ")]))
+           _U.list([$Html.text("Murol est surplombé par le château de Murol \n                     qui attire 100 000 visiteurs payants par an \n                     et bénéficie de l’attrait du lac Chambon où \n                     l’on enregistre 400 000 passages par an.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("La fréquentation touristique est très importante : le \n                   taux de fonction touristique atteint dans notre vallée \n                   6.82, chiffre le plus élevé dans le massif \n                   du Sancy, qui est a comparé avec le \n                   chiffre moyen de 1.3 au niveau national et \n                   5.3, chiffre moyen des zones de montagne. La \n                   population de Murol est multipliée par plus de \n                   3 en hiver et plus de 5 en \n                   été grâce aux atouts dont notre destination touristique \n                   dispose. ")]))
+           _U.list([$Html.text("La politique touristique de la commune de Murol \n                     lui a permis d’obtenir le référencement « Station \n                     Verte » en 1964, la labellisation Famille Plus \n                     en 2011, qui récompense ses efforts en faveur \n                     de l’accueil des familles, et le classement station \n                     de tourisme en janvier 2014. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Station Verte depuis 1964, notre commune convient parfaitement \n                   à des vacances orientées « Nature». C’est pourquoi, \n                   nous comptabilisons de nombreuses familles, notamment en été, \n                   qui profitent des activités de pleine nature, au \n                   lac ou sur nos sentiers. Dans une étude \n                   réalisée en décembre 2007, portant sur la composition \n                   de la clientèle en séjour à Murol, on \n                   compte 67.8% des visiteurs qui viennent en famille, \n                   22.3% en couple, 6.8% entre amis. Sans oublier \n                   qu’il y a un nombre non négligeable d’étrangers \n                   qui séjournent à Murol, nous ayant incité à \n                   nous rendre davantage accessible d’un point de vue \n                   linguistique avec, par exemple, la traduction de nos \n                   ouvrages au musée et l’emploi de personnel bilingue. ")]))
+           _U.list([$Html.text("Depuis 1999, la commune de Murol est membre \n                  de la ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.cc-massifdusancy.fr "),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("Communauté de Commune du Massif du \n                     Sancy")]))
+                   ,$Html.text(" qui compte 16 communes à ce jour. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Par ailleurs, notre commune, qui se situe à \n                   deux pas des deux principales stations de ski \n                   alpin du Massif du Sancy, bénéficie de la \n                   présence d’un foyer de ski nordique (avec une \n                   zone de raquette) au village de Beaune-le-Froid, à \n                   1000m d’altitude. Les pistes s’étendent dans la Forêt \n                   de Beaune-leFroid (gérée par l’Office National des Forêts). \n                   Ce site engendre une certaine complémentarité dans l’offre \n                   et nous permet de compter également sur le \n                   tourisme hivernal dès le mois de décembre.")]))
+           _U.list([$Html.text("La commune appartient à de multiples intercommunalités qui \n                 permettent la mutualisation des compétences et s’appuie sur \n                 un partenariat actif avec les collectivités locales. (cf. \n                 document ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("les apports des intercommunalités et du partenariat")]))
+                   ,$Html.text(")")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("En intersaison, nous accueillons davantage les vacanciers sans \n                   enfants, les seniors et un nombre croissant de \n                   camping-caristes, ce qui permet un allongement notable de \n                   la saison touristique.")]))
+           _U.list([$Html.text("La population de Murol était de 544 habitants \n                 en 2012. Les nouveaux chiffres du recensement 2016 \n                 ne sont pas encore publiés par l\'")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.insee.fr/fr/themes/comparateur.asp?codgeo=com-63247 "),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("INSEE")]))
+                   ,$Html.text(".")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("On comptait 651 logements en 2012 dont 40% \n                    de résidences principales. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La fréquentation touristique est très importante : le \n                     taux de fonction touristique atteint dans notre vallée \n                     6.82, chiffre le plus élevé dans le massif \n                     du Sancy, qui est a comparé avec le \n                     chiffre moyen de 1.3 au niveau national et \n                     5.3, chiffre moyen des zones de montagne. La \n                     population de Murol est multipliée par plus de \n                     3 en hiver et plus de 5 en \n                     été grâce aux atouts dont notre destination touristique \n                     dispose. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("L’INSEE fait état de 125 établissements actifs en \n                     décembre 2013. Le commerce et les services représentent \n                     le principal secteur d’activité avec 71% des établissements, \n                     la construction suit avec 9,6% et l’agriculture reste \n                     présente avec 7,2% des établissements. ")]))
            ,A2($Html.a,_U.list([$Html$Attributes.href("/Photothèque.html")]),_U.list([$Html.text("La photothèque")]))
            ,A2($Html.br,_U.list([]),_U.list([]))
            ,A2($Html.a,_U.list([$Html$Attributes.href("/VillageFleuri.html")]),_U.list([$Html.text("Murol village fleuri")]))]));

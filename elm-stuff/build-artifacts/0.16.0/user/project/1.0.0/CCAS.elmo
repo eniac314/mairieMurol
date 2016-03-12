@@ -19,12 +19,120 @@ Elm.CCAS.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("ccas")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Centre Communal d\'Action Social")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Président: Sébastien GOUTTEBEL")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vice-présidente: Sylvie GILLARD")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres: Véronique DEBOUT, Joséphine LANARO, Cathy MAURY")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Régie : Joséphine LANARO")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Membres non élus désignés par le maire parmi les Murolais:")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Paulette Benatek, Floriane Chazet-Fillon, Olivier Dhainaut, Monique Picot et Suzanne Planeix")]))]));
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le CCAS organise chaque année des manifestations\n                  pour petits et grands (Noël des enfants et ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/Annee2016.html")]),_U.list([$Html.text("repas du CCAS")]))
+                   ,$Html.text(").")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("En dehors de ces actions collectives, le CCAS \n                  souhaite être une ")
+                   ,A2($Html.b,_U.list([]),_U.list([$Html.text("réponse de proximité")]))
+                   ,$Html.text(" aux difficultés \n                 que vous pouvez rencontrer dans votre vie quotidienne:")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Aide d’urgence")]))
+                           ,$Html.text(" grâce à la régie d’avance\n                                  (denrées alimentaires, soins médicaux,\n                                   transport, fourniture d’énergie…) ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Secours")])),$Html.text(" ponctuels ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Don de "),A2($Html.b,_U.list([]),_U.list([$Html.text("bois")])),$Html.text(" de chauffage")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Aide pour les ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("démarches administratives")]))
+                           ,$Html.text(" (constitution de \n                            dossiers, mise en relation avec les services sociaux…) ")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Aide à l’accès à la ")
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("téléassistance")]))
+                           ,$Html.text(" pour \n                           les personnes seules, financée en partie par le \n                           CCAS")]))]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"},{ctor: "_Tuple2",_0: "fonts-size",_1: "2em"}]))]),
+           _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("N’hésitez pas à nous contacter! ")]))]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+           _U.list([$Html.text("Les membres du CCAS se sont engagés à \n                la confidentialité. ")]))
+           ,A2($Html.table,
+           _U.list([$Html$Attributes.id("tableCCAS")]),
+           _U.list([A2($Html.th,_U.list([$Html$Attributes.colspan(5)]),_U.list([$Html.text("LES MEMBRES DU CENTRE COMMUNAL D’ACTION SOCIALE (CCAS)")]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Sébastien")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("GOUTTEBEL")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("président")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Chautignat")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 45 28 85 89")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Sylvie")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("GILLARD")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("vice-présidente")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Allée de la Plage")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 60 97 80 58")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Floriane")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("CHAZEY")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("secrétaire")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Rue George Sand")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 79 79 20 71")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Catherine")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("MAURY")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("trésorière")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Rue de la Vieille Tour")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 45 18 45 35")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Joséphine")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("LANARO")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("régisseur")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Allée de la Plage")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 33 65 09 04")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Monique")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("PICOT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("régisseur suppléante")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("La Chassagne")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("04 73 88 65 79")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Véronique")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("DEBOUT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("conseillère municipale")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Rue de Besse")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 28 06 81 77")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Christelle")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("ROUX")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("conseillère municipale")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Route de Jassat")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 47 01 43 62")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Paulette")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("BENATEK")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("membre nommé")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Chautignat")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("04 73 88 63 90")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Olivier")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("DHAINAUT")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("membre nommé")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Groire")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("06 99 40 17 08")]))]))
+                   ,A2($Html.tr,
+                   _U.list([]),
+                   _U.list([A2($Html.td,_U.list([]),_U.list([$Html.text("Suzanne")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("PLANEIX")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("membre nommé")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("Rue de la Vieille Tour")]))
+                           ,A2($Html.td,_U.list([]),_U.list([$Html.text("04 73 78 65 08")]))]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

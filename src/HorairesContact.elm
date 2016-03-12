@@ -79,16 +79,26 @@ initialContent =
         , h5 [] [text "Par téléphone :"]
         , p  [] [text "04 73 88 60 67 / Fax : 04 73 88 65 03 "]
         , h5 [] [text "Par mail:"]
-        , mail "mairie.murol@wanadoo.fr"
+        , span [class "email"]
+               [ text "Services généraux: "
+               , a [href ("mailto:"++"mairie.murol@wanadoo.fr")]
+                   [text "mairie.murol@wanadoo.fr"]
+               ]
+        , br [] []
+        , span [class "email"]
+               [ text "Services généraux: "
+               , a [href ("mailto:"++"murolanimation@orange.fr")]
+                   [text "murolanimation@orange.fr"]
+               ]
         , h5 [] [text "Horaires d'ouverture:"]
         , p  [] [text "du lundi au vendredi : 9h à 12h30 / 13h30 à 17h"]
-        , p  [] [text "Permanence maire/adjoints samedi matin"]
-        
-        , h5 [] [text "Location de salles des fêtes municipales"]
-        , p  [] [text "La commune dispose de 3 salles polyvalentes.
-                       2 situés sur le bourg de Murol et la 3ème sur le bourg de Beaune le froid."]
-        , p  [] [text "Ces salles sont mises à la location au tarif de 150€ la journée pour vos évènements"]
-        , p  [] [text "Elles restent à disposition à titre gracieux pour les murolais."]
+        --, p  [] [text "Permanence maire/adjoints samedi matin"]
+        , p  [] [text "Rendez-vous possibles avec le maire ou les adjoints le samedi matin"]
+        --, h5 [] [text "Location de salles des fêtes municipales"]
+        --, p  [] [text "La commune dispose de 3 salles polyvalentes.
+        --               2 situés sur le bourg de Murol et la 3ème sur le bourg de Beaune le froid."]
+        --, p  [] [text "Ces salles sont mises à la location au tarif de 150€ la journée pour vos évènements"]
+        --, p  [] [text "Elles restent à disposition à titre gracieux pour les murolais."]
         ]
       ]
 

@@ -86,5 +86,6 @@ delib =
            , li [] [link "15 avril" "http://www.murol.fr/Deliberations_conseil/2015/CM15042015.pdf"]
            , li [] [link "2 juin" "http://www.murol.fr/Deliberations_conseil/2015/CM24092015.pdf"]
            , li [] [link "4 novembre" "http://www.murol.fr/Deliberations_conseil/2015/CM04112015.pdf"]
+           , li [] [link "3 décembre" ""]
            ]
       ])

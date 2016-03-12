@@ -56,11 +56,13 @@ Elm.Entreprises.make = function (_elm) {
       return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))));
    };
    var renderEntrepriseMap = function (am) {
-      var col = function (ds) {    return A2($Html.div,_U.list([$Html$Attributes.$class("column")]),ds);};
+      var col = function (ds) {
+         return A2($Html.div,_U.list([$Html$Attributes.$class("column"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "max-width",_1: "30%"}]))]),ds);
+      };
       var toDiv = F3(function (k,v,acc) {
          return A2($List._op["::"],
          A2($Html.div,
-         _U.list([$Html$Attributes.$class("businesses")]),
+         _U.list([$Html$Attributes.$class("businesses"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "max-width",_1: "95%"}]))]),
          A2($Basics._op["++"],_U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text(k)]))]),A2($List.map,renderEntreprise,v))),
          acc);
       });

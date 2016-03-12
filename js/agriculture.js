@@ -11815,11 +11815,13 @@ Elm.Agriculture.make = function (_elm) {
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
       var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       return A2($Html.div,
-      _U.list([$Html$Attributes.$class("businesses")]),
+      _U.list([$Html$Attributes.$class("businesses"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "max-width",_1: "95%"}]))]),
       _U.list([name$,A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$]))))]));
    };
    var renderAgriculteurMap = function (am) {
-      var col = function (ds) {    return A2($Html.div,_U.list([$Html$Attributes.$class("column")]),ds);};
+      var col = function (ds) {
+         return A2($Html.div,_U.list([$Html$Attributes.$class("column"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "max-width",_1: "30%"}]))]),ds);
+      };
       var agri = A2($List.map,renderAgriculteur,A2($Maybe.withDefault,_U.list([]),A2($Dict.get,"Agriculteur & producteur de fromages",am)));
       var toDiv = F3(function (k,v,acc) {
          return A2($List._op["::"],
@@ -11879,20 +11881,7 @@ Elm.Agriculture.make = function (_elm) {
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Agriculture")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Agriculture")]))
            ,renderAgriculteurMap(agriMap)
-           ,A2($Html.div,
-           _U.list([]),
-           _U.list([A2($Murol.link,"Saint-Nectaire AOP","http://www.fromages-aop-auvergne.com/AOP-Saint-Nectaire")
-                   ,A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("C’est dans une ferme datant de 1970 que \n                           Josette TIXIER vous accueillera pour vous faire découvrir \n                           ses secrets de fabrication du saint-Nectaire. Avec son \n                           fils David à la traite et sa belle-fille \n                           Angélique à la fromagerie, c’est une affaire de \n                           famille ! Suite à votre visite de la \n                           fromagerie, vous aurez droit bien entendu à une \n                           petite dégustation ! ")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Situation Beaune-le-froid, rue de Clermont")]))
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Visite guidée")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Juillet et août : jeudi, vendredi, samedi à 9h15 (compter 1h)")]))
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Vente au détail")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Toute l’année, tous les jours (sauf le mardi) de 9h15 à 12h et de 15h à 20h")]))
-                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Contactez-nous")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Josette TIXIER, son fils David et son épouse Angélique LAIR")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél./Fax. : 04.73.88.62.09")]))]))]));
+           ,A2($Html.div,_U.list([]),_U.list([A2($Murol.link,"Saint-Nectaire AOP","http://www.aop-saintnectaire.com/")]))]));
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});

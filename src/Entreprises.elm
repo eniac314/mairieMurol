@@ -63,12 +63,12 @@ view address model =
 renderEntrepriseMap : EntrepriseMap -> Html
 renderEntrepriseMap am = 
   let toDiv k v acc =
-        (div [class "businesses"]
+        (div [class "businesses", style [("max-width","95%")]]
             ( [ h5 [] [text k]] ++
                 List.map renderEntreprise v)) :: acc
       toDivs = Dict.foldr toDiv [] am
 
-      col ds = div [class "column"] ds
+      col ds = div [class "column", style [("max-width","30%")]] ds
 
   in div [] (List.map col (split3' toDivs)) 
 
