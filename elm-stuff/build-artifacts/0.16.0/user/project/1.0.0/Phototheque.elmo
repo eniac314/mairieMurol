@@ -25,7 +25,8 @@ Elm.Phototheque.make = function (_elm) {
               _U.list([A2($Html.p,
                       _U.list([]),
                       _U.list([$Html.text("Vous souhaitez partager vos plus belles photos de Murol ?\n                          Transmettez-les au webmaster, elles doivent être libres de\n                          droit. Le webmaster se réserve le droit d’accepter ou non les\n                          photos proposées selon les règles de parution en vigueur*")]))
-                      ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text("Règles de parution et de stockage")]))]))]));
+                      ,A2($Html.a,_U.list([$Html$Attributes.href("")]),_U.list([$Html.text("Règles de parution et de stockage")]))
+                      ,$Html.text(" *(mise en ligne prochainement)")]))]));
    };
    var initialContent = {wrapper: F2(function (content,showIntro) {
                            return A2($Html.div,
@@ -71,7 +72,7 @@ Elm.Phototheque.make = function (_elm) {
                                                                      ,_0: "Diaporama 2015"
                                                                      ,_1: "/images/tiles/photothèque/diaporama2015.jpg"
                                                                      ,_2: _U.list([A2($Html.a,
-                                                                                  _U.list([$Html$Attributes.download(true)
+                                                                                  _U.list([$Html$Attributes.target("_blank")
                                                                                           ,$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                                                                                   _U.list([$Html.text("Télécharger le diaporama 2015")]))
                                                                                   ,A2($Html.br,_U.list([]),_U.list([]))])

@@ -91,7 +91,9 @@ Elm.StarTable.make = function (_elm) {
       var mail$ = A2(maybeElem,
       _p3.mail,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
       });
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var label$ = labelToHtml(_p3.label);

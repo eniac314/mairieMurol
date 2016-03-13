@@ -82,7 +82,7 @@ renderEntreprise { name, descr, addr, tel, fax, mail, site} =
       fax'   = maybeElem
                 fax (\s -> p [] [text ("Fax : " ++ s)])
       mail'  = maybeElem
-                mail (\s -> p [] [text "e.mail: ", a [href s] [text s]])
+                mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
@@ -126,9 +126,18 @@ main =
 initialContent = 
   div [ class "subContainerData noSubmenu", id "entreprises"]
       [ h2 [] [text "Les Entreprises"]
-      , renderEntrepriseMap artMap]
+      , renderEntrepriseMap artMap
+      , contact
+      ]
 
 --Data 
+contact = 
+   p []
+     [ text "Liste non exhaustive, contactez "
+     , a [href ("mailto:"++"contactsite.murol@orange.fr")]
+         [text "le webmaster"]
+     , text " pour toute erreur ou oubli!"
+     ]
 defArt = Entreprise "" [] "" "" "" "" ""
 
 artMap = fromList
@@ -141,7 +150,7 @@ artMap = fromList
      ,
       { defArt |
         name   = "Cattarelli Rémi"
-      , addr   = "route de Besse - 63790 Murol"
+      , addr   = "route de Besse - 63790 MUROL"
       , tel    = "06 86 18 16 54"
       , mail   = "remi.cattarelli@orange.fr"
       , site   = "http://electymurol.wifeo.com"
@@ -170,7 +179,7 @@ artMap = fromList
    )
   ,("Plomberie"
    , [{ defArt |
-        name   = "BOUCHE Nicolas"
+        name   = "Bouche Nicolas"
       , addr   = "Rue George Sand 63790 MUROL"
       , tel    = "06 64 10 74 78"
       }]

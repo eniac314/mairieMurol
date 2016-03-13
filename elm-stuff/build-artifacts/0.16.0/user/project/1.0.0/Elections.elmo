@@ -21,7 +21,6 @@ Elm.Elections.make = function (_elm) {
    _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Résultats 1er tour")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Murol : votants 354, exprimés 338")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Suffrages total exprimés : 419")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Pour être élu au 1er tour les candidats doivent avoir recueillis 210 voix.")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("14 candidats sont élus au 1er tour")]))
@@ -254,20 +253,18 @@ Elm.Elections.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Les lois du 16 décembre 2010 de réforme \n                     territoriale et la loi électorale du 17 mai \n                     2013 posent le principe de l’élection au suffrage \n                     universel des assemblées des établissements publics de coopération \n                     intercommunale à fiscalité propre (cf. Chapitre 5). Cette \n                     innovation a entraîné des modifications sur les modes \n                     de scrutin applicables aux élections municipales ")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les modes de scrutins")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le mode de scrutin varie selon le nombre d’habitants\n                     de la commune.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les communes de plus de 1 000 habitants ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les conseillers municipaux seront élus les 23 et \n                     30 mars 2014. Les élections municipales ont lieu, \n                     en principe, tous les six ans. Le mode \n                     de scrutin varie selon le nombre d’habitants de \n                     la commune. Au plus tôt le vendredi et \n                     au plus tard le dimanche suivant le scrutin, \n                     le conseil municipal nouvellement élu se réunit pour \n                     procéder à l’élection du maire et de ses \n                     adjoints.")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Deux grandes innovations en 2014")]))
+           _U.list([$Html.text("Les élections municipales des 23 et 30 mars \n                     2014 ont été marquées par deux grandes innovations :")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les élections municipales des 23 et 30 mars \n                     2014 seront marquées par deux grandes innovations :")]))
+           _U.list([$Html.text("Les électeurs de toutes les communes de plus \n                     de 1000 habitants ont élu leurs conseillers municipaux selon \n                     le même mode scrutin\n                     qui impose le respect du principe de parité \n                     aux listes de candidats.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les électeurs de toutes les communes de plus \n                     de 1000 habitants éliront leurs conseillers municipaux selon \n                     le même mode scrutin. Ce mode de scrutin, \n                     qui impose le respect du principe de parité \n                     aux listes de candidats, était jusqu’alors réservé aux \n                     seules communes de plus de 3500 habitants. Cette \n                     modification, introduite par les lois organique et ordinaire \n                     du 17 mai 2013, concerne 6 550 communes. \n                     Elle devrait entraîner, selon les estimations du gouvernement, \n                     l’élection dans les conseils municipaux de près de \n                     16 000 conseillères supplémentaires (les conseils municipaux devraient \n                     à terme compter environ 87 000 élues). ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les électeurs désigneront, à l’aide d’un seul bulletin \n                     de vote, leurs conseillers municipaux et les conseillers \n                     communautaires. Les conseillers communautaires sont les représentants de \n                     la commune au sein de la structure intercommunale \n                     dont elle est membre. Prévue par la loi \n                     du 16 décembre 2010, cette réforme est destinée \n                     à conférer une véritable légitimité démocratique aux établissements \n                     publics de coopération intercommunale (EPCI) à fiscalité propre \n                     (communautés de communes, communautés d’agglomération, communautés urbaines, métropoles). \n                     Jusqu’alors, les représentants des communes au sein de \n                     ces EPCI étaient élus par les membres du \n                     conseil municipal. Les lois organique et ordinaire du \n                     17 mai 2013 ont déterminé deux modes de \n                     scrutin, selon que la commune compte moins de \n                     1 000 habitants, ou 1 000 habitants et \n                     plus. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les communes de moins de 1 000 habitants ")]))
+           _U.list([$Html.text("Les électeurs ont désigné, à l’aide d’un seul bulletin \n                     de vote, leurs conseillers municipaux et les conseillers \n                     communautaires. Les conseillers communautaires sont les représentants de \n                     la commune au sein de la structure intercommunale \n                     dont elle est membre.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les communes de moins de 1 000 habitants ")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Dans les communes de moins de 1 000 \n                     habitants, les conseillers municipaux sont élus au scrutin \n                     majoritaire, plurinominal, à deux tours. ")]))
@@ -291,8 +288,21 @@ Elm.Elections.make = function (_elm) {
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Elections")]),
                            _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Elections")])),content]));
                         }
-                        ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4",_0: "Les élections municipales",_1: "",_2: _U.list([elections]),_3: ""}
-                                                                    ,{ctor: "_Tuple4",_0: "Résultats des élections",_1: "",_2: _U.list([resElec]),_3: ""}]))};
+                        ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4"
+                                                                     ,_0: "Les élections municipales"
+                                                                     ,_1: "/images/tiles/elections/01.jpg"
+                                                                     ,_2: _U.list([elections])
+                                                                     ,_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Résultats des élections"
+                                                                     ,_1: "/images/tiles/elections/02.jpg"
+                                                                     ,_2: _U.list([resElec])
+                                                                     ,_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Autres élections"
+                                                                     ,_1: "/images/tiles/elections/03.jpg"
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "http://www.interieur.gouv.fr/Elections"}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

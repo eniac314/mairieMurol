@@ -152,10 +152,10 @@ initialContent =
             , p  [] [text "RAPPORTEUR : Sylvie GILLARD"]
             , p  [] [text "Sébastien GOUTTEBEL, Estel BOUCHE, Joséphine LANARO et Christelle ROUX"]
             ]
-      , p [] [text "Une commission lac et rivières sera créée prochainement 
-                   par le SIVU, structure porteuse du contrat de 
-                   lac. Nous vous communiquerons les modalités d’inscription dès 
-                   que possible."]
+      --, p [] [text "Une commission lac et rivières sera créée prochainement 
+      --             par le SIVU, structure porteuse du contrat de 
+      --             lac. Nous vous communiquerons les modalités d’inscription dès 
+      --             que possible."]
       , h4 [] [text "Commissions non ouvertes au public"]
 
       , p [] [text "Ces commissions sont des groupes de travail qui 
@@ -179,7 +179,8 @@ initialContent =
             ]
       , div [ class "commission"]
             [ h5 [] [text "C.C.A.S. (centre communal d’action sociale, structure réglementaire)"]
-            , p  [] [text "Sébastien GOUTTEBEL, Sylvie GILLARD, Véronique DEBOUT, Joséphine LANARO, Cathy MAURY et Christelle ROUX + cinq membres non élus à désigner par le maire parmi les Murolais"]
+            , p  [] [text "Sébastien GOUTTEBEL, Sylvie GILLARD, Véronique DEBOUT, Joséphine LANARO, Cathy MAURY, Christelle ROUX
+                          Floriane CHAZEY, Monique PICOT, Paulette BENATEK, Olivier DHAINAUT et Suzanne PLANEIX"]
             ]
       , div [ class "commission"]
             [ h5 [] [text "La commission communication/information"]

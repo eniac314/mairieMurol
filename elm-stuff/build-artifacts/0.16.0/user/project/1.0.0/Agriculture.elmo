@@ -17,6 +17,11 @@ Elm.Agriculture.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var contact = A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Liste non exhaustive, contactez ")
+           ,A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),_U.list([$Html.text("le webmaster")]))
+           ,$Html.text(" pour toute erreur ou oubli!")]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -57,7 +62,9 @@ Elm.Agriculture.make = function (_elm) {
       var mail$ = A2(maybeElem,
       _p3.mail,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
       });
       var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
       var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
@@ -99,39 +106,39 @@ Elm.Agriculture.make = function (_elm) {
    var agriMap = $Dict.fromList(_U.list([{ctor: "_Tuple2"
                                          ,_0: "Agriculteur & producteur de fromages"
                                          ,_1: _U.list([_U.update(defAgri,{name: "GAEC de Chautignat",addr: "Chautignat 63790 Murol",tel: "04 73 88 81 92"})
-                                                      ,_U.update(defAgri,{name: "Tourreix Pascal",addr: "Beaune Le Froid 63790 Murol",tel: "04 73 88 62 34"})
+                                                      ,_U.update(defAgri,{name: "Tourreix Pascal",addr: "Beaune-le-Froid 63790 Murol",tel: "04 73 88 62 34"})
                                                       ,_U.update(defAgri,
                                                       {name: "GAEC Tixier"
-                                                      ,addr: "Beaune Le Froid 63790 Murol"
+                                                      ,addr: "Beaune-le-Froid 63790 Murol"
                                                       ,tel: "04 73 88 81 10"
                                                       ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                           ,_0: "4500"
                                                                           ,_1: "http://www.sancy.com/activites/detail/4500/murol/gaec-tixier"})})
                                                       ,_U.update(defAgri,
                                                       {name: "GAEC des Monts Dores"
-                                                      ,addr: "Beaune le Froid 63790 Murol "
+                                                      ,addr: "Beaune-le-Froid 63790 Murol "
                                                       ,tel: "04 73 88 64 75 "
                                                       ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                           ,_0: "4179"
                                                                           ,_1: "http://www.sancy.com/activites/detail/4179/murol/gaec-des-monts-dore"})})
                                                       ,_U.update(defAgri,
-                                                      {name: "GAEC des Noisetiers",addr: "Beaune le Froid 63790 Murol",tel: "04 73 88 66 32 "})
+                                                      {name: "GAEC des Noisetiers",addr: "Beaune-le-Froid 63790 Murol",tel: "04 73 88 66 32 "})
                                                       ,_U.update(defAgri,
                                                       {name: "GAEC de la route des caves"
-                                                      ,addr: "Beaune le Froid 63790 Murol "
+                                                      ,addr: "Beaune-le-Froid 63790 Murol "
                                                       ,tel: "04 73 88 65 85"
                                                       ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                           ,_0: "4181"
                                                                           ,_1: "http://www.sancy.com/activites/detail/4181/murol/gaec-de-la-route-des-caves-ferme-roux"})})
-                                                      ,_U.update(defAgri,{name: "Laurent PLANEIX",addr: "Beaune le Froid 63790 Murol",tel: "04 73 88 60 74 "})
+                                                      ,_U.update(defAgri,{name: "Laurent PLANEIX",addr: "Beaune-le-Froid 63790 Murol",tel: "04 73 88 60 74 "})
                                                       ,_U.update(defAgri,{name: "Philippe BEAL",addr: "Les Ballats 63790 Murol",tel: "04 73 88 60 47 "})
                                                       ,_U.update(defAgri,
-                                                      {name: "Daniel BOUCHE",addr: "Beaune le Froid 63790 Murol",tel: "04 73 88 67 28 "})])}]));
+                                                      {name: "Daniel BOUCHE",addr: "Beaune-le-Froid 63790 Murol",tel: "04 73 88 67 28 "})])}]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Agriculture")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Agriculture")]))
            ,renderAgriculteurMap(agriMap)
-           ,A2($Html.div,_U.list([]),_U.list([A2($Murol.link,"Saint-Nectaire AOP","http://www.aop-saintnectaire.com/")]))]));
+           ,A2($Html.div,_U.list([]),_U.list([A2($Murol.link,"Saint-Nectaire AOP","http://www.aop-saintnectaire.com/"),contact]))]));
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
@@ -149,6 +156,7 @@ Elm.Agriculture.make = function (_elm) {
                                     ,changeMain: changeMain
                                     ,main: main
                                     ,initialContent: initialContent
+                                    ,contact: contact
                                     ,defAgri: defAgri
                                     ,agriMap: agriMap};
 };

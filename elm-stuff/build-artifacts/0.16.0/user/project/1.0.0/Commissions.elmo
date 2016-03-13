@@ -68,9 +68,6 @@ Elm.Commissions.make = function (_elm) {
            _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission petite enfance")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("RAPPORTEUR : Sylvie GILLARD")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Sébastien GOUTTEBEL, Estel BOUCHE, Joséphine LANARO et Christelle ROUX")]))]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Une commission lac et rivières sera créée prochainement \n                   par le SIVU, structure porteuse du contrat de \n                   lac. Nous vous communiquerons les modalités d’inscription dès \n                   que possible.")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Commissions non ouvertes au public")]))
            ,A2($Html.p,
            _U.list([]),
@@ -100,7 +97,7 @@ Elm.Commissions.make = function (_elm) {
            _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("C.C.A.S. (centre communal d’action sociale, structure réglementaire)")]))
                    ,A2($Html.p,
                    _U.list([]),
-                   _U.list([$Html.text("Sébastien GOUTTEBEL, Sylvie GILLARD, Véronique DEBOUT, Joséphine LANARO, Cathy MAURY et Christelle ROUX + cinq membres non élus à désigner par le maire parmi les Murolais")]))]))
+                   _U.list([$Html.text("Sébastien GOUTTEBEL, Sylvie GILLARD, Véronique DEBOUT, Joséphine LANARO, Cathy MAURY, Christelle ROUX\n                          Floriane CHAZEY, Monique PICOT, Paulette BENATEK, Olivier DHAINAUT et Suzanne PLANEIX")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("commission")]),
            _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("La commission communication/information")]))

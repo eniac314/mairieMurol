@@ -86,7 +86,7 @@ initialContent =
                ]
         , br [] []
         , span [class "email"]
-               [ text "Services généraux: "
+               [ text "Service animation: "
                , a [href ("mailto:"++"murolanimation@orange.fr")]
                    [text "murolanimation@orange.fr"]
                ]

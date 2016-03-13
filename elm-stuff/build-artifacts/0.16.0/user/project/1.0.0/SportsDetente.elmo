@@ -16,23 +16,91 @@ Elm.SportsDetente.make = function (_elm) {
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
    var _op = {};
+   var contact = A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Liste non exhaustive, contactez ")
+           ,A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),_U.list([$Html.text("le webmaster")]))
+           ,$Html.text(" pour toute erreur ou oubli!")]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("sportsDetente")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Activité : YOGA")]))
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Equipements sportifs")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("A Murol, les équipements sportifs de plein\n                     air en accès libre sont nombreux :")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Boucles de randonnée ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Parcours fixe de course d’orientation ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Boucles de randonnée VTT ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Domaine nordique ")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Site d’activités aquatiques et nautiques avec baignade surveillée \n                          l’été")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Sites de pêche")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Terrains de pétanque")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Courts de tennis")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Parcours sportif")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Plateau multisports")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Terrain de rugby ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Terrain de volley ")]))]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Activités sportives hebdomadaires")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Rugby")]))
+           ,$Html.text("Le XV de la Vallée Verte propose: ")
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("une école de rugby pour les plus jeunes \n                         avec des entraînements le samedi après-midi ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("une équipe adulte qui s’entraîne en soirée")]))]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Des séances de Yoga hebdomadaires sont mises en place dans l\'enceinte\n                     du centre Lignerat ou thermadore à St Nectaire tous les vendredis à 19h00.")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tarif : 10€ le cours d\'une heure et demie. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("renseignements sur place ou Association \"Créons Demain \"")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Contact : ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 06 86 325 346 ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mail  : isavey@wanadoo.fr")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Professeur : Isabelle Chassaniol")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Rugby tennis de table")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Qi gong gymnastique")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Ski de fond et raquettes")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Tennis multisports")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("terrain de pétanque")]))]));
+           _U.list([$Html.text("Renseignements : ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("/Associations.html?bloc=01#LeXVdelaValléeVerte")]),
+                   _U.list([$Html.text("XV de la Vallée Verte")]))]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Tennis de table")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Chaque lundi soir à 20h à la salle \n                     des fêtes de Murol ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Gymnastique d’entretien ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("/Associations.html?bloc=01#Rencontreetdétente")]),
+                   _U.list([$Html.text("L’association rencontre et détente")]))
+                   ,$Html.text(" organise des séances chaque \n                    lundi de 18h15 à 19h15 avec Sandrine Dalle. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tarif : 5€ la séance ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Qi Gong")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Albine Carpentier anime des séances de Qi Gong \n                     tous les mercredis de 16h30 à 18h00 à \n                     la salle des fêtes de Murol. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les cours de cette année mêlent Qi Gong, \n                     étirements, entretien de la souplesse articulaire et musculaire, \n                     Soul Voice, expression libre de danse (biodanse), automassages \n                     ... ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("D’autres activités sont proposées tout au long de \n                     l’année (méditations sonores, relaxation, randonnées, rencontres thématiques, échanges \n                     de recettes cuisine bio…) ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Renseignements auprès d’Albine Carpentier: ")]))
+           ,$Murol.mail("albinesoleil@gmail.com")
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Téléphone : 06 13 78 87 27")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Autres activités régulières")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Chorale")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La chorale de ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("/Associations.html?bloc=00#L\'EnsembleInstrumentaldelaValléeVerte(EIVV)")]),
+                   _U.list([$Html.text("l’Ensemble Instrumental de la Vallée Verte")]))
+                   ,$Html.text(" (EIVV) chante chaque mardi de 20h à \n                     22h à la salle des fêtes de Murol \n                     , sous la direction d’Annette BLATERON, le chef \n                     de chœur. Cette chorale regroupe une quarantaine de \n                     chanteurs, hommes et femmes, tous amateurs qui se \n                     répartissent en trois pupitres (soprano, alto et hommes). ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Adhésion (participation annuelle) : 40€ ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Tarot ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Des rencontres de joueurs de tarot ont lieu \n                     chaque 2ème vendredi du mois à 20h30 à \n                     la salle municipale en face de la poste. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("D’autres ")
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/Associations.html")]),_U.list([$Html.text("associations")]))
+                   ,$Html.text(" organisent également des activités, n’hésitez pas \n                    à les contacter ! ")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,contact]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {
@@ -50,5 +118,6 @@ Elm.SportsDetente.make = function (_elm) {
                                       ,contentMap: contentMap
                                       ,update: update
                                       ,main: main
-                                      ,initialContent: initialContent};
+                                      ,initialContent: initialContent
+                                      ,contact: contact};
 };

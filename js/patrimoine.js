@@ -11255,7 +11255,7 @@ Elm.Murol.make = function (_elm) {
                    _U.list([]))]))]))
            ,A2(script,
            "",
-           "(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\', \'UA-72224642-1\', \'auto\');ga(\'send\', \'pageview\');")]));
+           "  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n                  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\n                  ga(\'create\', \'UA-75068519-1\', \'auto\');\n                  ga(\'send\', \'pageview\');")]));
    var renderEtatRoutes = A2($Html.div,
    _U.list([$Html$Attributes.id("EtatRoutes")]),
    _U.list([A2($Html.a,
@@ -11284,7 +11284,7 @@ Elm.Murol.make = function (_elm) {
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
+           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
@@ -11334,7 +11334,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous souhaitez passer une information: ")
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
+                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
            ,A2($Html.p,
            _U.list([]),
@@ -11376,8 +11376,11 @@ Elm.Murol.make = function (_elm) {
       if (_p19.ctor === "Leaf") {
             var _p21 = _p19._1;
             var _p20 = _p19._0;
+            var targ = $String.isEmpty(_p21) ? "_self" : "_blank";
             var link$ = $String.isEmpty(_p21) ? toUrl(_p20) : _p21;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)]))]),_U.list([$Html.text(_p20)]));
+            return A2($Html.a,
+            _U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)])),$Html$Attributes.target(targ)]),
+            _U.list([$Html.text(_p20)]));
          } else {
             var _p23 = _p19._1;
             var _p22 = _p19._0;
@@ -11434,7 +11437,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 13 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11502,7 +11505,7 @@ Elm.Murol.make = function (_elm) {
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
                    ,A2(Leaf,"Péri et extra-scolaire","")
-                   ,A2(Leaf,"Les séniors","")
+                   ,A2(Leaf,"Les seniors","")
                    ,A2(Leaf,"Santé","")
                    ,A2(Leaf,"Transports","")
                    ,A2(Leaf,"Gestion des déchets","")
@@ -11679,7 +11682,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
-                              _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
+                              _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
                       ,expiry: $Date.fromString("04/02/2016")})
                       ,_U.update(emptyNews,
@@ -11688,8 +11691,81 @@ Elm.Murol.make = function (_elm) {
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
-                      ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
+                      ,expiry: $Date.fromString("09/11/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "SOS Animaux - Campagne de stérilisation des chats"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("SOS Animaux organise une campagne de\n                               stérilisation des chats (males et femelles).")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les vétérinaires d\'Issoire, de Brassac les Mines et \n                               de St Germain Lambron sont partenaires de cette \n                               campagne. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Plus d\'infos ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/Animaux.html")]),_U.list([$Html.text("page Animaux")]))]))]))
+                      ,expiry: $Date.fromString("04/16/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Coupure d\'électricité"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("ERDF procèdera à une coupure d\'électricité\n                               le mercredi 16 mars de 9h30 à 12h00 \n                               sur le secteur de la rue d\'Estaing, G. \n                               Sand, place du pont, le bourg, Rue Chauderon, \n                               du prélong, du levat, du château et route \n                               de St Nectaire.  ")]))]))
+                      ,expiry: $Date.fromString("03/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Chaîne des Puys & Faille de Limagne - nouveau film"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Découvrez, les Origines de la Terre, le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.youtube.com/watch?v=nkWlN3u2evc"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("nouveau film")]))
+                              ,$Html.text(" promotionnel de la candidature au patrimoine mondial \n                               pour la Chaîne des Puys et la faille \n                               de Limagne. ")]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Survol du château de Murol en drone - Vidéo"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.dropbox.com/s/hsuh6af2tcrres4/Chateau%20le%20Murol.mpg?dl=0")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("voir la vidéo")]))]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Bienvenue sur le nouveau site officiel de la commune de Murol!"
+                      ,date: $Date.fromString("03/12/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Nous l’avons mis en ligne dans sa version \n                               « printemps », il évoluera au fil des \n                               saisons… ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Découvrez ses nouvelles fonctionnalités et ses nombreux liens.")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Les listes (hébergements, commerces, artistes, associations…) ne sont \n                               pas exhaustives ! Nous les avons réalisées avec \n                               les informations que nous avons à ce jour. ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("N’hésitez pas à contacter le webmaster en cliquant \n                               sur le lien en bas de page, pour \n                               toute erreur ou oubli ! ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "float",_1: "right"}
+                                                                      ,{ctor: "_Tuple2",_0: "margin-right",_1: "30%"}]))]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("La commission communication ")]))]))]))
+                      ,expiry: $Date.fromString("04/12/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/13/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11768,70 +11844,119 @@ Elm.Patrimoine.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("patrimoine")]),
-   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Château de Murol")]))
+   _U.list([A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La commune de Murol possède un patrimoine naturel \n                   et culturel exceptionnel comme en témoigne le nombre \n                   de sites et monuments inscrits et classés auxquels \n                   se rajoutent les zones protégées: ")]))
+           ,A2($Html.ul,
+           _U.list([]),
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Château de Murol, classé monument historique depuis 1889 ")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Château de Murol et ses abords inscrits à \n                          l’inventaire des sites en 1944 ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Table mégalithique, classée monument historique depuis 1948 ")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Mur avec panneau armorié de la maison de \n                         l’Abbé d’Estaing, inscrit aux monuments historiques en 1975")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Eglise de Murol, inscrite en totalité en 2006 ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Massif du Tartaret, inscrit à l’inventaire des sites \n                         en 1970 ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Lac Chambon et ses rives, site inscrit en \n                          1939")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Bois des Bouves, inscrit à l’inventaire des sites \n                          en 1941")]))
+                   ,A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("Protection des bois et forêt : forêts sectionnales \n                          de Beaune-le-Froid, Murol, La Chassagne et les Ballats. ")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Outre ces sites classés, la commune est riche \n                     d’édifices du petit patrimoine : lavoirs, moulins, fours \n                     à pain…")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Château de Murol")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le château de Murol est classé au monument historique depuis 1889.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Edifié à l\'emplacement probable d\'un ancien camp romain, \n                     sa construction s\'étale du XIIème au XVIIIe siècle. \n                     Le Château de Murol appartint successivement aux seigneurs \n                     d´Apchon, aux comtes de Murol et enfin aux \n                     d´Estaing. Ces derniers feront de nombreux travaux pour \n                     moderniser les conditions de vie et adapter le \n                     système de défense aux exigences de l´artillerie. Grâce \n                     à la ferveur dont jouissaient les d´Estaing à \n                     la Cour, la forteresse fut épargnée par Richelieu. \n                     Elle le fut aussi à la Révolution. Mais \n                     ensuite abandonnée par son propriétaire, elle servit de \n                     carrière de pierres. Son classement comme Monument Historique \n                     mit un terme aux déprédations. Il est aujourd´hui \n                     propriété de la commune. Son architecture médiévale reste \n                     en partie conservée. C\'est le château le plus \n                     visité de notre région et donne à Murol \n                     une notoriété dépassant largement les limites de l\'Auvergne. ")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Des animations en costumes du Moyen-Âge sont proposées \n                   par les \"Paladins du Sancy\" de l\'agence Organicom. \n                   Aux travers d´histoires et de démonstrations (combat à \n                   l\'épée), des paysans, hommes d´armes, gentes dames et \n                   chevaliers font découvrir la vie d´une châtellenie au \n                   XIIIe siècle. ")]))
-           ,A2($Murol.link,"Site officiel","www.chateaudemurol.fr")
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée des Peintres de l´Ecole de Murol(s)")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Présentation d´une vidéo retraçant l´histoire de l´école et \n                    visite des collections de peintures. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Tableaux réalisés durant les deux premiers tiers du \n                     XXe siècle autour de l´Abbé Boudal et des \n                     maîtres Victor Charreton et Wladimir de Terlikowski.")]))
-           ,A2($Murol.link,"Site officiel","http://www.musee-murol.fr/")
+           ,A2($Murol.link,"Site officiel","http://www.chateaudemurol.fr")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée archéologique ")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Situé dans le parc du Prélong, ce petit \n                     édifice est couvert d\'un toit de chaume. Ses \n                     collections de poteries sigillées, pièces de monnaie, céramiques \n                     proviennent des fouilles de Jassat réalisées par l\'abbé \n                     Boudal vers 1895 et de Rageat réalisées par \n                     Mr Verdier vers 1950. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("L\'Eglise ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La vieille tour")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("De style gothique, construite en 1888. Le porche \n                     est surmonté d´une pierre sculptée représentant armes et \n                     devise des d´Estaing. L´intérieur de l´église a été \n                     peint par l´Abbé Boudal, curé de Murol, au \n                     cours du XIXe siècle. Ces décors se présentent \n                     sous forme de motifs ornementaux, représentations de Saints \n                     et apôtres, et surtout neuf grandes compositions murales, \n                     de 12m² chacune, retraçant des épisodes du nouveau \n                     testament. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le Parc du Prélong ")]))
+           _U.list([$Html.text("Cette maison, située rue de la vieille tour, \n                   date du XVème siècle et est l\'édifice le \n                   plus ancien du village. Elle aurait été occupée \n                   par un officier de rang élevé de la \n                   seigneurie de Murol.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée des Peintres de l´Ecole de Murol(s)")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Cette ancienne propriété familiale d´Achille Boyer, notable et \n                     maire de Murol, fut remodelée en parc d´agrément \n                     vers 1860. Un jardin à la française vient \n                     contraster avec l´apparente liberté du parc à l´anglaise. \n                     Il comporte des arbustes ornementaux (magnolias, rhododendrons, kalmias, \n                     azalées…) et deux types d´arbres : les essences \n                     locales et les essences encore nouvelles au milieu \n                     du XIXe siècle (séquoias, douglas, chênes rouges d´Amérique, \n                     cyprès de Lawson…). D\'une grande richesse botanique, il \n                     abrite 714 arbres recensés dont 34% de feuillus \n                     pour 26 espèces et 66% de résineux pour \n                     31 espèces. A noter quelques essences rares telles \n                     sciadopidis verticalis et stewartia cimensis, ainsi qu\'une allée \n                     de charmes, rares à cette altitude, où il \n                     fait bon flâner. Le plus gros arbre est \n                     un séquoia de 7,85m. de circonférence. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Cueillette interdite, accès libre et gratuit. ")]))
+           _U.list([$Html.text("Le musée des Peintres de l’Ecole de Murols \n                     est classé musée de France. Il recèle un \n                     patrimoine pictural original. Les tableaux ont été réalisés \n                     au début du XXe siècle par de nombreux \n                     peintres dont l´Abbé Boudal et des maîtres comme \n                     Victor Charreton et Wladimir de Terlikowski. Les paysages \n                     de neige ont été la source d’inspiration privilégiée \n                     de ces artistes. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Après avoir visionné une vidéo de présentation retraçant \n                     l´histoire de l´Ecole de Murols, découvrez une collection \n                     de peintures exceptionnelle au fil des différentes salles. \n                     L’exposition temporaire 2016, visible du 1er au 31 \n                     octobre, sera consacrée à Alfred Thésonnier. ")]))
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "font-style",_1: "oblique"}]))]),
+           _U.list([$Html.text("* Le nom de Murol se vit ajouter \n                 un « s » au XIXe siècle. ")]))
+           ,A2($Murol.link,"Site officiel","http://www.musee-murol.fr/")
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("L\'Eglise de Murol")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("De style gothique, elle a été construite en \n                     1888, inscrite dans l’inventaire supplémentaire des monuments historiques \n                     en 2006 ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le porche est surmonté d´une pierre sculptée représentant \n                     armes et devise des d´Estaing. L´intérieur de l´église \n                     a été peint par l´Abbé Boudal, curé de \n                     Murol, au cours du XIXe siècle. Il a \n                     réalisé des décors sous forme de motifs ornementaux, \n                     des représentations de saints et apôtres, et surtout \n                     neuf grandes compositions murales, de 12m² chacune, retraçant \n                     des épisodes du nouveau testament.")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Monument Charreton ")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Victor Charreton fait partie de cette génération d\'artistes \n                     de l\'école française qui s’est consacrée totalement au \n                     paysage après les impressionnistes. Il peint sur le \n                     motif retenant les lieux qui lui parlent en \n                     fonction des saisons, de la lumière et des \n                     couleurs. L\'Auvergne, la Bretagne et la Provence lui \n                     sont ainsi tout particulièrement chères sans oublier le \n                     sud de l\'Europe et le Maghreb où il \n                     eut l\'occasion de séjourner. Il manifeste une véritable \n                     prédilection pour les paysages d\'hiver auvergnats. Ses paysages \n                     printaniers et automnaux explosent quant à eux de \n                     couleurs. L\'Église de Murol et le givre, De \n                     la terrasse de Saint-Amand-Tallende en automne, Les champs \n                     vus du jardin d\'Eugénie, Neige sur le bassin, \n                     sont quelques titres de ses toiles significatifs de \n                     sa recherche picturale. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Victor Charreton a conseillé et influencé de nombreux \n                   peintres dont René Monteix. L\'Auvergne le séduit par \n                   l\'apreté de ses paysages et la luminosité de \n                   ses couleurs. Avec le peintre Léon Boudal, curé \n                   de Murol, il fonde l\'École de Murol qui \n                   attire de nombreux artistes de tous horizons, séduits \n                   par ce néo-impressionnisme qui exprime si bien la \n                   simplicité crue et la lumière des paysages auvergnats. ")]))
+           _U.list([$Html.text("Victor Charreton a conseillé et influencé de nombreux \n                   peintres dont René Monteix. L\'Auvergne le séduit par \n                   l\'âpreté de ses paysages et la luminosité de \n                   ses couleurs. Avec le peintre Léon Boudal, curé \n                   de Murol, il fonde l\'École de Murol qui \n                   attire de nombreux artistes de tous horizons, séduits \n                   par ce néo-impressionnisme qui exprime si bien la \n                   simplicité crue et la lumière des paysages auvergnats. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Rendez-vous au Musée de l’Ecole des peintres que \n                    vous pouvez visiter, il se trouve à côté \n                    du Parc municipal du Prélong à Murol ! \n                    ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("La vieille tour")]))
+           _U.list([$Html.text("Le monument Charreton se trouve au bout de \n                   la rue du même nom au pied du \n                   Tartaret. Les œuvres des peintres de l’Ecole de \n                   Murols sont exposées au musée municipal. \n                    ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le Parc du Prélong ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Cette maison, située rue de la vieille tour, \n                   date du XVème siècle et est l\'édifice le \n                   plus ancien du village. Elle aurait été occupée \n                   par un officier de rang élevé de la \n                   seigneurie de Murol.")]))
+           _U.list([$Html.text("Cette ancienne propriété familiale d´Achille Boyer, notable et \n                     maire de Murol, fut remodelée en parc d´agrément \n                     vers 1860. Un jardin à la française vient \n                     contraster avec l´apparente liberté du parc à l´anglaise. \n                     Il comporte des arbustes ornementaux (magnolias, rhododendrons, kalmias, \n                     azalées…) et deux types d´arbres : les essences \n                     locales et les essences encore nouvelles au milieu \n                     du XIXe siècle (séquoias, douglas, chênes rouges d´Amérique, \n                     cyprès de Lawson…). D\'une grande richesse botanique, il \n                     abrite 714 arbres recensés dont 34% de feuillus \n                     pour 26 espèces et 66% de résineux pour \n                     31 espèces. A noter quelques essences rares telles \n                     sciadopidis verticalis et stewartia cimensis, ainsi qu\'une allée \n                     de charmes, rares à cette altitude, où il \n                     fait bon flâner. Le plus gros arbre est \n                     un séquoia de 7,85m. de circonférence. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Cueillette interdite, accès libre et gratuit. ")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le volcan du Tartaret ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le volcan du Tartaret est un petit volcan \n                     de 870 m d’altitude qui fait partie des \n                     plus récentes formations volcaniques d’Auvergne. Le massif du \n                     Tartaret a été inscrit à l’inventaire des sites \n                     en 1970. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Le sommet du volcan offre une vue panoramique \n                     sur le Lac Chambon avec le Sancy en \n                     arrière-plan. Il permet de comprendre facilement l\'histoire volcanique \n                     du site. Le lac de Chambon n’aurait sans \n                     doute jamais existé sans l’éruption tardive du Tartaret. \n                     Par un phénomène de barrage naturel, l’éruption du \n                     Tartaret coupa la route à la Couze de \n                     Chaudefour, ruisseau de montagne et permit ainsi la \n                     formation du lac de Chambon. Quelques millénaires plus \n                     tard, le lac est toujours là. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pendant une de ses périodes effusives, le Tartaret \n                     a produit une des plus longues coulées de \n                     lave du massif, qui s\'est étirée jusqu\'à une \n                     vingtaine de kilomètres de Murol. \n                     ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les pentes du volcan sont habillées de hêtres \n                     et de pins. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Un sentier de randonnée fait une boucle depuis \n                     Murol. Le sentier chemine quelques instants sur la \n                     crête, avant de descendre vers le cratère, il \n                     revient ensuite vers Murol dont les maisons sont \n                     taillés dans la « cheire » du volcan. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Durant l’été 2012, de jeunes bénévoles de l’association \n                     des chantiers de jeunesse nous ont aidés à \n                     rénover le parcours sportif situé au sein du \n                     Tartaret, et à aménager le site du point \n                     de vue à son sommet. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La cime du Tartaret a été choisie à \n                     plusieurs reprises pour installer des œuvres d’art contemporain \n                     dans le cadre de l’événement annuel « Horizons \n                     Art et Nature en Sancy ». ")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le moulin à Beaune le froid ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Découvrir le moulin à eau de beaune en \n                   compagnie de Michel Tardif est un vrai plaisir. \n                   Vous racontant tout à la fois l\'histoire du \n                   village et du moulin. ")]))
+           _U.list([$Html.text("Découvrir le moulin à eau de Beaune, en \n                   compagnie de Michel Tardif, est un vrai plaisir. \n                   Il vous raconte tout à la fois l\'histoire \n                   du village et du moulin. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le moulin de beaune a entre 2 et \n                   3 siècles et a été exploité jusqu\'en 1949. \n                   La restauration a débuté il y a 5 \n                   ans. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Moulin banal, ce sont les villageois qui l\'exploitaient \n                    pour produire leur farine.")]))
+           _U.list([$Html.text("Le moulin de Beaune-le-Froid, vieux de 3 siècles, \n                   a été exploité jusqu\'en 1949. Moulin banal, ce \n                   sont les villageois qui l\'utilisaient pour produire leur \n                   farine. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Il a été restauré il y a quelques \n                    années. ")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Visite de ferme ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Issus d´un terroir très riche, nos produits ont \n                   su garder le goût du passé. Le Saint \n                   Nectaire, fromage d´Appelation d´Origine Contrôlée (AOC), fabriqué au \n                   coeur du Sancy et jusque dans le Cantal \n                   n´échappe pas à la règle. Ainsi le saint \n                   nectaire fermier, dont la fabrication encore artisanale dans \n                   de nombreuses fermes garantit une saveur exceptionnelle et \n                   changeante au gré des saisons. Il témoigne du \n                   savoir-faire de chacun, transmis à travers les âges. ")]))
+           _U.list([$Html.text("Beaune le froid et Chautignat sont des villages \n                   fortement liés à la tradition agropastorale. Le Saint \n                   Nectaire, fromage d´Appellation d´Origine Protégée (AOP), est fabriqué \n                   au cœur du Sancy et jusque dans le \n                   Cantal. Il témoigne d’un savoir-faire ancestral. A Murol, \n                   le Saint Nectaire fermier est de fabrication artisanale, \n                   ce qui lui garantit une saveur exceptionnelle et \n                   changeante au gré des saisons. Les fermes vous \n                   ouvrent leurs portes pour assister à la fabrication \n                   de ce fabuleux fromage. ")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Beaune le froid est fortement lié à la \n                   tradition agropastorale. Ce n´est donc pas un hasard \n                   si nombre de fermes spécialisées dans la fabrication \n                   artisanale de ce fromage jalonnent le village. Partez \n                   à la découverte de ce fromage mais respectez \n                   les horaires indiqués. Avant, le lait ne sera \n                   pas trait et après, le fromage sera déjà \n                   fait.")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les Caves à Beaune-le-Froid")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Grottes naturelles aménagées pour \n                   l´affinage du saint-nectaire. Vous pourrez les découvrir après \n                   la visite du moulin.")]))]));
+           _U.list([$Html.text("Ces grottes ont été aménagées dans la roche \n                   pour l´affinage du Saint-Nectaire. Vous pourrez les découvrir \n                   après la visite du moulin. ")]))
+           ,A2($Html.a,_U.list([$Html$Attributes.href("/PatrimoinePhoto.html")]),_U.list([$Html.text("Lien photothèque")]))]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {

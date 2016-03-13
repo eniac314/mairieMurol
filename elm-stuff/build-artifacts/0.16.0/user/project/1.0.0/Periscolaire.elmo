@@ -20,8 +20,7 @@ Elm.Periscolaire.make = function (_elm) {
    var peri = _U.list([{ctor: "_Tuple4"
                        ,_0: "Restaurant scolaire"
                        ,_1: "/images/tiles/periscolaire/restaurant scolaire.jpg"
-                       ,_2: _U.list([A2($Murol.link,"Fiche d\'inscription","")
-                                    ,A2($Html.p,
+                       ,_2: _U.list([A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("Le restaurant scolaire est un service non obligatoire \n                     assuré par le SIVOM de la Vallée Verte. \n                     Il accueille les enfants de la maternelle et \n                     de l’école élémentaire de Murol les lundis, mardis, \n                     jeudis et vendredis de 12h à 13h30. ")]))
                                     ,A2($Html.p,
@@ -68,17 +67,20 @@ Elm.Periscolaire.make = function (_elm) {
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
                                     _U.list([$Html.text("fiche d’inscription")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
                                     _U.list([$Html.text("règlement intérieur")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
                                     _U.list([$Html.text("charte du savoir vivre")]))]))])
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
@@ -112,7 +114,25 @@ Elm.Periscolaire.make = function (_elm) {
                                             ,A2($Html.li,_U.list([]),_U.list([$Html.text("Familles imposables : 1,35€ de l’heure ")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
-                                    _U.list([$Html.text("NB : le créneau 16h30/18h est facturé comme \n                    1 heure. ")]))])
+                                    _U.list([$Html.text("NB : le créneau 16h30/18h est facturé comme \n                    1 heure. ")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("fiche d’inscription")]))]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("règlement intérieur")]))]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("charte du savoir vivre")]))]))])
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Temps d\'activités périscolaires (TAP)"
@@ -141,7 +161,8 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP maternelle.pdf")
+                                                            ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("maternelle")]))]))]))
                                             ,A2($Html.tr,
                                             _U.list([]),
@@ -152,7 +173,8 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP Murol mars avril.pdf")
+                                                            ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Murol")]))]))]))
                                             ,A2($Html.tr,
                                             _U.list([]),
@@ -163,7 +185,8 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP Chambon.pdf")
+                                                            ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Chambon")]))]))]))
                                             ,A2($Html.tr,
                                             _U.list([]),
@@ -174,11 +197,30 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP  Saint Nectaire mars avril.pdf")
+                                                            ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Saint-Nectaire")]))]))]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
-                                    _U.list([$Html.text("L’inscription est annuelle et la participation\n                   des familles est de 12€ par trimestre et par enfant.")]))])
+                                    _U.list([$Html.text("L’inscription est annuelle et la participation\n                   des familles est de 12€ par trimestre et par enfant.")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("fiche d’inscription")]))]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("règlement intérieur")]))]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("charte du savoir vivre")]))]))])
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Centre de loisirs"
@@ -202,7 +244,8 @@ Elm.Periscolaire.make = function (_elm) {
                                     _U.list([]),
                                     _U.list([$Html.text("Ce service est subventionné par la CAF et \n                   la MSA. La participation des familles est fonction \n                   des revenus de celles-ci (")
                                             ,A2($Html.a,
-                                            _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                            _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tarifs 2016 CLSH SIVOM de la Vallée Verte.pdf")
+                                                    ,$Html$Attributes.target("_blank")]),
                                             _U.list([$Html.text("tarifs selon le quotient \n                      familial")]))
                                             ,$Html.text(")")]))
                                     ,A2($Html.p,
@@ -211,18 +254,20 @@ Elm.Periscolaire.make = function (_elm) {
                                             ,A2($Html.a,
                                             _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
                                             _U.list([$Html.text("dossiers d’inscriptions")]))
-                                            ,$Html.text(" sont à remettre au secrétariat du SIVOM, à la mairie de Murol. ")]))
+                                            ,$Html.text(" (disponibles prochainement) sont à remettre au secrétariat du SIVOM, à la mairie de Murol. ")]))
                                     ,$Html.text("Liens:")
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
                                     _U.list([$Html.text("projet éducatif du centre de loisirs du SIVOM de la Vallée Verte")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("Projet pédagogique vacances de printemps ")]))]))])
+                                            _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                            _U.list([$Html.text("Projet pédagogique vacances de printemps ")]))
+                                            ,$Html.text("(disponible prochainement)")]))])
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Transport scolaire"
@@ -255,19 +300,22 @@ Elm.Periscolaire.make = function (_elm) {
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
                                    _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf")
+                                           ,$Html$Attributes.target("_blank")]),
                                    _U.list([$Html.text("fiche d’inscription")]))]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
                                    _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf")
+                                           ,$Html$Attributes.target("_blank")]),
                                    _U.list([$Html.text("règlement intérieur")]))]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
                                    _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf")
+                                           ,$Html$Attributes.target("_blank")]),
                                    _U.list([$Html.text("charte du savoir vivre")]))]))
                                    ,content]));
                         })

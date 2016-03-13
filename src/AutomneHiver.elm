@@ -125,7 +125,7 @@ port tasks =
 galleries = [(automne, "automne"), (hiver, "hiver")]
 
 (automne, automneFx) = 
-  Gallery.init (picList 15) "automne" "Galerie automne"
+  Gallery.init (picList 14) "automne" "Galerie automne"
 
 (hiver,hiverFx) = 
   Gallery.init (picList 22) "hiver" "Galerie hiver"

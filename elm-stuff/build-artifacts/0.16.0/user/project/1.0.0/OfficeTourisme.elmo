@@ -22,13 +22,22 @@ Elm.OfficeTourisme.make = function (_elm) {
            ,A2($Html.img,_U.list([$Html$Attributes.src("/images/OT.JPG"),$Html$Attributes.id("officePic")]),_U.list([]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("infoOfficeTourisme")]),
-           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Adresse:")]))
+           _U.list([A2($Html.div,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "float",_1: "right"}])),$Html$Attributes.id("linkSancy")]),
+                   _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/sancy_hiver.jpg")]),_U.list([]))
+                           ,A2($Html.br,_U.list([]),_U.list([]))
+                           ,A2($Html.a,
+                           _U.list([$Html$Attributes.href("http://www.sancy.com")
+                                   ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))
+                                   ,$Html$Attributes.target("_blank")]),
+                           _U.list([$Html.text("sancy.com")]))]))
+                   ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Adresse:")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04 73 88 62 62")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04 73 88 60 23")]))
                    ,$Murol.mail("bt.murol-chambon@sancy.com")
                    ,A2($Html.br,_U.list([]),_U.list([]))
-                   ,A2($Murol.site,"www.sancy.com","www.sancy.com")
+                   ,A2($Murol.site,"www.sancy.com","http://www.sancy.com")
                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires:")]))
                    ,A2($Html.ul,
                    _U.list([]),

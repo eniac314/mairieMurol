@@ -105,14 +105,14 @@ initialContent =
             ,"/images/tiles/sortir/chateau.jpg"
             ,[
              ]
-            ,"www.chateaudemurol.fr"
+            ,"http://www.chateaudemurol.fr"
              )
             ,
             ("Dans les environs"
             ,"/images/tiles/sortir/sortir environs.jpg"
             ,[
              ]
-            ,""
+            ,"http://www.sancy.com"
              )
             ,
             ("Cinéma"

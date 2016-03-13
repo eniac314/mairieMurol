@@ -11185,7 +11185,9 @@ Elm.StarTable.make = function (_elm) {
       var mail$ = A2(maybeElem,
       _p3.mail,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
       });
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var label$ = labelToHtml(_p3.label);
@@ -11383,7 +11385,7 @@ Elm.Murol.make = function (_elm) {
                    _U.list([]))]))]))
            ,A2(script,
            "",
-           "(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\', \'UA-72224642-1\', \'auto\');ga(\'send\', \'pageview\');")]));
+           "  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n                  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\n                  ga(\'create\', \'UA-75068519-1\', \'auto\');\n                  ga(\'send\', \'pageview\');")]));
    var renderEtatRoutes = A2($Html.div,
    _U.list([$Html$Attributes.id("EtatRoutes")]),
    _U.list([A2($Html.a,
@@ -11412,7 +11414,7 @@ Elm.Murol.make = function (_elm) {
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
+           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
@@ -11462,7 +11464,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous souhaitez passer une information: ")
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
+                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
            ,A2($Html.p,
            _U.list([]),
@@ -11504,8 +11506,11 @@ Elm.Murol.make = function (_elm) {
       if (_p19.ctor === "Leaf") {
             var _p21 = _p19._1;
             var _p20 = _p19._0;
+            var targ = $String.isEmpty(_p21) ? "_self" : "_blank";
             var link$ = $String.isEmpty(_p21) ? toUrl(_p20) : _p21;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)]))]),_U.list([$Html.text(_p20)]));
+            return A2($Html.a,
+            _U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)])),$Html$Attributes.target(targ)]),
+            _U.list([$Html.text(_p20)]));
          } else {
             var _p23 = _p19._1;
             var _p22 = _p19._0;
@@ -11562,7 +11567,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 13 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11630,7 +11635,7 @@ Elm.Murol.make = function (_elm) {
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
                    ,A2(Leaf,"Péri et extra-scolaire","")
-                   ,A2(Leaf,"Les séniors","")
+                   ,A2(Leaf,"Les seniors","")
                    ,A2(Leaf,"Santé","")
                    ,A2(Leaf,"Transports","")
                    ,A2(Leaf,"Gestion des déchets","")
@@ -11807,7 +11812,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
-                              _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
+                              _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
                       ,expiry: $Date.fromString("04/02/2016")})
                       ,_U.update(emptyNews,
@@ -11816,8 +11821,81 @@ Elm.Murol.make = function (_elm) {
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
-                      ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
+                      ,expiry: $Date.fromString("09/11/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "SOS Animaux - Campagne de stérilisation des chats"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("SOS Animaux organise une campagne de\n                               stérilisation des chats (males et femelles).")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les vétérinaires d\'Issoire, de Brassac les Mines et \n                               de St Germain Lambron sont partenaires de cette \n                               campagne. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Plus d\'infos ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/Animaux.html")]),_U.list([$Html.text("page Animaux")]))]))]))
+                      ,expiry: $Date.fromString("04/16/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Coupure d\'électricité"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("ERDF procèdera à une coupure d\'électricité\n                               le mercredi 16 mars de 9h30 à 12h00 \n                               sur le secteur de la rue d\'Estaing, G. \n                               Sand, place du pont, le bourg, Rue Chauderon, \n                               du prélong, du levat, du château et route \n                               de St Nectaire.  ")]))]))
+                      ,expiry: $Date.fromString("03/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Chaîne des Puys & Faille de Limagne - nouveau film"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Découvrez, les Origines de la Terre, le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.youtube.com/watch?v=nkWlN3u2evc"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("nouveau film")]))
+                              ,$Html.text(" promotionnel de la candidature au patrimoine mondial \n                               pour la Chaîne des Puys et la faille \n                               de Limagne. ")]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Survol du château de Murol en drone - Vidéo"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.dropbox.com/s/hsuh6af2tcrres4/Chateau%20le%20Murol.mpg?dl=0")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("voir la vidéo")]))]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Bienvenue sur le nouveau site officiel de la commune de Murol!"
+                      ,date: $Date.fromString("03/12/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Nous l’avons mis en ligne dans sa version \n                               « printemps », il évoluera au fil des \n                               saisons… ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Découvrez ses nouvelles fonctionnalités et ses nombreux liens.")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Les listes (hébergements, commerces, artistes, associations…) ne sont \n                               pas exhaustives ! Nous les avons réalisées avec \n                               les informations que nous avons à ce jour. ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("N’hésitez pas à contacter le webmaster en cliquant \n                               sur le lien en bas de page, pour \n                               toute erreur ou oubli ! ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "float",_1: "right"}
+                                                                      ,{ctor: "_Tuple2",_0: "margin-right",_1: "30%"}]))]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("La commission communication ")]))]))]))
+                      ,expiry: $Date.fromString("04/12/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/13/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11935,14 +12013,16 @@ Elm.AssociationsList.make = function (_elm) {
    };
    var renderAssoc = function (_p4) {
       var _p5 = _p4;
-      var _p6 = _p5.resp;
+      var _p7 = _p5.resp;
+      var _p6 = _p5.nom;
+      var anchor = A2($Html.a,_U.list([$Html$Attributes.name($String.concat($String.words(_p6)))]),_U.list([]));
       var sites$ = sitesToHtml(_p5.sites);
       var mails$ = mailsToHtml(_p5.mails);
-      var resp$ = $List.isEmpty(_p6) ? nullTag : A2($Html.div,
+      var resp$ = $List.isEmpty(_p7) ? nullTag : A2($Html.div,
       _U.list([$Html$Attributes.$class("resps")]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Responsable(s): ")]))]),
-      $List.concat(A2($List.intersperse,_U.list([A2($Html.br,_U.list([]),_U.list([]))]),A2($List.map,renderResp,_p6)))));
+      $List.concat(A2($List.intersperse,_U.list([A2($Html.br,_U.list([]),_U.list([]))]),A2($List.map,renderResp,_p7)))));
       var affil$ = A2(maybeElem,
       _p5.affil,
       function (s) {
@@ -11966,14 +12046,23 @@ Elm.AssociationsList.make = function (_elm) {
                  ,A2($Html.p,_U.list([]),_U.list([$Html.text($Murol.capitalize(s))]))]));
       });
       var preci$ = A2(maybeElem,_p5.preci,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
-      var nom$ = A2(maybeElem,_p5.nom,function (s) {    return A2($Html.h5,_U.list([]),_U.list([$Html.text(s)]));});
-      return A2($Html.div,_U.list([$Html$Attributes.$class("assoc")]),_U.list([nom$,preci$,dom$,siege$,affil$,resp$,mails$,sites$]));
+      var nom$ = A2(maybeElem,_p6,function (s) {    return A2($Html.h5,_U.list([]),_U.list([anchor,$Html.text(s)]));});
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("assoc"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "max-width",_1: "95%"}]))]),
+      _U.list([nom$,preci$,dom$,siege$,affil$,resp$,mails$,sites$]));
    };
+   var contact = A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Liste non exhaustive, contactez ")
+           ,A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),_U.list([$Html.text("le webmaster")]))
+           ,$Html.text(" pour toute erreur ou oubli!")]));
    var renderAssocs = function (assocs) {
-      var col = function (ds) {    return A2($Html.div,_U.list([$Html$Attributes.$class("column")]),ds);};
+      var col = function (ds) {
+         return A2($Html.div,_U.list([$Html$Attributes.$class("column"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "max-width",_1: "30%"}]))]),ds);
+      };
       var assocs$ = A2($List.sortBy,function (_) {    return _.nom;},assocs);
       var toDivs = A2($List.map,renderAssoc,assocs$);
-      return A2($Html.div,_U.list([]),A2($List.map,col,$Murol.split3$(toDivs)));
+      return A2($Html.div,_U.list([]),A2($Basics._op["++"],A2($List.map,col,$Murol.split3$(toDivs)),_U.list([contact])));
    };
    var Pro = {ctor: "Pro"};
    var Sport = {ctor: "Sport"};
@@ -12018,7 +12107,7 @@ Elm.AssociationsList.make = function (_elm) {
                         ,_U.update(emptyAssoc,
                         {nom: "Association Bougn’Arts"
                         ,domaine: "organiser des festivals et des manifestations culturelles\n                - créer, organiser et promouvoir des animations et spectacles\n                de rues ainsi que des animations pédagogiques\n                - rassembler des artisans et des artistes à l’occasion de fêtes,\n                foires, marchés artisanaux et marchés à thèmes."
-                        ,siege: "« Les Aloès » Rue chabrol – 63790 Murol"
+                        ,siege: "« Les Aloès » Rue de Chabrol – 63790 Murol"
                         ,resp: _U.list([{poste: "Présidente",nom: "Bénédicte Manfri",tel: "06 72 16 78 46"}])
                         ,mails: _U.list(["associationbougnarts@orange.fr"])})
                         ,_U.update(emptyAssoc,
@@ -12028,24 +12117,25 @@ Elm.AssociationsList.make = function (_elm) {
                         ,mails: _U.list(["hfl63@orange.fr"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Couleurs et motifs"
-                        ,siege: "Allée de laPlage  Murol"
+                        ,domaine: "promouvoir, encourager, développer \n                 la pratique des arts, favoriser les talents\n                  par tous les moyens existants. "
+                        ,siege: "Allée de la Plage 63790 Murol"
                         ,resp: _U.list([{poste: "Présidente",nom: "Jacqueline GODARD",tel: ""}])
                         ,mails: _U.list(["jacqueline.godard@free.fr"])})
                         ,_U.update(emptyAssoc,
-                        {nom: "Association culturelle et sportive de Beaunele froid"
+                        {nom: "Association culturelle et sportive de Beaune-le-froid"
                         ,domaine: "activité ski de fond"
                         ,siege: "Beaune-le-Froid 63790 MUROL"
                         ,resp: _U.list([{poste: "Président",nom: "Yannick LATREILLE",tel: "04 73 88 81 18"}])
                         ,mails: _U.list(["yannick-latreille@hotmail.fr"])})
                         ,_U.update(emptyAssoc,
-                        {nom: "Association culturelle et sportive de Beaune le froid"
+                        {nom: "Association culturelle et sportive de Beaune-le-froid"
                         ,domaine: "activité ski de fond"
                         ,siege: "Beaune-le-Froid 63790 MUROL"
                         ,resp: _U.list([{poste: "Président",nom: "Yannick LATREILLE",tel: "04 73 88 81 18"}])
                         ,mails: _U.list(["yannick-latreille@hotmail.fr"])
                         ,cat: Sport})
                         ,_U.update(emptyAssoc,
-                        {nom: "Association de la Foire du Saint Nectaire de Beaune le Froid"
+                        {nom: "Association de la Foire du Saint Nectaire de Beaune-le-Froid"
                         ,domaine: "organisation de manifestations agricoles, promotion du \n                 Saint Nectaire fermier et des produits régionaux, activités d’animation dans la commune"
                         ,siege: "Mairie de Murol"
                         ,resp: _U.list([{poste: "Présidente",nom: "Pierrette TOURREIX",tel: "04 73 35 97 71"}])
@@ -12071,19 +12161,19 @@ Elm.AssociationsList.make = function (_elm) {
                         {nom: "Association Intercommunale des Anciens Combattants"
                         ,preci: "Section de Chambon sur Lac, Murol, Saint Nectaire"
                         ,domaine: "transmettre le devoir de mémoire aux jeunes générations, assurer la solidarité"
-                        ,siege: "rue Chareton, 63790 MUROL"
+                        ,siege: "rue Charreton, 63790 MUROL"
                         ,resp: _U.list([{poste: "Vice Président pour Murol",nom: "Georges GAUFFIER",tel: "04 73 83 62 02"}])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Médiévale de Murol - Auvergne (AMMA)"
                         ,domaine: "promouvoir et sauvegarder le patrimoine médiéval de la commune de Murol"
-                        ,siege: "La rivière Murol"
+                        ,siege: "La rivière route de Saint-Nectaire 63790 Murol"
                         ,resp: _U.list([{poste: "Président",nom: "Vincent Salesse",tel: "06 09 04 67 92"}])
                         ,mails: _U.list(["amma.murol@laposte.net"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Sancy Celtique"
                         ,domaine: "organisation de festival"
-                        ,siege: "La rivière Murol"
-                        ,resp: _U.list([{poste: "Président",nom: "Gérôme GODARD",tel: "04 73 26 02 00"}])
+                        ,siege: "La rivière route de Saint-Nectaire 63790 Murol"
+                        ,resp: _U.list([{poste: "Président",nom: "Jérôme GODARD",tel: "04 73 26 02 00"}])
                         ,mails: _U.list(["amma.murol@laposte.net"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Association Sportive des écoles de Murol et de Chambon sur Lac (A.S.E.M.C.)"
@@ -12111,7 +12201,7 @@ Elm.AssociationsList.make = function (_elm) {
                         {nom: "Collectif développement des commerçants Murolais 63"
                         ,domaine: "développement de l\'activité commerciale"
                         ,siege: "rue Georges Sand - 63790 MUROL"
-                        ,resp: _U.list([{poste: "Président",nom: "jean-Jacques ROUCHVARGER",tel: "06 32 97 02 19"}])
+                        ,resp: _U.list([{poste: "Président",nom: "Jean-Jacques ROUCHVARGER",tel: "06 32 97 02 19"}])
                         ,mails: _U.list(["njrorganisation@orange.fr"])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
@@ -12134,8 +12224,9 @@ Elm.AssociationsList.make = function (_elm) {
                         ,resp: _U.list([{poste: "Président",nom: "Pierre SOULIER ",tel: "04 73 79 50 70"}])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
-                        {nom: "Ensemble Instrumental de la Vallée Verte (EIVV)"
+                        {nom: "L\'Ensemble Instrumental de la Vallée Verte (EIVV)"
                         ,siege: "Lac Chambon - 63790 Chambon sur lac"
+                        ,domaine: "participer aux manifestations officielles, créer un tissu social \n                 entre les musiciens de la région du sancy \n                 et être fédérateur de toutes les personnes qui \n                 aiment la musique d’harmonie. "
                         ,resp: _U.list([{poste: "Président",nom: "Jean-louis REBOUFFAT",tel: "04 73 88 63 08"}])
                         ,mails: _U.list(["jeanlouis.rebouffat@sfr.fr"])})
                         ,_U.update(emptyAssoc,
@@ -12144,14 +12235,14 @@ Elm.AssociationsList.make = function (_elm) {
                         ,siege: "Mairie de Murol BP 11- 63 790 MUROL "
                         ,resp: _U.list([{poste: "Présidente",nom: "Claire FAYE",tel: ""}])
                         ,mails: _U.list(["element.terre@laposte.net"])
-                        ,sites: _U.list(["www.element-terre.org"])})
+                        ,sites: _U.list(["http://www.element-terre.org"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Elément Terre"
                         ,domaine: "éducation à l’environnement des scolaires, organisation de classes de découvertes"
                         ,siege: "Mairie de Murol BP 11- 63 790 MUROL "
                         ,resp: _U.list([{poste: "Présidente",nom: "Claire FAYE",tel: ""}])
                         ,mails: _U.list(["element.terre@laposte.net"])
-                        ,sites: _U.list(["www.element-terre.org"])
+                        ,sites: _U.list(["http://www.element-terre.org"])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Groupement de défense contre les ennemis des cultures"
@@ -12170,7 +12261,7 @@ Elm.AssociationsList.make = function (_elm) {
                         ,siege: "Groire - 63790 MUROL"
                         ,resp: _U.list([{poste: "Président",nom: "Bruno CATTARELLI ",tel: "06 70 02 06 28"}])
                         ,mails: _U.list(["jeepaoc@gmail.com, info@jeepaoc.com, jeepaoc.infoclub@orange.fr"])
-                        ,sites: _U.list(["www.jeepaoc.com"])})
+                        ,sites: _U.list(["http://www.jeepaoc.com"])})
                         ,_U.update(emptyAssoc,
                         {nom: "La Gaule Murolaise"
                         ,domaine: "société de Pêche"
@@ -12199,11 +12290,12 @@ Elm.AssociationsList.make = function (_elm) {
                         ,resp: _U.list([{poste: "Présidente",nom: "Bénédicte MANFRI ",tel: "06 72 16 78 46"}])
                         ,mails: _U.list(["assmurolrempart@gmail.com"])})
                         ,_U.update(emptyAssoc,
-                        {nom: "Natur ’ Sancy"
-                        ,domaine: "Activité de pleine nature, tout public\n                 Protection du patrimoine naturel en milieu montagnard,\n                 activités lié à la découverte du patrimoine."
+                        {nom: "Natur’ Sancy"
+                        ,domaine: "Activité de pleine nature, tout public\n                 Protection du patrimoine naturel en milieu montagnard,\n                 activités liées à la découverte du patrimoine."
                         ,siege: "route de Besse, 63790 MUROL"
                         ,resp: _U.list([{poste: "Présidente",nom: "Véronique DEBOUT",tel: "04 73 88 67 56"}])
-                        ,mails: _U.list(["natur.sancy@gmail.com","http://natursancy.blogspot.fr/"])})
+                        ,mails: _U.list(["natur.sancy@gmail.com"])
+                        ,sites: _U.list(["http://natursancy.blogspot.fr/"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Rencontre et détente"
                         ,domaine: "activités gymniques"
@@ -12233,7 +12325,7 @@ Elm.AssociationsList.make = function (_elm) {
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,
                         {nom: "Système d\'Echange Local \"S.SancyEL\""
-                        ,domaine: "association à caractère social permettant à leur membres de procéder\n                 à des échanges de biens, de services et de savoirs, sans avoir recours à la monnaie. "
+                        ,domaine: "association à caractère social permettant à ses membres de procéder\n                 à des échanges de biens, de services et de savoirs, sans avoir recours à la monnaie. "
                         ,siege: "3 impasse de la Vernoze - Champeix"
                         ,resp: _U.list([{poste: "Coprésidente",nom: "Annie JONCOUX",tel: "04 43 12 61 98 ou 06 9850 4297"}
                                        ,{poste: "Coprésidente",nom: "Livia VAN EIJLE",tel: "04 7388 6489"}])
@@ -12260,6 +12352,7 @@ Elm.AssociationsList.make = function (_elm) {
                                          ,Pro: Pro
                                          ,emptyAssoc: emptyAssoc
                                          ,renderAssocs: renderAssocs
+                                         ,contact: contact
                                          ,renderAssoc: renderAssoc
                                          ,renderResp: renderResp
                                          ,maybeElem: maybeElem
@@ -12291,12 +12384,17 @@ Elm.Associations.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
+   var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
+   "String",
+   function (v) {
+      return typeof v === "string" || typeof v === "object" && v instanceof String ? v : _U.badPort("a string",v);
+   });
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("associations")]),
                            _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Associations")])),content]));
                         }
-                        ,tiledMenu: A2($TiledMenu.initAt,"",$AssociationsList.associations)};
+                        ,tiledMenu: A2($TiledMenu.initAt,locationSearch,$AssociationsList.associations)};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

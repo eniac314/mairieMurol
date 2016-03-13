@@ -113,7 +113,7 @@ initialContent =
                  permettent la mutualisation des compétences et s’appuie sur 
                  un partenariat actif avec les collectivités locales. (cf. 
                  document "
-          , a [href "", target "_blank"]
+          , a [href "/baseDocumentaire/APPORTS INTERCOMMUNALITE ET PARTENARIAT.pdf", target "_blank"]
               [text "les apports des intercommunalités et du partenariat"]
           , text ")" 
           ]

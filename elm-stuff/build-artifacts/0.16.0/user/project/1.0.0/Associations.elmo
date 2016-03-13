@@ -17,12 +17,17 @@ Elm.Associations.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $TiledMenu = Elm.TiledMenu.make(_elm);
    var _op = {};
+   var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
+   "String",
+   function (v) {
+      return typeof v === "string" || typeof v === "object" && v instanceof String ? v : _U.badPort("a string",v);
+   });
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("associations")]),
                            _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Associations")])),content]));
                         }
-                        ,tiledMenu: A2($TiledMenu.initAt,"",$AssociationsList.associations)};
+                        ,tiledMenu: A2($TiledMenu.initAt,locationSearch,$AssociationsList.associations)};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

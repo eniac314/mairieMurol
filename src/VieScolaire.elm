@@ -140,7 +140,7 @@ vieScolaire =
 
 mater  =
  div [ class "subContainerData", id "materVieScolaire"]
-     [ h2 [] [text "Ecole maternelle"]
+     [ h2 [] [text "Ecole maternelle du SIVOM de la Vallée Verte"]
      , div [ class "schoolAddress"]
            [ p [] [ text "Ecole Maternelle"]
            , p [] [ text "Rue du Tartaret - 63790 Murol"]
@@ -161,7 +161,7 @@ mater  =
     , h5 [] [text "Année scolaire 2015 - 2016"]
     , p  [] [text "Répartition des classes : "]
     , ul []
-         [ li  [] [text "Classe des petits et moyens : Sandrine Gidon et Céline GAILLARD"]
+         [ li  [] [text "Classe des petits et moyens : Sandrine GIDON et Céline GAILLARD"]
          , li  [] [text "Classe des moyens et grands : Séverine AUBOUIN."]
          ] 
     
@@ -241,7 +241,7 @@ mater  =
             , a [href "/PériEtExtra-scolaire.html?bloc=2"]
                 [text "Temps d’Activités Périscolaires"]
             , text "(TAP) sont organisés de 15h00 à 16h30 par le
-                   SIVOM pour les enfants."
+                   SIVOM de la vallée verte pour les enfants."
             ]
       , p [] [text "Le projet d’école : il se poursuit avec, comme axes prioritaires,
                    la maîtrise de la langue, l’apprentissage du vivre
@@ -305,7 +305,7 @@ mater  =
         
 elem   = 
   div [ class "subContainerData", id "elemVieScolaire"]
-      [ h2 [] [text "Ecole élémentaire"]
+      [ h2 [] [text "Ecole élémentaire du Regroupement Pédagogique Intercommunal (RPI)"]
       , div [ class "schoolAddress"] 
             [ p [] [ text "Ecole élémentaire"]
             , p [] [ text "Rue de l'hôtel de ville - 63790 Murol"]
@@ -402,7 +402,7 @@ elem   =
             , a [href "/PériEtExtra-scolaire.html?bloc=2"]
                 [text "Temps d’Activités Périscolaires"]
             , text "(TAP) sont organisés de 15h00 à 16h30 par le
-                   SIVOM pour les enfants."
+                   SIVOM de la vallée verte pour les enfants."
             ]
 
       , p [] [text "Horaires de classe à l’école de Chambon
@@ -474,7 +474,7 @@ elem   =
             , a [href "/PériEtExtra-scolaire.html?bloc=2"]
                 [text "Temps d’Activités Périscolaires"]
             , text "(TAP) sont organisés de 15h15 à 16h45 par le
-                   SIVOM pour les enfants."
+                   SIVOM  de la vallée verte pour les enfants."
             ]
       
       , p [] [text "Projet d’écoles : les axes prioritaires sont

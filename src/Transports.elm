@@ -261,13 +261,13 @@ deneigement = [ p [] [text "En raison de la situation de moyenne montagne
                            de novembre à fin mars."]
               , p [] [text "Le déneigement des routes départementales situées sur la 
                            commune hors agglomération est du ressort des services 
-                           du Conseil Général du Puy de Dôme. Le 
+                           du Conseil Départemental du Puy de Dôme. Le 
                            service est effectivement assuré, comme l’atteste le plan 
                            de viabilité hivernale fourni par le Conseil Général 
                            du Puy de Dôme."]
               , p [] [text "En agglomération, c’est à la commune de Murol 
                            qu’échoit le déneigement. Les services techniques communaux disposent 
-                           de 5 employés chargés en alternance d’effectuer le 
+                           de 6 employés chargés en alternance d’effectuer le 
                            déneigement. Des astreintes sont organisées pour les weekends 
                            du 15 novembre à fin mars afin de 
                            répondre au mieux aux besoins. Les employés utilisent 

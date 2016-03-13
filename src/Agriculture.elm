@@ -87,7 +87,7 @@ renderAgriculteur { name, descr, addr, tel, fax, mail, site, refOt} =
       fax'   = maybeElem
                 fax (\s -> p [] [text ("Fax : " ++ s)])
       mail'  = maybeElem
-                mail (\s -> p [] [text "e.mail: ", a [href s] [text s]])
+                mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
@@ -141,6 +141,7 @@ initialContent =
       , renderAgriculteurMap agriMap
       , div [ ]
             [ link "Saint-Nectaire AOP" "http://www.aop-saintnectaire.com/"
+      , contact
             --, p [] [ text "C’est dans une ferme datant de 1970 que 
             --               Josette TIXIER vous accueillera pour vous faire découvrir 
             --               ses secrets de fabrication du saint-Nectaire. Avec son 
@@ -160,7 +161,15 @@ initialContent =
             ]
       ] 
 
---Data 
+--Data
+contact = 
+   p []
+     [ text "Liste non exhaustive, contactez "
+     , a [href ("mailto:"++"contactsite.murol@orange.fr")]
+         [text "le webmaster"]
+     , text " pour toute erreur ou oubli!"
+     ]
+
 defAgri = Agriculteur "" [] "" "" "" "" "" Nothing
 
 agriMap = fromList
@@ -173,40 +182,40 @@ agriMap = fromList
      ,
       { defAgri |
         name   = "Tourreix Pascal"
-      , addr   = "Beaune Le Froid 63790 Murol"
+      , addr   = "Beaune-le-Froid 63790 Murol"
       , tel    = "04 73 88 62 34" 
       }
      ,
       { defAgri |
         name   = "GAEC Tixier"
-      , addr   = "Beaune Le Froid 63790 Murol"
+      , addr   = "Beaune-le-Froid 63790 Murol"
       , tel    = "04 73 88 81 10"
       , refOt  = Just ("4500","http://www.sancy.com/activites/detail/4500/murol/gaec-tixier")
       }
       ,
       { defAgri |
         name   = "GAEC des Monts Dores"
-      , addr   = "Beaune le Froid 63790 Murol "
+      , addr   = "Beaune-le-Froid 63790 Murol "
       , tel    = "04 73 88 64 75 "
       , refOt  = Just ("4179","http://www.sancy.com/activites/detail/4179/murol/gaec-des-monts-dore")
       }
       ,
       { defAgri |
         name   = "GAEC des Noisetiers"
-      , addr   = "Beaune le Froid 63790 Murol"
+      , addr   = "Beaune-le-Froid 63790 Murol"
       , tel    = "04 73 88 66 32 "
       }
       ,
       { defAgri |
         name   = "GAEC de la route des caves"
-      , addr   = "Beaune le Froid 63790 Murol "
+      , addr   = "Beaune-le-Froid 63790 Murol "
       , tel    = "04 73 88 65 85"
       , refOt  = Just ("4181","http://www.sancy.com/activites/detail/4181/murol/gaec-de-la-route-des-caves-ferme-roux")
       }
       ,
       { defAgri |
         name   = "Laurent PLANEIX"
-      , addr   = "Beaune le Froid 63790 Murol"
+      , addr   = "Beaune-le-Froid 63790 Murol"
       , tel    = "04 73 88 60 74 "
       }
       ,
@@ -218,7 +227,7 @@ agriMap = fromList
       ,
       { defAgri |
         name   = "Daniel BOUCHE"
-      , addr   = "Beaune le Froid 63790 Murol"
+      , addr   = "Beaune-le-Froid 63790 Murol"
       , tel    = "04 73 88 67 28 "
       }
       ]

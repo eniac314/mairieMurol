@@ -102,12 +102,13 @@ initialContent =
            [ restaurants showIntro
            , content])
   , tiledMenu =
-      init [( "Restaurants"
+      init [( "Bars, brasseries et restaurants"
             , "/images/tiles/restaurants/restaurants.jpg"
             , [ h5 [] [ text "A Beaune le Froid"]
               , makeTable "aBeauneLeFroid" restosBeaunes
               , h5 [] [ text "A Murol"]
               , makeTable "aMurol" restosMurol
+              , contact
               ]
             )
             --,
@@ -121,13 +122,21 @@ initialContent =
             ,
             ( "Famille plus"
             , "/images/tiles/hebergements/famillePlus.jpg"
-            , [ makeTable "famillePlus"  famillePlus ]
+            , [ makeTable "famillePlus"  famillePlus, contact ]
             )
            ]
   }
 
 
 -- Data
+contact = 
+   p []
+     [ text "Liste non exhaustive, contactez "
+     , a [href ("mailto:"++"contactsite.murol@orange.fr")]
+         [text "le webmaster"]
+     , text " pour toute erreur ou oubli!"
+     ]
+
 famillePlus = 
   let tables = restosMurol ++ restosBeaunes
   in List.filter (\e ->  (.label e) == FamillePlus) tables
@@ -221,7 +230,7 @@ restosMurol =
     , descr = ["Restaurant"]
     , addr  = "Rue du Levat 63790 MUROL"
     , tel   = "04 73 88 60 50"
-    , mail  = "http://www.hoteldespins-murol.com"
+    , site  = "http://www.hoteldespins-murol.com"
     }
     ,
     { emptyTe |
@@ -254,7 +263,7 @@ restosMurol =
     , descr = ["Restaurant crêperie"]
     , addr  = "Rue George Sand 63790 MUROL"
     , tel   = "06 28 29 55 99"
-    , mail  = "http://www.sancy.com/activites/detail/4050/murol/creperie-le-george-sand"
+    , site  = "http://www.sancy.com/activites/detail/4050/murol/creperie-le-george-sand"
     }
     ,
     { emptyTe |

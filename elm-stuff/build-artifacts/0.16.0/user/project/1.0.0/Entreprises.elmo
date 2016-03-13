@@ -17,6 +17,11 @@ Elm.Entreprises.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var contact = A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Liste non exhaustive, contactez ")
+           ,A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),_U.list([$Html.text("le webmaster")]))
+           ,$Html.text(" pour toute erreur ou oubli!")]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -46,7 +51,9 @@ Elm.Entreprises.make = function (_elm) {
       var mail$ = A2(maybeElem,
       _p3.mail,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
       });
       var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
       var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
@@ -83,7 +90,7 @@ Elm.Entreprises.make = function (_elm) {
                                         ,_1: _U.list([_U.update(defArt,{name: "Boulhol Cougoul (Sarl)",addr: "Groire 63790 MUROL",tel: "04 73 88 67 33"})
                                                      ,_U.update(defArt,
                                                      {name: "Cattarelli Rémi"
-                                                     ,addr: "route de Besse - 63790 Murol"
+                                                     ,addr: "route de Besse - 63790 MUROL"
                                                      ,tel: "06 86 18 16 54"
                                                      ,mail: "remi.cattarelli@orange.fr"
                                                      ,site: "http://electymurol.wifeo.com"})
@@ -102,7 +109,7 @@ Elm.Entreprises.make = function (_elm) {
                                         {name: "Bouche Benoît (SARL)",addr: "Beaune Le Froid 63790 MUROL",tel: "04 73 88 80 72"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Plomberie"
-                                        ,_1: _U.list([_U.update(defArt,{name: "BOUCHE Nicolas",addr: "Rue George Sand 63790 MUROL",tel: "06 64 10 74 78"})])}
+                                        ,_1: _U.list([_U.update(defArt,{name: "Bouche Nicolas",addr: "Rue George Sand 63790 MUROL",tel: "06 64 10 74 78"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Marché de gros et demi-gros"
                                         ,_1: _U.list([_U.update(defArt,
@@ -116,7 +123,7 @@ Elm.Entreprises.make = function (_elm) {
                                         ,fax: "04 73 88 80 39"})])}]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("entreprises")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les Entreprises")])),renderEntrepriseMap(artMap)]));
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les Entreprises")])),renderEntrepriseMap(artMap),contact]));
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
@@ -134,6 +141,7 @@ Elm.Entreprises.make = function (_elm) {
                                     ,changeMain: changeMain
                                     ,main: main
                                     ,initialContent: initialContent
+                                    ,contact: contact
                                     ,defArt: defArt
                                     ,artMap: artMap};
 };

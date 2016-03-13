@@ -100,11 +100,12 @@ initialContent =
       init [( "Hôtels et résidences hôtelières"
             , "/images/tiles/hebergements/hotels.jpg"
             , [ p  [] [ text "Murol offre une grande diversité d'établissements, généralement indépendants. 
-                             Beaucoup d'entre eux se sont engagés dans desa 
-                             démarches de qualité, symbolisées par différents labels. Certains 
+                             Beaucoup d'entre eux se sont engagés dans une 
+                             démarche de qualité, symbolisées par différents labels. Certains 
                              sont hôtels restaurants et offrent une prestation en 
                              demi-pension et pension complète. "]
               , makeTable "Hôtels" hotels
+              , contact
               ]
             )
             ,
@@ -118,6 +119,7 @@ initialContent =
               , makeTable "Campings" campings
               , h4 [] [text "Aires de camping-cars"]
               , makeTable "Aires" aires
+              , contact
               ]
             )
             ,
@@ -129,6 +131,7 @@ initialContent =
                              de personnes passionnées par leur région et attentives 
                              à la qualité de l'accueil."]
               , makeTable "Chambres d'Hôtes" chambresHotes
+              , contact
               ]
             )
             ,
@@ -141,12 +144,13 @@ initialContent =
                              en étoiles, indique le degré de confort de 
                              la location. Certains sont même labellisés. "]
               , makeTable "Meublés" meubles
+              , contact
               ]
             )
             ,
             ( "Villages Vacances"
             , "/images/tiles/hebergements/villageVac.jpg"
-            , [ makeTable "Village Vacances"  azureva ]
+            , [ makeTable "Village Vacances"  azureva, contact ]
             )
             ,
             ( "Famille plus"
@@ -161,6 +165,7 @@ initialContent =
               , makeTable "" (List.filter (\e ->  (.label e) == FamillePlus) meubles)
               , h5 [] [text "Villages Vacances: "]
               , makeTable "" (List.filter (\e ->  (.label e) == FamillePlus) azureva)
+              , contact
               ]
             --, [ makeTable "famillePlus"  famillePlus ]
             )
@@ -169,6 +174,14 @@ initialContent =
 
 
 -- Data
+
+contact = 
+   p []
+     [ text "Liste non exhaustive, contactez "
+     , a [href ("mailto:"++"contactsite.murol@orange.fr")]
+         [text "le webmaster"]
+     , text " pour toute erreur ou oubli!"
+     ]
 
 famillePlus = 
   let tables = azureva ++ hotels ++ campings ++ meubles ++ chambresHotes
@@ -256,7 +269,7 @@ campings =
    , addr  = "Le Marais - 63790 MUROL"
    , tel   = "04 73 88 85 85"
    , fax   = "04 73 88 64 63"
-   , site  = "www.domaine-du-marais.com"
+   , site  = "http://www.domaine-du-marais.com"
    }
    ,
    { emptyTe |
@@ -280,7 +293,7 @@ campings =
    , addr  = "Allée de la Plage, 63790 MUROL"
    , tel   = "04 44 05 21 58"
    , descr = ["mobile homes chalet"]
-   , site  = "www.domaine-lac-chambon.fr" 
+   , site  = "http://www.domaine-lac-chambon.fr" 
    }
    ,
    { emptyTe |
@@ -314,7 +327,7 @@ campings =
    , tel   = "04 73 88 60 46"
    , fax   = "04 73 88 69 57"
    , mail  = "contact@camping-europe-murol.com"
-   , site  = "www.camping-europe-murol.com"
+   , site  = "http://www.camping-europe-murol.com"
    , descr = ["mobile homes piscine"]
    }
    ]
@@ -336,7 +349,7 @@ aires =
     , name  = "L'Europe"
     , addr  = "route de Jassat 63790 MUROL"
     , mail  = "contact@camping-europe-murol.com"
-    , site  = "www.camping-europe-murol.com"
+    , site  = "http://www.camping-europe-murol.com"
    }
   ]
 
@@ -376,6 +389,7 @@ meubles =
   [{ emptyTe |
      epis  = "2 épis"
    , name  = "La Cacode"
+   , refOt = Just ("1444","http://www.sancy.com/hebergements/detail/1444/murol/la-cacode")
    , descr = ["Maison 4 personnes","Contact: Mme CLEMENT Marie-Paule"]
    , addr  = "La Chassagne - 63790 Murol"
    , tel   = "04 73 88 60 85"
@@ -420,7 +434,7 @@ meubles =
    , descr = ["Appartement 2 personnes", "Contact: Mme DEBOUT Véronique"]
    , addr  = "route de Besse - 63790 MUROL"
    , tel   = "04 73 88 67 56 / 06 28 06 81 77"
-   , site  = "www.entre-chateau-et-volcans.fr"
+   , site  = "http://www.entre-chateau-et-volcans.fr"
    }
    ,
    { emptyTe |
@@ -460,7 +474,7 @@ meubles =
    , descr = ["Appartement 4 personnes, Contact: Mme JUAN Alice"]
    , addr  = "Route de Jassat - 63790 MUROL"
    , tel   = "04 73 88 61 16 - Portable : 06 88 76 81 70 - joignable : de 9h à 20h"
-   , mail  = "alice.elfes@wanadoo.fr"
+   , mail  = "les.elfes@orange.fr"
    }
    ,
    { emptyTe |

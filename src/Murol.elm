@@ -78,7 +78,7 @@ mainMenu = Node ""
   , Node "Vie locale"
          [ Leaf "Vie scolaire" ""
          , Leaf "Péri et extra-scolaire" ""
-         , Leaf "Les séniors" ""
+         , Leaf "Les seniors" ""
          , Leaf "Santé" ""
          , Leaf "Transports" ""
          , Leaf "Gestion des déchets" ""
@@ -137,7 +137,7 @@ initialModel =
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "03/09/2016" news
+  , news        = prepNews "03/13/2016" news
   }
 
 
@@ -204,7 +204,12 @@ renderMainMenu adr pos m  =
       let link' = if String.isEmpty link
                   then toUrl label
                   else link
-      in  a [ href link', classList [current label]]
+          
+          targ  = if String.isEmpty link
+                  then "_self"
+                  else "_blank"
+
+      in  a [ href link', classList [current label], target targ]
             [ text label]
     
     Node label xs ->
@@ -260,7 +265,7 @@ pageFooter =
   footer [ id "footer"]
          [div[]
              [p [] [ text "Vous souhaitez passer une information: "
-                   , a [href ("mailto:"++"uminokirinmail@gmail.com")]
+                   , a [href ("mailto:"++"contactsite.murol@orange.fr")]
                        [text " contactez le webmaster"]
                    ]
              ]
@@ -284,7 +289,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le mercredi 09 mars 2016"]
+            [text "Dernière mise à jour le dimanche 13 mars 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -338,7 +343,7 @@ renderMisc =
   div [ id "misc", class "divers"]
       [ h4 [] [text "Divers"]
       , div [id "peintres"]
-            [ a [href "http://www.musee-murol.fr/fr"]
+            [ a [href "http://www.musee-murol.fr/fr", target "_blank" ]
             [text "A découvrir, le musée des peintres de l’Ecole de Murols"]]
       , div [id "horairesContact"]
             [h4 [] [text "Mairie pratique:"]
@@ -405,7 +410,13 @@ renderCounter =
                      []
                ]
             ]   
-      , script "" "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-72224642-1', 'auto');ga('send', 'pageview');"
+      , script "" "  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                  ga('create', 'UA-75068519-1', 'auto');
+                  ga('send', 'pageview');"
       ]       
 
 renderPlugins =
@@ -515,7 +526,7 @@ script source js =
 
 
 mail s  = span [class "email"] [ text "Email: "
-         , a [href ("mailto:"++s)] [text s]
+         , a   [href ("mailto:"++s)] [text s]
          ]
 
 site tex addr =
@@ -686,7 +697,7 @@ news =
    , descr = div [class "newsdescr"]
                  [ p []
                      [ text "Le diaporama de la commune pour l'année 2015 est disponible."]
-                 , a [ download True, href "/baseDocumentaire/DIAPORAMA MUROL 2015.pdf"]
+                 , a [ target "_blank", href "/baseDocumentaire/DIAPORAMA MUROL 2015.pdf"]
                      [ text "Télécharger"]
                  ]
    , expiry = Date.fromString "04/02/2016"
@@ -700,13 +711,91 @@ news =
                  ]
    , expiry = Date.fromString "09/11/2016"
    }
-   --,{ emptyNews |
+   ,{ emptyNews |
+     title = "SOS Animaux - Campagne de stérilisation des chats"
+   , date  = Date.fromString "03/11/2016"
+   , descr = div [class "newsdescr"]
+                 [ p  [] [text "SOS Animaux organise une campagne de
+                               stérilisation des chats (males et femelles)."]
+                 , p  [] [text "Les vétérinaires d'Issoire, de Brassac les Mines et 
+                               de St Germain Lambron sont partenaires de cette 
+                               campagne. "]
+                 , p  []
+                      [text "Plus d'infos "
+                      ,a [href "/Animaux.html"] [text "page Animaux"]
+                      ]
+                  ]
+   , expiry = Date.fromString "04/16/2016"
+   } 
+   ,{ emptyNews |
+     title = "Coupure d'électricité"
+   , date  = Date.fromString "03/11/2016"
+   , descr = div [class "newsdescr"]
+                 [p [] [text "ERDF procèdera à une coupure d'électricité
+                               le mercredi 16 mars de 9h30 à 12h00 
+                               sur le secteur de la rue d'Estaing, G. 
+                               Sand, place du pont, le bourg, Rue Chauderon, 
+                               du prélong, du levat, du château et route 
+                               de St Nectaire.  "]
+                 ]
+   , expiry = Date.fromString "03/17/2016"
+   } 
+   ,{ emptyNews |
+     title = "Chaîne des Puys & Faille de Limagne - nouveau film"
+   , date  = Date.fromString "03/11/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "Découvrez, les Origines de la Terre, le "
+                        , a [ href "https://www.youtube.com/watch?v=nkWlN3u2evc"
+                            , target "_blank"]
+                            [text "nouveau film"]
+                        , text " promotionnel de la candidature au patrimoine mondial 
+                               pour la Chaîne des Puys et la faille 
+                               de Limagne. "
+                        ]
+                 ]
+   , expiry = Date.fromString ""
+   } 
+   ,{ emptyNews |
+     title = "Survol du château de Murol en drone - Vidéo"
+   , date  = Date.fromString "03/11/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)"]
+                 , p [] [a [href "https://www.dropbox.com/s/hsuh6af2tcrres4/Chateau%20le%20Murol.mpg?dl=0", target "_blank"]
+                           [text "voir la vidéo"]
+                        ] 
+                 ]
+   , expiry = Date.fromString ""
+   } 
+   ,{ emptyNews |
+     title = "Bienvenue sur le nouveau site officiel de la commune de Murol!"
+   , date  = Date.fromString "03/12/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [style [("margin-right","15%")]]
+                     [text "Nous l’avons mis en ligne dans sa version 
+                               « printemps », il évoluera au fil des 
+                               saisons… "]
+                 , p [style [("margin-right","15%")]]
+                     [text "Découvrez ses nouvelles fonctionnalités et ses nombreux liens."]
+                 , p [style [("margin-right","15%")]]
+                     [text "Les listes (hébergements, commerces, artistes, associations…) ne sont 
+                               pas exhaustives ! Nous les avons réalisées avec 
+                               les informations que nous avons à ce jour. "]
+                 , p [style [("margin-right","15%")]]
+                     [text "N’hésitez pas à contacter le webmaster en cliquant 
+                               sur le lien en bas de page, pour 
+                               toute erreur ou oubli ! "]
+                 , p [ style [("float","right"), ("margin-right","30%")]]
+                     [b [] [text "La commission communication "]]
+                 ]
+   , expiry = Date.fromString "04/12/2016"
+   }                
+  --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""
    --, descr = div [class "newsdescr"]
    --              []
    --, expiry = Date.fromString ""
-   --}                
+   --} 
   ]
 
 newsletters =

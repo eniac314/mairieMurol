@@ -75,8 +75,17 @@ initialContent =
   div [ class "subContainerData noSubmenu", id "officeTourisme"]
       [ h2 [] [ text "Office de Tourisme communautaire du massif du Sancy"]
       , img [src "/images/OT.JPG", id "officePic"] []
+
       , div [ id "infoOfficeTourisme"]
-            [ h5 [] [text "Adresse:"]
+            [ div [ style [("float","right")], id "linkSancy"] 
+                  [ img [src "/images/sancy_hiver.jpg"]  []
+                  , br [] []
+                  , a [ href "http://www.sancy.com"
+                      , style [("text-align","center")]
+                      , target "_blank"]
+                      [text "sancy.com"]
+                  ]
+            , h5 [] [text "Adresse:"]
             , p []
                 [ text "Rue de jassaguet - 63790 Murol"]
             , p []
@@ -85,13 +94,14 @@ initialContent =
                 [ text "Fax : 04 73 88 60 23"]
             , mail "bt.murol-chambon@sancy.com"
             , br [] []
-            , site "www.sancy.com" "www.sancy.com"
+            , site "www.sancy.com" "http://www.sancy.com"
             , h5 [] [text "Horaires:"]
             , ul []
                  [ li [] [text "pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h"]
                  , li [] [text "le reste de l’année, ouvert du lundi au samedi de 9h à 12h."]
                  ]
             ]
+      
       --, p [id "officeDescr"] 
       --    [b [] [text "Murol bénéficie des services de l’Office de Tourisme communautaire
       --                 de la communauté de communes du Massif du Sancy."]]      

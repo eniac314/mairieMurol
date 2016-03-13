@@ -186,11 +186,11 @@ initialContent =
       , p  [] [text "Renseignements sur murol.fr/mairie/CMJ ou à la mairie."]
       
       , h4 [] [text "Documents"]
-      , link "Demande de subvention" "http://www.murol.fr/Base_documentaire/Associations/Demande%20de%20subvention.pdf"
+      , link "Demande de subvention" "/baseDocumentaire/Associations/Demande%20de%20subvention.pdf"
       , br [] []
-      , link "Fiche SACEM" "http://www.murol.fr/Base_documentaire/Associations/fiche%20SACEM%20-%20mairie.pdf"
+      , link "Fiche SACEM" "/baseDocumentaire/Associations/fiche%20SACEM%20-%20mairie.pdf"
       , br [] []
-      , link "SACEM" "http://www.murol.fr/Base_documentaire/Associations/SACEM.pdf"
+      , link "SACEM" "/baseDocumentaire/Associations/SACEM.pdf"
       , br [] []
       ]
  

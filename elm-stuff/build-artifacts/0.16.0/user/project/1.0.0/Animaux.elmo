@@ -19,13 +19,32 @@ Elm.Animaux.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animaux")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Animaux")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vous avez trouvé ou perdu un animal, contacter")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vous avez trouvé ou perdu un animal, contactez")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("SOS Animaux")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("La Prade 63500 Le Broc")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél :04 7371 6243 ou 06 1328 0895")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Heures d\'ouverture:")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("14h00 à 17h00 du lundi au samedi inclus sauf jours fériés")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Référent local : Anne-Marie DOTTE tél : 06 8100 2032")]))]));
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Référent local : Anne-Marie DOTTE tél : 06 8100 2032")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("campagne de\n                    stérilisation des chats")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("SOS Animaux organise une campagne de\n                    stérilisation des chats (males et femelles).")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Vous êtes non imposables: ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Vous pouvez bénéficier d\'un tarif préférentiel pour la \n                     castration et la stérilisation de votre félin.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les vétérinaires d\'Issoire, de Brassac les Mines et \n                     de St Germain Lambron sont partenaires de cette \n                     campagne. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Comment procéder ? ")]))
+           ,A2($Html.ol,
+           _U.list([]),
+           _U.list([A2($Html.li,
+                   _U.list([]),
+                   _U.list([$Html.text("RDV à SOS Animaux pour obtenir un \n                             bon de stérilisation muni de son avis d\'imposition. \n                             Si vous ne pouvez pas vous déplacer contactez \n                             Anne-Marie Dotte au 06 8100 2032. ")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("vous prenz RDV avec un vétérinaire partenaire. ")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fin de la campagne le 15 avril 2016.")]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

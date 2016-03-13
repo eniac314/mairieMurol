@@ -117,7 +117,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([]),
                                               _U.list([$Html.text("C\'est le château le plus visité d’Auvergne. Il \n                           attire plus de 100 000 visiteurs par an \n                           qui peuvent profiter de ")
                                                       ,A2($Html.a,
-                                                      _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("www.chateaudemurol.fr")]),
+                                                      _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.chateaudemurol.fr")]),
                                                       _U.list([$Html.text("visites simples ou animées")]))
                                                       ,$Html.text(", de saynètes et de démonstrations. Paysans, hommes d´armes, \n                           gentes dames et chevaliers vous font découvrir la \n                           vie d´une châtellenie au XIIIe siècle! ")]))
                                               ,A2($Html.p,
@@ -133,7 +133,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       _U.list([$Html.text("nombreux vestiges")]))
                                                       ,$Html.text(" témoignent d’une occupation gauloise (dolmen) \n                           et gallo-romaine (villa et fanum). Elles sont menées \n                           par Dominique Allios, maître de conférences en archéologie \n                           et histoire de l’Art, et son équipe d’étudiants. \n                           Chaque vendredi soir du mois de juillet, ils \n                           animent des conférences archéologiques riches en rebondissements et \n                           font ainsi partager aux murolais et aux visiteurs \n                           les découvertes et avancées réalisées dans la semaine. \n                           (voir ")
                                                       ,A2($Html.a,
-                                                      _U.list([$Html$Attributes.href("/baseDocumentaire/presentationAllios.pdf")
+                                                      _U.list([$Html$Attributes.href("/baseDocumentaire/decouvrirMurol/presentationAllios.pdf")
                                                               ,$Html$Attributes.target("_blank")]),
                                                       _U.list([$Html.text("présentation de Dominique Allios")]))
                                                       ,$Html.text(")")]))])}
@@ -169,7 +169,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([]),
                                               _U.list([$Html.text("Le volcan du Tartaret est l’un des plus \n                             récents d’Auvergne. Il est à l’origine de la \n                             formation du lac Chambon, avec l’effondrement de l’ancien \n                             volcan de la Dent du Marais. (voir ")
                                                       ,A2($Html.a,
-                                                      _U.list([$Html$Attributes.href("/baseDocumentaire/tartaretLavina.pdf")
+                                                      _U.list([$Html$Attributes.href("/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf")
                                                               ,$Html$Attributes.target("_blank")]),
                                                       _U.list([$Html.text("historique de Pierre Lavina")]))
                                                       ,$Html.text(")")]))
@@ -263,7 +263,11 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                               _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Et pourquoi ne pas continuer?")]))
                                                                       ,A2($Html.p,
                                                                       _U.list([]),
-                                                                      _U.list([$Html.text(" La voie \n                                          verte se poursuit et fait le tour du \n                                          lac Chambon. ")]))]))]))
+                                                                      _U.list([$Html.text(" La voie \n                                         verte se poursuit et fait le tour du \n                                         lac Chambon. ")]))
+                                                                      ,A2($Html.a,
+                                                                      _U.list([$Html$Attributes.href("/baseDocumentaire/180904-CG63-DepliantLacChambon-2010.pdf")
+                                                                              ,$Html$Attributes.target("_blank")]),
+                                                                      _U.list([$Html.text("Document de présentation du conseil départemental")]))]))]))
                                                       ,$Murol.miniLightBox("map")]))
                                               ,A2($Html.div,
                                               _U.list([$Html$Attributes.id("divVoie2")]),
@@ -332,6 +336,13 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                               ,$Html.text(". L’ensoleillement et les prairies aux pentes\n                             douces sont favorables à l\'élevage comme aux cultures. ")]))
                                                       ,A2($Html.p,
                                                       _U.list([]),
+                                                      _U.list([$Html.text("Au bout du village,  vous trouverez le ")
+                                                              ,A2($Html.a,
+                                                              _U.list([$Html$Attributes.href("/Agriculture.html")]),
+                                                              _U.list([$Html.text("GAEC de Chautignat")]))
+                                                              ,$Html.text("qui produit et vend en direct du Saint-Nectaire fermier AOP.")]))
+                                                      ,A2($Html.p,
+                                                      _U.list([]),
                                                       _U.list([$Html.text("A proximité du village, le moulin à eau \n                         de Landrode est accessible à pied depuis le \n                         parking du château. Venez le découvrir et profiter \n                         d’une halte ombragée au bord du ruisseau! ")]))
                                                       ,A2($Html.p,
                                                       _U.list([]),
@@ -340,7 +351,8 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       _U.list([]),
                                                       _U.list([$Html.text("La magie des sites du moulin de Landrode \n                         et des grottes de Rajat a inspiré des \n                         artistes contemporains qui ont réalisés des œuvres majestueuses \n                         et éphémères dans la cadre de la manifestation \n                         annuelle « ")
                                                               ,A2($Html.a,
-                                                              _U.list([$Html$Attributes.href("www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),
+                                                              _U.list([$Html$Attributes.href("http://www.horizons-sancy.com")
+                                                                      ,$Html$Attributes.target("_blank")]),
                                                               _U.list([$Html.text("Horizons rencontres Art et Nature")]))
                                                               ,$Html.text("».")]))
                                                       ,A2($Html.div,

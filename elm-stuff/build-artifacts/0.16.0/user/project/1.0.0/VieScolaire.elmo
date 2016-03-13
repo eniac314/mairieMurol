@@ -33,7 +33,7 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Murol.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
    var elem = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("elemVieScolaire")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole élémentaire du Regroupement Pédagogique Intercommunal (RPI)")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole élémentaire")]))
@@ -125,7 +125,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("*Des ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
-                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM pour les enfants.")]))
+                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM de la vallée verte pour les enfants.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Horaires de classe à l’école de Chambon\n                    sur Lac (suite à la réforme des rythmes scolaires) :")]))
@@ -197,7 +197,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("*Des ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
-                   ,$Html.text("(TAP) sont organisés de 15h15 à 16h45 par le\n                   SIVOM pour les enfants.")]))
+                   ,$Html.text("(TAP) sont organisés de 15h15 à 16h45 par le\n                   SIVOM  de la vallée verte pour les enfants.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Projet d’écoles : les axes prioritaires sont\n                   l’orthographe, le vocabulaire, la production d’écrits,\n                   la lecture oralisée, la compréhension de textes\n                   et la résolution de problèmes.")]))
@@ -219,7 +219,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([$Html.text("NB : Si vous habitez Saint-Nectaire et que \n                   votre enfant est scolarisé à la maternelle de \n                   Murol, il poursuivra sa scolarité à l’école primaire \n                   de Saint-Nectaire. Dans ce cas, prendre contact avec \n                   la directrice de l’école de Saint-Nectaire avant le \n                   passage au CP. ")]))]));
    var mater = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("materVieScolaire")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole maternelle")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole maternelle du SIVOM de la Vallée Verte")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("schoolAddress")]),
            _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Ecole Maternelle")]))
@@ -236,7 +236,7 @@ Elm.VieScolaire.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Répartition des classes : ")]))
            ,A2($Html.ul,
            _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des petits et moyens : Sandrine Gidon et Céline GAILLARD")]))
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des petits et moyens : Sandrine GIDON et Céline GAILLARD")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des moyens et grands : Séverine AUBOUIN.")]))]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Horaires de classe (suite à la réforme des rythmes scolaires):")]))
            ,A2($Html.table,
@@ -307,7 +307,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("*Des ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
-                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM pour les enfants.")]))
+                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM de la vallée verte pour les enfants.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le projet d’école : il se poursuit avec, comme axes prioritaires,\n                   la maîtrise de la langue, l’apprentissage du vivre\n                   ensemble et de l’autonomie, ainsi que l’ouverture culturelle.")]))

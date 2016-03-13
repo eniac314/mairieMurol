@@ -80,8 +80,10 @@ initialContent =
       , h4 [] [text "Offres emploi SIVOM"]
       , h4 [] [text "Offres emploi professionnels"]
       , h4 [] [text "Liens utiles"]
-      , p  [] [text "Pôle emploi: ", a [href "www.pole-emploi.fr"] [text "Lien"]]
-      , p  [] [text "Relais Saisonniers Sancy: ", a [href "www.lerelais-saisonniers-sancy.org/"] [text "Lien"]]
+      , p  [] [text "Pôle emploi: ", a [href "http://www.pole-emploi.fr", target "_blank"]
+                                       [text "Lien"]]
+      , p  [] [text "Relais Saisonniers Sancy: ", a [href "http://www.lerelais-saisonniers-sancy.org/", target "_blank"]
+                                                    [text "Lien"]]
       ]
       
 

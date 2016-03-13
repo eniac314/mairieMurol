@@ -156,19 +156,22 @@ initialContent =
                  ils travaillent dans le cadre des commissions communales 
                  et représentent la commune au sein des intercommunalités 
                  en tant que délégués. (cf document "
-          , a [href "", target "_blank"]
-              [text "commissions et 
-                     délégations"]
+          , a [ href "/baseDocumentaire/conseilMunicipal/COMMISSIONS ET DELEGATIONS.pdf"
+              , target "_blank"]
+              [ text "commissions et 
+                      délégations"]
           , text ")"
           ]
-      , h4 [] [text "Vos élus"]
+      , h4 [] [text "Les élus"]
       , table [] 
               [ tr [] [ td [] [img [src "/images/elus/GOUTTEBEL.jpg"] []]
                       , td [] [span [class "status"] [text "Maire"]]
                       , td [] [ p [class "nom"] [text "Sébastien GOUTTEBEL"]
                               , p [class "job"]
-                                  [text "Président SIVOM de la Vallée Verte
-                                         Président des Maires Ruraux du Puy-de-Dôme"]  
+                                  [text "Président SIVOM de la Vallée Verte"
+                                  , br [] []
+                                  , text "Président des Maires Ruraux du Puy-de-Dôme"
+                                  ]  
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/DUMONTEL.jpg"] []]
@@ -182,8 +185,8 @@ initialContent =
                       , td [] [span [class "status"] [text "2ème Adjoint"]]
                       , td [] [ p [class "nom"] [text "François AUBERTY"]
                               , p [class "job"]
-                                  [text "Capitaine - Chef de compagnie
-                                         des Sapeurs Pompiers"]
+                                  [text "Commandant 
+                                         des Sapeurs Pompiers retraité"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/BOUCHE.jpg"] []]
@@ -219,8 +222,7 @@ initialContent =
                       , td [] [span [class "status"] [text "Conseiller municipal"]]
                       , td [] [ p [class "nom"] [text "Véronique DEBOUT"]
                               , p [class "job"]
-                                  [text "Webmaster du site \"murol.fr\"
-                                         Bénévole associatif - Militaire à la retraite"]
+                                  [text "Bénévole associatif - Militaire à la retraite"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/DOTTE.jpg"] []]

@@ -24,10 +24,10 @@ Elm.GestionDesRisques.make = function (_elm) {
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/dicrim.png")]),_U.list([]))
                    ,A2($Murol.link,
                    "Télécharger le document d\'information communal sur les risques majeurs \"DICRIM\"",
-                   "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf")
+                   "/baseDocumentaire/Dicrim%20murol%20v2%20mars%2012.pdf")
                    ,A2($Murol.link,
                    "Télécharger la brochure prise en compte du risque sismique en Auvergne",
-                   "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf")]))
+                   "/baseDocumentaire/risque_sismique_auvergne_cle582121.pdf")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Réévaluation des risques sismiques de la région Auvergne")]))
            ,A2($Html.p,
            _U.list([]),
@@ -50,7 +50,7 @@ Elm.GestionDesRisques.make = function (_elm) {
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("L’Auvergne, une région sismiquement active")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Par un contexte sismotectonique particulier (le Massif Central \n                     et son système de failles profondes), la région \n                     Auvergne est considérée comme une région sismiquement active. \n                     Les séismes de grande ampleur y sont rares \n                     ; le dernier en date remonte au moyen \n                     age : 1490 ; il avait fait d’importants \n                     dommages aux édifices de Riom et Clermont-Ferrand, pour \n                     une magnitude de 5.1 sur l’échelle de Richter.")]))
+           _U.list([$Html.text("Par un contexte sismotectonique particulier (le Massif Central \n                     et son système de failles profondes), la région \n                     Auvergne est considérée comme une région sismiquement active. \n                     Les séismes de grande ampleur y sont rares \n                     ; le dernier en date remonte au Moyen-Âge\n                     : 1490 ; il avait fait d’importants \n                     dommages aux édifices de Riom et Clermont-Ferrand, pour \n                     une magnitude de 5.1 sur l’échelle de Richter.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("L’activité sismique est toutefois permanente avec une centaine \n                     de répliques par an (de magnitude inférieure à \n                     3 et donc peu ou pas perceptibles) enregistrées \n                     par le réseau Sismologique localisé à l’Observatoire de \n                     Physique du Globe. ")]))
@@ -58,6 +58,9 @@ Elm.GestionDesRisques.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("La région Auvergne est aujourd’hui concernée pour la \n                     totalité de ses communes par des zonages de \n                     sismicité très faible, faible ou modérée. Seules les \n                     zones de sismicité faible (845 communes) ou modérée \n                     (390 communes) disposent d’une réglementation spécifique.")]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("http://www.puy-de-dome.gouv.fr/plan-de-prevention-des-risques-d-a430.html"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("PPRI couze Chambon")]))
            ,A2($Html.figure,
            _U.list([$Html$Attributes.$class("quakePic")]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/seismes.gif")]),_U.list([]))]))]));

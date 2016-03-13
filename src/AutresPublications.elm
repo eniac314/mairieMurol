@@ -63,7 +63,7 @@ main =
 initialContent =
   div [ class "subContainerData noSubmenu", id "autresPubli"]
       [ h2 [] [text "Autres publications"]
-      , link "Note de synthèse 2012 station classée de tourisme" ""
-      , link "Présention du chateau de Murol par Dominique Allios" "/baseDocumentaire/presentationAllios.pdf"
-      , link "Les volcans du Tartaret - Pierre Lavina" "/baseDocumentaire/tartaretLavina.pdf"
+      , link "Note de synthèse 2012 station classée de tourisme" "/baseDocumentaire/Notedesynthèse Murol 2012.pdf"
+      , link "Présention du chateau de Murol par Dominique Allios" "/baseDocumentaire/decouvrirMurol/presentationAllios.pdf"
+      , link "Les volcans du Tartaret - Pierre Lavina" "/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf"
       ]

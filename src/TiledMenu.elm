@@ -124,6 +124,7 @@ view address model =
                                  ]
                       Just l  -> [class "tile"
                                  , href l
+                                 --, target "_blank"
                                  , id "tiledMenuTop"
                                  ]
                     picture' = if String.isEmpty picture

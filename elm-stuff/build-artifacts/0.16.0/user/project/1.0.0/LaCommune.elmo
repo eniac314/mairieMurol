@@ -43,7 +43,7 @@ Elm.LaCommune.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La commune appartient à de multiples intercommunalités qui \n                 permettent la mutualisation des compétences et s’appuie sur \n                 un partenariat actif avec les collectivités locales. (cf. \n                 document ")
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html$Attributes.href("/baseDocumentaire/APPORTS INTERCOMMUNALITE ET PARTENARIAT.pdf"),$Html$Attributes.target("_blank")]),
                    _U.list([$Html.text("les apports des intercommunalités et du partenariat")]))
                    ,$Html.text(")")]))
            ,A2($Html.p,

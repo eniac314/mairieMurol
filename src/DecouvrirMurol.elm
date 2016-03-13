@@ -203,7 +203,7 @@ initialContent =
               , p [] [text "C'est le château le plus visité d’Auvergne. Il 
                            attire plus de 100 000 visiteurs par an 
                            qui peuvent profiter de "
-                     , a [target "_blank", href "www.chateaudemurol.fr"]
+                     , a [target "_blank", href "http://www.chateaudemurol.fr"]
                          [text "visites simples ou animées"]  
                      ,text ", de saynètes et de démonstrations. Paysans, hommes d´armes, 
                            gentes dames et chevaliers vous font découvrir la 
@@ -226,7 +226,7 @@ initialContent =
                            font ainsi partager aux murolais et aux visiteurs 
                            les découvertes et avancées réalisées dans la semaine. 
                            (voir "
-                     , a [href "/baseDocumentaire/presentationAllios.pdf", target "_blank"]
+                     , a [href "/baseDocumentaire/decouvrirMurol/presentationAllios.pdf", target "_blank"]
                          [text "présentation de Dominique Allios"]
                      , text ")"
                      ]
@@ -272,7 +272,7 @@ initialContent =
                              récents d’Auvergne. Il est à l’origine de la 
                              formation du lac Chambon, avec l’effondrement de l’ancien 
                              volcan de la Dent du Marais. (voir "
-                      ,a [href "/baseDocumentaire/tartaretLavina.pdf", target "_blank"]
+                      ,a [href "/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf", target "_blank"]
                          [text "historique de Pierre Lavina"]
 
                       , text ")"
@@ -391,10 +391,12 @@ initialContent =
                         , li []
                              [ p []
                                  [ text "Et pourquoi ne pas continuer?"]
-                             ,  p []
-                                  [ text " La voie 
-                                          verte se poursuit et fait le tour du 
-                                          lac Chambon. "]
+                             , p []
+                                 [ text " La voie 
+                                         verte se poursuit et fait le tour du 
+                                         lac Chambon. "]
+                             , a [href "/baseDocumentaire/180904-CG63-DepliantLacChambon-2010.pdf", target "_blank"]
+                                 [text "Document de présentation du conseil départemental"]
                              ] 
                         ]
                     , miniLightBox "map"
@@ -481,6 +483,10 @@ initialContent =
                       , text ". L’ensoleillement et les prairies aux pentes
                              douces sont favorables à l'élevage comme aux cultures. " 
                       ]
+              , p [] [ text "Au bout du village,  vous trouverez le "
+                     , a [href "/Agriculture.html"] [text "GAEC de Chautignat"]
+                     , text "qui produit et vend en direct du Saint-Nectaire fermier AOP."
+                     ]
               , p []
                   [text "A proximité du village, le moulin à eau 
                          de Landrode est accessible à pied depuis le 
@@ -503,7 +509,7 @@ initialContent =
                          artistes contemporains qui ont réalisés des œuvres majestueuses 
                          et éphémères dans la cadre de la manifestation 
                          annuelle « "
-                  , a [href "www.horizons-sancy.com", target "_blank"]
+                  , a [href "http://www.horizons-sancy.com", target "_blank"]
                       [ text "Horizons rencontres Art et Nature"]
                   , text "»."
                   ]

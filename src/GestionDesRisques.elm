@@ -73,8 +73,8 @@ initialContent =
       [ h2 [] [text "Gestion des Risques"]
       , div [class "DICRIM"] 
         [ img [src "/images/dicrim.png"] [] 
-        , link "Télécharger le document d'information communal sur les risques majeurs \"DICRIM\"" "http://www.murol.fr/Base_documentaire/Dicrim%20murol%20v2%20mars%2012.pdf"
-        , link "Télécharger la brochure prise en compte du risque sismique en Auvergne" "http://www.murol.fr/Base_documentaire/risque_sismique_auvergne_cle582121.pdf"
+        , link "Télécharger le document d'information communal sur les risques majeurs \"DICRIM\"" "/baseDocumentaire/Dicrim%20murol%20v2%20mars%2012.pdf"
+        , link "Télécharger la brochure prise en compte du risque sismique en Auvergne" "/baseDocumentaire/risque_sismique_auvergne_cle582121.pdf"
         ]
       , h4 [] [text "Réévaluation des risques sismiques de la région Auvergne"]
       , p  [] [text "Les séismes font partie des aléas naturels majeurs, 
@@ -111,8 +111,8 @@ initialContent =
                      et son système de failles profondes), la région 
                      Auvergne est considérée comme une région sismiquement active. 
                      Les séismes de grande ampleur y sont rares 
-                     ; le dernier en date remonte au moyen 
-                     age : 1490 ; il avait fait d’importants 
+                     ; le dernier en date remonte au Moyen-Âge
+                     : 1490 ; il avait fait d’importants 
                      dommages aux édifices de Riom et Clermont-Ferrand, pour 
                      une magnitude de 5.1 sur l’échelle de Richter."]
       , p  [] [text "L’activité sismique est toutefois permanente avec une centaine 
@@ -129,6 +129,8 @@ initialContent =
                      zones de sismicité faible (845 communes) ou modérée 
                      (390 communes) disposent d’une réglementation spécifique."]
 
+      , a [ href "http://www.puy-de-dome.gouv.fr/plan-de-prevention-des-risques-d-a430.html", target "_blank"]
+          [ text "PPRI couze Chambon"]
       , figure [class "quakePic"]
                [img [src "/images/seismes.gif"] []]
       ]

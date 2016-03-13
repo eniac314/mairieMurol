@@ -67,14 +67,17 @@ update action model =
 
 -- View
 
-viewGallery : Signal.Address Action -> (Gallery.Model,String) -> Html
+viewGallery : Signal.Address Action -> (Gallery.Model,String) -> List Html
 viewGallery address (gallery, name) =
-  Gallery.view (Signal.forwardTo address (GalleryAction name)) gallery
+  let t = h5 [] [text (.descr gallery)]
+  in 
+  t :: [Gallery.view (Signal.forwardTo address (GalleryAction name)) gallery]
  
 view : Signal.Address Action -> Model -> Html
 view address model =
-  let galleriesHtml = List.map (viewGallery address) (.galleries model)
-      
+
+  let galleriesHtml = List.concat (List.map (viewGallery address) (.galleries model))
+
       subContainerData =
         div [ class "subContainerData noSubmenu", id "annee2016"]
             (
@@ -242,5 +245,5 @@ galleries = [(veuxMaireRepasCCAS, "veuxMaireRepasCCAS")]
         filename = "IMGP5783.jpg"
       , caption = Just ""
       }
-    ] "veuxMaireRepasCCAS" ""
+    ] "veuxMaireRepasCCAS" "24 janvier - vœux du maire et repas CCAS"
 

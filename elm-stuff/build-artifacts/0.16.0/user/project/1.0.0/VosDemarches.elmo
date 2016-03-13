@@ -60,9 +60,7 @@ Elm.VosDemarches.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Postulez auprès des organismes proposant des missions de \n                     Service Civique directement à partir du site:")]))
-           ,A2($Murol.link,"http://www.service-civique.gouv.fr","http://www.service-civique.gouv.fr")
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Mission dans le puy de dôme:")]))
-           ,A2($Murol.link,"service civique puy de dôme","http://www.service-civique.gouv.fr/les_missions?tid=All&tid_1=16&tid_2=All&dept=Puy-de-Dôme ")]));
+           ,A2($Murol.link,"http://www.service-civique.gouv.fr","http://www.service-civique.gouv.fr")]));
    var listElec = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("listElecDemarches")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("inscription listes électorales")]))
@@ -81,7 +79,7 @@ Elm.VosDemarches.make = function (_elm) {
                    _U.list([]),
                    _U.list([A2($Html.p,
                    _U.list([]),
-                   _U.list([A2($Murol.link,"du formulaire qui vous concerne","http://www.murol.fr/Base_documentaire/electionsinscriptionf.pdf")]))]))]))
+                   _U.list([A2($Murol.link,"du formulaire qui vous concerne","/baseDocumentaire/electionsinscriptionf.pdf")]))]))]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Recommandations générales")]))
            ,A2($Html.p,
            _U.list([]),
@@ -182,7 +180,7 @@ Elm.VosDemarches.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Pour adresser votre demande par courrier postal, imprimez \n                     la demande en ")
-                   ,A2($Murol.link,"cliquant ici","http://www.murol.fr/Base_documentaire/demande%20acte%20de%20naissance.pdf")
+                   ,A2($Murol.link,"cliquant ici","/baseDocumentaire/demande%20acte%20de%20naissance.pdf")
                    ,$Html.text(", remplissez-la et envoyez à la mairie")]))
            ,A2($Html.p,
            _U.list([$Html$Attributes.$class("important")]),
@@ -244,12 +242,10 @@ Elm.VosDemarches.make = function (_elm) {
            _U.list([A2($Html.li,
                    _U.list([]),
                    _U.list([A2($Html.span,_U.list([]),_U.list([$Html.text("Certificat ")]))
-                           ,A2($Murol.link,"d\'immatriculation","http://www.murol.fr/Base_documentaire/ddeimatcerfa10672.pdf")
+                           ,A2($Murol.link,"d\'immatriculation","/baseDocumentaire/ddeimatcerfa10672.pdf")
                            ,A2($Html.span,_U.list([]),_U.list([$Html.text(" + ")]))
-                           ,A2($Murol.link,"notice explicative","http://www.murol.fr/Base_documentaire/notexpcg50322C.pdf")]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Murol.link,"Certificat de cession de véhicule","http://www.murol.fr/Base_documentaire/cessionvehic.pdf")]))
+                           ,A2($Murol.link,"notice explicative","/baseDocumentaire/notexpcg50322C.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Certificat de cession de véhicule","/baseDocumentaire/cessionvehic.pdf")]))
                    ,A2($Html.li,
                    _U.list([]),
                    _U.list([A2($Murol.link,"Certificat de non gage","http://www.interieur.gouv.fr/A-votre-service/Mes-demarches/Mes-teleservices")]))]))]));
@@ -305,13 +301,11 @@ Elm.VosDemarches.make = function (_elm) {
                    _U.list([$Html.text("un chèque ou mandat-lettre à l\'ordre de Monsieur \n                                 le régisseur des recettes de la préfecture, au \n                                 montant de la taxe régionale (si elle est \n                                 demandée)")]))]))
                    ,A2($Html.li,
                    _U.list([]),
-                   _U.list([A2($Murol.link,"Demande de délivrance","http://www.murol.fr/Base_documentaire/imprime_demande_permis_conduire.pdf")
+                   _U.list([A2($Murol.link,"Demande de délivrance","/baseDocumentaire/imprime_demande_permis_conduire.pdf")
                            ,A2($Html.span,_U.list([]),_U.list([$Html.text(" du permis de conduire")]))]))
                    ,A2($Html.li,
                    _U.list([]),
-                   _U.list([A2($Murol.link,
-                   "Demande de permis international",
-                   "http://www.murol.fr/Base_documentaire/imprime_demande_permis_international.pdf")]))]))]));
+                   _U.list([A2($Murol.link,"Demande de permis international","/baseDocumentaire/imprime_demande_permis_international.pdf")]))]))]));
    var justifDom = A2($Html.div,
    _U.list([$Html$Attributes.$class("justif")]),
    _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Justificatif de domicile ou de résidence")]))

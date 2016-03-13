@@ -151,7 +151,7 @@ main =
 
 medievales = 
   initDropable 0 
-               "Les Médiévales de Murol"
+               "Les Médiévales de Murol (Pont de l’Ascension)"
                (Just ( a [ href "/Medievales.html"]
                          [ text "lien photothèque"] ))
                ( [ p [] [text "Cette manifestation, organisée par la mairie de 
@@ -168,7 +168,7 @@ medievales =
 
 musee = 
   initDropable 1 
-               "L’exposition temporaire au musée des Peintres de l’Ecole de Murols"
+               "L’exposition temporaire au musée des Peintres de l’Ecole de Murols (saison estivale)"
                (Just ( a [ href "http://www.musee-murol.fr/fr", target "_blank"]
                          [ text "site officiel"] ))
                ( [ p [] [text "Chaque année, le dernier week-end de mai,
@@ -184,8 +184,8 @@ musee =
 
 horizon = 
   initDropable 2 
-               "Horizon, rencontres Art et Nature"
-               (Just ( a [ href "www.horizons-sancy.com", target "_blank"]
+               "Horizon, rencontres Art et Nature (saison estivale)"
+               (Just ( a [ href "http://www.horizons-sancy.com", target "_blank"]
                          [ text "site officiel"] ))
                ( [ p [] [text "Cette manifestation culturelle est organisée par la communauté 
                                de communes du massif du Sancy. La commune 
@@ -201,7 +201,7 @@ horizon =
 
 revolution = 
   initDropable 3
-               "La fête de la Révolution"
+               "La fête de la Révolution (14 juillet)"
                (Just ( a [ href "/14Juillet.html" ]
                          [ text "lien photothèque"] ))
                ( [ p [] [text "La municipalité de Murol, en partenariat avec différentes 
@@ -220,7 +220,7 @@ revolution =
 
 festivalArt = 
   initDropable 4
-               "Le festival d’Art"
+               "Le festival d’Art (été)"
                (Just ( a [ href "/FestivalArt.html" ]
                          [ text "lien photothèque"] ))
                ( [ p [] [text "Le service animation de la mairie organise chaque 

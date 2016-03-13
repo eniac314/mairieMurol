@@ -34,6 +34,7 @@ type alias Bulletin =
   { cover : String
   , date  : String
   , index : List String
+  , addr  : String
   }
 type alias Entry = (String,String)
 
@@ -51,7 +52,7 @@ view address model =
       ]
 
 renderBulletin 
-  {cover, date, index} = 
+  {cover, date, index, addr} = 
     div [class "bulletin"]
         [ figure [ class "cover"]
                  [ figcaption [] [text date] 
@@ -60,7 +61,7 @@ renderBulletin
         , ul []
              ((h6 [] [text "Dans ce numéro:"]
                :: List.map (\e -> li [] [text e]) index)
-              ++ [link "Téléchargez ici" ""])
+              ++ [link "Téléchargez ici" addr])
         ]
 
 contentMap =
@@ -112,7 +113,7 @@ bulls = List.reverse
             , "L’intercommunalité"
             , "L’état civil"
             , "Le site internet"
-            ]
+            ] "/baseDocumentaire/bulletin/1janvier2009.pdf"
  , Bulletin "cover1.png" "Janvier 2011"
             [ "Etat civil 2010"
             , "Horaires des services"
@@ -141,7 +142,7 @@ bulls = List.reverse
             , "Calendrier des diverses
                manifestations du
                1er semestre 2011"
-            ]
+            ] "/baseDocumentaire/bulletin/2janvier2011.pdf"
  , Bulletin "cover2.png" "Février 2012"
             [ "Etat civil 2011"
             , "Horaires des services"
@@ -166,7 +167,7 @@ bulls = List.reverse
             , "Calendrier des
                manifestations du
                1er semestre 2012"
-            ]
+            ] "/baseDocumentaire/bulletin/3fevrier2012.pdf"
  , Bulletin "cover3.png" "Mars 2013"
             [ "Etat civil"
             , "Urbanisme"
@@ -197,7 +198,7 @@ bulls = List.reverse
             , "Services sociaux"
             , "Associations"
             , "Calendrier"
-            ]
+            ] "/baseDocumentaire/bulletin/4mars2013.pdf"
   , Bulletin "cover4.png" "Janvier 2014"
              [ "Etat civil"
              , "Elections"
@@ -228,7 +229,7 @@ bulls = List.reverse
              , "Informatique et sites"
              , "Associations"
              , "Calendrier"
-             ]
+             ] "/baseDocumentaire/bulletin/5janvier2014.pdf"
  , Bulletin "cover5.png" "Mars 2015"
             [ "Equipe municipale"
             , "Intercommunalité"
@@ -263,16 +264,16 @@ bulls = List.reverse
             , "Murol en images"
             , "Associations"
             , "Calendrier"
-            ]
- , Bulletin "cover6.jpg" "Janvier 2016"
-            [ "Conseil regional"
-            , "Communaute de communes"
+            ] "/baseDocumentaire/bulletin/26mars2015.pdf"
+ , Bulletin "cover6.jpg" "Mars 2016"
+            [ "Conseil régional"
+            , "Communauté de communes"
             , "Sapeurs pompiers"
             , "SIVOM de besse"
             , "CCAS"
-            , "Organicite ®"
-            , "Tri des dechets "
-            , "Travaux realises"
+            , "Organicité ®"
+            , "Tri des déchets "
+            , "Travaux realisés"
             , "Embellissement et fleurissement"
             , "Château et archeologie"
             , "Prélong"
@@ -281,18 +282,18 @@ bulls = List.reverse
             , "Plan local d’urbanisme"
             , "Pavillon bleu"
             , "Ecoles"
-            , "SIVOM de la vallee verte"
-            , "Activites jeunesse"
+            , "SIVOM de la vallée verte"
+            , "Activités jeunesse"
             , "Animation estivale"
             , "Grandes manifestations"
             , "Associations"
-            , "Musee des peintres"
+            , "Musée des peintres"
             , "Investissements"
             , "Etat civil"
             , "Services"
             , "Site municipal"
             , "Maison de sante"
             , "Calendrier"
-            ]
+            ] "/baseDocumentaire/bulletin/mars2016.pdf"
  ]
 

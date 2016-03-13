@@ -53,13 +53,21 @@ renderAssocs : List Assoc -> Html
 renderAssocs assocs = 
   let assocs' = List.sortBy (.nom) assocs
       toDivs = List.map renderAssoc assocs'
-      col ds = div [class "column"] ds
+      col ds = div [class "column", style [("max-width","30%")]] ds
 
-  in div [] (List.map col (split3' toDivs))
+  in div [] ((List.map col (split3' toDivs)) ++ [contact])
+
+contact = 
+   p []
+     [ text "Liste non exhaustive, contactez "
+     , a [href ("mailto:"++"contactsite.murol@orange.fr")]
+         [text "le webmaster"]
+     , text " pour toute erreur ou oubli!"
+     ]
 
 renderAssoc : Assoc -> Html
 renderAssoc { nom, preci, domaine, siege, affil, resp, mails, sites, logo} = 
-  let nom'  = maybeElem nom (\s -> h5 [] [text s])
+  let nom'  = maybeElem nom (\s -> h5 [] [anchor, text s])
       preci' = maybeElem preci (\s -> p [] [text s])
       dom'   = maybeElem 
                 domaine 
@@ -87,9 +95,13 @@ renderAssoc { nom, preci, domaine, siege, affil, resp, mails, sites, logo} =
                                 (List.intersperse ([br [] []])
                                    (List.map renderResp resp)))
       mails' = mailsToHtml mails
-      sites' = sitesToHtml sites   
+      sites' = sitesToHtml sites
 
-  in div [class "assoc"]
+      anchor = a [name (String.concat (String.words nom))
+                 --, style [("display","none")]
+                 ] []    
+
+  in div [class "assoc", style [("max-width","95%")]]
          ([nom',preci',dom', siege', affil', resp', mails',sites'])
 
 
@@ -167,7 +179,7 @@ assocs =
                 de rues ainsi que des animations pédagogiques
                 - rassembler des artisans et des artistes à l’occasion de fêtes,
                 foires, marchés artisanaux et marchés à thèmes."
-    , siege   = "« Les Aloès » Rue chabrol – 63790 Murol"
+    , siege   = "« Les Aloès » Rue de Chabrol – 63790 Murol"
     , resp = [{ poste = "Présidente"
               , nom   = "Bénédicte Manfri"
               , tel   = "06 72 16 78 46"
@@ -187,7 +199,10 @@ assocs =
     }
   , { emptyAssoc |
       nom     = "Association Couleurs et motifs"
-    , siege   = "Allée de laPlage  Murol"
+    , domaine = "promouvoir, encourager, développer 
+                 la pratique des arts, favoriser les talents
+                  par tous les moyens existants. "
+    , siege   = "Allée de la Plage 63790 Murol"
     , resp = [{ poste = "Présidente"
               , nom   = "Jacqueline GODARD"
               , tel   = ""
@@ -195,7 +210,7 @@ assocs =
     , mails    = ["jacqueline.godard@free.fr"] 
     }
   , { emptyAssoc |
-      nom     = "Association culturelle et sportive de Beaunele froid"
+      nom     = "Association culturelle et sportive de Beaune-le-froid"
     , domaine = "activité ski de fond"
     , siege   = "Beaune-le-Froid 63790 MUROL"
     , resp = [{ poste = "Président"
@@ -206,7 +221,7 @@ assocs =
     --, cat = Sport 
     }
   , { emptyAssoc |
-      nom     = "Association culturelle et sportive de Beaune le froid"
+      nom     = "Association culturelle et sportive de Beaune-le-froid"
     , domaine = "activité ski de fond"
     , siege   = "Beaune-le-Froid 63790 MUROL"
     , resp = [{ poste = "Président"
@@ -217,7 +232,7 @@ assocs =
     , cat = Sport 
     }
   , { emptyAssoc |
-      nom     = "Association de la Foire du Saint Nectaire de Beaune le Froid"
+      nom     = "Association de la Foire du Saint Nectaire de Beaune-le-Froid"
     , domaine = "organisation de manifestations agricoles, promotion du 
                  Saint Nectaire fermier et des produits régionaux, activités d’animation dans la commune"
     , siege   = "Mairie de Murol"
@@ -261,7 +276,7 @@ assocs =
       nom     = "Association Intercommunale des Anciens Combattants"
     , preci   = "Section de Chambon sur Lac, Murol, Saint Nectaire"
     , domaine = "transmettre le devoir de mémoire aux jeunes générations, assurer la solidarité"
-    , siege   = "rue Chareton, 63790 MUROL"
+    , siege   = "rue Charreton, 63790 MUROL"
     , resp = [{ poste = "Vice Président pour Murol"
               , nom   = "Georges GAUFFIER"
               , tel   = "04 73 83 62 02"
@@ -270,7 +285,7 @@ assocs =
     , { emptyAssoc |
       nom     = "Association Médiévale de Murol - Auvergne (AMMA)"
     , domaine = "promouvoir et sauvegarder le patrimoine médiéval de la commune de Murol"
-    , siege   = "La rivière Murol"
+    , siege   = "La rivière route de Saint-Nectaire 63790 Murol"
     , resp = [{ poste = "Président"
               , nom   = "Vincent Salesse"
               , tel   = "06 09 04 67 92"
@@ -281,9 +296,9 @@ assocs =
     , { emptyAssoc |
       nom     = "Association Sancy Celtique"
     , domaine = "organisation de festival"
-    , siege   = "La rivière Murol"
+    , siege   = "La rivière route de Saint-Nectaire 63790 Murol"
     , resp = [{ poste = "Président"
-              , nom   = "Gérôme GODARD"
+              , nom   = "Jérôme GODARD"
               , tel   = "04 73 26 02 00"
               }
              ]
@@ -341,7 +356,7 @@ assocs =
     , domaine = "développement de l'activité commerciale"
     , siege   = "rue Georges Sand - 63790 MUROL"
     , resp = [{ poste = "Président"
-              , nom   = "jean-Jacques ROUCHVARGER"
+              , nom   = "Jean-Jacques ROUCHVARGER"
               , tel   = "06 32 97 02 19"
               }]
     , mails    = ["njrorganisation@orange.fr"]
@@ -387,8 +402,12 @@ assocs =
     , cat = Pro
     }
     , { emptyAssoc |
-      nom     = "Ensemble Instrumental de la Vallée Verte (EIVV)"
+      nom     = "L'Ensemble Instrumental de la Vallée Verte (EIVV)"
     , siege   = "Lac Chambon - 63790 Chambon sur lac"
+    , domaine = "participer aux manifestations officielles, créer un tissu social 
+                 entre les musiciens de la région du sancy 
+                 et être fédérateur de toutes les personnes qui 
+                 aiment la musique d’harmonie. "
     , resp = [{ poste = "Président"
               , nom   = "Jean-louis REBOUFFAT"
               , tel   = "04 73 88 63 08"
@@ -405,7 +424,7 @@ assocs =
               , tel   = ""
               }]
     , mails    = ["element.terre@laposte.net"]
-    , sites    = ["www.element-terre.org"]
+    , sites    = ["http://www.element-terre.org"]
     }
     ,
     { emptyAssoc |
@@ -417,7 +436,7 @@ assocs =
               , tel   = ""
               }]
     , mails    = ["element.terre@laposte.net"]
-    , sites    = ["www.element-terre.org"]
+    , sites    = ["http://www.element-terre.org"]
     , cat = Pro
     }
     ,
@@ -451,7 +470,7 @@ assocs =
               , tel   = "06 70 02 06 28"
               }]
     , mails    = ["jeepaoc@gmail.com, info@jeepaoc.com, jeepaoc.infoclub@orange.fr"]
-    , sites    = ["www.jeepaoc.com"]
+    , sites    = ["http://www.jeepaoc.com"]
     }
     ,
     { emptyAssoc |
@@ -525,16 +544,17 @@ assocs =
     }
     ,
     { emptyAssoc |
-      nom     = "Natur ’ Sancy"
+      nom     = "Natur’ Sancy"
     , domaine = "Activité de pleine nature, tout public
                  Protection du patrimoine naturel en milieu montagnard,
-                 activités lié à la découverte du patrimoine."
+                 activités liées à la découverte du patrimoine."
     , siege   = "route de Besse, 63790 MUROL"
     , resp = [{ poste = "Présidente"
               , nom   = "Véronique DEBOUT"
               , tel   = "04 73 88 67 56"
               }]
-    , mails    = ["natur.sancy@gmail.com","http://natursancy.blogspot.fr/"]
+    , mails    = ["natur.sancy@gmail.com"]
+    , sites    = ["http://natursancy.blogspot.fr/"]
     }
     ,
     { emptyAssoc |
@@ -586,7 +606,7 @@ assocs =
     ,
     { emptyAssoc |
       nom     = "Système d'Echange Local \"S.SancyEL\""
-    , domaine = "association à caractère social permettant à leur membres de procéder
+    , domaine = "association à caractère social permettant à ses membres de procéder
                  à des échanges de biens, de services et de savoirs, sans avoir recours à la monnaie. "
     , siege   = "3 impasse de la Vernoze - Champeix"
     , resp = [{ poste = "Coprésidente"

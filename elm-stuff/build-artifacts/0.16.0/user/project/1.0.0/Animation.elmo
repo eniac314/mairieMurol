@@ -102,7 +102,7 @@ Elm.Animation.make = function (_elm) {
    });
    var medievales = A4(initDropable,
    0,
-   "Les Médiévales de Murol",
+   "Les Médiévales de Murol (Pont de l’Ascension)",
    $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))),
    _U.list([A2($Html.p,
            _U.list([]),
@@ -112,7 +112,7 @@ Elm.Animation.make = function (_elm) {
            _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge. Immersion garantie !")]))]));
    var musee = A4(initDropable,
    1,
-   "L’exposition temporaire au musée des Peintres de l’Ecole de Murols",
+   "L’exposition temporaire au musée des Peintres de l’Ecole de Murols (saison estivale)",
    $Maybe.Just(A2($Html.a,
    _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
    _U.list([$Html.text("site officiel")]))),
@@ -121,8 +121,10 @@ Elm.Animation.make = function (_elm) {
    _U.list([$Html.text("Chaque année, le dernier week-end de mai,\n                               la commune organise le vernissage d’une \n                               exposition temporaire inédite au musée des Peintres de \n                               l’Ecole de Murols. \n                               L’exposition reste en place jusqu’au 31 octobre. L’objectif \n                               est de regrouper et de présenter pendant quelques \n                               mois les œuvres de l’un des peintres majeurs \n                               de l’Ecole de Murols.")]))]));
    var horizon = A4(initDropable,
    2,
-   "Horizon, rencontres Art et Nature",
-   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),_U.list([$Html.text("site officiel")]))),
+   "Horizon, rencontres Art et Nature (saison estivale)",
+   $Maybe.Just(A2($Html.a,
+   _U.list([$Html$Attributes.href("http://www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),
+   _U.list([$Html.text("site officiel")]))),
    _U.list([A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Cette manifestation culturelle est organisée par la communauté \n                               de communes du massif du Sancy. La commune \n                               de Murol soutient cet événement en tant que \n                               membre de la communauté de communes et a \n                               déjà accueilli de nombreuses œuvres sur son territoire.")]))
@@ -131,7 +133,7 @@ Elm.Animation.make = function (_elm) {
            _U.list([$Html.text("Les œuvres éphémères sont installées de juin à \n                               septembre sur des sites naturels. Cette manifestation prend \n                               une ampleur considérable qui dépasse le cadre régional \n                               et même national. ")]))]));
    var revolution = A4(initDropable,
    3,
-   "La fête de la Révolution",
+   "La fête de la Révolution (14 juillet)",
    $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/14Juillet.html")]),_U.list([$Html.text("lien photothèque")]))),
    _U.list([A2($Html.p,
            _U.list([]),
@@ -147,7 +149,7 @@ Elm.Animation.make = function (_elm) {
            _U.list([$Html.text("Vous souhaitez prendre part activement à la fête \n                               ? Louez un costume ! Renseignement à la \n                               mairie de Murol")]))]));
    var festivalArt = A4(initDropable,
    4,
-   "Le festival d’Art",
+   "Le festival d’Art (été)",
    $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/FestivalArt.html")]),_U.list([$Html.text("lien photothèque")]))),
    _U.list([A2($Html.p,
            _U.list([]),

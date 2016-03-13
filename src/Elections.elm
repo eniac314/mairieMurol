@@ -99,17 +99,24 @@ initialContent =
   , tiledMenu =
       initWithLink
             [("Les élections municipales"
-            ,""
+            ,"/images/tiles/elections/01.jpg"
             ,[ elections
              ]
             ,""
              )
             ,
             ("Résultats des élections"
-            ,""
+            ,"/images/tiles/elections/02.jpg"
             ,[ resElec
              ]
             ,""
+             )
+            ,
+            ("Autres élections"
+            ,"/images/tiles/elections/03.jpg"
+            ,[
+             ]
+            ,"http://www.interieur.gouv.fr/Elections"
              )
             ]
   }
@@ -187,49 +194,24 @@ elections =
                      de scrutin applicables aux élections municipales "]
 
       , h4 [] [text "Les modes de scrutins"]
-      , p  [] [text "Les conseillers municipaux seront élus les 23 et 
-                     30 mars 2014. Les élections municipales ont lieu, 
-                     en principe, tous les six ans. Le mode 
-                     de scrutin varie selon le nombre d’habitants de 
-                     la commune. Au plus tôt le vendredi et 
-                     au plus tard le dimanche suivant le scrutin, 
-                     le conseil municipal nouvellement élu se réunit pour 
-                     procéder à l’élection du maire et de ses 
-                     adjoints."]
+      , p  [] [text "Le mode de scrutin varie selon le nombre d’habitants
+                     de la commune."]
       
-      , h5 [] [text "Deux grandes innovations en 2014"]
+      , h5 [] [text "Les communes de plus de 1 000 habitants "]
       , p  [] [text "Les élections municipales des 23 et 30 mars 
-                     2014 seront marquées par deux grandes innovations :"]
+                     2014 ont été marquées par deux grandes innovations :"]
       , p  [] [text "Les électeurs de toutes les communes de plus 
-                     de 1000 habitants éliront leurs conseillers municipaux selon 
-                     le même mode scrutin. Ce mode de scrutin, 
+                     de 1000 habitants ont élu leurs conseillers municipaux selon 
+                     le même mode scrutin
                      qui impose le respect du principe de parité 
-                     aux listes de candidats, était jusqu’alors réservé aux 
-                     seules communes de plus de 3500 habitants. Cette 
-                     modification, introduite par les lois organique et ordinaire 
-                     du 17 mai 2013, concerne 6 550 communes. 
-                     Elle devrait entraîner, selon les estimations du gouvernement, 
-                     l’élection dans les conseils municipaux de près de 
-                     16 000 conseillères supplémentaires (les conseils municipaux devraient 
-                     à terme compter environ 87 000 élues). "]
-      , p  [] [text "Les électeurs désigneront, à l’aide d’un seul bulletin 
+                     aux listes de candidats."]
+      , p  [] [text "Les électeurs ont désigné, à l’aide d’un seul bulletin 
                      de vote, leurs conseillers municipaux et les conseillers 
                      communautaires. Les conseillers communautaires sont les représentants de 
                      la commune au sein de la structure intercommunale 
-                     dont elle est membre. Prévue par la loi 
-                     du 16 décembre 2010, cette réforme est destinée 
-                     à conférer une véritable légitimité démocratique aux établissements 
-                     publics de coopération intercommunale (EPCI) à fiscalité propre 
-                     (communautés de communes, communautés d’agglomération, communautés urbaines, métropoles). 
-                     Jusqu’alors, les représentants des communes au sein de 
-                     ces EPCI étaient élus par les membres du 
-                     conseil municipal. Les lois organique et ordinaire du 
-                     17 mai 2013 ont déterminé deux modes de 
-                     scrutin, selon que la commune compte moins de 
-                     1 000 habitants, ou 1 000 habitants et 
-                     plus. "]
+                     dont elle est membre."]
 
-      , h4 [] [text "Les communes de moins de 1 000 habitants "]
+      , h5 [] [text "Les communes de moins de 1 000 habitants "]
       , p  [] [text "Dans les communes de moins de 1 000 
                      habitants, les conseillers municipaux sont élus au scrutin 
                      majoritaire, plurinominal, à deux tours. "]
@@ -275,7 +257,6 @@ resElec =
       [ h5 [] [text "Résultats 1er tour"]
       , p  [] [text "Bureau de vote de Murol : votants 354, exprimés 338"]
       , p  [] [text "Bureau de vote de Beaune : votants 84, exprimés 81"] 
-      , p  [] [text "Bureau de vote de Beaune : votants 84, exprimés 81"]
       , p  [] [text "Suffrages total exprimés : 419"]
       , p  [] [text "Pour être élu au 1er tour les candidats doivent avoir recueillis 210 voix."]
       , p  [] [text "14 candidats sont élus au 1er tour"]

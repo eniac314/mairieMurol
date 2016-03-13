@@ -71,7 +71,7 @@ Elm.FestivalArt.make = function (_elm) {
            ,_U.update($Lightbox.defPic,{filename: "La compagnie Lilou Z2.jpg",caption: $Maybe.Just("La compagnie Lilou")})
            ,_U.update($Lightbox.defPic,{filename: "Les Piplettes en concert de clôture.jpg",caption: $Maybe.Just("Les Piplettes en concert de clôture")})]),
    "festivalArt",
-   "");
+   "Festival d\'Art 2015");
    var festival = _p0._0;
    var festivalFx = _p0._1;
    var galleries = _U.list([{ctor: "_Tuple2",_0: festival,_1: "festival"}]);
@@ -105,9 +105,14 @@ Elm.FestivalArt.make = function (_elm) {
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p12) {    var _p13 = _p12;return A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p13._1)),_p13._0);});
+   var viewGallery = F2(function (address,_p12) {
+      var _p13 = _p12;
+      var _p14 = _p13._0;
+      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p14))]));
+      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p13._1)),_p14)]));
+   });
    var view = F2(function (address,model) {
-      var galleriesHtml = A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model));
+      var galleriesHtml = $List.concat(A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)));
       var subContainerData = A2($Html.div,
       _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("festivalArt")]),
       A2($Basics._op["++"],
@@ -124,7 +129,7 @@ Elm.FestivalArt.make = function (_elm) {
               ,$Murol.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p14) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p15) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};

@@ -77,7 +77,7 @@ main =
 
 initialContent =
   div [ class "subContainerData noSubmenu", id "ccas"]
-      [ h2 [] [text "Centre Communal d'Action Social"]
+      [ h2 [] [text "Centre Communal d'Action Sociale"]
       , p []
           [ text "Le CCAS organise chaque année des manifestations
                   pour petits et grands (Noël des enfants et "

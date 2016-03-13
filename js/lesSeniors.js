@@ -11185,7 +11185,9 @@ Elm.StarTable.make = function (_elm) {
       var mail$ = A2(maybeElem,
       _p3.mail,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
       });
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var label$ = labelToHtml(_p3.label);
@@ -11383,7 +11385,7 @@ Elm.Murol.make = function (_elm) {
                    _U.list([]))]))]))
            ,A2(script,
            "",
-           "(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\', \'UA-72224642-1\', \'auto\');ga(\'send\', \'pageview\');")]));
+           "  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n                  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\n                  ga(\'create\', \'UA-75068519-1\', \'auto\');\n                  ga(\'send\', \'pageview\');")]));
    var renderEtatRoutes = A2($Html.div,
    _U.list([$Html$Attributes.id("EtatRoutes")]),
    _U.list([A2($Html.a,
@@ -11412,7 +11414,7 @@ Elm.Murol.make = function (_elm) {
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
+           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
@@ -11462,7 +11464,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous souhaitez passer une information: ")
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
+                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
            ,A2($Html.p,
            _U.list([]),
@@ -11504,8 +11506,11 @@ Elm.Murol.make = function (_elm) {
       if (_p19.ctor === "Leaf") {
             var _p21 = _p19._1;
             var _p20 = _p19._0;
+            var targ = $String.isEmpty(_p21) ? "_self" : "_blank";
             var link$ = $String.isEmpty(_p21) ? toUrl(_p20) : _p21;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)]))]),_U.list([$Html.text(_p20)]));
+            return A2($Html.a,
+            _U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)])),$Html$Attributes.target(targ)]),
+            _U.list([$Html.text(_p20)]));
          } else {
             var _p23 = _p19._1;
             var _p22 = _p19._0;
@@ -11562,7 +11567,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 13 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11630,7 +11635,7 @@ Elm.Murol.make = function (_elm) {
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
                    ,A2(Leaf,"Péri et extra-scolaire","")
-                   ,A2(Leaf,"Les séniors","")
+                   ,A2(Leaf,"Les seniors","")
                    ,A2(Leaf,"Santé","")
                    ,A2(Leaf,"Transports","")
                    ,A2(Leaf,"Gestion des déchets","")
@@ -11807,7 +11812,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
-                              _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
+                              _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
                       ,expiry: $Date.fromString("04/02/2016")})
                       ,_U.update(emptyNews,
@@ -11816,8 +11821,81 @@ Elm.Murol.make = function (_elm) {
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
-                      ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
+                      ,expiry: $Date.fromString("09/11/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "SOS Animaux - Campagne de stérilisation des chats"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("SOS Animaux organise une campagne de\n                               stérilisation des chats (males et femelles).")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les vétérinaires d\'Issoire, de Brassac les Mines et \n                               de St Germain Lambron sont partenaires de cette \n                               campagne. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Plus d\'infos ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/Animaux.html")]),_U.list([$Html.text("page Animaux")]))]))]))
+                      ,expiry: $Date.fromString("04/16/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Coupure d\'électricité"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("ERDF procèdera à une coupure d\'électricité\n                               le mercredi 16 mars de 9h30 à 12h00 \n                               sur le secteur de la rue d\'Estaing, G. \n                               Sand, place du pont, le bourg, Rue Chauderon, \n                               du prélong, du levat, du château et route \n                               de St Nectaire.  ")]))]))
+                      ,expiry: $Date.fromString("03/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Chaîne des Puys & Faille de Limagne - nouveau film"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Découvrez, les Origines de la Terre, le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.youtube.com/watch?v=nkWlN3u2evc"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("nouveau film")]))
+                              ,$Html.text(" promotionnel de la candidature au patrimoine mondial \n                               pour la Chaîne des Puys et la faille \n                               de Limagne. ")]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Survol du château de Murol en drone - Vidéo"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.dropbox.com/s/hsuh6af2tcrres4/Chateau%20le%20Murol.mpg?dl=0")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("voir la vidéo")]))]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Bienvenue sur le nouveau site officiel de la commune de Murol!"
+                      ,date: $Date.fromString("03/12/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Nous l’avons mis en ligne dans sa version \n                               « printemps », il évoluera au fil des \n                               saisons… ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Découvrez ses nouvelles fonctionnalités et ses nombreux liens.")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Les listes (hébergements, commerces, artistes, associations…) ne sont \n                               pas exhaustives ! Nous les avons réalisées avec \n                               les informations que nous avons à ce jour. ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("N’hésitez pas à contacter le webmaster en cliquant \n                               sur le lien en bas de page, pour \n                               toute erreur ou oubli ! ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "float",_1: "right"}
+                                                                      ,{ctor: "_Tuple2",_0: "margin-right",_1: "30%"}]))]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("La commission communication ")]))]))]))
+                      ,expiry: $Date.fromString("04/12/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/13/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11901,7 +11979,7 @@ Elm.LesSeniors.make = function (_elm) {
                           ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Les ateliers informatiques")]))
                                        ,A2($Html.p,
                                        _U.list([]),
-                                       _U.list([$Html.text("Chaque jeudi, Marie-Agnès Gaime anime deux ateliers informatiques \n                     pour les membres de l’association les Amis du \n                     Vieux Murol, dans la salle de réunion du \n                     1er étage de la mairie, équipée de 5 \n                     postes de travail, mis à disposition gratuitement pour \n                     permettre cette initiation. ")]))
+                                       _U.list([$Html.text("Chaque jeudi, Marie-Agnès Gaime anime deux ateliers informatiques \n                     pour les membres de l’association les Amis du \n                     Vieux Murol, dans la salle de réunion du \n                     1er étage de la mairie, équipée de 5 \n                     postes de travail, mise à disposition gratuitement pour \n                     permettre cette initiation. ")]))
                                        ,A2($Html.p,_U.list([]),_U.list([$Html.text("Horaires : 9H/10H30 et 10H30/12H ")]))
                                        ,A2($Html.p,_U.list([]),_U.list([$Html.text("Renseignements et inscriptions ")]))
                                        ,A2($Html.p,_U.list([]),_U.list([$Html.text("Marie-Agnès Gaime : 04 73 88 65 24")]))
@@ -11918,6 +11996,9 @@ Elm.LesSeniors.make = function (_elm) {
                                        ,A2($Html.h5,
                                        _U.list([]),
                                        _U.list([$Html.text("Les activités de l’association des Amis du Vieux \n                     Murol ")]))
+                                       ,A2($Html.a,
+                                       _U.list([$Html$Attributes.href("/Associations.html?bloc=00")]),
+                                       _U.list([$Html.text("Les associations culturelles")]))
                                        ,A2($Html.h5,
                                        _U.list([]),
                                        _U.list([$Html.text("Les animations du SIVOM de Besse et le \n                     bus des montagnes")]))
@@ -11935,11 +12016,17 @@ Elm.LesSeniors.make = function (_elm) {
                                                ,A2($Html.li,_U.list([]),_U.list([$Html.text("une sortie au sommet de l’élevage ")]))
                                                ,A2($Html.li,_U.list([]),_U.list([$Html.text("La journée des seniors")]))
                                                ,A2($Html.li,_U.list([]),_U.list([$Html.text("Le marché de Noël à Clermont-Ferrand ")]))
-                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("La foire de Brion")]))]))])
+                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("La foire de Brion")]))]))
+                                       ,A2($Html.p,
+                                       _U.list([]),
+                                       _U.list([$Html.text("pour tout renseignement\n                  contactez le ")
+                                               ,A2($Html.a,
+                                               _U.list([$Html$Attributes.href("/LesSeniors.html?bloc=01")]),
+                                               _U.list([$Html.text("SIVOM de Besse")]))]))])
                           ,_3: ""}
                          ,{ctor: "_Tuple4"
                           ,_0: "Services du SIVOM de BESSE"
-                          ,_1: ""
+                          ,_1: "/images/tiles/seniors/SIVOM.jpg"
                           ,_2: _U.list([A2($Html.div,
                                        _U.list([$Html$Attributes.id("SIVOMAddress")]),
                                        _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("SIVOM DE BESSE ")]))
@@ -11948,9 +12035,9 @@ Elm.LesSeniors.make = function (_elm) {
                                                ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 79 52 82")]))]))
                                        ,A2($Html.p,
                                        _U.list([]),
-                                       _U.list([$Html.text("Le SIVOM de Besse est une structure intercommunale \n                   qui offre multiples services pour améliorer le quotidien \n                   des personnes de plus de 60 ans. ")]))
+                                       _U.list([$Html.text("Le SIVOM de Besse est une structure intercommunale \n                   qui offre de multiples services pour améliorer le quotidien \n                   des personnes de plus de 60 ans. ")]))
                                        ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Le service d’aide à domicile ")]))
-                                       ,$Html.text("Ce service est composé de 20 aides à \n             domicile qui aident les personnes de plus de \n             60 ans à la réalisation des tâches de \n             la vie quotidienne: ")
+                                       ,$Html.text("Ce service est composé de 20 aides à \n             domicile qui assistent les personnes de plus de \n             60 ans pour la réalisation des tâches de \n             la vie quotidienne: ")
                                        ,A2($Html.ul,
                                        _U.list([]),
                                        _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Entretien du logement")]))
@@ -11979,7 +12066,7 @@ Elm.LesSeniors.make = function (_elm) {
                                        ,A2($Html.h5,_U.list([]),_U.list([$Html.text("La distribution de colis alimentaires")]))
                                        ,A2($Html.p,
                                        _U.list([]),
-                                       _U.list([$Html.text("Ce service s’adresse aux personnes démunies du territoire \n                   sur la base d’un diagnostic effectué par les \n                   assistants sociaux. ")]))
+                                       _U.list([$Html.text("Ce service s’adresse aux personnes à faibles \n                   ressources du territoire \n                   sur la base d’un diagnostic effectué par les \n                   assistants sociaux. ")]))
                                        ,A2($Html.p,
                                        _U.list([]),
                                        _U.list([$Html.text("Pour pouvoir bénéficier de ce service, prenez rendez-vous \n                   avec un(e) assistant(e) social(e) de la circonscription en \n                   appelant le : 04 73 89 48 55. ")]))
@@ -11987,7 +12074,7 @@ Elm.LesSeniors.make = function (_elm) {
                                        _U.list([]),
                                        _U.list([$Html.text("Les  ")
                                                ,A2($Html.a,
-                                               _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                               _U.list([$Html$Attributes.href("/LesSeniors.html?bloc=00"),$Html$Attributes.target("_blank")]),
                                                _U.list([$Html.text("animations du 3ème âge et le bus \n                    des montagnes")]))]))
                                        ,A2($Html.p,
                                        _U.list([]),
@@ -11999,8 +12086,7 @@ Elm.LesSeniors.make = function (_elm) {
                           ,_2: _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/CCAS.html")]),_U.list([$Html.text("Le CCAS de Murol")]))
                                        ,A2($Html.br,_U.list([]),_U.list([]))
                                        ,A2($Html.a,
-                                       _U.list([$Html$Attributes.href("http://www.puydedPage Seniorsome.com/MobiPlus-67262.html?1=1 ")
-                                               ,$Html$Attributes.target("_blank")]),
+                                       _U.list([$Html$Attributes.href("http://www.puydedome.com/MobiPlus-67262.html?1=1"),$Html$Attributes.target("_blank")]),
                                        _U.list([$Html.text("Les chèques transport mobiplus ")]))
                                        ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les assistants sociaux de la circonscription")]))
                                        ,A2($Html.p,
@@ -12023,7 +12109,7 @@ Elm.LesSeniors.make = function (_elm) {
    var initialContent = {wrapper: F2(function (content,showIntro) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("lesSeniors")]),
-                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les séniors")])),content]));
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les seniors")])),content]));
                         })
                         ,tiledMenu: A2($TiledMenu.initAtWithLink,locationSearch,seniors)};
    var update = F2(function (action,model) {
@@ -12042,7 +12128,7 @@ Elm.LesSeniors.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie Locale","Les séniors"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie Locale","Les seniors"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(function (_) {

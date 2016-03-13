@@ -18,7 +18,7 @@ Elm.CCAS.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("ccas")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Centre Communal d\'Action Social")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Centre Communal d\'Action Sociale")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le CCAS organise chaque année des manifestations\n                  pour petits et grands (Noël des enfants et ")

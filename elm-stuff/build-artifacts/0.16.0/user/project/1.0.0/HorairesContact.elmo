@@ -36,7 +36,7 @@ Elm.HorairesContact.make = function (_elm) {
                    ,A2($Html.br,_U.list([]),_U.list([]))
                    ,A2($Html.span,
                    _U.list([$Html$Attributes.$class("email")]),
-                   _U.list([$Html.text("Services généraux: ")
+                   _U.list([$Html.text("Service animation: ")
                            ,A2($Html.a,
                            _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","murolanimation@orange.fr"))]),
                            _U.list([$Html.text("murolanimation@orange.fr")]))]))

@@ -17,6 +17,11 @@ Elm.Commerces.make = function (_elm) {
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var contact = A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Liste non exhaustive, contactez ")
+           ,A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),_U.list([$Html.text("le webmaster")]))
+           ,$Html.text(" pour toute erreur ou oubli!")]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -62,7 +67,9 @@ Elm.Commerces.make = function (_elm) {
       var mail$ = A2(maybeElem,
       _p3.mail,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
       });
       var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
       var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
@@ -134,7 +141,7 @@ Elm.Commerces.make = function (_elm) {
                                                                                  ,_1: "http://www.sancy.com/activites/detail/6246/murol/la-poste"})
                                                              ,descr: _U.list(["services postaux et bancaires distributeur de billets"])
                                                              ,addr: "Rue George Sand 63790 MUROL"
-                                                             ,tel: "04 73 88 36 31"
+                                                             ,tel: "04 73 88 61 49 - National: 36 31"
                                                              ,site: "www.laposte.fr"})
                                                              ,_U.update(defCom,
                                                              {name: "Distributeur SPAR"
@@ -176,8 +183,7 @@ Elm.Commerces.make = function (_elm) {
                                                              ,addr: "route de Besse - 63790 MUROL"
                                                              ,tel: "06 78 08 35 74"
                                                              ,fax: "04 76 88 66 60"
-                                                             ,mail: "cattarellisacha@orange.fr"
-                                                             ,site: "http://murolmotosport.wifeo.com"})])}
+                                                             ,mail: "cattarellisacha@orange.fr"})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Laverie"
                                                 ,_1: _U.list([_U.update(defCom,
@@ -236,7 +242,7 @@ Elm.Commerces.make = function (_elm) {
                                                              ,addr: "Groire 63790 MUROL"
                                                              ,tel: "04 73 62 11 07 / 06 81 86 69 43"
                                                              ,mail: "contact@volcanographics.com"
-                                                             ,site: "www.volcanographics.com"})
+                                                             ,site: "http://www.volcanographics.com"})
                                                              ,_U.update(defCom,
                                                              {name: "Yvon CHAZEY"
                                                              ,descr: _U.list(["Création, reprographie, dépannage"])
@@ -274,7 +280,7 @@ Elm.Commerces.make = function (_elm) {
    var comMapSummer = $Dict.fromList(_U.list([{ctor: "_Tuple2"
                                               ,_0: "Art de la maison - cadeaux - souvenirs"
                                               ,_1: _U.list([_U.update(defCom,
-                                              {name: "Legoueix père et fils"
+                                              {name: "Legoueix père et fils (été)"
                                               ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                   ,_0: "6111"
                                                                   ,_1: "http://www.sancy.com/activites/detail/6111/murol/magasin-legoueix"})
@@ -315,7 +321,7 @@ Elm.Commerces.make = function (_elm) {
                                               ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                   ,_0: "6111"
                                                                   ,_1: "http://www.sancy.com/activites/detail/6111/murol/magasin-legoueix"})
-                                              ,descr: _U.list(["Souvenirs"])
+                                              ,descr: _U.list([""])
                                               ,addr: "Rue du Tartaret 63790 MUROL"
                                               ,tel: "04 73 88 66 21"})])}
                                              ,{ctor: "_Tuple2"
@@ -334,8 +340,9 @@ Elm.Commerces.make = function (_elm) {
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Commerces et services")]))
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouvert toute l\'année")]))
            ,renderCommerceMap(comMapYearLong)
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouverture Saisonière")]))
-           ,renderCommerceMap(comMapSummer)]));
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Ouverture Saisonnière")]))
+           ,renderCommerceMap(comMapSummer)
+           ,contact]));
    var subMenu = _U.list([]);
    var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
@@ -353,6 +360,7 @@ Elm.Commerces.make = function (_elm) {
                                   ,changeMain: changeMain
                                   ,main: main
                                   ,initialContent: initialContent
+                                  ,contact: contact
                                   ,defCom: defCom
                                   ,comMapYearLong: comMapYearLong
                                   ,comMapSummer: comMapSummer};

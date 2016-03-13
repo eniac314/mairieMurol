@@ -46,7 +46,7 @@ Elm.Annee2016.make = function (_elm) {
            ,_U.update($Lightbox.defPic,{filename: "IMGP5782.jpg",caption: $Maybe.Just("")})
            ,_U.update($Lightbox.defPic,{filename: "IMGP5783.jpg",caption: $Maybe.Just("")})]),
    "veuxMaireRepasCCAS",
-   "");
+   "24 janvier - vœux du maire et repas CCAS");
    var veuxMaireRepasCCAS = _p0._0;
    var veuxMaireRepasCCASFx = _p0._1;
    var galleries = _U.list([{ctor: "_Tuple2",_0: veuxMaireRepasCCAS,_1: "veuxMaireRepasCCAS"}]);
@@ -80,9 +80,14 @@ Elm.Annee2016.make = function (_elm) {
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p12) {    var _p13 = _p12;return A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p13._1)),_p13._0);});
+   var viewGallery = F2(function (address,_p12) {
+      var _p13 = _p12;
+      var _p14 = _p13._0;
+      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p14))]));
+      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p13._1)),_p14)]));
+   });
    var view = F2(function (address,model) {
-      var galleriesHtml = A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model));
+      var galleriesHtml = $List.concat(A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)));
       var subContainerData = A2($Html.div,
       _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("annee2016")]),
       A2($Basics._op["++"],
@@ -99,7 +104,7 @@ Elm.Annee2016.make = function (_elm) {
               ,$Murol.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p14) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p15) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};

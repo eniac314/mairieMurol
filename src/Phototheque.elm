@@ -143,7 +143,7 @@ initialContent =
       )
     ,( "Diaporama 2015"
       , "/images/tiles/photothèque/diaporama2015.jpg"
-      , [ a [ download True
+      , [ a [ target "_blank"
             , href "/baseDocumentaire/DIAPORAMA MUROL 2015.pdf"
             ]
             [ text "Télécharger le diaporama 2015"]
@@ -173,6 +173,7 @@ photothèque showIntro =
                           photos proposées selon les règles de parution en vigueur*"
                    ]
               , a  [href ""] [text "Règles de parution et de stockage"]
+              , text " *(mise en ligne prochainement)"
               ]
         
       ]

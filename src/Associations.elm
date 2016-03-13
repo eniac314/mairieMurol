@@ -75,6 +75,8 @@ update action model =
 
 --Main
 
+port locationSearch : String
+
 main =
   StartApp.start
     { model  = initialModel
@@ -90,5 +92,5 @@ initialContent =
            [ h2 [] [text "Associations"]
            , content])
   , tiledMenu =
-      initAt "" (AssociationsList.associations)
+      initAt locationSearch (AssociationsList.associations)
   }

@@ -54,7 +54,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Vie Locale", "Les séniors"]
+      [ renderMainMenu' ["Vie Locale", "Les seniors"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
@@ -101,7 +101,7 @@ initialContent =
   { wrapper = 
     (\content showIntro ->
        div [ class "subContainerData noSubmenu", id "lesSeniors"]
-           [ h2 [] [text "Les séniors"]
+           [ h2 [] [text "Les seniors"]
            , content])
   , tiledMenu =
       initAtWithLink locationSearch seniors
@@ -117,7 +117,7 @@ seniors =
                      pour les membres de l’association les Amis du 
                      Vieux Murol, dans la salle de réunion du 
                      1er étage de la mairie, équipée de 5 
-                     postes de travail, mis à disposition gratuitement pour 
+                     postes de travail, mise à disposition gratuitement pour 
                      permettre cette initiation. "]
       , p  [] [text "Horaires : 9H/10H30 et 10H30/12H "]
       , p  [] [text "Renseignements et inscriptions "]
@@ -139,7 +139,7 @@ seniors =
       
       , h5 [] [text "Les activités de l’association des Amis du Vieux 
                      Murol "]
-
+      , a  [href "/Associations.html?bloc=00"] [text "Les associations culturelles"]
       , h5 [] [text "Les animations du SIVOM de Besse et le 
                      bus des montagnes"]
       , p  [] [text "Ce service propose des activités, déplacements et voyages 
@@ -155,13 +155,18 @@ seniors =
          , li [] [text "Le marché de Noël à Clermont-Ferrand "]
          , li [] [text "La foire de Brion"]
          ]
-
+      , p []
+          [ text "pour tout renseignement
+                  contactez le "
+          , a [ href "/LesSeniors.html?bloc=01"]
+              [ text "SIVOM de Besse"]
+          ]
       ]
     , ""
     )
   ,
    ("Services du SIVOM de BESSE"
-   ,""
+   ,"/images/tiles/seniors/SIVOM.jpg"
    , [ div [ id "SIVOMAddress"]
            [ p [] [text "SIVOM DE BESSE "]
            , p [] [text "14, place du Grand Mèze"]
@@ -169,14 +174,14 @@ seniors =
            , p [] [text "Tél : 04 73 79 52 82"]
            ]
      , p  [] [text "Le SIVOM de Besse est une structure intercommunale 
-                   qui offre multiples services pour améliorer le quotidien 
+                   qui offre de multiples services pour améliorer le quotidien 
                    des personnes de plus de 60 ans. "]
      
      , h5 [] [text "Le service d’aide à domicile "]
 
      , text "Ce service est composé de 20 aides à 
-             domicile qui aident les personnes de plus de 
-             60 ans à la réalisation des tâches de 
+             domicile qui assistent les personnes de plus de 
+             60 ans pour la réalisation des tâches de 
              la vie quotidienne: "
 
      , ul []
@@ -204,7 +209,8 @@ seniors =
                    charge par l’ ARS (agence régionale de santé). "]
 
      , h5 [] [text "La distribution de colis alimentaires"]
-     , p  [] [text "Ce service s’adresse aux personnes démunies du territoire 
+     , p  [] [text "Ce service s’adresse aux personnes à faibles 
+                   ressources du territoire 
                    sur la base d’un diagnostic effectué par les 
                    assistants sociaux. "]
      , p  [] [text "Pour pouvoir bénéficier de ce service, prenez rendez-vous 
@@ -212,7 +218,8 @@ seniors =
                    appelant le : 04 73 89 48 55. "]
 
      , h5 [] [text "Les  "
-             , a [href "", target "_blank"] [text "animations du 3ème âge et le bus 
+             , a [ href "/LesSeniors.html?bloc=00"
+                 , target "_blank"] [text "animations du 3ème âge et le bus 
                     des montagnes"]
              ]
      , p  [] [text "Ce service propose des activités, déplacements et voyages 
@@ -226,7 +233,7 @@ seniors =
    ,"/images/tiles/seniors/autres.jpg"
    , [ a [href "/CCAS.html"] [text "Le CCAS de Murol"]
      , br [] []
-     , a [href "http://www.puydedPage Seniorsome.com/MobiPlus-67262.html?1=1 "
+     , a [href "http://www.puydedome.com/MobiPlus-67262.html?1=1"
          , target "_blank"
          ]
          [text "Les chèques transport mobiplus "]

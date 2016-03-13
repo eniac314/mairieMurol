@@ -24,7 +24,7 @@ Elm.Restaurants.make = function (_elm) {
                              ,descr: _U.list(["Restaurant"])
                              ,addr: "Rue du Levat 63790 MUROL"
                              ,tel: "04 73 88 60 50"
-                             ,mail: "http://www.hoteldespins-murol.com"})
+                             ,site: "http://www.hoteldespins-murol.com"})
                              ,_U.update($StarTable.emptyTe,
                              {name: "T-Me"
                              ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4080",_1: "http://www.sancy.com/activites/detail/4080/murol/t-me"})
@@ -48,7 +48,7 @@ Elm.Restaurants.make = function (_elm) {
                              ,descr: _U.list(["Restaurant crêperie"])
                              ,addr: "Rue George Sand 63790 MUROL"
                              ,tel: "06 28 29 55 99"
-                             ,mail: "http://www.sancy.com/activites/detail/4050/murol/creperie-le-george-sand"})
+                             ,site: "http://www.sancy.com/activites/detail/4050/murol/creperie-le-george-sand"})
                              ,_U.update($StarTable.emptyTe,
                              {name: "Auberge de la Plage"
                              ,descr: _U.list(["bar brasserie restaurant"])
@@ -108,22 +108,28 @@ Elm.Restaurants.make = function (_elm) {
       var tables = A2($Basics._op["++"],restosMurol,restosBeaunes);
       return A2($List.filter,function (e) {    return _U.eq(function (_) {    return _.label;}(e),$StarTable.FamillePlus);},tables);
    }();
+   var contact = A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Liste non exhaustive, contactez ")
+           ,A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),_U.list([$Html.text("le webmaster")]))
+           ,$Html.text(" pour toute erreur ou oubli!")]));
    var initialContent = {wrapper: F2(function (content,showIntro) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("restaurants")]),
                            _U.list([restaurants(showIntro),content]));
                         })
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
-                                                             ,_0: "Restaurants"
+                                                             ,_0: "Bars, brasseries et restaurants"
                                                              ,_1: "/images/tiles/restaurants/restaurants.jpg"
                                                              ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("A Beaune le Froid")]))
                                                                           ,A2($StarTable.makeTable,"aBeauneLeFroid",restosBeaunes)
                                                                           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("A Murol")]))
-                                                                          ,A2($StarTable.makeTable,"aMurol",restosMurol)])}
+                                                                          ,A2($StarTable.makeTable,"aMurol",restosMurol)
+                                                                          ,contact])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Famille plus"
                                                              ,_1: "/images/tiles/hebergements/famillePlus.jpg"
-                                                             ,_2: _U.list([A2($StarTable.makeTable,"famillePlus",famillePlus)])}]))};
+                                                             ,_2: _U.list([A2($StarTable.makeTable,"famillePlus",famillePlus),contact])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
@@ -175,6 +181,7 @@ Elm.Restaurants.make = function (_elm) {
                                     ,update: update
                                     ,main: main
                                     ,initialContent: initialContent
+                                    ,contact: contact
                                     ,famillePlus: famillePlus
                                     ,restaurants: restaurants
                                     ,restosBeaunes: restosBeaunes

@@ -47,7 +47,7 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
               A2($List._op["::"],
               A2($Html.h6,_U.list([]),_U.list([$Html.text("Dans ce numéro:")])),
               A2($List.map,function (e) {    return A2($Html.li,_U.list([]),_U.list([$Html.text(e)]));},_p3.index)),
-              _U.list([A2($Murol.link,"Téléchargez ici","")])))]));
+              _U.list([A2($Murol.link,"Téléchargez ici",_p3.addr)])))]));
    };
    var view = F2(function (address,model) {
       return A2($Html.div,
@@ -56,8 +56,8 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Murol.pageFooter]));
    });
-   var Bulletin = F3(function (a,b,c) {    return {cover: a,date: b,index: c};});
-   var bulls = $List.reverse(_U.list([A3(Bulletin,
+   var Bulletin = F4(function (a,b,c,d) {    return {cover: a,date: b,index: c,addr: d};});
+   var bulls = $List.reverse(_U.list([A4(Bulletin,
                                      "cover0.png",
                                      "Janvier 2009",
                                      _U.list(["La maison médicale"
@@ -73,8 +73,9 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Les opérations 2008"
                                              ,"L’intercommunalité"
                                              ,"L’état civil"
-                                             ,"Le site internet"]))
-                                     ,A3(Bulletin,
+                                             ,"Le site internet"]),
+                                     "/baseDocumentaire/bulletin/1janvier2009.pdf")
+                                     ,A4(Bulletin,
                                      "cover1.png",
                                      "Janvier 2011",
                                      _U.list(["Etat civil 2010"
@@ -101,8 +102,9 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"TNT"
                                              ,"Murol en images"
                                              ,"Associations"
-                                             ,"Calendrier des diverses\n               manifestations du\n               1er semestre 2011"]))
-                                     ,A3(Bulletin,
+                                             ,"Calendrier des diverses\n               manifestations du\n               1er semestre 2011"]),
+                                     "/baseDocumentaire/bulletin/2janvier2011.pdf")
+                                     ,A4(Bulletin,
                                      "cover2.png",
                                      "Février 2012",
                                      _U.list(["Etat civil 2011"
@@ -125,8 +127,9 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Elections 2012"
                                              ,"Murol en images"
                                              ,"Associations"
-                                             ,"Calendrier des\n               manifestations du\n               1er semestre 2012"]))
-                                     ,A3(Bulletin,
+                                             ,"Calendrier des\n               manifestations du\n               1er semestre 2012"]),
+                                     "/baseDocumentaire/bulletin/3fevrier2012.pdf")
+                                     ,A4(Bulletin,
                                      "cover3.png",
                                      "Mars 2013",
                                      _U.list(["Etat civil"
@@ -157,8 +160,9 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"SIVOM de Besse"
                                              ,"Services sociaux"
                                              ,"Associations"
-                                             ,"Calendrier"]))
-                                     ,A3(Bulletin,
+                                             ,"Calendrier"]),
+                                     "/baseDocumentaire/bulletin/4mars2013.pdf")
+                                     ,A4(Bulletin,
                                      "cover4.png",
                                      "Janvier 2014",
                                      _U.list(["Etat civil"
@@ -189,8 +193,9 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Balades du journal"
                                              ,"Informatique et sites"
                                              ,"Associations"
-                                             ,"Calendrier"]))
-                                     ,A3(Bulletin,
+                                             ,"Calendrier"]),
+                                     "/baseDocumentaire/bulletin/5janvier2014.pdf")
+                                     ,A4(Bulletin,
                                      "cover5.png",
                                      "Mars 2015",
                                      _U.list(["Equipe municipale"
@@ -225,18 +230,19 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Autres projets en cours"
                                              ,"Murol en images"
                                              ,"Associations"
-                                             ,"Calendrier"]))
-                                     ,A3(Bulletin,
+                                             ,"Calendrier"]),
+                                     "/baseDocumentaire/bulletin/26mars2015.pdf")
+                                     ,A4(Bulletin,
                                      "cover6.jpg",
-                                     "Janvier 2016",
-                                     _U.list(["Conseil regional"
-                                             ,"Communaute de communes"
+                                     "Mars 2016",
+                                     _U.list(["Conseil régional"
+                                             ,"Communauté de communes"
                                              ,"Sapeurs pompiers"
                                              ,"SIVOM de besse"
                                              ,"CCAS"
-                                             ,"Organicite ®"
-                                             ,"Tri des dechets "
-                                             ,"Travaux realises"
+                                             ,"Organicité ®"
+                                             ,"Tri des déchets "
+                                             ,"Travaux realisés"
                                              ,"Embellissement et fleurissement"
                                              ,"Château et archeologie"
                                              ,"Prélong"
@@ -245,18 +251,19 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Plan local d’urbanisme"
                                              ,"Pavillon bleu"
                                              ,"Ecoles"
-                                             ,"SIVOM de la vallee verte"
-                                             ,"Activites jeunesse"
+                                             ,"SIVOM de la vallée verte"
+                                             ,"Activités jeunesse"
                                              ,"Animation estivale"
                                              ,"Grandes manifestations"
                                              ,"Associations"
-                                             ,"Musee des peintres"
+                                             ,"Musée des peintres"
                                              ,"Investissements"
                                              ,"Etat civil"
                                              ,"Services"
                                              ,"Site municipal"
                                              ,"Maison de sante"
-                                             ,"Calendrier"]))]));
+                                             ,"Calendrier"]),
+                                     "/baseDocumentaire/bulletin/mars2016.pdf")]));
    var bulletin = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("bullPubli")]),
    A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("Le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));

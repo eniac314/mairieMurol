@@ -20,6 +20,7 @@ Elm.Hebergements.make = function (_elm) {
    var meubles = _U.list([_U.update($StarTable.emptyTe,
                          {epis: "2 épis"
                          ,name: "La Cacode"
+                         ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "1444",_1: "http://www.sancy.com/hebergements/detail/1444/murol/la-cacode"})
                          ,descr: _U.list(["Maison 4 personnes","Contact: Mme CLEMENT Marie-Paule"])
                          ,addr: "La Chassagne - 63790 Murol"
                          ,tel: "04 73 88 60 85"
@@ -58,7 +59,7 @@ Elm.Hebergements.make = function (_elm) {
                          ,descr: _U.list(["Appartement 2 personnes","Contact: Mme DEBOUT Véronique"])
                          ,addr: "route de Besse - 63790 MUROL"
                          ,tel: "04 73 88 67 56 / 06 28 06 81 77"
-                         ,site: "www.entre-chateau-et-volcans.fr"})
+                         ,site: "http://www.entre-chateau-et-volcans.fr"})
                          ,_U.update($StarTable.emptyTe,
                          {stars: $Maybe.Just(2)
                          ,name: "le Chapuzadou"
@@ -90,7 +91,7 @@ Elm.Hebergements.make = function (_elm) {
                          ,descr: _U.list(["Appartement 4 personnes, Contact: Mme JUAN Alice"])
                          ,addr: "Route de Jassat - 63790 MUROL"
                          ,tel: "04 73 88 61 16 - Portable : 06 88 76 81 70 - joignable : de 9h à 20h"
-                         ,mail: "alice.elfes@wanadoo.fr"})
+                         ,mail: "les.elfes@orange.fr"})
                          ,_U.update($StarTable.emptyTe,
                          {stars: $Maybe.Just(2)
                          ,name: "Les Genêts"
@@ -296,7 +297,7 @@ Elm.Hebergements.make = function (_elm) {
                        ,name: "L\'Europe"
                        ,addr: "route de Jassat 63790 MUROL"
                        ,mail: "contact@camping-europe-murol.com"
-                       ,site: "www.camping-europe-murol.com"})]);
+                       ,site: "http://www.camping-europe-murol.com"})]);
    var campings = _U.list([_U.update($StarTable.emptyTe,
                           {stars: $Maybe.Just(3)
                           ,label: $StarTable.FamillePlus
@@ -306,7 +307,7 @@ Elm.Hebergements.make = function (_elm) {
                           ,addr: "Le Marais - 63790 MUROL"
                           ,tel: "04 73 88 85 85"
                           ,fax: "04 73 88 64 63"
-                          ,site: "www.domaine-du-marais.com"})
+                          ,site: "http://www.domaine-du-marais.com"})
                           ,_U.update($StarTable.emptyTe,
                           {stars: $Maybe.Just(3)
                           ,label: $StarTable.FamillePlus
@@ -328,7 +329,7 @@ Elm.Hebergements.make = function (_elm) {
                           ,addr: "Allée de la Plage, 63790 MUROL"
                           ,tel: "04 44 05 21 58"
                           ,descr: _U.list(["mobile homes chalet"])
-                          ,site: "www.domaine-lac-chambon.fr"})
+                          ,site: "http://www.domaine-lac-chambon.fr"})
                           ,_U.update($StarTable.emptyTe,
                           {stars: $Maybe.Just(3)
                           ,label: $StarTable.FamillePlus
@@ -349,7 +350,7 @@ Elm.Hebergements.make = function (_elm) {
                           ,tel: "04 73 88 60 46"
                           ,fax: "04 73 88 69 57"
                           ,mail: "contact@camping-europe-murol.com"
-                          ,site: "www.camping-europe-murol.com"
+                          ,site: "http://www.camping-europe-murol.com"
                           ,descr: _U.list(["mobile homes piscine"])})]);
    var hotels = _U.list([_U.update($StarTable.emptyTe,
                         {stars: $Maybe.Just(2)
@@ -399,6 +400,11 @@ Elm.Hebergements.make = function (_elm) {
       var tables = A2($Basics._op["++"],azureva,A2($Basics._op["++"],hotels,A2($Basics._op["++"],campings,A2($Basics._op["++"],meubles,chambresHotes))));
       return A2($List.filter,function (e) {    return _U.eq(function (_) {    return _.label;}(e),$StarTable.FamillePlus);},tables);
    }();
+   var contact = A2($Html.p,
+   _U.list([]),
+   _U.list([$Html.text("Liste non exhaustive, contactez ")
+           ,A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),_U.list([$Html.text("le webmaster")]))
+           ,$Html.text(" pour toute erreur ou oubli!")]));
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Hébergements")]),
@@ -409,8 +415,9 @@ Elm.Hebergements.make = function (_elm) {
                                                              ,_1: "/images/tiles/hebergements/hotels.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
-                                                                          _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                             Beaucoup d\'entre eux se sont engagés dans desa \n                             démarches de qualité, symbolisées par différents labels. Certains \n                             sont hôtels restaurants et offrent une prestation en \n                             demi-pension et pension complète. ")]))
-                                                                          ,A2($StarTable.makeTable,"Hôtels",hotels)])}
+                                                                          _U.list([$Html.text("Murol offre une grande diversité d\'établissements, généralement indépendants. \n                             Beaucoup d\'entre eux se sont engagés dans une \n                             démarche de qualité, symbolisées par différents labels. Certains \n                             sont hôtels restaurants et offrent une prestation en \n                             demi-pension et pension complète. ")]))
+                                                                          ,A2($StarTable.makeTable,"Hôtels",hotels)
+                                                                          ,contact])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Campings et aires de camping-cars"
                                                              ,_1: "/images/tiles/hebergements/campings.jpg"
@@ -419,25 +426,28 @@ Elm.Hebergements.make = function (_elm) {
                                                                           _U.list([$Html.text("Ils offrent de bonnes conditions de confort et \n                             beaucoup d\'entre eux s\'engagent dans des démarches de \n                             qualité, symbolisées par différents labels. Certains d\'entre eux \n                             proposent également des locations de mobil-homes, chalets ou \n                             bungalows.")]))
                                                                           ,A2($StarTable.makeTable,"Campings",campings)
                                                                           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Aires de camping-cars")]))
-                                                                          ,A2($StarTable.makeTable,"Aires",aires)])}
+                                                                          ,A2($StarTable.makeTable,"Aires",aires)
+                                                                          ,contact])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Chambres d\'Hôtes"
                                                              ,_1: "/images/tiles/hebergements/chambresHotes.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Elles répondent aux exigences actuelles de la clientèle, \n                             en proposant des prestations de très bon confort. \n                             Séjourner en chambre d\'hôtes, c\'est partager le quotidien \n                             de personnes passionnées par leur région et attentives \n                             à la qualité de l\'accueil.")]))
-                                                                          ,A2($StarTable.makeTable,"Chambres d\'Hôtes",chambresHotes)])}
+                                                                          ,A2($StarTable.makeTable,"Chambres d\'Hôtes",chambresHotes)
+                                                                          ,contact])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Meublés et gîtes"
                                                              ,_1: "/images/tiles/hebergements/meuble.jpg"
                                                              ,_2: _U.list([A2($Html.p,
                                                                           _U.list([]),
                                                                           _U.list([$Html.text("Très répandus dans le Massif du Sancy, ils \n                             répondront à toutes les attentes et à tous \n                             les budgets. Les meublés que nous vous proposons \n                             sont tous classés par la préfecture. Le classement, \n                             en étoiles, indique le degré de confort de \n                             la location. Certains sont même labellisés. ")]))
-                                                                          ,A2($StarTable.makeTable,"Meublés",meubles)])}
+                                                                          ,A2($StarTable.makeTable,"Meublés",meubles)
+                                                                          ,contact])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Villages Vacances"
                                                              ,_1: "/images/tiles/hebergements/villageVac.jpg"
-                                                             ,_2: _U.list([A2($StarTable.makeTable,"Village Vacances",azureva)])}
+                                                             ,_2: _U.list([A2($StarTable.makeTable,"Village Vacances",azureva),contact])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Famille plus"
                                                              ,_1: "/images/tiles/hebergements/famillePlus.jpg"
@@ -480,7 +490,8 @@ Elm.Hebergements.make = function (_elm) {
                                                                           function (e) {
                                                                              return _U.eq(function (_) {    return _.label;}(e),$StarTable.FamillePlus);
                                                                           },
-                                                                          azureva))])}]))};
+                                                                          azureva))
+                                                                          ,contact])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {
@@ -528,6 +539,7 @@ Elm.Hebergements.make = function (_elm) {
                                      ,update: update
                                      ,main: main
                                      ,initialContent: initialContent
+                                     ,contact: contact
                                      ,famillePlus: famillePlus
                                      ,azureva: azureva
                                      ,hotels: hotels

@@ -11185,7 +11185,9 @@ Elm.StarTable.make = function (_elm) {
       var mail$ = A2(maybeElem,
       _p3.mail,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
       });
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var label$ = labelToHtml(_p3.label);
@@ -11383,7 +11385,7 @@ Elm.Murol.make = function (_elm) {
                    _U.list([]))]))]))
            ,A2(script,
            "",
-           "(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\', \'UA-72224642-1\', \'auto\');ga(\'send\', \'pageview\');")]));
+           "  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n                  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\n                  ga(\'create\', \'UA-75068519-1\', \'auto\');\n                  ga(\'send\', \'pageview\');")]));
    var renderEtatRoutes = A2($Html.div,
    _U.list([$Html$Attributes.id("EtatRoutes")]),
    _U.list([A2($Html.a,
@@ -11412,7 +11414,7 @@ Elm.Murol.make = function (_elm) {
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
+           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
@@ -11462,7 +11464,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous souhaitez passer une information: ")
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
+                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
            ,A2($Html.p,
            _U.list([]),
@@ -11504,8 +11506,11 @@ Elm.Murol.make = function (_elm) {
       if (_p19.ctor === "Leaf") {
             var _p21 = _p19._1;
             var _p20 = _p19._0;
+            var targ = $String.isEmpty(_p21) ? "_self" : "_blank";
             var link$ = $String.isEmpty(_p21) ? toUrl(_p20) : _p21;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)]))]),_U.list([$Html.text(_p20)]));
+            return A2($Html.a,
+            _U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)])),$Html$Attributes.target(targ)]),
+            _U.list([$Html.text(_p20)]));
          } else {
             var _p23 = _p19._1;
             var _p22 = _p19._0;
@@ -11562,7 +11567,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 13 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11630,7 +11635,7 @@ Elm.Murol.make = function (_elm) {
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
                    ,A2(Leaf,"Péri et extra-scolaire","")
-                   ,A2(Leaf,"Les séniors","")
+                   ,A2(Leaf,"Les seniors","")
                    ,A2(Leaf,"Santé","")
                    ,A2(Leaf,"Transports","")
                    ,A2(Leaf,"Gestion des déchets","")
@@ -11807,7 +11812,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
-                              _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
+                              _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
                       ,expiry: $Date.fromString("04/02/2016")})
                       ,_U.update(emptyNews,
@@ -11816,8 +11821,81 @@ Elm.Murol.make = function (_elm) {
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
-                      ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
+                      ,expiry: $Date.fromString("09/11/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "SOS Animaux - Campagne de stérilisation des chats"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("SOS Animaux organise une campagne de\n                               stérilisation des chats (males et femelles).")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les vétérinaires d\'Issoire, de Brassac les Mines et \n                               de St Germain Lambron sont partenaires de cette \n                               campagne. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Plus d\'infos ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/Animaux.html")]),_U.list([$Html.text("page Animaux")]))]))]))
+                      ,expiry: $Date.fromString("04/16/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Coupure d\'électricité"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("ERDF procèdera à une coupure d\'électricité\n                               le mercredi 16 mars de 9h30 à 12h00 \n                               sur le secteur de la rue d\'Estaing, G. \n                               Sand, place du pont, le bourg, Rue Chauderon, \n                               du prélong, du levat, du château et route \n                               de St Nectaire.  ")]))]))
+                      ,expiry: $Date.fromString("03/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Chaîne des Puys & Faille de Limagne - nouveau film"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Découvrez, les Origines de la Terre, le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.youtube.com/watch?v=nkWlN3u2evc"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("nouveau film")]))
+                              ,$Html.text(" promotionnel de la candidature au patrimoine mondial \n                               pour la Chaîne des Puys et la faille \n                               de Limagne. ")]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Survol du château de Murol en drone - Vidéo"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.dropbox.com/s/hsuh6af2tcrres4/Chateau%20le%20Murol.mpg?dl=0")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("voir la vidéo")]))]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Bienvenue sur le nouveau site officiel de la commune de Murol!"
+                      ,date: $Date.fromString("03/12/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Nous l’avons mis en ligne dans sa version \n                               « printemps », il évoluera au fil des \n                               saisons… ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Découvrez ses nouvelles fonctionnalités et ses nombreux liens.")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Les listes (hébergements, commerces, artistes, associations…) ne sont \n                               pas exhaustives ! Nous les avons réalisées avec \n                               les informations que nous avons à ce jour. ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("N’hésitez pas à contacter le webmaster en cliquant \n                               sur le lien en bas de page, pour \n                               toute erreur ou oubli ! ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "float",_1: "right"}
+                                                                      ,{ctor: "_Tuple2",_0: "margin-right",_1: "30%"}]))]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("La commission communication ")]))]))]))
+                      ,expiry: $Date.fromString("04/12/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/13/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11898,7 +11976,6 @@ Elm.Elections.make = function (_elm) {
    _U.list([$Html$Attributes.id("resElecPubli")]),
    _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Résultats 1er tour")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Murol : votants 354, exprimés 338")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Bureau de vote de Beaune : votants 84, exprimés 81")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Suffrages total exprimés : 419")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Pour être élu au 1er tour les candidats doivent avoir recueillis 210 voix.")]))
@@ -12132,20 +12209,18 @@ Elm.Elections.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Les lois du 16 décembre 2010 de réforme \n                     territoriale et la loi électorale du 17 mai \n                     2013 posent le principe de l’élection au suffrage \n                     universel des assemblées des établissements publics de coopération \n                     intercommunale à fiscalité propre (cf. Chapitre 5). Cette \n                     innovation a entraîné des modifications sur les modes \n                     de scrutin applicables aux élections municipales ")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les modes de scrutins")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le mode de scrutin varie selon le nombre d’habitants\n                     de la commune.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les communes de plus de 1 000 habitants ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les conseillers municipaux seront élus les 23 et \n                     30 mars 2014. Les élections municipales ont lieu, \n                     en principe, tous les six ans. Le mode \n                     de scrutin varie selon le nombre d’habitants de \n                     la commune. Au plus tôt le vendredi et \n                     au plus tard le dimanche suivant le scrutin, \n                     le conseil municipal nouvellement élu se réunit pour \n                     procéder à l’élection du maire et de ses \n                     adjoints.")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Deux grandes innovations en 2014")]))
+           _U.list([$Html.text("Les élections municipales des 23 et 30 mars \n                     2014 ont été marquées par deux grandes innovations :")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les élections municipales des 23 et 30 mars \n                     2014 seront marquées par deux grandes innovations :")]))
+           _U.list([$Html.text("Les électeurs de toutes les communes de plus \n                     de 1000 habitants ont élu leurs conseillers municipaux selon \n                     le même mode scrutin\n                     qui impose le respect du principe de parité \n                     aux listes de candidats.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les électeurs de toutes les communes de plus \n                     de 1000 habitants éliront leurs conseillers municipaux selon \n                     le même mode scrutin. Ce mode de scrutin, \n                     qui impose le respect du principe de parité \n                     aux listes de candidats, était jusqu’alors réservé aux \n                     seules communes de plus de 3500 habitants. Cette \n                     modification, introduite par les lois organique et ordinaire \n                     du 17 mai 2013, concerne 6 550 communes. \n                     Elle devrait entraîner, selon les estimations du gouvernement, \n                     l’élection dans les conseils municipaux de près de \n                     16 000 conseillères supplémentaires (les conseils municipaux devraient \n                     à terme compter environ 87 000 élues). ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les électeurs désigneront, à l’aide d’un seul bulletin \n                     de vote, leurs conseillers municipaux et les conseillers \n                     communautaires. Les conseillers communautaires sont les représentants de \n                     la commune au sein de la structure intercommunale \n                     dont elle est membre. Prévue par la loi \n                     du 16 décembre 2010, cette réforme est destinée \n                     à conférer une véritable légitimité démocratique aux établissements \n                     publics de coopération intercommunale (EPCI) à fiscalité propre \n                     (communautés de communes, communautés d’agglomération, communautés urbaines, métropoles). \n                     Jusqu’alors, les représentants des communes au sein de \n                     ces EPCI étaient élus par les membres du \n                     conseil municipal. Les lois organique et ordinaire du \n                     17 mai 2013 ont déterminé deux modes de \n                     scrutin, selon que la commune compte moins de \n                     1 000 habitants, ou 1 000 habitants et \n                     plus. ")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les communes de moins de 1 000 habitants ")]))
+           _U.list([$Html.text("Les électeurs ont désigné, à l’aide d’un seul bulletin \n                     de vote, leurs conseillers municipaux et les conseillers \n                     communautaires. Les conseillers communautaires sont les représentants de \n                     la commune au sein de la structure intercommunale \n                     dont elle est membre.")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Les communes de moins de 1 000 habitants ")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Dans les communes de moins de 1 000 \n                     habitants, les conseillers municipaux sont élus au scrutin \n                     majoritaire, plurinominal, à deux tours. ")]))
@@ -12169,8 +12244,21 @@ Elm.Elections.make = function (_elm) {
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Elections")]),
                            _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Elections")])),content]));
                         }
-                        ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4",_0: "Les élections municipales",_1: "",_2: _U.list([elections]),_3: ""}
-                                                                    ,{ctor: "_Tuple4",_0: "Résultats des élections",_1: "",_2: _U.list([resElec]),_3: ""}]))};
+                        ,tiledMenu: $TiledMenu.initWithLink(_U.list([{ctor: "_Tuple4"
+                                                                     ,_0: "Les élections municipales"
+                                                                     ,_1: "/images/tiles/elections/01.jpg"
+                                                                     ,_2: _U.list([elections])
+                                                                     ,_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Résultats des élections"
+                                                                     ,_1: "/images/tiles/elections/02.jpg"
+                                                                     ,_2: _U.list([resElec])
+                                                                     ,_3: ""}
+                                                                    ,{ctor: "_Tuple4"
+                                                                     ,_0: "Autres élections"
+                                                                     ,_1: "/images/tiles/elections/03.jpg"
+                                                                     ,_2: _U.list([])
+                                                                     ,_3: "http://www.interieur.gouv.fr/Elections"}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

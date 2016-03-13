@@ -71,10 +71,10 @@ Elm.ConseilMunicipal.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Les conseillers municipaux participent et votent les délibérations \n                 lors des réunions du conseil municipal. De plus, \n                 ils travaillent dans le cadre des commissions communales \n                 et représentent la commune au sein des intercommunalités \n                 en tant que délégués. (cf document ")
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
-                   _U.list([$Html.text("commissions et \n                     délégations")]))
+                   _U.list([$Html$Attributes.href("/baseDocumentaire/conseilMunicipal/COMMISSIONS ET DELEGATIONS.pdf"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("commissions et \n                      délégations")]))
                    ,$Html.text(")")]))
-           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Vos élus")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les élus")]))
            ,A2($Html.table,
            _U.list([]),
            _U.list([A2($Html.tr,
@@ -86,7 +86,9 @@ Elm.ConseilMunicipal.make = function (_elm) {
                            _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Sébastien GOUTTEBEL")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Président SIVOM de la Vallée Verte\n                                         Président des Maires Ruraux du Puy-de-Dôme")]))]))]))
+                                   _U.list([$Html.text("Président SIVOM de la Vallée Verte")
+                                           ,A2($Html.br,_U.list([]),_U.list([]))
+                                           ,$Html.text("Président des Maires Ruraux du Puy-de-Dôme")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DUMONTEL.jpg")]),_U.list([]))]))
@@ -106,7 +108,7 @@ Elm.ConseilMunicipal.make = function (_elm) {
                            _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("François AUBERTY")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Capitaine - Chef de compagnie\n                                         des Sapeurs Pompiers")]))]))]))
+                                   _U.list([$Html.text("Commandant \n                                         des Sapeurs Pompiers retraité")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/BOUCHE.jpg")]),_U.list([]))]))
@@ -160,7 +162,7 @@ Elm.ConseilMunicipal.make = function (_elm) {
                            _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Véronique DEBOUT")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Webmaster du site \"murol.fr\"\n                                         Bénévole associatif - Militaire à la retraite")]))]))]))
+                                   _U.list([$Html.text("Bénévole associatif - Militaire à la retraite")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/DOTTE.jpg")]),_U.list([]))]))

@@ -78,7 +78,7 @@ renderCommerce { name, descr, addr, tel, fax, mail, site, pjaun, refOt} =
       fax'   = maybeElem
                 fax (\s -> p [] [text ("Fax : " ++ s)])
       mail'  = maybeElem
-                mail (\s -> p [] [text "e.mail: ", a [href s] [text s]])
+                mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
@@ -133,11 +133,20 @@ initialContent =
       [ h2 [] [text "Commerces et services"]
       , h5 [] [text "Ouvert toute l'année"]
       , renderCommerceMap comMapYearLong
-      , h5 [] [text "Ouverture Saisonière"]
+      , h5 [] [text "Ouverture Saisonnière"]
       , renderCommerceMap comMapSummer
+      , contact
       ]
 
 --Data 
+contact = 
+   p []
+     [ text "Liste non exhaustive, contactez "
+     , a [href ("mailto:"++"contactsite.murol@orange.fr")]
+         [text "le webmaster"]
+     , text " pour toute erreur ou oubli!"
+     ]
+
 defCom = Commerce "" [] "" "" "" "" "" "" Nothing
 
 comMapYearLong = fromList
@@ -182,7 +191,7 @@ comMapYearLong = fromList
       , refOt  = Just ("6246","http://www.sancy.com/activites/detail/6246/murol/la-poste")
       , descr  = ["services postaux et bancaires distributeur de billets"]
       , addr   = "Rue George Sand 63790 MUROL"
-      , tel    = "04 73 88 36 31"
+      , tel    = "04 73 88 61 49 - National: 36 31"
       , site   = "www.laposte.fr"  
       }
       ,
@@ -249,7 +258,7 @@ comMapYearLong = fromList
       , tel    = "06 78 08 35 74"
       , fax    = "04 76 88 66 60"
       , mail   = "cattarellisacha@orange.fr"
-      , site   = "http://murolmotosport.wifeo.com"   
+      --, site   = "http://murolmotosport.wifeo.com"   
       }]
    )
   ,("Laverie"
@@ -337,7 +346,7 @@ comMapYearLong = fromList
       , addr   = "Groire 63790 MUROL"
       , tel    = "04 73 62 11 07 / 06 81 86 69 43"
       , mail   = "contact@volcanographics.com"
-      , site   = "www.volcanographics.com"
+      , site   = "http://www.volcanographics.com"
       }
      ,
      { defCom |
@@ -393,7 +402,7 @@ comMapYearLong = fromList
 comMapSummer = fromList
    [("Art de la maison - cadeaux - souvenirs"
     , [{ defCom |
-         name   = "Legoueix père et fils"
+         name   = "Legoueix père et fils (été)"
        , refOt  = Just ("6111","http://www.sancy.com/activites/detail/6111/murol/magasin-legoueix")
        , addr   = "Rue du Tartaret 63790 MUROL"
        , tel    = "04 73 88 66 21"
@@ -444,7 +453,7 @@ comMapSummer = fromList
      { defCom |
        name  = "Legoueix père et fils (hiver)"
      , refOt = Just ("6111","http://www.sancy.com/activites/detail/6111/murol/magasin-legoueix")
-     , descr = ["Souvenirs"]
+     , descr = [""]
      , addr  = "Rue du Tartaret 63790 MUROL"
      , tel   = "04 73 88 66 21"  
      }

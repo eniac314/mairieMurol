@@ -117,15 +117,18 @@ initialContent =
                      au 1er étage ou par téléphone au 04 
                      73 88 60 67. "]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "", target "_blank"]
+               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+                   , target "_blank"]
                    [ text "fiche d’inscription"]
                ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "", target "_blank"]
+               [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
+                   , target "_blank"]
                    [ text "règlement intérieur"]
                ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "", target "_blank"]
+               [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+                   , target "_blank"]
                    [ text "charte du savoir vivre"]
                ]
 
@@ -139,8 +142,7 @@ initialContent =
 peri =
   [ ("Restaurant scolaire"
     ,"/images/tiles/periscolaire/restaurant scolaire.jpg"
-    , [ link "Fiche d'inscription" ""
-      , p [] [ text "Le restaurant scolaire est un service non obligatoire 
+    , [ p [] [ text "Le restaurant scolaire est un service non obligatoire 
                      assuré par le SIVOM de la Vallée Verte. 
                      Il accueille les enfants de la maternelle et 
                      de l’école élémentaire de Murol les lundis, mardis, 
@@ -186,15 +188,19 @@ peri =
                    ]
               ]
       , p []
-          [ a [ href "", target "_blank"]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+              , target "_blank"]
               [ text "fiche d’inscription"]
           ]
       , p []
-          [ a [ href "", target "_blank"]
+          [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
+              , target "_blank"]
               [ text "règlement intérieur"]
           ]
       , p []
-          [ a [ href "", target "_blank"]
+          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+              , target "_blank"
+              ]
               [ text "charte du savoir vivre"]
           ]
       ]
@@ -232,6 +238,22 @@ peri =
            ]
       , p [] [text "NB : le créneau 16h30/18h est facturé comme 
                     1 heure. "]
+      , p []
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+              , target "_blank"]
+              [ text "fiche d’inscription"]
+          ]
+      , p []
+          [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
+              , target "_blank"]
+              [ text "règlement intérieur"]
+          ]
+      , p []
+          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+              , target "_blank"
+              ]
+              [ text "charte du savoir vivre"]
+          ]
       ]
     ,""
     )
@@ -259,32 +281,48 @@ peri =
                   , td [] [text "Mardi et vendredi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Karine Fouquet"]
-                  , td [] [a [href "", target "_blank"] [text "maternelle"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP maternelle.pdf", target "_blank"] [text "maternelle"]]
                   ]
              , tr []
                   [ td [] [text "Elémentaire de Murol"]
                   , td [] [text "Lundi et jeudi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "", target "_blank"] [text "Murol"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP Murol mars avril.pdf", target "_blank"] [text "Murol"]]
                   ]
              , tr []
                   [ td [] [text "Elémentaire du Chambon"]
                   , td [] [text "Lundi et jeudi"]
                   , td [] [text "15h15 à 16h45"]
                   , td [] [text "Karine Fouquet"]
-                  , td [] [a [href "", target "_blank"] [text "Chambon"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP Chambon.pdf", target "_blank"] [text "Chambon"]]
                   ]
              , tr []
                   [ td [] [text "Primaire de St Nectaire"]
                   , td [] [text "Mardi et vendredi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "", target "_blank"] [text "Saint-Nectaire"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP  Saint Nectaire mars avril.pdf", target "_blank"] [text "Saint-Nectaire"]]
                   ]  
              ]
      , p [] [text "L’inscription est annuelle et la participation
                    des familles est de 12€ par trimestre et par enfant."]   
+     , p []
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+              , target "_blank"]
+              [ text "fiche d’inscription"]
+          ]
+      , p []
+          [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
+              , target "_blank"]
+              [ text "règlement intérieur"]
+          ]
+      , p []
+          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+              , target "_blank"
+              ]
+              [ text "charte du savoir vivre"]
+          ]
      ]
     ,""
     )
@@ -313,7 +351,7 @@ peri =
       , p [] [text "Ce service est subventionné par la CAF et 
                    la MSA. La participation des familles est fonction 
                    des revenus de celles-ci ("
-             ,a [href "", target "_blank"]
+             ,a [href "/baseDocumentaire/periscolaire/tarifs 2016 CLSH SIVOM de la Vallée Verte.pdf", target "_blank"]
                 [text "tarifs selon le quotient 
                       familial"]
              ,text ")"    
@@ -321,11 +359,13 @@ peri =
       , p [] [ text "Les "
              , a [href "", target "_blank"]
                  [text "dossiers d’inscriptions"]
-             , text " sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
+             , text " (disponibles prochainement) sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
              ]
       , text "Liens:"
-      , p [] [a [href "", target "_blank"] [text "projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
-      , p [] [a [href "", target "_blank"] [text "Projet pédagogique vacances de printemps "]]
+      , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"] [text "projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
+      , p [] [a [href "", target "_blank"] [text "Projet pédagogique vacances de printemps "]
+             , text "(disponible prochainement)"
+             ]
       ]
     ,""
     )

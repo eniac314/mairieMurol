@@ -11255,7 +11255,7 @@ Elm.Murol.make = function (_elm) {
                    _U.list([]))]))]))
            ,A2(script,
            "",
-           "(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\', \'UA-72224642-1\', \'auto\');ga(\'send\', \'pageview\');")]));
+           "  (function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){\n                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n                  })(window,document,\'script\',\'//www.google-analytics.com/analytics.js\',\'ga\');\n\n                  ga(\'create\', \'UA-75068519-1\', \'auto\');\n                  ga(\'send\', \'pageview\');")]));
    var renderEtatRoutes = A2($Html.div,
    _U.list([$Html$Attributes.id("EtatRoutes")]),
    _U.list([A2($Html.a,
@@ -11284,7 +11284,7 @@ Elm.Murol.make = function (_elm) {
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr")]),
+           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
@@ -11334,7 +11334,7 @@ Elm.Murol.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous souhaitez passer une information: ")
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","uminokirinmail@gmail.com"))]),
+                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),
                    _U.list([$Html.text(" contactez le webmaster")]))]))]))
            ,A2($Html.p,
            _U.list([]),
@@ -11376,8 +11376,11 @@ Elm.Murol.make = function (_elm) {
       if (_p19.ctor === "Leaf") {
             var _p21 = _p19._1;
             var _p20 = _p19._0;
+            var targ = $String.isEmpty(_p21) ? "_self" : "_blank";
             var link$ = $String.isEmpty(_p21) ? toUrl(_p20) : _p21;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)]))]),_U.list([$Html.text(_p20)]));
+            return A2($Html.a,
+            _U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p20)])),$Html$Attributes.target(targ)]),
+            _U.list([$Html.text(_p20)]));
          } else {
             var _p23 = _p19._1;
             var _p22 = _p19._0;
@@ -11434,7 +11437,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 09 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 13 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
@@ -11502,7 +11505,7 @@ Elm.Murol.make = function (_elm) {
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
                    ,A2(Leaf,"Péri et extra-scolaire","")
-                   ,A2(Leaf,"Les séniors","")
+                   ,A2(Leaf,"Les seniors","")
                    ,A2(Leaf,"Santé","")
                    ,A2(Leaf,"Transports","")
                    ,A2(Leaf,"Gestion des déchets","")
@@ -11679,7 +11682,7 @@ Elm.Murol.make = function (_elm) {
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le diaporama de la commune pour l\'année 2015 est disponible.")]))
                               ,A2($Html.a,
-                              _U.list([$Html$Attributes.download(true),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
+                              _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
                               _U.list([$Html.text("Télécharger")]))]))
                       ,expiry: $Date.fromString("04/02/2016")})
                       ,_U.update(emptyNews,
@@ -11688,8 +11691,81 @@ Elm.Murol.make = function (_elm) {
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("lien")]))]))
-                      ,expiry: $Date.fromString("09/11/2016")})]);
-   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/09/2016",news)};
+                      ,expiry: $Date.fromString("09/11/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "SOS Animaux - Campagne de stérilisation des chats"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("SOS Animaux organise une campagne de\n                               stérilisation des chats (males et femelles).")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les vétérinaires d\'Issoire, de Brassac les Mines et \n                               de St Germain Lambron sont partenaires de cette \n                               campagne. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Plus d\'infos ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/Animaux.html")]),_U.list([$Html.text("page Animaux")]))]))]))
+                      ,expiry: $Date.fromString("04/16/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Coupure d\'électricité"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("ERDF procèdera à une coupure d\'électricité\n                               le mercredi 16 mars de 9h30 à 12h00 \n                               sur le secteur de la rue d\'Estaing, G. \n                               Sand, place du pont, le bourg, Rue Chauderon, \n                               du prélong, du levat, du château et route \n                               de St Nectaire.  ")]))]))
+                      ,expiry: $Date.fromString("03/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Chaîne des Puys & Faille de Limagne - nouveau film"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Découvrez, les Origines de la Terre, le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.youtube.com/watch?v=nkWlN3u2evc"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("nouveau film")]))
+                              ,$Html.text(" promotionnel de la candidature au patrimoine mondial \n                               pour la Chaîne des Puys et la faille \n                               de Limagne. ")]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Survol du château de Murol en drone - Vidéo"
+                      ,date: $Date.fromString("03/11/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.dropbox.com/s/hsuh6af2tcrres4/Chateau%20le%20Murol.mpg?dl=0")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("voir la vidéo")]))]))]))
+                      ,expiry: $Date.fromString("")})
+                      ,_U.update(emptyNews,
+                      {title: "Bienvenue sur le nouveau site officiel de la commune de Murol!"
+                      ,date: $Date.fromString("03/12/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Nous l’avons mis en ligne dans sa version \n                               « printemps », il évoluera au fil des \n                               saisons… ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Découvrez ses nouvelles fonctionnalités et ses nombreux liens.")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("Les listes (hébergements, commerces, artistes, associations…) ne sont \n                               pas exhaustives ! Nous les avons réalisées avec \n                               les informations que nous avons à ce jour. ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "15%"}]))]),
+                              _U.list([$Html.text("N’hésitez pas à contacter le webmaster en cliquant \n                               sur le lien en bas de page, pour \n                               toute erreur ou oubli ! ")]))
+                              ,A2($Html.p,
+                              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "float",_1: "right"}
+                                                                      ,{ctor: "_Tuple2",_0: "margin-right",_1: "30%"}]))]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("La commission communication ")]))]))]))
+                      ,expiry: $Date.fromString("04/12/2016")})]);
+   var initialModel = {mainMenu: mainMenu,logos: logos,newsletters: newsletters,news: A2(prepNews,"03/13/2016",news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
@@ -11783,55 +11859,55 @@ Elm.MurolInfos.make = function (_elm) {
    sortDate(_U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("2008")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 01 - Avril","http://www.murol.fr/Murol_info/01.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 02 - Mai","http://www.murol.fr/Murol_info/02.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 03 - Juin","http://www.murol.fr/Murol_info/03.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 04 - Septembre","http://www.murol.fr/Murol_info/04.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 05 - Décembre","http://www.murol.fr/Murol_info/05.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 01 - Avril","/baseDocumentaire/murolInfo/01.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 02 - Mai","/baseDocumentaire/murolInfo/02.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 03 - Juin","/baseDocumentaire/murolInfo/03.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 04 - Septembre","/baseDocumentaire/murolInfo/04.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 05 - Décembre","/baseDocumentaire/murolInfo/05.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2009")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 05 - Février","http://www.murol.fr/Murol_info/06.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 07 - Mai","http://www.murol.fr/Murol_info/07.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 08 - Septembre","http://www.murol.fr/Murol_info/08.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 09 - Décembre","http://www.murol.fr/Murol_info/09.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 05 - Février","/baseDocumentaire/murolInfo/06.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 07 - Mai","/baseDocumentaire/murolInfo/07.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 08 - Septembre","/baseDocumentaire/murolInfo/08.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 09 - Décembre","/baseDocumentaire/murolInfo/09.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2010")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 10 - Août","http://www.murol.fr/Murol_info/10.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 11 - Octobre","http://www.murol.fr/Murol_info/11.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 12 - Décembre","http://www.murol.fr/Murol_info/12.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 10 - Août","/baseDocumentaire/murolInfo/10.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 11 - Octobre","/baseDocumentaire/murolInfo/11.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 12 - Décembre","/baseDocumentaire/murolInfo/12.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2011")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 13 - Avril","http://www.murol.fr/Murol_info/13.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 14 - Mai","http://www.murol.fr/Murol_info/14.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 15 - Août","http://www.murol.fr/Murol_info/15.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 16 - Octobre","http://www.murol.fr/Murol_info/16.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 13 - Avril","/baseDocumentaire/murolInfo/13.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 14 - Mai","/baseDocumentaire/murolInfo/14.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 15 - Août","/baseDocumentaire/murolInfo/15.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 16 - Octobre","/baseDocumentaire/murolInfo/16.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2013")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 17 - Juin","http://www.murol.fr/Murol_info/17.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 18 - Novembre","http://www.murol.fr/Murol_info/18.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 17 - Juin","/baseDocumentaire/murolInfo/17.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 18 - Novembre","/baseDocumentaire/murolInfo/18.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2014")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 19 - Avril","http://www.murol.fr/Murol_info/19.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 20 - Mai","http://www.murol.fr/Murol_info/20.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 21 - Juin","http://www.murol.fr/Murol_info/21.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 22 - Octobre","http://www.murol.fr/Murol_info/22.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 23 - Décembre","http://www.murol.fr/Murol_info/23.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 19 - Avril","/baseDocumentaire/murolInfo/19.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 20 - Mai","/baseDocumentaire/murolInfo/20.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 21 - Juin","/baseDocumentaire/murolInfo/21.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 22 - Octobre","/baseDocumentaire/murolInfo/22.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 23 - Décembre","/baseDocumentaire/murolInfo/23.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2015")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 24 - Mai","http://www.murol.fr/Murol_info/24.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 25 - Juin","http://www.murol.fr/Murol_info/25.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 26 - Septembre","http://www.murol.fr/Murol_info/26.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 27 - Novembre","http://www.murol.fr/Murol_info/27.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 24 - Mai","/baseDocumentaire/murolInfo/24.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 25 - Juin","/baseDocumentaire/murolInfo/25.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 26 - Septembre","/baseDocumentaire/murolInfo/26.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 27 - Novembre","/baseDocumentaire/murolInfo/27.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2016")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 28 - Janvier","baseDocumentaire/MUROL INFOS 28.doc")]))]))]))));
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Numero 28 - Janvier","baseDocumentaire/murolInfo/28.pdf")]))]))]))));
    var initialContent = murolInf;
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {

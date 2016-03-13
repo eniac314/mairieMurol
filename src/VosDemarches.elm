@@ -326,9 +326,9 @@ permis =
                                  le régisseur des recettes de la préfecture, au 
                                  montant de la taxe régionale (si elle est 
                                  demandée)"]]
-           , li [] [link "Demande de délivrance" "http://www.murol.fr/Base_documentaire/imprime_demande_permis_conduire.pdf"
+           , li [] [link "Demande de délivrance" "/baseDocumentaire/imprime_demande_permis_conduire.pdf"
                    ,span  [] [text " du permis de conduire"]]
-           , li [] [link "Demande de permis international" "http://www.murol.fr/Base_documentaire/imprime_demande_permis_international.pdf"]
+           , li [] [link "Demande de permis international" "/baseDocumentaire/imprime_demande_permis_international.pdf"]
            ]
       ]
 
@@ -337,11 +337,11 @@ vehic =
       [ h2 [] [text "Véhicules"]
       , ul []
            [ li [] [ span [] [text "Certificat "]
-                   , link "d'immatriculation" "http://www.murol.fr/Base_documentaire/ddeimatcerfa10672.pdf"
+                   , link "d'immatriculation" "/baseDocumentaire/ddeimatcerfa10672.pdf"
                    , span [] [text " + "]
-                   , link "notice explicative" "http://www.murol.fr/Base_documentaire/notexpcg50322C.pdf"
+                   , link "notice explicative" "/baseDocumentaire/notexpcg50322C.pdf"
                    ]
-           , li [] [link "Certificat de cession de véhicule" "http://www.murol.fr/Base_documentaire/cessionvehic.pdf"]
+           , li [] [link "Certificat de cession de véhicule" "/baseDocumentaire/cessionvehic.pdf"]
            , li [] [link "Certificat de non gage" "http://www.interieur.gouv.fr/A-votre-service/Mes-demarches/Mes-teleservices"]
            ]
       ]
@@ -354,7 +354,7 @@ etatCiv =
                      que pour les personnes nées à Murol."]
       , p  [] [text "Pour adresser votre demande par courrier postal, imprimez 
                      la demande en "
-              ,link "cliquant ici" "http://www.murol.fr/Base_documentaire/demande%20acte%20de%20naissance.pdf"
+              ,link "cliquant ici" "/baseDocumentaire/demande%20acte%20de%20naissance.pdf"
               ,text ", remplissez-la et envoyez à la mairie"]
       , p  [class "important"] [text "Le délai d'obtention d'une demande d'acte de 
                                       naissance est de 8 jours (courrier transmis par voie postale)"]
@@ -418,7 +418,7 @@ listElec =
            [ li [] [p [] [text "d'une pièce d'identité (carte nationale d'identité, passeport)"]]
            , li [] [p [] [text "et d'un justificatif d'adresse (facture de téléphone, 
                                 quittance de loyer, EDF...)."]]
-           , li [] [p [] [link "du formulaire qui vous concerne" "http://www.murol.fr/Base_documentaire/electionsinscriptionf.pdf"]]
+           , li [] [p [] [link "du formulaire qui vous concerne" "/baseDocumentaire/electionsinscriptionf.pdf"]]
            ]
       , h4 [] [text "Recommandations générales"]
       , p  [] [text "Pour que votre inscription sur les 
@@ -583,6 +583,6 @@ servCiv =
       , p  [] [text "Postulez auprès des organismes proposant des missions de 
                      Service Civique directement à partir du site:"]
       , link "http://www.service-civique.gouv.fr" "http://www.service-civique.gouv.fr"
-      , p  [] [text "Mission dans le puy de dôme:"]
-      , link "service civique puy de dôme" "http://www.service-civique.gouv.fr/les_missions?tid=All&tid_1=16&tid_2=All&dept=Puy-de-Dôme "
+      --, p  [] [text "Mission dans le puy de dôme:"]
+      --, link "service civique puy de dôme" "http://www.service-civique.gouv.fr/les_missions?tid=All&tid_1=16&tid_2=All&dept=Puy-de-Dôme "
       ]

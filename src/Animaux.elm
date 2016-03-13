@@ -71,13 +71,33 @@ main =
 initialContent =
   div [ class "subContainerData noSubmenu", id "animaux"]
       [ h2 [] [text "Animaux"]
-      , p  [] [text "Vous avez trouvé ou perdu un animal, contacter"]
+      , p  [] [text "Vous avez trouvé ou perdu un animal, contactez"]
       , p  [] [text "SOS Animaux"]
       , p  [] [text "La Prade 63500 Le Broc"]
       , p  [] [text "Tél :04 7371 6243 ou 06 1328 0895"]
       , p  [] [text "Heures d'ouverture:"]
       , p  [] [text "14h00 à 17h00 du lundi au samedi inclus sauf jours fériés"]
       , p  [] [text "Référent local : Anne-Marie DOTTE tél : 06 8100 2032"]
+      
+      , h4 [] [text "campagne de
+                    stérilisation des chats"]
+
+      , p  [] [text "SOS Animaux organise une campagne de
+                    stérilisation des chats (males et femelles)."]
+      , p  [] [text "Vous êtes non imposables: "]
+      , p  [] [text "Vous pouvez bénéficier d'un tarif préférentiel pour la 
+                     castration et la stérilisation de votre félin."]
+      , p  [] [text "Les vétérinaires d'Issoire, de Brassac les Mines et 
+                     de St Germain Lambron sont partenaires de cette 
+                     campagne. "]
+      , p  [] [text "Comment procéder ? "]
+      , ol [] [ li [] [text "RDV à SOS Animaux pour obtenir un 
+                             bon de stérilisation muni de son avis d'imposition. 
+                             Si vous ne pouvez pas vous déplacer contactez 
+                             Anne-Marie Dotte au 06 8100 2032. "]
+              , li [] [text "vous prenz RDV avec un vétérinaire partenaire. "]
+              ]
+      , p  [] [text "Fin de la campagne le 15 avril 2016."]
       ]
       
 

@@ -69,7 +69,7 @@ makeRow { name, label, stars, epis, refOt, descr,
                 addr (\s -> p [] [text s])
 
       mail'  = maybeElem
-                mail (\s -> p [] [text "e.mail: ", a [href s] [text s]])
+                mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
                 site (\s -> p [] [text "site: ", a [href s] [text s]])
