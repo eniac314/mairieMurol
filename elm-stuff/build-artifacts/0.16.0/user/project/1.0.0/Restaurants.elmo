@@ -10,12 +10,12 @@ Elm.Restaurants.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StarTable = Elm.StarTable.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var restosMurol = _U.list([_U.update($StarTable.emptyTe,
                              {name: "A jour et nuit",addr: "Rue d\'Estaing - 63790 MUROL",descr: _U.list(["Bar brasserie restaurant"]),tel: "04 73 88 64 82"})
@@ -67,16 +67,16 @@ Elm.Restaurants.make = function (_elm) {
                              ,_U.update($StarTable.emptyTe,
                              {name: "Cubana café",descr: _U.list(["Bar de nuit"]),addr: "Place de la poste 63790 MUROL",tel: "04 73 88 85 79"})
                              ,_U.update($StarTable.emptyTe,
-                             {name: "Le Piccotin"
+                             {name: "Le Picotin"
                              ,descr: _U.list(["Restaurant pizzeria"])
                              ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4075",_1: "http://www.sancy.com/activites/detail/4075/murol/le-picotin"})
                              ,label: $StarTable.FamillePlus
-                             ,addr: "Rue Georges Sand - 63790 MUROL"
+                             ,addr: "Rue George Sand - 63790 MUROL"
                              ,tel: "04 73 62 37 10 / 06 83 00 11 85"})
                              ,_U.update($StarTable.emptyTe,
                              {name: "L\'Arbalète"
                              ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4034",_1: "http://www.sancy.com/activites/detail/4034/murol/l-arbalete"})
-                             ,addr: "Rue Georges Sand - 63790 Murol"
+                             ,addr: "Rue George Sand - 63790 Murol"
                              ,tel: "04 73 88 85 79"
                              ,mail: "restaurantlarbalete@gmail.com"})]);
    var restosBeaunes = _U.list([_U.update($StarTable.emptyTe,
@@ -146,7 +146,7 @@ Elm.Restaurants.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Tourisme","Restaurants"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Tourisme","Restaurants"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(function (_) {
@@ -163,15 +163,13 @@ Elm.Restaurants.make = function (_elm) {
               function (_) {
                  return _.showIntro;
               }(model))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
-   var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
-   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
-   var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: true};
+   var initialModel = {mainMenu: $Utils.mainMenu,mainContent: initialContent,showIntro: true};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   var Model = F3(function (a,b,c) {    return {mainMenu: a,mainContent: b,showIntro: c};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    return _elm.Restaurants.values = {_op: _op
-                                    ,subMenu: subMenu
                                     ,MainContent: MainContent
                                     ,Model: Model
                                     ,initialModel: initialModel

@@ -11,10 +11,10 @@ Elm.Patrimoine.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("patrimoine")]),
@@ -49,7 +49,7 @@ Elm.Patrimoine.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Des animations en costumes du Moyen-Âge sont proposées \n                   par les \"Paladins du Sancy\" de l\'agence Organicom. \n                   Aux travers d´histoires et de démonstrations (combat à \n                   l\'épée), des paysans, hommes d´armes, gentes dames et \n                   chevaliers font découvrir la vie d´une châtellenie au \n                   XIIIe siècle. ")]))
-           ,A2($Murol.link,"Site officiel","http://www.chateaudemurol.fr")
+           ,A2($Utils.link,"Site officiel","http://www.chateaudemurol.fr")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée archéologique ")]))
            ,A2($Html.p,
            _U.list([]),
@@ -68,7 +68,7 @@ Elm.Patrimoine.make = function (_elm) {
            ,A2($Html.p,
            _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "font-style",_1: "oblique"}]))]),
            _U.list([$Html.text("* Le nom de Murol se vit ajouter \n                 un « s » au XIXe siècle. ")]))
-           ,A2($Murol.link,"Site officiel","http://www.musee-murol.fr/")
+           ,A2($Utils.link,"Site officiel","http://www.musee-murol.fr/")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("L\'Eglise de Murol")]))
            ,A2($Html.p,
            _U.list([]),
@@ -136,11 +136,11 @@ Elm.Patrimoine.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Culture et loisirs","Patrimoine"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Culture et loisirs","Patrimoine"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
-   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Patrimoine.values = {_op: _op
                                    ,initialModel: initialModel

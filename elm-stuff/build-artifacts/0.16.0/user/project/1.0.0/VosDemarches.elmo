@@ -11,10 +11,10 @@ Elm.VosDemarches.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var servCiv = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("servCivDemarches")]),
@@ -60,7 +60,7 @@ Elm.VosDemarches.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Postulez auprès des organismes proposant des missions de \n                     Service Civique directement à partir du site:")]))
-           ,A2($Murol.link,"http://www.service-civique.gouv.fr","http://www.service-civique.gouv.fr")]));
+           ,A2($Utils.link,"http://www.service-civique.gouv.fr","http://www.service-civique.gouv.fr")]));
    var listElec = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("listElecDemarches")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("inscription listes électorales")]))
@@ -79,7 +79,7 @@ Elm.VosDemarches.make = function (_elm) {
                    _U.list([]),
                    _U.list([A2($Html.p,
                    _U.list([]),
-                   _U.list([A2($Murol.link,"du formulaire qui vous concerne","/baseDocumentaire/electionsinscriptionf.pdf")]))]))]))
+                   _U.list([A2($Utils.link,"du formulaire qui vous concerne","/baseDocumentaire/electionsinscriptionf.pdf")]))]))]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Recommandations générales")]))
            ,A2($Html.p,
            _U.list([]),
@@ -180,7 +180,7 @@ Elm.VosDemarches.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Pour adresser votre demande par courrier postal, imprimez \n                     la demande en ")
-                   ,A2($Murol.link,"cliquant ici","/baseDocumentaire/demande%20acte%20de%20naissance.pdf")
+                   ,A2($Utils.link,"cliquant ici","/baseDocumentaire/demande%20acte%20de%20naissance.pdf")
                    ,$Html.text(", remplissez-la et envoyez à la mairie")]))
            ,A2($Html.p,
            _U.list([$Html$Attributes.$class("important")]),
@@ -242,13 +242,13 @@ Elm.VosDemarches.make = function (_elm) {
            _U.list([A2($Html.li,
                    _U.list([]),
                    _U.list([A2($Html.span,_U.list([]),_U.list([$Html.text("Certificat ")]))
-                           ,A2($Murol.link,"d\'immatriculation","/baseDocumentaire/ddeimatcerfa10672.pdf")
+                           ,A2($Utils.link,"d\'immatriculation","/baseDocumentaire/ddeimatcerfa10672.pdf")
                            ,A2($Html.span,_U.list([]),_U.list([$Html.text(" + ")]))
-                           ,A2($Murol.link,"notice explicative","/baseDocumentaire/notexpcg50322C.pdf")]))
-                   ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"Certificat de cession de véhicule","/baseDocumentaire/cessionvehic.pdf")]))
+                           ,A2($Utils.link,"notice explicative","/baseDocumentaire/notexpcg50322C.pdf")]))
+                   ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"Certificat de cession de véhicule","/baseDocumentaire/cessionvehic.pdf")]))
                    ,A2($Html.li,
                    _U.list([]),
-                   _U.list([A2($Murol.link,"Certificat de non gage","http://www.interieur.gouv.fr/A-votre-service/Mes-demarches/Mes-teleservices")]))]))]));
+                   _U.list([A2($Utils.link,"Certificat de non gage","http://www.interieur.gouv.fr/A-votre-service/Mes-demarches/Mes-teleservices")]))]))]));
    var permis = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("permisDemarches")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Délivrance du permis")]))
@@ -301,11 +301,11 @@ Elm.VosDemarches.make = function (_elm) {
                    _U.list([$Html.text("un chèque ou mandat-lettre à l\'ordre de Monsieur \n                                 le régisseur des recettes de la préfecture, au \n                                 montant de la taxe régionale (si elle est \n                                 demandée)")]))]))
                    ,A2($Html.li,
                    _U.list([]),
-                   _U.list([A2($Murol.link,"Demande de délivrance","/baseDocumentaire/imprime_demande_permis_conduire.pdf")
+                   _U.list([A2($Utils.link,"Demande de délivrance","/baseDocumentaire/imprime_demande_permis_conduire.pdf")
                            ,A2($Html.span,_U.list([]),_U.list([$Html.text(" du permis de conduire")]))]))
                    ,A2($Html.li,
                    _U.list([]),
-                   _U.list([A2($Murol.link,"Demande de permis international","/baseDocumentaire/imprime_demande_permis_international.pdf")]))]))]));
+                   _U.list([A2($Utils.link,"Demande de permis international","/baseDocumentaire/imprime_demande_permis_international.pdf")]))]))]));
    var justifDom = A2($Html.div,
    _U.list([$Html$Attributes.$class("justif")]),
    _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Justificatif de domicile ou de résidence")]))
@@ -558,28 +558,22 @@ Elm.VosDemarches.make = function (_elm) {
             return _U.update(model,{mainContent: _p0._0,subMenu: _U.update(sb,{current: s})});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","Vos démarches"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Mairie","Vos démarches"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A3($Murol.renderSubMenu,address,"Vos démarches:",function (_) {    return _.subMenu;}(model))
+              _U.list([A3($Utils.renderSubMenu,address,"Vos démarches:",function (_) {    return _.subMenu;}(model))
                       ,function (_) {
                          return _.mainContent;
                       }(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var subMenu = {current: "Carte d\'identité"
                  ,entries: _U.list(["Carte d\'identité","Passeport","Permis de conduire","Véhicules","Etat civil","Liste électorale","Service civique"])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.VosDemarches.values = {_op: _op
                                      ,subMenu: subMenu

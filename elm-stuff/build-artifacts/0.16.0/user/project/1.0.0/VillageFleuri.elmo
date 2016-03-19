@@ -11,20 +11,20 @@ Elm.VillageFleuri.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("villageFleuri")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le concours des villes et villages fleuris")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("compteRendu")]),
-           _U.list([A2($Murol.link,"Compte rendu visite du jury en 2014","/baseDocumentaire/villageFleuri/compteRenduJury2014.pdf")
+           _U.list([A2($Utils.link,"Compte rendu visite du jury en 2014","/baseDocumentaire/villageFleuri/compteRenduJury2014.pdf")
                    ,A2($Html.img,_U.list([$Html$Attributes.src("/images/Village fleuri.jpg")]),_U.list([]))
                    ,A2($Html.br,_U.list([]),_U.list([]))
-                   ,A2($Murol.link," Téléchargez la fiche de présentation (PDF)","/baseDocumentaire/villageFleuri/presentationFR.pdf")]))
+                   ,A2($Utils.link," Téléchargez la fiche de présentation (PDF)","/baseDocumentaire/villageFleuri/presentationFR.pdf")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("L\'organisation")]))
            ,A2($Html.p,
            _U.list([]),
@@ -50,7 +50,7 @@ Elm.VillageFleuri.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Le règlement du concours est édité par le \n                     Conseil National des Villes et Villages Fleuris et \n                     diffusé sur l\'ensemble des communes du territoire national \n                     et des DOM / TOM par les structures \n                     départementales chargées du concours.")]))
-           ,A2($Murol.link,"Règlement (pdf)","/baseDocumentaire/villageFleuri/reglement.pdf")
+           ,A2($Utils.link,"Règlement (pdf)","/baseDocumentaire/villageFleuri/reglement.pdf")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Les évolutions du concours")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Durant les quarantes dernières années, le concours n\'a \n                     cessé d\'évoluer : ")]))
            ,A2($Html.p,
@@ -87,11 +87,11 @@ Elm.VillageFleuri.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Documentation","Village fleuri"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Documentation","Village fleuri"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
-   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.VillageFleuri.values = {_op: _op
                                       ,initialModel: initialModel

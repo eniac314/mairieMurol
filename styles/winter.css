@@ -87,7 +87,7 @@ header #subTitle{
   background-color: grey;
 }
 
-.mainMenu div 
+.mainMenu nav 
 {
   display: inline-block;
   margin: 0;
@@ -121,19 +121,19 @@ input::-moz-focus-inner {
   text-decoration: overline;
 }
 
-div[class*="Content"] > div
+nav[class*="Content"] > nav
 {
   display:none;
 }
 
-div[class*="Content"] div div
+nav[class*="Content"] nav nav
 {
   width:100%;
   margin: 0;
   padding: 0;
 }
 
-div[class*="Content"]:hover > div
+nav[class*="Content"]:hover > nav
 {
   background-color: rgba(29, 51, 162, 0.8);
   position: absolute;
@@ -141,7 +141,7 @@ div[class*="Content"]:hover > div
   display: block;
 }
 
-div[class*="Content"] a
+nav[class*="Content"] a
 { text-align: left;
   margin-right: 0;
   display:block;

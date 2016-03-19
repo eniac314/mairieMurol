@@ -10,12 +10,12 @@ Elm.Periscolaire.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var peri = _U.list([{ctor: "_Tuple4"
                        ,_0: "Restaurant scolaire"
@@ -232,7 +232,13 @@ Elm.Periscolaire.make = function (_elm) {
                                     ,A2($Html.ul,
                                     _U.list([]),
                                     _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Du 15 au 26 février 2016 ")]))
-                                            ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 11 au 22 avril 2016")]))
+                                            ,A2($Html.li,
+                                            _U.list([]),
+                                            _U.list([$Html.text("Du 11 au 22 avril 2016 - ")
+                                                    ,A2($Html.a,
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/planning activités avril.pdf")
+                                                            ,$Html$Attributes.target("_blank")]),
+                                                    _U.list([$Html.text("programme des activités prévues")]))]))
                                             ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 7 juillet au 23 août 2016 ")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
@@ -252,22 +258,29 @@ Elm.Periscolaire.make = function (_elm) {
                                     _U.list([]),
                                     _U.list([$Html.text("Les ")
                                             ,A2($Html.a,
-                                            _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
+                                            _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/DOSSIER INSCRIPTION CLSH avril 2016.pdf")
+                                                    ,$Html$Attributes.target("_blank")]),
                                             _U.list([$Html.text("dossiers d’inscriptions")]))
-                                            ,$Html.text(" (disponibles prochainement) sont à remettre au secrétariat du SIVOM, à la mairie de Murol. ")]))
+                                            ,$Html.text(" sont à remettre au secrétariat du SIVOM, à la mairie de Murol. ")]))
                                     ,$Html.text("Liens:")
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
                                     _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf")
                                             ,$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("projet éducatif du centre de loisirs du SIVOM de la Vallée Verte")]))]))
+                                    _U.list([$Html.text("Projet éducatif du centre de loisirs du SIVOM de la Vallée Verte")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
                                             _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
                                             _U.list([$Html.text("Projet pédagogique vacances de printemps ")]))
-                                            ,$Html.text("(disponible prochainement)")]))])
+                                            ,$Html.text(" (disponible prochainement)")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs printemps.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("Plaquette de présentation du centre de loisirs de printemps")]))]))])
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Transport scolaire"
@@ -336,7 +349,7 @@ Elm.Periscolaire.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie Locale","Péri et extra-scolaire"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie Locale","Péri et extra-scolaire"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(function (_) {
@@ -353,12 +366,12 @@ Elm.Periscolaire.make = function (_elm) {
               function (_) {
                  return _.showIntro;
               }(model))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Periscolaire.values = {_op: _op
                                      ,subMenu: subMenu

@@ -13,12 +13,12 @@ Elm.G14Juillet.make = function (_elm) {
    $Lightbox = Elm.Lightbox.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp = Elm.StartApp.make(_elm),
    $Task = Elm.Task.make(_elm),
-   $Time = Elm.Time.make(_elm);
+   $Time = Elm.Time.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var _p0 = A3($Gallery.init,$Lightbox.picList(12),"g14Juillet2015","Le 14 Juillet 2015");
    var g14Juillet2015 = _p0._0;
@@ -81,16 +81,16 @@ Elm.G14Juillet.make = function (_elm) {
       _U.list([$Html.text("Revenir au menu")]))]))));
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","photothèque"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Culture et loisirs","photothèque"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([subContainerData]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var timer = function (g) {
       return A2($Signal.map,function (_p17) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};
-   var initialModel = {mainMenu: $Murol.mainMenu,galleries: galleries,debug: ""};
+   var initialModel = {mainMenu: $Utils.mainMenu,galleries: galleries,debug: ""};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: timers});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);

@@ -8,10 +8,10 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
-                       renderMainMenu',
+import Utils exposing (mainMenu,
+                       renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       
                        capitalize,
                        renderListImg,
                        logos,
@@ -93,7 +93,7 @@ initDropable id title extra body =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Animation"] (.mainMenu model)
+      [ renderMainMenu ["Animation"] (.mainMenu model)
       , div [ id "subContainer"]
             [ div [ class "subContainerData noSubmenu", id "animation"]
                   [ h2 [] [text "Animation"]

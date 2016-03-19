@@ -10,10 +10,10 @@ Elm.AssociationsList.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $String = Elm.String.make(_elm);
+   $String = Elm.String.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var mailsToHtml = function (mails) {
@@ -41,7 +41,11 @@ Elm.AssociationsList.make = function (_elm) {
             _U.list([$Html$Attributes.$class("sitesAssoc")]),
             A2($Basics._op["++"],
             _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Site(s): ")]))]),
-            A2($List.map,function (s) {    return A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]));},sites)));
+            A2($List.map,
+            function (s) {
+               return A2($Html.a,_U.list([$Html$Attributes.href(s),$Html$Attributes.target("_blank")]),_U.list([$Html.text($Utils.prettyUrl(s))]));
+            },
+            sites)));
          }
    };
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
@@ -87,7 +91,7 @@ Elm.AssociationsList.make = function (_elm) {
          return A2($Html.div,
          _U.list([$Html$Attributes.$class("domaine")]),
          _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Domaine de compétences: ")]))
-                 ,A2($Html.p,_U.list([]),_U.list([$Html.text($Murol.capitalize(s))]))]));
+                 ,A2($Html.p,_U.list([]),_U.list([$Html.text($Utils.capitalize(s))]))]));
       });
       var preci$ = A2(maybeElem,_p5.preci,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var nom$ = A2(maybeElem,_p6,function (s) {    return A2($Html.h5,_U.list([]),_U.list([anchor,$Html.text(s)]));});
@@ -106,7 +110,7 @@ Elm.AssociationsList.make = function (_elm) {
       };
       var assocs$ = A2($List.sortBy,function (_) {    return _.nom;},assocs);
       var toDivs = A2($List.map,renderAssoc,assocs$);
-      return A2($Html.div,_U.list([]),A2($Basics._op["++"],A2($List.map,col,$Murol.split3$(toDivs)),_U.list([contact])));
+      return A2($Html.div,_U.list([]),A2($Basics._op["++"],A2($List.map,col,$Utils.split3$(toDivs)),_U.list([contact])));
    };
    var Pro = {ctor: "Pro"};
    var Sport = {ctor: "Sport"};
@@ -380,6 +384,22 @@ Elm.AssociationsList.make = function (_elm) {
                         ,affil: "Camping Qualité national"
                         ,siege: "Jassat 63790 MUROL"
                         ,resp: _U.list([{poste: "Présidente",nom: "Sylvie JORY",tel: ""}])
+                        ,cat: Pro})
+                        ,_U.update(emptyAssoc,
+                        {nom: "Auvergne Escapade"
+                        ,domaine: "Accompagnateurs en montagne"
+                        ,siege: "Beaune-le-Froid 63790 Murol"
+                        ,resp: _U.list([{poste: "Président",nom: "Jean Luc Ranvier",tel: "04 73 88 85 78 - 06 86 89 34 87"}])
+                        ,mails: _U.list(["info@auvergne-escapade.com"])
+                        ,sites: _U.list(["http://www.auvergne-escapade.com"])
+                        ,cat: Sport})
+                        ,_U.update(emptyAssoc,
+                        {nom: "Auvergne Escapade"
+                        ,domaine: "Accompagnateurs en montagne"
+                        ,siege: "Beaune-le-Froid 63790 Murol"
+                        ,resp: _U.list([{poste: "Président",nom: "Jean Luc Ranvier",tel: "04 73 88 85 78 - 06 86 89 34 87"}])
+                        ,mails: _U.list(["info@auvergne-escapade.com"])
+                        ,sites: _U.list(["http://www.auvergne-escapade.com"])
                         ,cat: Pro})]);
    var culture = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Culture);},assocs));
    var sport = renderAssocs(A2($List.filter,function (a) {    return _U.eq(a.cat,Sport);},assocs));

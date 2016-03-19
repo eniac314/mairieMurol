@@ -10,11 +10,11 @@ Elm.VieScolaire.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $SideMenu = Elm.SideMenu.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var second = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("secondVieScolaire")]),
@@ -26,11 +26,11 @@ Elm.VieScolaire.make = function (_elm) {
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("63610 - Besse et Saint Anastaise")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 79 52 74")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04 73 79 57 94")]))]))
-           ,$Murol.mail("ce.0630008S@ac.clermont.fr")
+           ,$Utils.mail("ce.0630008S@ac.clermont.fr")
            ,A2($Html.br,_U.list([]),_U.list([]))
-           ,A2($Murol.site,"Collège du Pavin","http://www.clg-pavin.ac-clermont.fr/")
+           ,A2($Utils.site,"Collège du Pavin","http://www.clg-pavin.ac-clermont.fr/")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
-           ,A2($Murol.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
+           ,A2($Utils.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
    var elem = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("elemVieScolaire")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Ecole élémentaire du Regroupement Pédagogique Intercommunal (RPI)")]))
@@ -394,13 +394,13 @@ Elm.VieScolaire.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie locale","Vie scolaire"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie locale","Vie scolaire"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A2($SideMenu.view,A2($Signal.forwardTo,address,SideMenuAction),function (_) {    return _.sideMenu;}(model))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
-   var initialModel = {mainMenu: $Murol.mainMenu
+   var initialModel = {mainMenu: $Utils.mainMenu
                       ,sideMenu: A5($SideMenu.initAt,
                       "Vie scolaire:",
                       "Accueil scolaire",

@@ -10,10 +10,10 @@ import Char
 import Dict exposing (..)
 import TiledMenu exposing (initWithLink,view,update,Action)
 import StarTable exposing (makeTable, emptyTe, Label(..))
-import Murol exposing (mainMenu,
-                       renderMainMenu',
+import Utils exposing (mainMenu,
+                       renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       
                        capitalize,
                        renderListImg,
                        logos,
@@ -24,7 +24,7 @@ import Murol exposing (mainMenu,
 
 
 -- Model
-subMenu : Murol.Submenu
+subMenu : Utils.Submenu
 subMenu = { current = "", entries = []}
 
 type alias MainContent = 
@@ -33,8 +33,8 @@ type alias MainContent =
   } 
 
 type alias Model = 
-  { mainMenu    : Murol.Menu
-  , subMenu     : Murol.Submenu
+  { mainMenu    : Utils.Menu
+  , subMenu     : Utils.Submenu
   , mainContent : MainContent
   }  
 
@@ -50,7 +50,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Documentation", "Elections"]
+      [ renderMainMenu ["Documentation", "Elections"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))

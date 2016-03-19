@@ -8,10 +8,10 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
+import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       prettyUrl,
                        capitalize,
                        renderListImg,
                        logos,
@@ -46,7 +46,7 @@ type alias CommerceMap = Dict String (List Commerce)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Vie économique", "Commerces"]
+      [ renderMainMenu ["Vie économique", "Commerces"]
                                (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
@@ -81,7 +81,7 @@ renderCommerce { name, descr, addr, tel, fax, mail, site, pjaun, refOt} =
                 mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
-                site (\s -> p [] [text "site: ", a [href s] [text s]])
+                site (\s -> p [] [text "site: ", a [href s, target "_blank"] [text (prettyUrl s)]])
       pjaun'  = maybeElem
                  pjaun (\s -> p [] [text "Pages Jaunes: ", a [href s] [text s]])
       refOt' = case refOt of
@@ -111,7 +111,6 @@ update action model =
   case action of
     NoOp    -> model
     Entry s -> changeMain model s
-    _       -> model
 
 changeMain model s =
     let newContent = get s contentMap
@@ -159,7 +158,7 @@ comMapYearLong = fromList
       }
      ,
       { defCom |
-        name   = "SPAR"
+        name   = "Supermarché SPAR"
       , refOt  = Just ("4236","http://www.sancy.com/activites/detail/4236/murol/spar")
       , descr  = ["Alimentation générale"]
       , addr   = "Rue de Besse - 63790 MUROL"
@@ -192,7 +191,7 @@ comMapYearLong = fromList
       , descr  = ["services postaux et bancaires distributeur de billets"]
       , addr   = "Rue George Sand 63790 MUROL"
       , tel    = "04 73 88 61 49 - National: 36 31"
-      , site   = "www.laposte.fr"  
+      , site   = "http://www.laposte.fr"  
       }
       ,
       { defCom |

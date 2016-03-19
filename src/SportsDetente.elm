@@ -8,10 +8,10 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
+import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       
                        capitalize,
                        renderListImg,
                        logos,
@@ -31,7 +31,7 @@ initialModel =
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Culture et loisirs","Sports et détente"]
+      [ renderMainMenu ["Culture et loisirs","Sports et détente"]
                                (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model

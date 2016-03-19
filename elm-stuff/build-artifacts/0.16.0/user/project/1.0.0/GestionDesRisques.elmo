@@ -11,10 +11,10 @@ Elm.GestionDesRisques.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("gestionDesRisques")]),
@@ -22,10 +22,10 @@ Elm.GestionDesRisques.make = function (_elm) {
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("DICRIM")]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/dicrim.png")]),_U.list([]))
-                   ,A2($Murol.link,
+                   ,A2($Utils.link,
                    "Télécharger le document d\'information communal sur les risques majeurs \"DICRIM\"",
                    "/baseDocumentaire/Dicrim%20murol%20v2%20mars%2012.pdf")
-                   ,A2($Murol.link,
+                   ,A2($Utils.link,
                    "Télécharger la brochure prise en compte du risque sismique en Auvergne",
                    "/baseDocumentaire/risque_sismique_auvergne_cle582121.pdf")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Réévaluation des risques sismiques de la région Auvergne")]))
@@ -74,22 +74,16 @@ Elm.GestionDesRisques.make = function (_elm) {
             return _U.update(model,{mainContent: _p0._0});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","Gestion des risques"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Mairie","Gestion des risques"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var subMenu = _U.list([]);
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.GestionDesRisques.values = {_op: _op
                                           ,subMenu: subMenu

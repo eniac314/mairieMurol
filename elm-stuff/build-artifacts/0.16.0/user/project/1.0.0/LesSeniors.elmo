@@ -10,12 +10,12 @@ Elm.LesSeniors.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var seniors = _U.list([{ctor: "_Tuple4"
                           ,_0: "Activités et animations"
@@ -172,7 +172,7 @@ Elm.LesSeniors.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie Locale","Les seniors"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie Locale","Les seniors"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(function (_) {
@@ -189,12 +189,12 @@ Elm.LesSeniors.make = function (_elm) {
               function (_) {
                  return _.showIntro;
               }(model))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.LesSeniors.values = {_op: _op
                                    ,subMenu: subMenu

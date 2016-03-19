@@ -10,10 +10,10 @@ import Char
 import Dict exposing (..)
 import SideMenu exposing (menuWithContextToContent, htmlToContent, init, view, update, Action)
 import TiledMenu exposing (initAt)
-import Murol exposing (mainMenu,
-                       renderMainMenu',
+import Utils exposing (mainMenu,
+                       renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       
                        capitalize,
                        renderListImg,
                        logos,
@@ -23,13 +23,13 @@ import Murol exposing (mainMenu,
 
 -- Model
 type alias Model =
-  { mainMenu : Murol.Menu
+  { mainMenu : Utils.Menu
   , sideMenu : SideMenu.Model
   } 
   
 
 initialModel =
-  { mainMenu = Murol.mainMenu
+  { mainMenu = Utils.mainMenu
   , sideMenu = SideMenu.initAt
                   "Vie scolaire:"
                   "Accueil scolaire"
@@ -59,7 +59,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Vie locale", "Vie scolaire"] (.mainMenu model)
+      [ renderMainMenu ["Vie locale", "Vie scolaire"] (.mainMenu model)
       , div [ id "subContainer"]
             [ SideMenu.view (Signal.forwardTo address SideMenuAction) (.sideMenu model)
             ]

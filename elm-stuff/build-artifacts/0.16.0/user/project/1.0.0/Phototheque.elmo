@@ -10,11 +10,11 @@ Elm.Phototheque.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var photothèque = function (showIntro) {
       return A2($Html.div,
@@ -98,7 +98,7 @@ Elm.Phototheque.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Culture et loisirs","photothèque"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Culture et loisirs","photothèque"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(function (_) {
@@ -115,9 +115,9 @@ Elm.Phototheque.make = function (_elm) {
               function (_) {
                  return _.showIntro;
               }(model))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
-   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent,showIntro: true};
+   var initialModel = {mainMenu: $Utils.mainMenu,mainContent: initialContent,showIntro: true};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    var Model = F3(function (a,b,c) {    return {mainMenu: a,mainContent: b,showIntro: c};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});

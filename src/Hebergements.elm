@@ -10,10 +10,9 @@ import Char
 import Dict exposing (..)
 import TiledMenu exposing (init,view,update,Action)
 import StarTable exposing (makeTable, emptyTe, Label(..))
-import Murol exposing (mainMenu,
-                       renderMainMenu',
+import Utils exposing (mainMenu,
+                       renderMainMenu,
                        pageFooter,
-                       renderMisc,
                        capitalize,
                        renderListImg,
                        logos,
@@ -24,7 +23,7 @@ import Murol exposing (mainMenu,
 
 
 -- Model
-subMenu : Murol.Submenu
+subMenu : Utils.Submenu
 subMenu = { current = "", entries = []}
 
 type alias MainContent = 
@@ -33,8 +32,8 @@ type alias MainContent =
   } 
 
 type alias Model = 
-  { mainMenu    : Murol.Menu
-  , subMenu     : Murol.Submenu
+  { mainMenu    : Utils.Menu
+  , subMenu     : Utils.Submenu
   , mainContent : MainContent
   }  
 
@@ -50,7 +49,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Tourisme", "Hébergements"]
+      [ renderMainMenu ["Tourisme", "Hébergements"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
@@ -339,7 +338,7 @@ aires =
     , name  = "Domaine du Lac Chambon"
     , addr  = "Allée de la Plage 63790 MUROL"
     , tel   = "04 44 05 21 58"
-    , site  = "www.domaine-lac-chambon.fr"
+    , site  = "http://www.domaine-lac-chambon.fr"
    }
    ,
    { emptyTe |

@@ -5,6 +5,7 @@ module.exports = function(grunt) {
       compile: {
         files: {
           "./js/murol.js": ["./src/Murol.elm"],
+          "./js/utils.js": ["./src/Utils.elm"],
           "./js/periscolaire.js": ["./src/Periscolaire.elm"],
           "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
           "./js/14Juillet.js": ["./src/14Juillet.elm"],
@@ -15,7 +16,6 @@ module.exports = function(grunt) {
           "./js/printempsEte.js": ["./src/PrintempsEte.elm"],
           "./js/automneHiver.js": ["./src/AutomneHiver.elm"],
           "./js/festivalArt.js": ["./src/FestivalArt.elm"],
-          "./js/tourisme.js": ["./src/Tourisme.elm"],
           "./js/animaux.js": ["./src/Animaux.elm"],
           "./js/vieScolaire.js": ["./src/VieScolaire.elm"],
           "./js/gestionDesDechets.js": ["./src/GestionDesDechets.elm"],
@@ -67,6 +67,7 @@ module.exports = function(grunt) {
     watch: {
       elm: {
         files: ["./src/Murol.elm"
+                , "./src/Utils.elm"
                 , "./src/Medievales.elm"
                 , "./src/14Juillet.elm"
                 , "./src/Annee2016.elm"
@@ -77,7 +78,6 @@ module.exports = function(grunt) {
                 , "./src/JourneeMurolais.elm"
                 , "./src/AutomneHiver.elm"
                 , "./src/FestivalArt.elm"
-                , "./src/Tourisme.elm"
                 , "./src/Animaux.elm"
                 , "./src/VieScolaire.elm"
                 , "./src/GestionDesDechets.elm"

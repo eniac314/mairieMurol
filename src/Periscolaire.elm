@@ -10,10 +10,9 @@ import Char
 import Dict exposing (..)
 import TiledMenu exposing (initAtWithLink,view,update,Action)
 import StarTable exposing (makeTable, emptyTe, Label(..))
-import Murol exposing (mainMenu,
-                       renderMainMenu',
+import Utils exposing (mainMenu,
+                       renderMainMenu,
                        pageFooter,
-                       renderMisc,
                        capitalize,
                        renderListImg,
                        logos,
@@ -24,7 +23,7 @@ import Murol exposing (mainMenu,
 
 
 -- Model
-subMenu : Murol.Submenu
+subMenu : Utils.Submenu
 subMenu = { current = "", entries = []}
 
 type alias MainContent = 
@@ -33,8 +32,8 @@ type alias MainContent =
   } 
 
 type alias Model = 
-  { mainMenu    : Murol.Menu
-  , subMenu     : Murol.Submenu
+  { mainMenu    : Utils.Menu
+  , subMenu     : Utils.Submenu
   , mainContent : MainContent
   , showIntro   : Bool
   }  
@@ -54,7 +53,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Vie Locale", "Péri et extra-scolaire"]
+      [ renderMainMenu ["Vie Locale", "Péri et extra-scolaire"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
@@ -338,9 +337,13 @@ peri =
              8h à 18h:"
       , ul []
            [ li [] [text "Du 15 au 26 février 2016 "]
-           , li [] [text "Du 11 au 22 avril 2016"]
+           , li [] [text "Du 11 au 22 avril 2016 - "
+                   , a [ href "/baseDocumentaire/periscolaire/planning activités avril.pdf", target "_blank"]
+                       [ text "programme des activités prévues"] 
+                   ]
            , li [] [text "Du 7 juillet au 23 août 2016 "]
            ]
+
       , p [] [text "Des enfants d’autres communes d’origine, de la population 
                    touristique notamment, pourront être également accueillis, dans la 
                    limite des places disponibles. "]
@@ -357,15 +360,25 @@ peri =
              ,text ")"    
              ]
       , p [] [ text "Les "
-             , a [href "", target "_blank"]
+             , a [href "/baseDocumentaire/periscolaire/DOSSIER INSCRIPTION CLSH avril 2016.pdf", target "_blank"]
                  [text "dossiers d’inscriptions"]
-             , text " (disponibles prochainement) sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
+             , text " sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
              ]
       , text "Liens:"
-      , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"] [text "projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
-      , p [] [a [href "", target "_blank"] [text "Projet pédagogique vacances de printemps "]
-             , text "(disponible prochainement)"
+      , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"]
+                [text "Projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
+      
+      , p [] [a [href "", target "_blank"]
+                [text "Projet pédagogique vacances de printemps "]
+             , text " (disponible prochainement)" 
              ]
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs printemps.pdf"
+                , target "_blank"
+                ]
+                [ text "Plaquette de présentation du centre de loisirs de printemps" ]
+             ]
+
+
       ]
     ,""
     )

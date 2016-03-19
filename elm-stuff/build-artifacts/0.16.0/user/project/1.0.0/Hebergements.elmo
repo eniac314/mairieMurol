@@ -10,12 +10,12 @@ Elm.Hebergements.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StarTable = Elm.StarTable.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var meubles = _U.list([_U.update($StarTable.emptyTe,
                          {epis: "2 épis"
@@ -287,7 +287,7 @@ Elm.Hebergements.make = function (_elm) {
                        ,name: "Domaine du Lac Chambon"
                        ,addr: "Allée de la Plage 63790 MUROL"
                        ,tel: "04 44 05 21 58"
-                       ,site: "www.domaine-lac-chambon.fr"})
+                       ,site: "http://www.domaine-lac-chambon.fr"})
                        ,_U.update($StarTable.emptyTe,
                        {descr: _U.list(["aire de service et d\'accueil"])
                        ,refOt: $Maybe.Just({ctor: "_Tuple2"
@@ -507,7 +507,7 @@ Elm.Hebergements.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Tourisme","Hébergements"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Tourisme","Hébergements"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A2(function (_) {
@@ -521,12 +521,12 @@ Elm.Hebergements.make = function (_elm) {
               function (_) {
                  return _.tiledMenu;
               }(function (_) {    return _.mainContent;}(model))))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Model = F3(function (a,b,c) {    return {mainMenu: a,subMenu: b,mainContent: c};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Hebergements.values = {_op: _op
                                      ,subMenu: subMenu

@@ -11,11 +11,11 @@ Elm.Agriculture.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $String = Elm.String.make(_elm);
+   $String = Elm.String.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var contact = A2($Html.p,
    _U.list([]),
@@ -32,13 +32,9 @@ Elm.Agriculture.make = function (_elm) {
             return _U.update(model,{mainContent: _p0._0});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
+   var Entry = function (a) {    return {ctor: "Entry",_0: a};};
+   var NoOp = {ctor: "NoOp"};
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var renderAgriculteur = function (_p2) {
@@ -57,7 +53,10 @@ Elm.Agriculture.make = function (_elm) {
       var site$ = A2(maybeElem,
       _p3.site,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("site: ")
+                 ,A2($Html.a,_U.list([$Html$Attributes.href(s),$Html$Attributes.target("_blank")]),_U.list([$Html.text($Utils.prettyUrl(s))]))]));
       });
       var mail$ = A2(maybeElem,
       _p3.mail,
@@ -92,14 +91,14 @@ Elm.Agriculture.make = function (_elm) {
       _U.list([]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Agriculteur & producteur de fromages: ")]))]),
-      A2($List.map,col,$Murol.split3$(agri))));
+      A2($List.map,col,$Utils.split3$(agri))));
    };
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie économique","Agriculture"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie économique","Agriculture"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Agriculteur = F8(function (a,b,c,d,e,f,g,h) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g,refOt: h};});
    var defAgri = A8(Agriculteur,"",_U.list([]),"","","","","",$Maybe.Nothing);
@@ -138,9 +137,9 @@ Elm.Agriculture.make = function (_elm) {
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("Agriculture")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Agriculture")]))
            ,renderAgriculteurMap(agriMap)
-           ,A2($Html.div,_U.list([]),_U.list([A2($Murol.link,"Saint-Nectaire AOP","http://www.aop-saintnectaire.com/"),contact]))]));
+           ,A2($Html.div,_U.list([]),_U.list([A2($Utils.link,"Saint-Nectaire AOP","http://www.aop-saintnectaire.com/"),contact]))]));
    var subMenu = _U.list([]);
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Agriculture.values = {_op: _op
                                     ,subMenu: subMenu
@@ -151,6 +150,8 @@ Elm.Agriculture.make = function (_elm) {
                                     ,renderAgriculteur: renderAgriculteur
                                     ,maybeElem: maybeElem
                                     ,nullTag: nullTag
+                                    ,NoOp: NoOp
+                                    ,Entry: Entry
                                     ,contentMap: contentMap
                                     ,update: update
                                     ,changeMain: changeMain

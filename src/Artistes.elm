@@ -8,10 +8,10 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
+import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       
                        capitalize,
                        renderListImg,
                        logos,
@@ -37,7 +37,7 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Culture et loisirs", "Artistes"]
+      [ renderMainMenu ["Culture et loisirs", "Artistes"]
                                (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
@@ -54,7 +54,6 @@ update action model =
   case action of
     NoOp    -> model
     Entry s -> changeMain model s
-    _       -> model
 
 changeMain model s =
     let newContent = get s contentMap
@@ -82,7 +81,7 @@ initialContent =
       , p  [] [ text "Pour les découvrir, suivez les liens en cliquant 
                      sur leurs noms. La plupart des liens conduit 
                      sur le site "
-              , a [href "http://www.murol-terre-des-arts.wifeo.com", target "_blank"]
+              , a [href "http://murol-terre-des-arts.wifeo.com", target "_blank"]
                   [text "www.murol-terre-des-arts.wifeo.com"]
               , text " qui présente également des 
                       artistes des environs de Murol. "

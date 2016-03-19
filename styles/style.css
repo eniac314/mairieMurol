@@ -117,7 +117,7 @@ header #subTitle{
   background-color: rgba(53, 100, 44, 0.8);
 }
 
-.mainMenu div 
+.mainMenu nav 
 {
   display: inline-block;
   margin: 0;
@@ -130,7 +130,9 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-.mainMenu a{
+
+
+.mainMenu a ,.mainMenu label{
   border: 1px solid white;
   border-left-width: 3px;
   height: auto;
@@ -148,24 +150,65 @@ input::-moz-focus-inner {
   color: white;
   }
 
-.mainMenu a:hover {
+.mainMenu label{
+  position: relative;
+  /*border-style: none;*/
+  margin: 0;
+  /*padding: 0;*/
+}
+
+.mainMenu a:hover, .mainMenu label:hover{
   color: black;
   text-decoration: overline;
 }
 
-div[class*="Content"] > div
+nav[class*="Content"] > nav
 {
   display:none;
 }
 
-div[class*="Content"] div div
+nav[class*="Content"] nav nav
 {
   width:100%;
   margin: 0;
   padding: 0;
 }
 
-div[class*="Content"]:hover > div
+@media screen and (min-width: 1024px) {
+
+    nav[class*="Content"]:hover > nav
+    {
+      background-color: rgba(96, 117, 38, 0.8);
+      position: absolute;
+      z-index: 1;
+      display: block;
+    }
+}
+
+input[type=radio] {
+   /*position: absolute;
+   top: -9999px;
+   left: -9999px;*/
+   top:0;
+   left:0;
+   position: absolute;
+   opacity: 0;
+   margin: 0;
+   padding: 0;
+
+   /* For mobile, it's typically better to position checkbox on top of clickable
+      area and turn opacity to 0 instead. */
+}
+
+@media screen and (max-width: 1024px) {
+    nav[class*="Content"] >input[type=radio]:checked ~ nav{
+      background-color: rgba(96, 117, 38, 0.8);
+      position: absolute;
+      z-index: 1;
+      display: block;
+    }
+}
+/*nav[class*="Content"]:focus > nav
 {
   background-color: rgba(96, 117, 38, 0.8);
   position: absolute;
@@ -173,7 +216,15 @@ div[class*="Content"]:hover > div
   display: block;
 }
 
-div[class*="Content"] a
+nav[class*="Content"]:active > nav
+{
+  background-color: rgba(96, 117, 38, 0.8);
+  position: absolute;
+  z-index: 1;
+  display: block;
+}*/
+
+nav[class*="Content"] a
 { text-align: left;
   margin-right: 0;
   display:block;

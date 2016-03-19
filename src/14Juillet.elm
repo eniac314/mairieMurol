@@ -13,14 +13,12 @@ import Lightbox exposing (Picture, defPic, picList)
 import Gallery exposing (..)
 import Time exposing (..)
 import Task exposing (..)
-import Murol exposing (mainMenu,
-                       renderMainMenu',
+import Utils exposing (mainMenu,
+                       renderMainMenu,
                        pageFooter,
-                       renderMisc, 
                        capitalize,
                        renderListImg,
                        logos,
-                       renderSubMenu,
                        mail,
                        site,
                        link)
@@ -28,7 +26,7 @@ import Murol exposing (mainMenu,
 -- Model
 
 type alias Model = 
-  { mainMenu    : Murol.Menu
+  { mainMenu    : Utils.Menu
   , galleries   : List (Gallery.Model,String)
   , debug : String
   }
@@ -92,7 +90,7 @@ view address model =
 
   in
   div [ id "container"]
-      [ renderMainMenu' ["Culture et loisirs", "photothèque"]
+      [ renderMainMenu ["Culture et loisirs", "photothèque"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ subContainerData ]

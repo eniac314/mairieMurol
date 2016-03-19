@@ -1,8 +1,10 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Site officiel de la commune de Murol">
+  <meta name="author" content="mairie de Murol">
   <title>La commune de Murol</title>
   <script type="text/javascript" src="./js/murol.js"></script>
   <link rel="stylesheet" href="./styles/style.css">
@@ -23,13 +25,30 @@
 </body>
 
 <script type="text/javascript">
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if(dd<10) {
+      dd='0'+dd
+  } 
+
+  if(mm<10) {
+      mm='0'+mm
+  } 
+
+  today = mm+'/'+dd+'/'+yyyy;
+
   var elmDiv = document.getElementById('elm-app');
   // var elmApp = Elm.embed(Elm.Murol, elmDiv, {scrollY: 0});
-  var elmApp = Elm.embed(Elm.Murol, elmDiv);
+  var elmApp = Elm.embed(Elm.Murol, elmDiv, {today: today});
   
+  
+
   window.onscroll = function(){
   
-  elmApp.ports.scrollY.send(document.body.scrollTop)
+    elmApp.ports.scrollY.send(document.body.scrollTop)
   
   }
 

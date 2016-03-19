@@ -11,11 +11,11 @@ Elm.Commerces.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $String = Elm.String.make(_elm);
+   $String = Elm.String.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var contact = A2($Html.p,
    _U.list([]),
@@ -32,13 +32,7 @@ Elm.Commerces.make = function (_elm) {
             return _U.update(model,{mainContent: _p0._0});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var renderCommerce = function (_p2) {
@@ -62,7 +56,10 @@ Elm.Commerces.make = function (_elm) {
       var site$ = A2(maybeElem,
       _p3.site,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("site: ")
+                 ,A2($Html.a,_U.list([$Html$Attributes.href(s),$Html$Attributes.target("_blank")]),_U.list([$Html.text($Utils.prettyUrl(s))]))]));
       });
       var mail$ = A2(maybeElem,
       _p3.mail,
@@ -90,14 +87,14 @@ Elm.Commerces.make = function (_elm) {
          acc);
       });
       var toDivs = A3($Dict.foldr,toDiv,_U.list([]),am);
-      return A2($Html.div,_U.list([]),A2($List.map,col,$Murol.split3$(toDivs)));
+      return A2($Html.div,_U.list([]),A2($List.map,col,$Utils.split3$(toDivs)));
    };
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie économique","Commerces"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie économique","Commerces"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Commerce = F9(function (a,b,c,d,e,f,g,h,i) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g,pjaun: h,refOt: i};});
    var defCom = A9(Commerce,"",_U.list([]),"","","","","","",$Maybe.Nothing);
@@ -109,7 +106,7 @@ Elm.Commerces.make = function (_elm) {
                                                              ,addr: "rue Pierre Céleirol - 63790 MUROL"
                                                              ,tel: "04 73 88 80 13"})
                                                              ,_U.update(defCom,
-                                                             {name: "SPAR"
+                                                             {name: "Supermarché SPAR"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                                  ,_0: "4236"
                                                                                  ,_1: "http://www.sancy.com/activites/detail/4236/murol/spar"})
@@ -142,7 +139,7 @@ Elm.Commerces.make = function (_elm) {
                                                              ,descr: _U.list(["services postaux et bancaires distributeur de billets"])
                                                              ,addr: "Rue George Sand 63790 MUROL"
                                                              ,tel: "04 73 88 61 49 - National: 36 31"
-                                                             ,site: "www.laposte.fr"})
+                                                             ,site: "http://www.laposte.fr"})
                                                              ,_U.update(defCom,
                                                              {name: "Distributeur SPAR"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
@@ -344,7 +341,7 @@ Elm.Commerces.make = function (_elm) {
            ,renderCommerceMap(comMapSummer)
            ,contact]));
    var subMenu = _U.list([]);
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Commerces.values = {_op: _op
                                   ,subMenu: subMenu

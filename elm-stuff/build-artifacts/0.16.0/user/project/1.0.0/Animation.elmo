@@ -11,10 +11,10 @@ Elm.Animation.make = function (_elm) {
    $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
    var NoOp = {ctor: "NoOp"};
@@ -44,7 +44,7 @@ Elm.Animation.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Animation"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Animation"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A2($Html.div,
@@ -67,7 +67,7 @@ Elm.Animation.make = function (_elm) {
                       _U.list([A2($Html.iframe,
                       _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis")]),
                       _U.list([]))]))]))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var dropN = F2(function (id,n) {
       return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
@@ -161,7 +161,7 @@ Elm.Animation.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous voulez venir présenter vos œuvres ? Contactez \n                               la mairie au 04 73 88 60 67 \n                               ou par mail à ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("mailto:murolanimation@orange.fr")]),_U.list([$Html.text("murolanimation@orange.fr")]))]))]));
-   var initialModel = {mainMenu: $Murol.mainMenu,drops: _U.list([medievales,musee,horizon,revolution,festivalArt])};
+   var initialModel = {mainMenu: $Utils.mainMenu,drops: _U.list([medievales,musee,horizon,revolution,festivalArt])};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Animation.values = {_op: _op
                                   ,initialModel: initialModel

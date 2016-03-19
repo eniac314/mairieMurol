@@ -11,10 +11,10 @@ Elm.OfficeTourisme.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("officeTourisme")]),
@@ -35,9 +35,9 @@ Elm.OfficeTourisme.make = function (_elm) {
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Rue de jassaguet - 63790 Murol")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tel: 04 73 88 62 62")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04 73 88 60 23")]))
-                   ,$Murol.mail("bt.murol-chambon@sancy.com")
+                   ,$Utils.mail("bt.murol-chambon@sancy.com")
                    ,A2($Html.br,_U.list([]),_U.list([]))
-                   ,A2($Murol.site,"www.sancy.com","http://www.sancy.com")
+                   ,A2($Utils.site,"www.sancy.com","http://www.sancy.com")
                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires:")]))
                    ,A2($Html.ul,
                    _U.list([]),
@@ -77,7 +77,7 @@ Elm.OfficeTourisme.make = function (_elm) {
                            ,$Html.text("pour les personnes aveugles, ainsi que d’un ")
                            ,A2($Html.b,_U.list([]),_U.list([$Html.text("micro ")]))
                            ,$Html.text("pour enregistrer la conversation. Au moins un membre du personnel\n                           d’accueil a suivi une formation spécifique à l’accueil des personnes\n                           handicapées (label Tourisme et Handicap).")]))]))
-           ,$Murol.renderListImg($Murol.logos)]));
+           ,$Utils.renderListImg($Utils.logos)]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -88,22 +88,16 @@ Elm.OfficeTourisme.make = function (_elm) {
             return _U.update(model,{mainContent: _p0._0});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Tourisme","Office de Tourisme"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Tourisme","Office de Tourisme"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var subMenu = _U.list([]);
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.OfficeTourisme.values = {_op: _op
                                        ,subMenu: subMenu

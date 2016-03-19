@@ -3,6 +3,7 @@ module StarTable where
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Utils exposing (prettyUrl)
 import String exposing (words, join, cons, uncons)
 
 addStars : Maybe Int -> String -> String ->  Html
@@ -72,7 +73,7 @@ makeRow { name, label, stars, epis, refOt, descr,
                 mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
-                site (\s -> p [] [text "site: ", a [href s] [text s]])
+                site (\s -> p [] [text "site: ", a [href s, target "_blank"] [text (prettyUrl s)]])
 
       pjaun'  = maybeElem
                  pjaun (\s -> p [] [text "Pages Jaunes: ", a [href s] [text s]])

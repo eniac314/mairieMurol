@@ -8,15 +8,13 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
+import Utils exposing (mainMenu,
                        renderMainMenu,
-                       pageFooter,
-                       renderMisc,
+                       prettyUrl,
+                       pageFooter,                      
                        capitalize,
                        renderListImg,
                        logos,
-                       Action (..),
-                       renderSubMenu,
                        link,
                        split3')
 
@@ -45,7 +43,7 @@ type alias AgriculteurMap = Dict String (List Agriculteur)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Vie économique","Agriculture"] (.mainMenu model)
+      [ renderMainMenu ["Vie économique","Agriculture"] (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -90,7 +88,7 @@ renderAgriculteur { name, descr, addr, tel, fax, mail, site, refOt} =
                 mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
-                site (\s -> p [] [text "site: ", a [href s] [text s]])
+                site (\s -> p [] [text "site: ", a [href s, target "_blank"] [text (prettyUrl s)]])
       refOt' = case refOt of
                  Nothing ->  nullTag
                  Just (n,ad) -> p [] [ text ("Référence OT: ")
@@ -111,6 +109,10 @@ nullTag = span [style [("display","none")]] []
 
 -- Update
 
+type Action =
+    NoOp
+  | Entry String 
+
 contentMap =
  fromList []
 
@@ -118,7 +120,6 @@ update action model =
   case action of
     NoOp    -> model
     Entry s -> changeMain model s
-    _       -> model
 
 changeMain model s =
     let newContent = get s contentMap

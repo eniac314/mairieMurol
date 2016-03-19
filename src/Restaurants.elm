@@ -10,10 +10,9 @@ import Char
 import Dict exposing (..)
 import TiledMenu exposing (init,view,update,Action)
 import StarTable exposing (makeTable, emptyTe, Label(..))
-import Murol exposing (mainMenu,
-                       renderMainMenu',
-                       pageFooter,
-                       renderMisc,
+import Utils exposing (mainMenu,
+                       renderMainMenu,
+                       pageFooter,                       
                        capitalize,
                        renderListImg,
                        logos,
@@ -24,8 +23,6 @@ import Murol exposing (mainMenu,
 
 
 -- Model
-subMenu : Murol.Submenu
-subMenu = { current = "", entries = []}
 
 type alias MainContent = 
   { wrapper : (Html -> Bool -> Html)
@@ -33,15 +30,13 @@ type alias MainContent =
   } 
 
 type alias Model = 
-  { mainMenu    : Murol.Menu
-  , subMenu     : Murol.Submenu
+  { mainMenu    : Utils.Menu
   , mainContent : MainContent
   , showIntro   : Bool
   }  
 
 initialModel =
   { mainMenu    = mainMenu
-  , subMenu     = subMenu
   , mainContent = initialContent
   , showIntro   = True
   }
@@ -52,7 +47,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Tourisme", "Restaurants"]
+      [ renderMainMenu ["Tourisme", "Restaurants"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))
@@ -291,18 +286,18 @@ restosMurol =
     }
     ,
     { emptyTe |
-      name  = "Le Piccotin"
+      name  = "Le Picotin"
     , descr = ["Restaurant pizzeria"]  
     , refOt = Just ("4075","http://www.sancy.com/activites/detail/4075/murol/le-picotin")
     , label = FamillePlus
-    , addr  = "Rue Georges Sand - 63790 MUROL"
+    , addr  = "Rue George Sand - 63790 MUROL"
     , tel   = "04 73 62 37 10 / 06 83 00 11 85"
     }
     ,
     { emptyTe |
       name  = "L'Arbalète"
     , refOt = Just ("4034","http://www.sancy.com/activites/detail/4034/murol/l-arbalete")
-    , addr  = "Rue Georges Sand - 63790 Murol"
+    , addr  = "Rue George Sand - 63790 Murol"
     , tel   = "04 73 88 85 79"
     , mail  = "restaurantlarbalete@gmail.com"
     }

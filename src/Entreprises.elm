@@ -8,10 +8,10 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
+import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       prettyUrl,
                        capitalize,
                        renderListImg,
                        logos,
@@ -44,7 +44,7 @@ type alias EntrepriseMap = Dict String (List Entreprise)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address ["Vie économique","Entreprises"] (.mainMenu model)
+      [ renderMainMenu ["Vie économique","Entreprises"] (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
             ]
@@ -85,7 +85,7 @@ renderEntreprise { name, descr, addr, tel, fax, mail, site} =
                 mail (\s -> p [] [text "e.mail: ", a [href ("mailto:"++s)] [text s]])
 
       site'  = maybeElem
-                site (\s -> p [] [text "site: ", a [href s] [text s]])
+                site (\s -> p [] [text "site: ", a [href s, target "_blank", target "_blank"] [text (prettyUrl s)]])
   in div [] ([name'] ++ descr' ++ [addr', tel', fax', mail', site'])
 
 
@@ -106,7 +106,6 @@ update action model =
   case action of
     NoOp    -> model
     Entry s -> changeMain model s
-    _       -> model
 
 changeMain model s =
     let newContent = get s contentMap
@@ -191,7 +190,7 @@ artMap = fromList
   --    , tel    = "04 7388 6033" 
   --    }]
   -- )
-  ,("Marché de gros et demi-gros"
+  ,("Marché de demi-gros et détail"
    , [{ defArt |
         name   = "Jallet Fruits et légumes"
       , addr   = "route de Besse 63790 MUROL"
@@ -207,6 +206,22 @@ artMap = fromList
       , fax    = "04 73 88 80 39"  
       }]
    )
+  ,("Plâtrerie/peinture"
+   , [{ defArt |
+        name   = "Sébastien Bouche"
+      , addr   = "Beaune-le-Froid 63790 MUROL"
+      , tel    = "06 18 70 41 71"
+      }]
+   )
+  --,(""
+  -- , [{ defArt |
+  --      name   = ""
+  --    , descr  = ""
+  --    , addr   = ""
+  --    , tel    = ""
+  --    , fax    = ""  
+  --    }]
+  -- )
   --,("Reprographie"
   -- , [{ defArt |
   --      name   = "Chazay Yvon"

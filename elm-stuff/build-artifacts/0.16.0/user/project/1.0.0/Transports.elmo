@@ -10,11 +10,11 @@ Elm.Transports.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var toRow = F2(function (xs,b) {
       var alt = b ? "row" : "rowAlt";
@@ -139,8 +139,8 @@ Elm.Transports.make = function (_elm) {
                                               ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Créer ou trouver un trajet, suivez les liens ci-dessous")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([A2($Murol.link,"http://www.covoiturageauvergne.net","http://www.covoiturageauvergne.net")]))
-                                              ,A2($Html.p,_U.list([]),_U.list([A2($Murol.link,"http://www.covoiturage.fr/","http://www.covoiturage.fr/")]))])}
+                                              _U.list([A2($Utils.link,"http://www.covoiturageauvergne.net","http://www.covoiturageauvergne.net")]))
+                                              ,A2($Html.p,_U.list([]),_U.list([A2($Utils.link,"http://www.covoiturage.fr/","http://www.covoiturage.fr/")]))])}
                                 ,{ctor: "_Tuple3",_0: "Déneigement",_1: "/images/tiles/transports/déneigement.jpg",_2: deneigement}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
@@ -157,7 +157,7 @@ Elm.Transports.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Vie Locale","Transports"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie Locale","Transports"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A2(function (_) {
@@ -171,12 +171,12 @@ Elm.Transports.make = function (_elm) {
               function (_) {
                  return _.tiledMenu;
               }(function (_) {    return _.mainContent;}(model))))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Model = F3(function (a,b,c) {    return {mainMenu: a,subMenu: b,mainContent: c};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Transports.values = {_op: _op
                                    ,subMenu: subMenu

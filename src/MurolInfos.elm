@@ -8,10 +8,10 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
+import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       
                        capitalize,
                        renderListImg,
                        logos,
@@ -41,7 +41,7 @@ type alias Entry = (String,String)
 -- View
 view address model =
   div [ id "container"]
-      [ renderMainMenu address
+      [ renderMainMenu
                        ["Documentation", "Murol Infos"]
                        (.mainMenu model)
       , div [ id "subContainer"]
@@ -59,7 +59,6 @@ update action model =
   case action of
     NoOp    -> model
     Entry s -> changeMain model s
-    _       -> model
 
 changeMain model s =
     let newContent = get s contentMap

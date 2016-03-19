@@ -9,10 +9,9 @@ import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
 import TiledMenu exposing (initAtPhoto,view,update,Action)
-import Murol exposing (mainMenu,
-                       renderMainMenu',
+import Utils exposing (mainMenu,
+                       renderMainMenu,
                        pageFooter,
-                       renderMisc,
                        capitalize,
                        renderListImg,
                        logos,
@@ -24,7 +23,7 @@ import Murol exposing (mainMenu,
 
 
 -- Model
-subMenu : Murol.Submenu
+subMenu : Utils.Submenu
 subMenu = { current = "", entries = []}
 
 type alias MainContent = 
@@ -33,8 +32,8 @@ type alias MainContent =
   } 
 
 type alias Model = 
-  { mainMenu    : Murol.Menu
-  , subMenu     : Murol.Submenu
+  { mainMenu    : Utils.Menu
+  , subMenu     : Utils.Submenu
   , mainContent : MainContent
   , showIntro   : Bool
   }  
@@ -54,7 +53,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu' ["Tourisme", "Découvrir Murol"]
+      [ renderMainMenu ["Tourisme", "Découvrir Murol"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))

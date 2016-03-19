@@ -10,12 +10,12 @@ Elm.DecouvrirMurol.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
    $String = Elm.String.make(_elm),
-   $TiledMenu = Elm.TiledMenu.make(_elm);
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var initialWrapper = F2(function (content,showIntro) {
       return A2($Html.div,
@@ -184,7 +184,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       ,A2($Html.img,
                                                       _U.list([$Html$Attributes.src("/images/tartaretBois.jpg"),$Html$Attributes.id("tartaretBois")]),
                                                       _U.list([]))
-                                                      ,$Murol.miniLightBox("parcoursSport")]))])}
+                                                      ,$Utils.miniLightBox("parcoursSport")]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Le lac Chambon"
                                  ,_1: "/images/tiles/decouvrirMurol/lacChambonTile.jpg"
@@ -268,7 +268,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                                       _U.list([$Html$Attributes.href("/baseDocumentaire/180904-CG63-DepliantLacChambon-2010.pdf")
                                                                               ,$Html$Attributes.target("_blank")]),
                                                                       _U.list([$Html.text("Document de présentation du conseil départemental")]))]))]))
-                                                      ,$Murol.miniLightBox("map")]))
+                                                      ,$Utils.miniLightBox("map")]))
                                               ,A2($Html.div,
                                               _U.list([$Html$Attributes.id("divVoie2")]),
                                               _U.list([A2($Html.p,
@@ -454,7 +454,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Murol.renderMainMenu$,_U.list(["Tourisme","Découvrir Murol"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Tourisme","Découvrir Murol"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
               _U.list([A3(function (_) {
@@ -471,12 +471,12 @@ Elm.DecouvrirMurol.make = function (_elm) {
               function (_) {
                  return _.showIntro;
               }(model))]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
    var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
    var subMenu = {current: "",entries: _U.list([])};
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.DecouvrirMurol.values = {_op: _op
                                        ,subMenu: subMenu

@@ -10,10 +10,10 @@ Elm.Deliberations.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
-   $StartApp$Simple = Elm.StartApp.Simple.make(_elm);
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var chunk = F2(function (n,xs) {
       var _p0 = xs;
@@ -32,33 +32,33 @@ Elm.Deliberations.make = function (_elm) {
    sortDate(_U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("2014")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"19 mars","/baseDocumentaire/Deliberations_conseil/2014/19032014.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"4 avril","/baseDocumentaire/Deliberations_conseil/2014/04042014.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"10 avril","/baseDocumentaire/Deliberations_conseil/2014/10042014.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"16 juillet","/baseDocumentaire/Deliberations_conseil/2014/16072014.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"28 oct","/baseDocumentaire/Deliberations_conseil/2014/28102014.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"22 dec","/baseDocumentaire/Deliberations_conseil/2014/22122014.pdf")]))]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"19 mars","/baseDocumentaire/Deliberations_conseil/2014/19032014.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"4 avril","/baseDocumentaire/Deliberations_conseil/2014/04042014.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"10 avril","/baseDocumentaire/Deliberations_conseil/2014/10042014.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"16 juillet","/baseDocumentaire/Deliberations_conseil/2014/16072014.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"28 oct","/baseDocumentaire/Deliberations_conseil/2014/28102014.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"22 dec","/baseDocumentaire/Deliberations_conseil/2014/22122014.pdf")]))]))
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2015")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"12 février","/baseDocumentaire/Deliberations_conseil/2015/CM12022015.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"19 mars","/baseDocumentaire/Deliberations_conseil/2015/CM19032015.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"15 avril","/baseDocumentaire/Deliberations_conseil/2015/CM15042015.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"2 juin","/baseDocumentaire/Deliberations_conseil/2015/CM24092015.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Murol.link,"4 novembre","/baseDocumentaire/Deliberations_conseil/2015/CM04112015.pdf")]))
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"12 février","/baseDocumentaire/Deliberations_conseil/2015/CM12022015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"19 mars","/baseDocumentaire/Deliberations_conseil/2015/CM19032015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"15 avril","/baseDocumentaire/Deliberations_conseil/2015/CM15042015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"2 juin","/baseDocumentaire/Deliberations_conseil/2015/CM24092015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"4 novembre","/baseDocumentaire/Deliberations_conseil/2015/CM04112015.pdf")]))
                             ,A2($Html.li,
                             _U.list([]),
-                            _U.list([A2($Murol.link,"3 décembre","/baseDocumentaire/Deliberations_conseil/2015/03-12-2015.pdf")]))]))]))));
+                            _U.list([A2($Utils.link,"3 décembre","/baseDocumentaire/Deliberations_conseil/2015/03-12-2015.pdf")]))]))]))));
    var initialContent = delib;
    var update = F2(function (action,model) {    var _p2 = action;return model;});
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Mairie","Délibérations"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Mairie","Délibérations"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
-   var initialModel = {mainMenu: $Murol.mainMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    var subMenu = _U.list([]);
    return _elm.Deliberations.values = {_op: _op

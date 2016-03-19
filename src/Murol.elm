@@ -11,6 +11,22 @@ import String exposing (words, join, cons, uncons)
 import Char
 import Task
 import TiledMenu
+import Utils exposing ( Menu
+                      , Submenu
+                      ,  renderMainMenu
+                      , renderSubMenu
+                      , renderListImg
+                      , link
+                      , script
+                      , mail
+                      , nullTag
+                      , year'
+                      , months'
+                      , day'
+                      , capitalize
+                      , mainMenu
+                      , logos
+                      , pageFooter)
 import Date exposing (..)
 
 -- Model
@@ -35,10 +51,10 @@ type alias News =
   }
 
 
-type alias Submenu =
-  { current : String 
-  , entries : List String
-  }  
+--type alias Submenu =
+--  { current : String 
+--  , entries : List String
+--  }  
 
 emptyNews = News "" (Err "") nullTag Nothing False 0 (Err "")
 
@@ -57,87 +73,14 @@ newstime news =
    Ok  d' -> Date.toTime d'
 
 
-type alias Link    = String
-type alias Label   = String
-type alias Visible = Bool
 
-type Menu = Leaf Label Link | Node Label (List Menu)
-
-mainMenu : Menu
-mainMenu = Node ""
-  [ Leaf "Accueil" "index.html"
-  , Leaf "Animation" ""
-  , Node "Tourisme"
-         [ Leaf "Office de Tourisme" ""
-         , Leaf "Découvrir Murol" ""
-         , Leaf "Hébergements" ""
-         , Leaf "Restaurants" ""
-         , Leaf "Carte & plan" ""
-         , Leaf "Animation estivale" "" 
-         ]
-  , Node "Vie locale"
-         [ Leaf "Vie scolaire" ""
-         , Leaf "Péri et extra-scolaire" ""
-         , Leaf "Les seniors" ""
-         , Leaf "Santé" ""
-         , Leaf "Transports" ""
-         , Leaf "Gestion des déchets" ""
-         , Leaf "Animaux" ""
-         ]
-  , Node "Vie économique"
-         [ Leaf "Agriculture" ""
-         , Leaf "Commerces" ""
-         , Leaf "Entreprises" ""
-         , Leaf "Offres d'emploi" ""
-         ]
-  , Node "Mairie"
-         [ Leaf "La commune" ""
-         , Leaf "Conseil municipal" ""
-         , Leaf "Délibérations" ""
-         , Leaf "Commissions" ""
-         , Leaf "CCAS" ""
-         , Leaf "Vos démarches" ""
-         , Leaf "Salles municipales" ""
-         , Leaf "Horaires et contact" ""
-         ]
-  , Node "Culture et loisirs"
-         [ Leaf "Artistes" ""
-         , Leaf "Associations" ""
-         , Leaf "Sortir" ""
-         , Leaf "Patrimoine" ""
-         , Leaf "Sports et détente" ""
-         , Leaf "Photothèque" ""
-         ]
-  , Node "Documentation"
-         [ Leaf "Bulletins municipaux" ""
-         , Leaf "Murol Infos" ""
-         , Leaf "Délibérations" ""
-         , Leaf "Gestion des risques" ""
-         , Leaf "Elections" ""
-         , Leaf "Autres publications" ""
-         , Leaf "Village fleuri" ""
-         , Leaf "Service-public.fr" "https://www.service-public.fr/"
-         ]
-  , Leaf "Petites annonces" ""]
-
---logos    = ["FamillePlus2.gif"
---           ,"StationTourismeRVB2.gif"
---           ,"Villagefleuri2.gif"
---           ,"StationVertegf2.gif"
---           ]
-
-logos    = [("famillePlus.jpg","http://www.familleplus.fr/fr")
-           ,("Station_Tourisme_RVB.jpg","http://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme")
-           ,("Village fleuri.png","http://www.villes-et-villages-fleuris.com/")
-           ,("StationVertegf.jpg","http://www.stationverte.com/")
-           ]
 
 
 initialModel = 
   { mainMenu    = mainMenu
   , logos       = logos
   , newsletters = newsletters
-  , news        = prepNews "03/13/2016" news
+  , news        = prepNews today news
   }
 
 
@@ -162,7 +105,7 @@ removeOld today ns =
 type Action 
   = NoOp
   | Hover String
-  | Entry String
+  --| UtilsEntry (Utils.Action)
   | Drop  Int
   --| ScrollY Int
 
@@ -171,7 +114,7 @@ update action model =
   case action of 
     NoOp    -> (model, none)
     Hover s -> (model, none)
-    Entry e -> (model, none)
+    --UtilsEntry e -> (model, none)
     --ScrollY r -> (model, none)
     Drop id -> 
       let n1 = List.map (dropN id) (.news model)
@@ -190,98 +133,6 @@ renderContent n1 address =
       , renderMisc
       ]
 
-renderMainMenu : Signal.Address Action -> List String -> Menu -> Html
-renderMainMenu adr pos m  = 
-  let toUrl s =
-    s |> words
-      |> List.map capitalize
-      |> join ""
-      |> (\s -> s ++ ".html")
-      current label = ("current", List.member label pos)
-
-  in case m of
-    Leaf label link -> 
-      let link' = if String.isEmpty link
-                  then toUrl label
-                  else link
-          
-          targ  = if String.isEmpty link
-                  then "_self"
-                  else "_blank"
-
-      in  a [ href link', classList [current label], target targ]
-            [ text label]
-    
-    Node label xs ->
-      if String.isEmpty label
-      
-      then div [ class "mainMenu"]
-               (List.map (renderMainMenu adr pos) xs)  
-      else
-        div [ class (label ++ "Content")]
-            ([ a [ classList [ ((label ++ "dropBtn"),True)
-                             , current label
-                             ]
-                 ]
-                 [ text label ]
-             , div [] (List.map (renderMainMenu adr pos) xs)
-             ])
-
-
-renderMainMenu' : List String -> Menu -> Html
-renderMainMenu' pos m  = 
-  let toUrl s =
-    s |> words
-      |> List.map capitalize
-      |> join ""
-      |> (\s -> s ++ ".html")
-      current label = ("current", List.member label pos)
-
-  in case m of
-    Leaf label link -> 
-      let link' = if String.isEmpty link
-                  then toUrl label
-                  else link
-      in  a [ href link', classList [current label]]
-            [ text label]
-         
-
-    Node label xs ->
-      if String.isEmpty label
-      
-      then div [ class "mainMenu"]
-               (List.map (renderMainMenu' pos) xs)  
-      else
-        div [ class (label ++ "Content")]
-            ([ a [ classList [ ((label ++ "dropBtn"),True)
-                             , current label
-                             ]
-                 ]
-                 [ text label ]
-             , div [] (List.map (renderMainMenu' pos) xs)
-             ])
-
-pageFooter = 
-  footer [ id "footer"]
-         [div[]
-             [p [] [ text "Vous souhaitez passer une information: "
-                   , a [href ("mailto:"++"contactsite.murol@orange.fr")]
-                       [text " contactez le webmaster"]
-                   ]
-             ]
-          , p [] [text "La mairie: "
-                 , a [href "HorairesEtContact.html"]
-                     [text "horaires et contact"]
-                 ]    
-          , renderCounter
-         ] 
-
-
- 
-renderListImg pics =
-  div [id "pics"]
-      [ ul []
-           (List.map (\(i,l) -> li [] [a [href l, target "_blank"] [img [src ("/images/" ++ i)] []]]) pics)]
 
 
 renderNewsList : Signal.Address Action -> String -> List News -> Html
@@ -289,7 +140,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le dimanche 13 mars 2016"]
+            [text "Dernière mise à jour le vendredi 18 mars 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -361,20 +212,7 @@ renderMisc =
             ] 
       ]
 
- 
 
-renderSubMenu address title submenu =
-  let es    = .entries submenu 
-      pos   = .current submenu
-      isCurrent e = classList [("submenuCurrent", e == pos)]
-      toA e = a [id e, onClick address (Entry e), href "#", isCurrent e]
-                [text e]
-      linkList = List.map toA es
-  in
-  div [ class "sideMenu"]
-      [ h3  [] [text (title)]
-      , div [] linkList
-      ]
 
 renderMeteo = 
   div [ id "meteo"]
@@ -393,31 +231,6 @@ renderEtatRoutes =
       ]
 
 
-
-renderCounter = 
-  div [ id "counter"]
-      [ script "" "var sc_project=10774754; var sc_invisible=0; var sc_security=\"74787ab4\"; var scJsHost = ((\"https:\" == document.location.protocol) ?\"https://secure.\" : \"http://www.\");document.write(\"<sc\"+\"ript type='text/javascript' src='\" +scJsHost+\"statcounter.com/counter/counter.js'></\"+\"script>\");"
-      , div [class "statcounter"]
-            [ text "Compteur: "
-            , a [title "web statistics"
-               , href "http://statcounter.com/free-web-stats/"
-               , target "_blank"
-               ]
-               [ img [ class "statcounter"
-                     , src "http://c.statcounter.com/10774754/0/74787ab4/0/"
-                     , alt "web statistics"
-                     ]
-                     []
-               ]
-            ]   
-      , script "" "  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-                  ga('create', 'UA-75068519-1', 'auto');
-                  ga('send', 'pageview');"
-      ]       
 
 renderPlugins =
   div [ id "plugins", class "submenu"]
@@ -444,7 +257,7 @@ renderAgenda =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [id "container"]
-      [ renderMainMenu address ["Accueil"] (.mainMenu model) 
+      [ renderMainMenu ["Accueil"] (.mainMenu model) 
       , div [ id "subContainer"]
             [ renderContent (.news model) address
             , div [class "sidebar"]
@@ -467,118 +280,13 @@ app =
 main =
     app.html
 
+port today : String
+
 port tasks : Signal (Task.Task Never ())
 port tasks =
     app.tasks
 
---main =
---  StartApp.start
---    { model  = initialModel
---    , view   = view
---    , update = update
---    }
 
---scrollYInbox : Signal.Mailbox String
---scrollYInbox = Signal.mailbox "5"
-
---scrollYEvent = on "scrollY" targetValue
---                (\s -> Signal.message scrollYInbox.address s)
-
---messages = scrollYInbox.signal
-
---port scrollY : Signal Int
-
---scrollYAct = Signal.map  ScrollY scrollY
-
-
-
-
--- Utils
-
-months' date = 
-  case Date.month date of
-    Jan -> "01" 
-    Feb -> "02"
-    Mar -> "03"
-    Apr -> "04"
-    May -> "05"
-    Jun -> "06"
-    Jul -> "07"
-    Aug -> "08"
-    Sep -> "09"
-    Oct -> "10"
-    Nov -> "11"
-    Dec -> "12"
-
-day' date  = toString (Date.day date)
-year' date = toString (Date.year date)
-
-capitalize : String -> String
-capitalize string =
-  case uncons string of
-   Nothing -> ""
-   Just (head, tail) ->
-      cons (Char.toUpper head) tail
-
-script : String -> String -> Html
-script source js =
-  node "script" [src source, type' "text/javascript"] [text js]
-
-
-mail s  = span [class "email"] [ text "Email: "
-         , a   [href ("mailto:"++s)] [text s]
-         ]
-
-site tex addr =
- span [] [ text "Site: "
-         , a [href addr, target "_blank"] [text tex]
-         ]
-
-link tex addr = a [href addr, target "_blank"] [text tex]
-
-maybeElem : String -> ( String -> Html ) -> Html
-maybeElem s f =
-  if String.isEmpty s
-  then nullTag
-  else f s
-
-nullTag = span [style [("display","none")]] []
-
-split3 xs (xs1,xs2,xs3) = 
-        case xs of
-          [] -> (xs1,xs2,xs3)
-          (x1::[]) -> (x1::xs1,xs2,xs3)
-          (x1::x2::[]) -> (x1::xs1,x2::xs2,xs3)
-          (x1::x2::x3::xs') -> split3 xs' (x1::xs1,x2::xs2,x3::xs3)
-
-split3' xs =
-  let l = ceiling (toFloat (List.length xs) / 3)
-      chunk n xs = 
-        case xs of 
-          []  -> []
-          xs' -> (List.take n xs') :: chunk n (drop n xs')
-  in chunk l xs  
-
-miniLightBox : String -> Html
-miniLightBox name = 
-  div [ class ("miniLightboxWrapper" ++ name)]
-      [ a [ href ("#"++ name ++"Big")
-          , id (name ++ "Small")
-          , class "thumbAnchor"
-          , title "Cliquez sur l'image pour agrandir"] 
-          
-          [ img [ src ("/images/"++name ++"Small.jpg")
-                , id (name ++ "Small")] []
-                , i   [class "fa fa-expand"] []
-                ]
-              
-      , a [ href "#_"
-          , class "miniLightbox"
-          , id (name ++ "Big")] 
-          [ img [src ("/images/"++name ++"Big.jpg")]
-                []
-          ]
-      ]
 
 -- Data
  
@@ -760,7 +468,7 @@ news =
    , date  = Date.fromString "03/11/2016"
    , descr = div [class "newsdescr"]
                  [ p [] [text "Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)"]
-                 , p [] [a [href "https://www.dropbox.com/s/hsuh6af2tcrres4/Chateau%20le%20Murol.mpg?dl=0", target "_blank"]
+                 , p [] [a [href "https://youtu.be/tY89AZLnvZc", target "_blank"]
                            [text "voir la vidéo"]
                         ] 
                  ]
@@ -788,7 +496,31 @@ news =
                      [b [] [text "La commission communication "]]
                  ]
    , expiry = Date.fromString "04/12/2016"
-   }                
+   }
+   ,{ emptyNews |
+     title = "Fermeture exceptionnelle de la poste"
+   , date  = Date.fromString "03/16/2016"
+   , descr = div [class "newsdescr"]
+                 [p [] [text "La poste de Murol sera exceptionnellement fermée
+                              les après-midis du 16 mars au 18 mars inclus."]]
+   , expiry = Date.fromString "03/19/2016"
+   }
+   ,{ emptyNews |
+     title = "Le programme du centre de loisirs d'avril est disponible!"
+   , date  = Date.fromString "03/17/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [ text "Le centre de loisirs du SIVOM de la Vallée Verte ouvre
+                             ses portes du 11 au 22 avril pour les enfants de 3 à 11 ans.
+                             Les plaquettes d'information seront prochainement
+                             dans les cartables des enfants et dans les mairies.
+                             Vous pouvez déjà consulter "
+                     , a [ href "/baseDocumentaire/periscolaire/planning activités avril.pdf", target "_blank"]
+                         [ text "le programme des activités prévues"]
+                     ]
+                 ]
+   , expiry = Date.fromString "04/23/2016"
+   }                  
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

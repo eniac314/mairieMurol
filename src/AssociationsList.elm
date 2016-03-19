@@ -8,10 +8,10 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Murol exposing (mainMenu,
+import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
-                       renderMisc,
+                       prettyUrl,
                        capitalize,
                        renderListImg,
                        logos,
@@ -131,7 +131,7 @@ sitesToHtml sites =
    [] -> nullTag
    _  -> div [class "sitesAssoc"]
               ( [h6 [] [text "Site(s): "]]
-                ++ (List.map  (\s-> a [href  s] [text s]) sites))
+                ++ (List.map  (\s-> a [href  s, target "_blank"] [text ( prettyUrl s)]) sites))
 -- Data
 associations = [("Culture, Evénementiel, Solidarité","/images/tiles/misc/ASSOC CULTURE.jpg",[culture])
                ,("Sport","/images/tiles/misc/ASSOC SPORT.jpg",[sport])
@@ -648,6 +648,32 @@ assocs =
               , nom   = "Sylvie JORY"
               , tel   = ""
               }]
+    , cat = Pro
+    }
+    ,
+    { emptyAssoc |
+      nom     = "Auvergne Escapade"
+    , domaine = "Accompagnateurs en montagne"
+    , siege   = "Beaune-le-Froid 63790 Murol"
+    , resp = [{ poste = "Président"
+              , nom   = "Jean Luc Ranvier"
+              , tel   = "04 73 88 85 78 - 06 86 89 34 87"
+              }]
+    , mails = ["info@auvergne-escapade.com"]
+    , sites = ["http://www.auvergne-escapade.com"]
+    , cat = Sport
+    }
+    ,
+    { emptyAssoc |
+      nom     = "Auvergne Escapade"
+    , domaine = "Accompagnateurs en montagne"
+    , siege   = "Beaune-le-Froid 63790 Murol"
+    , resp = [{ poste = "Président"
+              , nom   = "Jean Luc Ranvier"
+              , tel   = "04 73 88 85 78 - 06 86 89 34 87"
+              }]
+    , mails = ["info@auvergne-escapade.com"]
+    , sites = ["http://www.auvergne-escapade.com"]
     , cat = Pro
     }  
   ]

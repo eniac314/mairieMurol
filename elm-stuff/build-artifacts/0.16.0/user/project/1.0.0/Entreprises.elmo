@@ -11,11 +11,11 @@ Elm.Entreprises.make = function (_elm) {
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
-   $Murol = Elm.Murol.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
-   $String = Elm.String.make(_elm);
+   $String = Elm.String.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var contact = A2($Html.p,
    _U.list([]),
@@ -32,13 +32,7 @@ Elm.Entreprises.make = function (_elm) {
             return _U.update(model,{mainContent: _p0._0});
          }
    });
-   var update = F2(function (action,model) {
-      var _p1 = action;
-      switch (_p1.ctor)
-      {case "NoOp": return model;
-         case "Entry": return A2(changeMain,model,_p1._0);
-         default: return model;}
-   });
+   var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
    var renderEntreprise = function (_p2) {
@@ -46,7 +40,12 @@ Elm.Entreprises.make = function (_elm) {
       var site$ = A2(maybeElem,
       _p3.site,
       function (s) {
-         return A2($Html.p,_U.list([]),_U.list([$Html.text("site: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("site: ")
+                 ,A2($Html.a,
+                 _U.list([$Html$Attributes.href(s),$Html$Attributes.target("_blank"),$Html$Attributes.target("_blank")]),
+                 _U.list([$Html.text($Utils.prettyUrl(s))]))]));
       });
       var mail$ = A2(maybeElem,
       _p3.mail,
@@ -74,14 +73,14 @@ Elm.Entreprises.make = function (_elm) {
          acc);
       });
       var toDivs = A3($Dict.foldr,toDiv,_U.list([]),am);
-      return A2($Html.div,_U.list([]),A2($List.map,col,$Murol.split3$(toDivs)));
+      return A2($Html.div,_U.list([]),A2($List.map,col,$Utils.split3$(toDivs)));
    };
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A3($Murol.renderMainMenu,address,_U.list(["Vie économique","Entreprises"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie économique","Entreprises"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
-              ,$Murol.pageFooter]));
+              ,$Utils.pageFooter]));
    });
    var Entreprise = F7(function (a,b,c,d,e,f,g) {    return {name: a,descr: b,addr: c,tel: d,fax: e,mail: f,site: g};});
    var defArt = A7(Entreprise,"",_U.list([]),"","","","","");
@@ -111,21 +110,22 @@ Elm.Entreprises.make = function (_elm) {
                                         ,_0: "Plomberie"
                                         ,_1: _U.list([_U.update(defArt,{name: "Bouche Nicolas",addr: "Rue George Sand 63790 MUROL",tel: "06 64 10 74 78"})])}
                                        ,{ctor: "_Tuple2"
-                                        ,_0: "Marché de gros et demi-gros"
+                                        ,_0: "Marché de demi-gros et détail"
                                         ,_1: _U.list([_U.update(defArt,
                                         {name: "Jallet Fruits et légumes",addr: "route de Besse 63790 MUROL",tel: "04 73 88 66 82",fax: "04 73 88 64 88"})])}
                                        ,{ctor: "_Tuple2"
                                         ,_0: "Quincaillerie"
                                         ,_1: _U.list([_U.update(defArt,
-                                        {name: "Legoueix Père et Fils (SARL)"
-                                        ,addr: "rue du Tartaret 63790 MUROL"
-                                        ,tel: "04 7388 6621"
-                                        ,fax: "04 73 88 80 39"})])}]));
+                                        {name: "Legoueix Père et Fils (SARL)",addr: "rue du Tartaret 63790 MUROL",tel: "04 7388 6621",fax: "04 73 88 80 39"})])}
+                                       ,{ctor: "_Tuple2"
+                                        ,_0: "Plâtrerie/peinture"
+                                        ,_1: _U.list([_U.update(defArt,
+                                        {name: "Sébastien Bouche",addr: "Beaune-le-Froid 63790 MUROL",tel: "06 18 70 41 71"})])}]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("entreprises")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les Entreprises")])),renderEntrepriseMap(artMap),contact]));
    var subMenu = _U.list([]);
-   var initialModel = {mainMenu: $Murol.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Entreprises.values = {_op: _op
                                     ,subMenu: subMenu
