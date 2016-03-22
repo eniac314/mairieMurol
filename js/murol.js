@@ -11166,7 +11166,7 @@ Elm.Utils.make = function (_elm) {
          }
    };
    var year$ = function (date) {    return $Basics.toString($Date.year(date));};
-   var day$ = function (date) {    return $Basics.toString($Date.day(date));};
+   var day$ = function (date) {    var res = $Basics.toString($Date.day(date));return _U.eq($String.length(res),1) ? A2($Basics._op["++"],"0",res) : res;};
    var months$ = function (date) {
       var _p9 = $Date.month(date);
       switch (_p9.ctor)
@@ -11509,7 +11509,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 18 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 21 mars 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -11780,7 +11780,20 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/planning activités avril.pdf"),$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("le programme des activités prévues")]))]))]))
-                      ,expiry: $Date.fromString("04/23/2016")})]);
+                      ,expiry: $Date.fromString("04/23/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Des offres d\'emplois saisonniers sont disponibles !"
+                      ,date: $Date.fromString("03/21/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Le forum pour les emplois saisonniers se\n                               tiendra mercredi 7 avril 2016 à la salle\n                               polyvalente de Besse de 14h à 17h.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Le détail des offres est accessible sur la page ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/OffresD\'emploi.html")]),_U.list([$Html.text("offres emploi")]))]))]))
+                      ,expiry: $Date.fromString("06/15/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu,logos: $Utils.logos,newsletters: newsletters,news: A2(prepNews,today,news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;

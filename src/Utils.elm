@@ -241,7 +241,12 @@ months' date =
     Nov -> "11"
     Dec -> "12"
 
-day' date  = toString (Date.day date)
+day' date  = 
+  let res = toString (Date.day date)
+  in if  String.length res == 1
+     then "0"++res
+     else res
+     
 year' date = toString (Date.year date)
 
 capitalize : String -> String

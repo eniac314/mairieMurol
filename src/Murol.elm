@@ -140,7 +140,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le vendredi 18 mars 2016"]
+            [text "Dernière mise à jour le lundi 21 mars 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -521,6 +521,19 @@ news =
                  ]
    , expiry = Date.fromString "04/23/2016"
    }                  
+  ,{ emptyNews |
+     title = "Des offres d'emplois saisonniers sont disponibles !"
+   , date  = Date.fromString "03/21/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "Le forum pour les emplois saisonniers se
+                               tiendra mercredi 7 avril 2016 à la salle
+                               polyvalente de Besse de 14h à 17h."]
+                 , p [] [text "Le détail des offres est accessible sur la page "
+                        ,a [href "/OffresD'emploi.html"] [text "offres emploi"]
+                        ] 
+                 ]
+   , expiry = Date.fromString "06/15/2016"
+   }
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

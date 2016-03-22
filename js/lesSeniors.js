@@ -11160,7 +11160,7 @@ Elm.Utils.make = function (_elm) {
          }
    };
    var year$ = function (date) {    return $Basics.toString($Date.year(date));};
-   var day$ = function (date) {    return $Basics.toString($Date.day(date));};
+   var day$ = function (date) {    var res = $Basics.toString($Date.day(date));return _U.eq($String.length(res),1) ? A2($Basics._op["++"],"0",res) : res;};
    var months$ = function (date) {
       var _p9 = $Date.month(date);
       switch (_p9.ctor)

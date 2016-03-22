@@ -10889,7 +10889,7 @@ Elm.Utils.make = function (_elm) {
          }
    };
    var year$ = function (date) {    return $Basics.toString($Date.year(date));};
-   var day$ = function (date) {    return $Basics.toString($Date.day(date));};
+   var day$ = function (date) {    var res = $Basics.toString($Date.day(date));return _U.eq($String.length(res),1) ? A2($Basics._op["++"],"0",res) : res;};
    var months$ = function (date) {
       var _p9 = $Date.month(date);
       switch (_p9.ctor)
@@ -11108,7 +11108,38 @@ Elm.OffresEmploi.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("offresEmploi")]),
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Offres emploi de la mairie")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/offresEmploi/offre animateur saison estivale 2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("offre animateur saison estivale 2016")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/offresEmploi/offre responsable  animation 2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("offre responsable animation 2016")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/offresEmploi/offre surveillants de baignade 2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("offre surveillants de baignade 2016")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/offresEmploi/offre responsable des surveillants de baignade 2016.pdf")
+                   ,$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("offre responsable des surveillants de baignade 2016")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/offresEmploi/offre agents entretien mairie 2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("offre agents entretien mairie 2016")]))]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Offres emploi SIVOM")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/offresEmploi/offres sivom de la vallée verte  2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("offres sivom de la vallée verte 2016")]))]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Offres emploi professionnels")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Liens utiles")]))
            ,A2($Html.p,

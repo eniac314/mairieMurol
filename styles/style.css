@@ -623,6 +623,7 @@ span.date {
   padding: 0.1em 0.5em 0 0.4em;
   border-top-left-radius: 0.5em;
   box-shadow: -1px -1px 1px gray;
+  width:6em;
 }
 
 .news p {
