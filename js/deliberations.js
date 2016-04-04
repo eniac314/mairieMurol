@@ -11133,7 +11133,8 @@ Elm.Deliberations.make = function (_elm) {
                     _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"12 février","/baseDocumentaire/Deliberations_conseil/2015/CM12022015.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"19 mars","/baseDocumentaire/Deliberations_conseil/2015/CM19032015.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"15 avril","/baseDocumentaire/Deliberations_conseil/2015/CM15042015.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"2 juin","/baseDocumentaire/Deliberations_conseil/2015/CM24092015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"10 juin","/baseDocumentaire/Deliberations_conseil/2015/CM24092015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"24 septembre","/baseDocumentaire/Deliberations_conseil/2015/24-09-2015.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"4 novembre","/baseDocumentaire/Deliberations_conseil/2015/CM04112015.pdf")]))
                             ,A2($Html.li,
                             _U.list([]),

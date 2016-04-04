@@ -11110,7 +11110,8 @@ Elm.AutresPublications.make = function (_elm) {
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Autres publications")]))
            ,A2($Utils.link,"Note de synthèse 2012 station classée de tourisme","/baseDocumentaire/Notedesynthèse Murol 2012.pdf")
            ,A2($Utils.link,"Présention du chateau de Murol par Dominique Allios","/baseDocumentaire/decouvrirMurol/presentationAllios.pdf")
-           ,A2($Utils.link,"Les volcans du Tartaret - Pierre Lavina","/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf")]));
+           ,A2($Utils.link,"Les volcans du Tartaret - Pierre Lavina","/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf")
+           ,A2($Utils.link,"Le c.o.d.e des lacs et rivières - 2016","/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf")]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {

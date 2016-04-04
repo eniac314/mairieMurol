@@ -203,6 +203,11 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([$Html.text("L’été, la plage de sable et la zone \n                             de baignade surveillée en juillet août vous\n                             offrent une plage à la montagne ! \n                             Vous pourrez aussi pratiquer diverses activités en famille \n                             : pédalos, mini-golf, jeux pour enfants, pêche (site \n                             de deuxième catégorie), promenades… ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
+                                              _U.list([A2($Utils.link,
+                                              "Le c.o.d.e des lacs et rivières - 2016",
+                                              "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
                                               _U.list([$Html.text("Le complexe touristique est également équipé de deux ")
                                                       ,A2($Html.a,
                                                       _U.list([$Html$Attributes.href("/Restaurants.html")]),

@@ -316,6 +316,7 @@ initialContent =
                              Vous pourrez aussi pratiquer diverses activités en famille 
                              : pédalos, mini-golf, jeux pour enfants, pêche (site 
                              de deuxième catégorie), promenades… "]
+              , p [] [ link "Le c.o.d.e des lacs et rivières - 2016" "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf"]
               , p [] [ text "Le complexe touristique est également équipé de deux "
                      , a [href "/Restaurants.html"] [ text "bars restaurants"]
                      , text " qui vous proposeront rafraîchissements et spécialités 

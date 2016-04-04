@@ -126,7 +126,7 @@ galleries = [ (chateau, "chateauPics")
             ]
 
 (chateau, chateauFx) = 
-  Gallery.init (picList 15) "chateau" "Le château"
+  Gallery.init (picList 16) "chateau" "Le château"
 
 (petitPat, petitPatFx) = 
   Gallery.init (picList 18) "petitPatrimoine" "Le petit patrimoine"
