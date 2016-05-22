@@ -657,7 +657,7 @@ span.date {
 
 .newsdescr a:hover {
   border-bottom: 1px solid teal;
-  background-color: transparent;
+  background-color: teal;
 }
 
 .arrow{

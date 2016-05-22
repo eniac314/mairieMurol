@@ -140,7 +140,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 21 mars 2016"]
+            [text "Dernière mise à jour le samedi 21 mai 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -532,8 +532,102 @@ news =
                         ,a [href "/OffresD'emploi.html"] [text "offres emploi"]
                         ] 
                  ]
+   , expiry = Date.fromString "05/14/2016"
+   }
+   ,{ emptyNews |
+     title = "Artistes et artisans d'Art, inscrivez-vous au Festival d'Art de Murol!"
+   , date  = Date.fromString "04/12/2016"
+   , descr = div [class "newsdescr"]
+                 [p [] [text "Le Festival d'Art aura lieu dans les rues de Murol le dimanche 31
+                             juillet 2016. Pour participer, renvoyez la "
+                        , a [href "/baseDocumentaire/FA2016.pdf", target "_blank"]
+                            [text "fiche d'inscription"]
+                        , text " complétée à la mairie de Murol avant le 30 juin 2016"
+                       ]
+                 ]
+   , expiry = Date.fromString "07/01/2016"
+   }
+   ,{ emptyNews |
+     title = "Murol Infos 29"
+   , date  = Date.fromString "04/24/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Le nouveau \"Murol Infos\" (Avril 2016) est disponible: "
+                    , a [href "baseDocumentaire/murolInfo/29.pdf"] [text "Télécharger"]]
+                 ]
+   , expiry = Date.fromString "05/24/2016"
+   }
+   ,{ emptyNews |
+     title = "Les Médiévales de Murol approchent..."
+   , date  = Date.fromString "04/24/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016"]
+                 , a [href "http://www.medievalesmurol.fr/", target "_blank"] [text "Site officiel"]
+                 ]
+   , expiry = Date.fromString "05/08/2016"
+   } 
+  ,{ emptyNews |
+     title = "Photos des Médiévales 2016"
+   , date  = Date.fromString "05/16/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "Des photos des Médiévales 2016 sont disponibles dans la photothèque.
+                               Si vous avez des photos que vous souhaitez partager, contactez le webmaster."]
+                 , a [href "/Medievales.html"] [text "Lien photothèque"]
+                 ]
    , expiry = Date.fromString "06/15/2016"
    }
+   ,{ emptyNews |
+     title = "Vernissage d'\"Horizons Arts-Nature en Sancy\""
+   , date  = Date.fromString "05/16/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "La journée de vernissage d'\"Horizons Arts-Nature en Sancy\"
+                               aura lieu le jeudi 16 juin 2016, elle est ouverte au public.
+                               Les inscriptions auront lieu du 11 au 23 mai."
+                        ]
+                 , a [href "baseDocumentaire/AFFICHE2016.pdf" , target "_blank"] [text "Affiche 2016"]
+                 , br [] []
+                 , a [href " http://www.horizons-sancy.com/", target "_blank"] [text "Site officiel"]
+                 ]
+   , expiry = Date.fromString "06/17/2016"
+   } 
+   ,{ emptyNews |
+     title = "Réunion publique sur la réhabilitation de la zone humide de Murol"
+   , date  = Date.fromString "05/16/2016"
+   , descr = div [class "newsdescr"]
+                 [p [] [text "Afin d'illustrer la réunion publique sur la réhabilitation de la zone humide de Murol de
+                              mardi 16 mai, vous trouverez dans la documentation: "
+                        , a [href "baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf", target "blank"]
+                            [text "une note de présentation"]       
+                        , text " du SIVU et du contrat territorial ainsi que "
+                        , a [href "baseDocumentaire/Dossier zone humide de Murol.pdf", target "blank"]
+                            [text "le dossier sur la zone humide de Murol"
+                        , text "."]
+                        ]
+                 ]
+   , expiry = Date.fromString "05/20/2016"
+   }
+   ,{ emptyNews |
+     title = "Murol obtient le label Pavillon Bleu"
+   , date  = Date.fromString "05/21/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "La commune de Murol ainsi que celle de
+                               Chambon sur Lac ont reçu officiellement
+                               mercredi 18 mai le label Pavillon Bleu 2016
+                               à Villeneuve les Maguelone (34) pour leurs plages au lac Chambon.
+                               Ce label international récompense les
+                               communes qui veillent à la qualité de
+                               leurs eaux de baignade mais aussi qui
+                               s'inscrivent dans une démarche globale
+                               de respect de l'environnement."]
+                 , a [href "http://www.pavillonbleu.org/", target "_blank"]
+                     [text "www.pavillonbleu.org"]
+                 , br [] []
+                 , a [href "/Annee2016.html"]
+                     [text "Lien photothèque"] 
+                 ]
+   , expiry = Date.fromString "16/21/2016"
+   , pic = Just "PAVILLON BLEU LOGO 2.png"
+   } 
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

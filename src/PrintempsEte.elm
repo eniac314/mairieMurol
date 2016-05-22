@@ -126,4 +126,4 @@ galleries = [(printempsEte, "printempsEte")]
 
 
 (printempsEte,printempsEteFx) = 
-  Gallery.init (picList 4) "printemps" "Gallerie printemps été"
+  Gallery.init (picList 14) "printemps" "Gallerie printemps été"

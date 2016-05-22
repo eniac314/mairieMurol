@@ -11775,53 +11775,57 @@ Elm.Medievales.make = function (_elm) {
    $Time = Elm.Time.make(_elm),
    $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var _p0 = A3($Gallery.init,$Lightbox.picList(16),"medievales2015","Les Médiévales 2015");
-   var medievales2015 = _p0._0;
-   var medievales2015Fx = _p0._1;
-   var _p1 = A3($Gallery.init,$Lightbox.picList(20),"medievales2014","Les Médiévales 2014");
-   var medievales2014 = _p1._0;
-   var medievales2014Fx = _p1._1;
-   var _p2 = A3($Gallery.init,$Lightbox.picList(36),"medievales2013","Les Médiévales 2013");
-   var medievales2013 = _p2._0;
-   var medievales2013Fx = _p2._1;
-   var galleries = _U.list([{ctor: "_Tuple2",_0: medievales2015,_1: "medievales2015"}
+   var _p0 = A3($Gallery.init,$Lightbox.picList(56),"medievales2016","Les Médiévales 2016");
+   var medievales2016 = _p0._0;
+   var medievales2016Fx = _p0._1;
+   var _p1 = A3($Gallery.init,$Lightbox.picList(16),"medievales2015","Les Médiévales 2015");
+   var medievales2015 = _p1._0;
+   var medievales2015Fx = _p1._1;
+   var _p2 = A3($Gallery.init,$Lightbox.picList(20),"medievales2014","Les Médiévales 2014");
+   var medievales2014 = _p2._0;
+   var medievales2014Fx = _p2._1;
+   var _p3 = A3($Gallery.init,$Lightbox.picList(36),"medievales2013","Les Médiévales 2013");
+   var medievales2013 = _p3._0;
+   var medievales2013Fx = _p3._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: medievales2016,_1: "medievales2016"}
+                           ,{ctor: "_Tuple2",_0: medievales2015,_1: "medievales2015"}
                            ,{ctor: "_Tuple2",_0: medievales2014,_1: "medievales2014"}
                            ,{ctor: "_Tuple2",_0: medievales2013,_1: "medievales2013"}]);
    var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
    var update = F2(function (action,model) {
-      var _p3 = action;
-      if (_p3.ctor === "NoOp") {
+      var _p4 = action;
+      if (_p4.ctor === "NoOp") {
             return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          } else {
-            var updateWithId = function (_p4) {
-               var _p5 = _p4;
-               var _p7 = _p5._0;
-               var _p6 = _p5._1;
-               return _U.eq(_p6,_p3._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p3._1,_p7),_1: _p6} : {ctor: "_Tuple2"
-                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p7,_1: $Effects.none}
-                                                                                                         ,_1: _p6};
+            var updateWithId = function (_p5) {
+               var _p6 = _p5;
+               var _p8 = _p6._0;
+               var _p7 = _p6._1;
+               return _U.eq(_p7,_p4._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p4._1,_p8),_1: _p7} : {ctor: "_Tuple2"
+                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p8,_1: $Effects.none}
+                                                                                                         ,_1: _p7};
             };
-            var _p8 = A3($List.foldl,
-            F2(function (_p10,_p9) {
-               var _p11 = _p10;
-               var _p13 = _p11._1;
-               var _p12 = _p9;
+            var _p9 = A3($List.foldl,
+            F2(function (_p11,_p10) {
+               var _p12 = _p11;
+               var _p14 = _p12._1;
+               var _p13 = _p10;
                return {ctor: "_Tuple2"
-                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p11._0._0,_1: _p13},_p12._0)
-                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p13),_p11._0._1),_p12._1)};
+                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p12._0._0,_1: _p14},_p13._0)
+                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p14),_p12._0._1),_p13._1)};
             }),
             {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
             A2($List.map,updateWithId,function (_) {    return _.galleries;}(model)));
-            var ng = _p8._0;
-            var effs = _p8._1;
+            var ng = _p9._0;
+            var effs = _p9._1;
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p14) {
-      var _p15 = _p14;
-      var _p16 = _p15._0;
-      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p16))]));
-      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p15._1)),_p16)]));
+   var viewGallery = F2(function (address,_p15) {
+      var _p16 = _p15;
+      var _p17 = _p16._0;
+      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p17))]));
+      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p16._1)),_p17)]));
    });
    var view = F2(function (address,model) {
       var galleriesHtml = $List.concat(A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)));
@@ -11841,7 +11845,7 @@ Elm.Medievales.make = function (_elm) {
               ,$Utils.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p17) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p18) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};
@@ -11868,5 +11872,7 @@ Elm.Medievales.make = function (_elm) {
                                    ,medievales2014: medievales2014
                                    ,medievales2014Fx: medievales2014Fx
                                    ,medievales2015: medievales2015
-                                   ,medievales2015Fx: medievales2015Fx};
+                                   ,medievales2015Fx: medievales2015Fx
+                                   ,medievales2016: medievales2016
+                                   ,medievales2016Fx: medievales2016Fx};
 };

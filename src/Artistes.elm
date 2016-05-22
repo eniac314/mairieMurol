@@ -98,6 +98,7 @@ initialContent =
                    rue jusqu’au soir où ils peuvent partager l’ambiance 
                    festive du concert de clôture. "]
 
+      , p [] [a [href "baseDocumentaire/FA2016.pdf", target "_blank"] [text "Fiche d'inscription"]]
       , div []
             [ p [style [("text-align","center")]] [text "Festival d’Art 2016 : dimanche 31 juillet "]
             , p [style [("text-align","center")]] [text "Pour vous inscrire, contactez la mairie au 04 

@@ -103,13 +103,22 @@ Elm.Animation.make = function (_elm) {
    var medievales = A4(initDropable,
    0,
    "Les Médiévales de Murol (Pont de l’Ascension)",
-   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))),
+   $Maybe.Just(A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("http://www.medievalesmurol.fr/"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("site officiel")]))]))]))),
    _U.list([A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Cette manifestation, organisée par la mairie de \n                               Murol, l’association AMMA et d’autres associations partenaires, \n                               a lieu chaque année durant le week-end de \n                               l’Ascension.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge. Immersion garantie !")]))]));
+           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge. Immersion garantie !")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016:")]))
+           ,A2($Html.img,_U.list([$Html$Attributes.src("/images/programme2016.jpg")]),_U.list([]))]));
    var musee = A4(initDropable,
    1,
    "L’exposition temporaire au musée des Peintres de l’Ecole de Murols (saison estivale)",

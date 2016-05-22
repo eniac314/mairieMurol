@@ -11132,6 +11132,11 @@ Elm.Artistes.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Ce festival regroupe de très nombreux artistes et \n                   artisans d’art venus de tous horizons dont les \n                   œuvres envahissent les rues et places de Murol \n                   durant une journée d’été riche en couleurs. Petits \n                   et grands déambulent accompagnés par les animations de \n                   rue jusqu’au soir où ils peuvent partager l’ambiance \n                   festive du concert de clôture. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("baseDocumentaire/FA2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("Fiche d\'inscription")]))]))
            ,A2($Html.div,
            _U.list([]),
            _U.list([A2($Html.p,

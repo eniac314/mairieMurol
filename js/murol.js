@@ -11509,7 +11509,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 21 mars 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le samedi 21 mai 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -11793,7 +11793,98 @@ Elm.Murol.make = function (_elm) {
                               _U.list([]),
                               _U.list([$Html.text("Le détail des offres est accessible sur la page ")
                                       ,A2($Html.a,_U.list([$Html$Attributes.href("/OffresD\'emploi.html")]),_U.list([$Html.text("offres emploi")]))]))]))
-                      ,expiry: $Date.fromString("06/15/2016")})]);
+                      ,expiry: $Date.fromString("05/14/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Artistes et artisans d\'Art, inscrivez-vous au Festival d\'Art de Murol!"
+                      ,date: $Date.fromString("04/12/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le Festival d\'Art aura lieu dans les rues de Murol le dimanche 31\n                             juillet 2016. Pour participer, renvoyez la ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/FA2016.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("fiche d\'inscription")]))
+                              ,$Html.text(" complétée à la mairie de Murol avant le 30 juin 2016")]))]))
+                      ,expiry: $Date.fromString("07/01/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Murol Infos 29"
+                      ,date: $Date.fromString("04/24/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le nouveau \"Murol Infos\" (Avril 2016) est disponible: ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("baseDocumentaire/murolInfo/29.pdf")]),_U.list([$Html.text("Télécharger")]))]))]))
+                      ,expiry: $Date.fromString("05/24/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Les Médiévales de Murol approchent..."
+                      ,date: $Date.fromString("04/24/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://www.medievalesmurol.fr/"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Site officiel")]))]))
+                      ,expiry: $Date.fromString("05/08/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Photos des Médiévales 2016"
+                      ,date: $Date.fromString("05/16/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Des photos des Médiévales 2016 sont disponibles dans la photothèque.\n                               Si vous avez des photos que vous souhaitez partager, contactez le webmaster.")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("Lien photothèque")]))]))
+                      ,expiry: $Date.fromString("06/15/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Vernissage d\'\"Horizons Arts-Nature en Sancy\""
+                      ,date: $Date.fromString("05/16/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("La journée de vernissage d\'\"Horizons Arts-Nature en Sancy\"\n                               aura lieu le jeudi 16 juin 2016, elle est ouverte au public.\n                               Les inscriptions auront lieu du 11 au 23 mai.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/AFFICHE2016.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Affiche 2016")]))
+                              ,A2($Html.br,_U.list([]),_U.list([]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href(" http://www.horizons-sancy.com/"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Site officiel")]))]))
+                      ,expiry: $Date.fromString("06/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Réunion publique sur la réhabilitation de la zone humide de Murol"
+                      ,date: $Date.fromString("05/16/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Afin d\'illustrer la réunion publique sur la réhabilitation de la zone humide de Murol de\n                              mardi 16 mai, vous trouverez dans la documentation: ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf")
+                                      ,$Html$Attributes.target("blank")]),
+                              _U.list([$Html.text("une note de présentation")]))
+                              ,$Html.text(" du SIVU et du contrat territorial ainsi que ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/Dossier zone humide de Murol.pdf"),$Html$Attributes.target("blank")]),
+                              _U.list([$Html.text("le dossier sur la zone humide de Murol"),$Html.text(".")]))]))]))
+                      ,expiry: $Date.fromString("05/20/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Murol obtient le label Pavillon Bleu"
+                      ,date: $Date.fromString("05/21/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("La commune de Murol ainsi que celle de\n                               Chambon sur Lac ont reçu officiellement\n                               mercredi 18 mai le label Pavillon Bleu 2016\n                               à Villeneuve les Maguelone (34) pour leurs plages au lac Chambon.\n                               Ce label international récompense les\n                               communes qui veillent à la qualité de\n                               leurs eaux de baignade mais aussi qui\n                               s\'inscrivent dans une démarche globale\n                               de respect de l\'environnement.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://www.pavillonbleu.org/"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("www.pavillonbleu.org")]))
+                              ,A2($Html.br,_U.list([]),_U.list([]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Annee2016.html")]),_U.list([$Html.text("Lien photothèque")]))]))
+                      ,expiry: $Date.fromString("16/21/2016")
+                      ,pic: $Maybe.Just("PAVILLON BLEU LOGO 2.png")})]);
    var initialModel = {mainMenu: $Utils.mainMenu,logos: $Utils.logos,newsletters: newsletters,news: A2(prepNews,today,news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;

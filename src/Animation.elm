@@ -152,8 +152,11 @@ main =
 medievales = 
   initDropable 0 
                "Les Médiévales de Murol (Pont de l’Ascension)"
-               (Just ( a [ href "/Medievales.html"]
-                         [ text "lien photothèque"] ))
+               (Just (div []
+                          [ a [ href "/Medievales.html"]
+                              [ text "lien photothèque"]
+                          , p [] [a [href "http://www.medievalesmurol.fr/", target "_blank"] [text "site officiel"]]
+                          ] ))
                ( [ p [] [text "Cette manifestation, organisée par la mairie de 
                                Murol, l’association AMMA et d’autres associations partenaires, 
                                a lieu chaque année durant le week-end de 
@@ -163,6 +166,8 @@ medievales =
                                avec pour décor un campement médiéval, des danses, 
                                des spectacles médiévaux, ainsi que des artisans tout 
                                droit sortis du Moyen-âge. Immersion garantie !"]
+                  , p [] [text "Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016:"]
+                  , img [src "/images/programme2016.jpg"] []
                  ]
                )
 

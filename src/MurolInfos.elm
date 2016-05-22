@@ -139,6 +139,7 @@ murolInf =
            ]
       , h5 [] [text "2016"]     
       , ul []
-           [li [] [link "Numero 28 - Janvier" "baseDocumentaire/murolInfo/28.pdf"]
+           [ li [] [link "Numero 28 - Janvier" "baseDocumentaire/murolInfo/28.pdf"]
+           , li [] [link "Numero 29 - Avril" "baseDocumentaire/murolInfo/29.pdf"]
            ]
       ])
