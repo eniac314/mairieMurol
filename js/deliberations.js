@@ -10962,7 +10962,8 @@ Elm.Utils.make = function (_elm) {
                         ,_0: "Station_Tourisme_RVB.jpg"
                         ,_1: "http://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme"}
                        ,{ctor: "_Tuple2",_0: "Village fleuri.png",_1: "http://www.villes-et-villages-fleuris.com/"}
-                       ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}]);
+                       ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}
+                       ,{ctor: "_Tuple2",_0: "PAVILLON BLEU LOGO 2.png",_1: "http://www.pavillonbleu.org/"}]);
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
    var renderSubMenu = F3(function (address,title,submenu) {
       var pos = function (_) {    return _.current;}(submenu);
@@ -11117,7 +11118,7 @@ Elm.Deliberations.make = function (_elm) {
    var delib = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("delibPubli")]),
    A2($Basics._op["++"],
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Délibération conseil municipal")]))]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Délibérations conseil municipal")]))]),
    sortDate(_U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("2014")]))
                     ,A2($Html.ul,
                     _U.list([]),
@@ -11136,9 +11137,14 @@ Elm.Deliberations.make = function (_elm) {
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"10 juin","/baseDocumentaire/Deliberations_conseil/2015/CM24092015.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"24 septembre","/baseDocumentaire/Deliberations_conseil/2015/24-09-2015.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"4 novembre","/baseDocumentaire/Deliberations_conseil/2015/CM04112015.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"3 décembre","/baseDocumentaire/Deliberations_conseil/2015/03-12-2015.pdf")]))]))
+                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2016")]))
+                    ,A2($Html.ul,
+                    _U.list([]),
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"17 février","/baseDocumentaire/Deliberations_conseil/2016/17fev2016.pdf")]))
                             ,A2($Html.li,
                             _U.list([]),
-                            _U.list([A2($Utils.link,"3 décembre","/baseDocumentaire/Deliberations_conseil/2015/03-12-2015.pdf")]))]))]))));
+                            _U.list([A2($Utils.link,"17 mars","/baseDocumentaire/Deliberations_conseil/2016/17mars2016.pdf")]))]))]))));
    var initialContent = delib;
    var update = F2(function (action,model) {    var _p2 = action;return model;});
    var view = F2(function (address,model) {

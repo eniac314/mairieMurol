@@ -66,7 +66,7 @@ initialContent =
       , link "Note de synthèse 2012 station classée de tourisme" "/baseDocumentaire/Notedesynthèse Murol 2012.pdf"
       , link "Présention du chateau de Murol par Dominique Allios" "/baseDocumentaire/decouvrirMurol/presentationAllios.pdf"
       , link "Les volcans du Tartaret - Pierre Lavina" "/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf"
-      , link "Le c.o.d.e des lacs et rivières - 2016" "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf"
+      , link "Le c.o.d.e des lacs et rivières - 2015" "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf"
       , link "Note de présentation SIVU" "baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf"
       , link "Dossier zone humide de Murol" "baseDocumentaire/Dossier zone humide de Murol.pdf"
       ]

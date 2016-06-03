@@ -9,7 +9,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Lightbox exposing (Picture, defPic)
+import Lightbox exposing (Picture, defPic, picListHD)
 import Gallery exposing (..)
 import Time exposing (..)
 import Task exposing (..)
@@ -66,13 +66,15 @@ update action model =
 
 -- View
 
-viewGallery : Signal.Address Action -> (Gallery.Model,String) -> Html
+viewGallery : Signal.Address Action -> (Gallery.Model,String) -> List Html
 viewGallery address (gallery, name) =
-  Gallery.view (Signal.forwardTo address (GalleryAction name)) gallery
+  let t = h5 [] [text (.descr gallery)]
+  in 
+  t :: [Gallery.view (Signal.forwardTo address (GalleryAction name)) gallery]
  
 view : Signal.Address Action -> Model -> Html
 view address model =
-  let galleriesHtml = List.map (viewGallery address) (.galleries model)
+  let galleriesHtml = List.concat (List.map (viewGallery address) (.galleries model))
       
       subContainerData =
         div [ class "subContainerData noSubmenu", id "journeeMurolais"]
@@ -118,7 +120,12 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(journeeMurolais, "journeeMurolais")]
+galleries = [(journeeMurolais2016,"journeeMurolais2016")
+            ,(journeeMurolais, "journeeMurolais")
+            ]
+
+(journeeMurolais2016,journeeMurolais2016FX) = 
+  Gallery.init (picListHD 13) "journeeMurolais2016" "Edition 2016"
 
 (journeeMurolais, journeeMurolaisFx) = 
   Gallery.init 
@@ -211,5 +218,5 @@ galleries = [(journeeMurolais, "journeeMurolais")]
       , caption = Just ""
       , linkHD = True
       }
-    ] "journeeMurolais" ""
+    ] "journeeMurolais" "Edition 2015"
 

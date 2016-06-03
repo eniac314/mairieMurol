@@ -10,3 +10,6 @@ mogrify -resize 800x600 -gravity center -format jpg -quality 90 *.jpg
 
 images from docx:
 unzip foo.docx "word/media/*"
+
+rename "s/JPG/jpg/" *.JPG
+

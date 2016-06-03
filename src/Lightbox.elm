@@ -4,6 +4,7 @@ module Lightbox (Picture, Model, Action(..)
                 , view
                 , defPic
                 , picList
+                , picListHD
                 , picCaption) where
 
 import Html exposing (..)
@@ -48,6 +49,21 @@ picList n =
                 { defPic |
                   filename = filename
                 , caption = Just ""
+                }
+          in if m == -1 then [] else pic :: go (m - 1)
+  in go (n-1)  
+
+picListHD : Int -> List Picture
+picListHD n = 
+  let go m = 
+          let filename = if ( n - m ) < 10 
+                         then "0" ++ toString (n - m) ++ ".jpg"
+                         else toString (n - m) ++ ".jpg"  
+              pic = 
+                { defPic |
+                  filename = filename
+                , caption = Just ""
+                , linkHD  = True
                 }
           in if m == -1 then [] else pic :: go (m - 1)
   in go (n-1)  

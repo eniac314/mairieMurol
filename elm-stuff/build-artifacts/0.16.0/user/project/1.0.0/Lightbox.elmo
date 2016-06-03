@@ -160,6 +160,16 @@ Elm.Lightbox.make = function (_elm) {
       };
       return go(n - 1);
    };
+   var picListHD = function (n) {
+      var go = function (m) {
+         var filename = _U.cmp(n - m,10) < 0 ? A2($Basics._op["++"],"0",A2($Basics._op["++"],$Basics.toString(n - m),".jpg")) : A2($Basics._op["++"],
+         $Basics.toString(n - m),
+         ".jpg");
+         var pic = _U.update(defPic,{filename: filename,caption: $Maybe.Just(""),linkHD: true});
+         return _U.eq(m,-1) ? _U.list([]) : A2($List._op["::"],pic,go(m - 1));
+      };
+      return go(n - 1);
+   };
    var Model = F5(function (a,b,c,d,e) {    return {pictures: a,nameList: b,folder: c,display: d,diaporama: e};});
    var init = F2(function (pics,folder) {
       var nameList = A2($List.map,function (_) {    return _.filename;},pics);
@@ -171,6 +181,7 @@ Elm.Lightbox.make = function (_elm) {
                                  ,view: view
                                  ,defPic: defPic
                                  ,picList: picList
+                                 ,picListHD: picListHD
                                  ,picCaption: picCaption
                                  ,Picture: Picture
                                  ,Model: Model

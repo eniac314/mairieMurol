@@ -11239,7 +11239,8 @@ Elm.Utils.make = function (_elm) {
                         ,_0: "Station_Tourisme_RVB.jpg"
                         ,_1: "http://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme"}
                        ,{ctor: "_Tuple2",_0: "Village fleuri.png",_1: "http://www.villes-et-villages-fleuris.com/"}
-                       ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}]);
+                       ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}
+                       ,{ctor: "_Tuple2",_0: "PAVILLON BLEU LOGO 2.png",_1: "http://www.pavillonbleu.org/"}]);
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
    var renderSubMenu = F3(function (address,title,submenu) {
       var pos = function (_) {    return _.current;}(submenu);
@@ -11509,7 +11510,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le samedi 21 mai 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 02 juin 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -11884,7 +11885,46 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.br,_U.list([]),_U.list([]))
                               ,A2($Html.a,_U.list([$Html$Attributes.href("/Annee2016.html")]),_U.list([$Html.text("Lien photothèque")]))]))
                       ,expiry: $Date.fromString("16/21/2016")
-                      ,pic: $Maybe.Just("PAVILLON BLEU LOGO 2.png")})]);
+                      ,pic: $Maybe.Just("PAVILLON BLEU LOGO 2.png")})
+                      ,_U.update(emptyNews,
+                      {title: "Journée des Murolais"
+                      ,date: $Date.fromString("05/25/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("La journée des Murolais aura\n                              lieu samedi 28 mai au château, venez nombreux!")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/affiche journee des murolais 2016.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Affiche 2016")]))]))
+                      ,expiry: $Date.fromString("05/29/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Mise à jour photothèque"
+                      ,date: $Date.fromString("06/02/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Des photos du ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("Annee2016.html")]),_U.list([$Html.text("Mouv\'Auvergnat")]))
+                              ,$Html.text(", du ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("Annee2016.html")]),_U.list([$Html.text("vernissage")]))
+                              ,$Html.text(" de l\'exposition temporaire du musée et de la ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("JourneeMurolais.html")]),_U.list([$Html.text("journée des Murolais 2016")]))
+                              ,$Html.text(" sont disponibles dans la photothèque.")]))]))
+                      ,expiry: $Date.fromString("06/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Sébastien Gouttebel dans l\'émission \"Folie Passagère\""
+                      ,date: $Date.fromString("06/02/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("https://www.youtube.com/watch?v=htFqQhwmGLE")]),
+                              _U.list([$Html.text("Vidéo")]))
+                              ,$Html.text("  du passage de Sébastien Gouttebel dans\n                                l\'émission \"Folie Passagère\" sur les actions\n                                en milieu rural")]))]))
+                      ,expiry: $Date.fromString("06/17/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu,logos: $Utils.logos,newsletters: newsletters,news: A2(prepNews,today,news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;

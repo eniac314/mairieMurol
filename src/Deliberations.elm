@@ -69,7 +69,7 @@ sortDate xs = concat (reverse (chunk 2 xs))
 
 delib = 
   div [class "subContainerData noSubmenu", id "delibPubli"]
-      ([ h2 [] [text "Délibération conseil municipal"]] ++ sortDate
+      ([ h2 [] [text "Délibérations conseil municipal"]] ++ sortDate
       [ h5 [] [text "2014"]
       , ul []
            [ li [] [link "19 mars" "/baseDocumentaire/Deliberations_conseil/2014/19032014.pdf"]
@@ -88,5 +88,10 @@ delib =
            , li [] [link "24 septembre" "/baseDocumentaire/Deliberations_conseil/2015/24-09-2015.pdf"]
            , li [] [link "4 novembre" "/baseDocumentaire/Deliberations_conseil/2015/CM04112015.pdf"]
            , li [] [link "3 décembre" "/baseDocumentaire/Deliberations_conseil/2015/03-12-2015.pdf"]
+           ]
+      , h5 [] [text "2016"]
+      , ul []
+           [ li [] [link "17 février" "/baseDocumentaire/Deliberations_conseil/2016/17fev2016.pdf"]
+           , li [] [link "17 mars" "/baseDocumentaire/Deliberations_conseil/2016/17mars2016.pdf"] 
            ]
       ])

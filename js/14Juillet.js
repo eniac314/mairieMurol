@@ -11221,6 +11221,16 @@ Elm.Lightbox.make = function (_elm) {
       };
       return go(n - 1);
    };
+   var picListHD = function (n) {
+      var go = function (m) {
+         var filename = _U.cmp(n - m,10) < 0 ? A2($Basics._op["++"],"0",A2($Basics._op["++"],$Basics.toString(n - m),".jpg")) : A2($Basics._op["++"],
+         $Basics.toString(n - m),
+         ".jpg");
+         var pic = _U.update(defPic,{filename: filename,caption: $Maybe.Just(""),linkHD: true});
+         return _U.eq(m,-1) ? _U.list([]) : A2($List._op["::"],pic,go(m - 1));
+      };
+      return go(n - 1);
+   };
    var Model = F5(function (a,b,c,d,e) {    return {pictures: a,nameList: b,folder: c,display: d,diaporama: e};});
    var init = F2(function (pics,folder) {
       var nameList = A2($List.map,function (_) {    return _.filename;},pics);
@@ -11232,6 +11242,7 @@ Elm.Lightbox.make = function (_elm) {
                                  ,view: view
                                  ,defPic: defPic
                                  ,picList: picList
+                                 ,picListHD: picListHD
                                  ,picCaption: picCaption
                                  ,Picture: Picture
                                  ,Model: Model
@@ -11628,7 +11639,8 @@ Elm.Utils.make = function (_elm) {
                         ,_0: "Station_Tourisme_RVB.jpg"
                         ,_1: "http://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme"}
                        ,{ctor: "_Tuple2",_0: "Village fleuri.png",_1: "http://www.villes-et-villages-fleuris.com/"}
-                       ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}]);
+                       ,{ctor: "_Tuple2",_0: "StationVertegf.jpg",_1: "http://www.stationverte.com/"}
+                       ,{ctor: "_Tuple2",_0: "PAVILLON BLEU LOGO 2.png",_1: "http://www.pavillonbleu.org/"}]);
    var Entry = function (a) {    return {ctor: "Entry",_0: a};};
    var renderSubMenu = F3(function (address,title,submenu) {
       var pos = function (_) {    return _.current;}(submenu);

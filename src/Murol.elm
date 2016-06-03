@@ -140,7 +140,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le samedi 21 mai 2016"]
+            [text "Dernière mise à jour le mercredi 02 juin 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -627,7 +627,44 @@ news =
                  ]
    , expiry = Date.fromString "16/21/2016"
    , pic = Just "PAVILLON BLEU LOGO 2.png"
-   } 
+   }
+   ,{ emptyNews |
+     title = "Journée des Murolais"
+   , date  = Date.fromString "05/25/2016"
+   , descr = div [class "newsdescr"]
+                 [p [] [text "La journée des Murolais aura
+                              lieu samedi 28 mai au château, venez nombreux!"
+                        ]
+                 , a [href "baseDocumentaire/affiche journee des murolais 2016.pdf", target "_blank"] [text "Affiche 2016"]]
+   , expiry = Date.fromString "05/29/2016"
+   }
+   ,{ emptyNews |
+     title = "Mise à jour photothèque"
+   , date  = Date.fromString "06/02/2016"
+   , descr = div [class "newsdescr"]
+                 [p [] [ text "Des photos du " 
+                       , a [href "Annee2016.html"] [text "Mouv'Auvergnat"]
+                       , text ", du "
+                       , a [href "Annee2016.html"] [text "vernissage"]
+                       , text " de l'exposition temporaire du musée et de la "
+                       , a [href "JourneeMurolais.html"] [text "journée des Murolais 2016"]
+                       , text " sont disponibles dans la photothèque."] 
+                 ]
+   , expiry = Date.fromString "06/17/2016"
+   }
+   ,{ emptyNews |
+     title = "Sébastien Gouttebel dans l'émission \"Folie Passagère\""
+   , date  = Date.fromString "06/02/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [ a [target "_blank", href "https://www.youtube.com/watch?v=htFqQhwmGLE"]
+                            [text "Vidéo"]
+                        , text "  du passage de Sébastien Gouttebel dans
+                                l'émission \"Folie Passagère\" sur les actions
+                                en milieu rural"
+                        ]
+                 ]
+   , expiry = Date.fromString "06/17/2016"
+   }
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

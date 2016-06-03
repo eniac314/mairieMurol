@@ -121,12 +121,20 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(pavillonBleu,"pavillonBleu2016")
+galleries = [(vernissage,"vernissage2016")
+            ,(mouvauvergnat,"mouvauvergnat2016")
+            ,(pavillonBleu,"pavillonBleu2016")
             ,(veuxMaireRepasCCAS, "veuxMaireRepasCCAS")
             ]
 
 (pavillonBleu,pavillonBleuFX) = 
   Gallery.init (picList 17) "pavillonBleu2016" "18 mai - cérémonie officielle Pavillon bleu 2016 à Montpellier"
+
+(mouvauvergnat,mouvauvergnatFX) = 
+  Gallery.init (picList 5) "mouvauvergnat2016" "25 mai - Mouv'Auvergnat"
+
+(vernissage,vernissageFX) = 
+  Gallery.init (picList 4) "vernissageExpoMusée2016" "27 mai - vernissage de l'exposition temporaire du musée"
 
 (veuxMaireRepasCCAS, veuxMaireRepasCCASFx) = 
   Gallery.init 

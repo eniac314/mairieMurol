@@ -175,6 +175,7 @@ logos    = [("famillePlus.jpg","http://www.familleplus.fr/fr")
            ,("Station_Tourisme_RVB.jpg","http://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme")
            ,("Village fleuri.png","http://www.villes-et-villages-fleuris.com/")
            ,("StationVertegf.jpg","http://www.stationverte.com/")
+           ,("PAVILLON BLEU LOGO 2.png","http://www.pavillonbleu.org/")
            ]
 
 renderListImg pics =

@@ -337,11 +337,18 @@ peri =
              8h à 18h:"
       , ul []
            [ li [] [text "Du 15 au 26 février 2016 "]
-           , li [] [text "Du 11 au 22 avril 2016 - "
-                   , a [ href "/baseDocumentaire/periscolaire/planning activités avril.pdf", target "_blank"]
-                       [ text "programme des activités prévues"] 
+           , li [] [text "Du 11 au 22 avril 2016"
+                   --, a [ href "/baseDocumentaire/periscolaire/planning activités avril.pdf", target "_blank"]
+                   --    [ text "programme des activités prévues"] 
                    ]
-           , li [] [text "Du 7 juillet au 23 août 2016 "]
+           , li [] [text "Du 7 juillet au 23 août 2016: "
+                   , br [] []
+                   , a [ href "/baseDocumentaire/periscolaire/programmes centre de loisirs juillet 2016.pdf", target "_blank"]
+                       [ text "programme des activités prévues en juillet"]
+                   , br [] []
+                   , a [ href "/baseDocumentaire/periscolaire/planning activités août.pdf", target "_blank"]
+                       [ text "programme des activités prévues en août"]
+                   ]
            ]
 
       , p [] [text "Des enfants d’autres communes d’origine, de la population 
@@ -360,7 +367,7 @@ peri =
              ,text ")"    
              ]
       , p [] [ text "Les "
-             , a [href "/baseDocumentaire/periscolaire/DOSSIER INSCRIPTION CLSH avril 2016.pdf", target "_blank"]
+             , a [href "/baseDocumentaire/periscolaire/dossier inscription CLSH 2016.pdf", target "_blank"]
                  [text "dossiers d’inscriptions"]
              , text " sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
              ]
@@ -368,14 +375,14 @@ peri =
       , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"]
                 [text "Projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
       
-      , p [] [a [href "", target "_blank"]
-                [text "Projet pédagogique vacances de printemps "]
-             , text " (disponible prochainement)" 
-             ]
-      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs printemps.pdf"
+      --, p [] [a [href "", target "_blank"]
+      --          [text "Projet pédagogique vacances de printemps "]
+      --       , text " (disponible prochainement)" 
+      --       ]
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs été.pdf"
                 , target "_blank"
                 ]
-                [ text "Plaquette de présentation du centre de loisirs de printemps" ]
+                [ text "Plaquette de présentation du centre de loisirs été" ]
              ]
 
 
