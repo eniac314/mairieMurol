@@ -141,5 +141,6 @@ murolInf =
       , ul []
            [ li [] [link "Numero 28 - Janvier" "baseDocumentaire/murolInfo/28.pdf"]
            , li [] [link "Numero 29 - Avril" "baseDocumentaire/murolInfo/29.pdf"]
+           , li [] [link "Numero 30 - Juin" "baseDocumentaire/murolInfo/30.pdf"]
            ]
       ])

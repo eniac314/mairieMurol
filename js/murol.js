@@ -11439,8 +11439,18 @@ Elm.Murol.make = function (_elm) {
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
            _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
-           _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))]))
+                   _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Pour une visite en famille : la ")
+                           ,A2($Html.a,
+                           _U.list([$Html$Attributes.href("baseDocumentaire/Carte jeu de piste 2016.pdf"),$Html$Attributes.target("_blank")]),
+                           _U.list([$Html.text("carte jeu de piste")]))
+                           ,$Html.text(" et le ")
+                           ,A2($Html.a,
+                           _U.list([$Html$Attributes.href("baseDocumentaire/livret jeu musée 2016.pdf"),$Html$Attributes.target("_blank")]),
+                           _U.list([$Html.text("livret jeu")]))]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
            _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Mairie pratique:")]))
@@ -11510,7 +11520,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 02 juin 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le jeudi 09 juin 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -11924,7 +11934,52 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("https://www.youtube.com/watch?v=htFqQhwmGLE")]),
                               _U.list([$Html.text("Vidéo")]))
                               ,$Html.text("  du passage de Sébastien Gouttebel dans\n                                l\'émission \"Folie Passagère\" sur les actions\n                                en milieu rural")]))]))
-                      ,expiry: $Date.fromString("06/17/2016")})]);
+                      ,expiry: $Date.fromString("06/17/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Fête de la musique"
+                      ,date: $Date.fromString("06/09/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Cette année, grâce à l\'association \n                               \"les pirates\", Murol fêtera la musique.\n                               Venez nombreux au concert sur la place de\n                               l\'église le samedi 18 juin!")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/affiche fête de la musique 2016.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Affiche du concert")]))]))
+                      ,expiry: $Date.fromString("06/19/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Murol Infos 30"
+                      ,date: $Date.fromString("06/09/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le nouveau \"Murol Infos\" (Juin 2016) est disponible: ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/murolInfo/30.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Télécharger")]))]))]))
+                      ,expiry: $Date.fromString("07/09/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Centre de loisirs - été 2016"
+                      ,date: $Date.fromString("06/09/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Centre de loisirs pour les 3 à 11 ans:\n                            retrouvez les programmes d\'activités de\n                            cet été ainsi que le dossier d\'inscription\n                            dans l\'onglet vie locale/ péri et extrascolaire/CLSH")]))]))
+                      ,expiry: $Date.fromString("09/01/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Video du mouv\'auvergnat"
+                      ,date: $Date.fromString("06/09/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Une vidéo du Mouv\'Auvergnat qui a regroupé\n                            un millier de lycéens au lac Chambon est disponible :")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("https://www.youtube.com/watch?v=afkBKX-iZtE"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("lien youtube")]))]))
+                      ,expiry: $Date.fromString("06/19/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu,logos: $Utils.logos,newsletters: newsletters,news: A2(prepNews,today,news)};
    var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
    var main = app.html;

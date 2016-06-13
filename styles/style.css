@@ -618,12 +618,13 @@ h5.newsTitle:hover, h5.dropTitle:hover{
 span.date {
   float: right;
   color: white;
-  letter-spacing: 0.1em;
+  /*letter-spacing: 0.1em;*/
   background-color: rgba(119,136,153, 0.8);
   padding: 0.1em 0.5em 0 0.4em;
   border-top-left-radius: 0.5em;
   box-shadow: -1px -1px 1px gray;
   width:6em;
+  /*font-family: monospace;*/
 }
 
 .news p {
@@ -809,6 +810,7 @@ background-image: none;
 
 #agenda a{
   display: block;
+  margin-left: 1em;
 }
 
 #agenda a, .divers a{
@@ -817,13 +819,16 @@ background-image: none;
   color: teal;
   padding-right: 0.1em;
   padding-left: 0.1em;
-  margin-left: 1em;
 }
 
 #agenda a:hover, .divers a:hover{
   border-bottom-color: teal;
   color:white;
   background-color: teal;
+}
+
+.divers{
+  padding-left: 1em;
 }
 
 #agenda iframe{

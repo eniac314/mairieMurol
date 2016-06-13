@@ -140,7 +140,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le mercredi 02 juin 2016"]
+            [text "Dernière mise à jour le jeudi 09 juin 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -195,7 +195,16 @@ renderMisc =
       [ h4 [] [text "Divers"]
       , div [id "peintres"]
             [ a [href "http://www.musee-murol.fr/fr", target "_blank" ]
-            [text "A découvrir, le musée des peintres de l’Ecole de Murols"]]
+            [ text "A découvrir, le musée des peintres de l’Ecole de Murols"]
+            , p []
+                [ text "Pour une visite en famille : la "
+                , a [ href "baseDocumentaire/Carte jeu de piste 2016.pdf", target "_blank"]
+                    [ text "carte jeu de piste"]
+                , text " et le "
+                , a [ href "baseDocumentaire/livret jeu musée 2016.pdf", target "_blank"]
+                    [ text "livret jeu"]
+                ]
+            ]
       , div [id "horairesContact"]
             [h4 [] [text "Mairie pratique:"]
             , div [ id "horaires"]
@@ -665,6 +674,55 @@ news =
                  ]
    , expiry = Date.fromString "06/17/2016"
    }
+   ,{ emptyNews |
+     title = "Fête de la musique"
+   , date  = Date.fromString "06/09/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "Cette année, grâce à l'association 
+                               \"les pirates\", Murol fêtera la musique.
+                               Venez nombreux au concert sur la place de
+                               l'église le samedi 18 juin!"
+                        ]
+                 , a [ href "baseDocumentaire/affiche fête de la musique 2016.pdf"
+                     , target "_blank"]
+                     [text "Affiche du concert"]
+
+                 ]
+   , expiry = Date.fromString "06/19/2016"
+   }
+  ,{ emptyNews |
+     title = "Murol Infos 30"
+   , date  = Date.fromString "06/09/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Le nouveau \"Murol Infos\" (Juin 2016) est disponible: "
+                    , a [href "baseDocumentaire/murolInfo/30.pdf", target "_blank"] [text "Télécharger"]]
+                 ]
+   , expiry = Date.fromString "07/09/2016"
+   }
+   ,{ emptyNews |
+     title = "Centre de loisirs - été 2016"
+   , date  = Date.fromString "06/09/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [text "Centre de loisirs pour les 3 à 11 ans:
+                            retrouvez les programmes d'activités de
+                            cet été ainsi que le dossier d'inscription
+                            dans l'onglet vie locale/ péri et extrascolaire/CLSH"]
+                 ]
+   , expiry = Date.fromString "09/01/2016"
+   }
+   ,{ emptyNews |
+     title = "Video du mouv'auvergnat"
+   , date  = Date.fromString "06/09/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [text "Une vidéo du Mouv'Auvergnat qui a regroupé
+                            un millier de lycéens au lac Chambon est disponible :"]
+                 , a [href "https://www.youtube.com/watch?v=afkBKX-iZtE", target "_blank"] [text "lien youtube"]
+                 ]
+   , expiry = Date.fromString "06/19/2016"
+   } 
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""
