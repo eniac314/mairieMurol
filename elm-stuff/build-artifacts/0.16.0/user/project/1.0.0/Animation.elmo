@@ -143,7 +143,13 @@ Elm.Animation.make = function (_elm) {
    var revolution = A4(initDropable,
    3,
    "La fête de la Révolution (14 juillet)",
-   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/14Juillet.html")]),_U.list([$Html.text("lien photothèque")]))),
+   $Maybe.Just(A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/14Juillet.html")]),_U.list([$Html.text("lien photothèque")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/affiche14juillet2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 2016")]))]))),
    _U.list([A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("La municipalité de Murol, en partenariat avec différentes \n                               associations de la commune, organise le 14 juillet \n                               dans les rues de Murol. ")]))

@@ -69,4 +69,5 @@ initialContent =
       , link "Le c.o.d.e des lacs et rivières - 2015" "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf"
       , link "Note de présentation SIVU" "baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf"
       , link "Dossier zone humide de Murol" "baseDocumentaire/Dossier zone humide de Murol.pdf"
+      , link "Fiche Organicité" "baseDocumentaire/ficheORGANICITE.pdf"
       ]

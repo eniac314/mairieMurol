@@ -207,8 +207,13 @@ horizon =
 revolution = 
   initDropable 3
                "La fête de la Révolution (14 juillet)"
-               (Just ( a [ href "/14Juillet.html" ]
-                         [ text "lien photothèque"] ))
+               (Just ( div []
+                           [ a [ href "/14Juillet.html" ]
+                               [ text "lien photothèque"]
+                           , br [] []
+                           , a [href "/baseDocumentaire/animation/affiche14juillet2016.pdf", target "_blank"]
+                               [text "programme 2016"]
+                           ] ))
                ( [ p [] [text "La municipalité de Murol, en partenariat avec différentes 
                                associations de la commune, organise le 14 juillet 
                                dans les rues de Murol. " ]

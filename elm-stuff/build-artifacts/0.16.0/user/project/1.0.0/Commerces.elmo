@@ -35,6 +35,7 @@ Elm.Commerces.make = function (_elm) {
    var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
    var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
    var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var anchor = function (s) {    return A2($Html.a,_U.list([$Html$Attributes.name($String.concat($String.words(s)))]),_U.list([]));};
    var renderCommerce = function (_p2) {
       var _p3 = _p2;
       var refOt$ = function () {
@@ -72,7 +73,7 @@ Elm.Commerces.make = function (_elm) {
       var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
       var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
       var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
-      var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      var name$ = A2(maybeElem,_p3.name,function (s) {    return A2($Html.p,_U.list([]),_U.list([anchor(s),$Html.text(s)]));});
       return A2($Html.div,_U.list([]),A2($Basics._op["++"],_U.list([name$,refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$,pjaun$]))));
    };
    var renderCommerceMap = function (am) {
@@ -110,7 +111,7 @@ Elm.Commerces.make = function (_elm) {
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                                  ,_0: "4236"
                                                                                  ,_1: "http://www.sancy.com/activites/detail/4236/murol/spar"})
-                                                             ,descr: _U.list(["Alimentation générale"])
+                                                             ,descr: _U.list(["Alimentation générale","Service drive: www.sparmurol.fr"])
                                                              ,addr: "Rue de Besse - 63790 MUROL"
                                                              ,tel: "04 73 88 60 45 "
                                                              ,fax: "04 73 88 66 60"})
@@ -147,6 +148,10 @@ Elm.Commerces.make = function (_elm) {
                                                                                  ,_1: "http://www.sancy.com/activites/detail/7331/murol/distributeur-automatique-de-billets"})
                                                              ,descr: _U.list(["Distributeur de billets"])
                                                              ,addr: "Route de Besse 63790 MUROL"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Boucherie"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                {name: "La Pièce du Boucher",addr: "Rue George Sand 63790 MUROL",tel: "04 73 87 77 48"})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Art de la maison - cadeaux - souvenirs"
                                                 ,_1: _U.list([_U.update(defCom,
@@ -350,6 +355,7 @@ Elm.Commerces.make = function (_elm) {
                                   ,view: view
                                   ,renderCommerceMap: renderCommerceMap
                                   ,renderCommerce: renderCommerce
+                                  ,anchor: anchor
                                   ,maybeElem: maybeElem
                                   ,nullTag: nullTag
                                   ,contentMap: contentMap

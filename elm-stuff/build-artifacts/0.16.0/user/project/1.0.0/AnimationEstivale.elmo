@@ -18,9 +18,20 @@ Elm.AnimationEstivale.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animationEstivale")]),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le programme des animations estivales 2016 est\n                    en cours d\'élaboration et sera mis en ligne prochainement.")]))
+   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La saison estivale arrive avec de nombreuses animations!")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Découvrez le programme du mois de juillet 2016: ")]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme1.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 4-16 juillet")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme2.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 17-31 juillet")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ainsi que le déroulement de la journée du 14 Juillet:")]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/affiche14juillet2016.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 14 juillet")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
            ,A2($Html.img,_U.list([$Html$Attributes.src("/images/illustration animations estivales.jpg")]),_U.list([]))]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));

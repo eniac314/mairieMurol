@@ -70,7 +70,7 @@ renderCommerceMap am =
 
 renderCommerce : Commerce -> Html
 renderCommerce { name, descr, addr, tel, fax, mail, site, pjaun, refOt} = 
-  let name'  = maybeElem name (\s -> p [] [text s])
+  let name'  = maybeElem name (\s -> p [] [anchor s, text s])
       descr' = List.map (\s -> p [] [text s]) descr
       addr'  = maybeElem addr (\s -> p [] [text s])
       tel'   = maybeElem
@@ -93,6 +93,8 @@ renderCommerce { name, descr, addr, tel, fax, mail, site, pjaun, refOt} =
 
   in div [] ([name',refOt'] ++ descr' ++ [addr', tel', fax', mail', site', pjaun'])
 
+
+anchor s = a [name (String.concat (String.words s))] []
 
 maybeElem : String -> ( String -> Html ) -> Html
 maybeElem s f =
@@ -160,7 +162,7 @@ comMapYearLong = fromList
       { defCom |
         name   = "Supermarché SPAR"
       , refOt  = Just ("4236","http://www.sancy.com/activites/detail/4236/murol/spar")
-      , descr  = ["Alimentation générale"]
+      , descr  = ["Alimentation générale", "Service drive: www.sparmurol.fr"]
       , addr   = "Rue de Besse - 63790 MUROL"
       , tel    = "04 73 88 60 45 "
       , fax    = "04 73 88 66 60"
@@ -201,12 +203,13 @@ comMapYearLong = fromList
       , addr   = "Route de Besse 63790 MUROL" 
       }]
    )
-  --,("Boucherie"
-  -- , [{ defCom |
-  --      addr   = "Rue George Sand 63790 MUROL"
-  --    , tel    = "04 7388 6905"  
-  --    }]
-  -- )
+  ,("Boucherie"
+   , [{ defCom |
+        name   = "La Pièce du Boucher"
+      , addr   = "Rue George Sand 63790 MUROL"
+      , tel    = "04 73 87 77 48"  
+      }]
+   )
   --,("Boulangerie"
   -- , [{ defCom |
   --      addr   = "Rue Chabrol - 63790 MUROL"

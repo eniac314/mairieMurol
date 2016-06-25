@@ -62,7 +62,16 @@ main =
 
 initialContent =
   div [ class "subContainerData noSubmenu", id "animationEstivale"]
-      [ p [] [text "Le programme des animations estivales 2016 est
-                    en cours d'élaboration et sera mis en ligne prochainement."]
+      [ p [] [text "La saison estivale arrive avec de nombreuses animations!"]
+      , p [] [text "Découvrez le programme du mois de juillet 2016: "]
+      , a [href "/baseDocumentaire/animation/programme1.pdf", target "_blank"]
+          [text "programme 4-16 juillet"]
+      , br [] []
+      , a [href "/baseDocumentaire/animation/programme2.pdf", target "_blank"]
+          [text "programme 17-31 juillet"]
+      , p [] [text "Ainsi que le déroulement de la journée du 14 Juillet:"]
+      , a [href "/baseDocumentaire/animation/affiche14juillet2016.pdf", target "_blank"]
+          [text "programme 14 juillet"]
+      , br [] []
       , img [src "/images/illustration animations estivales.jpg"] []
       ]

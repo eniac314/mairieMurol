@@ -11114,7 +11114,8 @@ Elm.AutresPublications.make = function (_elm) {
            ,A2($Utils.link,"Les volcans du Tartaret - Pierre Lavina","/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf")
            ,A2($Utils.link,"Le c.o.d.e des lacs et rivières - 2015","/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf")
            ,A2($Utils.link,"Note de présentation SIVU","baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf")
-           ,A2($Utils.link,"Dossier zone humide de Murol","baseDocumentaire/Dossier zone humide de Murol.pdf")]));
+           ,A2($Utils.link,"Dossier zone humide de Murol","baseDocumentaire/Dossier zone humide de Murol.pdf")
+           ,A2($Utils.link,"Fiche Organicité","baseDocumentaire/ficheORGANICITE.pdf")]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {

@@ -140,7 +140,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le jeudi 09 juin 2016"]
+            [text "Dernière mise à jour le lundi 20 juin 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -698,7 +698,7 @@ news =
                     [ text "Le nouveau \"Murol Infos\" (Juin 2016) est disponible: "
                     , a [href "baseDocumentaire/murolInfo/30.pdf", target "_blank"] [text "Télécharger"]]
                  ]
-   , expiry = Date.fromString "07/09/2016"
+   , expiry = Date.fromString "06/19/2016"
    }
    ,{ emptyNews |
      title = "Centre de loisirs - été 2016"
@@ -722,12 +722,88 @@ news =
                  , a [href "https://www.youtube.com/watch?v=afkBKX-iZtE", target "_blank"] [text "lien youtube"]
                  ]
    , expiry = Date.fromString "06/19/2016"
+   }
+  ,{ emptyNews |
+     title = "Animation saison estivale - programmes disponibles"
+   , date  = Date.fromString "06/20/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [ text "La saison estivale arrive avec de nombreuses animations présentées sur des programmes par quinzaine.
+                             Retrouvez également le détail de la journée du 14 juillet"]
+                 , a [href "/baseDocumentaire/animation/programme1.pdf", target "_blank"]
+                     [text "programme 4-16 juillet"]
+                 , br [] []
+                 , a [href "/baseDocumentaire/animation/programme2.pdf", target "_blank"]
+                     [text "programme 17-31 juillet"]
+                 , br [] []
+                 , a [href "/baseDocumentaire/animation/affiche14juillet2016.pdf", target "_blank"]
+                     [text "programme 14 juillet"]
+                 ]
+   , expiry = Date.fromString "08/01/2016"
+   }
+   ,{ emptyNews |
+     title = "Murol Infos 31"
+   , date  = Date.fromString "06/20/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Le nouveau \"Murol Infos\" (saison estivale, 14 juillet, réunion publique PLU...)
+                            ainsi que ses annexes sont disponibles: "]
+                    , a [href "baseDocumentaire/murolInfo/31.pdf", target "_blank"] [text "Murol infos 31"]
+                    , br [] []
+                    , a [href "baseDocumentaire/ficheORGANICITE.pdf", target "_blank"] [text "fiche ORGANICITE"]
+                    , p []
+                        [text "programmes des animations juillet 2016:"
+                        , br [] []
+                        , a [href "/baseDocumentaire/animation/programme1.pdf", target "_blank"]
+                            [text "programme 4-16 juillet"]
+                        , br [] []
+                        , a [href "/baseDocumentaire/animation/programme2.pdf", target "_blank"]
+                            [text "programme 17-31 juillet"]
+                        , br [] []
+                        , a [href "/baseDocumentaire/animation/affiche14juillet2016.pdf", target "_blank"]
+                            [text "programme 14 juillet"]
+                        ]
+                 ]
+   , expiry = Date.fromString "07/20/2016"
+   }
+  ,{ emptyNews |
+     title = "Photos fête des écoles et des TAP"
+   , date  = Date.fromString "06/20/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les photos de la fête des écoles et des TAP qui a eu
+                           lieu le 11 juin 2016 sont disponibles dans la "
+                    , a [href "Annee2016.html"] [text "photothèque"]
+                    ]
+                 ]
+   , expiry = Date.fromString "07/01/2016"
+   }
+  ,{ emptyNews |
+     title = "Nouveautés dans les commerces de Murol"
+   , date  = Date.fromString "06/20/2016"
+   , descr = div [class "newsdescr"]
+                 [ p [] 
+                     [text "La boucherie a rouvert ses portes depuis le 1er juin 2016.
+                            Monsieur Papon, qui a repris ce commerce, vous propose ses "
+                     , a [href "/baseDocumentaire/commerces/flyerBoucherie.pdf", target "_blank"] [text "spécialités"]
+                     , text "."
+                     ]
+                 , p []
+                     [ text "Le supermarché SPAR offre un nouveau service à ses clients, le drive,
+                             à retrouver sur le site du "
+                     , a [href "/Commerces.html#SupermarchéSPAR"] [text "magasin"]
+                     , text "."
+                     ]
+                 ]
+   , expiry = Date.fromString "07/20/2016"
    } 
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""
    --, descr = div [class "newsdescr"]
-   --              []
+   --              [p []
+   --                 [text ""]
+   --              ]
    --, expiry = Date.fromString ""
    --} 
   ]
