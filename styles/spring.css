@@ -1,4 +1,4 @@
-/*summer2016.css*/
+/*spring.css*/
 /*-------------------------------------------------------------------------------
   import google fonts
 -------------------------------------------------------------------------------*/
@@ -20,11 +20,11 @@ html{
 }
 
 body {
-  background-color: #5e8ad9;
-  background-image: url(/images/landscapebottom.png), url(/images/landscapebottomO.png), url(/images/landscape1920.jpg), url(/images/fleurie.png), url(/images/bgblue.jpg);
-  background-repeat: repeat-x, repeat-x,  no-repeat, repeat-x, repeat;
-  background-position: top center, top right, top center, center bottom, top center;
-  background-size: auto, auto, auto, auto;
+  background-color: #cbdff3;
+  background-position: center top, center bottom;
+  background-image: url(/images/bgLeaf2.png), url(/images/bannerS.jpg), url(/images/Cloth.jpg);
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: top center;
   margin: 0;
   margin-bottom: 40px;
   padding-top: 0em;
@@ -64,7 +64,7 @@ header{
 
 header #pageTitle{
   /*background-color: #cfff4f;*/
-  background-color: gold;
+  background-color: #91bd19;
   font-style: italic;
   font-size: 45px;
   margin-bottom: 0;
@@ -73,8 +73,7 @@ header #pageTitle{
 
 header #subTitle{
   margin-top: 0;
-  color: aliceblue;
-  background-color: rgb(71, 84, 196);
+  background-color: gold;
   font-weight: normal;
   }
 
@@ -108,14 +107,14 @@ header #subTitle{
 -------------------------------------------------------------------------------*/
 .mainMenu
   {
-  background-color: rgba(96, 117, 138, 0.8);
+  background-color: rgba(96, 117, 38, 0.8);
   text-align: center;
   margin: 0;
   }
 
 .mainMenu .current{
   background-image: none;
-  background-color: rgba(53, 100, 144, 0.8);
+  background-color: rgba(53, 100, 44, 0.8);
 }
 
 .mainMenu nav 
@@ -142,8 +141,8 @@ input::-moz-focus-inner {
   margin-top: 0.2em;
   margin-right: 0.2em;
   margin-bottom: 0.2em;
-  background-color: #cd5c5c;
-  /*background-image: url(/images/menubg.gif);*/
+  /*background-color: saddlebrown;*/
+  background-image: url(/images/menubg.gif);
   /*background: -moz-linear-gradient(saddlebrown, peru, sienna);*/
   /*text-transform: capitalize;*/
   text-decoration: none;
@@ -179,7 +178,7 @@ nav[class*="Content"] nav nav
 
     nav[class*="Content"]:hover > nav
     {
-      background-color: rgba(96, 117, 138, 0.8);
+      background-color: rgba(96, 117, 38, 0.8);
       position: absolute;
       z-index: 1;
       display: block;
@@ -203,7 +202,7 @@ input[type=radio] {
 
 @media screen and (max-width: 1024px) {
     nav[class*="Content"] >input[type=radio]:checked ~ nav{
-      background-color: rgba(96, 117, 138, 0.8);
+      background-color: rgba(96, 117, 38, 0.8);
       position: absolute;
       z-index: 1;
       display: block;
@@ -284,7 +283,7 @@ nav[class*="Content"] a
   border-radius: 1px;
   border-top: 5px double gray;
   border-bottom: 5px double gray; 
-  background-color: #6856c1; /*68565d*/
+  background-color: #68565d;
   text-indent: 1.5em;
   padding: 0.3em;
   margin: 0;
@@ -395,7 +394,7 @@ nav[class*="Content"] a
 .subContainerData h2{
   text-align: center;
   /*text-transform: capitalize;*/
-  background-color: rgba(53, 100, 144, 0.9); /*blue*/
+  background-color: rgba(53, 100, 44, 0.9); /*green*/
   color: aliceblue;
   padding: 0.3em 0;
   margin-top: 0.4em;
@@ -412,7 +411,7 @@ nav[class*="Content"] a
   font-size: 100%;
   color: black;
   text-align: center;
-  background-color: #199a9a;
+  background-color: #91bd19;/*green*/
 }
 .subContainerData h5 {
   color: green;
@@ -705,7 +704,7 @@ span.date {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   text-transform: uppercase;
-  background-color: rgba(53, 100, 144, 1);
+  background-color: rgba(53, 100, 44, 1);
   color: white;
   padding-left: 0.5em;
 
@@ -1873,7 +1872,7 @@ style for Culture et loisirs
   border-top: 1px solid #aca6a9;
   clear: left;
   text-align: center;
-  background-color: rgb(255, 200, 50); /*rgba(53, 100, 44, 0.8)*/
+  background-color: rgba(53, 100, 44, 0.8);
   margin:0;
   padding: 0.4em 0 0 0;
   vertical-align: center;
