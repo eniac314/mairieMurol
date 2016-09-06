@@ -19,7 +19,7 @@ Elm.AnimationEstivale.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animationEstivale")]),
    _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La saison estivale arrive avec de nombreuses animations!")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Découvrez le programme du mois de juillet 2016: ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Découvrez le programme des mois de juillet et août 2016: ")]))
            ,A2($Html.a,
            _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme1.pdf"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("programme 4-16 juillet")]))
@@ -27,6 +27,14 @@ Elm.AnimationEstivale.make = function (_elm) {
            ,A2($Html.a,
            _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme2.pdf"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("programme 17-31 juillet")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme3.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 31 juillet - 12 août")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme4.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 14 - 31 août")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ainsi que le déroulement de la journée du 14 Juillet:")]))
            ,A2($Html.a,
            _U.list([$Html$Attributes.href("/baseDocumentaire/animation/affiche14juillet2016.pdf"),$Html$Attributes.target("_blank")]),

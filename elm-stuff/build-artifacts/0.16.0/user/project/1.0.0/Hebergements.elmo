@@ -385,7 +385,16 @@ Elm.Hebergements.make = function (_elm) {
                         ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "7388",_1: "http://www.sancy.com/hebergements/detail/7388/murol/hotel-domaine-du-lac-chambon"})
                         ,addr: "Allée de la Plage 63790 MUROL"
                         ,tel: "04 44 05 21 58"
-                        ,descr: _U.list(["Hôtel restaurant"])})]);
+                        ,descr: _U.list(["Hôtel restaurant"])})
+                        ,_U.update($StarTable.emptyTe,
+                        {stars: $Maybe.Just(3)
+                        ,name: "Hotel de Paris"
+                        ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "2536",_1: "http://www.sancy.com/hebergements/detail/2536/murol/hotel-de-paris"})
+                        ,addr: "Rue de la Vieille Tour 63790 Murol"
+                        ,tel: "04 73 88 19 09"
+                        ,descr: _U.list(["Hôtel"])
+                        ,mail: "hoteldeparis.murol@orange.fr"
+                        ,site: "http://hoteldeparis-murol.com/"})]);
    var azureva = _U.list([_U.update($StarTable.emptyTe,
    {name: "Azureva"
    ,label: $StarTable.FamillePlus

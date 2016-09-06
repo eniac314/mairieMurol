@@ -162,7 +162,7 @@ comMapYearLong = fromList
       { defCom |
         name   = "Supermarché SPAR"
       , refOt  = Just ("4236","http://www.sancy.com/activites/detail/4236/murol/spar")
-      , descr  = ["Alimentation générale", "Service drive: www.sparmurol.fr"]
+      , descr  = ["Alimentation générale", "Service drive et livraison: www.sparmurol.fr"]
       , addr   = "Rue de Besse - 63790 MUROL"
       , tel    = "04 73 88 60 45 "
       , fax    = "04 73 88 66 60"

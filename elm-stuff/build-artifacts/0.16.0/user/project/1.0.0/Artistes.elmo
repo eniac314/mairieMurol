@@ -97,17 +97,6 @@ Elm.Artistes.make = function (_elm) {
                    _U.list([$Html.text("site officiel")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("artiste")]),
-           _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Marc HUMBERT : artisan d’Art, travaille le cuir")]))
-                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image7.jpg")]),_U.list([]))
-                   ,A2($Html.a,
-                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murol-terre-des-arts.wifeo.com/marc-humbert.php")]),
-                   _U.list([$Html.text("site officiel 1")]))
-                   ,A2($Html.br,_U.list([]),_U.list([]))
-                   ,A2($Html.a,
-                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.marc-humbert-cuir.com/acc")]),
-                   _U.list([$Html.text("site officiel 2")]))]))
-           ,A2($Html.div,
-           _U.list([$Html$Attributes.$class("artiste")]),
            _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Alice JUAN : peinture")]))
                    ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/image8.jpg")]),_U.list([]))
                    ,A2($Html.a,

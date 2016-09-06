@@ -245,18 +245,19 @@ hotels = [{ emptyTe |
           , addr  = "Allée de la Plage 63790 MUROL"
           , tel   = "04 44 05 21 58"
           , descr = ["Hôtel restaurant"] 
+         }
+         --]
+         ,
+         { emptyTe |
+            stars = Just 3
+          , name  = "Hotel de Paris"
+          , refOt = Just ("2536","http://www.sancy.com/hebergements/detail/2536/murol/hotel-de-paris")
+          , addr  = "Rue de la Vieille Tour 63790 Murol"
+          , tel   = "04 73 88 19 09"
+          , descr = ["Hôtel"]
+          , mail  = "hoteldeparis.murol@orange.fr"
+          , site  = "http://hoteldeparis-murol.com/"  
          }]
-         --,
-         --{ emptyTe |
-         --   stars = Just 3
-         -- , name  = "Hotel de Paris"
-         -- , addr  = "Place de l’Hôtel de Ville 63790 MUROL"
-         -- , tel   = "04 73 88 60 09"
-         -- , fax   = "04 73 88 69 62"
-         -- , descr = ["Hôtel restaurant"]
-         -- , mail  = "info@hoteldeparis-murol.com"
-         -- , site  = "http://www.hoteldeparis-murol.com"  
-         --}]
 
 campings = 
   [{ emptyTe |

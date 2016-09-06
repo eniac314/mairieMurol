@@ -70,4 +70,5 @@ initialContent =
       , link "Note de présentation SIVU" "baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf"
       , link "Dossier zone humide de Murol" "baseDocumentaire/Dossier zone humide de Murol.pdf"
       , link "Fiche Organicité" "baseDocumentaire/ficheORGANICITE.pdf"
+      , link "Livret d'informations sur le lac Chambon" "baseDocumentaire/livretLac.pdf"
       ]

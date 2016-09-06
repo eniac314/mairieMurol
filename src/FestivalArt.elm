@@ -9,7 +9,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
-import Lightbox exposing (Picture, defPic)
+import Lightbox exposing (Picture, defPic, picList)
 import Gallery exposing (..)
 import Time exposing (..)
 import Task exposing (..)
@@ -122,7 +122,12 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(festival, "festival")]
+galleries = [(festival2016, "festival2016")
+            ,(festival, "festival")
+            ]
+
+(festival2016, festival2016Fx) = 
+  Gallery.init (picList 88) "festivalArt2016" "Festival d'Art 2016"
 
 (festival, festivalFx) = 
   Gallery.init 

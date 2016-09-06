@@ -11841,42 +11841,45 @@ Elm.FestivalArt.make = function (_elm) {
    "Festival d\'Art 2015");
    var festival = _p0._0;
    var festivalFx = _p0._1;
-   var galleries = _U.list([{ctor: "_Tuple2",_0: festival,_1: "festival"}]);
+   var _p1 = A3($Gallery.init,$Lightbox.picList(88),"festivalArt2016","Festival d\'Art 2016");
+   var festival2016 = _p1._0;
+   var festival2016Fx = _p1._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: festival2016,_1: "festival2016"},{ctor: "_Tuple2",_0: festival,_1: "festival"}]);
    var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
    var update = F2(function (action,model) {
-      var _p1 = action;
-      if (_p1.ctor === "NoOp") {
+      var _p2 = action;
+      if (_p2.ctor === "NoOp") {
             return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          } else {
-            var updateWithId = function (_p2) {
-               var _p3 = _p2;
-               var _p5 = _p3._0;
-               var _p4 = _p3._1;
-               return _U.eq(_p4,_p1._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p1._1,_p5),_1: _p4} : {ctor: "_Tuple2"
-                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p5,_1: $Effects.none}
-                                                                                                         ,_1: _p4};
+            var updateWithId = function (_p3) {
+               var _p4 = _p3;
+               var _p6 = _p4._0;
+               var _p5 = _p4._1;
+               return _U.eq(_p5,_p2._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p2._1,_p6),_1: _p5} : {ctor: "_Tuple2"
+                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p6,_1: $Effects.none}
+                                                                                                         ,_1: _p5};
             };
-            var _p6 = A3($List.foldl,
-            F2(function (_p8,_p7) {
-               var _p9 = _p8;
-               var _p11 = _p9._1;
-               var _p10 = _p7;
+            var _p7 = A3($List.foldl,
+            F2(function (_p9,_p8) {
+               var _p10 = _p9;
+               var _p12 = _p10._1;
+               var _p11 = _p8;
                return {ctor: "_Tuple2"
-                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p9._0._0,_1: _p11},_p10._0)
-                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p11),_p9._0._1),_p10._1)};
+                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p10._0._0,_1: _p12},_p11._0)
+                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p12),_p10._0._1),_p11._1)};
             }),
             {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
             A2($List.map,updateWithId,function (_) {    return _.galleries;}(model)));
-            var ng = _p6._0;
-            var effs = _p6._1;
+            var ng = _p7._0;
+            var effs = _p7._1;
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p12) {
-      var _p13 = _p12;
-      var _p14 = _p13._0;
-      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p14))]));
-      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p13._1)),_p14)]));
+   var viewGallery = F2(function (address,_p13) {
+      var _p14 = _p13;
+      var _p15 = _p14._0;
+      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p15))]));
+      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p14._1)),_p15)]));
    });
    var view = F2(function (address,model) {
       var galleriesHtml = $List.concat(A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)));
@@ -11896,7 +11899,7 @@ Elm.FestivalArt.make = function (_elm) {
               ,$Utils.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p15) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p16) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};
@@ -11918,6 +11921,8 @@ Elm.FestivalArt.make = function (_elm) {
                                     ,app: app
                                     ,main: main
                                     ,galleries: galleries
+                                    ,festival2016: festival2016
+                                    ,festival2016Fx: festival2016Fx
                                     ,festival: festival
                                     ,festivalFx: festivalFx};
 };

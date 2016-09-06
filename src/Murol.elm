@@ -140,7 +140,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 20 juin 2016"]
+            [text "Dernière mise à jour le lundi 01 août 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -739,7 +739,7 @@ news =
                  , a [href "/baseDocumentaire/animation/affiche14juillet2016.pdf", target "_blank"]
                      [text "programme 14 juillet"]
                  ]
-   , expiry = Date.fromString "08/01/2016"
+   , expiry = Date.fromString "07/31/2016"
    }
    ,{ emptyNews |
      title = "Murol Infos 31"
@@ -789,14 +789,76 @@ news =
                      , text "."
                      ]
                  , p []
-                     [ text "Le supermarché SPAR offre un nouveau service à ses clients, le drive,
+                     [ text "Le supermarché SPAR offre de nouveaux services à ses clients, le drive et la livraison à domicile,
                              à retrouver sur le site du "
                      , a [href "/Commerces.html#SupermarchéSPAR"] [text "magasin"]
                      , text "."
                      ]
                  ]
    , expiry = Date.fromString "07/20/2016"
-   } 
+   }
+  
+  ,{ emptyNews |
+     title = "COUPURE DE COURANT POUR TRAVAUX"
+   , date  = Date.fromString "06/29/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "JEUDI 30 JUIN de 9h à 12h
+                          Rue de la Pardaniche
+                          Place de la Mairie
+                          Rue Chabrol
+                          Groire"
+                    ]
+                 , p []
+                     [text "JEUDI 30 JUIN de 12h à 15h
+                            Rue de la Pardaniche
+                            Le Bourg
+                            Rue Chabrol
+                            Route de Groire
+                            Rue Guy de Maupassant
+                            Rue de Besse"]
+                 ]
+   , expiry = Date.fromString "07/01/2016"
+   }
+   ,{ emptyNews |
+     title = "Livret d'informations sur le lac Chambon"
+   , date  = Date.fromString "07/04/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Dans le cadre de la labellisation Pavillon Bleu de leurs plages,
+                           les communes de Chambon sur Lac et de Murol ont réalisé un livret
+                           d'informations sur le lac Chambon. "
+                    , a [href "baseDocumentaire/livretLac.pdf", target "_blank"] [text "Télécharger"]]
+                 ]
+   , expiry = Date.fromString "09/04/2016"
+   }
+   ,{ emptyNews |
+     title = "Minute de silence en hommage des victimes de Nice"
+   , date  = Date.fromString "07/17/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "A la demande de la préfecture, une minute de silence sera observée
+                          dimanche 17 juillet à midi devant la mairie de Murol en hommage aux victimes de Nice."]
+                 ]
+   , expiry = Date.fromString "07/19/2016"
+   }    
+   ,{ emptyNews |
+     title = "Animation saison estivale - programmes août disponibles"
+   , date  = Date.fromString "07/31/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [ text "La saison estivale continue avec de nombreuses animations présentées sur des programmes par quinzaine.
+                             "]
+                 , a [href "/baseDocumentaire/animation/programme3.pdf", target "_blank"]
+                     [text "programme 31 juillet - 12 août"]
+                 , br [] []
+                 , a [href "/baseDocumentaire/animation/programme4.pdf", target "_blank"]
+                     [text "programme 14 - 31 août"]
+                 
+                 ]
+   , expiry = Date.fromString "08/31/2016"
+ }
+
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""
