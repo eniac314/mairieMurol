@@ -13,10 +13,29 @@ Elm.Utils.make = function (_elm) {
    $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
+   $Random = Elm.Random.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $String = Elm.String.make(_elm);
    var _op = {};
+   var zip = F2(function (xs,ys) {
+      var _p0 = {ctor: "_Tuple2",_0: xs,_1: ys};
+      if (_p0._0.ctor === "::" && _p0._1.ctor === "::") {
+            return A2($List._op["::"],{ctor: "_Tuple2",_0: _p0._0._0,_1: _p0._1._0},A2(zip,_p0._0._1,_p0._1._1));
+         } else {
+            return _U.list([]);
+         }
+   });
+   var shuffle = F2(function (xs,seed) {
+      var l = $List.length(xs);
+      var g = A2($Random.$int,0,10 * l);
+      var indexesGen = A2($Random.list,l,g);
+      var indexList = $Basics.fst(A2($Random.generate,indexesGen,$Random.initialSeed(seed)));
+      var sortedList = A2($List.sortWith,
+      F2(function (_p2,_p1) {    var _p3 = _p2;var _p4 = _p1;return A2($Basics.compare,_p3._0,_p4._0);}),
+      A2(zip,indexList,xs));
+      return A2($List.map,$Basics.snd,sortedList);
+   });
    var prettyUrl = function (url) {    return A2($String.startsWith,"http://www",url) ? A2($String.dropLeft,7,url) : url;};
    var miniLightBox = function (name) {
       return A2($Html.div,
@@ -37,40 +56,40 @@ Elm.Utils.make = function (_elm) {
    };
    var split3$ = function (xs) {
       var chunk = F2(function (n,xs) {
-         var _p0 = xs;
-         if (_p0.ctor === "[]") {
+         var _p5 = xs;
+         if (_p5.ctor === "[]") {
                return _U.list([]);
             } else {
-               var _p1 = _p0;
-               return A2($List._op["::"],A2($List.take,n,_p1),A2(chunk,n,A2($List.drop,n,_p1)));
+               var _p6 = _p5;
+               return A2($List._op["::"],A2($List.take,n,_p6),A2(chunk,n,A2($List.drop,n,_p6)));
             }
       });
       var l = $Basics.ceiling($Basics.toFloat($List.length(xs)) / 3);
       return A2(chunk,l,xs);
    };
-   var split3 = F2(function (xs,_p2) {
+   var split3 = F2(function (xs,_p7) {
       split3: while (true) {
-         var _p3 = _p2;
-         var _p7 = _p3._2;
-         var _p6 = _p3._1;
-         var _p5 = _p3._0;
-         var _p4 = xs;
-         if (_p4.ctor === "[]") {
-               return {ctor: "_Tuple3",_0: _p5,_1: _p6,_2: _p7};
+         var _p8 = _p7;
+         var _p12 = _p8._2;
+         var _p11 = _p8._1;
+         var _p10 = _p8._0;
+         var _p9 = xs;
+         if (_p9.ctor === "[]") {
+               return {ctor: "_Tuple3",_0: _p10,_1: _p11,_2: _p12};
             } else {
-               if (_p4._1.ctor === "[]") {
-                     return {ctor: "_Tuple3",_0: A2($List._op["::"],_p4._0,_p5),_1: _p6,_2: _p7};
+               if (_p9._1.ctor === "[]") {
+                     return {ctor: "_Tuple3",_0: A2($List._op["::"],_p9._0,_p10),_1: _p11,_2: _p12};
                   } else {
-                     if (_p4._1._1.ctor === "[]") {
-                           return {ctor: "_Tuple3",_0: A2($List._op["::"],_p4._0,_p5),_1: A2($List._op["::"],_p4._1._0,_p6),_2: _p7};
+                     if (_p9._1._1.ctor === "[]") {
+                           return {ctor: "_Tuple3",_0: A2($List._op["::"],_p9._0,_p10),_1: A2($List._op["::"],_p9._1._0,_p11),_2: _p12};
                         } else {
-                           var _v3 = _p4._1._1._1,
-                           _v4 = {ctor: "_Tuple3"
-                                 ,_0: A2($List._op["::"],_p4._0,_p5)
-                                 ,_1: A2($List._op["::"],_p4._1._0,_p6)
-                                 ,_2: A2($List._op["::"],_p4._1._1._0,_p7)};
-                           xs = _v3;
-                           _p2 = _v4;
+                           var _v6 = _p9._1._1._1,
+                           _v7 = {ctor: "_Tuple3"
+                                 ,_0: A2($List._op["::"],_p9._0,_p10)
+                                 ,_1: A2($List._op["::"],_p9._1._0,_p11)
+                                 ,_2: A2($List._op["::"],_p9._1._1._0,_p12)};
+                           xs = _v6;
+                           _p7 = _v7;
                            continue split3;
                         }
                   }
@@ -97,18 +116,18 @@ Elm.Utils.make = function (_elm) {
       return A3($Html.node,"script",_U.list([$Html$Attributes.src(source),$Html$Attributes.type$("text/javascript")]),_U.list([$Html.text(js)]));
    });
    var capitalize = function (string) {
-      var _p8 = $String.uncons(string);
-      if (_p8.ctor === "Nothing") {
+      var _p13 = $String.uncons(string);
+      if (_p13.ctor === "Nothing") {
             return "";
          } else {
-            return A2($String.cons,$Char.toUpper(_p8._0._0),_p8._0._1);
+            return A2($String.cons,$Char.toUpper(_p13._0._0),_p13._0._1);
          }
    };
    var year$ = function (date) {    return $Basics.toString($Date.year(date));};
    var day$ = function (date) {    var res = $Basics.toString($Date.day(date));return _U.eq($String.length(res),1) ? A2($Basics._op["++"],"0",res) : res;};
    var months$ = function (date) {
-      var _p9 = $Date.month(date);
-      switch (_p9.ctor)
+      var _p14 = $Date.month(date);
+      switch (_p14.ctor)
       {case "Jan": return "01";
          case "Feb": return "02";
          case "Mar": return "03";
@@ -163,13 +182,13 @@ Elm.Utils.make = function (_elm) {
       _U.list([A2($Html.ul,
       _U.list([]),
       A2($List.map,
-      function (_p10) {
-         var _p11 = _p10;
+      function (_p15) {
+         var _p16 = _p15;
          return A2($Html.li,
          _U.list([]),
          _U.list([A2($Html.a,
-         _U.list([$Html$Attributes.href(_p11._1),$Html$Attributes.target("_blank")]),
-         _U.list([A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",_p11._0))]),_U.list([]))]))]));
+         _U.list([$Html$Attributes.href(_p16._1),$Html$Attributes.target("_blank")]),
+         _U.list([A2($Html.img,_U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/",_p16._0))]),_U.list([]))]))]));
       },
       pics))]));
    };
@@ -204,23 +223,23 @@ Elm.Utils.make = function (_elm) {
             return A2($Basics._op["++"],s,".html");
          }(A2($String.join,"",A2($List.map,capitalize,$String.words(s))));
       };
-      var _p12 = m;
-      if (_p12.ctor === "Leaf") {
-            var _p14 = _p12._1;
-            var _p13 = _p12._0;
-            var link$ = $String.isEmpty(_p14) ? toUrl(_p13) : _p14;
-            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p13)]))]),_U.list([$Html.text(_p13)]));
+      var _p17 = m;
+      if (_p17.ctor === "Leaf") {
+            var _p19 = _p17._1;
+            var _p18 = _p17._0;
+            var link$ = $String.isEmpty(_p19) ? toUrl(_p18) : _p19;
+            return A2($Html.a,_U.list([$Html$Attributes.href(link$),$Html$Attributes.classList(_U.list([current(_p18)]))]),_U.list([$Html.text(_p18)]));
          } else {
-            var _p16 = _p12._1;
-            var _p15 = _p12._0;
-            return $String.isEmpty(_p15) ? A2($Html.nav,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu(pos),_p16)) : A2($Html.nav,
-            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p15,"Content"))]),
+            var _p21 = _p17._1;
+            var _p20 = _p17._0;
+            return $String.isEmpty(_p20) ? A2($Html.nav,_U.list([$Html$Attributes.$class("mainMenu")]),A2($List.map,renderMainMenu(pos),_p21)) : A2($Html.nav,
+            _U.list([$Html$Attributes.$class(A2($Basics._op["++"],_p20,"Content"))]),
             _U.list([A2($Html.label,
-                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p15,"dropBtn"),_1: true},current(_p15)]))
-                            ,$Html$Attributes.$for(_p15)]),
-                    _U.list([$Html.text(_p15)]))
-                    ,A2($Html.input,_U.list([$Html$Attributes.type$("radio"),$Html$Attributes.name("menuRadio"),$Html$Attributes.id(_p15)]),_U.list([]))
-                    ,A2($Html.nav,_U.list([]),A2($List.map,renderMainMenu(pos),_p16))]));
+                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: A2($Basics._op["++"],_p20,"dropBtn"),_1: true},current(_p20)]))
+                            ,$Html$Attributes.$for(_p20)]),
+                    _U.list([$Html.text(_p20)]))
+                    ,A2($Html.input,_U.list([$Html$Attributes.type$("radio"),$Html$Attributes.name("menuRadio"),$Html$Attributes.id(_p20)]),_U.list([]))
+                    ,A2($Html.nav,_U.list([]),A2($List.map,renderMainMenu(pos),_p21))]));
          }
    });
    var Node = F2(function (a,b) {    return {ctor: "Node",_0: a,_1: b};});
@@ -302,5 +321,7 @@ Elm.Utils.make = function (_elm) {
                               ,split3: split3
                               ,split3$: split3$
                               ,miniLightBox: miniLightBox
-                              ,prettyUrl: prettyUrl};
+                              ,prettyUrl: prettyUrl
+                              ,zip: zip
+                              ,shuffle: shuffle};
 };

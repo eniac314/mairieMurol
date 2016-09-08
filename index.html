@@ -8,6 +8,7 @@
   <title>La commune de Murol</title>
   <script type="text/javascript" src="./js/murol.js"></script>
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -29,6 +30,8 @@
   var mm = today.getMonth()+1; //January is 0!
   var yyyy = today.getFullYear();
 
+  var time = today.getTime();
+
   if(dd<10) {
       dd='0'+dd
   } 
@@ -41,7 +44,7 @@
 
   var elmDiv = document.getElementById('elm-app');
   // var elmApp = Elm.embed(Elm.Murol, elmDiv, {scrollY: 0});
-  var elmApp = Elm.embed(Elm.Murol, elmDiv, {today: today});
+  var elmApp = Elm.embed(Elm.Murol, elmDiv, {today: today, time: time});
   
   
 

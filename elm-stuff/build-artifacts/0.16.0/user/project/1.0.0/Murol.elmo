@@ -8,6 +8,7 @@ Elm.Murol.make = function (_elm) {
    $Date = Elm.Date.make(_elm),
    $Debug = Elm.Debug.make(_elm),
    $Effects = Elm.Effects.make(_elm),
+   $Gallery = Elm.Gallery.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
    $Html$Events = Elm.Html.Events.make(_elm),
@@ -18,6 +19,7 @@ Elm.Murol.make = function (_elm) {
    $StartApp = Elm.StartApp.make(_elm),
    $String = Elm.String.make(_elm),
    $Task = Elm.Task.make(_elm),
+   $Time = Elm.Time.make(_elm),
    $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var newsletters = _U.list([{ctor: "_Tuple2"
@@ -29,6 +31,11 @@ Elm.Murol.make = function (_elm) {
                              ,{ctor: "_Tuple2"
                               ,_0: "Recevoir une alerte mise à jour site"
                               ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}]);
+   var time = Elm.Native.Port.make(_elm).inbound("time",
+   "Int",
+   function (v) {
+      return typeof v === "number" && isFinite(v) && Math.floor(v) === v ? v : _U.badPort("an integer",v);
+   });
    var today = Elm.Native.Port.make(_elm).inbound("today",
    "String",
    function (v) {
@@ -108,33 +115,35 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.id("newsletters"),$Html$Attributes.$class("submenu entry")]),
       _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Inscrivez vous")])),A2($Html.ul,_U.list([]),newsList)]));
    };
+   var GalleryAction = function (a) {    return {ctor: "GalleryAction",_0: a};};
+   var timer = A2($Signal.map,function (_p2) {    return GalleryAction($Gallery.TimeStep);},$Time.every(10 * $Time.second));
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
-   var renderNews = F2(function (address,_p2) {
-      var _p3 = _p2;
-      var _p7 = _p3.drop;
-      var arrow = _p7 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
+   var renderNews = F2(function (address,_p3) {
+      var _p4 = _p3;
+      var _p8 = _p4.drop;
+      var arrow = _p8 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
       _U.list([$Html$Attributes.src("/images/dArrow.jpeg")]),
       _U.list([]));
       var pic$ = function () {
-         var _p4 = _p3.pic;
-         if (_p4.ctor === "Nothing") {
+         var _p5 = _p4.pic;
+         if (_p5.ctor === "Nothing") {
                return $Utils.nullTag;
             } else {
                return A2($Html.img,
-               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p4._0)),$Html$Attributes.$class("newspic")]),
+               _U.list([$Html$Attributes.src(A2($Basics._op["++"],"/images/news/",_p5._0)),$Html$Attributes.$class("newspic")]),
                _U.list([]));
             }
       }();
-      var body = _p7 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p3.descr])) : $Utils.nullTag;
+      var body = _p8 ? A2($Html.div,_U.list([$Html$Attributes.$class("newsBody")]),_U.list([pic$,_p4.descr])) : $Utils.nullTag;
       var date$ = function () {
-         var _p5 = _p3.date;
-         if (_p5.ctor === "Err") {
-               return _p5._0;
+         var _p6 = _p4.date;
+         if (_p6.ctor === "Err") {
+               return _p6._0;
             } else {
-               var _p6 = _p5._0;
+               var _p7 = _p6._0;
                return A2($Basics._op["++"],
-               $Utils.day$(_p6),
-               A2($Basics._op["++"]," ",A2($Basics._op["++"],$Utils.months$(_p6),A2($Basics._op["++"]," ",$Utils.year$(_p6)))));
+               $Utils.day$(_p7),
+               A2($Basics._op["++"]," ",A2($Basics._op["++"],$Utils.months$(_p7),A2($Basics._op["++"]," ",$Utils.year$(_p7)))));
             }
       }();
       return A2($Html.div,
@@ -142,8 +151,8 @@ Elm.Murol.make = function (_elm) {
       _U.list([A2($Html.div,
               _U.list([$Html$Attributes.$class("newsHeader")]),
               _U.list([A2($Html.h5,
-                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p3.id))]),
-                      _U.list([$Html.text(_p3.title)]))
+                      _U.list([$Html$Attributes.$class("newsTitle"),A2($Html$Events.onClick,address,Drop(_p4.id))]),
+                      _U.list([$Html.text(_p4.title)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("date")]),_U.list([$Html.text(date$)]))
                       ,A2($Html.span,_U.list([$Html$Attributes.$class("arrow")]),_U.list([arrow]))]))
               ,body]));
@@ -170,7 +179,11 @@ Elm.Murol.make = function (_elm) {
               _U.list([A2(renderContent,function (_) {    return _.news;}(model),address)
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.$class("sidebar")]),
-                      _U.list([renderAgenda,renderPlugins,renderNewsLetter(function (_) {    return _.newsletters;}(model))]))]))
+                      _U.list([renderAgenda
+                              ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Une photo au hasard")]))
+                              ,A2($Gallery.viewM,A2($Signal.forwardTo,address,GalleryAction),function (_) {    return _.miniGallery;}(model))
+                              ,renderPlugins
+                              ,renderNewsLetter(function (_) {    return _.newsletters;}(model))]))]))
               ,$Utils.pageFooter]));
    });
    var Hover = function (a) {    return {ctor: "Hover",_0: a};};
@@ -183,30 +196,34 @@ Elm.Murol.make = function (_elm) {
       return A2($List.filter,p,ns);
    });
    var newstime = function (news) {
-      var _p8 = function (_) {    return _.date;}(news);
-      if (_p8.ctor === "Err") {
+      var _p9 = function (_) {    return _.date;}(news);
+      if (_p9.ctor === "Err") {
             return 0;
          } else {
-            return $Date.toTime(_p8._0);
+            return $Date.toTime(_p9._0);
          }
    };
    var dropN = F2(function (id,n) {
       return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
    });
    var update = F2(function (action,model) {
-      var _p9 = action;
-      switch (_p9.ctor)
+      var _p10 = action;
+      switch (_p10.ctor)
       {case "NoOp": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Hover": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
-         default: var n1 = A2($List.map,dropN(_p9._0),function (_) {    return _.news;}(model));
-           return {ctor: "_Tuple2",_0: _U.update(model,{news: n1}),_1: $Effects.none};}
+         case "Drop": var n1 = A2($List.map,dropN(_p10._0),function (_) {    return _.news;}(model));
+           return {ctor: "_Tuple2",_0: _U.update(model,{news: n1}),_1: $Effects.none};
+         default: var _p11 = A2($Gallery.updateM,_p10._0,function (_) {    return _.miniGallery;}(model));
+           var newGallery = _p11._0;
+           var effects = _p11._1;
+           return {ctor: "_Tuple2",_0: _U.update(model,{miniGallery: newGallery}),_1: A2($Effects.map,GalleryAction,effects)};}
    });
    var tag = F3(function (i,n,xs) {
-      var _p10 = xs;
-      if (_p10.ctor === "[]") {
+      var _p12 = xs;
+      if (_p12.ctor === "[]") {
             return _U.list([]);
          } else {
-            return A2($List._op["::"],_U.update(_p10._0,{id: i + n}),A3(tag,i,n + 1,_p10._1));
+            return A2($List._op["::"],_U.update(_p12._0,{id: i + n}),A3(tag,i,n + 1,_p12._1));
          }
    });
    var prepNews = F2(function (t,ns) {
@@ -742,11 +759,15 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme4.pdf"),$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("programme 14 - 31 août")]))]))
                       ,expiry: $Date.fromString("08/31/2016")})]);
-   var initialModel = {mainMenu: $Utils.mainMenu,logos: $Utils.logos,newsletters: newsletters,news: A2(prepNews,today,news)};
-   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([])});
+   var initialModel = {mainMenu: $Utils.mainMenu
+                      ,logos: $Utils.logos
+                      ,newsletters: newsletters
+                      ,news: A2(prepNews,today,news)
+                      ,miniGallery: $Basics.fst($Gallery.initMiniGallery(time))};
+   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([timer])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
-   var Model = F4(function (a,b,c,d) {    return {mainMenu: a,logos: b,newsletters: c,news: d};});
+   var Model = F5(function (a,b,c,d,e) {    return {mainMenu: a,logos: b,newsletters: c,news: d,miniGallery: e};});
    return _elm.Murol.values = {_op: _op
                               ,Model: Model
                               ,News: News
@@ -760,6 +781,7 @@ Elm.Murol.make = function (_elm) {
                               ,NoOp: NoOp
                               ,Hover: Hover
                               ,Drop: Drop
+                              ,GalleryAction: GalleryAction
                               ,update: update
                               ,renderContent: renderContent
                               ,renderNewsList: renderNewsList
@@ -771,6 +793,7 @@ Elm.Murol.make = function (_elm) {
                               ,renderPlugins: renderPlugins
                               ,renderAgenda: renderAgenda
                               ,view: view
+                              ,timer: timer
                               ,app: app
                               ,main: main
                               ,news: news

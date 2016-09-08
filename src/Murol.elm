@@ -11,6 +11,13 @@ import String exposing (words, join, cons, uncons)
 import Char
 import Task
 import TiledMenu
+import Time exposing (..)
+import Gallery exposing (initMiniGallery
+                        , updateM
+                        , viewM
+                        , Action
+                        , MiniGallery
+                        )
 import Utils exposing ( Menu
                       , Submenu
                       ,  renderMainMenu
@@ -36,6 +43,7 @@ type alias Model =
   , logos       : List (String,String)
   , newsletters : List (String,String)
   , news        : List News
+  , miniGallery : Gallery.MiniGallery
   --, newsMairie  : List News
   --, misc        : List (String,String)
   }
@@ -81,6 +89,7 @@ initialModel =
   , logos       = logos
   , newsletters = newsletters
   , news        = prepNews today news
+  , miniGallery = fst (initMiniGallery time)
   }
 
 
@@ -107,6 +116,7 @@ type Action
   | Hover String
   --| UtilsEntry (Utils.Action)
   | Drop  Int
+  | GalleryAction Gallery.Action
   --| ScrollY Int
 
 
@@ -119,9 +129,29 @@ update action model =
     Drop id -> 
       let n1 = List.map (dropN id) (.news model)
       in ({ model | news = n1 }, none)
+    GalleryAction act -> 
+      let (newGallery, effects) = Gallery.updateM act (.miniGallery model)
+      in ({model | miniGallery = newGallery} , Effects.map GalleryAction  effects)
 
 
+--update : Action -> Model -> (Model, Effects Action)
+--update action model =
+--  case action of 
+--    NoOp -> (model,none)
+--    (GalleryAction name act) ->
+--      let updateWithId (g,folder) =
+--            if (folder == name)
+--            then (Gallery.update act g, folder)
+--            else ((g,none),folder)
 
+--          (ng,effs) = List.foldl (\((g,e),f) (gs,ef) ->
+--                                   ((g,f)::gs,(Effects.map (GalleryAction f) e)::ef))
+--                                 ([],[])
+--                                 (List.map updateWithId (.galleries model))
+
+
+--      in ({ model | galleries = List.reverse ng}
+--          , Effects.batch effs)
 
 
 -- View
@@ -271,6 +301,8 @@ view address model =
             [ renderContent (.news model) address
             , div [class "sidebar"]
                   [ renderAgenda
+                  , h3 [] [text "Une photo au hasard"]
+                  , Gallery.viewM (Signal.forwardTo address GalleryAction) (.miniGallery model)
                   , renderPlugins
                   , renderNewsLetter (.newsletters model)
                   ]
@@ -278,18 +310,22 @@ view address model =
       , pageFooter 
       ]
 
+timer = Signal.map (\_ -> GalleryAction Gallery.TimeStep) (every (10*Time.second))
+
 app =
     StartApp.start
           { init = (initialModel, none)
           , view = view
           , update = update
-          , inputs = []
+          , inputs = [timer]
           }
 
 main =
     app.html
 
 port today : String
+
+port time : Int
 
 port tasks : Signal (Task.Task Never ())
 port tasks =

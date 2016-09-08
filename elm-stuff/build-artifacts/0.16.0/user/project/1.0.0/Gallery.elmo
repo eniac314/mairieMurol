@@ -13,11 +13,13 @@ Elm.Gallery.make = function (_elm) {
    $Html$Events = Elm.Html.Events.make(_elm),
    $Lightbox = Elm.Lightbox.make(_elm),
    $List = Elm.List.make(_elm),
+   $ListOfPics = Elm.ListOfPics.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $Streams = Elm.Streams.make(_elm),
-   $Time = Elm.Time.make(_elm);
+   $Time = Elm.Time.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
    var _op = {};
    var offset = function (x) {
       return $Html$Attributes.style(_U.list([{ctor: "_Tuple2"
@@ -140,6 +142,56 @@ Elm.Gallery.make = function (_elm) {
                                                                               {animationState: $Maybe.Just({elapsedTime: newElapsedTime,prevClockTime: _p10})})
                                                                               ,_1: $Effects.tick(Tick(_p11))};}
    });
+   var updateM = F2(function (action,model) {
+      var _p12 = action;
+      switch (_p12.ctor)
+      {case "Diaporama": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         case "Unfold": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         case "Move": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
+         case "TimeStep": return {ctor: "_Tuple2"
+                                 ,_0: _U.update(model,{direct: function (_) {    return _.moving;}(model) ? Right : function (_) {    return _.direct;}(model)})
+                                 ,_1: function (_) {
+                                    return _.moving;
+                                 }(model) ? $Effects.tick(Tick(Right)) : $Effects.none};
+         case "LightboxAction": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+         case "MoveLeft": var _p13 = model.animationState;
+           if (_p13.ctor === "Nothing") {
+                 return {ctor: "_Tuple2",_0: _U.update(model,{direct: Left}),_1: $Effects.tick(Tick(Left))};
+              } else {
+                 return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+              }
+         case "MoveRight": var _p14 = model.animationState;
+           if (_p14.ctor === "Nothing") {
+                 return {ctor: "_Tuple2",_0: _U.update(model,{direct: Right}),_1: $Effects.tick(Tick(Right))};
+              } else {
+                 return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
+              }
+         default: var _p18 = _p12._0;
+           var _p17 = _p12._1;
+           var newElapsedTime = function () {
+              var _p15 = model.animationState;
+              if (_p15.ctor === "Nothing") {
+                    return 0;
+                 } else {
+                    return _p15._0.elapsedTime + (_p17 - _p15._0.prevClockTime);
+                 }
+           }();
+           return _U.cmp(newElapsedTime,duration) > 0 ? {ctor: "_Tuple2"
+                                                        ,_0: _U.update(model,
+                                                        {pictures: function () {
+                                                           var _p16 = _p18;
+                                                           if (_p16.ctor === "Right") {
+                                                                 return $Streams.right(function (_) {    return _.pictures;}(model));
+                                                              } else {
+                                                                 return $Streams.left(function (_) {    return _.pictures;}(model));
+                                                              }
+                                                        }()
+                                                        ,animationState: $Maybe.Nothing})
+                                                        ,_1: $Effects.none} : {ctor: "_Tuple2"
+                                                                              ,_0: _U.update(model,
+                                                                              {animationState: $Maybe.Just({elapsedTime: newElapsedTime,prevClockTime: _p17})})
+                                                                              ,_1: $Effects.tick(Tick(_p18))};}
+   });
    var renderPreview = F2(function (address,model) {
       var thumb = function (p) {
          return A2($Html.a,
@@ -188,6 +240,58 @@ Elm.Gallery.make = function (_elm) {
                                                           ,{ctor: "_Tuple2",_0: "display",_1: function (_) {    return _.unfold;}(model)}]))]),
               _U.list([A2($Lightbox.view,A2($Signal.forwardTo,address,LightboxAction),function (_) {    return _.lightbox;}(model))]))]));
    });
+   var viewM = F2(function (address,model) {
+      var thumb = function (p) {
+         return A2($Html.a,
+         _U.list([offset((_U.eq(function (_) {    return _.direct;}(model),Left) ? 1 : -1) * toOffset(function (_) {    return _.animationState;}(model)))]),
+         _U.list([A2($Html.img,
+                 _U.list([$Html$Attributes.src(A2($Basics._op["++"],
+                 "images/photothèque/",
+                 A2($Basics._op["++"],function (_) {    return _.folder;}(p),A2($Basics._op["++"],"/thumbs/",function (_) {    return _.filename;}(p)))))]),
+                 _U.list([]))
+                 ,A2($Html.div,
+                 _U.list([$Html$Attributes.$class("hiddenGalleryLinksContainer")]),
+                 _U.list([A2($Html.a,
+                         _U.list([$Html$Attributes.href(function (_) {    return _.ref;}(p)),$Html$Attributes.$class("hiddenGalleryLinks")]),
+                         _U.list([$Html.text("Voir la gallerie")]))
+                         ,A2($Html.a,
+                         _U.list([$Html$Attributes.href("/photothèque.html"),$Html$Attributes.$class("hiddenGalleryLinks")]),
+                         _U.list([$Html.text("Visiter la photothèque")]))]))]));
+      };
+      var thumbs = A2($List.map,thumb,$Streams.current(function (_) {    return _.pictures;}(model)));
+      return A2($Html.div,
+      _U.list([$Html$Attributes.$class("gallery")
+              ,$Html$Attributes.id("miniGallery")
+              ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "280px"}]))]),
+      _U.list([A2($Html.div,
+              _U.list([$Html$Attributes.$class("previewPanel"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "230px"}]))]),
+              _U.list([A2($Html.div,
+              _U.list([$Html$Attributes.$class("previewThumbs")]),
+              _U.list([A2($Html.div,_U.list([$Html$Attributes.$class("innerPannel")]),thumbs)]))]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.$class("galleryButtons")
+                      ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"},{ctor: "_Tuple2",_0: "margin",_1: "auto"}]))]),
+              _U.list([A2($Html.button,
+                      _U.list([A2($Html$Events.onClick,address,MoveLeft)]),
+                      _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-backward")]),_U.list([]))]))
+                      ,A2($Html.button,
+                      _U.list([A2($Html$Events.onClick,address,Move)]),
+                      _U.list([function (_) {
+                         return _.moving;
+                      }(model) ? A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-pause")]),_U.list([])) : A2($Html.i,
+                      _U.list([$Html$Attributes.$class("fa fa-play")]),
+                      _U.list([]))]))
+                      ,A2($Html.button,
+                      _U.list([A2($Html$Events.onClick,address,MoveRight)]),
+                      _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-forward")]),_U.list([]))]))]))]));
+   });
+   var Thumbnail = F3(function (a,b,c) {    return {filename: a,folder: b,ref: c};});
+   var MiniGallery = F4(function (a,b,c,d) {    return {pictures: a,direct: b,animationState: c,moving: d};});
+   var initMiniGallery = function (seed) {
+      var thumbs = A2($List.map,function (_p19) {    var _p20 = _p19;return A3(Thumbnail,_p20._0,_p20._1,_p20._2);},$ListOfPics.picList2);
+      var picStream = A2($Streams.biStream,A3(chunk3,3,A2($List.take,20,A2($Utils.shuffle,thumbs,seed)),A3(Thumbnail,"","","")),_U.list([]));
+      return {ctor: "_Tuple2",_0: A4(MiniGallery,picStream,Left,$Maybe.Nothing,true),_1: $Effects.none};
+   };
    var Model = F9(function (a,b,c,d,e,f,g,h,i) {
       return {pictures: a,lightbox: b,direct: c,moving: d,unfold: e,diaporama: f,folder: g,descr: h,animationState: i};
    });
@@ -199,5 +303,15 @@ Elm.Gallery.make = function (_elm) {
       var pictures = A2($Streams.biStream,A3(chunk3,6,pics,$Lightbox.defPic),_U.list([]));
       return {ctor: "_Tuple2",_0: A9(Model,pictures,lightbox,Left,moving,unfold,diaporama,folder,descr,$Maybe.Nothing),_1: $Effects.none};
    });
-   return _elm.Gallery.values = {_op: _op,init: init,update: update,view: view,Model: Model,TimeStep: TimeStep};
+   return _elm.Gallery.values = {_op: _op
+                                ,init: init
+                                ,update: update
+                                ,view: view
+                                ,initMiniGallery: initMiniGallery
+                                ,updateM: updateM
+                                ,viewM: viewM
+                                ,chunk3: chunk3
+                                ,Model: Model
+                                ,MiniGallery: MiniGallery
+                                ,TimeStep: TimeStep};
 };

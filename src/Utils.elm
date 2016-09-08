@@ -8,7 +8,7 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Date exposing (..)
-
+import Random exposing (int, list, generate, initialSeed)
 
 
 -- Main Menu
@@ -322,3 +322,21 @@ prettyUrl url =
   if String.startsWith "http://www" url
   then String.dropLeft 7 url
   else url
+
+zip : List a -> List b -> List (a,b)
+zip xs ys =
+  case (xs, ys) of
+    ( x :: xs', y :: ys' ) ->
+        (x,y) :: zip xs' ys'
+
+    (_, _) ->
+        []
+
+shuffle : List a -> Int -> List a 
+shuffle xs seed = 
+  let l = length xs
+      g = int 0 (10*l)
+      indexesGen = Random.list l g
+      indexList = fst (generate indexesGen (initialSeed seed))
+      sortedList = sortWith (\ (i1,_) (i2,_) -> compare i1 i2) (zip indexList xs)
+  in List.map snd sortedList 

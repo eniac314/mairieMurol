@@ -1,4 +1,4 @@
-module 14Juillet where
+module Juillet14 where
 
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -21,7 +21,7 @@ import Utils exposing (mainMenu,
                        logos,
                        mail,
                        site,
-                       link)
+                       link) 
 
 -- Model
 

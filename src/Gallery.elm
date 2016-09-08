@@ -1,9 +1,14 @@
 module Gallery ( Picture
                , Action(TimeStep)
                , Model
+               , MiniGallery
                , init
                , update
-               , view) where
+               , view
+               , initMiniGallery
+               , updateM
+               , viewM
+               , chunk3 ) where
 
 import StartApp as StartApp
 import Html exposing (..)
@@ -18,6 +23,8 @@ import Dict exposing (..)
 import Date exposing (..)
 import Streams exposing (..)
 import Lightbox
+import ListOfPics exposing (picList, picList2)
+import Utils exposing (shuffle)
 import Time exposing (Time,second)
 
 -- Model
@@ -31,6 +38,19 @@ type alias Model =
      , folder : String
      , descr : String
      , animationState : AnimationState
+     }
+
+type alias MiniGallery = 
+     { pictures : BiStream (List Thumbnail)
+     , direct : Direction
+     , animationState : AnimationState
+     , moving : Bool
+     }
+
+type alias Thumbnail = 
+     { filename : String
+     , folder : String
+     , ref : String
      }
 
 type alias Picture = Lightbox.Picture
@@ -50,6 +70,14 @@ init pics folder descr =
       diaporama = False
   in ( Model pictures lightbox Left moving unfold diaporama folder descr Nothing
      , Effects.none ) 
+
+initMiniGallery : Int -> (MiniGallery, Effects Action)
+initMiniGallery seed = 
+  let thumbs = List.map (\(a,b,c) -> Thumbnail a b c) picList2
+      picStream = biStream (chunk3 3 (List.take 20 (shuffle thumbs seed)) (Thumbnail "" "" "")) []
+
+  in (MiniGallery picStream Left Nothing True, Effects.none)
+
 
 duration  = 1*Time.second
 
@@ -141,6 +169,67 @@ update action model =
           , Effects.tick (Tick direct)
           )
 
+updateM  : Action -> MiniGallery -> (MiniGallery, Effects Action) 
+updateM action model = 
+  case action of 
+    Diaporama -> (model,none)
+    Unfold    -> (model,none)
+    Move      -> ({ model | moving = not (.moving model) },none)
+    TimeStep  -> ({ model 
+                  | direct = if (.moving model)
+                             then Right
+                             else (.direct model)
+                  }, if (.moving model)
+                     then Effects.tick (Tick Right)
+                     else none)
+    LightboxAction act -> (model,none)
+    MoveLeft -> 
+      case model.animationState of
+        Nothing ->
+          ( { model | direct = Left }
+          , Effects.tick (Tick Left) )
+
+        Just _ ->
+          ( model, Effects.none )
+
+    MoveRight -> 
+      case model.animationState of
+        Nothing ->
+          ( { model | direct = Right }
+          , Effects.tick (Tick Right) )
+
+        Just _ ->
+          ( model, Effects.none )
+    
+    
+    Tick direct clockTime ->
+      let
+        newElapsedTime =
+          case model.animationState of
+            Nothing ->
+              0
+
+            Just {elapsedTime, prevClockTime} ->
+              elapsedTime + (clockTime - prevClockTime)
+      in
+        if newElapsedTime > duration then
+          ( { model | pictures = 
+                        case direct of 
+                          Right -> right (.pictures model)
+                          Left  -> left  (.pictures model)
+            , animationState = Nothing
+            }
+          , Effects.none
+          )
+        else
+          ( { model | 
+              animationState =
+               Just { elapsedTime = newElapsedTime, prevClockTime = clockTime }
+            }
+          , Effects.tick (Tick direct)
+          )
+
+
 -- View
 
 
@@ -197,6 +286,48 @@ view address model =
                ]
       , div [ classList [("galleryLightbox", True),("display", (.unfold model))]]
             [ Lightbox.view (Signal.forwardTo address LightboxAction) (.lightbox model)]
+      ]
+
+viewM : Signal.Address Action -> MiniGallery -> Html
+viewM address model = 
+  let thumb p  =
+        a [ offset ((if (.direct model) == Left then 1 else -1) * toOffset (.animationState model))
+          ]
+          [ img [src ("images/photothèque/" 
+                       ++ (.folder p)
+                       ++ "/thumbs/"
+                       ++ (.filename p))
+                ] []
+          , div [ class "hiddenGalleryLinksContainer"]
+                [ a [ href (.ref p)
+                    , class "hiddenGalleryLinks"
+                    ]
+                    [text "Voir la gallerie"]
+                , a [ href "/photothèque.html"
+                    , class "hiddenGalleryLinks"
+                    ]
+                    [text "Visiter la photothèque"]
+                ]
+          ]
+
+      thumbs = List.map thumb (current (.pictures model))
+  in 
+  div [ class "gallery" , id "miniGallery", style [("width","280px")]]
+      [ div [ class "previewPanel", style [("width","230px")]]
+            [ div [ class "previewThumbs"] [div [class "innerPannel"] thumbs]
+         
+            ]
+      , div [ class "galleryButtons" , style [("text-align","center"),("margin","auto")]]
+                            
+            [ button [ onClick address MoveLeft] [i [class "fa fa-backward"] []]
+            , button [ onClick address Move]
+                     [ if (.moving model)
+                       then i [class "fa fa-pause"] []
+                       else i [class "fa fa-play" ] [] 
+                     ]
+            , button [ onClick address MoveRight] [i [class "fa fa-forward"] []]
+               
+            ]
       ]
 
 -- Utils

@@ -8,7 +8,7 @@ module.exports = function(grunt) {
           "./js/utils.js": ["./src/Utils.elm"],
           "./js/periscolaire.js": ["./src/Periscolaire.elm"],
           "./js/decouvrirMurol.js": ["./src/DecouvrirMurol.elm"],
-          "./js/14Juillet.js": ["./src/14Juillet.elm"],
+          "./js/Juillet14.js": ["./src/Juillet14.elm"],
           "./js/medievales.js": ["./src/Medievales.elm"],
           "./js/patrimoinePhoto.js": ["./src/PatrimoinePhoto.elm"],
           "./js/annee2016.js": ["./src/Annee2016.elm"],
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
         files: ["./src/Murol.elm"
                 , "./src/Utils.elm"
                 , "./src/Medievales.elm"
-                , "./src/14Juillet.elm"
+                , "./src/Juillet14.elm"
                 , "./src/Annee2016.elm"
                 , "./src/PatrimoinePhoto.elm"
                 , "./src/Periscolaire.elm"
