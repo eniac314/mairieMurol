@@ -310,14 +310,14 @@ view address model =
       , pageFooter 
       ]
 
-timer = Signal.map (\_ -> GalleryAction Gallery.TimeStep) (every (10*Time.second))
+timer = Signal.map (\_ -> GalleryAction Gallery.TimeStep) (every (6*Time.second))
 
 app =
     StartApp.start
           { init = (initialModel, none)
           , view = view
           , update = update
-          , inputs = [timer]
+          , inputs = [timer, focusUpdate]
           }
 
 main =
@@ -326,6 +326,11 @@ main =
 port today : String
 
 port time : Int
+
+port focus : Signal Bool
+
+--focusUpdate : Signal GalleryAction
+focusUpdate = Signal.map (\b -> GalleryAction (Gallery.MoveB b)) focus
 
 port tasks : Signal (Task.Task Never ())
 port tasks =

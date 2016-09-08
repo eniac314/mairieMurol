@@ -1,5 +1,5 @@
 module Gallery ( Picture
-               , Action(TimeStep)
+               , Action(TimeStep,MoveB)
                , Model
                , MiniGallery
                , init
@@ -89,6 +89,7 @@ maxOffset = 224
 type Action = 
       Unfold
     | Move
+    | MoveB Bool
     | TimeStep
     | LightboxAction Lightbox.Action
     | MoveLeft
@@ -109,6 +110,9 @@ update action model =
     Unfold    -> ({ model | unfold = not (.unfold model) },none)
     
     Move      -> ({ model | moving = not (.moving model) },none)
+
+    MoveB b   -> ({ model | moving = b },none)
+
     
     TimeStep -> ({ model 
                  | lightbox = Lightbox.update Lightbox.TimeStep (.lightbox model)
@@ -175,6 +179,7 @@ updateM action model =
     Diaporama -> (model,none)
     Unfold    -> (model,none)
     Move      -> ({ model | moving = not (.moving model) },none)
+    MoveB b   -> ({ model | moving = b },none)
     TimeStep  -> ({ model 
                   | direct = if (.moving model)
                              then Right

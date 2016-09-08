@@ -44,13 +44,25 @@
 
   var elmDiv = document.getElementById('elm-app');
   // var elmApp = Elm.embed(Elm.Murol, elmDiv, {scrollY: 0});
-  var elmApp = Elm.embed(Elm.Murol, elmDiv, {today: today, time: time});
+  var elmApp = Elm.embed(Elm.Murol, elmDiv, {today: today, time: time, focus: true});
   
   
 
   window.onscroll = function(){
   
     elmApp.ports.scrollY.send(document.body.scrollTop)
+  
+  }
+
+  window.onfocus = function(){
+  
+    elmApp.ports.focus.send(true)
+  
+  }
+
+  window.onblur = function(){
+  
+    elmApp.ports.focus.send(false)
   
   }
 

@@ -12979,6 +12979,7 @@ Elm.Gallery.make = function (_elm) {
    var MoveLeft = {ctor: "MoveLeft"};
    var LightboxAction = function (a) {    return {ctor: "LightboxAction",_0: a};};
    var TimeStep = {ctor: "TimeStep"};
+   var MoveB = function (a) {    return {ctor: "MoveB",_0: a};};
    var Move = {ctor: "Move"};
    var Unfold = {ctor: "Unfold"};
    var maxOffset = 224;
@@ -13001,6 +13002,7 @@ Elm.Gallery.make = function (_elm) {
                                 ,_1: $Effects.none};
          case "Unfold": return {ctor: "_Tuple2",_0: _U.update(model,{unfold: $Basics.not(function (_) {    return _.unfold;}(model))}),_1: $Effects.none};
          case "Move": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
+         case "MoveB": return {ctor: "_Tuple2",_0: _U.update(model,{moving: _p5._0}),_1: $Effects.none};
          case "TimeStep": return {ctor: "_Tuple2"
                                  ,_0: _U.update(model,
                                  {lightbox: A2($Lightbox.update,$Lightbox.TimeStep,function (_) {    return _.lightbox;}(model))
@@ -13059,6 +13061,7 @@ Elm.Gallery.make = function (_elm) {
       {case "Diaporama": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Unfold": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Move": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
+         case "MoveB": return {ctor: "_Tuple2",_0: _U.update(model,{moving: _p12._0}),_1: $Effects.none};
          case "TimeStep": return {ctor: "_Tuple2"
                                  ,_0: _U.update(model,{direct: function (_) {    return _.moving;}(model) ? Right : function (_) {    return _.direct;}(model)})
                                  ,_1: function (_) {
@@ -13224,7 +13227,8 @@ Elm.Gallery.make = function (_elm) {
                                 ,chunk3: chunk3
                                 ,Model: Model
                                 ,MiniGallery: MiniGallery
-                                ,TimeStep: TimeStep};
+                                ,TimeStep: TimeStep
+                                ,MoveB: MoveB};
 };
 Elm.Juillet14 = Elm.Juillet14 || {};
 Elm.Juillet14.make = function (_elm) {

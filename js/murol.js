@@ -12979,6 +12979,7 @@ Elm.Gallery.make = function (_elm) {
    var MoveLeft = {ctor: "MoveLeft"};
    var LightboxAction = function (a) {    return {ctor: "LightboxAction",_0: a};};
    var TimeStep = {ctor: "TimeStep"};
+   var MoveB = function (a) {    return {ctor: "MoveB",_0: a};};
    var Move = {ctor: "Move"};
    var Unfold = {ctor: "Unfold"};
    var maxOffset = 224;
@@ -13001,6 +13002,7 @@ Elm.Gallery.make = function (_elm) {
                                 ,_1: $Effects.none};
          case "Unfold": return {ctor: "_Tuple2",_0: _U.update(model,{unfold: $Basics.not(function (_) {    return _.unfold;}(model))}),_1: $Effects.none};
          case "Move": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
+         case "MoveB": return {ctor: "_Tuple2",_0: _U.update(model,{moving: _p5._0}),_1: $Effects.none};
          case "TimeStep": return {ctor: "_Tuple2"
                                  ,_0: _U.update(model,
                                  {lightbox: A2($Lightbox.update,$Lightbox.TimeStep,function (_) {    return _.lightbox;}(model))
@@ -13059,6 +13061,7 @@ Elm.Gallery.make = function (_elm) {
       {case "Diaporama": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Unfold": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Move": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
+         case "MoveB": return {ctor: "_Tuple2",_0: _U.update(model,{moving: _p12._0}),_1: $Effects.none};
          case "TimeStep": return {ctor: "_Tuple2"
                                  ,_0: _U.update(model,{direct: function (_) {    return _.moving;}(model) ? Right : function (_) {    return _.direct;}(model)})
                                  ,_1: function (_) {
@@ -13224,7 +13227,8 @@ Elm.Gallery.make = function (_elm) {
                                 ,chunk3: chunk3
                                 ,Model: Model
                                 ,MiniGallery: MiniGallery
-                                ,TimeStep: TimeStep};
+                                ,TimeStep: TimeStep
+                                ,MoveB: MoveB};
 };
 Elm.UrlParsing = Elm.UrlParsing || {};
 Elm.UrlParsing.make = function (_elm) {
@@ -13530,6 +13534,11 @@ Elm.Murol.make = function (_elm) {
                              ,{ctor: "_Tuple2"
                               ,_0: "Recevoir une alerte mise à jour site"
                               ,_1: "https://docs.google.com/forms/d/1sAJ3usxihhBxeY6SNyr2v3JI98Ii27QL-7N_Yjtw4v8/viewform"}]);
+   var focus = Elm.Native.Port.make(_elm).inboundSignal("focus",
+   "Bool",
+   function (v) {
+      return typeof v === "boolean" ? v : _U.badPort("a boolean (true or false)",v);
+   });
    var time = Elm.Native.Port.make(_elm).inbound("time",
    "Int",
    function (v) {
@@ -13615,7 +13624,8 @@ Elm.Murol.make = function (_elm) {
       _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Inscrivez vous")])),A2($Html.ul,_U.list([]),newsList)]));
    };
    var GalleryAction = function (a) {    return {ctor: "GalleryAction",_0: a};};
-   var timer = A2($Signal.map,function (_p2) {    return GalleryAction($Gallery.TimeStep);},$Time.every(10 * $Time.second));
+   var timer = A2($Signal.map,function (_p2) {    return GalleryAction($Gallery.TimeStep);},$Time.every(6 * $Time.second));
+   var focusUpdate = A2($Signal.map,function (b) {    return GalleryAction($Gallery.MoveB(b));},focus);
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
    var renderNews = F2(function (address,_p3) {
       var _p4 = _p3;
@@ -14263,7 +14273,7 @@ Elm.Murol.make = function (_elm) {
                       ,newsletters: newsletters
                       ,news: A2(prepNews,today,news)
                       ,miniGallery: $Basics.fst($Gallery.initMiniGallery(time))};
-   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([timer])});
+   var app = $StartApp.start({init: {ctor: "_Tuple2",_0: initialModel,_1: $Effects.none},view: view,update: update,inputs: _U.list([timer,focusUpdate])});
    var main = app.html;
    var tasks = Elm.Native.Task.make(_elm).performSignal("tasks",app.tasks);
    var Model = F5(function (a,b,c,d,e) {    return {mainMenu: a,logos: b,newsletters: c,news: d,miniGallery: e};});
@@ -14295,6 +14305,7 @@ Elm.Murol.make = function (_elm) {
                               ,timer: timer
                               ,app: app
                               ,main: main
+                              ,focusUpdate: focusUpdate
                               ,news: news
                               ,newsletters: newsletters};
 };
