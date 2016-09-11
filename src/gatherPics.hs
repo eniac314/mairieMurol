@@ -73,6 +73,9 @@ main = do sd <- getCurrentDirectory
           hPrettyList names2 handle 
 
           hClose handle
+          
+          putStrLn $ "Found " ++ (show.length $ names2) ++ " pictures in "
+                      ++ (show.length $ names) ++ " directories"
 
           setCurrentDirectory sd
 
