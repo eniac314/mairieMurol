@@ -102,7 +102,7 @@ initialContent =
             --, p  [] [text "Lundi - Mercredi - Vendredi"]
             --, p  [] [text "de 9h00 à 12h00 / 14h00 à 19h00"]
             --, p  [] [text "3 samedis par mois de 9h00 à 12h00"]
-            , p  [class "pratiName"] [text "Dr Elise COLAS"]
+            --, p  [class "pratiName"] [text "Dr Elise COLAS"]
             ]
       , div [ class "praticiens"]
             [ h4 [] [text "CABINET DE SOINS INFIRMIERS"]

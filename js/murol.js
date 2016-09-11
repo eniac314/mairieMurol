@@ -11916,7 +11916,6 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "3 stand rue George Sand 8.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "3 stand salle des fêtes 3.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "3 stand place de la poste 2.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
-                          ,{ctor: "_Tuple3",_0: "waiting.gif",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "La compagnie Lilou Z1.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "2A  place de l\'église.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "3 stand rue George Sand 10.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
@@ -12461,7 +12460,6 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"3 stand rue George Sand 8.jpg"
                                        ,"3 stand salle des fêtes 3.jpg"
                                        ,"3 stand place de la poste 2.jpg"
-                                       ,"waiting.gif"
                                        ,"La compagnie Lilou Z1.jpg"
                                        ,"2A  place de l\'église.jpg"
                                        ,"3 stand rue George Sand 10.jpg"
@@ -13673,7 +13671,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 01 août 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 11 septembre 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {

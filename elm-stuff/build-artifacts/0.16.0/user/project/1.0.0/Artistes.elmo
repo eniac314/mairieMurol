@@ -79,8 +79,8 @@ Elm.Artistes.make = function (_elm) {
            _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Fabienne LAVEDRINE (atelier HOTANTIK BY FAB) : ferronnerie d’Art, sculpture")]))
                    ,A2($Html.img,_U.list([$Html$Attributes.src("/images/artistes/lavedrine1.jpg")]),_U.list([]))
                    ,A2($Html.a,
-                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.hotantikbyfab.fr/")]),
-                   _U.list([$Html.text("site officiel")]))]))
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("https://www.facebook.com/HotantikByFabCrea/")]),
+                   _U.list([$Html.text("page facebook")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("artiste")]),
            _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Annie DUMONTEL : couture, création de costumes")]))

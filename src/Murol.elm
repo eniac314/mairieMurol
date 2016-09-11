@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 01 août 2016"]
+            [text "Dernière mise à jour le dimanche 11 septembre 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 

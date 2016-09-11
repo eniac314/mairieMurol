@@ -11379,8 +11379,7 @@ Elm.Sante.make = function (_elm) {
            _U.list([$Html$Attributes.$class("praticiens")]),
            _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE CHIRURGIE DENTAIRE")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél :  04 73 88 27 96")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Maud JOLIVET")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Elise COLAS")]))]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Dr Maud JOLIVET")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),
            _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE SOINS INFIRMIERS")]))

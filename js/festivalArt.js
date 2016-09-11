@@ -11916,7 +11916,6 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "3 stand rue George Sand 8.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "3 stand salle des fêtes 3.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "3 stand place de la poste 2.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
-                          ,{ctor: "_Tuple3",_0: "waiting.gif",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "La compagnie Lilou Z1.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "2A  place de l\'église.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "3 stand rue George Sand 10.jpg",_1: "festivalArt",_2: "/FestivalArt.html"}
@@ -12461,7 +12460,6 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"3 stand rue George Sand 8.jpg"
                                        ,"3 stand salle des fêtes 3.jpg"
                                        ,"3 stand place de la poste 2.jpg"
-                                       ,"waiting.gif"
                                        ,"La compagnie Lilou Z1.jpg"
                                        ,"2A  place de l\'église.jpg"
                                        ,"3 stand rue George Sand 10.jpg"
