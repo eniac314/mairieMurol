@@ -1,5 +1,5 @@
 module Gallery ( Picture
-               , Action(TimeStep,MoveB)
+               , Action(TimeStep,Focused)
                , Model
                , MiniGallery
                , init
@@ -45,6 +45,7 @@ type alias MiniGallery =
      , direct : Direction
      , animationState : AnimationState
      , moving : Bool
+     , focused : Bool
      }
 
 type alias Thumbnail = 
@@ -76,7 +77,7 @@ initMiniGallery seed =
   let thumbs = List.map (\(a,b,c) -> Thumbnail a b c) picList2
       picStream = biStream (chunk3 3 (List.take 20 (shuffle thumbs seed)) (Thumbnail "" "" "")) []
 
-  in (MiniGallery picStream Left Nothing True, Effects.none)
+  in (MiniGallery picStream Left Nothing True True, Effects.none)
 
 
 duration  = 1*Time.second
@@ -88,8 +89,8 @@ maxOffset = 224
 
 type Action = 
       Unfold
-    | Move
-    | MoveB Bool
+    | Moving
+    | Focused Bool
     | TimeStep
     | LightboxAction Lightbox.Action
     | MoveLeft
@@ -109,9 +110,9 @@ update action model =
 
     Unfold    -> ({ model | unfold = not (.unfold model) },none)
     
-    Move      -> ({ model | moving = not (.moving model) },none)
+    Moving    -> ({ model | moving = not (.moving model) },none)
 
-    MoveB b   -> ({ model | moving = b },none)
+    Focused b -> ({ model | moving = b },none)
 
     
     TimeStep -> ({ model 
@@ -178,13 +179,13 @@ updateM action model =
   case action of 
     Diaporama -> (model,none)
     Unfold    -> (model,none)
-    Move      -> ({ model | moving = not (.moving model) },none)
-    MoveB b   -> ({ model | moving = b },none)
+    Moving    -> ({ model | moving = not (.moving model)},none)
+    Focused b -> ({ model | focused = b },none)
     TimeStep  -> ({ model 
-                  | direct = if (.moving model)
+                  | direct = if (.moving model )
                              then Right
                              else (.direct model)
-                  }, if (.moving model)
+                  }, if (.moving model && .focused model)
                      then Effects.tick (Tick Right)
                      else none)
     LightboxAction act -> (model,none)
@@ -278,7 +279,7 @@ view address model =
                              [ text "Voir toutes les photos"]
                      ]               
                , button [ onClick address MoveLeft] [i [class "fa fa-backward"] []]
-               , button [ onClick address Move]
+               , button [ onClick address Moving]
                         [ if (.moving model)
                           then i [class "fa fa-pause"] []
                           else i [class "fa fa-play" ] [] 
@@ -302,6 +303,9 @@ viewM address model =
                        ++ (.folder p)
                        ++ "/thumbs/"
                        ++ (.filename p))
+                --, style [("width","260px")
+                        --,("","")
+                        --]
                 ] []
           , div [ class "hiddenGalleryLinksContainer"]
                 [ a [ href (.ref p)
@@ -325,7 +329,7 @@ viewM address model =
       , div [ class "galleryButtons" , style [("text-align","center"),("margin","auto")]]
                             
             [ button [ onClick address MoveLeft] [i [class "fa fa-backward"] []]
-            , button [ onClick address Move]
+            , button [ onClick address Moving]
                      [ if (.moving model)
                        then i [class "fa fa-pause"] []
                        else i [class "fa fa-play" ] [] 

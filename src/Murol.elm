@@ -301,7 +301,7 @@ view address model =
             [ renderContent (.news model) address
             , div [class "sidebar"]
                   [ renderAgenda
-                  , h3 [] [text "Une photo au hasard"]
+                  , h3 [] [text "Coup d'oeil sur la photothèque"]
                   , Gallery.viewM (Signal.forwardTo address GalleryAction) (.miniGallery model)
                   , renderPlugins
                   , renderNewsLetter (.newsletters model)
@@ -330,7 +330,7 @@ port time : Int
 port focus : Signal Bool
 
 --focusUpdate : Signal GalleryAction
-focusUpdate = Signal.map (\b -> GalleryAction (Gallery.MoveB b)) focus
+focusUpdate = Signal.map (\b -> GalleryAction (Gallery.Focused b)) focus
 
 port tasks : Signal (Task.Task Never ())
 port tasks =

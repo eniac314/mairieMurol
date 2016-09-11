@@ -12979,8 +12979,8 @@ Elm.Gallery.make = function (_elm) {
    var MoveLeft = {ctor: "MoveLeft"};
    var LightboxAction = function (a) {    return {ctor: "LightboxAction",_0: a};};
    var TimeStep = {ctor: "TimeStep"};
-   var MoveB = function (a) {    return {ctor: "MoveB",_0: a};};
-   var Move = {ctor: "Move"};
+   var Focused = function (a) {    return {ctor: "Focused",_0: a};};
+   var Moving = {ctor: "Moving"};
    var Unfold = {ctor: "Unfold"};
    var maxOffset = 224;
    var duration = 1 * $Time.second;
@@ -13001,8 +13001,8 @@ Elm.Gallery.make = function (_elm) {
                                 ,_0: _U.update(model,{lightbox: A2($Lightbox.update,$Lightbox.OpenDiapo,function (_) {    return _.lightbox;}(model))})
                                 ,_1: $Effects.none};
          case "Unfold": return {ctor: "_Tuple2",_0: _U.update(model,{unfold: $Basics.not(function (_) {    return _.unfold;}(model))}),_1: $Effects.none};
-         case "Move": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
-         case "MoveB": return {ctor: "_Tuple2",_0: _U.update(model,{moving: _p5._0}),_1: $Effects.none};
+         case "Moving": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
+         case "Focused": return {ctor: "_Tuple2",_0: _U.update(model,{moving: _p5._0}),_1: $Effects.none};
          case "TimeStep": return {ctor: "_Tuple2"
                                  ,_0: _U.update(model,
                                  {lightbox: A2($Lightbox.update,$Lightbox.TimeStep,function (_) {    return _.lightbox;}(model))
@@ -13060,12 +13060,14 @@ Elm.Gallery.make = function (_elm) {
       switch (_p12.ctor)
       {case "Diaporama": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "Unfold": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
-         case "Move": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
-         case "MoveB": return {ctor: "_Tuple2",_0: _U.update(model,{moving: _p12._0}),_1: $Effects.none};
+         case "Moving": return {ctor: "_Tuple2",_0: _U.update(model,{moving: $Basics.not(function (_) {    return _.moving;}(model))}),_1: $Effects.none};
+         case "Focused": return {ctor: "_Tuple2",_0: _U.update(model,{focused: _p12._0}),_1: $Effects.none};
          case "TimeStep": return {ctor: "_Tuple2"
                                  ,_0: _U.update(model,{direct: function (_) {    return _.moving;}(model) ? Right : function (_) {    return _.direct;}(model)})
                                  ,_1: function (_) {
                                     return _.moving;
+                                 }(model) && function (_) {
+                                    return _.focused;
                                  }(model) ? $Effects.tick(Tick(Right)) : $Effects.none};
          case "LightboxAction": return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          case "MoveLeft": var _p13 = model.animationState;
@@ -13137,7 +13139,7 @@ Elm.Gallery.make = function (_elm) {
                       _U.list([A2($Html$Events.onClick,address,MoveLeft)]),
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-backward")]),_U.list([]))]))
                       ,A2($Html.button,
-                      _U.list([A2($Html$Events.onClick,address,Move)]),
+                      _U.list([A2($Html$Events.onClick,address,Moving)]),
                       _U.list([function (_) {
                          return _.moving;
                       }(model) ? A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-pause")]),_U.list([])) : A2($Html.i,
@@ -13189,7 +13191,7 @@ Elm.Gallery.make = function (_elm) {
                       _U.list([A2($Html$Events.onClick,address,MoveLeft)]),
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-backward")]),_U.list([]))]))
                       ,A2($Html.button,
-                      _U.list([A2($Html$Events.onClick,address,Move)]),
+                      _U.list([A2($Html$Events.onClick,address,Moving)]),
                       _U.list([function (_) {
                          return _.moving;
                       }(model) ? A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-pause")]),_U.list([])) : A2($Html.i,
@@ -13200,11 +13202,11 @@ Elm.Gallery.make = function (_elm) {
                       _U.list([A2($Html.i,_U.list([$Html$Attributes.$class("fa fa-forward")]),_U.list([]))]))]))]));
    });
    var Thumbnail = F3(function (a,b,c) {    return {filename: a,folder: b,ref: c};});
-   var MiniGallery = F4(function (a,b,c,d) {    return {pictures: a,direct: b,animationState: c,moving: d};});
+   var MiniGallery = F5(function (a,b,c,d,e) {    return {pictures: a,direct: b,animationState: c,moving: d,focused: e};});
    var initMiniGallery = function (seed) {
       var thumbs = A2($List.map,function (_p19) {    var _p20 = _p19;return A3(Thumbnail,_p20._0,_p20._1,_p20._2);},$ListOfPics.picList2);
       var picStream = A2($Streams.biStream,A3(chunk3,3,A2($List.take,20,A2($Utils.shuffle,thumbs,seed)),A3(Thumbnail,"","","")),_U.list([]));
-      return {ctor: "_Tuple2",_0: A4(MiniGallery,picStream,Left,$Maybe.Nothing,true),_1: $Effects.none};
+      return {ctor: "_Tuple2",_0: A5(MiniGallery,picStream,Left,$Maybe.Nothing,true,true),_1: $Effects.none};
    };
    var Model = F9(function (a,b,c,d,e,f,g,h,i) {
       return {pictures: a,lightbox: b,direct: c,moving: d,unfold: e,diaporama: f,folder: g,descr: h,animationState: i};
@@ -13228,7 +13230,7 @@ Elm.Gallery.make = function (_elm) {
                                 ,Model: Model
                                 ,MiniGallery: MiniGallery
                                 ,TimeStep: TimeStep
-                                ,MoveB: MoveB};
+                                ,Focused: Focused};
 };
 Elm.JourneeMurolais = Elm.JourneeMurolais || {};
 Elm.JourneeMurolais.make = function (_elm) {

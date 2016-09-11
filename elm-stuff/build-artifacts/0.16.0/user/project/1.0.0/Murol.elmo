@@ -122,7 +122,7 @@ Elm.Murol.make = function (_elm) {
    };
    var GalleryAction = function (a) {    return {ctor: "GalleryAction",_0: a};};
    var timer = A2($Signal.map,function (_p2) {    return GalleryAction($Gallery.TimeStep);},$Time.every(6 * $Time.second));
-   var focusUpdate = A2($Signal.map,function (b) {    return GalleryAction($Gallery.MoveB(b));},focus);
+   var focusUpdate = A2($Signal.map,function (b) {    return GalleryAction($Gallery.Focused(b));},focus);
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
    var renderNews = F2(function (address,_p3) {
       var _p4 = _p3;
@@ -186,7 +186,7 @@ Elm.Murol.make = function (_elm) {
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.$class("sidebar")]),
                       _U.list([renderAgenda
-                              ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Une photo au hasard")]))
+                              ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Coup d\'oeil sur la photothèque")]))
                               ,A2($Gallery.viewM,A2($Signal.forwardTo,address,GalleryAction),function (_) {    return _.miniGallery;}(model))
                               ,renderPlugins
                               ,renderNewsLetter(function (_) {    return _.newsletters;}(model))]))]))
