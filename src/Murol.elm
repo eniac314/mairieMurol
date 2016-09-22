@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le dimanche 11 septembre 2016"]
+            [text "Dernière mise à jour le mercredi 14 septembre 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -898,8 +898,21 @@ news =
                  
                  ]
    , expiry = Date.fromString "08/31/2016"
- }
-
+   }
+  ,{ emptyNews |
+     title = "Informations rentrée"
+   , date  = Date.fromString "09/14/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le nouveau "
+                    , a [href "/VieScolaire.html"] [text "calendrier scolaire"]
+                    , text " et les "
+                    , a [href "/PériEtExtra-scolaire.html"] [text "documents d'inscription"]
+                    , text " aux services périscolaires sont disponibles."
+                    ]
+                 ]
+   , expiry = Date.fromString "10/14/2016"
+   } 
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

@@ -116,19 +116,33 @@ initialContent =
                      au 1er étage ou par téléphone au 04 
                      73 88 60 67. "]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/fiche inscription Murol.pdf"
                    , target "_blank"]
-                   [ text "fiche d’inscription"]
+                   [ text "fiche d’inscription Murol"]
                ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/fiche inscription Chambon.pdf"
                    , target "_blank"]
-                   [ text "règlement intérieur"]
+                   [ text "fiche d’inscription Chambon"]
                ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/fiche inscription St Nectaire.pdf"
                    , target "_blank"]
-                   [ text "charte du savoir vivre"]
+                   [ text "fiche d’inscription Saint-Nectaire"]
+               ]
+           , p [ classList [("intro",True),("displayIntro", showIntro)]]
+               [ a [ href "/baseDocumentaire/periscolaire/reglementCharte.pdf"
+                   , target "_blank"]
+                   [ text "règlement intérieur et charte du savoir vivre"]
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
+           --        , target "_blank"]
+           --        [ text "règlement intérieur"]
+           --    ]
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+           --        , target "_blank"]
+           --        [ text "charte du savoir vivre"]
                ]
 
            , content])

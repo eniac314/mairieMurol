@@ -258,7 +258,7 @@ Elm.Gallery.make = function (_elm) {
                  _U.list([$Html$Attributes.$class("hiddenGalleryLinksContainer")]),
                  _U.list([A2($Html.a,
                          _U.list([$Html$Attributes.href(function (_) {    return _.ref;}(p)),$Html$Attributes.$class("hiddenGalleryLinks")]),
-                         _U.list([$Html.text("Voir la gallerie")]))
+                         _U.list([$Html.text("Voir la galerie")]))
                          ,A2($Html.a,
                          _U.list([$Html$Attributes.href("/photothèque.html"),$Html$Attributes.$class("hiddenGalleryLinks")]),
                          _U.list([$Html.text("Visiter la photothèque")]))]))]));

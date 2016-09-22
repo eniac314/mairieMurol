@@ -12056,23 +12056,29 @@ Elm.Periscolaire.make = function (_elm) {
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
                                    _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf")
+                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/fiche inscription Murol.pdf")
                                            ,$Html$Attributes.target("_blank")]),
-                                   _U.list([$Html.text("fiche d’inscription")]))]))
+                                   _U.list([$Html.text("fiche d’inscription Murol")]))]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
                                    _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf")
+                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/fiche inscription Chambon.pdf")
                                            ,$Html$Attributes.target("_blank")]),
-                                   _U.list([$Html.text("règlement intérieur")]))]))
+                                   _U.list([$Html.text("fiche d’inscription Chambon")]))]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
                                    _U.list([A2($Html.a,
-                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf")
+                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/fiche inscription St Nectaire.pdf")
                                            ,$Html$Attributes.target("_blank")]),
-                                   _U.list([$Html.text("charte du savoir vivre")]))]))
+                                   _U.list([$Html.text("fiche d’inscription Saint-Nectaire")]))]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
+                                                                               ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/reglementCharte.pdf"),$Html$Attributes.target("_blank")]),
+                                   _U.list([$Html.text("règlement intérieur et charte du savoir vivre")]))]))
                                    ,content]));
                         })
                         ,tiledMenu: A2($TiledMenu.initAtWithLink,locationSearch,peri)};

@@ -13167,7 +13167,7 @@ Elm.Gallery.make = function (_elm) {
                  _U.list([$Html$Attributes.$class("hiddenGalleryLinksContainer")]),
                  _U.list([A2($Html.a,
                          _U.list([$Html$Attributes.href(function (_) {    return _.ref;}(p)),$Html$Attributes.$class("hiddenGalleryLinks")]),
-                         _U.list([$Html.text("Voir la gallerie")]))
+                         _U.list([$Html.text("Voir la galerie")]))
                          ,A2($Html.a,
                          _U.list([$Html$Attributes.href("/photothèque.html"),$Html$Attributes.$class("hiddenGalleryLinks")]),
                          _U.list([$Html.text("Visiter la photothèque")]))]))]));
@@ -13671,7 +13671,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le dimanche 11 septembre 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 14 septembre 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -14267,7 +14267,20 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme4.pdf"),$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("programme 14 - 31 août")]))]))
-                      ,expiry: $Date.fromString("08/31/2016")})]);
+                      ,expiry: $Date.fromString("08/31/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Informations rentrée"
+                      ,date: $Date.fromString("09/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le nouveau ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/VieScolaire.html")]),_U.list([$Html.text("calendrier scolaire")]))
+                              ,$Html.text(" et les ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html")]),_U.list([$Html.text("documents d\'inscription")]))
+                              ,$Html.text(" aux services périscolaires sont disponibles.")]))]))
+                      ,expiry: $Date.fromString("10/14/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

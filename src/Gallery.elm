@@ -311,7 +311,7 @@ viewM address model =
                 [ a [ href (.ref p)
                     , class "hiddenGalleryLinks"
                     ]
-                    [text "Voir la gallerie"]
+                    [text "Voir la galerie"]
                 , a [ href "/photothèque.html"
                     , class "hiddenGalleryLinks"
                     ]
