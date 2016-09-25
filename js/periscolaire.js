@@ -11904,7 +11904,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP maternelle.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP 2016 MATERNELLE.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("maternelle")]))]))]))
                                             ,A2($Html.tr,
@@ -11916,7 +11916,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP Murol mars avril.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP MUROL 2016 période 1.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Murol")]))]))]))
                                             ,A2($Html.tr,
@@ -11928,7 +11928,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP Chambon.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP 2016 CHAMBON SUR LAC.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Chambon")]))]))]))
                                             ,A2($Html.tr,
@@ -11940,7 +11940,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP  Saint Nectaire mars avril.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP ST NECTAIRE 2016 période 1.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Saint-Nectaire")]))]))]))]))
                                     ,A2($Html.p,
