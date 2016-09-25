@@ -47,7 +47,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([$Html.text("A Murol, sont accueillis les enfants de Chambon \n                   sur Lac, Murol et Saint-Victor la Rivière du \n                   CP au CE2 inclus. La directrice de l’école \n                   élémentaire de Murol se nomme Corinne AUBERTY. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les enfants de CM1 et CM2 sont accueillis \n                   à l’école de Chambon sur Lac. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le directeur de l’école de Chambon sur Lac \n                    se nomme Claude BOURRET.")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2015 2016 ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2016 2017 ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Répartition des classes : ")]))
            ,A2($Html.ul,
            _U.list([]),
@@ -125,7 +125,7 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("*Des ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
-                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM de la vallée verte pour les enfants.")]))
+                   ,$Html.text("(TAP) sont organisés pour les enfants de 15h00 à 16h30 par le\n                   SIVOM de la vallée verte.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Horaires de classe à l’école de Chambon\n                    sur Lac (suite à la réforme des rythmes scolaires) :")]))
@@ -197,10 +197,14 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("*Des ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
-                   ,$Html.text("(TAP) sont organisés de 15h15 à 16h45 par le\n                   SIVOM  de la vallée verte pour les enfants.")]))
+                   ,$Html.text("(TAP) sont organisés pour les enfants de 15h15 à 16h45 par le\n                   SIVOM  de la vallée verte.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le projet d’écoles 2016/2020")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Projet d’écoles : les axes prioritaires sont\n                   l’orthographe, le vocabulaire, la production d’écrits,\n                   la lecture oralisée, la compréhension de textes\n                   et la résolution de problèmes.")]))
+           _U.list([$Html.text("Il est commun à l’école maternelle et aux écoles élémentaires\n                de Murol et Chambon sur Lac. Il se décline de la petite section\n                de maternelle au CM2.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les priorités retenues dans ce projet sont l’amélioration \n                     de la compréhension (consignes, histoires, lecture, résolution de \n                     problèmes…) et du comportement (apprendre ensemble pour vivre \n                     ensemble, comprendre ce que signifie être un élève, \n                     respecter les autres et l’adulte…) \n                     ")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
            ,A2($Html.p,_U.list([]),_U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Vous êtes nouveaux sur la commune:")]))]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Allez à la mairie avec les documents suivants: ")]))
@@ -232,11 +236,11 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La maternelle accueille les enfants des quatre communes \n                   du SIVOM dès l’âge de 2 ans, en \n                   fonction des places disponibles. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("La directrice de l’école maternelle se nomme Séverine \n                   AUBOUIN. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2015 - 2016")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2016 - 2017")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Répartition des classes : ")]))
            ,A2($Html.ul,
            _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des petits et moyens : Sandrine GIDON et Céline GAILLARD")]))
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des petits et moyens : Sandrine GIDON")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des moyens et grands : Séverine AUBOUIN.")]))]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Horaires de classe (suite à la réforme des rythmes scolaires):")]))
            ,A2($Html.table,
@@ -307,14 +311,18 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("*Des ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("Temps d’Activités Périscolaires")]))
-                   ,$Html.text("(TAP) sont organisés de 15h00 à 16h30 par le\n                   SIVOM de la vallée verte pour les enfants.")]))
+                   ,$Html.text("(TAP) sont organisés pour les enfants de 15h00 à 16h30 par le\n                   SIVOM de la vallée verte.")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Le projet d’écoles 2016/2020")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le projet d’école : il se poursuit avec, comme axes prioritaires,\n                   la maîtrise de la langue, l’apprentissage du vivre\n                   ensemble et de l’autonomie, ainsi que l’ouverture culturelle.")]))
+           _U.list([$Html.text("Il est commun à l’école maternelle et aux écoles élémentaires\n                de Murol et Chambon sur Lac. Il se décline de la petite section\n                de maternelle au CM2.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les priorités retenues dans ce projet sont l’amélioration \n                     de la compréhension (consignes, histoires, lecture, résolution de \n                     problèmes…) et du comportement (apprendre ensemble pour vivre \n                     ensemble, comprendre ce que signifie être un élève, \n                     respecter les autres et l’adulte…) \n                     ")]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les inscriptions pour la rentrée de septembre 2016 \n                     sont possibles dès maintenant. Prenez rendez-vous auprès de \n                     la directrice Séverine AUBOUIN au 04 73 88 \n                     64 70. ")]))
+           _U.list([$Html.text("Pour inscrire votre enfant à la maternelle, prenez rendez-vous auprès de \n                     la directrice Séverine AUBOUIN au 04 73 88 \n                     64 70. ")]))
            ,$Html.text("Pour inscrire votre enfant à la maternelle vous \n              aurez besoin: ")
            ,A2($Html.ul,
            _U.list([]),

@@ -158,10 +158,10 @@ mater  =
      , p [] [text "La directrice de l’école maternelle se nomme Séverine 
                    AUBOUIN. "]
 
-    , h5 [] [text "Année scolaire 2015 - 2016"]
+    , h5 [] [text "Année scolaire 2016 - 2017"]
     , p  [] [text "Répartition des classes : "]
     , ul []
-         [ li  [] [text "Classe des petits et moyens : Sandrine GIDON et Céline GAILLARD"]
+         [ li  [] [text "Classe des petits et moyens : Sandrine GIDON"]
          , li  [] [text "Classe des moyens et grands : Séverine AUBOUIN."]
          ] 
     
@@ -240,15 +240,25 @@ mater  =
      , p [] [ text "*Des "
             , a [href "/PériEtExtra-scolaire.html?bloc=2"]
                 [text "Temps d’Activités Périscolaires"]
-            , text "(TAP) sont organisés de 15h00 à 16h30 par le
-                   SIVOM de la vallée verte pour les enfants."
+            , text "(TAP) sont organisés pour les enfants de 15h00 à 16h30 par le
+                   SIVOM de la vallée verte."
             ]
-      , p [] [text "Le projet d’école : il se poursuit avec, comme axes prioritaires,
-                   la maîtrise de la langue, l’apprentissage du vivre
-                   ensemble et de l’autonomie, ainsi que l’ouverture culturelle."]
+      --, p [] [text "Le projet d’école : il se poursuit avec, comme axes prioritaires,
+      --             la maîtrise de la langue, l’apprentissage du vivre
+      --             ensemble et de l’autonomie, ainsi que l’ouverture culturelle."]
+      , h4 [] [text "Le projet d’écoles 2016/2020"]
+      , p []
+         [text "Il est commun à l’école maternelle et aux écoles élémentaires
+                de Murol et Chambon sur Lac. Il se décline de la petite section
+                de maternelle au CM2."]
+      , p [] [ text "Les priorités retenues dans ce projet sont l’amélioration 
+                     de la compréhension (consignes, histoires, lecture, résolution de 
+                     problèmes…) et du comportement (apprendre ensemble pour vivre 
+                     ensemble, comprendre ce que signifie être un élève, 
+                     respecter les autres et l’adulte…) 
+                     "]
       , h4 [] [ text "Inscription"]
-      , p  [] [ text "Les inscriptions pour la rentrée de septembre 2016 
-                     sont possibles dès maintenant. Prenez rendez-vous auprès de 
+      , p  [] [ text "Pour inscrire votre enfant à la maternelle, prenez rendez-vous auprès de 
                      la directrice Séverine AUBOUIN au 04 73 88 
                      64 70. "]
       , text "Pour inscrire votre enfant à la maternelle vous 
@@ -323,7 +333,7 @@ elem   =
       , p [] [text "Le directeur de l’école de Chambon sur Lac 
                     se nomme Claude BOURRET."]
 
-      , h5 [] [text "Année scolaire 2015 2016 "] 
+      , h5 [] [text "Année scolaire 2016 2017 "] 
       , p [] [text "Répartition des classes : "]
       , ul []
            [ li [] [text "Classe des CP: Marion VERDE et Elisabeth 
@@ -401,8 +411,8 @@ elem   =
       , p [] [ text "*Des "
             , a [href "/PériEtExtra-scolaire.html?bloc=2"]
                 [text "Temps d’Activités Périscolaires"]
-            , text "(TAP) sont organisés de 15h00 à 16h30 par le
-                   SIVOM de la vallée verte pour les enfants."
+            , text "(TAP) sont organisés pour les enfants de 15h00 à 16h30 par le
+                   SIVOM de la vallée verte."
             ]
 
       , p [] [text "Horaires de classe à l’école de Chambon
@@ -473,14 +483,21 @@ elem   =
       , p [] [ text "*Des "
             , a [href "/PériEtExtra-scolaire.html?bloc=2"]
                 [text "Temps d’Activités Périscolaires"]
-            , text "(TAP) sont organisés de 15h15 à 16h45 par le
-                   SIVOM  de la vallée verte pour les enfants."
+            , text "(TAP) sont organisés pour les enfants de 15h15 à 16h45 par le
+                   SIVOM  de la vallée verte."
             ]
       
-      , p [] [text "Projet d’écoles : les axes prioritaires sont
-                   l’orthographe, le vocabulaire, la production d’écrits,
-                   la lecture oralisée, la compréhension de textes
-                   et la résolution de problèmes."]
+      , h4 [] [text "Le projet d’écoles 2016/2020"]
+      , p []
+         [text "Il est commun à l’école maternelle et aux écoles élémentaires
+                de Murol et Chambon sur Lac. Il se décline de la petite section
+                de maternelle au CM2."]
+      , p [] [ text "Les priorités retenues dans ce projet sont l’amélioration 
+                     de la compréhension (consignes, histoires, lecture, résolution de 
+                     problèmes…) et du comportement (apprendre ensemble pour vivre 
+                     ensemble, comprendre ce que signifie être un élève, 
+                     respecter les autres et l’adulte…) 
+                     "]
 
       , h4 [] [ text "Inscription"]
       , p  [] [ b [] [text "Vous êtes nouveaux sur la commune:"]]
