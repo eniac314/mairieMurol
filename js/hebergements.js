@@ -12007,7 +12007,16 @@ Elm.Hebergements.make = function (_elm) {
                          ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "5302",_1: "http://www.sancy.com/hebergements/detail/5302/murol/villa-marie-louise-etage"})
                          ,descr: _U.list(["Appartement 6 personnes","Contact: Mme GUITTARD Crystel"])
                          ,tel: "04 73 61 31 47 / 06 88 18 10 56"
-                         ,addr: "Groire 63790 MUROL"})]);
+                         ,addr: "Groire 63790 MUROL"})
+                         ,_U.update($StarTable.emptyTe,
+                         {name: "Les Vergers du Sancy"
+                         ,refOt: $Maybe.Nothing
+                         ,epis: "3 épis"
+                         ,descr: _U.list(["Maison 2 personnes","Contact: Mme PICOT Monique"])
+                         ,tel: "04 73 88 65 79 / 06 84 29 28 25"
+                         ,addr: "La Chassagne 63790 MUROL"
+                         ,mail: "philippe.picot@orange.fr"
+                         ,site: "gite-vergers-sancy.com"})]);
    var chambresHotes = _U.list([_U.update($StarTable.emptyTe,
                                {epis: "1 épi"
                                ,name: "La Clé des champs"

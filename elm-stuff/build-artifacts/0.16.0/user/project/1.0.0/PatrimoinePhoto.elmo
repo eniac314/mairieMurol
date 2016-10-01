@@ -23,45 +23,50 @@ Elm.PatrimoinePhoto.make = function (_elm) {
    var _p0 = A3($Gallery.init,$Lightbox.picList(18),"petitPatrimoine","Le petit patrimoine");
    var petitPat = _p0._0;
    var petitPatFx = _p0._1;
-   var _p1 = A3($Gallery.init,$Lightbox.picList(16),"chateau","Le château");
-   var chateau = _p1._0;
-   var chateauFx = _p1._1;
-   var galleries = _U.list([{ctor: "_Tuple2",_0: chateau,_1: "chateauPics"},{ctor: "_Tuple2",_0: petitPat,_1: "petitPat"}]);
+   var _p1 = A3($Gallery.init,$Lightbox.picList(17),"illuminations","Le château - éclairage nocturne");
+   var ilum = _p1._0;
+   var ilumFX = _p1._1;
+   var _p2 = A3($Gallery.init,$Lightbox.picList(16),"chateau","Le château");
+   var chateau = _p2._0;
+   var chateauFx = _p2._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: chateau,_1: "chateauPics"}
+                           ,{ctor: "_Tuple2",_0: ilum,_1: "ilumPics"}
+                           ,{ctor: "_Tuple2",_0: petitPat,_1: "petitPat"}]);
    var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
    var update = F2(function (action,model) {
-      var _p2 = action;
-      if (_p2.ctor === "NoOp") {
+      var _p3 = action;
+      if (_p3.ctor === "NoOp") {
             return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          } else {
-            var updateWithId = function (_p3) {
-               var _p4 = _p3;
-               var _p6 = _p4._0;
-               var _p5 = _p4._1;
-               return _U.eq(_p5,_p2._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p2._1,_p6),_1: _p5} : {ctor: "_Tuple2"
-                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p6,_1: $Effects.none}
-                                                                                                         ,_1: _p5};
+            var updateWithId = function (_p4) {
+               var _p5 = _p4;
+               var _p7 = _p5._0;
+               var _p6 = _p5._1;
+               return _U.eq(_p6,_p3._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p3._1,_p7),_1: _p6} : {ctor: "_Tuple2"
+                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p7,_1: $Effects.none}
+                                                                                                         ,_1: _p6};
             };
-            var _p7 = A3($List.foldl,
-            F2(function (_p9,_p8) {
-               var _p10 = _p9;
-               var _p12 = _p10._1;
-               var _p11 = _p8;
+            var _p8 = A3($List.foldl,
+            F2(function (_p10,_p9) {
+               var _p11 = _p10;
+               var _p13 = _p11._1;
+               var _p12 = _p9;
                return {ctor: "_Tuple2"
-                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p10._0._0,_1: _p12},_p11._0)
-                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p12),_p10._0._1),_p11._1)};
+                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p11._0._0,_1: _p13},_p12._0)
+                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p13),_p11._0._1),_p12._1)};
             }),
             {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
             A2($List.map,updateWithId,function (_) {    return _.galleries;}(model)));
-            var ng = _p7._0;
-            var effs = _p7._1;
+            var ng = _p8._0;
+            var effs = _p8._1;
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p13) {
-      var _p14 = _p13;
-      var _p15 = _p14._0;
-      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p15))]));
-      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p14._1)),_p15)]));
+   var viewGallery = F2(function (address,_p14) {
+      var _p15 = _p14;
+      var _p16 = _p15._0;
+      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p16))]));
+      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p15._1)),_p16)]));
    });
    var view = F2(function (address,model) {
       var galleriesHtml = $List.concat(A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)));
@@ -81,7 +86,7 @@ Elm.PatrimoinePhoto.make = function (_elm) {
               ,$Utils.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p16) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p17) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};
@@ -105,6 +110,8 @@ Elm.PatrimoinePhoto.make = function (_elm) {
                                         ,galleries: galleries
                                         ,chateau: chateau
                                         ,chateauFx: chateauFx
+                                        ,ilum: ilum
+                                        ,ilumFX: ilumFX
                                         ,petitPat: petitPat
                                         ,petitPatFx: petitPatFx};
 };

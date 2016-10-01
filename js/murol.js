@@ -11706,6 +11706,23 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "21.jpg",_1: "medievales2013",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "24.jpg",_1: "medievales2013",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "35.jpg",_1: "medievales2013",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "escalier 3.jpg",_1: "journeeMurolais",_2: "/JourneeMurolais.html"}
                           ,{ctor: "_Tuple3",_0: "panorama 2.jpg",_1: "journeeMurolais",_2: "/JourneeMurolais.html"}
                           ,{ctor: "_Tuple3",_0: "panorama 5.jpg",_1: "journeeMurolais",_2: "/JourneeMurolais.html"}
@@ -12260,6 +12277,25 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"21.jpg"
                                        ,"24.jpg"
                                        ,"35.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "illuminations",_1: "/PatrimoinePhoto.html"}
+                          ,_1: _U.list(["06.jpg"
+                                       ,"01.jpg"
+                                       ,"03.jpg"
+                                       ,"15.jpg"
+                                       ,"14.jpg"
+                                       ,"07.jpg"
+                                       ,"10.jpg"
+                                       ,"17.jpg"
+                                       ,"13.jpg"
+                                       ,"11.jpg"
+                                       ,"02.jpg"
+                                       ,"05.jpg"
+                                       ,"16.jpg"
+                                       ,"12.jpg"
+                                       ,"04.jpg"
+                                       ,"08.jpg"
+                                       ,"09.jpg"])}
                          ,{ctor: "_Tuple2"
                           ,_0: {ctor: "_Tuple2",_0: "journeeMurolais",_1: "/JourneeMurolais.html"}
                           ,_1: _U.list(["escalier 3.jpg"
@@ -13671,7 +13707,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mercredi 14 septembre 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le samedi 01 octobre 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -14280,7 +14316,36 @@ Elm.Murol.make = function (_elm) {
                               ,$Html.text(" et les ")
                               ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html")]),_U.list([$Html.text("documents d\'inscription")]))
                               ,$Html.text(" aux services périscolaires sont disponibles.")]))]))
-                      ,expiry: $Date.fromString("10/14/2016")})]);
+                      ,expiry: $Date.fromString("10/14/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Semaine de la parentalité - 3 au 8 octobre"
+                      ,date: $Date.fromString("10/01/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("La CAF du Puy-de-Dôme organise la première semaine de la parentalité\n                          \"Etre parents d\'ado\" du 3 au 8 octobre 2016. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Consultez ")
+                                      ,A2($Html.a,
+                                      _U.list([$Html$Attributes.href("baseDocumentaire/plaquette_semaineParentalite2016.pdf")
+                                              ,$Html$Attributes.target("_blank")]),
+                                      _U.list([$Html.text("le programme")]))]))]))
+                      ,expiry: $Date.fromString("10/15/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Nouvel éclairage nocturne au chateau"
+                      ,date: $Date.fromString("10/01/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("le château de Murol et ses remparts sortent de l\'ombre!\n                            Découvrez les premières photos du nouvel éclairage nocturne.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Visitez ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/PatrimoinePhoto.html")]),_U.list([$Html.text("la photothèque")]))]))]))
+                      ,expiry: $Date.fromString("11/01/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

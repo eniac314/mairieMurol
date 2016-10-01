@@ -11706,6 +11706,23 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "21.jpg",_1: "medievales2013",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "24.jpg",_1: "medievales2013",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "35.jpg",_1: "medievales2013",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "escalier 3.jpg",_1: "journeeMurolais",_2: "/JourneeMurolais.html"}
                           ,{ctor: "_Tuple3",_0: "panorama 2.jpg",_1: "journeeMurolais",_2: "/JourneeMurolais.html"}
                           ,{ctor: "_Tuple3",_0: "panorama 5.jpg",_1: "journeeMurolais",_2: "/JourneeMurolais.html"}
@@ -12260,6 +12277,25 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"21.jpg"
                                        ,"24.jpg"
                                        ,"35.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "illuminations",_1: "/PatrimoinePhoto.html"}
+                          ,_1: _U.list(["06.jpg"
+                                       ,"01.jpg"
+                                       ,"03.jpg"
+                                       ,"15.jpg"
+                                       ,"14.jpg"
+                                       ,"07.jpg"
+                                       ,"10.jpg"
+                                       ,"17.jpg"
+                                       ,"13.jpg"
+                                       ,"11.jpg"
+                                       ,"02.jpg"
+                                       ,"05.jpg"
+                                       ,"16.jpg"
+                                       ,"12.jpg"
+                                       ,"04.jpg"
+                                       ,"08.jpg"
+                                       ,"09.jpg"])}
                          ,{ctor: "_Tuple2"
                           ,_0: {ctor: "_Tuple2",_0: "journeeMurolais",_1: "/JourneeMurolais.html"}
                           ,_1: _U.list(["escalier 3.jpg"

@@ -71,4 +71,5 @@ initialContent =
       , link "Dossier zone humide de Murol" "baseDocumentaire/Dossier zone humide de Murol.pdf"
       , link "Fiche Organicité" "baseDocumentaire/ficheORGANICITE.pdf"
       , link "Livret d'informations sur le lac Chambon" "baseDocumentaire/livretLac.pdf"
+      , link "Plaquette semaine parentalité" "baseDocumentaire/plaquette_semaineParentalite2016.pdf"
       ]

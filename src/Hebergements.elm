@@ -717,6 +717,18 @@ meubles =
    , tel   = "04 73 61 31 47 / 06 88 18 10 56"
    , addr  = "Groire 63790 MUROL"
    }
+   ,
+   { emptyTe |
+     name  = "Les Vergers du Sancy"
+   , refOt = Nothing
+   , epis  = "3 épis"  
+   , descr = ["Maison 2 personnes"
+             , "Contact: Mme PICOT Monique"]
+   , tel   = "04 73 88 65 79 / 06 84 29 28 25"
+   , addr  = "La Chassagne 63790 MUROL"
+   , mail  = "philippe.picot@orange.fr"
+   , site  = "gite-vergers-sancy.com"
+   }
    --,
    --{ emptyTe |
    --  name  = ""

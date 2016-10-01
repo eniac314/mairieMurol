@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le mercredi 14 septembre 2016"]
+            [text "Dernière mise à jour le samedi 01 octobre 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -912,6 +912,33 @@ news =
                     ]
                  ]
    , expiry = Date.fromString "10/14/2016"
+   } 
+   ,{ emptyNews |
+     title = "Semaine de la parentalité - 3 au 8 octobre"
+   , date  = Date.fromString "10/01/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "La CAF du Puy-de-Dôme organise la première semaine de la parentalité
+                          \"Etre parents d'ado\" du 3 au 8 octobre 2016. "]
+                 , p [] [ text "Consultez "
+                        , a [href "baseDocumentaire/plaquette_semaineParentalite2016.pdf", target "_blank"]
+                            [text "le programme"]]
+                 ]
+   , expiry = Date.fromString "10/15/2016"
+   }
+   ,{ emptyNews |
+     title = "Nouvel éclairage nocturne au chateau"
+   , date  = Date.fromString "10/01/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [text "le château de Murol et ses remparts sortent de l'ombre!
+                            Découvrez les premières photos du nouvel éclairage nocturne."] 
+                 , p []
+                     [ text "Visitez "
+                     , a [href "/PatrimoinePhoto.html"] [text "la photothèque"]
+                     ]
+                 ]
+   , expiry = Date.fromString "11/01/2016"
    } 
   --,{ emptyNews |
    --  title = ""
