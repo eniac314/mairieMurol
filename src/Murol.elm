@@ -291,7 +291,11 @@ renderAgenda =
       , p [] [a [href "/Animation.html"] [text "Programmes des manifestations"]]
       ] 
       
-
+renderMiniGallery address model = 
+  div [id "minGalDiv", class "submenu"]
+      [ h3 [] [text "Coup d'oeil sur la photothèque"]
+      , Gallery.viewM (Signal.forwardTo address GalleryAction) (.miniGallery model)
+      ]
 
 view : Signal.Address Action -> Model -> Html
 view address model =
@@ -301,8 +305,7 @@ view address model =
             [ renderContent (.news model) address
             , div [class "sidebar"]
                   [ renderAgenda
-                  , h3 [] [text "Coup d'oeil sur la photothèque"]
-                  , Gallery.viewM (Signal.forwardTo address GalleryAction) (.miniGallery model)
+                  , renderMiniGallery address model
                   , renderPlugins
                   , renderNewsLetter (.newsletters model)
                   ]

@@ -121,6 +121,12 @@ Elm.Murol.make = function (_elm) {
       _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Inscrivez vous")])),A2($Html.ul,_U.list([]),newsList)]));
    };
    var GalleryAction = function (a) {    return {ctor: "GalleryAction",_0: a};};
+   var renderMiniGallery = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("minGalDiv"),$Html$Attributes.$class("submenu")]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Coup d\'oeil sur la photothèque")]))
+              ,A2($Gallery.viewM,A2($Signal.forwardTo,address,GalleryAction),function (_) {    return _.miniGallery;}(model))]));
+   });
    var timer = A2($Signal.map,function (_p2) {    return GalleryAction($Gallery.TimeStep);},$Time.every(6 * $Time.second));
    var focusUpdate = A2($Signal.map,function (b) {    return GalleryAction($Gallery.Focused(b));},focus);
    var Drop = function (a) {    return {ctor: "Drop",_0: a};};
@@ -186,8 +192,7 @@ Elm.Murol.make = function (_elm) {
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.$class("sidebar")]),
                       _U.list([renderAgenda
-                              ,A2($Html.h3,_U.list([]),_U.list([$Html.text("Coup d\'oeil sur la photothèque")]))
-                              ,A2($Gallery.viewM,A2($Signal.forwardTo,address,GalleryAction),function (_) {    return _.miniGallery;}(model))
+                              ,A2(renderMiniGallery,address,model)
                               ,renderPlugins
                               ,renderNewsLetter(function (_) {    return _.newsletters;}(model))]))]))
               ,$Utils.pageFooter]));
@@ -840,6 +845,7 @@ Elm.Murol.make = function (_elm) {
                               ,renderEtatRoutes: renderEtatRoutes
                               ,renderPlugins: renderPlugins
                               ,renderAgenda: renderAgenda
+                              ,renderMiniGallery: renderMiniGallery
                               ,view: view
                               ,timer: timer
                               ,app: app
