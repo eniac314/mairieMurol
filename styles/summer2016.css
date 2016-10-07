@@ -1,4 +1,4 @@
-/*automne2016.css*/
+/*summer2016.css*/
 /*-------------------------------------------------------------------------------
   import google fonts
 -------------------------------------------------------------------------------*/
@@ -20,13 +20,15 @@ html{
 }
 
 body {
-  background-attachment: fixed;
   background-color: #5e8ad9;
-  background-image: url(/images/automne_bg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url(/images/landscapebottom.png), url(/images/landscapebottomO.png), url(/images/landscape1920.jpg), url(/images/fleurie.png), url(/images/bgblue.jpg);
+  background-repeat: repeat-x, repeat-x,  no-repeat, repeat-x, repeat;
+  background-position: top center, top right, top center, center bottom, top center;
+  background-size: auto, auto, auto, auto;
   margin: 0;
+  margin-bottom: 40px;
   padding-top: 0em;
+  padding-bottom: 40px;
   min-height: 1080px;
 }
 
@@ -45,7 +47,7 @@ body {
         padding-top: 0em;
         margin-left: 9em;
         margin-right:9em;
-    } 
+    }
 
  header #pageTitle{
      margin-top: 0;
@@ -56,19 +58,13 @@ body {
 
 
 header{ 
-  background-image: url(/images/banner_automne_1567.jpg);
-  background-position: center top;
-  background-repeat: no-repeat, repeat;
-  padding-top: 200px;
-  width: 85%;
-  margin: auto;
   text-align: center;
   font-family: 'lora', Verdana, serif;
 }
 
 header #pageTitle{
   /*background-color: #cfff4f;*/
-  background-color: rgb(255, 211, 37);
+  background-color: gold;
   font-style: italic;
   font-size: 45px;
   margin-bottom: 0;
@@ -77,33 +73,30 @@ header #pageTitle{
 
 header #subTitle{
   margin-top: 0;
-  margin-bottom: 0;
   color: aliceblue;
-  background-color: rgb(69, 22, 6);
+  background-color: rgb(71, 84, 196);
   font-weight: normal;
   }
 
 #container
-  { width: 85%;
+  { width: 80%;
     margin: auto;
     background-color: rgba(255, 255, 255, 0.9);
-    /*border-radius: 0.5em;*/
-    /*padding-top: 0.5em;*/
-    /*padding-bottom: 1em;*/
-    /*margin-top: 12em;*/
+    border-radius: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    margin-top: 12em;
   }
 
 @media screen and (max-width: 1368px) {
     #container {
-    }
-    #header {
-      background-image: url(/images/banner_automne_1149.jpg)
+        width: 85%;
     }
 }
 
 @media screen and (max-height: 600px) {
     #container {
-        /*margin-top: 2em;*/
+        margin-top: 2em;
     }
 }
 
@@ -115,15 +108,14 @@ header #subTitle{
 -------------------------------------------------------------------------------*/
 .mainMenu
   {
-  background-color: rgba(94, 129, 53, 0.8);
-  background-color: url(/images/automne_iconbg.gif);
+  background-color: rgba(96, 117, 138, 0.8);
   text-align: center;
-  margin: 10;
+  margin: 0;
   }
 
 .mainMenu .current{
   background-image: none;
-  background-color: rgb(69, 22, 6); /*brown*/
+  background-color: rgba(53, 100, 144, 0.8);
 }
 
 .mainMenu nav 
@@ -150,15 +142,13 @@ input::-moz-focus-inner {
   margin-top: 0.2em;
   margin-right: 0.2em;
   margin-bottom: 0.2em;
-  /*background-color: #cd5c5c;*/
-  background-color: sienna;
-  background-image: url(/images/automne_iconbg.gif);
+  background-color: #cd5c5c;
   /*background-image: url(/images/menubg.gif);*/
   /*background: -moz-linear-gradient(saddlebrown, peru, sienna);*/
   /*text-transform: capitalize;*/
   text-decoration: none;
   font-family: 'PT Serif', verdana, serif;
-  color: #edf3db; /*green white*/
+  color: white;
   }
 
 .mainMenu label{
@@ -169,8 +159,8 @@ input::-moz-focus-inner {
 }
 
 .mainMenu a:hover, .mainMenu label:hover{
-  color: aliceblue;
-  background-image: url(/images/automne_iconbg02.gif);
+  color: black;
+  text-decoration: overline;
 }
 
 nav[class*="Content"] > nav
@@ -405,7 +395,7 @@ nav[class*="Content"] a
 .subContainerData h2{
   text-align: center;
   /*text-transform: capitalize;*/
-  background-color: sienna;
+  background-color: rgba(53, 100, 144, 0.9); /*blue*/
   color: aliceblue;
   padding: 0.3em 0;
   margin-top: 0.4em;
@@ -414,15 +404,15 @@ nav[class*="Content"] a
 
 .subContainerData h3 {
   font-size: 150%;
-  color:sienna;
+  color: #2F4F4F;/*darkslategray*/
 }
 .subContainerData h4 {
   margin-top: 0.5em;
   text-transform: uppercase;
   font-size: 100%;
-  color:  #432e2a; /*darkbrown*/
+  color: black;
   text-align: center;
-  background-color: peru;
+  background-color: #199a9a;
 }
 .subContainerData h5 {
   color: green;
@@ -715,8 +705,8 @@ span.date {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   text-transform: uppercase;
-  background-color: rgb(89, 58, 46); /*brown*/
-  color: papayawhip;
+  background-color: rgba(53, 100, 144, 1);
+  color: white;
   padding-left: 0.5em;
 
 }
@@ -2273,43 +2263,6 @@ footer p {
   margin-top: 45%;
 }
 
-
-#miniGallery .hiddenGalleryLinksContainer{
-  position: absolute;
-  height: 100%;
-  top: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#miniGallery .hiddenGalleryLinks{
-  opacity: 0;
-  display: block;
-  text-align: center;
-  margin: 1em;
-  color: black;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  font-size: 16px;
-  background-color: white;
-  border-radius: 0.5em;
-  padding: 0.3em;
-  text-decoration: none;
-}  
-
-#miniGallery .hiddenGalleryLinks:hover{
-  color: teal;
-}
-
-#miniGallery .hiddenGalleryLinksContainer:hover a{
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-}
 
 .halfPic{
   position: absolute;
