@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le samedi 01 octobre 2016"]
+            [text "Dernière mise à jour le lundi 10 octobre 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -942,7 +942,41 @@ news =
                      ]
                  ]
    , expiry = Date.fromString "11/01/2016"
+   }
+   ,{ emptyNews |
+     title = "Conseil municipal"
+   , date  = Date.fromString "10/10/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le prochain conseil municipal aura lieu mercredi
+                           12 octobre à 20h30 à la mairie de Murol. L'ordre
+                           du jour est consultable sur les panneaux d'affichage (mairie et Beaune)."]
+                 ]
+   , expiry = Date.fromString "10/13/2016"
    } 
+   ,{ emptyNews |
+     title = "Nouveautés pour le Pôle Lecture Publique du Sancy"
+   , date  = Date.fromString "10/10/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le Pôle Lecture Publique du Sancy propose des 
+                           animations mensuelles dans chacune des classes de la 
+                           maternelle et de l'élémentaire. A la suite de 
+                           ces interventions une permanence du bibliothécaire est assurée 
+                           pour les adultes dans les locaux de l'office 
+                           du tourisme de Murol de 15h30 à 16h30. 
+                           Vous pourrez ainsi retourner vos livres, récupérer vos 
+                           commandes, découvrir une sélection d'ouvrages (romans, polars...) et 
+                           pourquoi pas adhérer si ce n'est pas déjà 
+                           fait. Première permanence le jeudi 13 octobre 2016. 
+                           Venez nombreux!"
+                    ]
+                 , p [] [ a [href "http://besse.agate-sigb.com/rechercher/info_bib.php"
+                            , target "_blank"]
+                            [text "Site du pôle lecture"]]
+                 ]
+   , expiry = Date.fromString "10/31/2016"
+   }  
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

@@ -174,7 +174,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le samedi 01 octobre 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 10 octobre 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -811,7 +811,30 @@ Elm.Murol.make = function (_elm) {
                               _U.list([]),
                               _U.list([$Html.text("Visitez ")
                                       ,A2($Html.a,_U.list([$Html$Attributes.href("/PatrimoinePhoto.html")]),_U.list([$Html.text("la photothèque")]))]))]))
-                      ,expiry: $Date.fromString("11/01/2016")})]);
+                      ,expiry: $Date.fromString("11/01/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Conseil municipal"
+                      ,date: $Date.fromString("10/10/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le prochain conseil municipal aura lieu mercredi\n                           12 octobre à 20h30 à la mairie de Murol. L\'ordre\n                           du jour est consultable sur les panneaux d\'affichage (mairie et Beaune).")]))]))
+                      ,expiry: $Date.fromString("10/13/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Nouveautés pour le Pôle Lecture Publique du Sancy"
+                      ,date: $Date.fromString("10/10/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Le Pôle Lecture Publique du Sancy propose des \n                           animations mensuelles dans chacune des classes de la \n                           maternelle et de l\'élémentaire. A la suite de \n                           ces interventions une permanence du bibliothécaire est assurée \n                           pour les adultes dans les locaux de l\'office \n                           du tourisme de Murol de 15h30 à 16h30. \n                           Vous pourrez ainsi retourner vos livres, récupérer vos \n                           commandes, découvrir une sélection d\'ouvrages (romans, polars...) et \n                           pourquoi pas adhérer si ce n\'est pas déjà \n                           fait. Première permanence le jeudi 13 octobre 2016. \n                           Venez nombreux!")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://besse.agate-sigb.com/rechercher/info_bib.php"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Site du pôle lecture")]))]))]))
+                      ,expiry: $Date.fromString("10/31/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters
