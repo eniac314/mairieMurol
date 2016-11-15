@@ -932,20 +932,6 @@ news =
    , expiry = Date.fromString "10/15/2016"
    }
    ,{ emptyNews |
-     title = "Nouvel éclairage nocturne au chateau"
-   , date  = Date.fromString "10/01/2016"
-   , descr = div [class "newsdescr"]
-                 [ p []
-                     [text "le château de Murol et ses remparts sortent de l'ombre!
-                            Découvrez les premières photos du nouvel éclairage nocturne."] 
-                 , p []
-                     [ text "Visitez "
-                     , a [href "/PatrimoinePhoto.html"] [text "la photothèque"]
-                     ]
-                 ]
-   , expiry = Date.fromString "11/01/2016"
-   }
-   ,{ emptyNews |
      title = "Conseil municipal"
    , date  = Date.fromString "10/10/2016"
    , descr = div [class "newsdescr"]
@@ -1066,6 +1052,20 @@ news =
                     , a [href "baseDocumentaire/murolInfo/32.pdf", target "_blank"] [text "Télécharger"]]
                  ]
    , expiry = Date.fromString "12/14/2016"
+   }
+   ,{ emptyNews |
+     title = "Nouvel éclairage nocturne au chateau"
+   , date  = Date.fromString "11/14/2016"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [text "le château de Murol et ses remparts sortent de l'ombre!
+                            Découvrez les nouvelles photos HDR de l'éclairage nocturne."] 
+                 , p []
+                     [ text "Visitez "
+                     , a [href "/PatrimoinePhoto.html"] [text "la photothèque"]
+                     ]
+                 ]
+   , expiry = Date.fromString "11/31/2016"
    }   
   --,{ emptyNews |
    --  title = ""

@@ -792,19 +792,6 @@ Elm.Murol.make = function (_elm) {
                                       _U.list([$Html.text("le programme")]))]))]))
                       ,expiry: $Date.fromString("10/15/2016")})
                       ,_U.update(emptyNews,
-                      {title: "Nouvel éclairage nocturne au chateau"
-                      ,date: $Date.fromString("10/01/2016")
-                      ,descr: A2($Html.div,
-                      _U.list([$Html$Attributes.$class("newsdescr")]),
-                      _U.list([A2($Html.p,
-                              _U.list([]),
-                              _U.list([$Html.text("le château de Murol et ses remparts sortent de l\'ombre!\n                            Découvrez les premières photos du nouvel éclairage nocturne.")]))
-                              ,A2($Html.p,
-                              _U.list([]),
-                              _U.list([$Html.text("Visitez ")
-                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/PatrimoinePhoto.html")]),_U.list([$Html.text("la photothèque")]))]))]))
-                      ,expiry: $Date.fromString("11/01/2016")})
-                      ,_U.update(emptyNews,
                       {title: "Conseil municipal"
                       ,date: $Date.fromString("10/10/2016")
                       ,descr: A2($Html.div,
@@ -899,7 +886,20 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.href("baseDocumentaire/murolInfo/32.pdf"),$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("Télécharger")]))]))]))
-                      ,expiry: $Date.fromString("12/14/2016")})]);
+                      ,expiry: $Date.fromString("12/14/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Nouvel éclairage nocturne au chateau"
+                      ,date: $Date.fromString("11/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("le château de Murol et ses remparts sortent de l\'ombre!\n                            Découvrez les nouvelles photos HDR de l\'éclairage nocturne.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Visitez ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/PatrimoinePhoto.html")]),_U.list([$Html.text("la photothèque")]))]))]))
+                      ,expiry: $Date.fromString("11/31/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

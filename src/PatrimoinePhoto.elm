@@ -123,6 +123,7 @@ port tasks =
 --galleries : List Gallery
 galleries = [ (chateau, "chateauPics")
             , (ilum,"ilumPics")
+            , (ilum2,"ilum2Pics")
             , (petitPat, "petitPat")
             ]
 
@@ -132,6 +133,9 @@ galleries = [ (chateau, "chateauPics")
 
 (ilum, ilumFX) =
   Gallery.init (picList 17) "illuminations" "Le château - éclairage nocturne"
+
+(ilum2, ilum2FX) =
+  Gallery.init (picList 9) "illuminations2" "Le château - éclairage nocturne, gallerie HDR"
 
 (petitPat, petitPatFx) = 
   Gallery.init (picList 18) "petitPatrimoine" "Le petit patrimoine"
