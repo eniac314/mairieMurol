@@ -70,9 +70,6 @@ main =
 initialContent = 
   div [ class "subContainerData noSubmenu", id "initDechets"]
       [ h2 [] [text "La gestion des déchets"]
-        , link "Informations concernant la taxe d'enlèvement des ordures ménagère"
-             "/baseDocumentaire/SICTOM/Informationsaugmentationtaxes.pdf"
-        , text "2014"
         , h5 [ class "trashCat"] [ text "Ramassage des ordures"]
         , p  [] [ text "Le ramassage des ordures a lieu le: "]
         , ul []

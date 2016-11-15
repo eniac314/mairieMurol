@@ -108,12 +108,6 @@ Elm.Transports.make = function (_elm) {
                                               _U.list([$Html.text("Les vols réguliers pour l’Europe, directs ou avec \n                           une correspondance, sont à destination des pays suivants \n                           : Belgique, Grande-Bretagne, Italie, Pays-Bas, Suisse, Allemagne, Espagne, \n                           Portugal, Norvège, Danemark, Suède, Finlande, Russie, Pologne, Autriche, \n                           République Tchèque, Hongrie, Serbie, Bulgarie et Grèce. ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([$Html.text("Pour un accès par le car, un service \n                           de navette permet de rejoindre Murol depuis la \n                           gare ou l’aéroport de Clermont-Ferrand. Elle effectue le \n                           trajet Chambon sur Lac - Murol - Saint-Nectaire \n                           – Champeix – Clermont-Ferrand, en service régulier tous \n                           les mardis de l’année, mais également le samedi \n                           en juillet et en août . En saison \n                           estivale l’offre de transport collectif est donc plus \n                           importante.")]))
-                                              ,A2($Html.p,
-                                              _U.list([]),
-                                              _U.list([$Html.text("Un service de réservation est disponible sur le \n                           site internet de l’Office de Tourisme du Sancy \n                           ainsi que les horaires et trajet des navettes. \n                           Les mêmes informations sont disponibles au bureau de \n                           l’Office de Tourisme de Murol ainsi qu’à la \n                           mairie.")]))
-                                              ,A2($Html.p,
-                                              _U.list([]),
                                               _U.list([$Html.text("Un service de taxis indépendants est offert sur \n                           le territoire de la commune de Murol. ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
@@ -121,7 +115,6 @@ Elm.Transports.make = function (_elm) {
                                               ,A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("Ainsi, il existe de nombreuses alternatives à la \n                           voiture individuelle pour se rendre à Murol, sans \n                           oublier que le GR30 traverse la commune et \n                           que certains randonneurs viennent à pied pour une \n                           halte d’une ou plusieurs nuits dans notre station.")]))])}
-                                ,{ctor: "_Tuple3",_0: "Navette",_1: "/images/tiles/transports/navette.jpg",_2: _U.list([navetteEte,navetteHs])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Covoiturage"
                                  ,_1: "/images/tiles/transports/logo-covoiturage.jpg"

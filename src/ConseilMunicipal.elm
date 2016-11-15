@@ -199,8 +199,9 @@ initialContent =
                       , td [] [span [class "status"] [text "4ème adjoint"]]
                       , td [] [ p [class "nom"] [text "Sylvie GILLARD"]
                               , p [class "job"]
-                                  [text "Vice-Présidente du CCAS
-                                         Professeur des Ecoles"]
+                                  [text "Vice-Présidente du CCAS"
+                                  , br [] []
+                                  ,text "Professeur des Ecoles"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/CATTARELLI.jpg"] []]
@@ -228,16 +229,18 @@ initialContent =
                       , td [] [span [class "status"] [text "Conseiller municipal"]]
                       , td [] [ p [class "nom"] [text "Anne-Marie DOTTE"]
                               , p [class "job"]
-                                  [text "Retraitée du Tourisme
-                                            Co-présidente du COSA"]
+                                  [text "Retraitée du Tourisme"
+                                  , br [] []
+                                  ,text "Co-présidente du COSA"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/LAIR.jpg"] []]
                       , td [] [span [class "status"] [text "Conseiller municipal"]]
                       , td [] [ p [class "nom"] [text "Angélique LAIR"]
                               , p [class "job"]
-                                  [text "Présidente du Syndicat agricole
-                                         Exploitante agricole"]
+                                  [text "Présidente du Syndicat agricole"
+                                  , br [] []
+                                  ,text "Exploitante agricole"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/LANARO.jpg"] []]
@@ -245,8 +248,9 @@ initialContent =
                       , td [] [ p [class "nom"] [text "Joséphine LANARO"]
                               , p [class "job"]
                                   [text "Membre du CCAS
-                                        responsable de la régie d’avance
-                                        Educatrice
+                                        responsable de la régie d’avance"
+                                  , br [] []
+                                  ,text "Educatrice
                                         spécialisée retraitée"]
                               ]
                       ]

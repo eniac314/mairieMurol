@@ -99,10 +99,11 @@ initialContent =
   , tiledMenu =
       init [( "Bars, brasseries et restaurants"
             , "/images/tiles/restaurants/restaurants.jpg"
-            , [ h5 [] [ text "A Beaune le Froid"]
-              , makeTable "aBeauneLeFroid" restosBeaunes
-              , h5 [] [ text "A Murol"]
-              , makeTable "aMurol" restosMurol
+            , [ 
+              --h5 [] [ text "A Beaune le Froid"]
+              --, makeTable "aBeauneLeFroid" restosBeaunes
+                --h5 [] [ text "A Murol"]
+                makeTable "aMurol" restosMurol
               , contact
               ]
             )
@@ -180,15 +181,15 @@ restosMurol =
     , descr = ["Bar brasserie restaurant"]
     , tel   = "04 73 88 64 82"
     }
-    --,
-    --{ emptyTe |
-    --  name  = "Au Montagnard"
-    --, addr  = "Rue d'Estaing - 63790 MUROL"
-    --, descr = ["Plat à emporter au restaurant"]
-    --, tel   = "04 73 88 61 52"
+    ,
+    { emptyTe |
+      name  = "Au Montagnard"
+    , addr  = "Rue d'Estaing - 63790 MUROL"
+    , descr = ["Plat à emporter au restaurant"]
+    , tel   = "04 73 88 61 52"
     --, mail  = "restaurant.aumontagnard@orange.fr"
-    --, site  = "http://restaurantaumontagnard.wifeo.com/"
-    --}
+    , site  = "http://restaurantaumontagnard.wifeo.com/"
+    }
     --,
     --{ emptyTe |
     --  name  = "Chez Dame Galinette"
@@ -278,13 +279,13 @@ restosMurol =
     , mail  = "lac.chambon@wanadoo.fr"
     }
     ,
-    { emptyTe |
-      name  = "Cubana café"
-    , descr = ["Bar de nuit"]
-    , addr  = "Place de la poste 63790 MUROL"
-    , tel   = "04 73 88 85 79"
-    }
-    ,
+    --{ emptyTe |
+    --  name  = "Cubana café"
+    --, descr = ["Bar de nuit"]
+    --, addr  = "Place de la poste 63790 MUROL"
+    --, tel   = "04 73 88 85 79"
+    --}
+    --,
     { emptyTe |
       name  = "Le Picotin"
     , descr = ["Restaurant pizzeria"]  

@@ -96,7 +96,6 @@ initialContent =
                              Anne-Marie Dotte au 06 8100 2032. "]
               , li [] [text "vous prenz RDV avec un vétérinaire partenaire. "]
               ]
-      , p  [] [text "Fin de la campagne le 15 avril 2016."]
       ]
       
 

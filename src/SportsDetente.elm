@@ -118,7 +118,7 @@ initialContent =
       , p [] [ a [href "/Associations.html?bloc=01#Rencontreetdétente"]
                  [text "L’association rencontre et détente"]
              , text " organise des séances chaque 
-                    lundi de 18h15 à 19h15 avec Sandrine Dalle. "    
+                    vendredi de 19h à 20h avec Sandrine Dalle. "    
              ]
       , p  [] [text "Tarif : 5€ la séance "]
 

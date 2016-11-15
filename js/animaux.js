@@ -11381,8 +11381,7 @@ Elm.Animaux.make = function (_elm) {
            _U.list([A2($Html.li,
                    _U.list([]),
                    _U.list([$Html.text("RDV à SOS Animaux pour obtenir un \n                             bon de stérilisation muni de son avis d\'imposition. \n                             Si vous ne pouvez pas vous déplacer contactez \n                             Anne-Marie Dotte au 06 8100 2032. ")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("vous prenz RDV avec un vétérinaire partenaire. ")]))]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fin de la campagne le 15 avril 2016.")]))]));
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("vous prenz RDV avec un vétérinaire partenaire. ")]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

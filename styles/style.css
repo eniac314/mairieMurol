@@ -1185,6 +1185,11 @@ background-image: none;
   margin-bottom: 1em;
 }
 
+#pavBleuImg{
+  float: right;
+  margin-left: 1em;
+}
+
 #lac1, #lac2, #lac3{
   display: inline-block;
   max-width: 29%;

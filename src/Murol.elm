@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 10 octobre 2016"]
+            [text "Dernière mise à jour le lundi 14 novembre 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -224,16 +224,18 @@ renderMisc =
   div [ id "misc", class "divers"]
       [ h4 [] [text "Divers"]
       , div [id "peintres"]
-            [ a [href "http://www.musee-murol.fr/fr", target "_blank" ]
-            [ text "A découvrir, le musée des peintres de l’Ecole de Murols"]
-            , p []
-                [ text "Pour une visite en famille : la "
-                , a [ href "baseDocumentaire/Carte jeu de piste 2016.pdf", target "_blank"]
-                    [ text "carte jeu de piste"]
-                , text " et le "
-                , a [ href "baseDocumentaire/livret jeu musée 2016.pdf", target "_blank"]
-                    [ text "livret jeu"]
-                ]
+            [ text "Fermeture annuelle du "
+            , a [href "http://www.musee-murol.fr/fr", target "_blank" ]
+                [ text " musée des peintres de l’Ecole de Murols"]
+            , p [] [text "Réouverture le 23 décembre."]
+            --, p []
+            --    [ text "Pour une visite en famille : la "
+            --    , a [ href "baseDocumentaire/Carte jeu de piste 2016.pdf", target "_blank"]
+            --        [ text "carte jeu de piste"]
+            --    , text " et le "
+            --    , a [ href "baseDocumentaire/livret jeu musée 2016.pdf", target "_blank"]
+            --        [ text "livret jeu"]
+                --]
             ]
       , div [id "horairesContact"]
             [h4 [] [text "Mairie pratique:"]
@@ -678,7 +680,7 @@ news =
                  , a [href "/Annee2016.html"]
                      [text "Lien photothèque"] 
                  ]
-   , expiry = Date.fromString "16/21/2016"
+   , expiry = Date.fromString "06/21/2016"
    , pic = Just "PAVILLON BLEU LOGO 2.png"
    }
    ,{ emptyNews |
@@ -976,7 +978,95 @@ news =
                             [text "Site du pôle lecture"]]
                  ]
    , expiry = Date.fromString "10/31/2016"
-   }  
+   }
+   
+   ,{ emptyNews |
+     title = "Elections 2017"
+   , date  = Date.fromString "11/14/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "En 2017, auront lieu les élections présidentielles et 
+                           législatives. 
+                           Attention!                            
+                           Pour pouvoir voter vous devez être inscrits sur 
+                           les listes électorales. Si ce n’est pas le 
+                           cas, vous devez vous inscrire impérativement avant le 
+                           31 décembre 2016, après il sera trop tard! 
+                           "]
+                 ]
+   , expiry = Date.fromString "12/31/2016"
+   }
+   ,{ emptyNews |
+     title = "Festivités de Noël"
+   , date  = Date.fromString "11/14/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les fêtes se préparent à Murol, marché de Noël de l'APE,
+                          passage du père Noël de la commune, fête des illuminations des
+                          commerçants..."]
+                 , p [] [text "Détails dans le "
+                        , a [href "baseDocumentaire/murolInfo/32.pdf", target "_blank"]
+                            [text "Murol Infos"]]
+                 ]
+   , expiry = Date.fromString "12/23/2016"
+   } 
+   ,{ emptyNews |
+     title = "Opération 1001 petits déjeuners - 21 novembre"
+   , date  = Date.fromString "11/14/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les élèves des écoles élémentaires de Murol et de
+                          Chambon sur lac bénéficieront d'une intervention 
+                          de l'association Trisomie 21 du Puy de Dôme
+                          sur le handicap. Elle sera suivie de la distribution de petits
+                          déjeuners. Cette opération, au profit de l'association, est financée
+                          par les collectivités de Murol et Chambon."]
+                 , a [href "http://trisomie21-france.org/les-associations-regionales-et-departementales/les-associations-trisomie-21-pres-de-chez-vous/383-63-trisomie-21-puy-de-dome", target "_blank"]
+                     [text "Site de l'association"]
+                 ]
+   , expiry = Date.fromString "11/22/2016"
+   }
+   ,{ emptyNews |
+     title = "Pôle lecture publique 17 novembre"
+   , date  = Date.fromString "11/14/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "La prochaine permanence du bibliothécaire pour les adultes
+                          aura lieu le 17 novembre de 15h30 à 16h30 dans les locaux 
+                          de l'office du tourisme de Murol."]
+                 ,p [] [text "Vous  pouvez  ainsi  retourner  vos  livres,
+                          récupérer  vos  commandes, découvrir  une  sélection  
+                          d'ouvrages (romans, polars...) et pourquoi pas adhérer
+                          si ce n'est pas déjà fait?
+                          Venez nombreux!"]
+                  , p [] [text "Dates des permanences suivantes: 
+                          15 décembre, 12 janvier, 9 février, 30 mars, 11 mai et 22 juin. "
+                      ]
+                 ]
+   , expiry = Date.fromString "11/18/2016"
+   }
+   ,{ emptyNews |
+     title = "Changement de délégataire au château de Murol"
+   , date  = Date.fromString "11/14/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le conseil municipal du 7 novembre 2016 a attribué la nouvelle 
+                          délégation de service public pour le château à la société Kléber Rossillon
+                          qui succédera à la société Organicom à partir du 1er décembre 2016 
+                          pour une durée de 12 ans."]
+                 ]
+   , expiry = Date.fromString "12/31/2016"
+   } 
+   ,{ emptyNews |
+     title = "Murol Infos 32"
+   , date  = Date.fromString "11/14/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Le nouveau \"Murol Infos\" (novembre 2016) est disponible: "
+                    , a [href "baseDocumentaire/murolInfo/32.pdf", target "_blank"] [text "Télécharger"]]
+                 ]
+   , expiry = Date.fromString "12/14/2016"
+   }   
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

@@ -130,7 +130,9 @@ Elm.ConseilMunicipal.make = function (_elm) {
                            _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Sylvie GILLARD")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Vice-Présidente du CCAS\n                                         Professeur des Ecoles")]))]))]))
+                                   _U.list([$Html.text("Vice-Présidente du CCAS")
+                                           ,A2($Html.br,_U.list([]),_U.list([]))
+                                           ,$Html.text("Professeur des Ecoles")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/CATTARELLI.jpg")]),_U.list([]))]))
@@ -174,7 +176,9 @@ Elm.ConseilMunicipal.make = function (_elm) {
                            _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Anne-Marie DOTTE")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Retraitée du Tourisme\n                                            Co-présidente du COSA")]))]))]))
+                                   _U.list([$Html.text("Retraitée du Tourisme")
+                                           ,A2($Html.br,_U.list([]),_U.list([]))
+                                           ,$Html.text("Co-présidente du COSA")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/LAIR.jpg")]),_U.list([]))]))
@@ -186,7 +190,9 @@ Elm.ConseilMunicipal.make = function (_elm) {
                            _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Angélique LAIR")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Présidente du Syndicat agricole\n                                         Exploitante agricole")]))]))]))
+                                   _U.list([$Html.text("Présidente du Syndicat agricole")
+                                           ,A2($Html.br,_U.list([]),_U.list([]))
+                                           ,$Html.text("Exploitante agricole")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/LANARO.jpg")]),_U.list([]))]))
@@ -198,7 +204,9 @@ Elm.ConseilMunicipal.make = function (_elm) {
                            _U.list([A2($Html.p,_U.list([$Html$Attributes.$class("nom")]),_U.list([$Html.text("Joséphine LANARO")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.$class("job")]),
-                                   _U.list([$Html.text("Membre du CCAS\n                                        responsable de la régie d’avance\n                                        Educatrice\n                                        spécialisée retraitée")]))]))]))
+                                   _U.list([$Html.text("Membre du CCAS\n                                        responsable de la régie d’avance")
+                                           ,A2($Html.br,_U.list([]),_U.list([]))
+                                           ,$Html.text("Educatrice\n                                        spécialisée retraitée")]))]))]))
                    ,A2($Html.tr,
                    _U.list([]),
                    _U.list([A2($Html.td,_U.list([]),_U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/elus/MAURY.jpg")]),_U.list([]))]))

@@ -173,7 +173,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP MUROL 2016 période 1.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tap murol  2016 toussaint - noël.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Murol")]))]))]))
                                             ,A2($Html.tr,
@@ -197,7 +197,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TAP ST NECTAIRE 2016 période 1.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tap St Nect 2016 Toussaint - Noël.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Saint-Nectaire")]))]))]))]))
                                     ,A2($Html.p,

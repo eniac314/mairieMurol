@@ -301,7 +301,7 @@ peri =
                   , td [] [text "Lundi et jeudi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP MUROL 2016 période 1.pdf", target "_blank"] [text "Murol"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/tap murol  2016 toussaint - noël.pdf", target "_blank"] [text "Murol"]]
                   ]
              , tr []
                   [ td [] [text "Elémentaire du Chambon"]
@@ -315,7 +315,7 @@ peri =
                   , td [] [text "Mardi et vendredi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP ST NECTAIRE 2016 période 1.pdf", target "_blank"] [text "Saint-Nectaire"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/tap St Nect 2016 Toussaint - Noël.pdf", target "_blank"] [text "Saint-Nectaire"]]
                   ]  
              ]
      , p [] [text "L’inscription est annuelle et la participation

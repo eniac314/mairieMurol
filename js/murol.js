@@ -13622,19 +13622,11 @@ Elm.Murol.make = function (_elm) {
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Divers")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
-           _U.list([A2($Html.a,
+           _U.list([$Html.text("Fermeture annuelle du ")
+                   ,A2($Html.a,
                    _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
-                   _U.list([$Html.text("A découvrir, le musée des peintres de l’Ecole de Murols")]))
-                   ,A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("Pour une visite en famille : la ")
-                           ,A2($Html.a,
-                           _U.list([$Html$Attributes.href("baseDocumentaire/Carte jeu de piste 2016.pdf"),$Html$Attributes.target("_blank")]),
-                           _U.list([$Html.text("carte jeu de piste")]))
-                           ,$Html.text(" et le ")
-                           ,A2($Html.a,
-                           _U.list([$Html$Attributes.href("baseDocumentaire/livret jeu musée 2016.pdf"),$Html$Attributes.target("_blank")]),
-                           _U.list([$Html.text("livret jeu")]))]))]))
+                   _U.list([$Html.text(" musée des peintres de l’Ecole de Murols")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Réouverture le 23 décembre.")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
            _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Mairie pratique:")]))
@@ -13713,7 +13705,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 10 octobre 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 14 novembre 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -14094,7 +14086,7 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html.text("www.pavillonbleu.org")]))
                               ,A2($Html.br,_U.list([]),_U.list([]))
                               ,A2($Html.a,_U.list([$Html$Attributes.href("/Annee2016.html")]),_U.list([$Html.text("Lien photothèque")]))]))
-                      ,expiry: $Date.fromString("16/21/2016")
+                      ,expiry: $Date.fromString("06/21/2016")
                       ,pic: $Maybe.Just("PAVILLON BLEU LOGO 2.png")})
                       ,_U.update(emptyNews,
                       {title: "Journée des Murolais"
@@ -14373,7 +14365,80 @@ Elm.Murol.make = function (_elm) {
                               _U.list([A2($Html.a,
                               _U.list([$Html$Attributes.href("http://besse.agate-sigb.com/rechercher/info_bib.php"),$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("Site du pôle lecture")]))]))]))
-                      ,expiry: $Date.fromString("10/31/2016")})]);
+                      ,expiry: $Date.fromString("10/31/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Elections 2017"
+                      ,date: $Date.fromString("11/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("En 2017, auront lieu les élections présidentielles et \n                           législatives. \n                           Attention!                            \n                           Pour pouvoir voter vous devez être inscrits sur \n                           les listes électorales. Si ce n’est pas le \n                           cas, vous devez vous inscrire impérativement avant le \n                           31 décembre 2016, après il sera trop tard! \n                           ")]))]))
+                      ,expiry: $Date.fromString("12/31/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Festivités de Noël"
+                      ,date: $Date.fromString("11/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les fêtes se préparent à Murol, marché de Noël de l\'APE,\n                          passage du père Noël de la commune, fête des illuminations des\n                          commerçants...")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Détails dans le ")
+                                      ,A2($Html.a,
+                                      _U.list([$Html$Attributes.href("baseDocumentaire/murolInfo/32.pdf"),$Html$Attributes.target("_blank")]),
+                                      _U.list([$Html.text("Murol Infos")]))]))]))
+                      ,expiry: $Date.fromString("12/23/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Opération 1001 petits déjeuners - 21 novembre"
+                      ,date: $Date.fromString("11/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les élèves des écoles élémentaires de Murol et de\n                          Chambon sur lac bénéficieront d\'une intervention \n                          de l\'association Trisomie 21 du Puy de Dôme\n                          sur le handicap. Elle sera suivie de la distribution de petits\n                          déjeuners. Cette opération, au profit de l\'association, est financée\n                          par les collectivités de Murol et Chambon.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://trisomie21-france.org/les-associations-regionales-et-departementales/les-associations-trisomie-21-pres-de-chez-vous/383-63-trisomie-21-puy-de-dome")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Site de l\'association")]))]))
+                      ,expiry: $Date.fromString("11/22/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Pôle lecture publique 17 novembre"
+                      ,date: $Date.fromString("11/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("La prochaine permanence du bibliothécaire pour les adultes\n                          aura lieu le 17 novembre de 15h30 à 16h30 dans les locaux \n                          de l\'office du tourisme de Murol.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Vous  pouvez  ainsi  retourner  vos  livres,\n                          récupérer  vos  commandes, découvrir  une  sélection  \n                          d\'ouvrages (romans, polars...) et pourquoi pas adhérer\n                          si ce n\'est pas déjà fait?\n                          Venez nombreux!")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Dates des permanences suivantes: \n                          15 décembre, 12 janvier, 9 février, 30 mars, 11 mai et 22 juin. ")]))]))
+                      ,expiry: $Date.fromString("11/18/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Changement de délégataire au château de Murol"
+                      ,date: $Date.fromString("11/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le conseil municipal du 7 novembre 2016 a attribué la nouvelle \n                          délégation de service public pour le château à la société Kléber Rossillon\n                          qui succédera à la société Organicom à partir du 1er décembre 2016 \n                          pour une durée de 12 ans.")]))]))
+                      ,expiry: $Date.fromString("12/31/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Murol Infos 32"
+                      ,date: $Date.fromString("11/14/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le nouveau \"Murol Infos\" (novembre 2016) est disponible: ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/murolInfo/32.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Télécharger")]))]))]))
+                      ,expiry: $Date.fromString("12/14/2016")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

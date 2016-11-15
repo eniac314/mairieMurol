@@ -53,10 +53,10 @@ Elm.Sante.make = function (_elm) {
            _U.list([$Html$Attributes.$class("praticiens")]),
            _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET DE KINESITHERAPIE")]))
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 88 63 46")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mr Sébastien MONNET")]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Sébastien MONNET")]))
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Céline MAYER")]))
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mathias GARCIA")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Clotilde BAHIN")]))]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Aurélie Maizières")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),
            _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET MÉDICAL POLYVALENT")]))

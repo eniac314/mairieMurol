@@ -295,7 +295,8 @@ initialContent =
             ,
             ("Le lac Chambon"
             ,"/images/tiles/decouvrirMurol/lacChambonTile.jpg"
-            , [ p [] [ text "Le lac Chambon est un lac de barrage 
+            , [ img [src "/images/PAVILLON BLEU LOGO 2.png", id "pavBleuImg"] []
+              , p [] [ text "Le lac Chambon est un lac de barrage 
                              naturel issu des éruptions du "
                      , a [href "/DécouvrirMurol.html?bloc=Le volcan du Tartaret"]
                          [text "Tartaret"]
@@ -316,7 +317,19 @@ initialContent =
                              Vous pourrez aussi pratiquer diverses activités en famille 
                              : pédalos, mini-golf, jeux pour enfants, pêche (site 
                              de deuxième catégorie), promenades… "]
-              , p [] [ link "Le c.o.d.e des lacs et rivières - 2016" "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf"]
+              , p [] [ text "La commune de Murol a obtenu le label Pavillon Bleu en 2016.
+                            Ce label international récompense les communes qui veillent
+                            à la qualité de leurs eaux de baignade mais aussi qui s'inscrivent
+                            dans une démarche globale de respect de l'environnement. "]
+
+              --, p [] [ link "Le c.o.d.e des lacs et rivières - 2016" "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf"]
+              , p [] 
+                  [ text "Livret d'informations sur le lac "
+                  , link "\"Le Lac Chambon pas à pas\""
+                        "/baseDocumentaire/livretLac.pdf"]
+              , p [] 
+                  [ link "Site officiel du label Pavillon Bleu"
+                        "http://www.pavillonbleu.org/"]
               , p [] [ text "Le complexe touristique est également équipé de deux "
                      , a [href "/Restaurants.html"] [ text "bars restaurants"]
                      , text " qui vous proposeront rafraîchissements et spécialités 

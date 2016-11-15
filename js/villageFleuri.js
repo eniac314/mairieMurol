@@ -11375,8 +11375,12 @@ Elm.VillageFleuri.make = function (_elm) {
            _U.list([$Html.text("Ces Fleurs sont apposées sur une signalétique spécifique \n                   représentée par un panneau à l\'entrée de la \n                   commune. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text(" National, gratuit et ouvert à toutes les communes,\n                     le concours se déroule à plusieurs échelons (voir schéma ci-contre):")]))
-           ,A2($Html.img,_U.list([$Html$Attributes.src("schema")]),_U.list([]))
+           _U.list([$Html.text(" National, gratuit et ouvert à toutes les communes,\n                     le concours se déroule à plusieurs échelons (détails sur le ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.villes-et-villages-fleuris.com/-les-differents-echelons_40.html")
+                           ,$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("site officiel")]))
+                   ,$Html.text(").")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Dans le cadre de la loi de décentralisation et à partir de 1988,\n                    le concours est organisé avec le soutien des départements et des régions.")]))

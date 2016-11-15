@@ -133,21 +133,21 @@ initialContent =
                            : Belgique, Grande-Bretagne, Italie, Pays-Bas, Suisse, Allemagne, Espagne, 
                            Portugal, Norvège, Danemark, Suède, Finlande, Russie, Pologne, Autriche, 
                            République Tchèque, Hongrie, Serbie, Bulgarie et Grèce. "]
-              , p [] [text "Pour un accès par le car, un service 
-                           de navette permet de rejoindre Murol depuis la 
-                           gare ou l’aéroport de Clermont-Ferrand. Elle effectue le 
-                           trajet Chambon sur Lac - Murol - Saint-Nectaire 
-                           – Champeix – Clermont-Ferrand, en service régulier tous 
-                           les mardis de l’année, mais également le samedi 
-                           en juillet et en août . En saison 
-                           estivale l’offre de transport collectif est donc plus 
-                           importante."]
-              , p [] [text "Un service de réservation est disponible sur le 
-                           site internet de l’Office de Tourisme du Sancy 
-                           ainsi que les horaires et trajet des navettes. 
-                           Les mêmes informations sont disponibles au bureau de 
-                           l’Office de Tourisme de Murol ainsi qu’à la 
-                           mairie."]
+              --, p [] [text "Pour un accès par le car, un service 
+              --             de navette permet de rejoindre Murol depuis la 
+              --             gare ou l’aéroport de Clermont-Ferrand. Elle effectue le 
+              --             trajet Chambon sur Lac - Murol - Saint-Nectaire 
+              --             – Champeix – Clermont-Ferrand, en service régulier tous 
+              --             les mardis de l’année, mais également le samedi 
+              --             en juillet et en août . En saison 
+              --             estivale l’offre de transport collectif est donc plus 
+              --             importante."]
+              --, p [] [text "Un service de réservation est disponible sur le 
+              --             site internet de l’Office de Tourisme du Sancy 
+              --             ainsi que les horaires et trajet des navettes. 
+              --             Les mêmes informations sont disponibles au bureau de 
+              --             l’Office de Tourisme de Murol ainsi qu’à la 
+              --             mairie."]
               , p [] [text "Un service de taxis indépendants est offert sur 
                            le territoire de la commune de Murol. "]
               , p [] [text "Enfin, la municipalité de Murol favorise le covoiturage 
@@ -161,11 +161,11 @@ initialContent =
                            halte d’une ou plusieurs nuits dans notre station."]
               ]
             )
-            ,
-            ( "Navette"
-            , "/images/tiles/transports/navette.jpg"
-            , [ navetteEte, navetteHs]
-            )
+            --,
+            --( "Navette"
+            --, "/images/tiles/transports/navette.jpg"
+            --, [ navetteEte, navetteHs]
+            --)
             ,
             ( "Covoiturage"
             , "/images/tiles/transports/logo-covoiturage.jpg"

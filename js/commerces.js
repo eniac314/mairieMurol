@@ -11560,12 +11560,13 @@ Elm.Commerces.make = function (_elm) {
                                                              ,tel: "04 73 88 69 37 / 06 74 55 15 33"
                                                              ,descr: _U.list(["Taxi, transport malade assis"])})
                                                              ,_U.update(defCom,
-                                                             {name: "Taxi Miseroux"
+                                                             {name: "Taxi Maryline"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
                                                                                  ,_0: "4552"
                                                                                  ,_1: "http://www.sancy.com/activites/detail/4552/murol/taxi-miseroux"})
-                                                             ,addr: "Groire 63790 MUROL"
-                                                             ,tel: "04 73 88 81 12"
+                                                             ,addr: "Le Bourg 63790 MUROL"
+                                                             ,tel: "04 73 88 81 12 / 06 89 56 25 94"
+                                                             ,mail: "sancytaxi@orange.fr"
                                                              ,descr: _U.list(["Taxi, transport malade assis"])})
                                                              ,_U.update(defCom,
                                                              {name: "Navette publique"

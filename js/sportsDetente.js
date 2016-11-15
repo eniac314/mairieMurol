@@ -11402,7 +11402,7 @@ Elm.SportsDetente.make = function (_elm) {
            _U.list([A2($Html.a,
                    _U.list([$Html$Attributes.href("/Associations.html?bloc=01#Rencontreetdétente")]),
                    _U.list([$Html.text("L’association rencontre et détente")]))
-                   ,$Html.text(" organise des séances chaque \n                    lundi de 18h15 à 19h15 avec Sandrine Dalle. ")]))
+                   ,$Html.text(" organise des séances chaque \n                    vendredi de 19h à 20h avec Sandrine Dalle. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tarif : 5€ la séance ")]))
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Qi Gong")]))
            ,A2($Html.p,

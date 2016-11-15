@@ -85,8 +85,10 @@ initialContent =
                    représentée par un panneau à l'entrée de la 
                    commune. "]
       , p [] [text " National, gratuit et ouvert à toutes les communes,
-                     le concours se déroule à plusieurs échelons (voir schéma ci-contre):"]
-      , img [src "schema"] []
+                     le concours se déroule à plusieurs échelons (détails sur le "
+             , a [href "http://www.villes-et-villages-fleuris.com/-les-differents-echelons_40.html", target "_blank"] [text "site officiel"]
+             , text ")."
+             ]
       , p [] [text "Dans le cadre de la loi de décentralisation et à partir de 1988,
                     le concours est organisé avec le soutien des départements et des régions."]
       

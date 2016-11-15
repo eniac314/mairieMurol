@@ -11797,7 +11797,10 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Le lac Chambon"
                                  ,_1: "/images/tiles/decouvrirMurol/lacChambonTile.jpg"
-                                 ,_2: _U.list([A2($Html.p,
+                                 ,_2: _U.list([A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/PAVILLON BLEU LOGO 2.png"),$Html$Attributes.id("pavBleuImg")]),
+                                              _U.list([]))
+                                              ,A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("Le lac Chambon est un lac de barrage \n                             naturel issu des éruptions du ")
                                                       ,A2($Html.a,
@@ -11812,9 +11815,14 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([$Html.text("L’été, la plage de sable et la zone \n                             de baignade surveillée en juillet août vous\n                             offrent une plage à la montagne ! \n                             Vous pourrez aussi pratiquer diverses activités en famille \n                             : pédalos, mini-golf, jeux pour enfants, pêche (site \n                             de deuxième catégorie), promenades… ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([A2($Utils.link,
-                                              "Le c.o.d.e des lacs et rivières - 2016",
-                                              "/baseDocumentaire/code_lacs_rivieres_2015_calameo.pdf")]))
+                                              _U.list([$Html.text("La commune de Murol a obtenu le label Pavillon Bleu en 2016.\n                            Ce label international récompense les communes qui veillent\n                            à la qualité de leurs eaux de baignade mais aussi qui s\'inscrivent\n                            dans une démarche globale de respect de l\'environnement. ")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([$Html.text("Livret d\'informations sur le lac ")
+                                                      ,A2($Utils.link,"\"Le Lac Chambon pas à pas\"","/baseDocumentaire/livretLac.pdf")]))
+                                              ,A2($Html.p,
+                                              _U.list([]),
+                                              _U.list([A2($Utils.link,"Site officiel du label Pavillon Bleu","http://www.pavillonbleu.org/")]))
                                               ,A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("Le complexe touristique est également équipé de deux ")

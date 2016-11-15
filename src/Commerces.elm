@@ -326,10 +326,11 @@ comMapYearLong = fromList
       }
       ,
       { defCom |
-         name   = "Taxi Miseroux"
+         name   = "Taxi Maryline"
        , refOt  = Just ("4552","http://www.sancy.com/activites/detail/4552/murol/taxi-miseroux")   
-       , addr   = "Groire 63790 MUROL"
-       , tel    = "04 73 88 81 12"
+       , addr   = "Le Bourg 63790 MUROL"
+       , tel    = "04 73 88 81 12 / 06 89 56 25 94"
+       , mail   = "sancytaxi@orange.fr"
        , descr  = ["Taxi, transport malade assis"] 
       }
       ,
