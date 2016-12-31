@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 14 novembre 2016"]
+            [text "Dernière mise à jour le mardi 13 décembre 2016"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -1066,6 +1066,19 @@ news =
                      ]
                  ]
    , expiry = Date.fromString "11/31/2016"
+   }
+   ,{ emptyNews |
+     title = "Service civique - missions à pourvoir en Auvergne"
+   , date  = Date.fromString "12/12/2016"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Offres de services civiques sur la région
+                           auvergne à pourvoir en 2017: "
+                    , a [href "http://shoutout.wix.com/so/7LZaLlzW?cid=3aa2bccc-3c25-43d9-8912-f8d419f60ea8&region=b9a4e5c3-b1b0-4b29-9f0f-1c6df353a7b7#/main", target "_blank"]
+                        [text "site de l'annonce"]
+                    ]
+                 ]
+   , expiry = Date.fromString "01/12/2017"
    }   
   --,{ emptyNews |
    --  title = ""

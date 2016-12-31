@@ -13718,7 +13718,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 14 novembre 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mardi 13 décembre 2016")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -14451,7 +14451,20 @@ Elm.Murol.make = function (_elm) {
                               _U.list([]),
                               _U.list([$Html.text("Visitez ")
                                       ,A2($Html.a,_U.list([$Html$Attributes.href("/PatrimoinePhoto.html")]),_U.list([$Html.text("la photothèque")]))]))]))
-                      ,expiry: $Date.fromString("11/31/2016")})]);
+                      ,expiry: $Date.fromString("11/31/2016")})
+                      ,_U.update(emptyNews,
+                      {title: "Service civique - missions à pourvoir en Auvergne"
+                      ,date: $Date.fromString("12/12/2016")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Offres de services civiques sur la région\n                           auvergne à pourvoir en 2017: ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://shoutout.wix.com/so/7LZaLlzW?cid=3aa2bccc-3c25-43d9-8912-f8d419f60ea8&region=b9a4e5c3-b1b0-4b29-9f0f-1c6df353a7b7#/main")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("site de l\'annonce")]))]))]))
+                      ,expiry: $Date.fromString("01/12/2017")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters
