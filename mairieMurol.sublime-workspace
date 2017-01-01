@@ -520,325 +520,519 @@
 	"buffers":
 	[
 		{
-			"file": "src/Utils.elm",
+			"file": "Associations.html",
 			"settings":
 			{
-				"buffer_size": 9967,
+				"buffer_size": 942,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "AutomneHiver.html",
+			"settings":
+			{
+				"buffer_size": 1470,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "AutresPublications.html",
+			"settings":
+			{
+				"buffer_size": 912,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "BulletinsMunicipaux.html",
+			"settings":
+			{
+				"buffer_size": 914,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Carte&Plan.html",
+			"settings":
+			{
+				"buffer_size": 894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "CCAS.html",
+			"settings":
+			{
+				"buffer_size": 884,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Commerces.html",
+			"settings":
+			{
+				"buffer_size": 894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Commissions.html",
+			"settings":
+			{
+				"buffer_size": 898,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ConseilMunicipal.html",
+			"settings":
+			{
+				"buffer_size": 908,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "DécouvrirMurol.html",
+			"settings":
+			{
+				"buffer_size": 1030,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Délibérations.html",
+			"settings":
+			{
+				"buffer_size": 902,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Documentation.html",
+			"settings":
+			{
+				"buffer_size": 902,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Elections.html",
+			"settings":
+			{
+				"buffer_size": 894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "elm.js",
+			"settings":
+			{
+				"buffer_size": 291988,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "elm-package.json",
+			"settings":
+			{
+				"buffer_size": 578,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Entreprises.html",
+			"settings":
+			{
+				"buffer_size": 898,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "FestivalArt.html",
+			"settings":
+			{
+				"buffer_size": 999,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gatherPics",
+			"settings":
+			{
+				"buffer_size": 6396992,
+				"encoding": "Hexadecimal",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "GestionDesDéchets.html",
+			"settings":
+			{
+				"buffer_size": 910,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "GestionDesRisques.html",
+			"settings":
+			{
+				"buffer_size": 910,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "google8ef9fedb39655dcb.html",
+			"settings":
+			{
+				"buffer_size": 53,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 6187,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Hébergements.html",
+			"settings":
+			{
+				"buffer_size": 900,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "HorairesEtContact.html",
+			"settings":
+			{
+				"buffer_size": 906,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 1535,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "JourneeMurolais.html",
+			"settings":
+			{
+				"buffer_size": 1007,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "LaCommune.html",
+			"settings":
+			{
+				"buffer_size": 894,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "LesSeniors.html",
+			"settings":
+			{
+				"buffer_size": 938,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "LICENSE",
+			"settings":
+			{
+				"buffer_size": 1478,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mairieMurol.sublime-project",
+			"settings":
+			{
+				"buffer_size": 4,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mairieMurol.sublime-workspace",
+			"settings":
+			{
+				"buffer_size": 43241,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/FestivalArt.elm",
+			"file": "Medievales.html",
 			"settings":
 			{
-				"buffer_size": 9814,
-				"encoding": "UTF-8",
+				"buffer_size": 994,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Lightbox.elm",
+			"file": "MurolInfos.html",
 			"settings":
 			{
-				"buffer_size": 15285,
-				"encoding": "UTF-8",
+				"buffer_size": 896,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/JourneeMurolais.elm",
+			"file": "NumerosD'urgences.html",
 			"settings":
 			{
-				"buffer_size": 5175,
-				"encoding": "UTF-8",
+				"buffer_size": 906,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Annee2016.elm",
+			"file": "OfficeDeTourisme.html",
 			"settings":
 			{
-				"buffer_size": 6362,
-				"encoding": "UTF-8",
+				"buffer_size": 904,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/PrintempsEte.elm",
+			"file": "OffresD'emploi.html",
 			"settings":
 			{
-				"buffer_size": 3222,
-				"encoding": "UTF-8",
+				"buffer_size": 900,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/AutresPublications.elm",
+			"file": "Patrimoine.html",
 			"settings":
 			{
-				"buffer_size": 2327,
-				"encoding": "UTF-8",
+				"buffer_size": 896,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Periscolaire.elm",
+			"file": "PatrimoinePhoto.html",
 			"settings":
 			{
-				"buffer_size": 18089,
-				"encoding": "UTF-8",
+				"buffer_size": 1004,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "styles/style.css",
+			"file": "PériEtExtra-scolaire.html",
 			"settings":
 			{
-				"buffer_size": 48376,
-				"encoding": "UTF-8",
+				"buffer_size": 942,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Murol.elm",
+			"file": "PetitesAnnonces.html",
 			"settings":
 			{
-				"buffer_size": 46119,
-				"encoding": "UTF-8",
+				"buffer_size": 906,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/DecouvrirMurol.elm",
+			"file": "Photothèque.html",
 			"settings":
 			{
-				"buffer_size": 31317,
-				"encoding": "UTF-8",
+				"buffer_size": 898,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Restaurants.elm",
+			"file": "PrintempsEte.html",
 			"settings":
 			{
-				"buffer_size": 10752,
-				"encoding": "UTF-8",
+				"buffer_size": 998,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Gallery.elm",
+			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 11149,
-				"encoding": "UTF-8",
+				"buffer_size": 14,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Sante.elm",
+			"file": "Restaurants.html",
 			"settings":
 			{
-				"buffer_size": 4605,
-				"encoding": "UTF-8",
+				"buffer_size": 898,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Transports.elm",
+			"file": "robots.txt",
 			"settings":
 			{
-				"buffer_size": 14403,
-				"encoding": "UTF-8",
+				"buffer_size": 94,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/GestionDesDechets.elm",
+			"file": "SallesMunicipales.html",
 			"settings":
 			{
-				"buffer_size": 8844,
-				"encoding": "UTF-8",
+				"buffer_size": 898,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Animaux.elm",
+			"file": "Santé.html",
 			"settings":
 			{
-				"buffer_size": 2995,
-				"encoding": "UTF-8",
+				"buffer_size": 886,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Hebergements.elm",
+			"file": "sitemap.xml",
 			"settings":
 			{
-				"buffer_size": 25582,
-				"encoding": "UTF-8",
+				"buffer_size": 8458,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Commerces.elm",
+			"file": "Sortir.html",
 			"settings":
 			{
-				"buffer_size": 14375,
-				"encoding": "UTF-8",
+				"buffer_size": 888,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/TiledMenu.elm",
+			"file": "SportsEtDétente.html",
 			"settings":
 			{
-				"buffer_size": 5362,
-				"encoding": "UTF-8",
+				"buffer_size": 902,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Associations.elm",
+			"file": "start",
 			"settings":
 			{
-				"buffer_size": 2180,
+				"buffer_size": 88,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/AssociationsList.elm",
+			"file": "Texts.xcf",
 			"settings":
 			{
-				"buffer_size": 23858,
-				"encoding": "UTF-8",
+				"buffer_size": 1835352,
+				"encoding": "Hexadecimal",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/MurolInfos.elm",
+			"file": "Transports.html",
 			"settings":
 			{
-				"buffer_size": 5022,
-				"encoding": "UTF-8",
+				"buffer_size": 938,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Animation.elm",
+			"file": "VieScolaire.html",
 			"settings":
 			{
-				"buffer_size": 10420,
-				"encoding": "UTF-8",
+				"buffer_size": 940,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/AnimationEstivale.elm",
+			"file": "VillageFleuri.html",
 			"settings":
 			{
-				"buffer_size": 2536,
-				"encoding": "UTF-8",
+				"buffer_size": 902,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Medievales.elm",
+			"file": "VosDémarches.html",
 			"settings":
 			{
-				"buffer_size": 3770,
-				"encoding": "UTF-8",
+				"buffer_size": 900,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Artistes.elm",
+			"contents": "Searching 63 files for \"La municipalité de Murol vous souhaite une bonne année 2017\"\n\n/home/eniac314/prog/elm/mairieMurol/14Juillet.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Agriculture.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Animation.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/AnimationEstivale.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Animaux.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Annee2016.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Artistes.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Associations.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/AutomneHiver.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/AutresPublications.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/BulletinsMunicipaux.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/CCAS.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Carte&Plan.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Commerces.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Commissions.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/ConseilMunicipal.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Documentation.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/DécouvrirMurol.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Délibérations.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Elections.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Entreprises.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/FestivalArt.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/GestionDesDéchets.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/GestionDesRisques.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/HorairesEtContact.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Hébergements.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/JourneeMurolais.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/LaCommune.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/LesSeniors.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Medievales.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/MurolInfos.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/NumerosD'urgences.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/OfficeDeTourisme.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/OffresD'emploi.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Patrimoine.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/PatrimoinePhoto.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/PetitesAnnonces.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Photothèque.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/PrintempsEte.html:\n   22            </h1>\n   23            <h2 id=\"subTitle\">\n   24:             La municipalité de Murol vous souhaite une bonne année 2017\n   25            </h2>\n   26    </header>\n\n/home/eniac314/prog/elm/mairieMurol/PériEtExtra-scolaire.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Restaurants.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/SallesMunicipales.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Santé.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Sortir.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/SportsEtDétente.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/Transports.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/VieScolaire.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/VillageFleuri.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/VosDémarches.html:\n   21            </h1>\n   22            <h2 id=\"subTitle\">\n   23:             La municipalité de Murol vous souhaite une bonne année 2017\n   24            </h2>\n   25    </header>\n\n/home/eniac314/prog/elm/mairieMurol/index.html:\n   20            </h1>\n   21            <h2 id=\"subTitle\">\n   22:             La municipalité de Murol vous souhaite une bonne année 2017\n   23            </h2>\n   24    </header>\n\n50 matches across 50 files\n",
 			"settings":
 			{
-				"buffer_size": 9980,
-				"encoding": "UTF-8",
+				"buffer_size": 11917,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "14Juillet.html",
+			"settings":
+			{
+				"buffer_size": 992,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/SportsDetente.elm",
+			"file": "Agriculture.html",
 			"settings":
 			{
-				"buffer_size": 6484,
-				"encoding": "UTF-8",
+				"buffer_size": 898,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/VillageFleuri.elm",
+			"file": "Animation.html",
 			"settings":
 			{
-				"buffer_size": 6957,
-				"encoding": "UTF-8",
+				"buffer_size": 894,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/PatrimoinePhoto.elm",
+			"file": "AnimationEstivale.html",
 			"settings":
 			{
-				"buffer_size": 3626,
-				"encoding": "UTF-8",
+				"buffer_size": 910,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/VieScolaire.elm",
+			"file": "Animaux.html",
 			"settings":
 			{
-				"buffer_size": 25489,
-				"encoding": "UTF-8",
+				"buffer_size": 890,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/LesSeniors.elm",
+			"file": "Annee2016.html",
 			"settings":
 			{
-				"buffer_size": 9062,
-				"encoding": "UTF-8",
+				"buffer_size": 995,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/OffresEmploi.elm",
+			"file": "Artistes.html",
 			"settings":
 			{
-				"buffer_size": 3817,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Phototheque.elm",
-			"settings":
-			{
-				"buffer_size": 4400,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/AutomneHiver.elm",
-			"settings":
-			{
-				"buffer_size": 3282,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Deliberations.elm",
-			"settings":
-			{
-				"buffer_size": 3150,
-				"encoding": "UTF-8",
+				"buffer_size": 892,
 				"line_ending": "Unix"
 			}
 		}
@@ -908,8 +1102,44 @@
 	},
 	"file_history":
 	[
-		"/home/eniac314/prog/elm/mairieMurol/styles/summer2016.css",
+		"/home/eniac314/prog/elm/mairieMurol/src/Utils.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/FestivalArt.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Lightbox.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/JourneeMurolais.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Annee2016.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/PrintempsEte.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/AutresPublications.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Periscolaire.elm",
+		"/home/eniac314/prog/elm/mairieMurol/styles/style.css",
 		"/home/eniac314/prog/elm/mairieMurol/src/Murol.elm",
+		"/home/eniac314/prog/elm/mairieMurol/Commerces.html",
+		"/home/eniac314/prog/elm/mairieMurol/src/DecouvrirMurol.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Restaurants.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Gallery.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Sante.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Transports.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/GestionDesDechets.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Animaux.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Hebergements.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Commerces.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/TiledMenu.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Associations.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/AssociationsList.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/MurolInfos.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Animation.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/AnimationEstivale.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Medievales.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Artistes.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/SportsDetente.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/VillageFleuri.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/PatrimoinePhoto.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/VieScolaire.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/LesSeniors.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/OffresEmploi.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Phototheque.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/AutomneHiver.elm",
+		"/home/eniac314/prog/elm/mairieMurol/src/Deliberations.elm",
+		"/home/eniac314/prog/elm/mairieMurol/styles/summer2016.css",
 		"/home/fayong/prog/elm/mairieMurol/14Juillet.html",
 		"/home/eniac314/prog/elm/mairieMurol/Associations.html",
 		"/home/fayong/prog/elm/mairieMurol/src/14Juillet.elm",
@@ -999,43 +1229,7 @@
 		"/home/fayong/prog/elm/mairieMurol/Transports.html",
 		"/home/fayong/prog/elm/mairieMurol/Documentation.html",
 		"/home/fayong/prog/elm/mairieMurol/NumerosD'urgences.html",
-		"/home/fayong/prog/elm/mairieMurol/src/AgricultureOld.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/Covoiturage.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/ArtEtMusique.elm",
-		"/home/fayong/prog/elm/mairieMurol/Hébergements.html",
-		"/home/fayong/prog/elm/mairieMurol/src/EntreprisesOld.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/Artisanat.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/Scroll.elm",
-		"/home/fayong/prog/elm/mairieMurol/murol.html",
-		"/home/fayong/prog/elm/mairieMurol/src/GestionDesDechets.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/elm-package.json",
-		"/home/fayong/prog/elm/mairieMurol/src/CMJ.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/Cinema.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/ArtisanatArt.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/SportEtDetentes.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/QuinzaineCom.elm",
-		"/home/fayong/prog/elm/mairieMurol/Agriculture.html",
-		"/home/fayong/prog/elm/mairieMurol/ArtEtMusique.html",
-		"/home/fayong/prog/elm/mairieMurol/Artisanat.html",
-		"/home/fayong/prog/elm/mairieMurol/ArtisanatD'art.html",
-		"/home/fayong/prog/elm/mairieMurol/CCAS.html",
-		"/home/fayong/prog/elm/mairieMurol/Cinema.html",
-		"/home/fayong/prog/elm/mairieMurol/CMJ.html",
-		"/home/fayong/prog/elm/mairieMurol/Commerces.html",
-		"/home/fayong/prog/elm/mairieMurol/Commissions.html",
-		"/home/fayong/prog/elm/mairieMurol/ConseilMunicipal.html",
-		"/home/fayong/prog/elm/mairieMurol/Covoiturage.html",
-		"/home/fayong/prog/elm/mairieMurol/Entreprises.html",
-		"/home/fayong/prog/elm/mairieMurol/GestionDesDéchets.html",
-		"/home/fayong/prog/elm/mairieMurol/GestionDesRisques.html",
-		"/home/fayong/prog/elm/mairieMurol/HorairesEtContact.html",
-		"/home/fayong/prog/elm/mairieMurol/LaCommune.html",
-		"/home/fayong/prog/elm/mairieMurol/OffresD'emploi.html",
-		"/home/fayong/prog/elm/mairieMurol/Publications.html",
-		"/home/fayong/prog/elm/mairieMurol/QuinzaineCommerciale.html",
-		"/home/fayong/prog/elm/mairieMurol/SportsEtDétente.html",
-		"/home/fayong/prog/elm/mairieMurol/Tourisme.html",
-		"/home/fayong/prog/elm/mairieMurol/VosDémarches.html"
+		"/home/fayong/prog/elm/mairieMurol/src/AgricultureOld.elm"
 	],
 	"find":
 	{
@@ -1054,6 +1248,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"La municipalité de Murol vous souhaite une bonne année 2017",
+			"bienvenu",
+			"la commune de",
+			"la commune de vous",
+			"la commune de",
+			"commun",
 			"mise",
 			"bloc",
 			"navette",
@@ -1175,13 +1375,7 @@
 			"miniLightbox",
 			"fa-",
 			"decou",
-			"medievales",
-			"pho",
-			"pho\n\n",
-			"office",
-			"Tarta",
-			"photo",
-			"ocobre"
+			"medievales"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1189,6 +1383,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"La municipalité de Murol vous souhaite une bonne année 2017",
 			"jpg",
 			"murolInfo",
 			"/baseDocumentaire",
@@ -1224,29 +1419,29 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 57,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Utils.elm",
+					"file": "Associations.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9967,
+						"buffer_size": 942,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								561,
-								561
+								696,
+								696
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1254,166 +1449,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/FestivalArt.elm",
+					"file": "AutomneHiver.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3198,
-								3198
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2109.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/Lightbox.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								193,
-								193
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 513.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/JourneeMurolais.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5175,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								350,
-								350
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/Annee2016.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6362,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3396,
-								3396
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1755.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 31,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/PrintempsEte.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3222,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								268,
-								268
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1995.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 30,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/AutresPublications.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2327,
+						"buffer_size": 1470,
 						"regions":
 						{
 						},
@@ -1426,247 +1471,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 881.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 32,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/Periscolaire.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18089,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13306,
-								13306
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 266.0,
-						"translation.y": 5244.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "styles/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48376,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								21081,
-								21081
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 22216.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/Murol.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 46119,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4369,
-								4369
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 200.0,
-						"translation.y": 2817.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "src/DecouvrirMurol.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 31317,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15628,
-								15628
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 206.0,
-						"translation.y": 5559.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "src/Restaurants.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10752,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5767,
-								5767
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 3216.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/Gallery.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11149,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4275.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "src/Sante.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4605,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3811,
-								3811
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1881.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "src/Transports.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14403,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3507,
-								3507
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1674,76 +1479,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
-					"file": "src/GestionDesDechets.elm",
+					"buffer": 2,
+					"file": "AutresPublications.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8844,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1612,
-								1612
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 855.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "src/Animaux.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2995,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2970,
-								2970
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1354.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "src/Hebergements.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25582,
+						"buffer_size": 912,
 						"regions":
 						{
 						},
@@ -1756,189 +1501,845 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5493.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 55,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "BulletinsMunicipaux.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 914,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 54,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Carte&Plan.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 53,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "CCAS.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 52,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Commerces.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 51,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Commissions.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 50,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "ConseilMunicipal.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 908,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 49,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "DécouvrirMurol.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1030,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 48,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "Délibérations.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 902,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 47,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "Documentation.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 902,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 46,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "Elections.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 45,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "elm.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 291988,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 44,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "elm-package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 43,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "Entreprises.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 42,
+					"type": "text"
+				},
+				{
+					"file": "favicon.ico",
+					"semi_transient": false,
+					"stack_index": 41,
+					"type": "image"
+				},
+				{
+					"buffer": 16,
+					"file": "FestivalArt.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 999,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 40,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "gatherPics",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6396992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
 					"buffer": 18,
-					"file": "src/Commerces.elm",
+					"file": "GestionDesDéchets.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14375,
+						"buffer_size": 910,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9866,
-								9866
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5743.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
 					"buffer": 19,
-					"file": "src/TiledMenu.elm",
+					"file": "GestionDesRisques.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5362,
+						"buffer_size": 910,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3046,
-								3046
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1867.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
 					"buffer": 20,
-					"file": "src/Associations.elm",
+					"file": "google8ef9fedb39655dcb.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2180,
+						"buffer_size": 53,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1824,
-								1824
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 969.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
 					"buffer": 21,
-					"file": "src/AssociationsList.elm",
+					"file": "Gruntfile.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 23858,
+						"buffer_size": 6187,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3026,
-								3026
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1202.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "Hébergements.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 900,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 34,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
-					"file": "src/MurolInfos.elm",
+					"buffer": 23,
+					"file": "HorairesEtContact.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5022,
+						"buffer_size": 906,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4961,
-								4961
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 72.0,
-						"translation.y": 2446.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
-					"file": "src/Animation.elm",
+					"buffer": 24,
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10420,
+						"buffer_size": 1535,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8183,
-								8183
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 32,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "JourneeMurolais.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1007,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 31,
+					"type": "text"
+				},
+				{
+					"buffer": 26,
+					"file": "LaCommune.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 30,
+					"type": "text"
+				},
+				{
+					"buffer": 27,
+					"file": "LesSeniors.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 29,
+					"type": "text"
+				},
+				{
+					"buffer": 28,
+					"file": "LICENSE",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 28,
+					"type": "text"
+				},
+				{
+					"buffer": 29,
+					"file": "mairieMurol.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 27,
+					"type": "text"
+				},
+				{
+					"buffer": 30,
+					"file": "mairieMurol.sublime-workspace",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 43241,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1948,235 +2349,175 @@
 					"type": "text"
 				},
 				{
-					"buffer": 24,
-					"file": "src/AnimationEstivale.elm",
+					"buffer": 31,
+					"file": "Medievales.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2536,
+						"buffer_size": 994,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1500,
-								1500
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 47.0,
-						"translation.y": 912.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 25,
-					"file": "src/Medievales.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3770,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3727,
-								3727
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1717.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
-					"file": "src/Artistes.elm",
+					"buffer": 32,
+					"file": "MurolInfos.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9980,
+						"buffer_size": 896,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3124,
-								3124
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1387.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
-					"file": "src/SportsDetente.elm",
+					"buffer": 33,
+					"file": "NumerosD'urgences.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6484,
+						"buffer_size": 906,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4002,
-								4002
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 2002.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "src/VillageFleuri.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6957,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2933,
-								2933
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 129.0,
-						"translation.y": 1356.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "src/PatrimoinePhoto.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3527,
-								3527
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 166.0,
-						"translation.y": 1995.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 30,
-					"file": "src/VieScolaire.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25489,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4727,
-								4727
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 513.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
-					"file": "src/LesSeniors.elm",
+					"buffer": 34,
+					"file": "OfficeDeTourisme.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9062,
+						"buffer_size": 904,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1414,
-								1414
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 35,
+					"file": "OffresD'emploi.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 900,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 36,
+					"file": "Patrimoine.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 896,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -2188,42 +2529,12 @@
 					"type": "text"
 				},
 				{
-					"buffer": 32,
-					"file": "src/OffresEmploi.elm",
+					"buffer": 37,
+					"file": "PatrimoinePhoto.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3817,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3371,
-								3371
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1900.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 33,
-					"file": "src/Phototheque.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4400,
+						"buffer_size": 1004,
 						"regions":
 						{
 						},
@@ -2236,24 +2547,24 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2059.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
-					"file": "src/AutomneHiver.elm",
+					"buffer": 38,
+					"file": "PériEtExtra-scolaire.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3282,
+						"buffer_size": 942,
 						"regions":
 						{
 						},
@@ -2266,45 +2577,967 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2451.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 35,
-					"file": "src/Deliberations.elm",
+					"buffer": 39,
+					"file": "PetitesAnnonces.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3150,
+						"buffer_size": 906,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1963,
-								1963
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 118.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 40,
+					"file": "Photothèque.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 41,
+					"file": "PrintempsEte.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 998,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 42,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 43,
+					"file": "Restaurants.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 44,
+					"file": "robots.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 94,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 45,
+					"file": "SallesMunicipales.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 46,
+					"file": "Santé.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 886,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 47,
+					"file": "sitemap.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 48,
+					"file": "Sortir.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 49,
+					"file": "SportsEtDétente.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 902,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 50,
+					"file": "start",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 88,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 51,
+					"file": "Texts.xcf",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1835352,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 52,
+					"file": "Transports.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 53,
+					"file": "VieScolaire.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 54,
+					"file": "VillageFleuri.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 902,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 55,
+					"file": "VosDémarches.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 900,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								696,
+								696
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 56,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11917,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										229,
+										275
+									],
+									[
+										464,
+										510
+									],
+									[
+										697,
+										743
+									],
+									[
+										938,
+										984
+									],
+									[
+										1169,
+										1215
+									],
+									[
+										1402,
+										1448
+									],
+									[
+										1634,
+										1680
+									],
+									[
+										1870,
+										1916
+									],
+									[
+										2106,
+										2152
+									],
+									[
+										2348,
+										2394
+									],
+									[
+										2591,
+										2637
+									],
+									[
+										2819,
+										2865
+									],
+									[
+										3053,
+										3099
+									],
+									[
+										3286,
+										3332
+									],
+									[
+										3521,
+										3567
+									],
+									[
+										3761,
+										3807
+									],
+									[
+										3998,
+										4044
+									],
+									[
+										4236,
+										4282
+									],
+									[
+										4473,
+										4519
+									],
+									[
+										4706,
+										4752
+									],
+									[
+										4941,
+										4987
+									],
+									[
+										5176,
+										5222
+									],
+									[
+										5417,
+										5463
+									],
+									[
+										5658,
+										5704
+									],
+									[
+										5899,
+										5945
+									],
+									[
+										6135,
+										6181
+									],
+									[
+										6374,
+										6420
+									],
+									[
+										6607,
+										6653
+									],
+									[
+										6841,
+										6887
+									],
+									[
+										7075,
+										7121
+									],
+									[
+										7309,
+										7355
+									],
+									[
+										7550,
+										7596
+									],
+									[
+										7790,
+										7836
+									],
+									[
+										8028,
+										8074
+									],
+									[
+										8262,
+										8308
+									],
+									[
+										8501,
+										8547
+									],
+									[
+										8740,
+										8786
+									],
+									[
+										8975,
+										9021
+									],
+									[
+										9211,
+										9257
+									],
+									[
+										9455,
+										9501
+									],
+									[
+										9690,
+										9736
+									],
+									[
+										9931,
+										9977
+									],
+									[
+										10160,
+										10206
+									],
+									[
+										10390,
+										10436
+									],
+									[
+										10629,
+										10675
+									],
+									[
+										10863,
+										10909
+									],
+									[
+										11098,
+										11144
+									],
+									[
+										11335,
+										11381
+									],
+									[
+										11571,
+										11617
+									],
+									[
+										11800,
+										11846
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2508.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 57,
+					"file": "14Juillet.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 992,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 64,
+					"type": "text"
+				},
+				{
+					"buffer": 58,
+					"file": "Agriculture.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 63,
+					"type": "text"
+				},
+				{
+					"buffer": 59,
+					"file": "Animation.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 62,
+					"type": "text"
+				},
+				{
+					"buffer": 60,
+					"file": "AnimationEstivale.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 61,
+					"type": "text"
+				},
+				{
+					"buffer": 61,
+					"file": "Animaux.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 890,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 60,
+					"type": "text"
+				},
+				{
+					"buffer": 62,
+					"file": "Annee2016.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 59,
+					"type": "text"
+				},
+				{
+					"buffer": 63,
+					"file": "Artistes.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 58,
 					"type": "text"
 				}
 			]
@@ -2353,7 +3586,7 @@
 	"project": "mairieMurol.sublime-project",
 	"replace":
 	{
-		"height": 66.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

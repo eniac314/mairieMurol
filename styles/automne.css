@@ -1,4 +1,4 @@
-/*winter2017.css*/
+/*automne2016.css*/
 /*-------------------------------------------------------------------------------
   import google fonts
 -------------------------------------------------------------------------------*/
@@ -21,8 +21,8 @@ html{
 
 body {
   background-attachment: fixed;
-  background-color: #ccccff;
-  background-image: url(/images/winter_bg.jpg);
+  background-color: #a87f39;
+  background-image: url(/images/automne_bg2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
@@ -60,7 +60,7 @@ body {
 
 
 header{ 
-  background-image: url(/images/banner_winter_1567.jpg);
+  background-image: url(/images/banner_automne_1567.jpg);
   background-position: center top;
   background-repeat: no-repeat, repeat;
   padding-top: 200px;
@@ -72,12 +72,7 @@ header{
 
 header #pageTitle{
   /*background-color: #cfff4f;*/
-  color: aliceblue;
-  background-color: #000033;
-  background-image: url(/images/snowflake1.png), url(/images/snowflake1.png);
-  background-repeat: no-repeat, no-repeat;
-  background-size: contain;
-  background-position: right, left;
+  background-color: rgb(255, 211, 37);
   font-style: italic;
   font-size: 45px;
   margin-bottom: 0;
@@ -87,8 +82,8 @@ header #pageTitle{
 header #subTitle{
   margin-top: 0;
   margin-bottom: 0;
-  color: #000033;
-  background-color: aliceblue;
+  color: aliceblue;
+  background-color: rgb(69, 22, 6);
   font-weight: normal;
   }
 
@@ -114,7 +109,7 @@ header #subTitle{
     #container {
     }
     #header {
-      background-image: url(/images/banner_winter_1149.jpg)
+      background-image: url(/images/banner_automne_1149.jpg)
     }
 }
 
@@ -132,15 +127,15 @@ header #subTitle{
 -------------------------------------------------------------------------------*/
 .mainMenu
   {
-  background-color: rgba(102, 102, 153, 0.8);
+  background-color: rgba(94, 129, 53, 0.8);
+  background-color: url(/images/automne_iconbg.gif);
   text-align: center;
   margin: 10;
   }
 
 .mainMenu .current{
   background-image: none;
-  color: aliceblue;
-  background-color: #000033; /*brown*/
+  background-color: rgb(69, 22, 6); /*brown*/
 }
 
 .mainMenu nav 
@@ -167,14 +162,15 @@ input::-moz-focus-inner {
   margin-top: 0.2em;
   margin-right: 0.2em;
   margin-bottom: 0.2em;
-  background-color: #c7caf9; /*lightblue*/
-  background-image: url(/images/winter_iconbgB.gif);
+  /*background-color: #cd5c5c;*/
+  background-color: sienna;
+  background-image: url(/images/automne_iconbg.gif);
   /*background-image: url(/images/menubg.gif);*/
   /*background: -moz-linear-gradient(saddlebrown, peru, sienna);*/
   /*text-transform: capitalize;*/
   text-decoration: none;
   font-family: 'PT Serif', verdana, serif;
-  color: #000033; /*green white*/
+  color: #edf3db; /*green white*/
   }
 
 .mainMenu label{
@@ -185,8 +181,8 @@ input::-moz-focus-inner {
 }
 
 .mainMenu a:hover, .mainMenu label:hover{
-  color: teal;
-  background-image: url(/images/winter_iconbgS.gif);
+  color: aliceblue;
+  background-image: url(/images/automne_iconbg02.gif);
 }
 
 nav[class*="Content"] > nav
@@ -421,7 +417,7 @@ nav[class*="Content"] a
 .subContainerData h2{
   text-align: center;
   /*text-transform: capitalize;*/
-  background-color: #333366;
+  background-color: sienna;
   color: aliceblue;
   padding: 0.3em 0;
   margin-top: 0.4em;
@@ -436,9 +432,9 @@ nav[class*="Content"] a
   margin-top: 0.5em;
   text-transform: uppercase;
   font-size: 100%;
-  color:  #e4e4ff;
+  color:  #432e2a; /*darkbrown*/
   text-align: center;
-  background-color: #666699;
+  background-color: peru;
 }
 .subContainerData h5 {
   color: green;
@@ -731,8 +727,8 @@ span.date {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   text-transform: uppercase;
-  background-color: #000033;
-  color: #e4e4ff;
+  background-color: rgb(89, 58, 46); /*brown*/
+  color: papayawhip;
   padding-left: 0.5em;
 
 }
@@ -1908,7 +1904,7 @@ style for Culture et loisirs
   border-top: 1px solid #aca6a9;
   clear: left;
   text-align: center;
-  background-color: teal; /*rgba(53, 100, 44, 0.8)*/
+  background-color: rgb(255, 200, 50); /*rgba(53, 100, 44, 0.8)*/
   margin:0;
   padding: 0.4em 0 0 0;
   vertical-align: center;
