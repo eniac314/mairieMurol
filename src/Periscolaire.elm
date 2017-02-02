@@ -301,7 +301,7 @@ peri =
                   , td [] [text "Lundi et jeudi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/tap murol  2016 toussaint - noël.pdf", target "_blank"] [text "Murol"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/tap murol  2017 noël-février.pdf", target "_blank"] [text "Murol"]]
                   ]
              , tr []
                   [ td [] [text "Elémentaire du Chambon"]
@@ -315,7 +315,7 @@ peri =
                   , td [] [text "Mardi et vendredi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/tap St Nect 2016 Toussaint - Noël.pdf", target "_blank"] [text "Saint-Nectaire"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/tap St Nect 2017  noël février.pdf", target "_blank"] [text "Saint-Nectaire"]]
                   ]  
              ]
      , p [] [text "L’inscription est annuelle et la participation
@@ -344,27 +344,24 @@ peri =
     , [ p [] [text "Le Centre de Loisirs du SIVOM de la 
                    Vallée Verte propose d’accueillir les enfants des communes 
                    de Chambon sur Lac, Murol, Saint-Nectaire et Saint-Victor-la-Rivière, 
-                   nés après le 01/01/2005, ayant 3 ans révolus 
+                   ayant 3 ans révolus 
                    et déjà inscrits dans un établissement scolaire."]
       , text "Il sera ouvert dans les locaux de l’école 
              maternelle de Murol du lundi au vendredi de 
              8h à 18h:"
       , ul []
-           [ li [] [text "Du 15 au 26 février 2016 "]
-           , li [] [text "Du 11 au 22 avril 2016"
-                   --, a [ href "/baseDocumentaire/periscolaire/planning activités avril.pdf", target "_blank"]
-                   --    [ text "programme des activités prévues"] 
+           [ li [] [text "Du 20 février au 3 mars 2017"]
+           , li [] [text "Du 17 au 28 avril 2017"
+                    
                    ]
-           , li [] [text "Du 7 juillet au 23 août 2016: "
-                   , br [] []
-                   , a [ href "/baseDocumentaire/periscolaire/programmes centre de loisirs juillet 2016.pdf", target "_blank"]
-                       [ text "programme des activités prévues en juillet"]
-                   , br [] []
-                   , a [ href "/baseDocumentaire/periscolaire/planning activités août.pdf", target "_blank"]
-                       [ text "programme des activités prévues en août"]
+           , li [] [text "Du 1 juillet au 25 août 2017"
                    ]
+           
            ]
-
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/prog d'activités fév 2017.pdf", target "_blank"]
+                      [ text "programme des activités prévues en fevrier"]
+                  ]
+                  
       , p [] [text "Des enfants d’autres communes d’origine, de la population 
                    touristique notamment, pourront être également accueillis, dans la 
                    limite des places disponibles. "]
@@ -393,10 +390,16 @@ peri =
       --          [text "Projet pédagogique vacances de printemps "]
       --       , text " (disponible prochainement)" 
       --       ]
-      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs été.pdf"
+      --, p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs été.pdf"
+      --          , target "_blank"
+      --          ]
+      --          [ text "Plaquette de présentation du centre de loisirs été" ]
+      --       ]
+
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs hiver.pdf"
                 , target "_blank"
                 ]
-                [ text "Plaquette de présentation du centre de loisirs été" ]
+                [ text "Plaquette de présentation du centre de loisirs hiver" ]
              ]
 
 

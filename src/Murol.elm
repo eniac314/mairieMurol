@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le mardi 13 décembre 2016"]
+            [text "Dernière mise à jour le jeudi 02 fevrier 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -224,18 +224,22 @@ renderMisc =
   div [ id "misc", class "divers"]
       [ h4 [] [text "Divers"]
       , div [id "peintres"]
-            [ text "Fermeture annuelle du "
+            [ 
+            --  text "Fermeture annuelle du "
+            --, a [href "http://www.musee-murol.fr/fr", target "_blank" ]
+            --    [ text " musée des peintres de l’Ecole de Murols"]
+            --, p [] [text "Réouverture le 23 décembre."]
+              text "A découvrir, " 
             , a [href "http://www.musee-murol.fr/fr", target "_blank" ]
-                [ text " musée des peintres de l’Ecole de Murols"]
-            , p [] [text "Réouverture le 23 décembre."]
-            --, p []
-            --    [ text "Pour une visite en famille : la "
-            --    , a [ href "baseDocumentaire/Carte jeu de piste 2016.pdf", target "_blank"]
-            --        [ text "carte jeu de piste"]
-            --    , text " et le "
-            --    , a [ href "baseDocumentaire/livret jeu musée 2016.pdf", target "_blank"]
-            --        [ text "livret jeu"]
-                --]
+              [ text "le musée des peintres de l’Ecole de Murols"]
+            , p []
+                [ text "Pour une visite en famille :"
+                --, a [ href "baseDocumentaire/Carte jeu de piste 2016.pdf", target "_blank"]
+                    --[ text "carte jeu de piste"]
+                , text " le "
+                , a [ href "baseDocumentaire/livret jeu musée 2017.pdf", target "_blank"]
+                    [ text "livret jeu"]
+                ]
             ]
       , div [id "horairesContact"]
             [h4 [] [text "Mairie pratique:"]
@@ -1079,7 +1083,84 @@ news =
                     ]
                  ]
    , expiry = Date.fromString "01/12/2017"
-   }   
+   }
+   ,{ emptyNews |
+     title = "Noël des enfants 2016"
+   , date  = Date.fromString "01/02/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "les photos du Noël des enfants de la
+                           commune sont disponibles dans la "
+                    , a [href "/Annee2016.html"] [text "photothèque"]
+                    ]
+                 ]
+   , expiry = Date.fromString "02/02/2017"
+   }
+   ,{ emptyNews |
+     title = "Les voeux du maire"
+   , date  = Date.fromString "01/02/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le maire,Sébastien Gouttebel, et le conseil
+                           municipal seront heureux de vous accueillir
+                           le dimanche 22 janvier 2017 à la salle des
+                           fêtes de Murol à 11h pour la présentation
+                           du bilan de l’année écoulée et des
+                           projets à venir."]
+                 ]
+   , expiry = Date.fromString "01/23/2017"
+   }
+   ,{ emptyNews |
+     title = "Inscription pour le repas du CCAS"
+   , date  = Date.fromString "01/02/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les réponses aux invitations pour le repas du CCAS
+                           du 22 janvier,qu'elles soient positives ou négatives,
+                           devront parvenir à la mairie au plus tard le 6 janvier
+                           afin de faciliter l'organisation, merci!"]
+                 ]
+   , expiry = Date.fromString "01/07/2017"
+   }
+   ,{ emptyNews |
+     title = "Nouveau programme d'activités du centre de loisirs"
+   , date  = Date.fromString "01/15/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez le programme d'activité du centre
+                          de loisirs pour les vacances de février"
+                    ]
+                 , a [href "/PériEtExtra-scolaire.html?bloc=3"] [text "lien"]
+                 ]
+   , expiry = Date.fromString "02/31/2017"
+   }
+   ,{ emptyNews |
+     title = "Programme des activités périscolaires - mise à jour janvier/février"
+   , date  = Date.fromString "01/15/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "A consulter "
+                    , a [href "/PériEtExtra-scolaire.html?bloc=2"] [text "ici"]]
+                 ]
+   , expiry = Date.fromString "02/31/2017"
+   }
+   ,{ emptyNews |
+     title = "Nouveautés dans la photothèque"
+   , date  = Date.fromString "02/02/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Nouvelles photos disponibles: "
+                    , a [href "/14Juillet.html"] [text "photos du dernier 14 juillet"]
+                    , text ", "
+                    , a [href "/baseDocumentaire/DIAPORAMA MUROL 2016.pdf", target "_blank"] [text "diaporama de l'année 2016"]
+                    , text ", "
+                    , a [href "/PatrimoinePhoto.html"] [text "diaporama sur le château"]
+                    , text ", "
+                    , a [href "/Annee2017.html"] [text "voeux du maire et repas du CCAS 2017"]
+                    ]
+                 ]
+   , expiry = Date.fromString "02/31/2017"
+   }     
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

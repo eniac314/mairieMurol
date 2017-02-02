@@ -23,7 +23,7 @@ Elm.PatrimoinePhoto.make = function (_elm) {
    var _p0 = A3($Gallery.init,$Lightbox.picList(18),"petitPatrimoine","Le petit patrimoine");
    var petitPat = _p0._0;
    var petitPatFx = _p0._1;
-   var _p1 = A3($Gallery.init,$Lightbox.picList(9),"illuminations2","Le château - éclairage nocturne, gallerie HDR");
+   var _p1 = A3($Gallery.init,$Lightbox.picList(9),"illuminations2","Le château - éclairage nocturne, galerie HDR");
    var ilum2 = _p1._0;
    var ilum2FX = _p1._1;
    var _p2 = A3($Gallery.init,$Lightbox.picList(17),"illuminations","Le château - éclairage nocturne");
@@ -77,7 +77,13 @@ Elm.PatrimoinePhoto.make = function (_elm) {
       var subContainerData = A2($Html.div,
       _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("patrimionePhoto")]),
       A2($Basics._op["++"],
-      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le patrimoine")]))]),
+      _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Le patrimoine")]))
+              ,A2($Html.p,
+              _U.list([]),
+              _U.list([$Html.text("Diaporama: ")
+                      ,A2($Html.a,
+                      _U.list([$Html$Attributes.href("/baseDocumentaire/le château de Murol au fil du temps.pdf")]),
+                      _U.list([$Html.text("le château de Murol au fil du temps")]))]))]),
       A2($Basics._op["++"],
       galleriesHtml,
       _U.list([A2($Html.a,

@@ -83,11 +83,17 @@ Elm.Murol.make = function (_elm) {
    _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Divers")]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("peintres")]),
-           _U.list([$Html.text("Fermeture annuelle du ")
+           _U.list([$Html.text("A découvrir, ")
                    ,A2($Html.a,
                    _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
-                   _U.list([$Html.text(" musée des peintres de l’Ecole de Murols")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Réouverture le 23 décembre.")]))]))
+                   _U.list([$Html.text("le musée des peintres de l’Ecole de Murols")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("Pour une visite en famille :")
+                           ,$Html.text(" le ")
+                           ,A2($Html.a,
+                           _U.list([$Html$Attributes.href("baseDocumentaire/livret jeu musée 2017.pdf"),$Html$Attributes.target("_blank")]),
+                           _U.list([$Html.text("livret jeu")]))]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
            _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("Mairie pratique:")]))
@@ -166,7 +172,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mardi 13 décembre 2016")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le jeudi 02 fevrier 2017")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -912,7 +918,75 @@ Elm.Murol.make = function (_elm) {
                               _U.list([$Html$Attributes.href("http://shoutout.wix.com/so/7LZaLlzW?cid=3aa2bccc-3c25-43d9-8912-f8d419f60ea8&region=b9a4e5c3-b1b0-4b29-9f0f-1c6df353a7b7#/main")
                                       ,$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("site de l\'annonce")]))]))]))
-                      ,expiry: $Date.fromString("01/12/2017")})]);
+                      ,expiry: $Date.fromString("01/12/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Noël des enfants 2016"
+                      ,date: $Date.fromString("01/02/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("les photos du Noël des enfants de la\n                           commune sont disponibles dans la ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Annee2016.html")]),_U.list([$Html.text("photothèque")]))]))]))
+                      ,expiry: $Date.fromString("02/02/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Les voeux du maire"
+                      ,date: $Date.fromString("01/02/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Le maire,Sébastien Gouttebel, et le conseil\n                           municipal seront heureux de vous accueillir\n                           le dimanche 22 janvier 2017 à la salle des\n                           fêtes de Murol à 11h pour la présentation\n                           du bilan de l’année écoulée et des\n                           projets à venir.")]))]))
+                      ,expiry: $Date.fromString("01/23/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Inscription pour le repas du CCAS"
+                      ,date: $Date.fromString("01/02/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Les réponses aux invitations pour le repas du CCAS\n                           du 22 janvier,qu\'elles soient positives ou négatives,\n                           devront parvenir à la mairie au plus tard le 6 janvier\n                           afin de faciliter l\'organisation, merci!")]))]))
+                      ,expiry: $Date.fromString("01/07/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Nouveau programme d\'activités du centre de loisirs"
+                      ,date: $Date.fromString("01/15/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Découvrez le programme d\'activité du centre\n                          de loisirs pour les vacances de février")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=3")]),_U.list([$Html.text("lien")]))]))
+                      ,expiry: $Date.fromString("02/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Programme des activités périscolaires - mise à jour janvier/février"
+                      ,date: $Date.fromString("01/15/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("A consulter ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=2")]),_U.list([$Html.text("ici")]))]))]))
+                      ,expiry: $Date.fromString("02/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Nouveautés dans la photothèque"
+                      ,date: $Date.fromString("02/02/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Nouvelles photos disponibles: ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/14Juillet.html")]),_U.list([$Html.text("photos du dernier 14 juillet")]))
+                              ,$Html.text(", ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2016.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("diaporama de l\'année 2016")]))
+                              ,$Html.text(", ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/PatrimoinePhoto.html")]),_U.list([$Html.text("diaporama sur le château")]))
+                              ,$Html.text(", ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/Annee2017.html")]),
+                              _U.list([$Html.text("voeux du maire et repas du CCAS 2017")]))]))]))
+                      ,expiry: $Date.fromString("02/31/2017")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

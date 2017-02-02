@@ -121,13 +121,17 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(marcheEstival,"marcheEstival")
+galleries = [(noelEnfants2016,"noelEnfants2016")
+            ,(marcheEstival,"marcheEstival")
             ,(feteEcoles,"feteEcoles2016")
             ,(vernissage,"vernissage2016")
             ,(mouvauvergnat,"mouvauvergnat2016")
             ,(pavillonBleu,"pavillonBleu2016")
             ,(veuxMaireRepasCCAS, "veuxMaireRepasCCAS")
             ]
+
+( noelEnfants2016, noelEnfants2016FX ) = 
+  Gallery.init (picList 61) "noelEnfants2016" "18 décembre - Noël des enfants"
 
 ( marcheEstival, marcheEstivalFX ) = 
   Gallery.init (picList 15) "marcheEstival" "le marché Estival"

@@ -141,21 +141,21 @@ initialContent =
         ]
       , "/JourneeMurolais.html"
       )
-    ,( "Diaporama 2015"
-      , "/images/tiles/photothèque/diaporama2015.jpg"
+    ,( "Diaporama 2016"
+      , "/images/tiles/photothèque/diaporama2016.jpg"
       , [ a [ target "_blank"
-            , href "/baseDocumentaire/DIAPORAMA MUROL 2015.pdf"
+            , href "/baseDocumentaire/DIAPORAMA MUROL 2016.pdf"
             ]
-            [ text "Télécharger le diaporama 2015"]
+            [ text "Télécharger le diaporama 2016"]
         , br [] []
         ]
       , ""
       )
-    ,( "Année 2016"
-      , "/images/tiles/photothèque/annee2016.jpg"
+    ,( "Année 2017"
+      , "/images/tiles/photothèque/annee2017.jpg"
       , [ 
         ]
-      , "/Annee2016.html"
+      , "/Annee2017.html"
       )
      ]
   }

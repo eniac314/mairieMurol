@@ -11916,7 +11916,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tap murol  2016 toussaint - noël.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tap murol  2017 noël-février.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Murol")]))]))]))
                                             ,A2($Html.tr,
@@ -11940,7 +11940,7 @@ Elm.Periscolaire.make = function (_elm) {
                                                     ,A2($Html.td,
                                                     _U.list([]),
                                                     _U.list([A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tap St Nect 2016 Toussaint - Noël.pdf")
+                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tap St Nect 2017  noël février.pdf")
                                                             ,$Html$Attributes.target("_blank")]),
                                                     _U.list([$Html.text("Saint-Nectaire")]))]))]))]))
                                     ,A2($Html.p,
@@ -11970,25 +11970,19 @@ Elm.Periscolaire.make = function (_elm) {
                        ,_1: "/images/tiles/periscolaire/centre de loisirs.jpg"
                        ,_2: _U.list([A2($Html.p,
                                     _U.list([]),
-                                    _U.list([$Html.text("Le Centre de Loisirs du SIVOM de la \n                   Vallée Verte propose d’accueillir les enfants des communes \n                   de Chambon sur Lac, Murol, Saint-Nectaire et Saint-Victor-la-Rivière, \n                   nés après le 01/01/2005, ayant 3 ans révolus \n                   et déjà inscrits dans un établissement scolaire.")]))
+                                    _U.list([$Html.text("Le Centre de Loisirs du SIVOM de la \n                   Vallée Verte propose d’accueillir les enfants des communes \n                   de Chambon sur Lac, Murol, Saint-Nectaire et Saint-Victor-la-Rivière, \n                   ayant 3 ans révolus \n                   et déjà inscrits dans un établissement scolaire.")]))
                                     ,$Html.text("Il sera ouvert dans les locaux de l’école \n             maternelle de Murol du lundi au vendredi de \n             8h à 18h:")
                                     ,A2($Html.ul,
                                     _U.list([]),
-                                    _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Du 15 au 26 février 2016 ")]))
-                                            ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 11 au 22 avril 2016")]))
-                                            ,A2($Html.li,
-                                            _U.list([]),
-                                            _U.list([$Html.text("Du 7 juillet au 23 août 2016: ")
-                                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                                    ,A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/programmes centre de loisirs juillet 2016.pdf")
-                                                            ,$Html$Attributes.target("_blank")]),
-                                                    _U.list([$Html.text("programme des activités prévues en juillet")]))
-                                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                                    ,A2($Html.a,
-                                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/planning activités août.pdf")
-                                                            ,$Html$Attributes.target("_blank")]),
-                                                    _U.list([$Html.text("programme des activités prévues en août")]))]))]))
+                                    _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Du 20 février au 3 mars 2017")]))
+                                            ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 17 au 28 avril 2017")]))
+                                            ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 1 juillet au 25 août 2017")]))]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/prog d\'activités fév 2017.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("programme des activités prévues en fevrier")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("Des enfants d’autres communes d’origine, de la population \n                   touristique notamment, pourront être également accueillis, dans la \n                   limite des places disponibles. ")]))
@@ -12021,9 +12015,9 @@ Elm.Periscolaire.make = function (_elm) {
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs été.pdf")
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs hiver.pdf")
                                             ,$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("Plaquette de présentation du centre de loisirs été")]))]))])
+                                    _U.list([$Html.text("Plaquette de présentation du centre de loisirs hiver")]))]))])
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Transport scolaire"

@@ -69,19 +69,19 @@ Elm.Phototheque.make = function (_elm) {
                                                                      ,_2: _U.list([])
                                                                      ,_3: "/JourneeMurolais.html"}
                                                                     ,{ctor: "_Tuple4"
-                                                                     ,_0: "Diaporama 2015"
-                                                                     ,_1: "/images/tiles/photothèque/diaporama2015.jpg"
+                                                                     ,_0: "Diaporama 2016"
+                                                                     ,_1: "/images/tiles/photothèque/diaporama2016.jpg"
                                                                      ,_2: _U.list([A2($Html.a,
                                                                                   _U.list([$Html$Attributes.target("_blank")
-                                                                                          ,$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2015.pdf")]),
-                                                                                  _U.list([$Html.text("Télécharger le diaporama 2015")]))
+                                                                                          ,$Html$Attributes.href("/baseDocumentaire/DIAPORAMA MUROL 2016.pdf")]),
+                                                                                  _U.list([$Html.text("Télécharger le diaporama 2016")]))
                                                                                   ,A2($Html.br,_U.list([]),_U.list([]))])
                                                                      ,_3: ""}
                                                                     ,{ctor: "_Tuple4"
-                                                                     ,_0: "Année 2016"
-                                                                     ,_1: "/images/tiles/photothèque/annee2016.jpg"
+                                                                     ,_0: "Année 2017"
+                                                                     ,_1: "/images/tiles/photothèque/annee2017.jpg"
                                                                      ,_2: _U.list([])
-                                                                     ,_3: "/Annee2016.html"}]))};
+                                                                     ,_3: "/Annee2017.html"}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

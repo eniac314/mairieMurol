@@ -80,7 +80,12 @@ view address model =
       subContainerData =
         div [ class "subContainerData noSubmenu", id "patrimionePhoto"]
             (
-            [ h2 [] [text "Le patrimoine"] ]
+            [ h2 [] [text "Le patrimoine"] 
+            , p []
+                [ text "Diaporama: "
+                , a [href "/baseDocumentaire/le château de Murol au fil du temps.pdf"]
+                    [text "le château de Murol au fil du temps"]
+                ] ]
              ++ galleriesHtml ++
             [ a [ href "/Photothèque.html", id "backToTiledMenu"]
                 [ text "Revenir au menu" ]
@@ -135,7 +140,7 @@ galleries = [ (chateau, "chateauPics")
   Gallery.init (picList 17) "illuminations" "Le château - éclairage nocturne"
 
 (ilum2, ilum2FX) =
-  Gallery.init (picList 9) "illuminations2" "Le château - éclairage nocturne, gallerie HDR"
+  Gallery.init (picList 9) "illuminations2" "Le château - éclairage nocturne, galerie HDR"
 
 (petitPat, petitPatFx) = 
   Gallery.init (picList 18) "petitPatrimoine" "Le petit patrimoine"
