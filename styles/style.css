@@ -967,12 +967,19 @@ background-image: none;
 .divers #peintres{
   background-image: url("/images/peintres.png");
   background-repeat: no-repeat;
+  background-position: 100% 10px;
+  min-height:96px;
+  padding-top: 1em;
+  border-bottom: 1px solid #aca6a9;
+}
+
+.divers #chateauDivers{
+  background-image: url("/images/logo-chateau-de-murol-800.png");
+  background-repeat: no-repeat;
   background-position: right top;
   min-height:96px;
   border-bottom: 1px solid #aca6a9;
 }
-
-
 
 
 /*--end of code fot divers--------------*/

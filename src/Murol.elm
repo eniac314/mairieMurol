@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le jeudi 02 fevrier 2017"]
+            [text "Dernière mise à jour le vendredi 17 fevrier 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -223,6 +223,18 @@ renderNewsLetter news =
 renderMisc =
   div [ id "misc", class "divers"]
       [ h4 [] [text "Divers"]
+      , div [id "chateauDivers"]
+            [ 
+            --  text "Fermeture annuelle du "
+            --, a [href "http://www.musee-murol.fr/fr", target "_blank" ]
+            --    [ text " musée des peintres de l’Ecole de Murols"]
+            --, p [] [text "Réouverture le 23 décembre."]
+              p [] [ text "A partir du 18 février, le château sera ouvert tous les jours de 10h à 18h." ] 
+            , p [] [ text "Plus d'informations sur le nouveau site officiel : "
+                   , a [href "http://murolchateau.com/", target "_blank" ] [text "murolchateau.com"]
+                   ]
+            
+            ]
       , div [id "peintres"]
             [ 
             --  text "Fermeture annuelle du "
@@ -1160,7 +1172,26 @@ news =
                     ]
                  ]
    , expiry = Date.fromString "02/31/2017"
-   }     
+   }
+  ,{ emptyNews |
+     title = "Changement de délégataire au château de Murol"
+   , date  = Date.fromString "02/16/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Suite au conseil municipal du 1er février 2017, le maire, Sébastien Gouttebel, a signé la convention de
+                           délégation de service public  pour le château mardi 14 février 2017 avec la société Kleber-Rossillon."
+                    ]
+                 , p []
+                     [text "Le château ouvrira ses portes "
+                     , b [] [text "tous les jours de 10h à 18h à partir de samedi 18 février 2017."]
+                     ]
+                 , p [] 
+                     [ text "Retrouvez les informations sur le nouveau site du château: "
+                     , a [href "http://murolchateau.com/", target "_blank"] [text "murolchateau.com"]
+                     ]
+                 ]
+   , expiry = Date.fromString "03/16/2017"
+   }      
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

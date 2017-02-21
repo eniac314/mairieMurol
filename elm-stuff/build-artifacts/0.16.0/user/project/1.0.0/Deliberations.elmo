@@ -52,9 +52,22 @@ Elm.Deliberations.make = function (_elm) {
                     ,A2($Html.ul,
                     _U.list([]),
                     _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"17 février","/baseDocumentaire/Deliberations_conseil/2016/17fev2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"17 mars","/baseDocumentaire/Deliberations_conseil/2016/17mars2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"14 avril","/baseDocumentaire/Deliberations_conseil/2016/14avr2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"16 juin","/baseDocumentaire/Deliberations_conseil/2016/16juin2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"12 juillet","/baseDocumentaire/Deliberations_conseil/2016/12jui2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"12 octobre","/baseDocumentaire/Deliberations_conseil/2016/12oct2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"7 novembre","/baseDocumentaire/Deliberations_conseil/2016/07nov2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"28 novembre","/baseDocumentaire/Deliberations_conseil/2016/28nov2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"5 décembre","/baseDocumentaire/Deliberations_conseil/2016/05dec2016.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"13 décembre","/baseDocumentaire/Deliberations_conseil/2016/13dec2016.pdf")]))]))
+                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2017")]))
+                    ,A2($Html.ul,
+                    _U.list([]),
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"17 janvier","/baseDocumentaire/Deliberations_conseil/2017/17jan2017.pdf")]))
                             ,A2($Html.li,
                             _U.list([]),
-                            _U.list([A2($Utils.link,"17 mars","/baseDocumentaire/Deliberations_conseil/2016/17mars2016.pdf")]))]))]))));
+                            _U.list([A2($Utils.link,"1 février","/baseDocumentaire/Deliberations_conseil/2017/01fev2017.pdf")]))]))]))));
    var initialContent = delib;
    var update = F2(function (action,model) {    var _p2 = action;return model;});
    var view = F2(function (address,model) {
