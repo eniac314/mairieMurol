@@ -11595,7 +11595,40 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"Site municipal"
                                              ,"Maison de sante"
                                              ,"Calendrier"]),
-                                     "/baseDocumentaire/bulletin/mars2016.pdf")]));
+                                     "/baseDocumentaire/bulletin/mars2016.pdf")
+                                     ,A4(Bulletin,
+                                     "cover7.jpg",
+                                     "Mars 2017",
+                                     _U.list(["La communauté de communes du Sancy"
+                                             ,"Le Pôle Lecture Publique"
+                                             ,"La charte de débeloppement durable"
+                                             ,"Les actions du SIVU"
+                                             ,"Les sapeurs-pompiers volontaires"
+                                             ,"Les surveillants de baignade"
+                                             ,"L\'état civil"
+                                             ,"Le SIVOM de Besse"
+                                             ,"Les actions du CCAS"
+                                             ,"Les écoles"
+                                             ,"Le SIVOM de la vallée verte"
+                                             ,"Salage et déneigement"
+                                             ,"Les travaux de l\'équipe technique"
+                                             ,"Le château et la DSP"
+                                             ,"Les travaux de la plage et le pavillon bleu"
+                                             ,"Gros travaux et investissements"
+                                             ,"Embellissement et fleurissement"
+                                             ,"La journée des Murolais et le compostage"
+                                             ,"Le tri des déchets"
+                                             ,"Les animations"
+                                             ,"Le musée"
+                                             ,"L\'archéologie"
+                                             ,"Les associations"
+                                             ,"SOS Animaux"
+                                             ,"Les éléctions 2017"
+                                             ,"Le site internet"
+                                             ,"L\'annuaire de la maison de santé"
+                                             ,"Les services"
+                                             ,"Le calendrier"]),
+                                     "/baseDocumentaire/bulletin/mars2017.pdf")]));
    var bulletin = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("bullPubli")]),
    A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("Le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));

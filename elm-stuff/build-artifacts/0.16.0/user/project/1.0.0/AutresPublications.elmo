@@ -19,6 +19,9 @@ Elm.AutresPublications.make = function (_elm) {
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("autresPubli")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Autres publications")]))
+           ,A2($Utils.link,"Charte de développement durable - préconisation","/baseDocumentaire/charte de dvlpt durable préconisation Murol.pdf")
+           ,A2($Utils.link,"Charte de développement durable - diagnostic","/baseDocumentaire/Charte de dvlpt durable diagnostic MUROL.pdf")
+           ,A2($Utils.link,"Document valtom compostage","/baseDocumentaire/doc valtom compostage.pdf")
            ,A2($Utils.link,"Note de synthèse 2012 station classée de tourisme","/baseDocumentaire/Notedesynthèse Murol 2012.pdf")
            ,A2($Utils.link,"Présention du chateau de Murol par Dominique Allios","/baseDocumentaire/decouvrirMurol/presentationAllios.pdf")
            ,A2($Utils.link,"Les volcans du Tartaret - Pierre Lavina","/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf")

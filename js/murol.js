@@ -14013,7 +14013,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 17 fevrier 2017")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le mardi 14 mars 2017")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -14846,7 +14846,17 @@ Elm.Murol.make = function (_elm) {
                                       ,A2($Html.a,
                                       _U.list([$Html$Attributes.href("http://murolchateau.com/"),$Html$Attributes.target("_blank")]),
                                       _U.list([$Html.text("murolchateau.com")]))]))]))
-                      ,expiry: $Date.fromString("03/16/2017")})]);
+                      ,expiry: $Date.fromString("03/16/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Le bulletin municipal n°8 est disponible"
+                      ,date: $Date.fromString("03/14/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Sommaire et téléchargement ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("ici")]))]))]))
+                      ,expiry: $Date.fromString("09/11/2017")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

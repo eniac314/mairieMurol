@@ -105,7 +105,7 @@ initialContent =
             ,"/images/tiles/sortir/chateau.jpg"
             ,[
              ]
-            ,"http://www.chateaudemurol.fr"
+            ,"http://murolchateau.com/"
              )
             ,
             ("Dans les environs"

@@ -30,7 +30,7 @@ Elm.Sortir.make = function (_elm) {
                                                                      ,_0: "Château de Murol"
                                                                      ,_1: "/images/tiles/sortir/chateau.jpg"
                                                                      ,_2: _U.list([])
-                                                                     ,_3: "http://www.chateaudemurol.fr"}
+                                                                     ,_3: "http://murolchateau.com/"}
                                                                     ,{ctor: "_Tuple4"
                                                                      ,_0: "Dans les environs"
                                                                      ,_1: "/images/tiles/sortir/sortir environs.jpg"

@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le vendredi 17 fevrier 2017"]
+            [text "Dernière mise à jour le mardi 14 mars 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -1191,6 +1191,17 @@ news =
                      ]
                  ]
    , expiry = Date.fromString "03/16/2017"
+   }
+  ,{ emptyNews |
+     title = "Le bulletin municipal n°8 est disponible"
+   , date  = Date.fromString "03/14/2017"
+   , descr = div [class "newsdescr"]
+                 [ p [] [ text "Sommaire et téléchargement " 
+                        , a [ href "/BulletinsMunicipaux.html"]
+                            [ text "ici"]
+                        ]
+                 ]
+   , expiry = Date.fromString "09/11/2017"
    }      
   --,{ emptyNews |
    --  title = ""

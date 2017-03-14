@@ -47,7 +47,7 @@ initialModel =
 view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
-      [ renderMainMenu ["Culture et loisirs", "photothèque"]
+      [ renderMainMenu ["Culture et loisirs", "Photothèque"]
                         (.mainMenu model)
       , div [ id "subContainer"]
             [ (.wrapper (.mainContent model))

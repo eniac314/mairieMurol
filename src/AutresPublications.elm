@@ -63,6 +63,9 @@ main =
 initialContent =
   div [ class "subContainerData noSubmenu", id "autresPubli"]
       [ h2 [] [text "Autres publications"]
+      , link "Charte de développement durable - préconisation" "/baseDocumentaire/charte de dvlpt durable préconisation Murol.pdf"
+      , link "Charte de développement durable - diagnostic" "/baseDocumentaire/Charte de dvlpt durable diagnostic MUROL.pdf"
+      , link "Document valtom compostage" "/baseDocumentaire/doc valtom compostage.pdf"
       , link "Note de synthèse 2012 station classée de tourisme" "/baseDocumentaire/Notedesynthèse Murol 2012.pdf"
       , link "Présention du chateau de Murol par Dominique Allios" "/baseDocumentaire/decouvrirMurol/presentationAllios.pdf"
       , link "Les volcans du Tartaret - Pierre Lavina" "/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf"
