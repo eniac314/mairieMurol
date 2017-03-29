@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le mardi 14 mars 2017"]
+            [text "Dernière mise à jour le samedi 25 mars 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -1202,7 +1202,23 @@ news =
                         ]
                  ]
    , expiry = Date.fromString "09/11/2017"
-   }      
+   }
+   ,{ emptyNews |
+     title = "Mise à jour de la page centre de loisirs pour les vacances de printemps"
+   , date  = Date.fromString "03/25/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les documents du centre de loisirs (programme, dossier d'inscription,
+                           projet pédagogique et plaquette de présentation) ont étés mis à jour
+                           pour les vacances de printemps."
+                    ]
+                 ,p [] 
+                    [text "A consulter dans l'onglet vie locale/ péri et extrascolaire/CLSH"
+                    ]   
+                    
+                 ]
+   , expiry = Date.fromString "04/31/2017"
+   }       
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

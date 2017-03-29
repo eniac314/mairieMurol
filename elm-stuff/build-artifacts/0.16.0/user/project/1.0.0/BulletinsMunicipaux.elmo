@@ -263,7 +263,7 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                      "Mars 2017",
                                      _U.list(["La communauté de communes du Sancy"
                                              ,"Le Pôle Lecture Publique"
-                                             ,"La charte de débeloppement durable"
+                                             ,"La charte de développement durable"
                                              ,"Les actions du SIVU"
                                              ,"Les sapeurs-pompiers volontaires"
                                              ,"Les surveillants de baignade"

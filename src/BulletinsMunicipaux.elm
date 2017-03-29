@@ -297,7 +297,7 @@ bulls = List.reverse
  , Bulletin "cover7.jpg" "Mars 2017"
             [ "La communauté de communes du Sancy"
             , "Le Pôle Lecture Publique"
-            , "La charte de débeloppement durable"
+            , "La charte de développement durable"
             , "Les actions du SIVU"
             , "Les sapeurs-pompiers volontaires"
             , "Les surveillants de baignade"

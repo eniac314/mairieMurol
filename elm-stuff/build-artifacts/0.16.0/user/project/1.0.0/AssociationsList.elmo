@@ -282,14 +282,14 @@ Elm.AssociationsList.make = function (_elm) {
                         ,domaine: "éducation à l’environnement des scolaires, organisation de classes de découvertes"
                         ,siege: "Mairie de Murol BP 11- 63 790 MUROL "
                         ,resp: _U.list([{poste: "Présidente",nom: "Claire FAYE",tel: ""}])
-                        ,mails: _U.list(["element.terre@laposte.net"])
+                        ,mails: _U.list(["contact@element-terre.org"])
                         ,sites: _U.list(["http://www.element-terre.org"])})
                         ,_U.update(emptyAssoc,
                         {nom: "Elément Terre"
                         ,domaine: "éducation à l’environnement des scolaires, organisation de classes de découvertes"
                         ,siege: "Mairie de Murol BP 11- 63 790 MUROL "
                         ,resp: _U.list([{poste: "Présidente",nom: "Claire FAYE",tel: ""}])
-                        ,mails: _U.list(["element.terre@laposte.net"])
+                        ,mails: _U.list(["contact@element-terre.org"])
                         ,sites: _U.list(["http://www.element-terre.org"])
                         ,cat: Pro})
                         ,_U.update(emptyAssoc,

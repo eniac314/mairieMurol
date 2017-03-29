@@ -358,8 +358,8 @@ peri =
                    ]
            
            ]
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/prog d'activités fév 2017.pdf", target "_blank"]
-                      [ text "programme des activités prévues en fevrier"]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/planning avril 2017.pdf", target "_blank"]
+                      [ text "programme des activités prévues en avril"]
                   ]
                   
       , p [] [text "Des enfants d’autres communes d’origine, de la population 
@@ -378,7 +378,7 @@ peri =
              ,text ")"    
              ]
       , p [] [ text "Les "
-             , a [href "/baseDocumentaire/periscolaire/dossier inscription CLSH 2016.pdf", target "_blank"]
+             , a [href "/baseDocumentaire/periscolaire/pré inscription avril 2017.pdf", target "_blank"]
                  [text "dossiers d’inscriptions"]
              , text " sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
              ]
@@ -386,20 +386,19 @@ peri =
       , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"]
                 [text "Projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
       
-      --, p [] [a [href "", target "_blank"]
-      --          [text "Projet pédagogique vacances de printemps "]
-      --       , text " (disponible prochainement)" 
-      --       ]
+      , p [] [a [href "/baseDocumentaire/periscolaire/PP avril 2017.pdf", target "_blank"]
+                [text "Projet pédagogique vacances de printemps "]
+             ]
       --, p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs été.pdf"
       --          , target "_blank"
       --          ]
       --          [ text "Plaquette de présentation du centre de loisirs été" ]
       --       ]
 
-      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs hiver.pdf"
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2017 centre de loisirs printemps.pdf"
                 , target "_blank"
                 ]
-                [ text "Plaquette de présentation du centre de loisirs hiver" ]
+                [ text "Plaquette de présentation du centre de loisirs printemps" ]
              ]
 
 

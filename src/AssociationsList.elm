@@ -423,7 +423,7 @@ assocs =
               , nom   = "Claire FAYE"
               , tel   = ""
               }]
-    , mails    = ["element.terre@laposte.net"]
+    , mails    = ["contact@element-terre.org"]
     , sites    = ["http://www.element-terre.org"]
     }
     ,
@@ -435,7 +435,7 @@ assocs =
               , nom   = "Claire FAYE"
               , tel   = ""
               }]
-    , mails    = ["element.terre@laposte.net"]
+    , mails    = ["contact@element-terre.org"]
     , sites    = ["http://www.element-terre.org"]
     , cat = Pro
     }
