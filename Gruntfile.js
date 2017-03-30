@@ -26,6 +26,7 @@ module.exports = function(grunt) {
           "./js/commerces.js": ["./src/Commerces.elm"],
           "./js/entreprises.js": ["./src/Entreprises.elm"],
           "./js/lesSeniors.js": ["./src/LesSeniors.elm"],
+          "./js/lesAdos.js": ["./src/LesAdos.elm"],
           "./js/offresEmploi.js": ["./src/OffresEmploi.elm"],
           "./js/quinzaineCom.js": ["./src/QuinzaineCom.elm"],
           "./js/laCommune.js": ["./src/LaCommune.elm"],
@@ -89,6 +90,7 @@ module.exports = function(grunt) {
                 , "./src/Commerces.elm"
                 , "./src/Entreprises.elm"
                 , "./src/LesSeniors.elm"
+                , "./src/LesAdos.elm"
                 , "./src/OffresEmploi.elm"
                 , "./src/QuinzaineCom.elm"
                 , "./src/LaCommune.elm"

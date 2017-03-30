@@ -1,0 +1,73 @@
+Elm.LesAdos = Elm.LesAdos || {};
+Elm.LesAdos.make = function (_elm) {
+   "use strict";
+   _elm.LesAdos = _elm.LesAdos || {};
+   if (_elm.LesAdos.values) return _elm.LesAdos.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
+   var _op = {};
+   var initialContent = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("lesAdos")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Les ados")]))
+           ,A2($Html.div,
+           _U.list([]),
+           _U.list([A2($Html.p,
+                   _U.list([]),
+                   _U.list([$Html.text("La municipalité et le CCAS de Murol ont mis en place le dispositif\n                  \"argent de poche\" qui permet aux jeunes de 14 à 18 ans domiciliés\n                  sur la commune de participer à des chantiers encadrés\n                  durant les vacances scolaires.")]))
+                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("En contre-partie ils recevront une gratification.")]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("/baseDocumentaire/ados/Document d\'information argent de poche.pdf"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("Document information argent de poche")]))]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("/baseDocumentaire/ados/Dossier d\'inscription argent de poche.pdf"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("Dossier inscription argent de poche")]))]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("/baseDocumentaire/ados/plaquette printemps 2017 argent de poche.pdf"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("Plaquette printemps 2017 argent de poche")]))]))]))]));
+   var contentMap = $Dict.fromList(_U.list([]));
+   var changeMain = F2(function (model,s) {
+      var newContent = A2($Dict.get,s,contentMap);
+      var _p0 = newContent;
+      if (_p0.ctor === "Nothing") {
+            return model;
+         } else {
+            return _U.update(model,{mainContent: _p0._0});
+         }
+   });
+   var update = F2(function (action,model) {    var _p1 = action;if (_p1.ctor === "NoOp") {    return model;} else {    return A2(changeMain,model,_p1._0);}});
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Mairie","Horaires et contact"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
+              ,$Utils.pageFooter]));
+   });
+   var subMenu = _U.list([]);
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.LesAdos.values = {_op: _op
+                                ,subMenu: subMenu
+                                ,initialModel: initialModel
+                                ,view: view
+                                ,contentMap: contentMap
+                                ,update: update
+                                ,changeMain: changeMain
+                                ,main: main
+                                ,initialContent: initialContent};
+};

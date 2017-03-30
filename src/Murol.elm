@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le samedi 25 mars 2017"]
+            [text "Dernière mise à jour le jeudi 30 mars 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -1204,7 +1204,7 @@ news =
    , expiry = Date.fromString "09/11/2017"
    }
    ,{ emptyNews |
-     title = "Mise à jour de la page centre de loisirs pour les vacances de printemps"
+     title = "Mise à jour page centre de loisirs - les vacances de printemps"
    , date  = Date.fromString "03/25/2017"
    , descr = div [class "newsdescr"]
                  [p []
@@ -1218,7 +1218,29 @@ news =
                     
                  ]
    , expiry = Date.fromString "04/31/2017"
-   }       
+   }
+   ,{ emptyNews |
+     title = "Dispositif \"argent de poche\""
+   , date  = Date.fromString "03/30/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Nouveau ! Le dispositif \"argent de poche\" sera opérationnel dès les vacances
+                           de printemps. Vous êtes âgé de 14 à 18 ans et souhaitez participer à la vie
+                           de la commune, en gagnant un peu d'argent de poche? Renseignez-vous en lisant
+                           le "
+                    , a [href "/baseDocumentaire/ados/Document d'information argent de poche.pdf", target "_blank"]
+                        [text "document d'information"]
+                    , text " et la "
+                    , a [href "/baseDocumentaire/ados/plaquette printemps 2017 argent de poche.pdf", target "_blank"]
+                        [text "plaquette printemps"]
+                    , text " puis téléchargez le "
+                    , a [href "/baseDocumentaire/ados/Dossier d'inscription argent de poche.pdf", target "_blank"]
+                        [text "dossier d'inscription"]
+                    , text " ! Vous pouvez aussi retrouver ces documents à la mairie."
+                    ]
+                 ]
+   , expiry = Date.fromString "04/30/2017"
+   }        
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

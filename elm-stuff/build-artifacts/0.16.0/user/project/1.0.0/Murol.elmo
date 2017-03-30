@@ -181,7 +181,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le samedi 25 mars 2017")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le jeudi 30 mars 2017")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -1026,7 +1026,7 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,_U.list([$Html$Attributes.href("/BulletinsMunicipaux.html")]),_U.list([$Html.text("ici")]))]))]))
                       ,expiry: $Date.fromString("09/11/2017")})
                       ,_U.update(emptyNews,
-                      {title: "Mise à jour de la page centre de loisirs pour les vacances de printemps"
+                      {title: "Mise à jour page centre de loisirs - les vacances de printemps"
                       ,date: $Date.fromString("03/25/2017")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
@@ -1034,7 +1034,31 @@ Elm.Murol.make = function (_elm) {
                               _U.list([]),
                               _U.list([$Html.text("Les documents du centre de loisirs (programme, dossier d\'inscription,\n                           projet pédagogique et plaquette de présentation) ont étés mis à jour\n                           pour les vacances de printemps.")]))
                               ,A2($Html.p,_U.list([]),_U.list([$Html.text("A consulter dans l\'onglet vie locale/ péri et extrascolaire/CLSH")]))]))
-                      ,expiry: $Date.fromString("04/31/2017")})]);
+                      ,expiry: $Date.fromString("04/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Dispositif \"argent de poche\""
+                      ,date: $Date.fromString("03/30/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Nouveau ! Le dispositif \"argent de poche\" sera opérationnel dès les vacances\n                           de printemps. Vous êtes âgé de 14 à 18 ans et souhaitez participer à la vie\n                           de la commune, en gagnant un peu d\'argent de poche? Renseignez-vous en lisant\n                           le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/ados/Document d\'information argent de poche.pdf")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("document d\'information")]))
+                              ,$Html.text(" et la ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/ados/plaquette printemps 2017 argent de poche.pdf")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("plaquette printemps")]))
+                              ,$Html.text(" puis téléchargez le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/ados/Dossier d\'inscription argent de poche.pdf")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("dossier d\'inscription")]))
+                              ,$Html.text(" ! Vous pouvez aussi retrouver ces documents à la mairie.")]))]))
+                      ,expiry: $Date.fromString("04/30/2017")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters
