@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le jeudi 30 mars 2017"]
+            [text "Dernière mise à jour le vendredi 19 mai 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -248,10 +248,19 @@ renderMisc =
                 [ text "Pour une visite en famille :"
                 --, a [ href "baseDocumentaire/Carte jeu de piste 2016.pdf", target "_blank"]
                     --[ text "carte jeu de piste"]
-                , text " le "
-                , a [ href "baseDocumentaire/livret jeu musée 2017.pdf", target "_blank"]
-                    [ text "livret jeu"]
+                --, text " le "
+                --, a [ href "baseDocumentaire/livret jeu musée 2017.pdf", target "_blank"]
+                --    [ text "livret jeu"]
+                , text " la "
+                , a [ href "baseDocumentaire/Carte jeu de piste 2017.pdf", target "_blank"]
+                    [ text "carte du jeu de piste"]
+                , text " et la "
+                , a [ href "baseDocumentaire/plaquette musée Murol 2017.pdf"
+                    , target "_blank"]
+                    [text "plaquette du Musée"]
                 ]
+            , p []
+                []
             ]
       , div [id "horairesContact"]
             [h4 [] [text "Mairie pratique:"]
@@ -1241,6 +1250,111 @@ news =
                  ]
    , expiry = Date.fromString "04/30/2017"
    }        
+  ,{ emptyNews |
+     title = "Formation professionnelle"
+   , date  = Date.fromString "04/04/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Aux mois de mai et juin, le Crefad Auvergne vous
+                           propose des animations et des journées de formation
+                           pour les personnes qui ont des projets de création
+                           de leur activité"
+                    ]
+                 , p []
+                     [text "plus d'informations "
+                     , a [href "/baseDocumentaire/Formation professionnelle.pdf"
+                     , target "_blank"] [text "ici"]
+                     ]
+                 ]
+   , expiry = Date.fromString "07/01/2017"
+   }
+   ,{ emptyNews |
+     title = "Médiévales 2017"
+   , date  = Date.fromString "04/30/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les Médiévales 2017 auront lieu les 26 et 27 mai, venez nombreux!"]
+                 , p []
+                     [a [href "/baseDocumentaire/medievales.pdf"
+                        , target "_blank"
+                        ]
+                        [text "affiche"]]
+                 ]
+   , expiry = Date.fromString ""
+   }
+   ,{ emptyNews |
+     title = "Murol Infos 33"
+   , date  = Date.fromString "05/11/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Le nouveau \"Murol Infos\" présentant
+                            les animations du printemps et le budget communal est disponible"
+                    , a [href "baseDocumentaire/murolInfo/33.pdf", target "_blank"] [text "Télécharger"]]
+                 ]
+   , expiry = Date.fromString "06/11/2017"
+   }
+   ,{ emptyNews |
+     title = "Nouvelle activité sur la commune"
+   , date  = Date.fromString "05/11/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ a [href "http://western-poneys.wifeo.com/", target "_blank"]
+                        [text "Western Poneys"]
+                    , text " propose la location de poneys en main pour
+                            enfants accompagnés d'un adulte (3 à 12 ans, max 30kg)"
+                    ]
+                 ]
+   , expiry = Date.fromString "06/11/2017"
+   }
+   ,{ emptyNews |
+     title = "Samedi 20 mai : journée des Murolais et Nuit des musées"
+   , date  = Date.fromString "05/16/2017"
+   , descr = div [class "newsdescr"]
+                 [ h6 [] [text "La journée des Murolais"]
+                 , p []
+                     [text "La journée des murolais aura lieu le samedi 20 mai 2017
+                            au château de Murol en présence du nouveau délégataire,
+                            M. Kléber ROSSILLON et de la directrice Mme POIZOT. "
+                     , b [] [text "Rendez-vous à 10h dans la haute cour."]]
+                 , p [] 
+                     [text "Le maire et le délégataire présenteront la stratégie de
+                            développement de la nouvelle convention, puis vous pourrez
+                            visiter le château et découvrir de nouveaux aménagements."]
+                 , p [] [text "Pour la photo des murolais, le thème de cette année est
+                               l’époque médiévale. Costumez-vous… si vous le souhaitez !"]
+                 , p [] [text "La matinée se clôturera par un moment de convivialité."]
+                 
+                 , h6 [] [text "La nuit des musées"]
+                 , p [] [ text "Le musée des peintres de l'Ecole de Murols propose, "
+                        , b [] [text "samedi 20 mai de 21h00 à 23h00"]
+                        , text ", une soirée insolite qui débutera par un concert
+                                 classique et humoristique. Le quatuor des saxophonistes « " 
+                        , b [] [text "Sancy-SaxSoFun "]
+                        , text "» interprétera des œuvres nées de la rencontre du saxophone
+                               et des grands compositeurs du 18 ème siècle, Bach, Haendel et Vivaldi."       
+                        ]
+                 , p [] [text "La soirée se poursuivra par la visite libre des œuvres des peintres dont
+                               l'originalité réside dans la représentation des paysages de neige."] 
+                 , p [] [text "Entrée gratuite dans la limite des places disponibles. "]
+                 , p [] [ a [href "baseDocumentaire/affiche 20 mai.pdf"
+                            , target "_blank"
+                            ]
+                            [text "lien affiche"]]
+                 ]
+   , expiry = Date.fromString "05/21/2017"
+   }
+   ,{ emptyNews |
+     title = "La commune de Murol a obtenu le label Pavillon Bleu pour 2017"
+   , date  = Date.fromString "05/19/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Suite aux décisions des jurys nationaux et internationaux, Murol a obtenu
+                           le label pour la deuxième année consécutive. Plus d'informations dans le "
+                    , a [href "/baseDocumentaire/PAVILLON BLEU dossier de presse 2017.pdf", target "_blank"] [text "dossier de presse Pavillon Bleu 2017"]
+                    ]
+                 ]
+   , expiry = Date.fromString "09/15/2017"
+   }    
   --,{ emptyNews |
    --  title = ""
    --, date  = Date.fromString ""

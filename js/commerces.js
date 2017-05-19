@@ -11676,7 +11676,16 @@ Elm.Commerces.make = function (_elm) {
                                                                   ,_1: "http://www.sancy.com/activites/detail/4234/murol/toutiveti-vetements"})
                                               ,tel: "06 76 66 97 47"
                                               ,mail: "toutiveti@hotmail.fr"
-                                              ,descr: _U.list(["Vêtements/chaussures - hommes/femmes/enfants "])})])}]));
+                                              ,descr: _U.list(["Vêtements/chaussures - hommes/femmes/enfants "])})])}
+                                             ,{ctor: "_Tuple2"
+                                              ,_0: "Location poneys"
+                                              ,_1: _U.list([_U.update(defCom,
+                                              {name: "Western Poneys"
+                                              ,refOt: $Maybe.Nothing
+                                              ,descr: _U.list([""])
+                                              ,addr: "Route de Besse 63790 MUROL, à coté du supermaché SPAR"
+                                              ,tel: "06 66 85 24 10 ou 06 63 41 22 47"
+                                              ,site: "http://western-poneys.wifeo.com/"})])}]));
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("commerces")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Commerces et services")]))

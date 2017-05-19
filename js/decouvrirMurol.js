@@ -11727,7 +11727,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([]),
                                               _U.list([$Html.text("C\'est le château le plus visité d’Auvergne. Il \n                           attire plus de 100 000 visiteurs par an \n                           qui peuvent profiter de ")
                                                       ,A2($Html.a,
-                                                      _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.chateaudemurol.fr")]),
+                                                      _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murolchateau.com/")]),
                                                       _U.list([$Html.text("visites simples ou animées")]))
                                                       ,$Html.text(", de saynètes et de démonstrations. Paysans, hommes d´armes, \n                           gentes dames et chevaliers vous font découvrir la \n                           vie d´une châtellenie au XIIIe siècle! ")]))
                                               ,A2($Html.p,

@@ -112,7 +112,7 @@ initialContent =
                    l'épée), des paysans, hommes d´armes, gentes dames et 
                    chevaliers font découvrir la vie d´une châtellenie au 
                    XIIIe siècle. "]
-      , link "Site officiel" "http://www.chateaudemurol.fr"
+      , link "Site officiel" "http://www.murolchateau.com"
 
       , h4 [] [text "Musée archéologique "]
 

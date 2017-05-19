@@ -11369,7 +11369,9 @@ Elm.AutresPublications.make = function (_elm) {
            ,A2($Utils.link,"Dossier zone humide de Murol","baseDocumentaire/Dossier zone humide de Murol.pdf")
            ,A2($Utils.link,"Fiche Organicité","baseDocumentaire/ficheORGANICITE.pdf")
            ,A2($Utils.link,"Livret d\'informations sur le lac Chambon","baseDocumentaire/livretLac.pdf")
-           ,A2($Utils.link,"Plaquette semaine parentalité","baseDocumentaire/plaquette_semaineParentalite2016.pdf")]));
+           ,A2($Utils.link,"Plaquette semaine parentalité","baseDocumentaire/plaquette_semaineParentalite2016.pdf")
+           ,A2($Utils.link,"Communiqué de presse concernant la lutte contre les ambroisies","baseDocumentaire/CPDGSdecretarreteambroisies040517.pdf")
+           ,A2($Utils.link,"Dossier de presse PAVILLON BLEU 2017","/baseDocumentaire/PAVILLON BLEU dossier de presse 2017.pdf")]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});
    var contentMap = $Dict.fromList(_U.list([]));
    var view = F2(function (address,model) {

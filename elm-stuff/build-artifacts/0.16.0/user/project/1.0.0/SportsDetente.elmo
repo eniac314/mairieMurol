@@ -79,6 +79,33 @@ Elm.SportsDetente.make = function (_elm) {
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Renseignements auprès d’Albine Carpentier: ")]))
            ,$Utils.mail("albinesoleil@gmail.com")
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Téléphone : 06 13 78 87 27")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Western Poneys")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.b,
+           _U.list([]),
+           _U.list([$Html.text("Location poneys en main pour enfant\n                         accompagné d\'un adulte (enfant 3-12 ans maxi 30kg).")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Autres prestations possibles en fonction de vos demandes le\n                   reste de l\'année sur réservation : fêtes associatives, anniversaires\n                    de vos enfants ou activités extra-scolaires, marchés, brocantes...")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Retenir les dates au moins 15 jours à l\'avance.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Plusieurs formules possibles : forfait demi-journée\n                   , forfait journée ou location individuelle.")]))
+           ,A2($Html.h6,_U.list([]),_U.list([$Html.text("Période d\'ouverture")]))
+           ,A2($Html.p,_U.list([]),_U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("En 2017")]))]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ouvert tous les jours de juillet et août de 10h à 19h.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Ouvertures ponctuelles week-ends et jours fériés en mai,\n                    juin et septembre suivant météo. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour les horaires et jours d\'ouverture, n\'hésitez pas à\n                    consulter notre site internet, régulièrement mis à jour.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("http://western-poneys.wifeo.com/"),$Html$Attributes.target("blank_")]),
+           _U.list([$Html.text("Western Poneys")]))]))
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Autres activités régulières")]))
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Chorale")]))
            ,A2($Html.p,

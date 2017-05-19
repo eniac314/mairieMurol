@@ -482,4 +482,18 @@ comMapSummer = fromList
       , mail   = "toutiveti@hotmail.fr"
       , descr  = [ "Vêtements/chaussures - hommes/femmes/enfants "]
       }]
-   )]
+   )
+   ,
+   ("Location poneys"
+    ,[
+     { defCom |
+       name  = "Western Poneys"
+     , refOt = Nothing
+     , descr = [""]
+     , addr  = "Route de Besse 63790 MUROL, à coté du supermaché SPAR"
+     , tel   = "06 66 85 24 10 ou 06 63 41 22 47" 
+     , site  = "http://western-poneys.wifeo.com/" 
+     }
+    ]
+    )
+  ]

@@ -136,7 +136,29 @@ initialContent =
       , p  [] [text "Renseignements auprès d’Albine Carpentier: "]
       , mail "albinesoleil@gmail.com"
       , p  [] [text "Téléphone : 06 13 78 87 27"]
+      
+      , h5 [] [text "Western Poneys"]
 
+      , p [] [b[] [text "Location poneys en main pour enfant
+                         accompagné d'un adulte (enfant 3-12 ans maxi 30kg)."]]
+      , p [] [text "Autres prestations possibles en fonction de vos demandes le
+                   reste de l'année sur réservation : fêtes associatives, anniversaires
+                    de vos enfants ou activités extra-scolaires, marchés, brocantes..."]
+      , p [] [text "Retenir les dates au moins 15 jours à l'avance."]
+      , p [] [text "Plusieurs formules possibles : forfait demi-journée
+                   , forfait journée ou location individuelle."]
+      , h6 [] [text "Période d'ouverture"]
+      , p [] [b [] [text "En 2017"]]
+      , p [] [text "Ouvert tous les jours de juillet et août de 10h à 19h."]
+      , p [] [text "Ouvertures ponctuelles week-ends et jours fériés en mai,
+                    juin et septembre suivant météo. "
+             ]
+      , p [] [text "Pour les horaires et jours d'ouverture, n'hésitez pas à
+                    consulter notre site internet, régulièrement mis à jour."
+             ]
+      , p [] [a [href "http://western-poneys.wifeo.com/", target "blank_"] [text "Western Poneys"]]
+
+      
       , h4 [] [text "Autres activités régulières"]
       
       , h5 [] [text "Chorale"]

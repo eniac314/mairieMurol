@@ -11388,7 +11388,7 @@ Elm.Patrimoine.make = function (_elm) {
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Des animations en costumes du Moyen-Âge sont proposées \n                   par les \"Paladins du Sancy\" de l\'agence Organicom. \n                   Aux travers d´histoires et de démonstrations (combat à \n                   l\'épée), des paysans, hommes d´armes, gentes dames et \n                   chevaliers font découvrir la vie d´une châtellenie au \n                   XIIIe siècle. ")]))
-           ,A2($Utils.link,"Site officiel","http://www.chateaudemurol.fr")
+           ,A2($Utils.link,"Site officiel","http://www.murolchateau.com")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée archéologique ")]))
            ,A2($Html.p,
            _U.list([]),

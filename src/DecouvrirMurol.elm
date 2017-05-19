@@ -202,7 +202,7 @@ initialContent =
               , p [] [text "C'est le château le plus visité d’Auvergne. Il 
                            attire plus de 100 000 visiteurs par an 
                            qui peuvent profiter de "
-                     , a [target "_blank", href "http://www.chateaudemurol.fr"]
+                     , a [target "_blank", href "http://murolchateau.com/"]
                          [text "visites simples ou animées"]  
                      ,text ", de saynètes et de démonstrations. Paysans, hommes d´armes, 
                            gentes dames et chevaliers vous font découvrir la 

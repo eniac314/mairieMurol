@@ -75,4 +75,6 @@ initialContent =
       , link "Fiche Organicité" "baseDocumentaire/ficheORGANICITE.pdf"
       , link "Livret d'informations sur le lac Chambon" "baseDocumentaire/livretLac.pdf"
       , link "Plaquette semaine parentalité" "baseDocumentaire/plaquette_semaineParentalite2016.pdf"
+      , link "Communiqué de presse concernant la lutte contre les ambroisies" "baseDocumentaire/CPDGSdecretarreteambroisies040517.pdf"
+      , link "Dossier de presse PAVILLON BLEU 2017" "/baseDocumentaire/PAVILLON BLEU dossier de presse 2017.pdf"
       ]
