@@ -89,7 +89,9 @@ Elm.MurolInfos.make = function (_elm) {
                     ,A2($Html.h5,_U.list([]),_U.list([$Html.text("2017")]))
                     ,A2($Html.ul,
                     _U.list([]),
-                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"Numero 33 - Mai","baseDocumentaire/murolInfo/33.pdf")]))]))]))));
+                    _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"Numero 33 - Mai","baseDocumentaire/murolInfo/33.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"Numero 34 - Juin","baseDocumentaire/murolInfo/34.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"Numero 35 - Septembre","baseDocumentaire/murolInfo/34.pdf")]))]))]))));
    var initialContent = murolInf;
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {

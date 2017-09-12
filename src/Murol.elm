@@ -170,7 +170,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le vendredi 19 mai 2017"]
+            [text "Dernière mise à jour le vendredi 08 septembre 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -215,10 +215,50 @@ renderNewsLetter news =
         a [href address] [li [] [text content]] 
       newsList = List.map toNews news
   in
-  div [id "newsletters", class "submenu entry"]
-      [ h3 [] [text "Inscrivez vous"]
-      , ul [] newsList
+  div [id "newsletters", class "submenu entry"
+      , style [("text-align", "center")]
       ]
+      [ h3 [] [text "Visite virtuelle aerienne"]
+      , div [ style [("width","300px")
+                    ,("margin","auto")
+                    ,("margin-top","0.5em")
+                    ,("display","inline-block")
+                    ,("background-color","darkgrey")
+                    ,("text-align","center")
+                    ]
+            ]
+            [ a [ style [("margin","auto")
+                        ,("margin-top","0.5em")
+                        ,("margin-bottom","0.5em")
+                        ,("display","inline-block")
+                        ,("cursor","pointer")
+                        ]
+                , href "visite/visite-virtuelle-aerienne-murol.html"
+                , target "_blank"
+                ]
+                [ img [src "/images/visiteVirt.jpg"
+                      , style [("border-style","solid")
+                              ,("border-width","5px")
+                              ,("border-color","white")
+                              ,("box-shadow","5px 5px 5px black")
+                              ]
+                      ]
+                      []
+
+                ]
+            , p [] 
+                    [ text "Réalisée par la société "
+                    , a [ href "http://www.w3ds.fr/"
+                        , target "_blank"
+                        , style [("color","teal")]
+                        ]
+                        [text "W3D's"]
+                    ]
+            ]
+      ]
+      --[ h3 [] [text "Inscrivez vous"]
+      --, ul [] newsList
+      --]
 
 renderMisc =
   div [ id "misc", class "divers"]
@@ -245,6 +285,11 @@ renderMisc =
             , a [href "http://www.musee-murol.fr/fr", target "_blank" ]
               [ text "le musée des peintres de l’Ecole de Murols"]
             , p []
+                [ text "Consultez la " 
+                , a [ href "baseDocumentaire/plaquette musée Murol 2017.pdf"
+                    , target "_blank"]
+                    [text "plaquette du Musée"]]
+            , p []
                 [ text "Pour une visite en famille :"
                 --, a [ href "baseDocumentaire/Carte jeu de piste 2016.pdf", target "_blank"]
                     --[ text "carte jeu de piste"]
@@ -254,10 +299,10 @@ renderMisc =
                 , text " la "
                 , a [ href "baseDocumentaire/Carte jeu de piste 2017.pdf", target "_blank"]
                     [ text "carte du jeu de piste"]
-                , text " et la "
-                , a [ href "baseDocumentaire/plaquette musée Murol 2017.pdf"
+                , text " et le "
+                , a [ href "baseDocumentaire/livret saison 2017.pdf"
                     , target "_blank"]
-                    [text "plaquette du Musée"]
+                    [text "livret jeu"]
                 ]
             , p []
                 []
@@ -321,7 +366,23 @@ renderAgenda =
 renderMiniGallery address model = 
   div [id "minGalDiv", class "submenu"]
       [ h3 [] [text "Coup d'oeil sur la photothèque"]
-      , Gallery.viewM (Signal.forwardTo address GalleryAction) (.miniGallery model)
+      , div [style [("width","100%")
+                   ,("margin-top","0")
+                   ,("text-align","center")
+                   --,("background-color","blue")
+                   ]
+            ]
+            [ div [ style [("display","inline-block")
+                          ,("margin-top","0")
+                          ,("margin","auto")
+                          ,("text-align","left")
+                          --,("background-color","red")
+                          --,("padding","-1em")
+                          ]
+                  ]
+                  [Gallery.viewM (Signal.forwardTo address GalleryAction) (.miniGallery model)
+                  ]
+                  ]   
       ]
 
 view : Signal.Address Action -> Model -> Html
@@ -1269,8 +1330,8 @@ news =
    , expiry = Date.fromString "07/01/2017"
    }
    ,{ emptyNews |
-     title = "Médiévales 2017"
-   , date  = Date.fromString "04/30/2017"
+     title = "Médiévales 2017 - le programme"
+   , date  = Date.fromString "05/26/2017"
    , descr = div [class "newsdescr"]
                  [p []
                     [text "Les Médiévales 2017 auront lieu les 26 et 27 mai, venez nombreux!"]
@@ -1279,8 +1340,33 @@ news =
                         , target "_blank"
                         ]
                         [text "affiche"]]
+                 , h6 []
+                      [text "Vendredi"]
+                 , p []
+                     [ b [] [text "11h"]
+                     , text " inauguration et défilé des troupes"
+                     ]
+                 , p []
+                     [ b [] [text "14h/19h"]
+                     , text " jeux médiévaux et atelier apprenti chevalier "
+                     ]
+                 , p []
+                     [ b [] [text "21h"]
+                     , text " concert place de l’église"
+                     ]
+                 , h6 []
+                      [text "Samedi"]
+                 , p []
+                     [ b [] [text "11h/19h"]
+                     , text " jeux médiévaux, atelier apprenti chevalier,
+                            combats médiévaux juniors"
+                     ]
+                 , p []
+                     [ b [] [text "17h"]
+                     , text " défilé des troupes "
+                     ]
                  ]
-   , expiry = Date.fromString ""
+   , expiry = Date.fromString "07/01/2017"
    }
    ,{ emptyNews |
      title = "Murol Infos 33"
@@ -1354,16 +1440,320 @@ news =
                     ]
                  ]
    , expiry = Date.fromString "09/15/2017"
-   }    
+   }
+   ,{ emptyNews |
+     title = "Inscription au Festival d'Art 30 juillet 2017"
+   , date  = Date.fromString "05/26/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Artistes ou artisans d'art, professionnels ou amateurs, vous
+                          pouvez vous inscrire au Festival d'Art jusqu'au 30 juin 2017."]
+                 , p [] [ a [href "baseDocumentaire/FA2017.pdf"
+                            , target "_blank"
+                            ]
+                            [text "lien fiche d'inscription"]
+                        ]
+                 ]
+   , expiry = Date.fromString "07/02/2017"
+   }
+   ,{ emptyNews |
+     title = "Offres d'emploi saisonniers au château de Murol"
+   , date  = Date.fromString "05/26/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le château de Murol recrute pour l'été."]
+                 , p []
+                     [ text "Voir les "
+                     , a [href "/OffresD'emploi.html"]
+                         [text "offres"]
+                     ]
+                 ]
+   , expiry = Date.fromString "06/25/2017"
+   }
+   ,{ emptyNews |
+     title = "Photos de la journée des Murolais et de la Nuit des Musées"
+   , date  = Date.fromString "05/26/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Retrouvez les photos des éditions 2017 de ces deux 
+                            évènements dans la "]
+                    , a [href "/Photothèque.html"]
+                        [text "photothèque"]
+                 ]
+   , expiry = Date.fromString "06/15/2017"
+   }
+   ,{ emptyNews |
+     title = "Offres d'emploi - agent technique remplaçant"
+   , date  = Date.fromString "06/01/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "La mairie de Murol recherche un agent technique remplaçant."]
+                 , p []
+                     [ text "Voir les "
+                     , a [href "/OffresD'emploi.html"]
+                         [text "offres"]
+                     ]
+                 ]
+   , expiry = Date.fromString "06/25/2017"
+   }
+   ,{ emptyNews |
+     title = "Photos du vernissage de l'exposition du musée et des Médiévales"
+   , date  = Date.fromString "06/01/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Retrouvez les photos des éditions 2017 de ces deux 
+                            évènements dans la "]
+                    , a [href "/Photothèque.html"]
+                        [text "photothèque"]
+                 ]
+   , expiry = Date.fromString "06/15/2017"
+   }
+  ,{ emptyNews |
+     title = "Randonnée des 6 lacs"
+   , date  = Date.fromString "06/19/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "La randonnée solidaire des 6 lacs passe à Murol jeudi 22 juin.
+                            Vous pouvez encore vous inscrire sur le "
+                    , a [href "http://uneviemeilleure.org/", target "_blank"]
+                        [text "site de l'association"]
+                    , text "."
+                    , br [] []
+                    , a [ href "/baseDocumentaire/randonnée solidaire001.pdf"
+                        , target "_blank"
+                        ]
+                        [text "Affiche"]
+                    , br [] []
+                    , a [ href "/baseDocumentaire/programme rando des 6 lacs.pdf"
+                        , target "_blank"
+                        ]
+                        [text "Programme"]
+                    ]
+                 ]
+   , expiry = Date.fromString "06/23/2017"
+   } 
+   ,{ emptyNews |
+     title = "Conte des enfants de l'école de Murol et fête des écoles"
+   , date  = Date.fromString "06/19/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Il était une fois une fête des écoles qui a transporté
+                           les spectateurs au coeur du Moyen-Âge : chevaliers, dragon,
+                           sorcier, danseurs et chanteurs... rien n'a été oublié par
+                           les auteurs en herbe de ce conte inédit ! "
+                    ]
+                 , a [href "/Annee2017.html"]
+                     [text "Voir les photos"]
+                 , p []
+                     [a [ href "/baseDocumentaire/conte élémentaire Murol.pdf" 
+                        , target "_blank"]
+                        [ text "Conte des enfants de l'école de Murol"]
+                     ]
+                 ]
+   , expiry = Date.fromString "16/31/2017"
+   }
+   ,{ emptyNews |
+     title = "Ouverture du centre de loisirs du SIVOM de la Vallée Verte"
+   , date  = Date.fromString "06/25/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "il sera ouvert du 10 juillet au 25 aout (sauf 14 juillet
+                           et 15 août). Vous pouvez encore inscrire vos enfants
+                           selon les places disponibles."
+                    ]
+                 , p [] [ a [href "/PériEtExtra-scolaire.html?bloc=3"]
+                            [text "Présentation du centre de loisirs"]
+                        ]
+                 , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette CLSH 2017.pdf"
+                           , target "_blank"
+                           ]
+                           [ text "Plaquette de présentation du centre de loisirs été" ]
+                        ]
+                 , p [] [ a [href "/baseDocumentaire/periscolaire/INSCRIPTION  clsh 2017-2018.pdf", target "_blank"]
+                            [text "dossiers d’inscriptions"]
+                        ]
+                 
+                 ]
+   , expiry = Date.fromString "07/25/2017"
+   }
+   ,{ emptyNews |
+     title = "Les élèves de l'école de Chambon sur Lac lauréats !"
+   , date  = Date.fromString "07/04/2017"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [text "Les élèves de l'école de Chambon sur Lac
+                           ont reçu le premier prix du concours scolaire du meilleur petit journal du patrimoine. Félicitations!
+                           "
+                    ]
+                 , p [] 
+                     [ a [href "http://www.patrimoine-environnement.fr/laureats-2017-concours-scolaire/", target "_blank"]
+                         [text "plus d'informations"
+                         ]
+                     ]
+                 , p []
+                     [a [href "/baseDocumentaire/JOURNAL CHAMBON_SUR_LAC CM1-CM2.pdf", target "_blank"]
+                        [text "le petit journal du patrimoine"]    
+                     ]
+                 ]
+   , expiry = Date.fromString "08/04/2017"
+   } 
+   ,{ emptyNews |
+     title = "Murol info 34 - Spécial circulation et stationnement à Murol"
+   , date  = Date.fromString "07/04/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le dernier Murol Infos regroupe les informations
+                           concernant la circulation et le stationnement dans la commune"]
+                 , p [] 
+                     [text "Consultation "
+                     , a [ href "/baseDocumentaire/murolInfo/34.pdf"
+                         , target "_blank"
+                         ]
+                         [ text "ici"]
+                     ]          
+                 ]
+   , expiry = Date.fromString "08/31/2017"
+   }
+   ,{ emptyNews |
+     title = "Inauguration des oeuvres Horizons Arts Nature en Sancy"
+   , date  = Date.fromString "07/08/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les photos des journées d'inauguration
+                          (22 et 23 juin 2017) sont visibles dans la photothèque."]
+                 , a [href "/Annee2017.html"]
+                     [text "Voir les photos"]
+                 ]
+   , expiry = Date.fromString "08/08/2017"
+   }
+   ,{ emptyNews |
+     title = "Animation saison estivale - programmes disponibles"
+   , date  = Date.fromString "07/08/2017"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [ text "La saison estivale arrive avec de nombreuses animations présentées sur des programmes par quinzaine.
+                             Retrouvez également le détail de la journée du 14 juillet "
+                     ]
+                 ,  p []
+                      [ text "Voir la "
+                      , a [href "/AnimationEstivale.html"] [text "page dédiée"]
+                      ]
+                 
+                 ]
+   , expiry = Date.fromString "09/01/2017"
+   }
+   ,{ emptyNews |
+     title = "Photos du Festival d'Art 2017"
+   , date  = Date.fromString "08/09/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Les photos de l'édition 2017 du Festival d'Art sont visibles dans la "
+                    , a [href "/FestivalArt.html"] [text "photothèque"]]
+                 ]
+   , expiry = Date.fromString "09/09/2017"
+   }
+   ,{ emptyNews |
+     title = "Mise en ligne de la visite virtuelle aérienne"
+   , date  = Date.fromString "08/17/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Prenez de la hauteur et découvrez Murol vu par les drones de la société " 
+                    , a [ href "http://www.w3ds.fr/"
+                        , target "_blank"
+                        
+                        ]
+                        [text "W3D's"]      
+                    , text ". "
+                    ]
+                  , p []
+                      [ text "Voir le "
+                      ,  a [ href "visite/visite-virtuelle-aerienne-murol.html"
+                           , target "_blank"
+                           ]
+                          [text "panorama interactif"]
+                      , text "."
+                      ]
+                 ]
+   , expiry = Date.fromString "09/17/2017"
+   }
+   ,{ emptyNews |
+      title = "Délibérations du conseil municipal"
+    , date  = Date.fromString "08/17/2017"
+    , descr = div [class "newsdescr"]
+                  [p []
+                     [text "Les dernières délibérations du conseil municipal sont
+                           disponibles "
+                     , a [href "/Délibérations.html"]
+                         [text "ici"] 
+                     ]
+                  ]
+    , expiry = Date.fromString "08/31/2017"
+    } 
+  ,{ emptyNews |
+     title = "Vidéo de la réalisation de la charpente du château de Murol"
+   , date  = Date.fromString "08/18/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez en vidéo la réalisation de la charpente du château.
+                           Montage réalisé à partir d'images d'archives datant du début
+                           des années 2000."
+                    ]
+                 , a [href "/DécouvrirMurol.html?bloc=1#videoCharpente"]
+                     [text "Lien ici"]   
+                 ]
+   , expiry = Date.fromString "09/18/2017"
+   }
+   ,{ emptyNews |
+     title = "le Murol infos 35 est disponible"
+   , date  = Date.fromString "09/08/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Retrouvez les activités proposées par la municipalité
+                           et les associations dans le "
+                    , a [href "/baseDocumentaire/murolInfo/35.pdf"]
+                        [text "Murol Infos 35"]
+                    ]   
+                 ]
+   , expiry = Date.fromString "10/08/2017"
+   }
+   ,{ emptyNews |
+     title = "pleins feux sur l’association des jeunes de Murol"
+   , date  = Date.fromString "09/12/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les 1/2/3 septembre Murol était en fête grâce à ses jeunes.
+                           Retrouvez ici la vidéo du ventriglisse géant diffusée
+                           par le journal « La Montagne »"
+                    ]
+                 , a [href "http://www.lamontagne.fr/murol/insolite/2017/09/02/les-conscrits-font-le-buzz-avec-un-ventriglisse-geant-a-murol_12534803.html"]
+                     [text "Voir la vidéo"]   
+                 ]
+   , expiry = Date.fromString "09/31/2017"
+   }
   --,{ emptyNews |
-   --  title = ""
-   --, date  = Date.fromString ""
-   --, descr = div [class "newsdescr"]
-   --              [p []
-   --                 [text ""]
-   --              ]
-   --, expiry = Date.fromString ""
-   --} 
+  --   title = ""
+  -- , date  = Date.fromString ""
+  -- , descr = div [class "newsdescr"]
+  --               [p []
+  --                  [text ""
+  --                  ]
+  --               , a [href ""]
+  --                   [text "Lien ici"]   
+  --               ]
+  -- , expiry = Date.fromString ""
+  -- }
+  --,{ emptyNews |
+  --   title = ""
+  -- , date  = Date.fromString ""
+  -- , descr = div [class "newsdescr"]
+  --               [p []
+  --                  [text ""
+  --                  ]
+  --               , a [href ""]
+  --                   [text "Lien ici"]   
+  --               ]
+  -- , expiry = Date.fromString ""
+  -- }  
   ]
 
 newsletters =

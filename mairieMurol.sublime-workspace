@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"dispo",
+				"disponible"
+			],
+			[
+				"blank",
+				"_blank"
+			],
+			[
+				"an",
+				"animEst"
+			],
+			[
+				"es",
+				"estivale"
+			],
+			[
+				"murol",
+				"murolInfo"
+			],
+			[
+				"infor",
+				"informations"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"A",
+				"Annee2016"
+			],
+			[
+				"com",
+				"communales"
+			],
+			[
 				"bl",
 				"_blank"
 			],
@@ -176,10 +212,6 @@
 				"target"
 			],
 			[
-				"ba",
-				"background-color"
-			],
-			[
 				"to",
 				"toDivs"
 			],
@@ -198,10 +230,6 @@
 			[
 				"re",
 				"refOt"
-			],
-			[
-				"A",
-				"Alimentation"
 			],
 			[
 				"Murol",
@@ -376,10 +404,6 @@
 				"peri"
 			],
 			[
-				"com",
-				"commune"
-			],
-			[
 				"Ani",
 				"Animaux"
 			],
@@ -490,30 +514,6 @@
 			[
 				"up",
 				"updateWithId"
-			],
-			[
-				"l",
-				"lightbox"
-			],
-			[
-				"gal",
-				"galleries"
-			],
-			[
-				"th",
-				"thumbs"
-			],
-			[
-				"curr",
-				"currentPic"
-			],
-			[
-				"cu",
-				"currentPic"
-			],
-			[
-				"thu",
-				"thumb"
 			]
 		]
 	},
@@ -532,7 +532,7 @@
 			"file": "src/Animation.elm",
 			"settings":
 			{
-				"buffer_size": 10420,
+				"buffer_size": 10723,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -541,16 +541,25 @@
 			"file": "src/AnimationEstivale.elm",
 			"settings":
 			{
-				"buffer_size": 2536,
+				"buffer_size": 2757,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Animaux.elm",
+			"file": "src/Mentions.elm",
 			"settings":
 			{
-				"buffer_size": 3263,
+				"buffer_size": 2831,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 6466,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -559,16 +568,16 @@
 			"file": "src/Annee2017.elm",
 			"settings":
 			{
-				"buffer_size": 3413,
+				"buffer_size": 4064,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Annee2017.html",
+			"file": "src/Annee2016.elm",
 			"settings":
 			{
-				"buffer_size": 1008,
+				"buffer_size": 6533,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -702,8 +711,16 @@
 			"file": "src/DecouvrirMurol.elm",
 			"settings":
 			{
-				"buffer_size": 31313,
+				"buffer_size": 31874,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/eniac314/prog/elm/mocalis/src/Parser.elm",
+			"settings":
+			{
+				"buffer_size": 12366,
 				"line_ending": "Unix"
 			}
 		},
@@ -711,7 +728,7 @@
 			"file": "src/Deliberations.elm",
 			"settings":
 			{
-				"buffer_size": 4300,
+				"buffer_size": 4598,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -764,7 +781,7 @@
 			"file": "src/FestivalArt.elm",
 			"settings":
 			{
-				"buffer_size": 9814,
+				"buffer_size": 9961,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -836,7 +853,7 @@
 			"file": "src/JourneeMurolais.elm",
 			"settings":
 			{
-				"buffer_size": 5175,
+				"buffer_size": 5353,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -845,7 +862,7 @@
 			"file": "src/Juillet14.elm",
 			"settings":
 			{
-				"buffer_size": 3737,
+				"buffer_size": 3891,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -881,7 +898,7 @@
 			"file": "src/ListOfPics.elm",
 			"settings":
 			{
-				"buffer_size": 47125,
+				"buffer_size": 67083,
 				"line_ending": "Unix"
 			}
 		},
@@ -889,7 +906,7 @@
 			"file": "src/Medievales.elm",
 			"settings":
 			{
-				"buffer_size": 3770,
+				"buffer_size": 3925,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -898,7 +915,7 @@
 			"file": "src/Murol.elm",
 			"settings":
 			{
-				"buffer_size": 59331,
+				"buffer_size": 74328,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -907,7 +924,7 @@
 			"file": "styles/style.css",
 			"settings":
 			{
-				"buffer_size": 48575,
+				"buffer_size": 48610,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -916,7 +933,7 @@
 			"file": "src/MurolInfos.elm",
 			"settings":
 			{
-				"buffer_size": 5162,
+				"buffer_size": 5329,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -943,7 +960,7 @@
 			"file": "src/OffresEmploi.elm",
 			"settings":
 			{
-				"buffer_size": 3817,
+				"buffer_size": 4550,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -981,7 +998,7 @@
 			"file": "src/Periscolaire.elm",
 			"settings":
 			{
-				"buffer_size": 17927,
+				"buffer_size": 18527,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1025,7 +1042,7 @@
 			"file": "src/SallesFetes.elm",
 			"settings":
 			{
-				"buffer_size": 3757,
+				"buffer_size": 4108,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1101,10 +1118,10 @@
 			}
 		},
 		{
-			"file": "src/Transports.elm",
+			"file": "src/Mentions.elm",
 			"settings":
 			{
-				"buffer_size": 14403,
+				"buffer_size": 2831,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1121,7 +1138,25 @@
 			"file": "src/Utils.elm",
 			"settings":
 			{
-				"buffer_size": 9997,
+				"buffer_size": 10474,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "mentionsLegales.html",
+			"settings":
+			{
+				"buffer_size": 897,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Animation.html",
+			"settings":
+			{
+				"buffer_size": 899,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1130,7 +1165,7 @@
 			"file": "LesAdos.html",
 			"settings":
 			{
-				"buffer_size": 903,
+				"buffer_size": 895,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1228,8 +1263,10 @@
 	},
 	"file_history":
 	[
-		"/home/eniac314/prog/elm/mairieMurol/src/LesAdos.elm",
 		"/home/eniac314/prog/elm/mairieMurol/Gruntfile.js",
+		"/home/eniac314/prog/elm/mocalis/src/BetterParser.elm",
+		"/home/eniac314/prog/elm/mairieMurol/Annee2017.html",
+		"/home/eniac314/prog/elm/mairieMurol/src/LesAdos.elm",
 		"/tmp/mozilla_eniac3140/Kokopelli wish list",
 		"/home/eniac314/prog/elm/mairieMurol/styles/summer2016.css",
 		"/home/eniac314/prog/elm/mairieMurol/styles/winter.css",
@@ -1353,13 +1390,11 @@
 		"/home/fayong/prog/elm/mairieMurol/src/Associations.elm",
 		"/home/fayong/prog/elm/mairieMurol/src/Restaurants.elm",
 		"/home/fayong/prog/elm/mairieMurol/src/Animation.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/Sortir.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/Deliberations.elm",
-		"/home/fayong/prog/elm/mairieMurol/src/HorairesContact.elm"
+		"/home/fayong/prog/elm/mairieMurol/src/Sortir.elm"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -1374,6 +1409,38 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"jour",
+			"info",
+			"mise",
+			"*",
+			"mise",
+			"jour",
+			"déli",
+			"delib",
+			"virt",
+			"visite",
+			"1em",
+			"shadow",
+			"jour",
+			"festival",
+			"revolution",
+			"14 Jui",
+			"estiv",
+			"anim",
+			"jour",
+			"#4754C4",
+			"murol info",
+			"murol",
+			"jou",
+			"jour à jou",
+			"jour",
+			"fête",
+			"fete",
+			"année",
+			"jour",
+			"vernissa",
+			"jou",
+			"nuit",
 			"jour",
 			"jou",
 			"32",
@@ -1469,39 +1536,7 @@
 			"pre",
 			"counter",
 			"menbre",
-			"menbres",
-			"ccas",
-			"lac",
-			"lqc",
-			"den",
-			"legoue",
-			"Murol",
-			"Beaune Le Froid",
-			"beau",
-			"initAt",
-			"initA",
-			"\"\"",
-			"init",
-			"sancy",
-			"natur'",
-			"contact",
-			"web",
-			"contac",
-			"mail",
-			"ccas",
-			"CCAS",
-			"table",
-			"busine",
-			"legou",
-			"saiso",
-			"musar",
-			"Froid",
-			"Sancy",
-			"qui",
-			"quiet",
-			"h4",
-			"seniors",
-			"h3"
+			"menbres"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1509,7 +1544,7 @@
 		"regex": false,
 		"replace_history":
 		[
-			"La municipalité de Murol vous souhaite une bonne année 2017",
+			"La municipalité de Murol vous souhaite la bienvenue",
 			"jpg",
 			"murolInfo",
 			"/baseDocumentaire",
@@ -1545,7 +1580,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 44,
 			"sheets":
 			[
 				{
@@ -1575,7 +1610,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
@@ -1584,15 +1619,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10420,
+						"buffer_size": 10723,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4404,
+								4404
 							]
 						],
 						"settings":
@@ -1602,10 +1637,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2025.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1614,15 +1649,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2536,
+						"buffer_size": 2757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								188,
-								188
+								2749,
+								2749
 							]
 						],
 						"settings":
@@ -1635,24 +1670,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "src/Animaux.elm",
+					"file": "src/Mentions.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3263,
+						"buffer_size": 2831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3185,
-								3185
+								2821,
+								2821
 							]
 						],
 						"settings":
@@ -1661,28 +1696,58 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 60.0,
+						"translation.y": 1097.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "src/Annee2017.elm",
+					"file": "Gruntfile.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3413,
+						"buffer_size": 6466,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2245,
-								2245
+								6156,
+								6156
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1596.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/Annee2017.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3423,
+								3423
 							]
 						],
 						"settings":
@@ -1692,44 +1757,44 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1159.0,
+						"translation.y": 1762.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "Annee2017.html",
+					"buffer": 6,
+					"file": "src/Annee2016.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1008,
+						"buffer_size": 6533,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								969,
-								969
+								4174,
+								4174
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2173.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "src/Artistes.elm",
 					"semi_transient": false,
 					"settings":
@@ -1755,11 +1820,11 @@
 						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "src/Associations.elm",
 					"semi_transient": false,
 					"settings":
@@ -1785,11 +1850,11 @@
 						"translation.y": 57.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "src/AssociationsList.elm",
 					"semi_transient": false,
 					"settings":
@@ -1811,15 +1876,15 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 7681.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "src/AutomneHiver.elm",
 					"semi_transient": false,
 					"settings":
@@ -1845,11 +1910,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 71,
+					"stack_index": 75,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "src/AutresPublications.elm",
 					"semi_transient": false,
 					"settings":
@@ -1861,8 +1926,8 @@
 						"selection":
 						[
 							[
-								2910,
-								2910
+								1159,
+								1159
 							]
 						],
 						"settings":
@@ -1871,15 +1936,15 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 255.0,
+						"translation.x": 0.0,
 						"translation.y": 881.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "src/BulletinsMunicipaux.elm",
 					"semi_transient": false,
 					"settings":
@@ -1905,11 +1970,11 @@
 						"translation.y": 5261.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "src/CartePlan.elm",
 					"semi_transient": false,
 					"settings":
@@ -1935,11 +2000,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 70,
+					"stack_index": 74,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "src/CCAS.elm",
 					"semi_transient": false,
 					"settings":
@@ -1965,11 +2030,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 69,
+					"stack_index": 73,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "src/Cinema.elm",
 					"semi_transient": false,
 					"settings":
@@ -1995,11 +2060,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 68,
+					"stack_index": 72,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "src/CMJ.elm",
 					"semi_transient": false,
 					"settings":
@@ -2025,11 +2090,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 67,
+					"stack_index": 71,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "src/Commerces.elm",
 					"semi_transient": false,
 					"settings":
@@ -2055,11 +2120,11 @@
 						"translation.y": 8439.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 18,
 					"file": "src/Commissions.elm",
 					"semi_transient": false,
 					"settings":
@@ -2085,11 +2150,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 66,
+					"stack_index": 70,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
 					"file": "src/ConseilMunicipal.elm",
 					"semi_transient": false,
 					"settings":
@@ -2115,11 +2180,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 65,
+					"stack_index": 69,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 20,
 					"file": "src/Covoiturage.elm",
 					"semi_transient": false,
 					"settings":
@@ -2145,24 +2210,54 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 64,
+					"stack_index": 68,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 21,
 					"file": "src/DecouvrirMurol.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 31313,
+						"buffer_size": 31874,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8213,
-								8213
+								9747,
+								9747
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 149.0,
+						"translation.y": 3995.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "/home/eniac314/prog/elm/mocalis/src/Parser.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12366,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8494,
+								8494
 							]
 						],
 						"settings":
@@ -2172,27 +2267,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3764.0,
+						"translation.y": 5142.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 23,
 					"file": "src/Deliberations.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4300,
+						"buffer_size": 4598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4291,
-								4291
+								4598,
+								4598
 							]
 						],
 						"settings":
@@ -2201,15 +2296,15 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 120.0,
-						"translation.y": 1800.0,
+						"translation.x": 0.0,
+						"translation.y": 451.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 24,
 					"file": "src/Documentation.elm",
 					"semi_transient": false,
 					"settings":
@@ -2235,11 +2330,11 @@
 						"translation.y": 1944.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 25,
 					"file": "src/Elections.elm",
 					"semi_transient": false,
 					"settings":
@@ -2265,11 +2360,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 63,
+					"stack_index": 67,
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 26,
 					"file": "src/elm-package.json",
 					"semi_transient": false,
 					"settings":
@@ -2295,11 +2390,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 62,
+					"stack_index": 66,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
+					"buffer": 27,
 					"file": "src/Entreprises.elm",
 					"semi_transient": false,
 					"settings":
@@ -2325,11 +2420,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 61,
+					"stack_index": 65,
 					"type": "text"
 				},
 				{
-					"buffer": 26,
+					"buffer": 28,
 					"file": "src/EntreprisesOld.elm",
 					"semi_transient": false,
 					"settings":
@@ -2355,24 +2450,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 60,
+					"stack_index": 64,
 					"type": "text"
 				},
 				{
-					"buffer": 27,
+					"buffer": 29,
 					"file": "src/FestivalArt.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9814,
+						"buffer_size": 9961,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3788,
+								3788
 							]
 						],
 						"settings":
@@ -2382,14 +2477,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2109.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 59,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 28,
+					"buffer": 30,
 					"file": "src/Gallery.elm",
 					"semi_transient": false,
 					"settings":
@@ -2415,11 +2510,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 58,
+					"stack_index": 63,
 					"type": "text"
 				},
 				{
-					"buffer": 29,
+					"buffer": 31,
 					"file": "src/gatherPics.hi",
 					"semi_transient": false,
 					"settings":
@@ -2443,11 +2538,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 57,
+					"stack_index": 62,
 					"type": "text"
 				},
 				{
-					"buffer": 30,
+					"buffer": 32,
 					"file": "src/gatherPics.hs",
 					"semi_transient": false,
 					"settings":
@@ -2473,11 +2568,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 56,
+					"stack_index": 61,
 					"type": "text"
 				},
 				{
-					"buffer": 31,
+					"buffer": 33,
 					"file": "src/gatherPics.o",
 					"semi_transient": false,
 					"settings":
@@ -2501,11 +2596,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 55,
+					"stack_index": 60,
 					"type": "text"
 				},
 				{
-					"buffer": 32,
+					"buffer": 34,
 					"file": "src/GestionDesDechets.elm",
 					"semi_transient": false,
 					"settings":
@@ -2531,11 +2626,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 59,
 					"type": "text"
 				},
 				{
-					"buffer": 33,
+					"buffer": 35,
 					"file": "src/GestionDesRisques.elm",
 					"semi_transient": false,
 					"settings":
@@ -2561,11 +2656,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 53,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
-					"buffer": 34,
+					"buffer": 36,
 					"file": "src/Hebergements.elm",
 					"semi_transient": false,
 					"settings":
@@ -2591,71 +2686,71 @@
 						"translation.y": 399.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 35,
-					"file": "src/JourneeMurolais.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5175,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 52,
-					"type": "text"
-				},
-				{
-					"buffer": 36,
-					"file": "src/Juillet14.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3737,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3252,
-								3252
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1938.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 29,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
 					"buffer": 37,
+					"file": "src/JourneeMurolais.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5353,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2986,
+								2986
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1974.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 26,
+					"type": "text"
+				},
+				{
+					"buffer": 38,
+					"file": "src/Juillet14.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3891,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3888,
+								3888
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1762.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 39,
 					"file": "src/LaCommune.elm",
 					"semi_transient": false,
 					"settings":
@@ -2681,11 +2776,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
-					"buffer": 38,
+					"buffer": 40,
 					"file": "src/LesAdos.elm",
 					"semi_transient": false,
 					"settings":
@@ -2711,11 +2806,11 @@
 						"translation.y": 1140.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
-					"buffer": 39,
+					"buffer": 41,
 					"file": "src/Lightbox.elm",
 					"semi_transient": false,
 					"settings":
@@ -2741,16 +2836,16 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
-					"buffer": 40,
+					"buffer": 42,
 					"file": "src/ListOfPics.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 47125,
+						"buffer_size": 67083,
 						"regions":
 						{
 						},
@@ -2765,20 +2860,80 @@
 						{
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 10043.0,
+						"translation.x": 3256.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 41,
+					"buffer": 43,
 					"file": "src/Medievales.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3770,
+						"buffer_size": 3925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3181,
+								3181
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2109.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 44,
+					"file": "src/Murol.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 74328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73103,
+								73103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 31469.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 45,
+					"file": "styles/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48610,
 						"regions":
 						{
 						},
@@ -2791,109 +2946,49 @@
 						],
 						"settings":
 						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8873.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 46,
+					"file": "src/MurolInfos.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5329,
+								5329
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2465.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 42,
-					"file": "src/Murol.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 59331,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4381,
-								4381
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 193.0,
-						"translation.y": 2644.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 43,
-					"file": "styles/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48575,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17743,
-								17743
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 17903.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 44,
-					"file": "src/MurolInfos.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5162,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4999,
-								4999
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 20.0,
-						"translation.y": 1942.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 45,
+					"buffer": 47,
 					"file": "src/NumerosUrgences.elm",
 					"semi_transient": false,
 					"settings":
@@ -2919,11 +3014,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 55,
 					"type": "text"
 				},
 				{
-					"buffer": 46,
+					"buffer": 48,
 					"file": "src/OfficeTourisme.elm",
 					"semi_transient": false,
 					"settings":
@@ -2949,24 +3044,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
-					"buffer": 47,
+					"buffer": 49,
 					"file": "src/OffresEmploi.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3817,
+						"buffer_size": 4550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4156,
+								4156
 							]
 						],
 						"settings":
@@ -2976,14 +3071,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1154.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 48,
+					"buffer": 50,
 					"file": "src/Patrimoine.elm",
 					"semi_transient": false,
 					"settings":
@@ -3009,11 +3104,11 @@
 						"translation.y": 3028.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
-					"buffer": 49,
+					"buffer": 51,
 					"file": "src/PatrimoinePhoto.elm",
 					"semi_transient": false,
 					"settings":
@@ -3039,11 +3134,11 @@
 						"translation.y": 1420.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
-					"buffer": 50,
+					"buffer": 52,
 					"semi_transient": false,
 					"settings":
 					{
@@ -3069,24 +3164,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
-					"buffer": 51,
+					"buffer": 53,
 					"file": "src/Periscolaire.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 17927,
+						"buffer_size": 18527,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15125,
-								15125
+								14832,
+								14832
 							]
 						],
 						"settings":
@@ -3095,15 +3190,15 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 236.0,
-						"translation.y": 6509.0,
+						"translation.x": 36.0,
+						"translation.y": 6657.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 52,
+					"buffer": 54,
 					"file": "src/PetitesAnnonces.elm",
 					"semi_transient": false,
 					"settings":
@@ -3129,11 +3224,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 53,
 					"type": "text"
 				},
 				{
-					"buffer": 53,
+					"buffer": 55,
 					"file": "src/Phototheque.elm",
 					"semi_transient": false,
 					"settings":
@@ -3163,7 +3258,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 54,
+					"buffer": 56,
 					"file": "src/PrintempsEte.elm",
 					"semi_transient": false,
 					"settings":
@@ -3189,11 +3284,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
-					"buffer": 55,
+					"buffer": 57,
 					"file": "src/Restaurants.elm",
 					"semi_transient": false,
 					"settings":
@@ -3216,27 +3311,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2793.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
-					"buffer": 56,
+					"buffer": 58,
 					"file": "src/SallesFetes.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3757,
+						"buffer_size": 4108,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1760,
+								1760
 							]
 						],
 						"settings":
@@ -3246,14 +3341,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1140.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
-					"buffer": 57,
+					"buffer": 59,
 					"file": "src/Sante.elm",
 					"semi_transient": false,
 					"settings":
@@ -3279,11 +3374,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 58,
+					"buffer": 60,
 					"file": "src/Scroll.elm",
 					"semi_transient": false,
 					"settings":
@@ -3307,11 +3402,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
-					"buffer": 59,
+					"buffer": 61,
 					"file": "src/SideMenu.elm",
 					"semi_transient": false,
 					"settings":
@@ -3337,11 +3432,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 41,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
-					"buffer": 60,
+					"buffer": 62,
 					"file": "src/Sortir.elm",
 					"semi_transient": false,
 					"settings":
@@ -3367,11 +3462,11 @@
 						"translation.y": 1710.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 39,
 					"type": "text"
 				},
 				{
-					"buffer": 61,
+					"buffer": 63,
 					"file": "src/SportsDetente.elm",
 					"semi_transient": false,
 					"settings":
@@ -3397,11 +3492,11 @@
 						"translation.y": 2193.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
-					"buffer": 62,
+					"buffer": 64,
 					"file": "src/StarTable.elm",
 					"semi_transient": false,
 					"settings":
@@ -3427,11 +3522,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
-					"buffer": 63,
+					"buffer": 65,
 					"file": "src/Streams.elm",
 					"semi_transient": false,
 					"settings":
@@ -3457,11 +3552,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 64,
+					"buffer": 66,
 					"file": "src/TiledMenu.elm",
 					"semi_transient": false,
 					"settings":
@@ -3487,24 +3582,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
-					"buffer": 65,
-					"file": "src/Transports.elm",
+					"buffer": 67,
+					"file": "src/Mentions.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14403,
+						"buffer_size": 2831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2244,
+								2244
 							]
 						],
 						"settings":
@@ -3514,14 +3609,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 881.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 66,
+					"buffer": 68,
 					"file": "src/UrlParsing.elm",
 					"semi_transient": false,
 					"settings":
@@ -3547,24 +3642,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
-					"buffer": 67,
+					"buffer": 69,
 					"file": "src/Utils.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9997,
+						"buffer_size": 10474,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7377,
-								7377
+								5851,
+								5851
 							]
 						],
 						"settings":
@@ -3573,28 +3668,28 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 3564.0,
+						"translation.x": 29.0,
+						"translation.y": 3450.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 68,
-					"file": "LesAdos.html",
+					"buffer": 70,
+					"file": "mentionsLegales.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 903,
+						"buffer_size": 897,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								875,
-								875
+								897,
+								897
 							]
 						],
 						"settings":
@@ -3607,11 +3702,71 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 69,
+					"buffer": 71,
+					"file": "Animation.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 72,
+					"file": "LesAdos.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 35,
+					"type": "text"
+				},
+				{
+					"buffer": 73,
 					"file": "src/VieScolaire.elm",
 					"semi_transient": false,
 					"settings":
@@ -3637,11 +3792,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
-					"buffer": 70,
+					"buffer": 74,
 					"file": "src/VillageFleuri.elm",
 					"semi_transient": false,
 					"settings":
@@ -3667,11 +3822,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 71,
+					"buffer": 75,
 					"file": "src/VosDemarches.elm",
 					"semi_transient": false,
 					"settings":
@@ -3697,7 +3852,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 43,
 					"type": "text"
 				}
 			]

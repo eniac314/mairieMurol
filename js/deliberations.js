@@ -11186,7 +11186,16 @@ Elm.Utils.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La mairie: ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
-           ,renderCounter]));
+           ,renderCounter
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+           _U.list([$Html.text("Conception : ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.gillardinformatique.net"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("gillardInformatique")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/mentionsLegales.html")]),_U.list([$Html.text("Mentions légales")]))]))]))]));
    var renderListImg = function (pics) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("pics")]),
@@ -11405,7 +11414,12 @@ Elm.Deliberations.make = function (_elm) {
                     _U.list([]),
                     _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"17 janvier","/baseDocumentaire/Deliberations_conseil/2017/17jan2017.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"1 février","/baseDocumentaire/Deliberations_conseil/2017/01fev2017.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"13 mars","/baseDocumentaire/Deliberations_conseil/2017/13mar2017.pdf")]))]))]))));
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"13 mars","/baseDocumentaire/Deliberations_conseil/2017/13mar2017.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"11 avril","/baseDocumentaire/Deliberations_conseil/2017/11Avr2017.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"15 juin ","/baseDocumentaire/Deliberations_conseil/2017/15Juin2017.pdf")]))
+                            ,A2($Html.li,
+                            _U.list([]),
+                            _U.list([A2($Utils.link,"30 juin","/baseDocumentaire/Deliberations_conseil/2017/30Juin2017.pdf")]))]))]))));
    var initialContent = delib;
    var update = F2(function (action,model) {    var _p2 = action;return model;});
    var view = F2(function (address,model) {

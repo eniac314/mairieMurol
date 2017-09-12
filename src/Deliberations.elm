@@ -107,5 +107,8 @@ delib =
            [ li [] [link "17 janvier" "/baseDocumentaire/Deliberations_conseil/2017/17jan2017.pdf"]
            , li [] [link "1 février" "/baseDocumentaire/Deliberations_conseil/2017/01fev2017.pdf"]
            , li [] [link "13 mars" "/baseDocumentaire/Deliberations_conseil/2017/13mar2017.pdf"] 
+           , li [] [link "11 avril" "/baseDocumentaire/Deliberations_conseil/2017/11Avr2017.pdf"] 
+           , li [] [link "15 juin " "/baseDocumentaire/Deliberations_conseil/2017/15Juin2017.pdf"] 
+           , li [] [link "30 juin" "/baseDocumentaire/Deliberations_conseil/2017/30Juin2017.pdf"] 
            ]
       ])

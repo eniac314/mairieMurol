@@ -11545,6 +11545,94 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "03.jpg",_1: "printemps",_2: "/PrintempsEte.html"}
                           ,{ctor: "_Tuple3",_0: "36.jpg",_1: "printemps",_2: "/PrintempsEte.html"}
                           ,{ctor: "_Tuple3",_0: "09.jpg",_1: "printemps",_2: "/PrintempsEte.html"}
+                          ,{ctor: "_Tuple3",_0: "47.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "22.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "39.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "24.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "41.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "85.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "74.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "49.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "19.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "21.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "45.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "40.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "29.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "33.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "44.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "50.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "28.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "76.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "27.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "32.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "55.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "83.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "61.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "71.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "81.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "87.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "46.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "77.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "18.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "59.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "31.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "37.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "68.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "54.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "58.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "38.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "75.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "43.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "84.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "35.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "25.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "48.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "80.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "23.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "51.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "79.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "42.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "52.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "65.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "30.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "67.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "56.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "64.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "86.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "62.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "26.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "20.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "60.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "66.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "53.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "78.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "34.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "57.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "63.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "69.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "82.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "88.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "70.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "73.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "36.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
+                          ,{ctor: "_Tuple3",_0: "72.jpg",_1: "festivalArt2017",_2: "FestivalArt.html"}
                           ,{ctor: "_Tuple3",_0: "04.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "10.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "12.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
@@ -11562,6 +11650,26 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "14.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "03.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "09.jpg",_1: "illuminations",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "19.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "18.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "20.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "g14Juillet2017",_2: "/14Juillet.html"}
                           ,{ctor: "_Tuple3",_0: "22.jpg",_1: "medievales2013",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "24.jpg",_1: "medievales2013",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "04.jpg",_1: "medievales2013",_2: "/Medievales.html"}
@@ -11689,6 +11797,170 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "14.jpg",_1: "g14Juillet2014",_2: "/14Juillet.html"}
                           ,{ctor: "_Tuple3",_0: "03.jpg",_1: "g14Juillet2014",_2: "/14Juillet.html"}
                           ,{ctor: "_Tuple3",_0: "09.jpg",_1: "g14Juillet2014",_2: "/14Juillet.html"}
+                          ,{ctor: "_Tuple3",_0: "47.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "22.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "39.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "24.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "41.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "49.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "19.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "21.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "45.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "40.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "29.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "33.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "44.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "50.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "28.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "27.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "32.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "55.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "61.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "46.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "18.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "59.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "31.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "37.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "54.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "58.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "38.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "43.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "35.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "25.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "48.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "23.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "51.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "42.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "52.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "30.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "56.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "64.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "62.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "26.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "20.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "60.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "53.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "34.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "57.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "63.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "36.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "medievales2017",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "47.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "22.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "39.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "24.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "41.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "49.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "19.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "21.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "45.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "40.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "29.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "33.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "44.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "50.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "28.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "27.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "32.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "55.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "61.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "46.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "18.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "59.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "31.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "37.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "54.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "58.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "38.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "43.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "35.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "25.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "48.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "23.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "51.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "42.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "52.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "30.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "56.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "26.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "20.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "60.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "53.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "34.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "57.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "36.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "horizons2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "22.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "24.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "19.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "21.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "27.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "18.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "25.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "23.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "26.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "20.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "journée des Murolais 2017",_2: "/JourneeMurolais.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "nuit des musées 2017",_2: "/Annee2017.html"}
                           ,{ctor: "_Tuple3",_0: "04.jpg",_1: "automne",_2: "/AutomneHiver.html"}
                           ,{ctor: "_Tuple3",_0: "10.jpg",_1: "automne",_2: "/AutomneHiver.html"}
                           ,{ctor: "_Tuple3",_0: "12.jpg",_1: "automne",_2: "/AutomneHiver.html"}
@@ -11703,6 +11975,35 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "14.jpg",_1: "automne",_2: "/AutomneHiver.html"}
                           ,{ctor: "_Tuple3",_0: "03.jpg",_1: "automne",_2: "/AutomneHiver.html"}
                           ,{ctor: "_Tuple3",_0: "09.jpg",_1: "automne",_2: "/AutomneHiver.html"}
+                          ,{ctor: "_Tuple3",_0: "22.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "24.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "19.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "21.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "29.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "28.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "27.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "18.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "25.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "23.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "26.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "20.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "fête des écoles 2017",_2: "/Annee2017.html"}
                           ,{ctor: "_Tuple3",_0: "04.jpg",_1: "medievales2015",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "10.jpg",_1: "medievales2015",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "12.jpg",_1: "medievales2015",_2: "/Medievales.html"}
@@ -11760,6 +12061,20 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "14.jpg",_1: "chateau",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "03.jpg",_1: "chateau",_2: "/PatrimoinePhoto.html"}
                           ,{ctor: "_Tuple3",_0: "09.jpg",_1: "chateau",_2: "/PatrimoinePhoto.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "vernissageExpoMusée2017",_2: "/Annee2017.html"}
                           ,{ctor: "_Tuple3",_0: "04.jpg",_1: "vernissageExpoMusée2016",_2: "/Annee2016.html"}
                           ,{ctor: "_Tuple3",_0: "01.jpg",_1: "vernissageExpoMusée2016",_2: "/Annee2016.html"}
                           ,{ctor: "_Tuple3",_0: "02.jpg",_1: "vernissageExpoMusée2016",_2: "/Annee2016.html"}
@@ -12246,6 +12561,96 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"36.jpg"
                                        ,"09.jpg"])}
                          ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "festivalArt2017",_1: "FestivalArt.html"}
+                          ,_1: _U.list(["47.jpg"
+                                       ,"22.jpg"
+                                       ,"39.jpg"
+                                       ,"24.jpg"
+                                       ,"41.jpg"
+                                       ,"85.jpg"
+                                       ,"04.jpg"
+                                       ,"10.jpg"
+                                       ,"74.jpg"
+                                       ,"12.jpg"
+                                       ,"49.jpg"
+                                       ,"19.jpg"
+                                       ,"21.jpg"
+                                       ,"45.jpg"
+                                       ,"40.jpg"
+                                       ,"29.jpg"
+                                       ,"08.jpg"
+                                       ,"33.jpg"
+                                       ,"44.jpg"
+                                       ,"50.jpg"
+                                       ,"28.jpg"
+                                       ,"76.jpg"
+                                       ,"27.jpg"
+                                       ,"32.jpg"
+                                       ,"55.jpg"
+                                       ,"01.jpg"
+                                       ,"83.jpg"
+                                       ,"61.jpg"
+                                       ,"15.jpg"
+                                       ,"71.jpg"
+                                       ,"81.jpg"
+                                       ,"11.jpg"
+                                       ,"87.jpg"
+                                       ,"17.jpg"
+                                       ,"46.jpg"
+                                       ,"77.jpg"
+                                       ,"05.jpg"
+                                       ,"18.jpg"
+                                       ,"59.jpg"
+                                       ,"31.jpg"
+                                       ,"37.jpg"
+                                       ,"68.jpg"
+                                       ,"54.jpg"
+                                       ,"58.jpg"
+                                       ,"38.jpg"
+                                       ,"75.jpg"
+                                       ,"43.jpg"
+                                       ,"84.jpg"
+                                       ,"35.jpg"
+                                       ,"25.jpg"
+                                       ,"48.jpg"
+                                       ,"80.jpg"
+                                       ,"23.jpg"
+                                       ,"06.jpg"
+                                       ,"51.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"79.jpg"
+                                       ,"42.jpg"
+                                       ,"13.jpg"
+                                       ,"52.jpg"
+                                       ,"65.jpg"
+                                       ,"30.jpg"
+                                       ,"67.jpg"
+                                       ,"56.jpg"
+                                       ,"64.jpg"
+                                       ,"86.jpg"
+                                       ,"16.jpg"
+                                       ,"62.jpg"
+                                       ,"26.jpg"
+                                       ,"20.jpg"
+                                       ,"14.jpg"
+                                       ,"60.jpg"
+                                       ,"66.jpg"
+                                       ,"53.jpg"
+                                       ,"78.jpg"
+                                       ,"34.jpg"
+                                       ,"57.jpg"
+                                       ,"63.jpg"
+                                       ,"03.jpg"
+                                       ,"69.jpg"
+                                       ,"82.jpg"
+                                       ,"88.jpg"
+                                       ,"70.jpg"
+                                       ,"73.jpg"
+                                       ,"36.jpg"
+                                       ,"09.jpg"
+                                       ,"72.jpg"])}
+                         ,{ctor: "_Tuple2"
                           ,_0: {ctor: "_Tuple2",_0: "illuminations",_1: "/PatrimoinePhoto.html"}
                           ,_1: _U.list(["04.jpg"
                                        ,"10.jpg"
@@ -12261,6 +12666,28 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"07.jpg"
                                        ,"13.jpg"
                                        ,"16.jpg"
+                                       ,"14.jpg"
+                                       ,"03.jpg"
+                                       ,"09.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "g14Juillet2017",_1: "/14Juillet.html"}
+                          ,_1: _U.list(["04.jpg"
+                                       ,"10.jpg"
+                                       ,"12.jpg"
+                                       ,"19.jpg"
+                                       ,"08.jpg"
+                                       ,"01.jpg"
+                                       ,"15.jpg"
+                                       ,"11.jpg"
+                                       ,"17.jpg"
+                                       ,"05.jpg"
+                                       ,"18.jpg"
+                                       ,"06.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"13.jpg"
+                                       ,"16.jpg"
+                                       ,"20.jpg"
                                        ,"14.jpg"
                                        ,"03.jpg"
                                        ,"09.jpg"])}
@@ -12402,6 +12829,167 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"03.jpg"
                                        ,"09.jpg"])}
                          ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "medievales2017",_1: "/Medievales.html"}
+                          ,_1: _U.list(["47.jpg"
+                                       ,"22.jpg"
+                                       ,"39.jpg"
+                                       ,"24.jpg"
+                                       ,"41.jpg"
+                                       ,"04.jpg"
+                                       ,"10.jpg"
+                                       ,"12.jpg"
+                                       ,"49.jpg"
+                                       ,"19.jpg"
+                                       ,"21.jpg"
+                                       ,"45.jpg"
+                                       ,"40.jpg"
+                                       ,"29.jpg"
+                                       ,"08.jpg"
+                                       ,"33.jpg"
+                                       ,"44.jpg"
+                                       ,"50.jpg"
+                                       ,"28.jpg"
+                                       ,"27.jpg"
+                                       ,"32.jpg"
+                                       ,"55.jpg"
+                                       ,"01.jpg"
+                                       ,"61.jpg"
+                                       ,"15.jpg"
+                                       ,"11.jpg"
+                                       ,"17.jpg"
+                                       ,"46.jpg"
+                                       ,"05.jpg"
+                                       ,"18.jpg"
+                                       ,"59.jpg"
+                                       ,"31.jpg"
+                                       ,"37.jpg"
+                                       ,"54.jpg"
+                                       ,"58.jpg"
+                                       ,"38.jpg"
+                                       ,"43.jpg"
+                                       ,"35.jpg"
+                                       ,"25.jpg"
+                                       ,"48.jpg"
+                                       ,"23.jpg"
+                                       ,"06.jpg"
+                                       ,"51.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"42.jpg"
+                                       ,"13.jpg"
+                                       ,"52.jpg"
+                                       ,"30.jpg"
+                                       ,"56.jpg"
+                                       ,"64.jpg"
+                                       ,"16.jpg"
+                                       ,"62.jpg"
+                                       ,"26.jpg"
+                                       ,"20.jpg"
+                                       ,"14.jpg"
+                                       ,"60.jpg"
+                                       ,"53.jpg"
+                                       ,"34.jpg"
+                                       ,"57.jpg"
+                                       ,"63.jpg"
+                                       ,"03.jpg"
+                                       ,"36.jpg"
+                                       ,"09.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "horizons2017",_1: "/Annee2017.html"}
+                          ,_1: _U.list(["47.jpg"
+                                       ,"22.jpg"
+                                       ,"39.jpg"
+                                       ,"24.jpg"
+                                       ,"41.jpg"
+                                       ,"04.jpg"
+                                       ,"10.jpg"
+                                       ,"12.jpg"
+                                       ,"49.jpg"
+                                       ,"19.jpg"
+                                       ,"21.jpg"
+                                       ,"45.jpg"
+                                       ,"40.jpg"
+                                       ,"29.jpg"
+                                       ,"08.jpg"
+                                       ,"33.jpg"
+                                       ,"44.jpg"
+                                       ,"50.jpg"
+                                       ,"28.jpg"
+                                       ,"27.jpg"
+                                       ,"32.jpg"
+                                       ,"55.jpg"
+                                       ,"01.jpg"
+                                       ,"61.jpg"
+                                       ,"15.jpg"
+                                       ,"11.jpg"
+                                       ,"17.jpg"
+                                       ,"46.jpg"
+                                       ,"05.jpg"
+                                       ,"18.jpg"
+                                       ,"59.jpg"
+                                       ,"31.jpg"
+                                       ,"37.jpg"
+                                       ,"54.jpg"
+                                       ,"58.jpg"
+                                       ,"38.jpg"
+                                       ,"43.jpg"
+                                       ,"35.jpg"
+                                       ,"25.jpg"
+                                       ,"48.jpg"
+                                       ,"23.jpg"
+                                       ,"06.jpg"
+                                       ,"51.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"42.jpg"
+                                       ,"13.jpg"
+                                       ,"52.jpg"
+                                       ,"30.jpg"
+                                       ,"56.jpg"
+                                       ,"16.jpg"
+                                       ,"26.jpg"
+                                       ,"20.jpg"
+                                       ,"14.jpg"
+                                       ,"60.jpg"
+                                       ,"53.jpg"
+                                       ,"34.jpg"
+                                       ,"57.jpg"
+                                       ,"03.jpg"
+                                       ,"36.jpg"
+                                       ,"09.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "journée des Murolais 2017",_1: "/JourneeMurolais.html"}
+                          ,_1: _U.list(["22.jpg"
+                                       ,"24.jpg"
+                                       ,"04.jpg"
+                                       ,"10.jpg"
+                                       ,"12.jpg"
+                                       ,"19.jpg"
+                                       ,"21.jpg"
+                                       ,"08.jpg"
+                                       ,"27.jpg"
+                                       ,"01.jpg"
+                                       ,"15.jpg"
+                                       ,"11.jpg"
+                                       ,"17.jpg"
+                                       ,"05.jpg"
+                                       ,"18.jpg"
+                                       ,"25.jpg"
+                                       ,"23.jpg"
+                                       ,"06.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"13.jpg"
+                                       ,"16.jpg"
+                                       ,"26.jpg"
+                                       ,"20.jpg"
+                                       ,"14.jpg"
+                                       ,"03.jpg"
+                                       ,"09.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "nuit des musées 2017",_1: "/Annee2017.html"}
+                          ,_1: _U.list(["04.jpg","10.jpg","12.jpg","08.jpg","01.jpg","11.jpg","05.jpg","06.jpg","02.jpg","07.jpg","03.jpg","09.jpg"])}
+                         ,{ctor: "_Tuple2"
                           ,_0: {ctor: "_Tuple2",_0: "automne",_1: "/AutomneHiver.html"}
                           ,_1: _U.list(["04.jpg"
                                        ,"10.jpg"
@@ -12414,6 +13002,37 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"02.jpg"
                                        ,"07.jpg"
                                        ,"13.jpg"
+                                       ,"14.jpg"
+                                       ,"03.jpg"
+                                       ,"09.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "fête des écoles 2017",_1: "/Annee2017.html"}
+                          ,_1: _U.list(["22.jpg"
+                                       ,"24.jpg"
+                                       ,"04.jpg"
+                                       ,"10.jpg"
+                                       ,"12.jpg"
+                                       ,"19.jpg"
+                                       ,"21.jpg"
+                                       ,"29.jpg"
+                                       ,"08.jpg"
+                                       ,"28.jpg"
+                                       ,"27.jpg"
+                                       ,"01.jpg"
+                                       ,"15.jpg"
+                                       ,"11.jpg"
+                                       ,"17.jpg"
+                                       ,"05.jpg"
+                                       ,"18.jpg"
+                                       ,"25.jpg"
+                                       ,"23.jpg"
+                                       ,"06.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"13.jpg"
+                                       ,"16.jpg"
+                                       ,"26.jpg"
+                                       ,"20.jpg"
                                        ,"14.jpg"
                                        ,"03.jpg"
                                        ,"09.jpg"])}
@@ -12456,6 +13075,22 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"07.jpg"
                                        ,"13.jpg"
                                        ,"16.jpg"
+                                       ,"14.jpg"
+                                       ,"03.jpg"
+                                       ,"09.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "vernissageExpoMusée2017",_1: "/Annee2017.html"}
+                          ,_1: _U.list(["04.jpg"
+                                       ,"10.jpg"
+                                       ,"12.jpg"
+                                       ,"08.jpg"
+                                       ,"01.jpg"
+                                       ,"11.jpg"
+                                       ,"05.jpg"
+                                       ,"06.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"13.jpg"
                                        ,"14.jpg"
                                        ,"03.jpg"
                                        ,"09.jpg"])}
@@ -13086,7 +13721,16 @@ Elm.Utils.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La mairie: ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
-           ,renderCounter]));
+           ,renderCounter
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+           _U.list([$Html.text("Conception : ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.gillardinformatique.net"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("gillardInformatique")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/mentionsLegales.html")]),_U.list([$Html.text("Mentions légales")]))]))]))]));
    var renderListImg = function (pics) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("pics")]),
@@ -13931,15 +14575,21 @@ Elm.Murol.make = function (_elm) {
                    _U.list([$Html.text("le musée des peintres de l’Ecole de Murols")]))
                    ,A2($Html.p,
                    _U.list([]),
+                   _U.list([$Html.text("Consultez la ")
+                           ,A2($Html.a,
+                           _U.list([$Html$Attributes.href("baseDocumentaire/plaquette musée Murol 2017.pdf"),$Html$Attributes.target("_blank")]),
+                           _U.list([$Html.text("plaquette du Musée")]))]))
+                   ,A2($Html.p,
+                   _U.list([]),
                    _U.list([$Html.text("Pour une visite en famille :")
                            ,$Html.text(" la ")
                            ,A2($Html.a,
                            _U.list([$Html$Attributes.href("baseDocumentaire/Carte jeu de piste 2017.pdf"),$Html$Attributes.target("_blank")]),
                            _U.list([$Html.text("carte du jeu de piste")]))
-                           ,$Html.text(" et la ")
+                           ,$Html.text(" et le ")
                            ,A2($Html.a,
-                           _U.list([$Html$Attributes.href("baseDocumentaire/plaquette musée Murol 2017.pdf"),$Html$Attributes.target("_blank")]),
-                           _U.list([$Html.text("plaquette du Musée")]))]))
+                           _U.list([$Html$Attributes.href("baseDocumentaire/livret saison 2017.pdf"),$Html$Attributes.target("_blank")]),
+                           _U.list([$Html.text("livret jeu")]))]))
                    ,A2($Html.p,_U.list([]),_U.list([]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.id("horairesContact")]),
@@ -13962,15 +14612,56 @@ Elm.Murol.make = function (_elm) {
       };
       var newsList = A2($List.map,toNews,news);
       return A2($Html.div,
-      _U.list([$Html$Attributes.id("newsletters"),$Html$Attributes.$class("submenu entry")]),
-      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Inscrivez vous")])),A2($Html.ul,_U.list([]),newsList)]));
+      _U.list([$Html$Attributes.id("newsletters")
+              ,$Html$Attributes.$class("submenu entry")
+              ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+      _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Visite virtuelle aerienne")]))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "300px"}
+                                                      ,{ctor: "_Tuple2",_0: "margin",_1: "auto"}
+                                                      ,{ctor: "_Tuple2",_0: "margin-top",_1: "0.5em"}
+                                                      ,{ctor: "_Tuple2",_0: "display",_1: "inline-block"}
+                                                      ,{ctor: "_Tuple2",_0: "background-color",_1: "darkgrey"}
+                                                      ,{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+              _U.list([A2($Html.a,
+                      _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin",_1: "auto"}
+                                                              ,{ctor: "_Tuple2",_0: "margin-top",_1: "0.5em"}
+                                                              ,{ctor: "_Tuple2",_0: "margin-bottom",_1: "0.5em"}
+                                                              ,{ctor: "_Tuple2",_0: "display",_1: "inline-block"}
+                                                              ,{ctor: "_Tuple2",_0: "cursor",_1: "pointer"}]))
+                              ,$Html$Attributes.href("visite/visite-virtuelle-aerienne-murol.html")
+                              ,$Html$Attributes.target("_blank")]),
+                      _U.list([A2($Html.img,
+                      _U.list([$Html$Attributes.src("/images/visiteVirt.jpg")
+                              ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "border-style",_1: "solid"}
+                                                              ,{ctor: "_Tuple2",_0: "border-width",_1: "5px"}
+                                                              ,{ctor: "_Tuple2",_0: "border-color",_1: "white"}
+                                                              ,{ctor: "_Tuple2",_0: "box-shadow",_1: "5px 5px 5px black"}]))]),
+                      _U.list([]))]))
+                      ,A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Réalisée par la société ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://www.w3ds.fr/")
+                                      ,$Html$Attributes.target("_blank")
+                                      ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "color",_1: "teal"}]))]),
+                              _U.list([$Html.text("W3D\'s")]))]))]))]));
    };
    var GalleryAction = function (a) {    return {ctor: "GalleryAction",_0: a};};
    var renderMiniGallery = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("minGalDiv"),$Html$Attributes.$class("submenu")]),
       _U.list([A2($Html.h3,_U.list([]),_U.list([$Html.text("Coup d\'oeil sur la photothèque")]))
-              ,A2($Gallery.viewM,A2($Signal.forwardTo,address,GalleryAction),function (_) {    return _.miniGallery;}(model))]));
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "100%"}
+                                                      ,{ctor: "_Tuple2",_0: "margin-top",_1: "0"}
+                                                      ,{ctor: "_Tuple2",_0: "text-align",_1: "center"}]))]),
+              _U.list([A2($Html.div,
+              _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "inline-block"}
+                                                      ,{ctor: "_Tuple2",_0: "margin-top",_1: "0"}
+                                                      ,{ctor: "_Tuple2",_0: "margin",_1: "auto"}
+                                                      ,{ctor: "_Tuple2",_0: "text-align",_1: "left"}]))]),
+              _U.list([A2($Gallery.viewM,A2($Signal.forwardTo,address,GalleryAction),function (_) {    return _.miniGallery;}(model))]))]))]));
    });
    var timer = A2($Signal.map,function (_p2) {    return GalleryAction($Gallery.TimeStep);},$Time.every(6 * $Time.second));
    var focusUpdate = A2($Signal.map,function (b) {    return GalleryAction($Gallery.Focused(b));},focus);
@@ -14019,7 +14710,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 19 mai 2017")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 08 septembre 2017")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -14913,8 +15604,8 @@ Elm.Murol.make = function (_elm) {
                                       _U.list([$Html.text("ici")]))]))]))
                       ,expiry: $Date.fromString("07/01/2017")})
                       ,_U.update(emptyNews,
-                      {title: "Médiévales 2017"
-                      ,date: $Date.fromString("04/30/2017")
+                      {title: "Médiévales 2017 - le programme"
+                      ,date: $Date.fromString("05/26/2017")
                       ,descr: A2($Html.div,
                       _U.list([$Html$Attributes.$class("newsdescr")]),
                       _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Les Médiévales 2017 auront lieu les 26 et 27 mai, venez nombreux!")]))
@@ -14922,8 +15613,22 @@ Elm.Murol.make = function (_elm) {
                               _U.list([]),
                               _U.list([A2($Html.a,
                               _U.list([$Html$Attributes.href("/baseDocumentaire/medievales.pdf"),$Html$Attributes.target("_blank")]),
-                              _U.list([$Html.text("affiche")]))]))]))
-                      ,expiry: $Date.fromString("")})
+                              _U.list([$Html.text("affiche")]))]))
+                              ,A2($Html.h6,_U.list([]),_U.list([$Html.text("Vendredi")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("11h")])),$Html.text(" inauguration et défilé des troupes")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("14h/19h")])),$Html.text(" jeux médiévaux et atelier apprenti chevalier ")]))
+                              ,A2($Html.p,_U.list([]),_U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("21h")])),$Html.text(" concert place de l’église")]))
+                              ,A2($Html.h6,_U.list([]),_U.list([$Html.text("Samedi")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("11h/19h")]))
+                                      ,$Html.text(" jeux médiévaux, atelier apprenti chevalier,\n                            combats médiévaux juniors")]))
+                              ,A2($Html.p,_U.list([]),_U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("17h")])),$Html.text(" défilé des troupes ")]))]))
+                      ,expiry: $Date.fromString("07/01/2017")})
                       ,_U.update(emptyNews,
                       {title: "Murol Infos 33"
                       ,date: $Date.fromString("05/11/2017")
@@ -14994,7 +15699,254 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.href("/baseDocumentaire/PAVILLON BLEU dossier de presse 2017.pdf"),$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("dossier de presse Pavillon Bleu 2017")]))]))]))
-                      ,expiry: $Date.fromString("09/15/2017")})]);
+                      ,expiry: $Date.fromString("09/15/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Inscription au Festival d\'Art 30 juillet 2017"
+                      ,date: $Date.fromString("05/26/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Artistes ou artisans d\'art, professionnels ou amateurs, vous\n                          pouvez vous inscrire au Festival d\'Art jusqu\'au 30 juin 2017.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/FA2017.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("lien fiche d\'inscription")]))]))]))
+                      ,expiry: $Date.fromString("07/02/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Offres d\'emploi saisonniers au château de Murol"
+                      ,date: $Date.fromString("05/26/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le château de Murol recrute pour l\'été.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Voir les ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/OffresD\'emploi.html")]),_U.list([$Html.text("offres")]))]))]))
+                      ,expiry: $Date.fromString("06/25/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Photos de la journée des Murolais et de la Nuit des Musées"
+                      ,date: $Date.fromString("05/26/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Retrouvez les photos des éditions 2017 de ces deux \n                            évènements dans la ")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Photothèque.html")]),_U.list([$Html.text("photothèque")]))]))
+                      ,expiry: $Date.fromString("06/15/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Offres d\'emploi - agent technique remplaçant"
+                      ,date: $Date.fromString("06/01/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La mairie de Murol recherche un agent technique remplaçant.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Voir les ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/OffresD\'emploi.html")]),_U.list([$Html.text("offres")]))]))]))
+                      ,expiry: $Date.fromString("06/25/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Photos du vernissage de l\'exposition du musée et des Médiévales"
+                      ,date: $Date.fromString("06/01/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Retrouvez les photos des éditions 2017 de ces deux \n                            évènements dans la ")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Photothèque.html")]),_U.list([$Html.text("photothèque")]))]))
+                      ,expiry: $Date.fromString("06/15/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Randonnée des 6 lacs"
+                      ,date: $Date.fromString("06/19/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("La randonnée solidaire des 6 lacs passe à Murol jeudi 22 juin.\n                            Vous pouvez encore vous inscrire sur le ")
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://uneviemeilleure.org/"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("site de l\'association")]))
+                              ,$Html.text(".")
+                              ,A2($Html.br,_U.list([]),_U.list([]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/randonnée solidaire001.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Affiche")]))
+                              ,A2($Html.br,_U.list([]),_U.list([]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/programme rando des 6 lacs.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Programme")]))]))]))
+                      ,expiry: $Date.fromString("06/23/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Conte des enfants de l\'école de Murol et fête des écoles"
+                      ,date: $Date.fromString("06/19/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Il était une fois une fête des écoles qui a transporté\n                           les spectateurs au coeur du Moyen-Âge : chevaliers, dragon,\n                           sorcier, danseurs et chanteurs... rien n\'a été oublié par\n                           les auteurs en herbe de ce conte inédit ! ")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Annee2017.html")]),_U.list([$Html.text("Voir les photos")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/conte élémentaire Murol.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Conte des enfants de l\'école de Murol")]))]))]))
+                      ,expiry: $Date.fromString("16/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Ouverture du centre de loisirs du SIVOM de la Vallée Verte"
+                      ,date: $Date.fromString("06/25/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("il sera ouvert du 10 juillet au 25 aout (sauf 14 juillet\n                           et 15 août). Vous pouvez encore inscrire vos enfants\n                           selon les places disponibles.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=3")]),
+                              _U.list([$Html.text("Présentation du centre de loisirs")]))]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/plaquette CLSH 2017.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Plaquette de présentation du centre de loisirs été")]))]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/INSCRIPTION  clsh 2017-2018.pdf")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("dossiers d’inscriptions")]))]))]))
+                      ,expiry: $Date.fromString("07/25/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Les élèves de l\'école de Chambon sur Lac lauréats !"
+                      ,date: $Date.fromString("07/04/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les élèves de l\'école de Chambon sur Lac\n                           ont reçu le premier prix du concours scolaire du meilleur petit journal du patrimoine. Félicitations!\n                           ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://www.patrimoine-environnement.fr/laureats-2017-concours-scolaire/")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("plus d\'informations")]))]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/JOURNAL CHAMBON_SUR_LAC CM1-CM2.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("le petit journal du patrimoine")]))]))]))
+                      ,expiry: $Date.fromString("08/04/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Murol info 34 - Spécial circulation et stationnement à Murol"
+                      ,date: $Date.fromString("07/04/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Le dernier Murol Infos regroupe les informations\n                           concernant la circulation et le stationnement dans la commune")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Consultation ")
+                                      ,A2($Html.a,
+                                      _U.list([$Html$Attributes.href("/baseDocumentaire/murolInfo/34.pdf"),$Html$Attributes.target("_blank")]),
+                                      _U.list([$Html.text("ici")]))]))]))
+                      ,expiry: $Date.fromString("08/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Inauguration des oeuvres Horizons Arts Nature en Sancy"
+                      ,date: $Date.fromString("07/08/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les photos des journées d\'inauguration\n                          (22 et 23 juin 2017) sont visibles dans la photothèque.")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Annee2017.html")]),_U.list([$Html.text("Voir les photos")]))]))
+                      ,expiry: $Date.fromString("08/08/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Animation saison estivale - programmes disponibles"
+                      ,date: $Date.fromString("07/08/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("La saison estivale arrive avec de nombreuses animations présentées sur des programmes par quinzaine.\n                             Retrouvez également le détail de la journée du 14 juillet ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Voir la ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/AnimationEstivale.html")]),_U.list([$Html.text("page dédiée")]))]))]))
+                      ,expiry: $Date.fromString("09/01/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Photos du Festival d\'Art 2017"
+                      ,date: $Date.fromString("08/09/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Les photos de l\'édition 2017 du Festival d\'Art sont visibles dans la ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/FestivalArt.html")]),_U.list([$Html.text("photothèque")]))]))]))
+                      ,expiry: $Date.fromString("09/09/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Mise en ligne de la visite virtuelle aérienne"
+                      ,date: $Date.fromString("08/17/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Prenez de la hauteur et découvrez Murol vu par les drones de la société ")
+                                      ,A2($Html.a,
+                                      _U.list([$Html$Attributes.href("http://www.w3ds.fr/"),$Html$Attributes.target("_blank")]),
+                                      _U.list([$Html.text("W3D\'s")]))
+                                      ,$Html.text(". ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Voir le ")
+                                      ,A2($Html.a,
+                                      _U.list([$Html$Attributes.href("visite/visite-virtuelle-aerienne-murol.html"),$Html$Attributes.target("_blank")]),
+                                      _U.list([$Html.text("panorama interactif")]))
+                                      ,$Html.text(".")]))]))
+                      ,expiry: $Date.fromString("09/17/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Délibérations du conseil municipal"
+                      ,date: $Date.fromString("08/17/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Les dernières délibérations du conseil municipal sont\n                           disponibles ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/Délibérations.html")]),_U.list([$Html.text("ici")]))]))]))
+                      ,expiry: $Date.fromString("08/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Vidéo de la réalisation de la charpente du château de Murol"
+                      ,date: $Date.fromString("08/18/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Découvrez en vidéo la réalisation de la charpente du château.\n                           Montage réalisé à partir d\'images d\'archives datant du début\n                           des années 2000.")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/DécouvrirMurol.html?bloc=1#videoCharpente")]),_U.list([$Html.text("Lien ici")]))]))
+                      ,expiry: $Date.fromString("09/18/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "le Murol infos 35 est disponible"
+                      ,date: $Date.fromString("09/08/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Retrouvez les activités proposées par la municipalité\n                           et les associations dans le ")
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/baseDocumentaire/murolInfo/35.pdf")]),_U.list([$Html.text("Murol Infos 35")]))]))]))
+                      ,expiry: $Date.fromString("10/08/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "pleins feux sur l’association des jeunes de Murol"
+                      ,date: $Date.fromString("09/12/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Les 1/2/3 septembre Murol était en fête grâce à ses jeunes.\n                           Retrouvez ici la vidéo du ventriglisse géant diffusée\n                           par le journal « La Montagne »")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://www.lamontagne.fr/murol/insolite/2017/09/02/les-conscrits-font-le-buzz-avec-un-ventriglisse-geant-a-murol_12534803.html")]),
+                              _U.list([$Html.text("Voir la vidéo")]))]))
+                      ,expiry: $Date.fromString("09/31/2017")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

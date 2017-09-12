@@ -66,7 +66,12 @@ Elm.Deliberations.make = function (_elm) {
                     _U.list([]),
                     _U.list([A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"17 janvier","/baseDocumentaire/Deliberations_conseil/2017/17jan2017.pdf")]))
                             ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"1 février","/baseDocumentaire/Deliberations_conseil/2017/01fev2017.pdf")]))
-                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"13 mars","/baseDocumentaire/Deliberations_conseil/2017/13mar2017.pdf")]))]))]))));
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"13 mars","/baseDocumentaire/Deliberations_conseil/2017/13mar2017.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"11 avril","/baseDocumentaire/Deliberations_conseil/2017/11Avr2017.pdf")]))
+                            ,A2($Html.li,_U.list([]),_U.list([A2($Utils.link,"15 juin ","/baseDocumentaire/Deliberations_conseil/2017/15Juin2017.pdf")]))
+                            ,A2($Html.li,
+                            _U.list([]),
+                            _U.list([A2($Utils.link,"30 juin","/baseDocumentaire/Deliberations_conseil/2017/30Juin2017.pdf")]))]))]))));
    var initialContent = delib;
    var update = F2(function (action,model) {    var _p2 = action;return model;});
    var view = F2(function (address,model) {

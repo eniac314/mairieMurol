@@ -20,48 +20,65 @@ Elm.Annee2017.make = function (_elm) {
    $Time = Elm.Time.make(_elm),
    $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var _p0 = A3($Gallery.init,$Lightbox.picList(20),"repasCCAS2017","22 janvier - Le repas du CCAS");
-   var repasCCAS2017 = _p0._0;
-   var repasCCAS2017FX = _p0._1;
-   var _p1 = A3($Gallery.init,$Lightbox.picList(12),"voeuxMaire2017","22 janvier - Les voeux du maire");
-   var voeuxMaire2017 = _p1._0;
-   var voeuxMaire2017FX = _p1._1;
-   var galleries = _U.list([{ctor: "_Tuple2",_0: repasCCAS2017,_1: "repasCCAS2017"},{ctor: "_Tuple2",_0: voeuxMaire2017,_1: "voeuxMaire2017"}]);
+   var _p0 = A3($Gallery.init,$Lightbox.picList(12),"nuit des musées 2017","20 Mai - La nuit des musées");
+   var nuitMusee2017 = _p0._0;
+   var nuitMusee2017FX = _p0._1;
+   var _p1 = A3($Gallery.init,$Lightbox.picList(20),"repasCCAS2017","22 janvier - Le repas du CCAS");
+   var repasCCAS2017 = _p1._0;
+   var repasCCAS2017FX = _p1._1;
+   var _p2 = A3($Gallery.init,$Lightbox.picList(12),"voeuxMaire2017","22 janvier - Les voeux du maire");
+   var voeuxMaire2017 = _p2._0;
+   var voeuxMaire2017FX = _p2._1;
+   var _p3 = A3($Gallery.init,$Lightbox.picList(14),"vernissageExpoMusée2017","26 mai - vernissage de l\'exposition temporaire du musée");
+   var vernissage = _p3._0;
+   var vernissageFX = _p3._1;
+   var _p4 = A3($Gallery.init,$Lightbox.picList(29),"fête des écoles 2017","17 juin - fête des écoles et des TAP");
+   var feteEcoles = _p4._0;
+   var feteEcolesFX = _p4._1;
+   var _p5 = A3($Gallery.init,$Lightbox.picList(61),"horizons2017","22 et 23 juin - horizons 2017");
+   var horizons = _p5._0;
+   var horizonsFX = _p5._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: horizons,_1: "horizons2017"}
+                           ,{ctor: "_Tuple2",_0: feteEcoles,_1: "feteEcoles2017"}
+                           ,{ctor: "_Tuple2",_0: vernissage,_1: "vernissage2017"}
+                           ,{ctor: "_Tuple2",_0: nuitMusee2017,_1: "nuitMusee2017"}
+                           ,{ctor: "_Tuple2",_0: repasCCAS2017,_1: "repasCCAS2017"}
+                           ,{ctor: "_Tuple2",_0: voeuxMaire2017,_1: "voeuxMaire2017"}]);
    var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
    var update = F2(function (action,model) {
-      var _p2 = action;
-      if (_p2.ctor === "NoOp") {
+      var _p6 = action;
+      if (_p6.ctor === "NoOp") {
             return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          } else {
-            var updateWithId = function (_p3) {
-               var _p4 = _p3;
-               var _p6 = _p4._0;
-               var _p5 = _p4._1;
-               return _U.eq(_p5,_p2._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p2._1,_p6),_1: _p5} : {ctor: "_Tuple2"
-                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p6,_1: $Effects.none}
-                                                                                                         ,_1: _p5};
+            var updateWithId = function (_p7) {
+               var _p8 = _p7;
+               var _p10 = _p8._0;
+               var _p9 = _p8._1;
+               return _U.eq(_p9,_p6._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p6._1,_p10),_1: _p9} : {ctor: "_Tuple2"
+                                                                                                          ,_0: {ctor: "_Tuple2",_0: _p10,_1: $Effects.none}
+                                                                                                          ,_1: _p9};
             };
-            var _p7 = A3($List.foldl,
-            F2(function (_p9,_p8) {
-               var _p10 = _p9;
-               var _p12 = _p10._1;
-               var _p11 = _p8;
+            var _p11 = A3($List.foldl,
+            F2(function (_p13,_p12) {
+               var _p14 = _p13;
+               var _p16 = _p14._1;
+               var _p15 = _p12;
                return {ctor: "_Tuple2"
-                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p10._0._0,_1: _p12},_p11._0)
-                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p12),_p10._0._1),_p11._1)};
+                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p14._0._0,_1: _p16},_p15._0)
+                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p16),_p14._0._1),_p15._1)};
             }),
             {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
             A2($List.map,updateWithId,function (_) {    return _.galleries;}(model)));
-            var ng = _p7._0;
-            var effs = _p7._1;
+            var ng = _p11._0;
+            var effs = _p11._1;
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p13) {
-      var _p14 = _p13;
-      var _p15 = _p14._0;
-      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p15))]));
-      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p14._1)),_p15)]));
+   var viewGallery = F2(function (address,_p17) {
+      var _p18 = _p17;
+      var _p19 = _p18._0;
+      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p19))]));
+      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p18._1)),_p19)]));
    });
    var view = F2(function (address,model) {
       var galleriesHtml = $List.concat(A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)));
@@ -81,7 +98,7 @@ Elm.Annee2017.make = function (_elm) {
               ,$Utils.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p16) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p20) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};
@@ -103,8 +120,16 @@ Elm.Annee2017.make = function (_elm) {
                                   ,app: app
                                   ,main: main
                                   ,galleries: galleries
+                                  ,horizons: horizons
+                                  ,horizonsFX: horizonsFX
+                                  ,feteEcoles: feteEcoles
+                                  ,feteEcolesFX: feteEcolesFX
+                                  ,vernissage: vernissage
+                                  ,vernissageFX: vernissageFX
                                   ,voeuxMaire2017: voeuxMaire2017
                                   ,voeuxMaire2017FX: voeuxMaire2017FX
                                   ,repasCCAS2017: repasCCAS2017
-                                  ,repasCCAS2017FX: repasCCAS2017FX};
+                                  ,repasCCAS2017FX: repasCCAS2017FX
+                                  ,nuitMusee2017: nuitMusee2017
+                                  ,nuitMusee2017FX: nuitMusee2017FX};
 };

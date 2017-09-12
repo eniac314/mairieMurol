@@ -9,6 +9,7 @@ import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
 import TiledMenu exposing (initAtPhoto,view,update,Action)
+import Json.Encode 
 import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
@@ -229,6 +230,16 @@ initialContent =
                          [text "présentation de Dominique Allios"]
                      , text ")"
                      ]
+              , h4 [id "videoCharpente"]
+                   [text "Travaux de réalisation de la charpente du Château de Murol - Début des années 2000"]
+              , iframe [ src "https://www.youtube.com/embed/K3dqCQvf-Uk"
+                       , width 560
+                       , height 315
+                       , attribute "frameborder" "0" --(Json.Encode.string "0")
+                       , attribute "allowfullscreen" "true"--(Json.Encode.string "true")
+                       ]
+                       []
+              , br [] []
               ]
             )
             ,

@@ -122,7 +122,8 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [ (g14Juillet2016, "g14Juillet2016")
+galleries = [ (g14Juillet2017,"g14Juillet2017") 
+            , (g14Juillet2016, "g14Juillet2016")
             , (g14Juillet2015, "g14Juillet2015")
             , (g14Juillet2014, "g14Juillet2014")
             , (g14Juillet2013, "g14Juillet2013")
@@ -139,4 +140,7 @@ galleries = [ (g14Juillet2016, "g14Juillet2016")
 
 (g14Juillet2016, g14Juillet2016Fx) = 
   Gallery.init (picList 49) "g14Juillet2016" "Le 14 Juillet 2016"
+
+(g14Juillet2017, g14Juillet2017Fx) = 
+  Gallery.init (picList 20) "g14Juillet2017" "Le 14 Juillet 2017"
 

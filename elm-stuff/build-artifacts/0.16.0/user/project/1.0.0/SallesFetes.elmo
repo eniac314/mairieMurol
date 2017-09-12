@@ -19,7 +19,19 @@ Elm.SallesFetes.make = function (_elm) {
    var initialContent = {wrapper: function (content) {
                            return A2($Html.div,
                            _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("sallesFetes")]),
-                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Location des salles municipales")])),content]));
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Location des salles municipales")]))
+                                   ,A2($Html.h6,_U.list([]),_U.list([$Html.text("formulaires salles communales:")]))
+                                   ,A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("/baseDocumentaire/Prêt de matériel.pdf")]),
+                                   _U.list([$Html.text("Demande de matériels")]))]))
+                                   ,A2($Html.p,
+                                   _U.list([]),
+                                   _U.list([A2($Html.a,
+                                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("/baseDocumentaire/location salle des fêtes.pdf")]),
+                                   _U.list([$Html.text("Demande de salle communale")]))]))
+                                   ,content]));
                         }
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Salle des fêtes de Murol"

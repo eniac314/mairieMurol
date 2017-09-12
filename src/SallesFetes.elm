@@ -95,6 +95,12 @@ initialContent =
     (\content ->
        div [ class "subContainerData noSubmenu", id "sallesFetes"]
            [ h2 [] [text "Location des salles municipales"]
+           , h6 [] [text "formulaires salles communales:"]
+           , p [] [a [target "_blank", href "/baseDocumentaire/Prêt de matériel.pdf"] 
+                     [text "Demande de matériels"]]
+           , p [] [a [target "_blank", href "/baseDocumentaire/location salle des fêtes.pdf"]
+                     [text "Demande de salle communale"]]
+
            , content])
   , tiledMenu =
       init [( "Salle des fêtes de Murol"

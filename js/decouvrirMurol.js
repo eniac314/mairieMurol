@@ -11457,7 +11457,16 @@ Elm.Utils.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La mairie: ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
-           ,renderCounter]));
+           ,renderCounter
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+           _U.list([$Html.text("Conception : ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.gillardinformatique.net"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("gillardInformatique")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/mentionsLegales.html")]),_U.list([$Html.text("Mentions légales")]))]))]))]));
    var renderListImg = function (pics) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("pics")]),
@@ -11746,7 +11755,18 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       _U.list([$Html$Attributes.href("/baseDocumentaire/decouvrirMurol/presentationAllios.pdf")
                                                               ,$Html$Attributes.target("_blank")]),
                                                       _U.list([$Html.text("présentation de Dominique Allios")]))
-                                                      ,$Html.text(")")]))])}
+                                                      ,$Html.text(")")]))
+                                              ,A2($Html.h4,
+                                              _U.list([$Html$Attributes.id("videoCharpente")]),
+                                              _U.list([$Html.text("Travaux de réalisation de la charpente du Château de Murol - Début des années 2000")]))
+                                              ,A2($Html.iframe,
+                                              _U.list([$Html$Attributes.src("https://www.youtube.com/embed/K3dqCQvf-Uk")
+                                                      ,$Html$Attributes.width(560)
+                                                      ,$Html$Attributes.height(315)
+                                                      ,A2($Html$Attributes.attribute,"frameborder","0")
+                                                      ,A2($Html$Attributes.attribute,"allowfullscreen","true")]),
+                                              _U.list([]))
+                                              ,A2($Html.br,_U.list([]),_U.list([]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Beaune le froid"
                                  ,_1: "/images/tiles/decouvrirMurol/beauneTile.jpg"

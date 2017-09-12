@@ -120,9 +120,13 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(journeeMurolais2016,"journeeMurolais2016")
+galleries = [(journeeMurolais2017,"journeeMurolais2017")
+            ,(journeeMurolais2016,"journeeMurolais2016")
             ,(journeeMurolais, "journeeMurolais")
             ]
+
+(journeeMurolais2017,journeeMurolais2017FX) = 
+  Gallery.init (picListHD 27) "journée des Murolais 2017" "Edition 2017"
 
 (journeeMurolais2016,journeeMurolais2016FX) = 
   Gallery.init (picListHD 13) "journeeMurolais2016" "Edition 2016"

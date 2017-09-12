@@ -76,6 +76,13 @@ main =
 initialContent =
   div [ class "subContainerData", id "offresEmploi"]
       [ h4 [] [text "Offres emploi de la mairie"]
+      --, ul []
+      --     [ li  []
+      --           [ a [href "/baseDocumentaire/offresEmploi/offre agent technique mairie Murol.pdf", target "_blank"]
+      --               [text "offre agent technique remplaçant"]
+      --           ]
+      --     ]
+      --     ]
       --, p  []
       --     [ a [href "/baseDocumentaire/offresEmploi/offre animateur saison estivale 2016.pdf", target "_blank"]
       --         [text "offre animateur saison estivale 2016"]
@@ -99,7 +106,7 @@ initialContent =
       --, p  []
       --     [ a [href "/baseDocumentaire/offresEmploi/", target "_blank"]
       --         [text ""]
-      --     ]
+           
        
       , h4 [] [text "Offres emploi SIVOM"]
       --, ul []
@@ -113,6 +120,14 @@ initialContent =
       --     ]
       
       , h4 [] [text "Offres emploi professionnels"]
+      --, ul []
+      --     [ li [] [a [target "_blank", href "/baseDocumentaire/offresEmploi/offre animateurs château 2017.pdf"] 
+      --                [text "offre animateurs château"]
+      --                ]
+      --     , li [] [a [target "_blank", href "/baseDocumentaire/offresEmploi/offre agent technique polyvalent château 2017.pdf"] 
+      --                [text "offre agent technique polyvalent château"]
+      --                ]
+      --     ]
       , h4 [] [text "Liens utiles"]
       , p  [] [text "Pôle emploi: ", a [href "http://www.pole-emploi.fr", target "_blank"]
                                        [text "Lien"]]

@@ -11186,7 +11186,16 @@ Elm.Utils.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La mairie: ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
-           ,renderCounter]));
+           ,renderCounter
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+           _U.list([$Html.text("Conception : ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.gillardinformatique.net"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("gillardInformatique")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/mentionsLegales.html")]),_U.list([$Html.text("Mentions légales")]))]))]))]));
    var renderListImg = function (pics) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("pics")]),
@@ -11357,9 +11366,33 @@ Elm.AnimationEstivale.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animationEstivale")]),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("La saison estivale 2016 est terminée, retrouvez nous\n                   dès le printemps prochain pour notre nouvelle programmation.")]))
+   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La saison estivale arrive avec de nombreuses animations!")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Découvrez le programme des mois de juillet et août 2017: ")]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 1 juillet 2017.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 9 - 21 juillet")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 2 juillet 2017.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 23 juillet - 5 août")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme3 aout 2017.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 6 - 18 août")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 4 aout 2017.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 20 août - 1 septembre")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/expos estivales 2017.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("Les expos estivales 2017")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ainsi que le déroulement de la journée du 14 Juillet:")]))
+           ,A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/affiche14juillet2017.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("programme 14 juillet")]))
+           ,A2($Html.br,_U.list([]),_U.list([]))
            ,A2($Html.br,_U.list([]),_U.list([]))
            ,A2($Html.img,_U.list([$Html$Attributes.src("/images/illustration animations estivales.jpg")]),_U.list([]))]));
    var update = F2(function (action,model) {    var _p0 = action;if (_p0.ctor === "NoOp") {    return model;} else {    return model;}});

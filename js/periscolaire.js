@@ -11457,7 +11457,16 @@ Elm.Utils.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La mairie: ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
-           ,renderCounter]));
+           ,renderCounter
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+           _U.list([$Html.text("Conception : ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.gillardinformatique.net"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("gillardInformatique")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/mentionsLegales.html")]),_U.list([$Html.text("Mentions légales")]))]))]))]));
    var renderListImg = function (pics) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("pics")]),
@@ -11977,13 +11986,25 @@ Elm.Periscolaire.make = function (_elm) {
                                     _U.list([]),
                                     _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Du 20 février au 3 mars 2017")]))
                                             ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 17 au 28 avril 2017")]))
-                                            ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 1 juillet au 25 août 2017")]))]))
+                                            ,A2($Html.li,_U.list([]),_U.list([$Html.text("Du 10 juillet au 25 août 2017")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/planning avril 2017.pdf")
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE ET PROGRAMME JUILLET 2017.pdf")
                                             ,$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("programme des activités prévues en avril")]))]))
+                                    _U.list([$Html.text("programme des activités et projet pédagogique - Juillet 2017")]))]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/programme août 2017.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("programme des activités - Août 2017")]))]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE aout 2017.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("projet pédagogique - Août 2017")]))]))
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([$Html.text("Des enfants d’autres communes d’origine, de la population \n                   touristique notamment, pourront être également accueillis, dans la \n                   limite des places disponibles. ")]))
@@ -11994,7 +12015,7 @@ Elm.Periscolaire.make = function (_elm) {
                                     _U.list([]),
                                     _U.list([$Html.text("Ce service est subventionné par la CAF et \n                   la MSA. La participation des familles est fonction \n                   des revenus de celles-ci (")
                                             ,A2($Html.a,
-                                            _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/tarifs 2016 CLSH SIVOM de la Vallée Verte.pdf")
+                                            _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/TARIFS SIVOM 2017.pdf")
                                                     ,$Html$Attributes.target("_blank")]),
                                             _U.list([$Html.text("tarifs selon le quotient \n                      familial")]))
                                             ,$Html.text(")")]))
@@ -12002,7 +12023,7 @@ Elm.Periscolaire.make = function (_elm) {
                                     _U.list([]),
                                     _U.list([$Html.text("Les ")
                                             ,A2($Html.a,
-                                            _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/pré inscription avril 2017.pdf")
+                                            _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/INSCRIPTION  clsh 2017-2018.pdf")
                                                     ,$Html$Attributes.target("_blank")]),
                                             _U.list([$Html.text("dossiers d’inscriptions")]))
                                             ,$Html.text(" sont à remettre au secrétariat du SIVOM, à la mairie de Murol. ")]))
@@ -12016,14 +12037,9 @@ Elm.Periscolaire.make = function (_elm) {
                                     ,A2($Html.p,
                                     _U.list([]),
                                     _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/PP avril 2017.pdf"),$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("Projet pédagogique vacances de printemps ")]))]))
-                                    ,A2($Html.p,
-                                    _U.list([]),
-                                    _U.list([A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/plaquette 2017 centre de loisirs printemps.pdf")
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/plaquette CLSH 2017.pdf")
                                             ,$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("Plaquette de présentation du centre de loisirs printemps")]))]))])
+                                    _U.list([$Html.text("Plaquette de présentation du centre de loisirs été")]))]))])
                        ,_3: ""}
                       ,{ctor: "_Tuple4"
                        ,_0: "Transport scolaire"

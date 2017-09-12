@@ -121,9 +121,21 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(repasCCAS2017, "repasCCAS2017")
+galleries = [(horizons,"horizons2017")
+            ,(feteEcoles,"feteEcoles2017")
+            ,(vernissage,"vernissage2017")
+            ,(nuitMusee2017, "nuitMusee2017")
+            ,(repasCCAS2017, "repasCCAS2017")
             ,(voeuxMaire2017, "voeuxMaire2017")
             ]
+(horizons,horizonsFX) = 
+  Gallery.init (picList 61) "horizons2017" "22 et 23 juin - horizons 2017"
+
+(feteEcoles,feteEcolesFX) = 
+  Gallery.init (picList 29) "fête des écoles 2017" "17 juin - fête des écoles et des TAP"
+
+(vernissage,vernissageFX) = 
+  Gallery.init (picList 14) "vernissageExpoMusée2017" "26 mai - vernissage de l'exposition temporaire du musée"
 
 ( voeuxMaire2017, voeuxMaire2017FX ) = 
   Gallery.init (picList 12) "voeuxMaire2017" "22 janvier - Les voeux du maire"
@@ -131,3 +143,5 @@ galleries = [(repasCCAS2017, "repasCCAS2017")
 ( repasCCAS2017, repasCCAS2017FX ) = 
   Gallery.init (picList 20) "repasCCAS2017" "22 janvier - Le repas du CCAS"
 
+( nuitMusee2017, nuitMusee2017FX ) = 
+  Gallery.init (picList 12) "nuit des musées 2017" "20 Mai - La nuit des musées"

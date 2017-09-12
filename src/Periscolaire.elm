@@ -354,12 +354,19 @@ peri =
            , li [] [text "Du 17 au 28 avril 2017"
                     
                    ]
-           , li [] [text "Du 1 juillet au 25 août 2017"
+           , li [] [text "Du 10 juillet au 25 août 2017"
                    ]
            
            ]
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/planning avril 2017.pdf", target "_blank"]
-                      [ text "programme des activités prévues en avril"]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE ET PROGRAMME JUILLET 2017.pdf", target "_blank"]
+                      [ text "programme des activités et projet pédagogique - Juillet 2017"]
+                  ]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/programme août 2017.pdf", target "_blank"]
+                      [ text "programme des activités - Août 2017"]
+                  ]
+
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE aout 2017.pdf", target "_blank"]
+                      [ text "projet pédagogique - Août 2017"]
                   ]
                   
       , p [] [text "Des enfants d’autres communes d’origine, de la population 
@@ -372,13 +379,13 @@ peri =
       , p [] [text "Ce service est subventionné par la CAF et 
                    la MSA. La participation des familles est fonction 
                    des revenus de celles-ci ("
-             ,a [href "/baseDocumentaire/periscolaire/tarifs 2016 CLSH SIVOM de la Vallée Verte.pdf", target "_blank"]
+             ,a [href "/baseDocumentaire/periscolaire/TARIFS SIVOM 2017.pdf", target "_blank"]
                 [text "tarifs selon le quotient 
                       familial"]
              ,text ")"    
              ]
       , p [] [ text "Les "
-             , a [href "/baseDocumentaire/periscolaire/pré inscription avril 2017.pdf", target "_blank"]
+             , a [href "/baseDocumentaire/periscolaire/INSCRIPTION  clsh 2017-2018.pdf", target "_blank"]
                  [text "dossiers d’inscriptions"]
              , text " sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
              ]
@@ -386,20 +393,26 @@ peri =
       , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"]
                 [text "Projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
       
-      , p [] [a [href "/baseDocumentaire/periscolaire/PP avril 2017.pdf", target "_blank"]
-                [text "Projet pédagogique vacances de printemps "]
-             ]
-      --, p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2016 centre de loisirs été.pdf"
-      --          , target "_blank"
-      --          ]
-      --          [ text "Plaquette de présentation du centre de loisirs été" ]
+      --, p [] [a [href "/baseDocumentaire/periscolaire/PP avril 2017.pdf", target "_blank"]
+      --          [text "Projet pédagogique vacances de printemps "]
       --       ]
-
-      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2017 centre de loisirs printemps.pdf"
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette CLSH 2017.pdf"
                 , target "_blank"
                 ]
-                [ text "Plaquette de présentation du centre de loisirs printemps" ]
+                [ text "Plaquette de présentation du centre de loisirs été" ]
              ]
+      
+      --, p [] [a [ href "/baseDocumentaire/periscolaire/plaquette CLSH 2017.pdf"
+      --          , target "_blank"
+      --          ]
+      --          [ text "Tarifs SIVOM 2017" ]
+      --       ]
+
+      --, p [] [a [ href "/baseDocumentaire/periscolaire/plaquette 2017 centre de loisirs printemps.pdf"
+      --          , target "_blank"
+      --          ]
+      --          [ text "Plaquette de présentation du centre de loisirs printemps" ]
+      --       ]
 
 
       ]

@@ -28,6 +28,7 @@ initialModel =
             , horizon
             , revolution
             , festivalArt
+            , animEst
             ]
   }
 
@@ -110,7 +111,8 @@ view address model =
                   , insertDrop address (.drops model) 1 
                   , insertDrop address (.drops model) 2 
                   , insertDrop address (.drops model) 3
-                  , insertDrop address (.drops model) 4  
+                  , insertDrop address (.drops model) 4
+                  , insertDrop address (.drops model) 5   
                   
                   , h4 [] [text "Calendrier"]
                   , div [ id "bigAgenda"] 
@@ -155,10 +157,10 @@ medievales =
                (Just (div []
                           [ a [ href "/Medievales.html"]
                               [ text "lien photothèque"]
-                          , p [] [a [href "http://www.medievalesmurol.fr/", target "_blank"] [text "site officiel"]]
+                          --, p [] [a [href "http://www.medievalesmurol.fr/", target "_blank"] [text "site officiel"]]
                           ] ))
                ( [ p [] [text "Cette manifestation, organisée par la mairie de 
-                               Murol, l’association AMMA et d’autres associations partenaires, 
+                               Murol et des associations partenaires, 
                                a lieu chaque année durant le week-end de 
                                l’Ascension." ]
                  , p [] [text "Au pied du château du XIIIème siècle, les 
@@ -166,8 +168,8 @@ medievales =
                                avec pour décor un campement médiéval, des danses, 
                                des spectacles médiévaux, ainsi que des artisans tout 
                                droit sortis du Moyen-âge. Immersion garantie !"]
-                  , p [] [text "Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016:"]
-                  , img [src "/images/programme2016.jpg"] []
+                  --, p [] [text "Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016:"]
+                  --, img [src "/images/programme2016.jpg"] []
                  ]
                )
 
@@ -249,4 +251,12 @@ festivalArt =
                             [text "murolanimation@orange.fr"]
                         ]
                  ]
+               )
+
+animEst = 
+  initDropable 5 
+               "Les animations estivales"
+               (Just ( a [ href "/AnimationEstivale.html" ]
+                         [ text "page dédiée"] ))
+               ( [ ]
                )

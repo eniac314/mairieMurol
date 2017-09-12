@@ -11186,7 +11186,16 @@ Elm.Utils.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La mairie: ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("HorairesEtContact.html")]),_U.list([$Html.text("horaires et contact")]))]))
-           ,renderCounter]));
+           ,renderCounter
+           ,A2($Html.p,
+           _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+           _U.list([$Html.text("Conception : ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.gillardinformatique.net"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("gillardInformatique")]))
+                   ,A2($Html.p,
+                   _U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-top",_1: "0"},{ctor: "_Tuple2",_0: "padding-top",_1: "0"}]))]),
+                   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/mentionsLegales.html")]),_U.list([$Html.text("Mentions légales")]))]))]))]));
    var renderListImg = function (pics) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("pics")]),
@@ -11400,6 +11409,7 @@ Elm.Animation.make = function (_elm) {
                       ,A3(insertDrop,address,function (_) {    return _.drops;}(model),2)
                       ,A3(insertDrop,address,function (_) {    return _.drops;}(model),3)
                       ,A3(insertDrop,address,function (_) {    return _.drops;}(model),4)
+                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),5)
                       ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Calendrier")]))
                       ,A2($Html.div,
                       _U.list([$Html$Attributes.id("bigAgenda")]),
@@ -11442,22 +11452,13 @@ Elm.Animation.make = function (_elm) {
    var medievales = A4(initDropable,
    0,
    "Les Médiévales de Murol (Pont de l’Ascension)",
-   $Maybe.Just(A2($Html.div,
-   _U.list([]),
-   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([A2($Html.a,
-           _U.list([$Html$Attributes.href("http://www.medievalesmurol.fr/"),$Html$Attributes.target("_blank")]),
-           _U.list([$Html.text("site officiel")]))]))]))),
+   $Maybe.Just(A2($Html.div,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))]))),
    _U.list([A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Cette manifestation, organisée par la mairie de \n                               Murol, l’association AMMA et d’autres associations partenaires, \n                               a lieu chaque année durant le week-end de \n                               l’Ascension.")]))
+           _U.list([$Html.text("Cette manifestation, organisée par la mairie de \n                               Murol et des associations partenaires, \n                               a lieu chaque année durant le week-end de \n                               l’Ascension.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge. Immersion garantie !")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016:")]))
-           ,A2($Html.img,_U.list([$Html$Attributes.src("/images/programme2016.jpg")]),_U.list([]))]));
+           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge. Immersion garantie !")]))]));
    var musee = A4(initDropable,
    1,
    "L’exposition temporaire au musée des Peintres de l’Ecole de Murols (saison estivale)",
@@ -11515,7 +11516,12 @@ Elm.Animation.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Vous voulez venir présenter vos œuvres ? Contactez \n                               la mairie au 04 73 88 60 67 \n                               ou par mail à ")
                    ,A2($Html.a,_U.list([$Html$Attributes.href("mailto:murolanimation@orange.fr")]),_U.list([$Html.text("murolanimation@orange.fr")]))]))]));
-   var initialModel = {mainMenu: $Utils.mainMenu,drops: _U.list([medievales,musee,horizon,revolution,festivalArt])};
+   var animEst = A4(initDropable,
+   5,
+   "Les animations estivales",
+   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/AnimationEstivale.html")]),_U.list([$Html.text("page dédiée")]))),
+   _U.list([]));
+   var initialModel = {mainMenu: $Utils.mainMenu,drops: _U.list([medievales,musee,horizon,revolution,festivalArt,animEst])};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Animation.values = {_op: _op
                                   ,initialModel: initialModel
@@ -11534,5 +11540,6 @@ Elm.Animation.make = function (_elm) {
                                   ,musee: musee
                                   ,horizon: horizon
                                   ,revolution: revolution
-                                  ,festivalArt: festivalArt};
+                                  ,festivalArt: festivalArt
+                                  ,animEst: animEst};
 };

@@ -199,6 +199,17 @@ pageFooter =
                      [text "horaires et contact"]
                  ]    
           , renderCounter
+         --, br [] []
+         , p [style [("margin-top","0")
+                    ,("padding-top","0") 
+                    ]] [text "Conception : "
+                , a [href "http://www.gillardinformatique.net"
+                    , target "_blank"]
+                    [text "gillardInformatique"]
+         , p [style [("margin-top","0")
+                    ,("padding-top","0") 
+                    ]] [a [href "/mentionsLegales.html"] [text "Mentions légales"]]
+         ]
          ] 
 
 renderCounter = 
