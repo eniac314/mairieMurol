@@ -11274,8 +11274,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11512,13 +11511,6 @@ Elm.Commerces.make = function (_elm) {
                                                 ,mail: "le-grenier-du-chateau@sfr.fr"
                                                 ,descr: _U.list(["Art de la maison, cadeaux, souvenirs"])})])}
                                                ,{ctor: "_Tuple2"
-                                                ,_0: "Coiffure"
-                                                ,_1: _U.list([_U.update(defCom,
-                                                {name: "Beal Patricia"
-                                                ,descr: _U.list(["Coiffure mixte"])
-                                                ,addr: "Rue Estaing - 63790 MUROL"
-                                                ,tel: "04 73 88 60 59"})])}
-                                               ,{ctor: "_Tuple2"
                                                 ,_0: "Garage"
                                                 ,_1: _U.list([_U.update(defCom,
                                                              {name: "Garage de l\'Avenir"
@@ -11557,8 +11549,7 @@ Elm.Commerces.make = function (_elm) {
                                                              {name: "Atelier Hotantik by Fab"
                                                              ,addr: "Rue Chabrol 63790 MUROL"
                                                              ,tel: "06 80 00 11 09"
-                                                             ,descr: _U.list(["Sculpture, ferronnerie"])})
-                                                             ,_U.update(defCom,{name: "Galerie d\'Art",addr: "Rue George Sand 63790 MUROL"})])}
+                                                             ,descr: _U.list(["Sculpture, ferronnerie"])})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Transport"
                                                 ,_1: _U.list([_U.update(defCom,
@@ -11577,14 +11568,7 @@ Elm.Commerces.make = function (_elm) {
                                                              ,addr: "Le Bourg 63790 MUROL"
                                                              ,tel: "04 73 88 81 12 / 06 89 56 25 94"
                                                              ,mail: "sancytaxi@orange.fr"
-                                                             ,descr: _U.list(["Taxi, transport malade assis"])})
-                                                             ,_U.update(defCom,
-                                                             {name: "Navette publique"
-                                                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                                 ,_0: "6505"
-                                                                                 ,_1: "http://www.sancy.com/activites/detail/6505/murol/ligne-reguliere-chambon-murol-st-nectaire-clermont"})
-                                                             ,tel: "04 73 88 62 62 / 04 73 88 60 67"
-                                                             ,descr: _U.list(["ligne pour Clermont Ferrand"])})])}
+                                                             ,descr: _U.list(["Taxi, transport malade assis"])})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: " Informatique: dépannage, graphiste, créateur"
                                                 ,_1: _U.list([_U.update(defCom,
@@ -11611,8 +11595,7 @@ Elm.Commerces.make = function (_elm) {
                                                              {name: "Atelier Hotantik by Fab"
                                                              ,addr: "Rue Chabrol 63790 MUROL"
                                                              ,tel: "06 80 00 11 09"
-                                                             ,descr: _U.list(["Sculpture, ferronnerie"])})
-                                                             ,_U.update(defCom,{name: "Galerie d\'Art",addr: "Rue George Sand 63790 MUROL"})])}
+                                                             ,descr: _U.list(["Sculpture, ferronnerie"])})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Produit du terroir"
                                                 ,_1: _U.list([_U.update(defCom,

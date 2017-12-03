@@ -8,134 +8,75 @@ import List exposing (..)
 import String exposing (words, join, cons, uncons)
 import Char
 import Dict exposing (..)
+import TiledMenu exposing (initAtWithLink,view,update,Action)
+import StarTable exposing (makeTable, emptyTe, Label(..))
 import Utils exposing (mainMenu,
                        renderMainMenu,
                        pageFooter,
-                       
                        capitalize,
                        renderListImg,
                        logos,
+                       renderSubMenu,
                        mail,
                        site,
                        link)
 
 -- Model
+subMenu : Utils.Submenu
+subMenu = { current = "", entries = []}
+
+type alias MainContent = 
+  { wrapper : (Html -> Bool -> Html)
+  , tiledMenu :  TiledMenu.Model
+  } 
+
+type alias Model = 
+  { mainMenu    : Utils.Menu
+  , subMenu     : Utils.Submenu
+  , mainContent : MainContent
+  , showIntro   : Bool
+  }  
 
 initialModel =
-  { mainMenu = mainMenu
-  , drops = [ medievales
-            , musee 
-            , horizon
-            , revolution
-            , festivalArt
-            , animEst
-            ]
+  { mainMenu    = mainMenu
+  , subMenu     = subMenu
+  , mainContent = initialContent
+  , showIntro   = if String.isEmpty locationSearch
+                  then True
+                  else False
   }
-
-
-type alias Dropable = 
-  { intro : (Signal.Address Action -> Html)
-  , body  : List Html
-  , drop  : Bool
-  , id    : Int
-  }
-
-tag i n xs =
- case xs of
-      [] -> []
-      (x::xs') -> {x | id = i+n} :: tag i (n+1) xs'  
-
-dropN id n = if .id n == id
-             then {n | drop = not (.drop n)}
-             else n
-
-nullTag = span [style [("display","none")]] []
-
-insertDrop : Signal.Address Action -> List Dropable -> Int -> Html
-insertDrop address ds n = 
-  let drop'   = head (List.filter (\d -> .id d == n) ds)
-      content = 
-        case drop' of
-          Nothing -> nullTag
-          Just { intro, body, drop, id } ->
-            let body' =
-                 if drop
-                 then div [class "dropBody"] body
-                 else nullTag 
-                
-                arrow =
-                 if drop
-                 then img [src "/images/uArrow.jpeg"] []
-                 else img [src "/images/dArrow.jpeg"] []
-
-            in
-            div [class "dropable"]
-                [ div [class "dropHeader"] 
-                      [ span [class "arrow"] [arrow]
-                      , intro address
-                      ]
-                , body'
-                ]   
-
-  in content 
-
-initDropable : Int -> String -> Maybe Html -> List Html -> Dropable
-initDropable id title extra body =
-  let intro = 
-        (\a -> div [class "dropIntro"]
-                   [ h5 [class "dropTitle", onClick a (Drop id)]
-                        [text title]
-                   , br [] []
-                   , Maybe.withDefault nullTag extra
-                   ]
-        ) 
-  in Dropable intro body False id 
 
 -- View
+view : Signal.Address Action -> Model -> Html
 view address model =
   div [ id "container"]
       [ renderMainMenu ["Animation"] (.mainMenu model)
       , div [ id "subContainer"]
-            [ div [ class "subContainerData noSubmenu", id "animation"]
-                  [ h2 [] [text "Animation"]
-                  , p [] [text "La commune de Murol, riche d’un service animation 
-                               municipal et d’une trentaine d’associations dynamiques, offre diverses 
-                               animations à sa population locale et à ses 
-                               visiteurs tout au long de l’année. Voir le 
-                               calendrier ci-dessous."]
-                  , p [] [text "De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent 
-                               au cours de l’année à Murol. Dans l’ordre 
-                               du calendrier, on voit apparaître : "]
-
-                  , insertDrop address (.drops model) 0
-                  , insertDrop address (.drops model) 1 
-                  , insertDrop address (.drops model) 2 
-                  , insertDrop address (.drops model) 3
-                  , insertDrop address (.drops model) 4
-                  , insertDrop address (.drops model) 5   
-                  
-                  , h4 [] [text "Calendrier"]
-                  , div [ id "bigAgenda"] 
-                        [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis"] []                        ]
-                  ]
+            [ (.wrapper (.mainContent model))
+               (TiledMenu.view (Signal.forwardTo address TiledMenuAction) (.tiledMenu (.mainContent model)))
+               (.showIntro model)
             ]
       , pageFooter
       ]
-
-
 -- Update
 
-type Action 
-  = NoOp
-  | Drop  Int
+type Action =
+    NoOp
+  | TiledMenuAction (TiledMenu.Action)
 
+update : Action -> Model -> Model
 update action model =
   case action of
     NoOp    -> model
-    Drop id -> 
-      let n1 = List.map (dropN id) (.drops model)
-      in ({ model | drops = n1 })
-
+    TiledMenuAction act ->
+      let mc = (.mainContent model)
+          tm = (.tiledMenu (.mainContent model))
+      in
+          { model | 
+            showIntro = not (.showIntro model)
+            , mainContent = 
+               { mc | tiledMenu = TiledMenu.update act tm }
+          }
 
 --Main
 
@@ -146,117 +87,157 @@ main =
     , update = update
     }
 
-  
+port locationSearch : String
+
+initialContent =
+  { wrapper = 
+    (\content showIntro ->
+       div [ class "subContainerData noSubmenu", id "periscolaire"]
+           [ h2 [] [text "Animation"]
+           , p [classList [("intro",True),("displayIntro", showIntro)]]
+               [text "La commune de Murol, riche d’un service animation 
+                      municipal et d’une trentaine d’associations dynamiques, offre diverses 
+                      animations à sa population locale et à ses 
+                      visiteurs tout au long de l’année. Voir le 
+                      calendrier ci-dessous."]
+           , p [classList [("intro",True),("displayIntro", showIntro)]]
+               [text "De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent 
+                      au cours de l’année à Murol."]
+
+           , content
+           
+           , h4 [classList [("intro",True),("displayIntro", showIntro)]]
+                [text "Calendrier"]
+           , div [ id "bigAgenda", classList [("intro",True),("displayIntro", showIntro)]] 
+                 [ iframe [src "https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis"] []                        ]
+                  
+           ])
+  , tiledMenu =
+      initAtWithLink locationSearch anim
+  }
+--Data
+
+anim =
+  [ ("Médiévales de Murol"
+    ,"/images/tiles/animation/medievales.jpg"
+    , [ h5 [] 
+           [text "Date: Pont de l’Ascension"]
+      , a [ href "/Medievales.html"]
+          [ text "lien photothèque"]    
+      , p [] [text "Cette manifestation, organisée par la mairie de 
+                    Murol et des associations partenaires, 
+                    a lieu chaque année durant le week-end de 
+                    l’Ascension." ]
+      , p [] [text "Au pied du château du XIIIème siècle, les 
+                    rues de Murol vivent au rythme du Moyen-âge 
+                    avec pour décor un campement médiéval, des danses, 
+                    des spectacles médiévaux, ainsi que des artisans tout 
+                    droit sortis du Moyen-âge. Immersion garantie !"]
+      ]
+    ,""
+    )
+  ,("Expo temporaire du musée des peintres"
+    ,"/images/tiles/animation/expoMusée.jpg"
+    , [ h5 [] [text "Date: saison estivale"]
+      , a [ href "http://www.musee-murol.fr/fr", target "_blank"]
+          [ text "site officiel"]
+      , p [] [text "Chaque année, le dernier week-end de mai,
+                   la commune organise le vernissage d’une 
+                   exposition temporaire inédite au musée des Peintres de 
+                   l’Ecole de Murols. 
+                   L’exposition reste en place jusqu’au 31 octobre. L’objectif 
+                   est de regrouper et de présenter pendant quelques 
+                   mois les œuvres de l’un des peintres majeurs 
+                   de l’Ecole de Murols." ]
+      ]
+    ,""
+    )
+  ,("Horizons, Arts nature en Sancy"
+    ,"/images/tiles/animation/horizon.jpg"
+    , [ h5 [] [text "Date: saison estivale"]
+      , a [ href "http://www.horizons-sancy.com", target "_blank"]
+          [ text "site officiel"]
+      , p [] [text "Cette manifestation culturelle est organisée par la communauté 
+                    de communes du massif du Sancy. La commune 
+                    de Murol soutient cet événement en tant que 
+                    membre de la communauté de communes et a 
+                    déjà accueilli de nombreuses œuvres sur son territoire." ]
+      , p [] [text "Les œuvres éphémères sont installées de juin à 
+                    septembre sur des sites naturels. Cette manifestation prend 
+                    une ampleur considérable qui dépasse le cadre régional 
+                    et même national. "]
+      ]
+    ,""
+    )
+  ,("Fête de la révolution"
+    ,"/images/tiles/animation/feu d'artifice.jpg"
+    , [ h5 [] [text "Date: 14 juillet"]
+      , a [ href "/14Juillet.html" ]
+          [ text "lien photothèque"]
+      , p [] [text "La municipalité de Murol, en partenariat avec différentes 
+                    associations de la commune, organise le 14 juillet 
+                    dans les rues de Murol. " ]
+      , p [] [text "En journée : reconstitution en costumes d’époque de la Révolution française, 
+                    animations de rues, cavalcade, et taverne révolutionnaire. "]
+      , p [] [text "Le soir : défilé costumé suivi du feu 
+                    d’artifice tiré du château de Murol et du 
+                    bal des pompiers. "]
+      , p [] [text "Vous souhaitez prendre part activement à la fête 
+                    ? Louez un costume ! Renseignement à la 
+                    mairie de Murol"]
+      ]
+    ,""
+    )
+  ,("Festival d'Art"
+    ,"/images/tiles/animation/festivalArt.jpg"
+    , [ h5 [] [text "Date: été"]
+      , a [ href "/FestivalArt.html" ]
+          [ text "lien photothèque"]
+      , p [] [text "Le service animation de la mairie organise chaque 
+                    été le festival d’Art." ]
+      , p [] [text "Ce festival regroupe de très nombreux artistes et 
+                    artisans d’art venus de tous horizons. Leurs 
+                    œuvres envahissent les rues et places de Murol 
+                    durant une journée d’été riche en couleurs. Petits 
+                    et grands déambulent accompagnés par les animations de 
+                    rue jusqu’au soir où ils peuvent partager l’ambiance 
+                    festive du concert de clôture."]
+      , p [] [ text "Vous voulez venir présenter vos œuvres ? Contactez 
+                    la mairie au 04 73 88 60 67 
+                    ou par mail à "
+             , a [href "mailto:murolanimation@orange.fr"]
+                 [text "murolanimation@orange.fr"]
+             ]
+      ]
+    ,""
+    )
+  ,("Animation estivale pour tous"
+    ,"/images/tiles/animation/animation estivale.jpg"
+    , [  p [] [text "La saison estivale est riche de nombreuses animations!"]
+      , p [] [text "Programmes des mois de juillet et août 2017: "]
+      , a [href "/baseDocumentaire/animation/programme 1 juillet 2017.pdf", target "_blank"]
+          [text "programme 9 - 21 juillet"]
+      , br [] []
+      , a [href "/baseDocumentaire/animation/programme 2 juillet 2017.pdf", target "_blank"]
+          [text "programme 23 juillet - 5 août"]
+      , br [] []
+      , a [href "/baseDocumentaire/animation/programme3 aout 2017.pdf", target "_blank"]
+          [text "programme 6 - 18 août"]
+      , br [] []
+      , a [href "/baseDocumentaire/animation/programme 4 aout 2017.pdf", target "_blank"]
+          [text "programme 20 août - 1 septembre"]
+
+      , br [] []
+      , br [] []
+      , a [href "/baseDocumentaire/animation/expos estivales 2017.pdf", target "_blank"]
+          [text "Les expos estivales 2017"]
       
-
--- Data
-
-medievales = 
-  initDropable 0 
-               "Les Médiévales de Murol (Pont de l’Ascension)"
-               (Just (div []
-                          [ a [ href "/Medievales.html"]
-                              [ text "lien photothèque"]
-                          --, p [] [a [href "http://www.medievalesmurol.fr/", target "_blank"] [text "site officiel"]]
-                          ] ))
-               ( [ p [] [text "Cette manifestation, organisée par la mairie de 
-                               Murol et des associations partenaires, 
-                               a lieu chaque année durant le week-end de 
-                               l’Ascension." ]
-                 , p [] [text "Au pied du château du XIIIème siècle, les 
-                               rues de Murol vivent au rythme du Moyen-âge 
-                               avec pour décor un campement médiéval, des danses, 
-                               des spectacles médiévaux, ainsi que des artisans tout 
-                               droit sortis du Moyen-âge. Immersion garantie !"]
-                  --, p [] [text "Les 10eme Médiévales de Murol se dérouleront VENDREDI 6 & SAMEDI 7 MAI 2016:"]
-                  --, img [src "/images/programme2016.jpg"] []
-                 ]
-               )
-
-musee = 
-  initDropable 1 
-               "L’exposition temporaire au musée des Peintres de l’Ecole de Murols (saison estivale)"
-               (Just ( a [ href "http://www.musee-murol.fr/fr", target "_blank"]
-                         [ text "site officiel"] ))
-               ( [ p [] [text "Chaque année, le dernier week-end de mai,
-                               la commune organise le vernissage d’une 
-                               exposition temporaire inédite au musée des Peintres de 
-                               l’Ecole de Murols. 
-                               L’exposition reste en place jusqu’au 31 octobre. L’objectif 
-                               est de regrouper et de présenter pendant quelques 
-                               mois les œuvres de l’un des peintres majeurs 
-                               de l’Ecole de Murols." ]
-                 ]
-               )
-
-horizon = 
-  initDropable 2 
-               "Horizon, rencontres Art et Nature (saison estivale)"
-               (Just ( a [ href "http://www.horizons-sancy.com", target "_blank"]
-                         [ text "site officiel"] ))
-               ( [ p [] [text "Cette manifestation culturelle est organisée par la communauté 
-                               de communes du massif du Sancy. La commune 
-                               de Murol soutient cet événement en tant que 
-                               membre de la communauté de communes et a 
-                               déjà accueilli de nombreuses œuvres sur son territoire." ]
-                 , p [] [text "Les œuvres éphémères sont installées de juin à 
-                               septembre sur des sites naturels. Cette manifestation prend 
-                               une ampleur considérable qui dépasse le cadre régional 
-                               et même national. "]
-                 ]
-               )
-
-revolution = 
-  initDropable 3
-               "La fête de la Révolution (14 juillet)"
-               (Just ( div []
-                           [ a [ href "/14Juillet.html" ]
-                               [ text "lien photothèque"]
-                           , br [] []
-                           , a [href "/baseDocumentaire/animation/affiche14juillet2016.pdf", target "_blank"]
-                               [text "programme 2016"]
-                           ] ))
-               ( [ p [] [text "La municipalité de Murol, en partenariat avec différentes 
-                               associations de la commune, organise le 14 juillet 
-                               dans les rues de Murol. " ]
-                 , p [] [text "En journée : reconstitution en costumes d’époque de la Révolution française, 
-                               animations de rues, cavalcade, et taverne révolutionnaire. "]
-                 , p [] [text "Le soir : défilé costumé suivi du feu 
-                               d’artifice tiré du château de Murol et du 
-                               bal des pompiers. "]
-                 , p [] [text "Vous souhaitez prendre part activement à la fête 
-                               ? Louez un costume ! Renseignement à la 
-                               mairie de Murol"]
-                 ]
-               )
-
-festivalArt = 
-  initDropable 4
-               "Le festival d’Art (été)"
-               (Just ( a [ href "/FestivalArt.html" ]
-                         [ text "lien photothèque"] ))
-               ( [ p [] [text "Le service animation de la mairie organise chaque 
-                               été le festival d’Art." ]
-                 , p [] [text "Ce festival regroupe de très nombreux artistes et 
-                               artisans d’art venus de tous horizons. Leurs 
-                               œuvres envahissent les rues et places de Murol 
-                               durant une journée d’été riche en couleurs. Petits 
-                               et grands déambulent accompagnés par les animations de 
-                               rue jusqu’au soir où ils peuvent partager l’ambiance 
-                               festive du concert de clôture."]
-                 , p [] [ text "Vous voulez venir présenter vos œuvres ? Contactez 
-                               la mairie au 04 73 88 60 67 
-                               ou par mail à "
-                        , a [href "mailto:murolanimation@orange.fr"]
-                            [text "murolanimation@orange.fr"]
-                        ]
-                 ]
-               )
-
-animEst = 
-  initDropable 5 
-               "Les animations estivales"
-               (Just ( a [ href "/AnimationEstivale.html" ]
-                         [ text "page dédiée"] ))
-               ( [ ]
-               )
+      , a [href "/baseDocumentaire/animation/affiche14juillet2017.pdf", target "_blank"]
+          [text "programme 14 juillet 2017"]
+      , br [] []
+      , br [] []
+      , img [src "/images/illustration animations estivales.jpg"] []
+      ]
+    ,""
+    ) 
+  ]

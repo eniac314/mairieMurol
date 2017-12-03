@@ -96,8 +96,9 @@ initialContent =
             , site "www.sancy.com" "http://www.sancy.com"
             , h5 [] [text "Horaires:"]
             , ul []
-                 [ li [] [text "pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h"]
-                 , li [] [text "le reste de l’année, ouvert du lundi au samedi de 9h à 12h."]
+                 [ li [] [text "pendant les vacances d'été, ouvert du lundi au samedi de 9h à 18h30,
+                                le dimanche de 9h à 12h30 et de 13h30 à 18h."]
+                 , li [] [text "le reste de l’année, ouvert du lundi au vendredi de 9h à 12h."]
                  ]
             ]
       
@@ -109,7 +110,7 @@ initialContent =
            [ li [] [ text "un ", b [] [text "accueil multilingue"] ]
            , li [] [ text "des ", b [] [text "documentations"], text " en libre-service sur les visites,
                      activités et les hébergements dans le massif du Sancy et au-delà"]
-           , li [] [ text "un ", b [] [text "coin enfant"], text " pour faire patienter
+           , li [] [ text "un ", b [] [text "coin enfant et le Tibou Mag"], text " pour faire patienter
                      les bambins (label Famille Plus)" ]
            , li [] [ text "Une connexion ", b [] [text "internet en wifi"]]
            , li [] [ text "Un service ", b [] [text "boutique"], text " avec les cartes

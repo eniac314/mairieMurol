@@ -11545,8 +11545,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11707,7 +11706,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       ,A2($Html.a,
                                                       _U.list([$Html$Attributes.href("/Animation.html")]),
                                                       _U.list([$Html.text("grandes manifestations")]))
-                                                      ,$Html.text(" à destination d’un public \n                             familial. Chaque dimanche de la saison estivale, participez à une visite insolite du bourg \n                             en suivant Monsieur Alphonse…")]))
+                                                      ,$Html.text(" à destination d’un public \n                             familial.")]))
                                               ,A2($Html.img,_U.list([$Html$Attributes.src("/images/prélong.JPG"),$Html$Attributes.id("bourg2")]),_U.list([]))
                                               ,A2($Html.img,
                                               _U.list([$Html$Attributes.src("/images/museePeintre.jpeg"),$Html$Attributes.id("bourg3")]),
@@ -11734,11 +11733,11 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([$Html.text("Il est aujourd´hui propriété de la commune et \n                            est géré par un délégataire. ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([$Html.text("C\'est le château le plus visité d’Auvergne. Il \n                           attire plus de 100 000 visiteurs par an \n                           qui peuvent profiter de ")
+                                              _U.list([$Html.text("C\'est le château le plus visité d’Auvergne. Il \n                           attire plus de 100 000 visiteurs par an \n                           qui peuvent profiter découvrir cette forteresse lors de  ")
                                                       ,A2($Html.a,
                                                       _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://murolchateau.com/")]),
                                                       _U.list([$Html.text("visites simples ou animées")]))
-                                                      ,$Html.text(", de saynètes et de démonstrations. Paysans, hommes d´armes, \n                           gentes dames et chevaliers vous font découvrir la \n                           vie d´une châtellenie au XIIIe siècle! ")]))
+                                                      ,$Html.text(". Immergez-vous dans le quotidien de Guillaume de Murol\n                             au fil des salles reconstituées. Profitez des anecdotes\n                             et apports historiques de Guillemette ou  de Maître Jean.")]))
                                               ,A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("Depuis plusieurs années, des ")
@@ -11746,11 +11745,7 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       _U.list([$Html$Attributes.target("_blank")
                                                               ,$Html$Attributes.href("https://sites.google.com/site/murolarcheoancien")]),
                                                       _U.list([$Html.text("recherches archéologiques")]))
-                                                      ,$Html.text(" sont conduites \n                           au château et sur l’ensemble de la commune \n                           afin de retracer l’histoire de ce territoire dont \n                           de ")
-                                                      ,A2($Html.a,
-                                                      _U.list([$Html$Attributes.href(""),$Html$Attributes.target("_blank")]),
-                                                      _U.list([$Html.text("nombreux vestiges")]))
-                                                      ,$Html.text(" témoignent d’une occupation gauloise (dolmen) \n                           et gallo-romaine (villa et fanum). Elles sont menées \n                           par Dominique Allios, maître de conférences en archéologie \n                           et histoire de l’Art, et son équipe d’étudiants. \n                           Chaque vendredi soir du mois de juillet, ils \n                           animent des conférences archéologiques riches en rebondissements et \n                           font ainsi partager aux murolais et aux visiteurs \n                           les découvertes et avancées réalisées dans la semaine. \n                           (voir ")
+                                                      ,$Html.text(" sont conduites \n                           au château et sur l’ensemble de la commune \n                           afin de retracer l’histoire de ce territoire dont \n                           de nombreux vestiges témoignent d’une occupation gauloise (dolmen) \n                           et gallo-romaine (villa et fanum). Elles sont menées \n                           par Dominique Allios, maître de conférences en archéologie \n                           et histoire de l’Art, et son équipe d’étudiants. \n                           Chaque vendredi soir du mois de juillet, ils \n                           animent des conférences archéologiques riches en rebondissements et \n                           font ainsi partager aux murolais et aux visiteurs \n                           les découvertes et avancées réalisées dans la semaine. \n                           (voir ")
                                                       ,A2($Html.a,
                                                       _U.list([$Html$Attributes.href("/baseDocumentaire/decouvrirMurol/presentationAllios.pdf")
                                                               ,$Html$Attributes.target("_blank")]),
@@ -11785,13 +11780,13 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([$Html.text("En 2011, son four à pain a été \n                           entièrement reconstruit par des bénévoles de l’association des \n                           «chantiers de jeunesse». En 2014, d’autres \n                           jeunes de cette association ont permis de remettre \n                           en état le « chemin des caves » \n                           où les agriculteurs affinent le Saint-Nectaire. ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([$Html.text("Chaque lundi de la saison estivale, \n                           découvrez le patrimoine et les savoir-faire de ce \n                           village avec Michel Tardif. ")]))
+                                              _U.list([$Html.text("Chaque lundi de la saison estivale, \n                           découvrez le patrimoine et les savoir-faire de ce \n                           village avec Jean-Paul Pasdeloup.")]))
                                               ,A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("Début juillet, la foire du Saint-Nectaire vous \n                           permettra de rencontrer les producteurs de fromage et \n                           d’autres produits du terroir. Bonne dégustation! ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([$Html.text("L’hiver, pratiquez le ski de fond ou la \n                           randonnée en raquettes sur les pistes du domaine \n                           nordique de la forêt de Beaune-le-Froid. ")]))])}
+                                              _U.list([$Html.text("L’hiver, profitez librement des circuits balisés\n                            non damés de la forêt de Beaune-le-Froid, en raquette\n                            ou ski de randonnée nordique. ")]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Le volcan du Tartaret"
                                  ,_1: "/images/tiles/decouvrirMurol/tartaretTile.jpg"
@@ -11833,7 +11828,22 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                               _U.list([$Html.text("Le lac Chambon, propriété du conseil départemental, se \n                             trouve à cheval sur les communes de Chambon \n                             sur Lac à l’ouest et Murol à l’est. \n                             La plage de Murol offre un panorama somptueux \n                             sur la vallée de Chaudefour et les crêtes \n                             du massif du Sancy. Elle est fréquentée en \n                             toute saison. ")]))
                                               ,A2($Html.p,
                                               _U.list([]),
-                                              _U.list([$Html.text("L’été, la plage de sable et la zone \n                             de baignade surveillée en juillet août vous\n                             offrent une plage à la montagne ! \n                             Vous pourrez aussi pratiquer diverses activités en famille \n                             : pédalos, mini-golf, jeux pour enfants, pêche (site \n                             de deuxième catégorie), promenades… ")]))
+                                              _U.list([$Html.text("L’été, la plage de sable et la zone \n                             de baignade surveillée en juillet août vous\n                             offrent une plage à la montagne ! \n                             Vous pourrez aussi pratiquer diverses activités en famille \n                             : pique-nique, barques, pédalos, mini-golf, jeux pour enfants,\n                             jeux collectifs sur le terrain multisport, pêche (site \n                             de deuxième catégorie), promenades… ")]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/picLac03.jpg")
+                                                      ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "1em"}
+                                                                                      ,{ctor: "_Tuple2",_0: "max-width",_1: "26.1%"}]))]),
+                                              _U.list([]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/picLac01.jpg")
+                                                      ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "1em"}
+                                                                                      ,{ctor: "_Tuple2",_0: "max-width",_1: "29.1%"}]))]),
+                                              _U.list([]))
+                                              ,A2($Html.img,
+                                              _U.list([$Html$Attributes.src("/images/picLac02.jpg")
+                                                      ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin-right",_1: "1em"}
+                                                                                      ,{ctor: "_Tuple2",_0: "max-width",_1: "36.5%"}]))]),
+                                              _U.list([]))
                                               ,A2($Html.p,
                                               _U.list([]),
                                               _U.list([$Html.text("La commune de Murol a obtenu le label Pavillon Bleu en 2016.\n                            Ce label international récompense les communes qui veillent\n                            à la qualité de leurs eaux de baignade mais aussi qui s\'inscrivent\n                            dans une démarche globale de respect de l\'environnement. ")]))

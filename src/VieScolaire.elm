@@ -116,7 +116,8 @@ vieScolaire =
                      MUROL, jusqu’à la fin du CE2. "
               ] 
         , p [] [text "Les enfants de CM1 et CM2 sont scolarisés 
-                     à l’école de Chambon sur Lac. "]
+                     à l’école de Chambon sur Lac. En fonction des effectifs,
+                     la répartition des niveaux dans les classes peut varier."]
         , p [] [text "Les écoles élémentaires de Murol et de Chambon 
                      sur Lac fonctionnent en Regroupement Pédagogique Intercommunal (RPI) 
                      et accueillent les enfants de Chambon sur Lac, 
@@ -128,12 +129,23 @@ vieScolaire =
                       et Saint-Anastaise."
                ]
         ,
-        figure [ class "imgHolydays"]
-               [ img [src "/images/carteZones.jpg"] []
-               , img [src "/images/calendVac.jpg"] []
-               , figcaption [] [ text "Vacances scolaires, répartition des zones et calendrier"
+        figure [ class "imgHolydays", style [("margin","auto")]]
+               [ img [src "/images/carteZones.jpg"
+                     --, style [("width","100%")]
+                     ] []
+               , img [src "baseDocumentaire/Screenshot-2017-10-3 Le calendrier scolaire.png"
+                     , style [("vertical-align","top")]
+                     ]
+                     []
+               , figcaption []
+                               [ text "Vacances scolaires, répartition des zones et "
+                               , a [ href "baseDocumentaire/calendrier_scolaire_2017_2018_413655.pdf"
+                                   , target "_blank"
+                                   ]
+                                   [text "calendrier"]
                                , br [] []
-                               , a [ href "http://www.education.gouv.fr/cid87910/calendrier-scolaire-pour-les-annees-2015-2016-2016-2017-2017-2018.html"] [ text "source: education.gouv.fr"] ]
+                               , text "Source: "
+                               , a [ href "http://www.education.gouv.fr/cid87910/calendrier-scolaire-pour-les-annees-2015-2016-2016-2017-2017-2018.html"] [ text "education.gouv.fr"] ]
         ]
         ]
 
@@ -158,10 +170,10 @@ mater  =
      , p [] [text "La directrice de l’école maternelle se nomme Séverine 
                    AUBOUIN. "]
 
-    , h5 [] [text "Année scolaire 2016 - 2017"]
+    , h5 [] [text "Année scolaire 2017 - 2018"]
     , p  [] [text "Répartition des classes : "]
     , ul []
-         [ li  [] [text "Classe des petits et moyens : Sandrine GIDON"]
+         [ li  [] [text "Classe des petits et moyens : Sandrine ROMARY"]
          , li  [] [text "Classe des moyens et grands : Séverine AUBOUIN."]
          ] 
     
@@ -333,12 +345,11 @@ elem   =
       , p [] [text "Le directeur de l’école de Chambon sur Lac 
                     se nomme Claude BOURRET."]
 
-      , h5 [] [text "Année scolaire 2016 2017 "] 
+      , h5 [] [text "Année scolaire 2017 2018 "] 
       , p [] [text "Répartition des classes : "]
       , ul []
-           [ li [] [text "Classe des CP: Marion VERDE et Elisabeth 
-                          TAMET"]
-           , li [] [text "Classe des CE1 / CE2: Corinne AUBERTY "]
+           [ li [] [text "Classe des CP / CE1: Marion VERDE"]
+           , li [] [text "Classe des CE2 / CM1: Corinne AUBERTY "]
            , li [] [text "Classe des CM1 / CM2 (Chambon sur Lac):
                           Claude BOURRET"]
            ]
@@ -539,7 +550,7 @@ second =
       , mail "ce.0630008S@ac.clermont.fr"
       , br [] []
       , site "Collège du Pavin"
-             "http://www.clg-pavin.ac-clermont.fr/"
+             "http://college-pavin-besse.fr/"
       , h4 [] [ text "Inscription"]
       , site "Informations inscriptions"
              "http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e"

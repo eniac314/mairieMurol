@@ -76,8 +76,8 @@ delib =
            , li [] [link "4 avril" "/baseDocumentaire/Deliberations_conseil/2014/04042014.pdf"]
            , li [] [link "10 avril" "/baseDocumentaire/Deliberations_conseil/2014/10042014.pdf"]
            , li [] [link "16 juillet" "/baseDocumentaire/Deliberations_conseil/2014/16072014.pdf"]
-           , li [] [link "28 oct" "/baseDocumentaire/Deliberations_conseil/2014/28102014.pdf"]
-           , li [] [link "22 dec" "/baseDocumentaire/Deliberations_conseil/2014/22122014.pdf"]
+           , li [] [link "28 octobre" "/baseDocumentaire/Deliberations_conseil/2014/28102014.pdf"]
+           , li [] [link "22 décembre" "/baseDocumentaire/Deliberations_conseil/2014/22122014.pdf"]
            ]
       , h5 [] [text "2015"]
       , ul []
@@ -110,5 +110,7 @@ delib =
            , li [] [link "11 avril" "/baseDocumentaire/Deliberations_conseil/2017/11Avr2017.pdf"] 
            , li [] [link "15 juin " "/baseDocumentaire/Deliberations_conseil/2017/15Juin2017.pdf"] 
            , li [] [link "30 juin" "/baseDocumentaire/Deliberations_conseil/2017/30Juin2017.pdf"] 
+           , li [] [link "22 août" "/baseDocumentaire/Deliberations_conseil/2017/22Aout2017.pdf"]
+           , li [] [link "27 septembre" "/baseDocumentaire/Deliberations_conseil/2017/27Sep2017.pdf"]         
            ]
       ])

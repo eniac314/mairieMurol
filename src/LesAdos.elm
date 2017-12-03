@@ -83,9 +83,9 @@ initialContent =
         , p [] [a [href "/baseDocumentaire/ados/Dossier d'inscription argent de poche.pdf", target "_blank"]
                   [text "Dossier inscription argent de poche"]
                ]
-        , p [] [a [href "/baseDocumentaire/ados/plaquette printemps 2017 argent de poche.pdf", target "_blank"]
-                  [text "Plaquette printemps 2017 argent de poche"]
-               ]
+        --, p [] [a [href "/baseDocumentaire/ados/plaquette printemps 2017 argent de poche.pdf", target "_blank"]
+        --          [text "Plaquette printemps 2017 argent de poche"]
+        --       ]
         ]
       ]
 

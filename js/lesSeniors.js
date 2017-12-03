@@ -11545,8 +11545,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11802,18 +11801,11 @@ Elm.LesSeniors.make = function (_elm) {
                                        ,A2($Html.p,
                                        _U.list([]),
                                        _U.list([$Html.text("Ce service propose des activités, déplacements et voyages \n                    à l’ensemble des seniors du territoire. ")]))
-                                       ,$Html.text("Au programme pour 2016 : ")
-                                       ,A2($Html.ul,
-                                       _U.list([]),
-                                       _U.list([A2($Html.li,
-                                               _U.list([]),
-                                               _U.list([$Html.text("une randonnée au lac Chambon et visite \n                        du musée des Peintres")]))
-                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("5 séances de piscine")]))
-                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("des animations « belote » ")]))
-                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("une sortie au sommet de l’élevage ")]))
-                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("La journée des seniors")]))
-                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("Le marché de Noël à Clermont-Ferrand ")]))
-                                               ,A2($Html.li,_U.list([]),_U.list([$Html.text("La foire de Brion")]))]))
+                                       ,$Html.text("Au programme pour 2017 : ")
+                                       ,A2($Html.a,
+                                       _U.list([$Html$Attributes.href("baseDocumentaire/animation/animations SIVOM 2017.pdf")
+                                               ,$Html$Attributes.target("_blank")]),
+                                       _U.list([$Html.text("voir le programme 2017")]))
                                        ,A2($Html.p,
                                        _U.list([]),
                                        _U.list([$Html.text("pour tout renseignement\n                  contactez le ")

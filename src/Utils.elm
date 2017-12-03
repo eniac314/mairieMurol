@@ -29,7 +29,7 @@ mainMenu = Node ""
          , Leaf "Hébergements" ""
          , Leaf "Restaurants" ""
          , Leaf "Carte & plan" ""
-         , Leaf "Animation estivale" "" 
+         --, Leaf "Animation estivale" "" 
          ]
   , Node "Vie locale"
          [ Leaf "Vie scolaire" ""

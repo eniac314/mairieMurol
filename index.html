@@ -7,8 +7,16 @@
   <meta name="author" content="mairie de Murol">
   <title>La commune de Murol</title>
   <script type="text/javascript" src="./js/murol.js"></script>
+  <script type="text/javascript" src="./js/iframeResizer.min.js"></script>
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet" href="/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
+<script>
+  // function resizeIframe(obj) {
+  //   obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  // }
+
+</script>
+
 </head>
 
 <body>
@@ -67,5 +75,6 @@
   }
 
 </script>
+<script>iFrameResize({log:true, scrolling:true}, '#searchIframe')</script>
 </body>
 </html>

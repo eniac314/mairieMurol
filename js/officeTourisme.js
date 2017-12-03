@@ -11274,8 +11274,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11389,8 +11388,10 @@ Elm.OfficeTourisme.make = function (_elm) {
                    ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Horaires:")]))
                    ,A2($Html.ul,
                    _U.list([]),
-                   _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("pendant les vacances, ouvert du lundi au samedi de 9h à 12h et de 14h à 18h")]))
-                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("le reste de l’année, ouvert du lundi au samedi de 9h à 12h.")]))]))]))
+                   _U.list([A2($Html.li,
+                           _U.list([]),
+                           _U.list([$Html.text("pendant les vacances d\'été, ouvert du lundi au samedi de 9h à 18h30,\n                                le dimanche de 9h à 12h30 et de 13h30 à 18h.")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("le reste de l’année, ouvert du lundi au vendredi de 9h à 12h.")]))]))]))
            ,A2($Html.h5,_U.list([$Html$Attributes.id("officeDescr")]),_U.list([$Html.text("Le bureau de Murol propose :")]))
            ,A2($Html.ul,
            _U.list([]),
@@ -11403,7 +11404,7 @@ Elm.OfficeTourisme.make = function (_elm) {
                    ,A2($Html.li,
                    _U.list([]),
                    _U.list([$Html.text("un ")
-                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("coin enfant")]))
+                           ,A2($Html.b,_U.list([]),_U.list([$Html.text("coin enfant et le Tibou Mag")]))
                            ,$Html.text(" pour faire patienter\n                     les bambins (label Famille Plus)")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("Une connexion "),A2($Html.b,_U.list([]),_U.list([$Html.text("internet en wifi")]))]))
                    ,A2($Html.li,

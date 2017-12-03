@@ -20,11 +20,13 @@ Elm.GestionDesDechets.make = function (_elm) {
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("initDechets")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("La gestion des déchets")]))
            ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Ramassage des ordures")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le ramassage des ordures a lieu le: ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Pour la période automne jusqu’au 30 décembre 2017\n                     , la collecte est effectuée telle que :")]))
            ,A2($Html.ul,
            _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("lundi pour les ordures ménagères")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("le mercredi pour le tri sélectif \"poubelles jaunes\"")]))]))
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Ordures ménagères : deux fois par semaine, le lundi et vendredi matin")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Tri sélectif : le mercredi, une fois par semaine")]))]))
            ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Objets encombrants")]))
            ,A2($Html.p,
            _U.list([]),

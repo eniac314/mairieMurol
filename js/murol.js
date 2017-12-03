@@ -13809,8 +13809,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -14647,6 +14646,16 @@ Elm.Murol.make = function (_elm) {
                                       ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "color",_1: "teal"}]))]),
                               _U.list([$Html.text("W3D\'s")]))]))]))]));
    };
+   var renderSearch = A2($Html.div,
+   _U.list([]),
+   _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("RECHERCHER SUR LE SITE")]))
+           ,A2($Html.iframe,
+           _U.list([$Html$Attributes.src("search.html")
+                   ,$Html$Attributes.id("searchIframe")
+                   ,$Html$Attributes.height(46)
+                   ,A2($Html$Attributes.attribute,"frameborder","0")
+                   ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "width",_1: "100%"}]))]),
+           _U.list([]))]));
    var GalleryAction = function (a) {    return {ctor: "GalleryAction",_0: a};};
    var renderMiniGallery = F2(function (address,model) {
       return A2($Html.div,
@@ -14710,13 +14719,13 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 08 septembre 2017")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le lundi 23 octobre 2017")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
       return A2($Html.div,
       _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("index")]),
-      _U.list([A3(renderNewsList,address,"Actualités de la commune",n1),$Utils.renderListImg($Utils.logos),renderMisc]));
+      _U.list([renderSearch,A3(renderNewsList,address,"Actualités de la commune",n1),$Utils.renderListImg($Utils.logos),renderMisc]));
    });
    var view = F2(function (address,model) {
       return A2($Html.div,
@@ -15946,7 +15955,113 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.href("http://www.lamontagne.fr/murol/insolite/2017/09/02/les-conscrits-font-le-buzz-avec-un-ventriglisse-geant-a-murol_12534803.html")]),
                               _U.list([$Html.text("Voir la vidéo")]))]))
-                      ,expiry: $Date.fromString("09/31/2017")})]);
+                      ,expiry: $Date.fromString("09/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Emplois saisonniers"
+                      ,date: $Date.fromString("09/20/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Le forum des emplois saisonniers se tiendra le jeudi 5 octobre de 14 à 17h à Besse")]))
+                              ,A2($Html.a,_U.list([$Html$Attributes.href("/baseDocumentaire/forum besse.pdf")]),_U.list([$Html.text("Lien ici")]))]))
+                      ,expiry: $Date.fromString("10/06/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Fermetures exceptionnelles du musée des peintres"
+                      ,date: $Date.fromString("10/07/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Pour raison de formation, le musée des peintres sera fermé :")]))
+                              ,A2($Html.ul,
+                              _U.list([]),
+                              _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("lundi 9/10 : MATIN")]))
+                                      ,A2($Html.li,_U.list([]),_U.list([$Html.text("mardi 17/10 : MATIN")]))
+                                      ,A2($Html.li,_U.list([]),_U.list([$Html.text("mardi 24/10 : JOURNÉE")]))]))]))
+                      ,expiry: $Date.fromString("10/25/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Fermeture exceptionnelle de l\'office de tourisme"
+                      ,date: $Date.fromString("10/07/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                      _U.list([]),
+                      _U.list([$Html.text("Nous vous informons que les services des Offices de\n                           Tourisme du Massif du Sancy seront exceptionnellement fermés du lundi 9 au mercredi 11/10 inclus.\n                           Ré-ouverture au public jeudi 12 octobre à 9h.")]))]))
+                      ,expiry: $Date.fromString("10/13/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Actions en faveur des malades de la mémoire et des aidants"
+                      ,date: $Date.fromString("10/11/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("La Plateforme de répit 63 organise des ateliers gratuits à la Bourboule pour les personnes\n                           atteintes d\'une maladie de la mémoire.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/Ateliers mémoire.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Voir le planning")]))
+                              ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les aidants peuvent bénéficier d\'un soutien psychologique gratuit à domicile.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/SOUTIEN PSYCHOLOGIQUE.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Voir la brochure")]))]))
+                      ,expiry: $Date.fromString("12/31/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Octobre rose 2017, prévention du cancer du sein"
+                      ,date: $Date.fromString("10/11/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Un ciné- débat gratuit est organisé à Besse par l\'ARDOC,\n                           la CAMIEG et le CLIC jeudi 19 octobre à 20h.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/OCTOBRE ROSE.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Communiqué de presse")]))]))
+                      ,expiry: $Date.fromString("10/21/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "A la Toussaint, devenez chevalier de Murol !"
+                      ,date: $Date.fromString("10/23/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.h6,
+                              _U.list([]),
+                              _U.list([$Html.text("Intégrez l’école de chevalerie\n                                de Jean de Murol et devenez chevalier du château !")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Pendant les vacances de la Toussaint, Messire Jean de Murol\n                           vous invite à rejoindre ses rangs et à intégrer son école de chevalerie. ")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Durant cette animation encadrée par ces deux fidèles sergents d’armes,\n                             notre vaillant cavalier montrera l’exemple aux enfants en exécutant des\n                             démonstrations de joutes, de combats à l’épée et d’exercices équestres.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Petits et grands pourront assister à ces démonstrations de cavalerie.\n                            Les enfants qui participeront seront choisis par nos animateurs et auront\n                            entre 6 et 13 ans. ")
+                                      ,A2($Html.br,_U.list([]),_U.list([]))
+                                      ,$Html.text("Tous les jours sauf le samedi 28 octobre, à 12h, 14h45, 15h45, 16h45.")
+                                      ,A2($Html.br,_U.list([]),_U.list([]))
+                                      ,$Html.text("Durée : environ 30 minutes.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Venez également découvrir la vie quotidienne d’une seigneurie auvergnate\n                            en l’an de grâce 1417 en suivant les habitants de la seigneurie de\n                            Guillaume : Guillemette, sa cuisinière ou encore Maître Jean,\n                            riche laboureur.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Visites guidées tous les jours à 11h, 14h, 15h, 16h et 17h.")
+                                      ,A2($Html.br,_U.list([]),_U.list([]))
+                                      ,$Html.text("Durée : environ 1h.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("http://murolchateau.com/"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Site officiel du château de Murol")]))]))
+                      ,expiry: $Date.fromString("11/06/2017")})
+                      ,_U.update(emptyNews,
+                      {title: "Navette Azureva entre Murol et Besse/Super-Besse"
+                      ,date: $Date.fromString("10/23/2017")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Navette proposée par le village-vacances\n                          Azureva-Murol pour accéder en toute\n                          tranquillité et sécurité aux pistes de ski de Besse\n                          et Super-Besse.")]))
+                              ,A2($Html.p,_U.list([]),_U.list([$Html.text("Du lundi au samedi, du 12 février au 10\n                            mars 2018")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/Navette Azureva Murol - Superbesse fevrier 2018.pdf")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Horaires et infos pratiques")]))]))
+                      ,expiry: $Date.fromString("03/11/2018")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters
@@ -15974,6 +16089,7 @@ Elm.Murol.make = function (_elm) {
                               ,renderContent: renderContent
                               ,renderNewsList: renderNewsList
                               ,renderNews: renderNews
+                              ,renderSearch: renderSearch
                               ,renderNewsLetter: renderNewsLetter
                               ,renderMisc: renderMisc
                               ,renderMeteo: renderMeteo

@@ -11274,8 +11274,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11404,13 +11403,10 @@ Elm.Sante.make = function (_elm) {
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Sébastien MONNET")]))
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Céline MAYER")]))
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Mathias GARCIA")]))
-                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Aurélie Maizières")]))]))
+                   ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Aurélie MAIZIERES")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),
-           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("CABINET MÉDICAL POLYVALENT")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Tél : 04 73 55 30 59 ")]))
-                   ,A2($Html.p,_U.list([]),_U.list([$Html.text("Permanences régulières")]))
-                   ,A2($Html.h4,_U.list([]),_U.list([$Html.text("DIÉTÉTICIENNE ")]))
+           _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text("DIÉTÉTICIENNE ")]))
                    ,A2($Html.p,_U.list([$Html$Attributes.$class("pratiName")]),_U.list([$Html.text("Marion MONGHAL")]))]))
            ,A2($Html.div,
            _U.list([$Html$Attributes.$class("praticiens")]),

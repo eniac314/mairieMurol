@@ -11679,8 +11679,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11781,7 +11780,7 @@ Elm.VieScolaire.make = function (_elm) {
                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Fax : 04 73 79 57 94")]))]))
            ,$Utils.mail("ce.0630008S@ac.clermont.fr")
            ,A2($Html.br,_U.list([]),_U.list([]))
-           ,A2($Utils.site,"Collège du Pavin","http://www.clg-pavin.ac-clermont.fr/")
+           ,A2($Utils.site,"Collège du Pavin","http://college-pavin-besse.fr/")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Inscription")]))
            ,A2($Utils.site,"Informations inscriptions","http://www.education.gouv.fr/cid79/inscription.html#inscription-en-6e")]));
    var elem = A2($Html.div,
@@ -11800,12 +11799,12 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([$Html.text("A Murol, sont accueillis les enfants de Chambon \n                   sur Lac, Murol et Saint-Victor la Rivière du \n                   CP au CE2 inclus. La directrice de l’école \n                   élémentaire de Murol se nomme Corinne AUBERTY. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les enfants de CM1 et CM2 sont accueillis \n                   à l’école de Chambon sur Lac. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le directeur de l’école de Chambon sur Lac \n                    se nomme Claude BOURRET.")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2016 2017 ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2017 2018 ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Répartition des classes : ")]))
            ,A2($Html.ul,
            _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CP: Marion VERDE et Elisabeth \n                          TAMET")]))
-                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CE1 / CE2: Corinne AUBERTY ")]))
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CP / CE1: Marion VERDE")]))
+                   ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CE2 / CM1: Corinne AUBERTY ")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des CM1 / CM2 (Chambon sur Lac):\n                          Claude BOURRET")]))]))
            ,A2($Html.p,
            _U.list([]),
@@ -11989,11 +11988,11 @@ Elm.VieScolaire.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("La maternelle accueille les enfants des quatre communes \n                   du SIVOM dès l’âge de 2 ans, en \n                   fonction des places disponibles. ")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("La directrice de l’école maternelle se nomme Séverine \n                   AUBOUIN. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2016 - 2017")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Année scolaire 2017 - 2018")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Répartition des classes : ")]))
            ,A2($Html.ul,
            _U.list([]),
-           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des petits et moyens : Sandrine GIDON")]))
+           _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des petits et moyens : Sandrine ROMARY")]))
                    ,A2($Html.li,_U.list([]),_U.list([$Html.text("Classe des moyens et grands : Séverine AUBOUIN.")]))]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Horaires de classe (suite à la réforme des rythmes scolaires):")]))
            ,A2($Html.table,
@@ -12117,7 +12116,9 @@ Elm.VieScolaire.make = function (_elm) {
                    _U.list([$Html$Attributes.href("/VieScolaire.html?bloc=Ecole elementaire")]),
                    _U.list([$Html.text("l’école élémentaire de Murol")]))
                    ,$Html.text(", place de l’Hôtel de Ville 63790 \n                     MUROL, jusqu’à la fin du CE2. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les enfants de CM1 et CM2 sont scolarisés \n                     à l’école de Chambon sur Lac. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Les enfants de CM1 et CM2 sont scolarisés \n                     à l’école de Chambon sur Lac. En fonction des effectifs,\n                     la répartition des niveaux dans les classes peut varier.")]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Les écoles élémentaires de Murol et de Chambon \n                     sur Lac fonctionnent en Regroupement Pédagogique Intercommunal (RPI) \n                     et accueillent les enfants de Chambon sur Lac, \n                     Murol et Saint-Victor-la-Rivière. ")]))
@@ -12127,16 +12128,23 @@ Elm.VieScolaire.make = function (_elm) {
                    ,A2($Html.a,_U.list([$Html$Attributes.href("/VieScolaire.html?bloc=Le secondaire")]),_U.list([$Html.text("collège")]))
                    ,$Html.text(" du secteur se trouve à Besse \n                      et Saint-Anastaise.")]))
            ,A2($Html.figure,
-           _U.list([$Html$Attributes.$class("imgHolydays")]),
+           _U.list([$Html$Attributes.$class("imgHolydays"),$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "margin",_1: "auto"}]))]),
            _U.list([A2($Html.img,_U.list([$Html$Attributes.src("/images/carteZones.jpg")]),_U.list([]))
-                   ,A2($Html.img,_U.list([$Html$Attributes.src("/images/calendVac.jpg")]),_U.list([]))
+                   ,A2($Html.img,
+                   _U.list([$Html$Attributes.src("baseDocumentaire/Screenshot-2017-10-3 Le calendrier scolaire.png")
+                           ,$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "vertical-align",_1: "top"}]))]),
+                   _U.list([]))
                    ,A2($Html.figcaption,
                    _U.list([]),
-                   _U.list([$Html.text("Vacances scolaires, répartition des zones et calendrier")
+                   _U.list([$Html.text("Vacances scolaires, répartition des zones et ")
+                           ,A2($Html.a,
+                           _U.list([$Html$Attributes.href("baseDocumentaire/calendrier_scolaire_2017_2018_413655.pdf"),$Html$Attributes.target("_blank")]),
+                           _U.list([$Html.text("calendrier")]))
                            ,A2($Html.br,_U.list([]),_U.list([]))
+                           ,$Html.text("Source: ")
                            ,A2($Html.a,
                            _U.list([$Html$Attributes.href("http://www.education.gouv.fr/cid87910/calendrier-scolaire-pour-les-annees-2015-2016-2016-2017-2017-2018.html")]),
-                           _U.list([$Html.text("source: education.gouv.fr")]))]))]))]));
+                           _U.list([$Html.text("education.gouv.fr")]))]))]))]));
    var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
    "String",
    function (v) {

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>Main</title><style>html,head,body { padding:0; margin:0; }
+body { font-family: calibri, helvetica, arial, sans-serif; }</style>
+<link rel="stylesheet" href="./styles/searchStyle.css">
+<div id="main"></div>
+<script type="text/javascript" src="./js/iframeResizer.contentWindow.min.js"></script>
+<script src="js/search.js"></script>
+<script>
+    var node = document.getElementById('main');
+    var app = Elm.Search.embed(node);
+    // Note: if your Elm module is named "MyThing.Root" you
+    // would call "Elm.MyThing.Root.embed(node)" instead.
+    //function resizeIframe(obj) {
+    //  obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+    //}
+
+</script>
+<base target="_parent">
+</head><body><script type="text/javascript">Elm.Main.fullscreen()</script></body></html>

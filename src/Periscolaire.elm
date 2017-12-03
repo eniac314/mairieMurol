@@ -115,25 +115,46 @@ initialContent =
                      jeudis de 9h30 à 12h30 dans son bureau 
                      au 1er étage ou par téléphone au 04 
                      73 88 60 67. "]
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
+           --        , target "_blank"]
+           --        [ text "fiche de renseignements Murol"]
+           --    ]
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
+           --        , target "_blank"]
+           --        [ text "fiche de renseignements Chambon"]
+           --    ]
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+           --        , target "_blank"]
+           --        [ text "fiche de renseignements Saint-Nectaire"]
+           --    ]
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/reglementCharte.pdf"
+           --        , target "_blank"]
+           --        [ text "règlement intérieur et charte du savoir vivre"]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/fiche inscription Murol.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
                    , target "_blank"]
-                   [ text "fiche d’inscription Murol"]
+                   [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
+                   ]
+           , p [ classList [("intro",True),("displayIntro", showIntro)]]
+               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
+                   , target "_blank"]
+                   [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
                ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/fiche inscription Chambon.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
                    , target "_blank"]
-                   [ text "fiche d’inscription Chambon"]
+                   [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
                ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/fiche inscription St Nectaire.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
                    , target "_blank"]
-                   [ text "fiche d’inscription Saint-Nectaire"]
+                   [ text "Charte du savoir-vivre"]
                ]
-           , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/reglementCharte.pdf"
-                   , target "_blank"]
-                   [ text "règlement intérieur et charte du savoir vivre"]
+
            --, p [ classList [("intro",True),("displayIntro", showIntro)]]
            --    [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
            --        , target "_blank"]
@@ -143,7 +164,7 @@ initialContent =
            --    [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
            --        , target "_blank"]
            --        [ text "charte du savoir vivre"]
-               ]
+           --    ]
 
            , content])
   , tiledMenu =
@@ -200,23 +221,27 @@ peri =
                    , td [] [ text "3,10€"]
                    ]
               ]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
               , target "_blank"]
-              [ text "fiche d’inscription"]
-          ]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
-              , target "_blank"]
-              [ text "règlement intérieur"]
-          ]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
-              , target "_blank"
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
               ]
-              [ text "charte du savoir vivre"]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
+              , target "_blank"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
           ]
-      ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+              , target "_blank"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
+          ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+              , target "_blank"]
+              [ text "Charte du savoir-vivre"]
+          ]
+    ]
     ,"")
   , ("Garderie périscolaire"
     ,"/images/tiles/periscolaire/garderie.jpg"
@@ -251,21 +276,25 @@ peri =
            ]
       , p [] [text "NB : le créneau 16h30/18h est facturé comme 
                     1 heure. "]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
               , target "_blank"]
-              [ text "fiche d’inscription"]
-          ]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
-              , target "_blank"]
-              [ text "règlement intérieur"]
-          ]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
-              , target "_blank"
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
               ]
-              [ text "charte du savoir vivre"]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
+              , target "_blank"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
+          ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+              , target "_blank"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
+          ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
+              , target "_blank"]
+              [ text "Charte du savoir-vivre"]
           ]
       ]
     ,""
@@ -294,48 +323,76 @@ peri =
                   , td [] [text "Mardi et vendredi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Karine Fouquet"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP 2016 MATERNELLE.pdf", target "_blank"] [text "maternelle"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/PROGRAMME TAP MATERNELLE 2017 2018.pdf", target "_blank"] [text "maternelle"]]
                   ]
              , tr []
                   [ td [] [text "Elémentaire de Murol"]
                   , td [] [text "Lundi et jeudi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/tap murol  2017 noël-février.pdf", target "_blank"] [text "Murol"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP murol 2017 rentrée à toussaint-1.pdf", target "_blank"] [text "Murol"]]
                   ]
              , tr []
                   [ td [] [text "Elémentaire du Chambon"]
                   , td [] [text "Lundi et jeudi"]
                   , td [] [text "15h15 à 16h45"]
                   , td [] [text "Karine Fouquet"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP 2016 CHAMBON SUR LAC.pdf", target "_blank"] [text "Chambon"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/PROGRAMME TAP CHAMBON 2017 2018.pdf", target "_blank"] [text "Chambon"]]
                   ]
              , tr []
                   [ td [] [text "Primaire de St Nectaire"]
                   , td [] [text "Mardi et vendredi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/tap St Nect 2017  noël février.pdf", target "_blank"] [text "Saint-Nectaire"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP St Nect 2017 rentrée à toussaint-1.pdf", target "_blank"] [text "Saint-Nectaire"]]
                   ]  
              ]
      , p [] [text "L’inscription est annuelle et la participation
                    des familles est de 12€ par trimestre et par enfant."]   
-     , p []
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL2015-2016.pdf"
+     , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
               , target "_blank"]
-              [ text "fiche d’inscription"]
-          ]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
-              , target "_blank"]
-              [ text "règlement intérieur"]
-          ]
-      , p []
-          [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
-              , target "_blank"
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
               ]
-              [ text "charte du savoir vivre"]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
+              , target "_blank"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
           ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+              , target "_blank"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
+          ]
+     
+      
+      --, p [ ]
+      --    [ a [ href "/baseDocumentaire/periscolaire/TAP murol 2017 rentrée à toussaint-1.pdf"
+      --        , target "_blank"]
+      --        [ text "programme TAP Murol - rentrée à Toussaint"]
+      --    ]
+
+      --, p [ ]
+      --    [ a [ href "/baseDocumentaire/periscolaire/PROGRAMME TAP CHAMBON 2017 2018.pdf"
+      --        , target "_blank"]
+      --        [ text "programme annuel TAP Chambon"]
+      --    ]
+      --, p [ ]
+      --    [ a [ href "/baseDocumentaire/periscolaire/TAP St Nect 2017 rentrée à toussaint-1.pdf"
+      --        , target "_blank"]
+      --        [ text "programme TAP Saint-Nectaire - rentrée à Toussaint"]
+      --    ]
+      --, p [ ]
+      --    [ a [ href "/baseDocumentaire/periscolaire/PROGRAMME TAP MATERNELLE 2017 2018.pdf"
+      --        , target "_blank"]
+      --        [ text "programme TAP Maternelle"]
+      --    ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE TAP 2017 2018.pdf"
+              , target "_blank"]
+              [ text "projet pédagogique TAP"]
+          ]
+     
      ]
     ,""
     )
@@ -427,7 +484,7 @@ peri =
       --             par mois (64€ par mois pour les élèves 
       --             non subventionnés)."] 
       ]
-    ,"http://www.puydedome.com/Colleges/Transport_scolaire-46427_67331.html?1=1"
+    ,"http://www.puy-de-dome.fr/transports/transports-scolaires/bus-scolaire.html"
     )
   , ("Activités jeunesse de la communauté de communes"
     ,"/images/tiles/periscolaire/actiJeunesse.jpg"

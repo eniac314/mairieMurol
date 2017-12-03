@@ -144,17 +144,9 @@ seniors =
                      bus des montagnes"]
       , p  [] [text "Ce service propose des activités, déplacements et voyages 
                     à l’ensemble des seniors du territoire. "]
-      , text "Au programme pour 2016 : "
-      , ul []
-         [ li [] [text "une randonnée au lac Chambon et visite 
-                        du musée des Peintres"]
-         , li [] [text "5 séances de piscine"]
-         , li [] [text "des animations « belote » "]
-         , li [] [text "une sortie au sommet de l’élevage "]
-         , li [] [text "La journée des seniors"]
-         , li [] [text "Le marché de Noël à Clermont-Ferrand "]
-         , li [] [text "La foire de Brion"]
-         ]
+      , text "Au programme pour 2017 : "
+      , a [href "baseDocumentaire/animation/animations SIVOM 2017.pdf", target "_blank"]
+          [text "voir le programme 2017"]
       , p []
           [ text "pour tout renseignement
                   contactez le "

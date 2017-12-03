@@ -63,7 +63,6 @@ type alias News =
 --  { current : String 
 --  , entries : List String
 --  }  
-
 emptyNews = News "" (Err "") nullTag Nothing False 0 (Err "")
 
 tag i n xs =
@@ -158,11 +157,11 @@ update action model =
 
 renderContent n1 address = 
   div [ class "subContainerData", id "index"]
-      [ renderNewsList address "Actualités de la commune" n1
+      [ renderSearch
+      , renderNewsList address "Actualités de la commune" n1
       , renderListImg logos
       , renderMisc
       ]
-
 
 
 renderNewsList : Signal.Address Action -> String -> List News -> Html
@@ -170,7 +169,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le vendredi 08 septembre 2017"]
+            [text "Dernière mise à jour le lundi 23 octobre 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -208,7 +207,25 @@ renderNews address { title, date, descr, pic, drop, id, expiry} =
       , body
       ]
 
-
+renderSearch = 
+  div []
+      [ h4 [] [text "RECHERCHER SUR LE SITE"]
+      , iframe [ src "search.html"
+               , id "searchIframe" 
+             --, width 
+               , height 46
+               , attribute "frameborder" "0" --(Json.Encode.string "0")
+               --, attribute "scrolling" "no"
+               --, attribute "onload" "resizeIframe(this);"
+               --, attribute "allowfullscreen" "true"--(Json.Encode.string "true")
+            , style [ ("width", "100%")
+                    --, ("height","100%")
+                    --, ("overflow","hidden")
+                    --, ("max_height","200px")
+                    ]
+            ]
+            []
+      ]
 
 renderNewsLetter news =
   let toNews (content,address) =
@@ -1730,6 +1747,135 @@ news =
                  ]
    , expiry = Date.fromString "09/31/2017"
    }
+  ,{ emptyNews |
+     title = "Emplois saisonniers"
+   , date  = Date.fromString "09/20/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le forum des emplois saisonniers se tiendra le jeudi 5 octobre de 14 à 17h à Besse"
+                    ]
+                 , a [href "/baseDocumentaire/forum besse.pdf"]
+                     [text "Lien ici"]   
+                 ]
+   , expiry = Date.fromString "10/06/2017"
+   }
+   ,{ emptyNews |
+     title = "Fermetures exceptionnelles du musée des peintres"
+   , date  = Date.fromString "10/07/2017"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [text "Pour raison de formation, le musée des peintres sera fermé :"
+                     ]
+                 , ul []
+                      [ li [] [text "lundi 9/10 : MATIN"]
+                      , li [] [text "mardi 17/10 : MATIN"]
+                      , li [] [text "mardi 24/10 : JOURNÉE"]
+                      ]   
+                 ]
+   , expiry = Date.fromString "10/25/2017"
+   }
+   ,{ emptyNews |
+     title = "Fermeture exceptionnelle de l'office de tourisme"
+   , date  = Date.fromString "10/07/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Nous vous informons que les services des Offices de
+                           Tourisme du Massif du Sancy seront exceptionnellement fermés du lundi 9 au mercredi 11/10 inclus.
+                           Ré-ouverture au public jeudi 12 octobre à 9h."
+                    ]
+                 ]
+   , expiry = Date.fromString "10/13/2017"
+   }
+   ,{ emptyNews |
+     title = "Actions en faveur des malades de la mémoire et des aidants"
+   , date  = Date.fromString "10/11/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "La Plateforme de répit 63 organise des ateliers gratuits à la Bourboule pour les personnes
+                           atteintes d'une maladie de la mémoire."
+                    ]
+                 , a [href "baseDocumentaire/Ateliers mémoire.pdf", target "_blank"]
+                     [text "Voir le planning"]
+                 , p []
+                     [text "Les aidants peuvent bénéficier d'un soutien psychologique gratuit à domicile."
+                     ]
+                 , a [href "baseDocumentaire/SOUTIEN PSYCHOLOGIQUE.pdf" , target "_blank"]
+                     [text "Voir la brochure"]   
+                 
+                 ]
+   , expiry = Date.fromString "12/31/2017"
+   }
+   ,{ emptyNews |
+     title = "Octobre rose 2017, prévention du cancer du sein"
+   , date  = Date.fromString "10/11/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Un ciné- débat gratuit est organisé à Besse par l'ARDOC,
+                           la CAMIEG et le CLIC jeudi 19 octobre à 20h."
+                    ]
+                 , a [href "baseDocumentaire/OCTOBRE ROSE.pdf", target "_blank"]
+                     [text "Communiqué de presse"]   
+                 ]
+   , expiry = Date.fromString "10/21/2017"
+   }
+   ,{ emptyNews |
+     title = "A la Toussaint, devenez chevalier de Murol !"
+   , date  = Date.fromString "10/23/2017"
+   , descr = div [class "newsdescr"]
+                 [ h6 [] [text "Intégrez l’école de chevalerie
+                                de Jean de Murol et devenez chevalier du château !"]
+                 , p []
+                    [text "Pendant les vacances de la Toussaint, Messire Jean de Murol
+                           vous invite à rejoindre ses rangs et à intégrer son école de chevalerie. "
+                    ]
+                 , p []
+                     [ text "Durant cette animation encadrée par ces deux fidèles sergents d’armes,
+                             notre vaillant cavalier montrera l’exemple aux enfants en exécutant des
+                             démonstrations de joutes, de combats à l’épée et d’exercices équestres."
+                     ]
+                 , p []
+                     [text "Petits et grands pourront assister à ces démonstrations de cavalerie.
+                            Les enfants qui participeront seront choisis par nos animateurs et auront
+                            entre 6 et 13 ans. "
+                     , br [] []
+                     , text "Tous les jours sauf le samedi 28 octobre, à 12h, 14h45, 15h45, 16h45."
+                     , br [] []
+                     , text "Durée : environ 30 minutes."
+                     ]
+                 , p [] 
+                     [text "Venez également découvrir la vie quotidienne d’une seigneurie auvergnate
+                            en l’an de grâce 1417 en suivant les habitants de la seigneurie de
+                            Guillaume : Guillemette, sa cuisinière ou encore Maître Jean,
+                            riche laboureur."
+                      ]
+                 , p [] [text "Visites guidées tous les jours à 11h, 14h, 15h, 16h et 17h."
+                        , br [] []
+                        , text "Durée : environ 1h."
+                        ]
+                 , a [href "http://murolchateau.com/", target "_blank"]
+                     [text "Site officiel du château de Murol"]   
+                 ]
+   , expiry = Date.fromString "11/06/2017"
+   }
+  ,{ emptyNews |
+     title = "Navette Azureva entre Murol et Besse/Super-Besse"
+   , date  = Date.fromString "10/23/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Navette proposée par le village-vacances
+                          Azureva-Murol pour accéder en toute
+                          tranquillité et sécurité aux pistes de ski de Besse
+                          et Super-Besse."
+                    ]
+                 , p []
+                     [text "Du lundi au samedi, du 12 février au 10
+                            mars 2018"
+                     ]
+                 , a [href "/baseDocumentaire/Navette Azureva Murol - Superbesse fevrier 2018.pdf", target "_blank"]
+                     [text "Horaires et infos pratiques"]   
+                 ]
+   , expiry = Date.fromString "03/11/2018"
+   }      
   --,{ emptyNews |
   --   title = ""
   -- , date  = Date.fromString ""
@@ -1737,19 +1883,7 @@ news =
   --               [p []
   --                  [text ""
   --                  ]
-  --               , a [href ""]
-  --                   [text "Lien ici"]   
-  --               ]
-  -- , expiry = Date.fromString ""
-  -- }
-  --,{ emptyNews |
-  --   title = ""
-  -- , date  = Date.fromString ""
-  -- , descr = div [class "newsdescr"]
-  --               [p []
-  --                  [text ""
-  --                  ]
-  --               , a [href ""]
+  --               , a [href "", target "_blank"]
   --                   [text "Lien ici"]   
   --               ]
   -- , expiry = Date.fromString ""

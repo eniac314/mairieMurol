@@ -169,8 +169,7 @@ initialContent =
                      , a [href "/Animation.html"]
                          [text "grandes manifestations"]
                      , text " à destination d’un public 
-                             familial. Chaque dimanche de la saison estivale, participez à une visite insolite du bourg 
-                             en suivant Monsieur Alphonse…"
+                             familial."
                      ]
               , img [src "/images/prélong.JPG", id "bourg2"] []
               , img [src "/images/museePeintre.jpeg", id "bourg3"] []
@@ -202,12 +201,12 @@ initialContent =
                             est géré par un délégataire. "]
               , p [] [text "C'est le château le plus visité d’Auvergne. Il 
                            attire plus de 100 000 visiteurs par an 
-                           qui peuvent profiter de "
+                           qui peuvent profiter découvrir cette forteresse lors de  "
                      , a [target "_blank", href "http://murolchateau.com/"]
                          [text "visites simples ou animées"]  
-                     ,text ", de saynètes et de démonstrations. Paysans, hommes d´armes, 
-                           gentes dames et chevaliers vous font découvrir la 
-                           vie d´une châtellenie au XIIIe siècle! "
+                     ,text ". Immergez-vous dans le quotidien de Guillaume de Murol
+                             au fil des salles reconstituées. Profitez des anecdotes
+                             et apports historiques de Guillemette ou  de Maître Jean."
                      ]
               , p [] [text "Depuis plusieurs années, des "
                      ,a [target "_blank", href "https://sites.google.com/site/murolarcheoancien"]
@@ -215,9 +214,7 @@ initialContent =
                      ,text " sont conduites 
                            au château et sur l’ensemble de la commune 
                            afin de retracer l’histoire de ce territoire dont 
-                           de "
-                     ,a [href "", target "_blank"] [text "nombreux vestiges"]
-                     ,text " témoignent d’une occupation gauloise (dolmen) 
+                           de nombreux vestiges témoignent d’une occupation gauloise (dolmen) 
                            et gallo-romaine (villa et fanum). Elles sont menées 
                            par Dominique Allios, maître de conférences en archéologie 
                            et histoire de l’Art, et son équipe d’étudiants. 
@@ -266,13 +263,13 @@ initialContent =
                            où les agriculteurs affinent le Saint-Nectaire. "]
               , p [] [text "Chaque lundi de la saison estivale, 
                            découvrez le patrimoine et les savoir-faire de ce 
-                           village avec Michel Tardif. "]
+                           village avec Jean-Paul Pasdeloup."]
               , p [] [text "Début juillet, la foire du Saint-Nectaire vous 
                            permettra de rencontrer les producteurs de fromage et 
                            d’autres produits du terroir. Bonne dégustation! "]
-              , p [] [text "L’hiver, pratiquez le ski de fond ou la 
-                           randonnée en raquettes sur les pistes du domaine 
-                           nordique de la forêt de Beaune-le-Froid. "] 
+              , p [] [text "L’hiver, profitez librement des circuits balisés
+                            non damés de la forêt de Beaune-le-Froid, en raquette
+                            ou ski de randonnée nordique. "] 
               ]
             )
             ,
@@ -326,8 +323,29 @@ initialContent =
                              de baignade surveillée en juillet août vous
                              offrent une plage à la montagne ! 
                              Vous pourrez aussi pratiquer diverses activités en famille 
-                             : pédalos, mini-golf, jeux pour enfants, pêche (site 
+                             : pique-nique, barques, pédalos, mini-golf, jeux pour enfants,
+                             jeux collectifs sur le terrain multisport, pêche (site 
                              de deuxième catégorie), promenades… "]
+              , img [src "/images/picLac03.jpg"
+                    , style [("margin-right","1em")
+                            --,("height","170px")
+                            ,("max-width","26.1%")
+                            ]
+                    ]
+                    []
+              , img [ src "/images/picLac01.jpg"
+                    , style [("margin-right","1em")
+                            --,("height","170px")
+                            ,("max-width","29.1%")
+                            ]
+                    ]
+                    []
+              , img [src "/images/picLac02.jpg"
+                    , style [("margin-right","1em")
+                            --,("height","170px")
+                            ,("max-width","36.5%")
+                            ]
+                    ] []
               , p [] [ text "La commune de Murol a obtenu le label Pavillon Bleu en 2016.
                             Ce label international récompense les communes qui veillent
                             à la qualité de leurs eaux de baignade mais aussi qui s'inscrivent

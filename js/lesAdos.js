@@ -11274,8 +11274,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11382,12 +11381,7 @@ Elm.LesAdos.make = function (_elm) {
                    _U.list([]),
                    _U.list([A2($Html.a,
                    _U.list([$Html$Attributes.href("/baseDocumentaire/ados/Dossier d\'inscription argent de poche.pdf"),$Html$Attributes.target("_blank")]),
-                   _U.list([$Html.text("Dossier inscription argent de poche")]))]))
-                   ,A2($Html.p,
-                   _U.list([]),
-                   _U.list([A2($Html.a,
-                   _U.list([$Html$Attributes.href("/baseDocumentaire/ados/plaquette printemps 2017 argent de poche.pdf"),$Html$Attributes.target("_blank")]),
-                   _U.list([$Html.text("Plaquette printemps 2017 argent de poche")]))]))]))]));
+                   _U.list([$Html.text("Dossier inscription argent de poche")]))]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);

@@ -11009,6 +11009,277 @@ Elm.StartApp.Simple.make = function (_elm) {
    var Config = F3(function (a,b,c) {    return {model: a,view: b,update: c};});
    return _elm.StartApp.Simple.values = {_op: _op,Config: Config,start: start};
 };
+Elm.UrlParsing = Elm.UrlParsing || {};
+Elm.UrlParsing.make = function (_elm) {
+   "use strict";
+   _elm.UrlParsing = _elm.UrlParsing || {};
+   if (_elm.UrlParsing.values) return _elm.UrlParsing.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm);
+   var _op = {};
+   var putSpaces = function (xs) {    var xs$ = A2($String.split,"%20",xs);return A2($String.join," ",xs$);};
+   var firstOccurrence = F2(function (c,s) {
+      var _p0 = A2($String.indexes,$String.fromChar(c),s);
+      if (_p0.ctor === "[]") {
+            return $Maybe.Nothing;
+         } else {
+            return $Maybe.Just(_p0._0);
+         }
+   });
+   var splitAtFirst = F2(function (c,s) {
+      var _p1 = A2(firstOccurrence,c,s);
+      if (_p1.ctor === "Nothing") {
+            return {ctor: "_Tuple2",_0: s,_1: ""};
+         } else {
+            var _p2 = _p1._0;
+            return {ctor: "_Tuple2",_0: A2($String.left,_p2,s),_1: A2($String.dropLeft,_p2 + 1,s)};
+         }
+   });
+   var parseParams = function (stringWithAmpersands) {
+      var eachParam = A2($String.split,"&",stringWithAmpersands);
+      var eachPair = A2($List.map,splitAtFirst(_U.chr("=")),eachParam);
+      var _p3 = $List.head(eachPair);
+      if (_p3.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p3._0.ctor === "_Tuple2" && _p3._0._0 === "bloc") {
+                  return _p3._0._1;
+               } else {
+                  return "";
+               }
+         }
+   };
+   var getTitle = function (urlParams) {
+      var _p4 = $String.uncons(urlParams);
+      if (_p4.ctor === "Nothing") {
+            return "";
+         } else {
+            if (_p4._0.ctor === "_Tuple2" && _p4._0._0.valueOf() === "?") {
+                  return parseParams(putSpaces(_p4._0._1));
+               } else {
+                  return "";
+               }
+         }
+   };
+   return _elm.UrlParsing.values = {_op: _op
+                                   ,getTitle: getTitle
+                                   ,parseParams: parseParams
+                                   ,splitAtFirst: splitAtFirst
+                                   ,firstOccurrence: firstOccurrence
+                                   ,putSpaces: putSpaces};
+};
+Elm.TiledMenu = Elm.TiledMenu || {};
+Elm.TiledMenu.make = function (_elm) {
+   "use strict";
+   _elm.TiledMenu = _elm.TiledMenu || {};
+   if (_elm.TiledMenu.values) return _elm.TiledMenu.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Dict = Elm.Dict.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $Html$Events = Elm.Html.Events.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm),
+   $UrlParsing = Elm.UrlParsing.make(_elm);
+   var _op = {};
+   var getByTitle = F2(function (s,m) {
+      var d$ = A2($Dict.filter,
+      F2(function (k,_p0) {    var _p1 = _p0;return _U.eq(function (_) {    return _.title;}(_p1._0),s);}),
+      function (_) {
+         return _.menuData;
+      }(m));
+      var ids = $Dict.keys(d$);
+      var _p2 = $List.head(ids);
+      if (_p2.ctor === "Nothing") {
+            return $Result.toMaybe($String.toInt(s));
+         } else {
+            return $Maybe.Just(_p2._0);
+         }
+   });
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var ShowMenu = {ctor: "ShowMenu"};
+   var ShowTile = function (a) {    return {ctor: "ShowTile",_0: a};};
+   var view = F2(function (address,model) {
+      var _p3 = model.current;
+      if (_p3.ctor === "Menu") {
+            var toDivs = F3(function (_p5,_p4,acc) {
+               var _p6 = _p4;
+               var _p7 = _p6._0;
+               var title = _p7.title;
+               var iD = _p7.iD;
+               var picture = _p7.picture;
+               var link = _p7.link;
+               var attr = function () {
+                  var _p8 = link;
+                  if (_p8.ctor === "Nothing") {
+                        return _U.list([$Html$Attributes.$class("tile")
+                                       ,$Html$Attributes.href("#")
+                                       ,$Html$Attributes.id("tiledMenuTop")
+                                       ,A2($Html$Events.onClick,address,ShowTile(iD))]);
+                     } else {
+                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p8._0),$Html$Attributes.id("tiledMenuTop")]);
+                     }
+               }();
+               var picture$ = $String.isEmpty(picture) ? "/images/tiles/hebergements/placeholder.jpg" : picture;
+               var htmlTile = A2($Html.a,
+               attr,
+               _U.list([A2($Html.figure,
+               _U.list([]),
+               _U.list([A2($Html.img,_U.list([$Html$Attributes.src(picture$)]),_U.list([]))
+                       ,A2($Html.div,
+                       _U.list([$Html$Attributes.$class("captionWrapper")]),
+                       _U.list([A2($Html.figcaption,_U.list([]),_U.list([$Html.text(title)]))]))]))]));
+               return A2($List._op["::"],htmlTile,acc);
+            });
+            var tiles = A3($Dict.foldr,toDivs,_U.list([]),model.menuData);
+            return A2($Html.div,_U.list([$Html$Attributes.$class("tiledMenu")]),tiles);
+         } else {
+            return A2($Html.div,
+            _U.list([$Html$Attributes.$class("selected")]),
+            _U.list([_p3._0
+                    ,A2($Html.a,
+                    _U.list([$Html$Attributes.href("#tiledMenuTop"),A2($Html$Events.onClick,address,ShowMenu),$Html$Attributes.id("backToTiledMenu")]),
+                    _U.list([$Html.text("Revenir au menu")]))
+                    ,function (_) {
+                       return _.photoLink;
+                    }(model) ? A2($Html.a,
+                    _U.list([$Html$Attributes.href("/Photothèque.html"),$Html$Attributes.id("photoLink")]),
+                    _U.list([$Html.text("Photothèque")])) : nullTag]));
+         }
+   });
+   var Content = function (a) {    return {ctor: "Content",_0: a};};
+   var Menu = {ctor: "Menu"};
+   var Tile = F4(function (a,b,c,d) {    return {title: a,iD: b,picture: c,link: d};});
+   var nullTile = A4(Tile,"",0,"",$Maybe.Nothing);
+   var update = F2(function (action,model) {
+      var _p9 = action;
+      if (_p9.ctor === "ShowTile") {
+            var _p10 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p9._0,model.menuData));
+            var newContent = _p10._1;
+            return _U.update(model,{current: Content(newContent)});
+         } else {
+            return _U.update(model,{current: Menu});
+         }
+   });
+   var Model = F3(function (a,b,c) {    return {current: a,menuData: b,photoLink: c};});
+   var init = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p11) {
+         var _p12 = _p11;
+         var _p14 = _p12._0._0;
+         var _p13 = _p12._1;
+         return {ctor: "_Tuple2"
+                ,_0: _p13
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A4(Tile,_p14,_p13,_p12._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p14)])),_p12._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A3(Model,Menu,$Dict.fromList(xs$),false);
+   };
+   var initAt = F2(function (urlParams,xs) {
+      var model = init(xs);
+      var title = $UrlParsing.getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p15 = maybeId;
+      if (_p15.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p15._0),model);
+         }
+   });
+   var initWithLink = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p16) {
+         var _p17 = _p16;
+         var _p20 = _p17._0._0;
+         var _p19 = _p17._0._3;
+         var _p18 = _p17._1;
+         var l$ = $String.isEmpty(_p19) ? $Maybe.Nothing : $Maybe.Just(_p19);
+         return {ctor: "_Tuple2"
+                ,_0: _p18
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A4(Tile,_p20,_p18,_p17._0._1,l$)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p20)])),_p17._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A3(Model,Menu,$Dict.fromList(xs$),false);
+   };
+   var initAtWithLink = F2(function (urlParams,xs) {
+      var model = initWithLink(xs);
+      var title = $UrlParsing.getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p21 = maybeId;
+      if (_p21.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p21._0),model);
+         }
+   });
+   var initPhoto = function (xs) {
+      var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
+      var n = $List.length(xs);
+      var xs$ = A2($List.map,
+      function (_p22) {
+         var _p23 = _p22;
+         var _p25 = _p23._0._0;
+         var _p24 = _p23._1;
+         return {ctor: "_Tuple2"
+                ,_0: _p24
+                ,_1: {ctor: "_Tuple2"
+                     ,_0: A4(Tile,_p25,_p24,_p23._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p25)])),_p23._0._2))}};
+      },
+      A2(zip,xs,_U.range(0,n)));
+      return A3(Model,Menu,$Dict.fromList(xs$),true);
+   };
+   var initAtPhoto = F2(function (urlParams,xs) {
+      var model = initPhoto(xs);
+      var title = $UrlParsing.getTitle(urlParams);
+      var maybeId = A2(getByTitle,title,model);
+      var _p26 = maybeId;
+      if (_p26.ctor === "Nothing") {
+            return model;
+         } else {
+            return A2(update,ShowTile(_p26._0),model);
+         }
+   });
+   return _elm.TiledMenu.values = {_op: _op
+                                  ,Model: Model
+                                  ,Tile: Tile
+                                  ,Menu: Menu
+                                  ,Content: Content
+                                  ,init: init
+                                  ,initAt: initAt
+                                  ,initAtPhoto: initAtPhoto
+                                  ,initAtWithLink: initAtWithLink
+                                  ,initWithLink: initWithLink
+                                  ,initPhoto: initPhoto
+                                  ,ShowTile: ShowTile
+                                  ,ShowMenu: ShowMenu
+                                  ,update: update
+                                  ,view: view
+                                  ,maybeElem: maybeElem
+                                  ,nullTile: nullTile
+                                  ,nullTag: nullTag
+                                  ,getByTitle: getByTitle};
+};
 Elm.Utils = Elm.Utils || {};
 Elm.Utils.make = function (_elm) {
    "use strict";
@@ -11274,8 +11545,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11346,6 +11616,140 @@ Elm.Utils.make = function (_elm) {
                               ,zip: zip
                               ,shuffle: shuffle};
 };
+Elm.StarTable = Elm.StarTable || {};
+Elm.StarTable.make = function (_elm) {
+   "use strict";
+   _elm.StarTable = _elm.StarTable || {};
+   if (_elm.StarTable.values) return _elm.StarTable.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $String = Elm.String.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
+   var _op = {};
+   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
+   var labelToHtml = function (l) {    var _p0 = l;if (_p0.ctor === "NoLabel") {    return nullTag;} else {    return nullTag;}};
+   var maybeElem = F2(function (s,f) {    return $String.isEmpty(s) ? nullTag : f(s);});
+   var TableEntry = function (a) {
+      return function (b) {
+         return function (c) {
+            return function (d) {
+               return function (e) {
+                  return function (f) {
+                     return function (g) {
+                        return function (h) {
+                           return function (i) {
+                              return function (j) {
+                                 return function (k) {
+                                    return function (l) {
+                                       return function (m) {
+                                          return {name: a,label: b,stars: c,epis: d,refOt: e,descr: f,addr: g,tel: h,fax: i,mail: j,site: k,pjaun: l,pics: m};
+                                       };
+                                    };
+                                 };
+                              };
+                           };
+                        };
+                     };
+                  };
+               };
+            };
+         };
+      };
+   };
+   var NoLabel = {ctor: "NoLabel"};
+   var emptyTe = TableEntry("")(NoLabel)($Maybe.Nothing)("")($Maybe.Nothing)(_U.list([]))("")("")("")("")("")("")(_U.list([]));
+   var FamillePlus = {ctor: "FamillePlus"};
+   var addStars = F3(function (n,e,s) {
+      var go = function (n) {    return _U.eq(n,0) ? "" : A2($Basics._op["++"],"★",go(n - 1));};
+      var _p1 = n;
+      if (_p1.ctor === "Nothing") {
+            return $String.isEmpty(e) ? $Html.text(s) : A2($Html.span,
+            _U.list([]),
+            _U.list([$Html.text(A2($Basics._op["++"],s," - ")),A2($Html.span,_U.list([$Html$Attributes.$class("epis")]),_U.list([$Html.text(e)]))]));
+         } else {
+            return A2($Html.span,
+            _U.list([]),
+            _U.list([$Html.text(A2($Basics._op["++"],s," ")),A2($Html.span,_U.list([$Html$Attributes.$class("stars")]),_U.list([$Html.text(go(_p1._0))]))]));
+         }
+   });
+   var makeRow = F2(function (_p2,alt) {
+      var _p3 = _p2;
+      var alt$ = alt ? "altLine" : "Line";
+      var pics$ = A2($Html.div,_U.list([]),A2($List.map,function (s) {    return A2($Html.img,_U.list([$Html$Attributes.src(s)]),_U.list([]));},_p3.pics));
+      var fax$ = A2(maybeElem,_p3.fax,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Fax : ",s))]));});
+      var tel$ = A2(maybeElem,_p3.tel,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(A2($Basics._op["++"],"Tel. ",s))]));});
+      var refOt$ = function () {
+         var _p4 = _p3.refOt;
+         if (_p4.ctor === "Nothing") {
+               return nullTag;
+            } else {
+               return A2($Html.p,
+               _U.list([]),
+               _U.list([$Html.text("Référence OT: ")
+                       ,A2($Html.a,_U.list([$Html$Attributes.href(_p4._0._1),$Html$Attributes.target("_blank")]),_U.list([$Html.text(_p4._0._0)]))]));
+            }
+      }();
+      var descr$ = A2($List.map,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));},_p3.descr);
+      var pjaun$ = A2(maybeElem,
+      _p3.pjaun,
+      function (s) {
+         return A2($Html.p,_U.list([]),_U.list([$Html.text("Pages Jaunes: "),A2($Html.a,_U.list([$Html$Attributes.href(s)]),_U.list([$Html.text(s)]))]));
+      });
+      var site$ = A2(maybeElem,
+      _p3.site,
+      function (s) {
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("site: ")
+                 ,A2($Html.a,_U.list([$Html$Attributes.href(s),$Html$Attributes.target("_blank")]),_U.list([$Html.text($Utils.prettyUrl(s))]))]));
+      });
+      var mail$ = A2(maybeElem,
+      _p3.mail,
+      function (s) {
+         return A2($Html.p,
+         _U.list([]),
+         _U.list([$Html.text("e.mail: "),A2($Html.a,_U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:",s))]),_U.list([$Html.text(s)]))]));
+      });
+      var addr$ = A2(maybeElem,_p3.addr,function (s) {    return A2($Html.p,_U.list([]),_U.list([$Html.text(s)]));});
+      var label$ = labelToHtml(_p3.label);
+      var name$ = A2($Html.h6,_U.list([]),_U.list([A3(addStars,_p3.stars,_p3.epis,_p3.name)]));
+      return A2($Html.tr,
+      _U.list([$Html$Attributes.$class(alt$)]),
+      _U.list([A2($Html.td,
+              _U.list([]),
+              A2($Basics._op["++"],_U.list([name$,label$,refOt$]),A2($Basics._op["++"],descr$,_U.list([addr$,tel$,fax$,mail$,site$,pjaun$]))))
+              ,A2($Html.td,_U.list([]),_U.list([pics$]))]));
+   });
+   var makeTable = F2(function (name,entries) {
+      var makeRows = F2(function (b,xs) {
+         var _p5 = xs;
+         if (_p5.ctor === "[]") {
+               return _U.list([]);
+            } else {
+               return A2($List._op["::"],A2(makeRow,_p5._0,b),A2(makeRows,$Basics.not(b),_p5._1));
+            }
+      });
+      return A2($Html.table,_U.list([$Html$Attributes.id(name)]),A2(makeRows,true,entries));
+   });
+   return _elm.StarTable.values = {_op: _op
+                                  ,addStars: addStars
+                                  ,FamillePlus: FamillePlus
+                                  ,NoLabel: NoLabel
+                                  ,TableEntry: TableEntry
+                                  ,emptyTe: emptyTe
+                                  ,makeTable: makeTable
+                                  ,makeRow: makeRow
+                                  ,maybeElem: maybeElem
+                                  ,nullTag: nullTag
+                                  ,labelToHtml: labelToHtml};
+};
 Elm.Animation = Elm.Animation || {};
 Elm.Animation.make = function (_elm) {
    "use strict";
@@ -11356,190 +11760,203 @@ Elm.Animation.make = function (_elm) {
    $Debug = Elm.Debug.make(_elm),
    $Html = Elm.Html.make(_elm),
    $Html$Attributes = Elm.Html.Attributes.make(_elm),
-   $Html$Events = Elm.Html.Events.make(_elm),
    $List = Elm.List.make(_elm),
    $Maybe = Elm.Maybe.make(_elm),
    $Result = Elm.Result.make(_elm),
    $Signal = Elm.Signal.make(_elm),
    $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm),
    $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var Drop = function (a) {    return {ctor: "Drop",_0: a};};
-   var NoOp = {ctor: "NoOp"};
-   var nullTag = A2($Html.span,_U.list([$Html$Attributes.style(_U.list([{ctor: "_Tuple2",_0: "display",_1: "none"}]))]),_U.list([]));
-   var insertDrop = F3(function (address,ds,n) {
-      var drop$ = $List.head(A2($List.filter,function (d) {    return _U.eq(function (_) {    return _.id;}(d),n);},ds));
-      var content = function () {
-         var _p0 = drop$;
-         if (_p0.ctor === "Nothing") {
-               return nullTag;
-            } else {
-               var _p1 = _p0._0.drop;
-               var arrow = _p1 ? A2($Html.img,_U.list([$Html$Attributes.src("/images/uArrow.jpeg")]),_U.list([])) : A2($Html.img,
-               _U.list([$Html$Attributes.src("/images/dArrow.jpeg")]),
-               _U.list([]));
-               var body$ = _p1 ? A2($Html.div,_U.list([$Html$Attributes.$class("dropBody")]),_p0._0.body) : nullTag;
-               return A2($Html.div,
-               _U.list([$Html$Attributes.$class("dropable")]),
-               _U.list([A2($Html.div,
-                       _U.list([$Html$Attributes.$class("dropHeader")]),
-                       _U.list([A2($Html.span,_U.list([$Html$Attributes.$class("arrow")]),_U.list([arrow])),_p0._0.intro(address)]))
-                       ,body$]));
-            }
-      }();
-      return content;
+   var anim = _U.list([{ctor: "_Tuple4"
+                       ,_0: "Médiévales de Murol"
+                       ,_1: "/images/tiles/animation/medievales.jpg"
+                       ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Date: Pont de l’Ascension")]))
+                                    ,A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Cette manifestation, organisée par la mairie de \n                    Murol et des associations partenaires, \n                    a lieu chaque année durant le week-end de \n                    l’Ascension.")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                    rues de Murol vivent au rythme du Moyen-âge \n                    avec pour décor un campement médiéval, des danses, \n                    des spectacles médiévaux, ainsi que des artisans tout \n                    droit sortis du Moyen-âge. Immersion garantie !")]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Expo temporaire du musée des peintres"
+                       ,_1: "/images/tiles/animation/expoMusée.jpg"
+                       ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Date: saison estivale")]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("site officiel")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Chaque année, le dernier week-end de mai,\n                   la commune organise le vernissage d’une \n                   exposition temporaire inédite au musée des Peintres de \n                   l’Ecole de Murols. \n                   L’exposition reste en place jusqu’au 31 octobre. L’objectif \n                   est de regrouper et de présenter pendant quelques \n                   mois les œuvres de l’un des peintres majeurs \n                   de l’Ecole de Murols.")]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Horizons, Arts nature en Sancy"
+                       ,_1: "/images/tiles/animation/horizon.jpg"
+                       ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Date: saison estivale")]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("http://www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("site officiel")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Cette manifestation culturelle est organisée par la communauté \n                    de communes du massif du Sancy. La commune \n                    de Murol soutient cet événement en tant que \n                    membre de la communauté de communes et a \n                    déjà accueilli de nombreuses œuvres sur son territoire.")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Les œuvres éphémères sont installées de juin à \n                    septembre sur des sites naturels. Cette manifestation prend \n                    une ampleur considérable qui dépasse le cadre régional \n                    et même national. ")]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Fête de la révolution"
+                       ,_1: "/images/tiles/animation/feu d\'artifice.jpg"
+                       ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Date: 14 juillet")]))
+                                    ,A2($Html.a,_U.list([$Html$Attributes.href("/14Juillet.html")]),_U.list([$Html.text("lien photothèque")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("La municipalité de Murol, en partenariat avec différentes \n                    associations de la commune, organise le 14 juillet \n                    dans les rues de Murol. ")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("En journée : reconstitution en costumes d’époque de la Révolution française, \n                    animations de rues, cavalcade, et taverne révolutionnaire. ")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Le soir : défilé costumé suivi du feu \n                    d’artifice tiré du château de Murol et du \n                    bal des pompiers. ")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Vous souhaitez prendre part activement à la fête \n                    ? Louez un costume ! Renseignement à la \n                    mairie de Murol")]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Festival d\'Art"
+                       ,_1: "/images/tiles/animation/festivalArt.jpg"
+                       ,_2: _U.list([A2($Html.h5,_U.list([]),_U.list([$Html.text("Date: été")]))
+                                    ,A2($Html.a,_U.list([$Html$Attributes.href("/FestivalArt.html")]),_U.list([$Html.text("lien photothèque")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Le service animation de la mairie organise chaque \n                    été le festival d’Art.")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Ce festival regroupe de très nombreux artistes et \n                    artisans d’art venus de tous horizons. Leurs \n                    œuvres envahissent les rues et places de Murol \n                    durant une journée d’été riche en couleurs. Petits \n                    et grands déambulent accompagnés par les animations de \n                    rue jusqu’au soir où ils peuvent partager l’ambiance \n                    festive du concert de clôture.")]))
+                                    ,A2($Html.p,
+                                    _U.list([]),
+                                    _U.list([$Html.text("Vous voulez venir présenter vos œuvres ? Contactez \n                    la mairie au 04 73 88 60 67 \n                    ou par mail à ")
+                                            ,A2($Html.a,
+                                            _U.list([$Html$Attributes.href("mailto:murolanimation@orange.fr")]),
+                                            _U.list([$Html.text("murolanimation@orange.fr")]))]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Animation estivale pour tous"
+                       ,_1: "/images/tiles/animation/animation estivale.jpg"
+                       ,_2: _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La saison estivale est riche de nombreuses animations!")]))
+                                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Programmes des mois de juillet et août 2017: ")]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 1 juillet 2017.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("programme 9 - 21 juillet")]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 2 juillet 2017.pdf")
+                                            ,$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("programme 23 juillet - 5 août")]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme3 aout 2017.pdf"),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("programme 6 - 18 août")]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 4 aout 2017.pdf"),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("programme 20 août - 1 septembre")]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/expos estivales 2017.pdf"),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("Les expos estivales 2017")]))
+                                    ,A2($Html.a,
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/affiche14juillet2017.pdf"),$Html$Attributes.target("_blank")]),
+                                    _U.list([$Html.text("programme 14 juillet 2017")]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
+                                    ,A2($Html.img,_U.list([$Html$Attributes.src("/images/illustration animations estivales.jpg")]),_U.list([]))])
+                       ,_3: ""}]);
+   var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
+   "String",
+   function (v) {
+      return typeof v === "string" || typeof v === "object" && v instanceof String ? v : _U.badPort("a string",v);
    });
+   var initialContent = {wrapper: F2(function (content,showIntro) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("periscolaire")]),
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Animation")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
+                                                                               ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+                                   _U.list([$Html.text("La commune de Murol, riche d’un service animation \n                      municipal et d’une trentaine d’associations dynamiques, offre diverses \n                      animations à sa population locale et à ses \n                      visiteurs tout au long de l’année. Voir le \n                      calendrier ci-dessous.")]))
+                                   ,A2($Html.p,
+                                   _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
+                                                                               ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+                                   _U.list([$Html.text("De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent \n                      au cours de l’année à Murol.")]))
+                                   ,content
+                                   ,A2($Html.h4,
+                                   _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
+                                                                               ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+                                   _U.list([$Html.text("Calendrier")]))
+                                   ,A2($Html.div,
+                                   _U.list([$Html$Attributes.id("bigAgenda")
+                                           ,$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
+                                                                               ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
+                                   _U.list([A2($Html.iframe,
+                                   _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis")]),
+                                   _U.list([]))]))]));
+                        })
+                        ,tiledMenu: A2($TiledMenu.initAtWithLink,locationSearch,anim)};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,
+            {showIntro: $Basics.not(function (_) {    return _.showIntro;}(model)),mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
       _U.list([A2($Utils.renderMainMenu,_U.list(["Animation"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,
               _U.list([$Html$Attributes.id("subContainer")]),
-              _U.list([A2($Html.div,
-              _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animation")]),
-              _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Animation")]))
-                      ,A2($Html.p,
-                      _U.list([]),
-                      _U.list([$Html.text("La commune de Murol, riche d’un service animation \n                               municipal et d’une trentaine d’associations dynamiques, offre diverses \n                               animations à sa population locale et à ses \n                               visiteurs tout au long de l’année. Voir le \n                               calendrier ci-dessous.")]))
-                      ,A2($Html.p,
-                      _U.list([]),
-                      _U.list([$Html.text("De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent \n                               au cours de l’année à Murol. Dans l’ordre \n                               du calendrier, on voit apparaître : ")]))
-                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),0)
-                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),1)
-                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),2)
-                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),3)
-                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),4)
-                      ,A3(insertDrop,address,function (_) {    return _.drops;}(model),5)
-                      ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Calendrier")]))
-                      ,A2($Html.div,
-                      _U.list([$Html$Attributes.id("bigAgenda")]),
-                      _U.list([A2($Html.iframe,
-                      _U.list([$Html$Attributes.src("https://calendar.google.com/calendar/embed?showTitle=0&height=600&wkst=1&amp;bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis")]),
-                      _U.list([]))]))]))]))
+              _U.list([A3(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))),
+              function (_) {
+                 return _.showIntro;
+              }(model))]))
               ,$Utils.pageFooter]));
    });
-   var dropN = F2(function (id,n) {
-      return _U.eq(function (_) {    return _.id;}(n),id) ? _U.update(n,{drop: $Basics.not(function (_) {    return _.drop;}(n))}) : n;
-   });
-   var update = F2(function (action,model) {
-      var _p2 = action;
-      if (_p2.ctor === "NoOp") {
-            return model;
-         } else {
-            var n1 = A2($List.map,dropN(_p2._0),function (_) {    return _.drops;}(model));
-            return _U.update(model,{drops: n1});
-         }
-   });
-   var tag = F3(function (i,n,xs) {
-      var _p3 = xs;
-      if (_p3.ctor === "[]") {
-            return _U.list([]);
-         } else {
-            return A2($List._op["::"],_U.update(_p3._0,{id: i + n}),A3(tag,i,n + 1,_p3._1));
-         }
-   });
-   var Dropable = F4(function (a,b,c,d) {    return {intro: a,body: b,drop: c,id: d};});
-   var initDropable = F4(function (id,title,extra,body) {
-      var intro = function (a) {
-         return A2($Html.div,
-         _U.list([$Html$Attributes.$class("dropIntro")]),
-         _U.list([A2($Html.h5,_U.list([$Html$Attributes.$class("dropTitle"),A2($Html$Events.onClick,a,Drop(id))]),_U.list([$Html.text(title)]))
-                 ,A2($Html.br,_U.list([]),_U.list([]))
-                 ,A2($Maybe.withDefault,nullTag,extra)]));
-      };
-      return A4(Dropable,intro,body,false,id);
-   });
-   var medievales = A4(initDropable,
-   0,
-   "Les Médiévales de Murol (Pont de l’Ascension)",
-   $Maybe.Just(A2($Html.div,_U.list([]),_U.list([A2($Html.a,_U.list([$Html$Attributes.href("/Medievales.html")]),_U.list([$Html.text("lien photothèque")]))]))),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Cette manifestation, organisée par la mairie de \n                               Murol et des associations partenaires, \n                               a lieu chaque année durant le week-end de \n                               l’Ascension.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Au pied du château du XIIIème siècle, les \n                               rues de Murol vivent au rythme du Moyen-âge \n                               avec pour décor un campement médiéval, des danses, \n                               des spectacles médiévaux, ainsi que des artisans tout \n                               droit sortis du Moyen-âge. Immersion garantie !")]))]));
-   var musee = A4(initDropable,
-   1,
-   "L’exposition temporaire au musée des Peintres de l’Ecole de Murols (saison estivale)",
-   $Maybe.Just(A2($Html.a,
-   _U.list([$Html$Attributes.href("http://www.musee-murol.fr/fr"),$Html$Attributes.target("_blank")]),
-   _U.list([$Html.text("site officiel")]))),
-   _U.list([A2($Html.p,
-   _U.list([]),
-   _U.list([$Html.text("Chaque année, le dernier week-end de mai,\n                               la commune organise le vernissage d’une \n                               exposition temporaire inédite au musée des Peintres de \n                               l’Ecole de Murols. \n                               L’exposition reste en place jusqu’au 31 octobre. L’objectif \n                               est de regrouper et de présenter pendant quelques \n                               mois les œuvres de l’un des peintres majeurs \n                               de l’Ecole de Murols.")]))]));
-   var horizon = A4(initDropable,
-   2,
-   "Horizon, rencontres Art et Nature (saison estivale)",
-   $Maybe.Just(A2($Html.a,
-   _U.list([$Html$Attributes.href("http://www.horizons-sancy.com"),$Html$Attributes.target("_blank")]),
-   _U.list([$Html.text("site officiel")]))),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Cette manifestation culturelle est organisée par la communauté \n                               de communes du massif du Sancy. La commune \n                               de Murol soutient cet événement en tant que \n                               membre de la communauté de communes et a \n                               déjà accueilli de nombreuses œuvres sur son territoire.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Les œuvres éphémères sont installées de juin à \n                               septembre sur des sites naturels. Cette manifestation prend \n                               une ampleur considérable qui dépasse le cadre régional \n                               et même national. ")]))]));
-   var revolution = A4(initDropable,
-   3,
-   "La fête de la Révolution (14 juillet)",
-   $Maybe.Just(A2($Html.div,
-   _U.list([]),
-   _U.list([A2($Html.a,_U.list([$Html$Attributes.href("/14Juillet.html")]),_U.list([$Html.text("lien photothèque")]))
-           ,A2($Html.br,_U.list([]),_U.list([]))
-           ,A2($Html.a,
-           _U.list([$Html$Attributes.href("/baseDocumentaire/animation/affiche14juillet2016.pdf"),$Html$Attributes.target("_blank")]),
-           _U.list([$Html.text("programme 2016")]))]))),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("La municipalité de Murol, en partenariat avec différentes \n                               associations de la commune, organise le 14 juillet \n                               dans les rues de Murol. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("En journée : reconstitution en costumes d’époque de la Révolution française, \n                               animations de rues, cavalcade, et taverne révolutionnaire. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le soir : défilé costumé suivi du feu \n                               d’artifice tiré du château de Murol et du \n                               bal des pompiers. ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Vous souhaitez prendre part activement à la fête \n                               ? Louez un costume ! Renseignement à la \n                               mairie de Murol")]))]));
-   var festivalArt = A4(initDropable,
-   4,
-   "Le festival d’Art (été)",
-   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/FestivalArt.html")]),_U.list([$Html.text("lien photothèque")]))),
-   _U.list([A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Le service animation de la mairie organise chaque \n                               été le festival d’Art.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Ce festival regroupe de très nombreux artistes et \n                               artisans d’art venus de tous horizons. Leurs \n                               œuvres envahissent les rues et places de Murol \n                               durant une journée d’été riche en couleurs. Petits \n                               et grands déambulent accompagnés par les animations de \n                               rue jusqu’au soir où ils peuvent partager l’ambiance \n                               festive du concert de clôture.")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Vous voulez venir présenter vos œuvres ? Contactez \n                               la mairie au 04 73 88 60 67 \n                               ou par mail à ")
-                   ,A2($Html.a,_U.list([$Html$Attributes.href("mailto:murolanimation@orange.fr")]),_U.list([$Html.text("murolanimation@orange.fr")]))]))]));
-   var animEst = A4(initDropable,
-   5,
-   "Les animations estivales",
-   $Maybe.Just(A2($Html.a,_U.list([$Html$Attributes.href("/AnimationEstivale.html")]),_U.list([$Html.text("page dédiée")]))),
-   _U.list([]));
-   var initialModel = {mainMenu: $Utils.mainMenu,drops: _U.list([medievales,musee,horizon,revolution,festivalArt,animEst])};
+   var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
+   var subMenu = {current: "",entries: _U.list([])};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.Animation.values = {_op: _op
+                                  ,subMenu: subMenu
+                                  ,MainContent: MainContent
+                                  ,Model: Model
                                   ,initialModel: initialModel
-                                  ,Dropable: Dropable
-                                  ,tag: tag
-                                  ,dropN: dropN
-                                  ,nullTag: nullTag
-                                  ,insertDrop: insertDrop
-                                  ,initDropable: initDropable
                                   ,view: view
                                   ,NoOp: NoOp
-                                  ,Drop: Drop
+                                  ,TiledMenuAction: TiledMenuAction
                                   ,update: update
                                   ,main: main
-                                  ,medievales: medievales
-                                  ,musee: musee
-                                  ,horizon: horizon
-                                  ,revolution: revolution
-                                  ,festivalArt: festivalArt
-                                  ,animEst: animEst};
+                                  ,initialContent: initialContent
+                                  ,anim: anim};
 };

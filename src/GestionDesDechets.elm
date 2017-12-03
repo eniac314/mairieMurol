@@ -71,11 +71,19 @@ initialContent =
   div [ class "subContainerData noSubmenu", id "initDechets"]
       [ h2 [] [text "La gestion des déchets"]
         , h5 [ class "trashCat"] [ text "Ramassage des ordures"]
-        , p  [] [ text "Le ramassage des ordures a lieu le: "]
+        , p [] [text "Pour la période automne jusqu’au 30 décembre 2017
+                     , la collecte est effectuée telle que :"
+               ]
         , ul []
-             [ li [] [text "lundi pour les ordures ménagères"]
-             , li [] [text "le mercredi pour le tri sélectif \"poubelles jaunes\""]
+             [ li [] [text "Ordures ménagères : deux fois par semaine, le lundi et vendredi matin"]
+             , li [] [text "Tri sélectif : le mercredi, une fois par semaine"]
              ]
+
+        --, p  [] [ text "Le ramassage des ordures a lieu le: "]
+        --, ul []
+        --     [ li [] [text "lundi pour les ordures ménagères"]
+        --     , li [] [text "le mercredi pour le tri sélectif \"poubelles jaunes\""]
+        --     ]
         , h5 [ class "trashCat"] [ text "Objets encombrants"]
         , p  [] [ text "La municipalité souhaite aider les personnes n’ayant pas 
                         les moyens matériels nécessaires pour évacuer leurs objets 

@@ -11274,8 +11274,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Découvrir Murol","")
                    ,A2(Leaf,"Hébergements","")
                    ,A2(Leaf,"Restaurants","")
-                   ,A2(Leaf,"Carte & plan","")
-                   ,A2(Leaf,"Animation estivale","")]))
+                   ,A2(Leaf,"Carte & plan","")]))
            ,A2(Node,
            "Vie locale",
            _U.list([A2(Leaf,"Vie scolaire","")
@@ -11366,8 +11365,8 @@ Elm.AnimationEstivale.make = function (_elm) {
    var _op = {};
    var initialContent = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("animationEstivale")]),
-   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La saison estivale arrive avec de nombreuses animations!")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Découvrez le programme des mois de juillet et août 2017: ")]))
+   _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La saison estivale est riche de nombreuses animations!")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Programmes des mois de juillet et août 2017: ")]))
            ,A2($Html.a,
            _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 1 juillet 2017.pdf"),$Html$Attributes.target("_blank")]),
            _U.list([$Html.text("programme 9 - 21 juillet")]))

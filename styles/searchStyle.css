@@ -1,0 +1,44 @@
+#searchPlugin{
+	max-height: 200px;
+}
+
+#searchPlugin input {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+}
+
+.searchResult {
+ 	text-decoration-line: none;
+	text-decoration-style: solid;
+	color: teal;
+	padding-right: 0.1em;
+	padding-left: 0.1em;	
+}
+
+.searchResult:hover{
+  border-bottom-color: teal;
+  color:white;
+  background-color: teal;
+}
+
+.searchMatch{
+	padding-left: 0.5em;
+	padding-bottom: 0.5em;
+	border-top: 1px solid #aca6a9;
+}
+
+#noResult{
+	margin-left: 0.5em;
+}
+
+.matchingKeyword{
+	color: white;
+	letter-spacing: 0.1em;
+	background-color: rgba(119,136,153, 0.8);
+	padding: 0.1em 0.5em 0 0.4em;
+	border-top-left-radius: 0.5em;
+	box-shadow: -1px -1px 1px gray;
+	margin-right: 0.5em;
+	cursor: pointer;
+}

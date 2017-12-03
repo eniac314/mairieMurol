@@ -235,14 +235,14 @@ comMapYearLong = fromList
       }
       ]
   )
-  ,("Coiffure"
-   , [{ defCom |
-        name   = "Beal Patricia"
-      , descr  = ["Coiffure mixte"]
-      , addr   = "Rue Estaing - 63790 MUROL"
-      , tel    = "04 73 88 60 59"  
-      }]
-   )
+  --,("Coiffure"
+  -- , [{ defCom |
+  --      name   = "Beal Patricia"
+  --    , descr  = ["Coiffure mixte"]
+  --    , addr   = "Rue Estaing - 63790 MUROL"
+  --    , tel    = "04 73 88 60 59"  
+  --    }]
+  -- )
   ,("Garage"
    , [{ defCom |
         name   = "Garage de l'Avenir"
@@ -308,11 +308,11 @@ comMapYearLong = fromList
        , tel    = "06 80 00 11 09"
        , descr  = ["Sculpture, ferronnerie"] 
       }
-      ,
-      { defCom |
-         name   = "Galerie d'Art"
-       , addr   = "Rue George Sand 63790 MUROL"
-      }
+      --,
+      --{ defCom |
+      --   name   = "Galerie d'Art"
+      -- , addr   = "Rue George Sand 63790 MUROL"
+      --}
       ]
     )
   ,
@@ -333,13 +333,13 @@ comMapYearLong = fromList
        , mail   = "sancytaxi@orange.fr"
        , descr  = ["Taxi, transport malade assis"] 
       }
-      ,
-      { defCom |
-         name   = "Navette publique"
-       , refOt  = Just ("6505","http://www.sancy.com/activites/detail/6505/murol/ligne-reguliere-chambon-murol-st-nectaire-clermont")
-       , tel    = "04 73 88 62 62 / 04 73 88 60 67"
-       , descr  = ["ligne pour Clermont Ferrand"]
-      }
+      --,
+      --{ defCom |
+      --   name   = "Navette publique"
+      -- , refOt  = Just ("6505","http://www.sancy.com/activites/detail/6505/murol/ligne-reguliere-chambon-murol-st-nectaire-clermont")
+      -- , tel    = "04 73 88 62 62 / 04 73 88 60 67"
+      -- , descr  = ["ligne pour Clermont Ferrand"]
+      --}
       ]
     )
    ,(" Informatique: dépannage, graphiste, créateur"
@@ -376,11 +376,11 @@ comMapYearLong = fromList
        , tel    = "06 80 00 11 09"
        , descr  = ["Sculpture, ferronnerie"] 
       }
-      ,
-      { defCom |
-         name   = "Galerie d'Art"
-       , addr   = "Rue George Sand 63790 MUROL"
-      }
+      --,
+      --{ defCom |
+      --   name   = "Galerie d'Art"
+      -- , addr   = "Rue George Sand 63790 MUROL"
+      --}
       ]
     )
    

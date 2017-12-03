@@ -64,8 +64,8 @@ initialContent =
   div [ class "subContainerData noSubmenu", id "animationEstivale"]
       --[ p [] [text "La saison estivale 2016 est terminée, retrouvez nous
       --             dès le printemps prochain pour notre nouvelle programmation."]
-      [ p [] [text "La saison estivale arrive avec de nombreuses animations!"]
-      , p [] [text "Découvrez le programme des mois de juillet et août 2017: "]
+      [ p [] [text "La saison estivale est riche de nombreuses animations!"]
+      , p [] [text "Programmes des mois de juillet et août 2017: "]
       , a [href "/baseDocumentaire/animation/programme 1 juillet 2017.pdf", target "_blank"]
           [text "programme 9 - 21 juillet"]
       , br [] []
