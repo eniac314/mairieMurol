@@ -109,8 +109,8 @@ Elm.Commerces.make = function (_elm) {
                                                              ,_U.update(defCom,
                                                              {name: "Supermarché SPAR"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                                 ,_0: "4236"
-                                                                                 ,_1: "http://www.sancy.com/activites/detail/4236/murol/spar"})
+                                                                                 ,_0: "4662103"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/spar/"})
                                                              ,descr: _U.list(["Alimentation générale","Service drive et livraison: www.sparmurol.fr"])
                                                              ,addr: "Rue de Besse - 63790 MUROL"
                                                              ,tel: "04 73 88 60 45 "
@@ -118,8 +118,8 @@ Elm.Commerces.make = function (_elm) {
                                                              ,_U.update(defCom,
                                                              {name: "Vival"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                                 ,_0: "3663"
-                                                                                 ,_1: "http://www.sancy.com/activites/detail/3663/murol/vival"})
+                                                                                 ,_0: "4662124"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/vival-2/"})
                                                              ,descr: _U.list(["Alimentation générale"])
                                                              ,addr: "Rue Chabrol - 63790 MUROL"
                                                              ,tel: "04 73 88 61 56"})])}
@@ -144,21 +144,46 @@ Elm.Commerces.make = function (_elm) {
                                                              ,_U.update(defCom,
                                                              {name: "Distributeur SPAR"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                                 ,_0: "7331"
-                                                                                 ,_1: "http://www.sancy.com/activites/detail/7331/murol/distributeur-automatique-de-billets"})
+                                                                                 ,_0: "4700279"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/distributeur-automatique-de-billets/"})
                                                              ,descr: _U.list(["Distributeur de billets"])
                                                              ,addr: "Route de Besse 63790 MUROL"})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Boucherie"
                                                 ,_1: _U.list([_U.update(defCom,
-                                                {name: "La Pièce du Boucher",addr: "Rue George Sand 63790 MUROL",tel: "04 73 87 77 48"})])}
+                                                {name: "La Pièce du Boucher"
+                                                ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                    ,_0: "4662160"
+                                                                    ,_1: "https://www.sancy.com/commerce-service/la-piece-du-boucher/"})
+                                                ,addr: "Rue George Sand 63790 MUROL"
+                                                ,tel: "04 73 87 77 48"})])}
+                                               ,{ctor: "_Tuple2"
+                                                ,_0: "Prestataires"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                             {name: "Auvergne Escapade"
+                                                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                                 ,_0: "4716925"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/auvergne-escapade/"})
+                                                             ,addr: "Beaune-le-Froid - 63790 MUROL"
+                                                             ,tel: "06 86 89 34 87"
+                                                             ,descr: _U.list(["Randonnées pédestres guidées et raquettes à neige en hiver"])
+                                                             ,site: "http://www.auvergne-escapade.com/"})
+                                                             ,_U.update(defCom,
+                                                             {name: "Bureau Montagne Auvergne Sancy Volcans"
+                                                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                                 ,_0: "4716923"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/bureau-montagne-auvergne-sancy-volcans/"})
+                                                             ,addr: "Bp 11 - 63790 MUROL"
+                                                             ,tel: "06 41 66 90 80"
+                                                             ,descr: _U.list(["Raquettes à neige. Randonnées sur les volcans, lever de soleil, orientation, VTT, astronomie, tir à l\'arc."])
+                                                             ,site: "http://www.bureaumontagne.com/"})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Art de la maison - cadeaux - souvenirs"
                                                 ,_1: _U.list([_U.update(defCom,
                                                 {name: "Le grenier du château"
                                                 ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                    ,_0: "7548"
-                                                                    ,_1: "http://www.sancy.com/activites/detail/7548/murol/le-grenier-du-chateau"})
+                                                                    ,_0: "4672387"
+                                                                    ,_1: "https://www.sancy.com/commerce-service/le-grenier-du-chateau/"})
                                                 ,addr: "Rue Georges Sand - 63790 MUROL"
                                                 ,tel: "04 73 88 95 28"
                                                 ,mail: "le-grenier-du-chateau@sfr.fr"
@@ -170,15 +195,25 @@ Elm.Commerces.make = function (_elm) {
                                                              ,descr: _U.list(["Réparations toutes marques, carburants"])
                                                              ,addr: "Le Marais - 63790 MUROL"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                                 ,_0: "3682"
-                                                                                 ,_1: "http://www.sancy.com/activites/detail/3682/murol/garage-de-l-avenir"})})
+                                                                                 ,_0: "4668358"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/garage-de-lavenir/"})})
                                                              ,_U.update(defCom,
                                                              {name: "Murol Moto Sport"
                                                              ,descr: _U.list(["Vente réparations toutes marques"])
                                                              ,addr: "route de Besse - 63790 MUROL"
                                                              ,tel: "06 78 08 35 74"
                                                              ,fax: "04 76 88 66 60"
-                                                             ,mail: "cattarellisacha@orange.fr"})])}
+                                                             ,mail: "cattarellisacha@orange.fr"})
+                                                             ,_U.update(defCom,
+                                                             {name: "Sancy Bike Service"
+                                                             ,descr: _U.list(["Réparation et entretien de vélos, VTT, cyclos. Vente pièces et accessoires."])
+                                                             ,addr: "Rue du Tartaret - 63790 MUROL"
+                                                             ,tel: "0676121929"
+                                                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                                 ,_0: "4768953"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/sancy-bike-service/"})
+                                                             ,mail: "ebikeattitude@gmail.com"
+                                                             ,site: "https://www.sancybikeservice.com/"})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Laverie"
                                                 ,_1: _U.list([_U.update(defCom,
@@ -190,12 +225,20 @@ Elm.Commerces.make = function (_elm) {
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Pharmacie"
                                                 ,_1: _U.list([_U.update(defCom,
-                                                {name: "Pharmacie Brassier",addr: "Rue Estaing - 63790 MUROL",tel: "04 73 88 60 42"})])}
+                                                {name: "Pharmacie Brassier"
+                                                ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                    ,_0: "4666016"
+                                                                    ,_1: "https://www.sancy.com/commerce-service/pharmacie-brassier/"})
+                                                ,addr: "Rue Estaing - 63790 MUROL"
+                                                ,tel: "04 73 88 60 42"})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: "Artisanat d\'Art, galerie d\'art, antiquité"
                                                 ,_1: _U.list([_U.update(defCom,
                                                              {name: "Atelier ST Christophe"
                                                              ,addr: "Rue George Sand 63790 MUROL"
+                                                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                                 ,_0: "4681516"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/atelier-saint-christophe-murol-feerie/"})
                                                              ,tel: "04 63 22 68 15"
                                                              ,descr: _U.list(["Création de bijoux"])})
                                                              ,_U.update(defCom,
@@ -216,12 +259,19 @@ Elm.Commerces.make = function (_elm) {
                                                              ,_U.update(defCom,
                                                              {name: "Taxi Maryline"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                                 ,_0: "4552"
-                                                                                 ,_1: "http://www.sancy.com/activites/detail/4552/murol/taxi-miseroux"})
+                                                                                 ,_0: "4666800"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/sancy-taxi-maryline-2/"})
                                                              ,addr: "Le Bourg 63790 MUROL"
                                                              ,tel: "04 73 88 81 12 / 06 89 56 25 94"
                                                              ,mail: "sancytaxi@orange.fr"
-                                                             ,descr: _U.list(["Taxi, transport malade assis"])})])}
+                                                             ,descr: _U.list(["Taxi, transport malade assis"])})
+                                                             ,_U.update(defCom,
+                                                             {name: "Navette Azureva "
+                                                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                                 ,_0: "4849676"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/navette-azureva-murol-besse-super-besse/"})
+                                                             ,tel: "04 73 88 58 58"
+                                                             ,descr: _U.list(["ligne Murol Superbesse"])})])}
                                                ,{ctor: "_Tuple2"
                                                 ,_0: " Informatique: dépannage, graphiste, créateur"
                                                 ,_1: _U.list([_U.update(defCom,
@@ -254,8 +304,8 @@ Elm.Commerces.make = function (_elm) {
                                                 ,_1: _U.list([_U.update(defCom,
                                                              {name: "Les Caves du château"
                                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                                 ,_0: "3673"
-                                                                                 ,_1: "http://www.sancy.com/activites/detail/3673/murol/les-caves-du-chateau"})
+                                                                                 ,_0: "4662107"
+                                                                                 ,_1: "https://www.sancy.com/commerce-service/les-caves-du-chateau/"})
                                                              ,descr: _U.list(["caviste, fromager, produits du terroir"])
                                                              ,addr: "Place du pont - 63790 MUROL"
                                                              ,tel: "04 73 88 63 34"})
@@ -278,6 +328,9 @@ Elm.Commerces.make = function (_elm) {
                                               ,_0: "Artisanat d\'Art, galerie d\'art, antiquité"
                                               ,_1: _U.list([_U.update(defCom,
                                               {name: "Cuir Cath"
+                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                  ,_0: "4795036"
+                                                                  ,_1: "https://www.sancy.com/commerce-service/artisanat-dart-cuir-cath-2/"})
                                               ,addr: "Rue George Sand 63790 MUROL"
                                               ,tel: "06 11 89 14 52"
                                               ,mail: "cuircath63@orange.fr"
@@ -306,19 +359,28 @@ Elm.Commerces.make = function (_elm) {
                                               ,_1: _U.list([_U.update(defCom,
                                               {name: "Legoueix père et fils (hiver)"
                                               ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                  ,_0: "6111"
-                                                                  ,_1: "http://www.sancy.com/activites/detail/6111/murol/magasin-legoueix"})
+                                                                  ,_0: "4682148"
+                                                                  ,_1: "https://www.sancy.com/commerce-service/legoueix-skishop/"})
                                               ,descr: _U.list([""])
                                               ,addr: "Rue du Tartaret 63790 MUROL"
                                               ,tel: "04 73 88 66 21"})])}
+                                             ,{ctor: "_Tuple2"
+                                              ,_0: "Location de Pedal’eau"
+                                              ,_1: _U.list([_U.update(defCom,
+                                              {name: "plage Murol du lac Chambon"
+                                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
+                                                                  ,_0: "4716921"
+                                                                  ,_1: "https://www.sancy.com/commerce-service/location-de-pedaleau/"})
+                                              ,descr: _U.list([""])
+                                              ,tel: "06 08 58 40 30"})])}
                                              ,{ctor: "_Tuple2"
                                               ,_0: "Vêtements"
                                               ,_1: _U.list([_U.update(defCom,
                                               {name: "Toutiveti"
                                               ,addr: "Route de Besse - parking supermarché SPAR - 63790 MUROL"
                                               ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                  ,_0: "4234"
-                                                                  ,_1: "http://www.sancy.com/activites/detail/4234/murol/toutiveti-vetements"})
+                                                                  ,_0: "4679489"
+                                                                  ,_1: "https://www.sancy.com/commerce-service/toutiveti-vetements/"})
                                               ,tel: "06 76 66 97 47"
                                               ,mail: "toutiveti@hotmail.fr"
                                               ,descr: _U.list(["Vêtements/chaussures - hommes/femmes/enfants "])})])}
@@ -326,7 +388,7 @@ Elm.Commerces.make = function (_elm) {
                                               ,_0: "Location poneys"
                                               ,_1: _U.list([_U.update(defCom,
                                               {name: "Western Poneys"
-                                              ,refOt: $Maybe.Nothing
+                                              ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4716916",_1: "https://www.sancy.com/commerce-service/western-poneys/"})
                                               ,descr: _U.list([""])
                                               ,addr: "Route de Besse 63790 MUROL, à coté du supermaché SPAR"
                                               ,tel: "06 66 85 24 10 ou 06 63 41 22 47"

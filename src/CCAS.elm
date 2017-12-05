@@ -80,7 +80,7 @@ initialContent =
       , p []
           [ text "Le CCAS organise chaque année des manifestations
                   pour petits et grands (Noël des enfants et "
-          , a [href "/Annee2016.html"]
+          , a [href "/Annee2017.html"]
               [text "repas du CCAS"]
           , text ")."
           ]

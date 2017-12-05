@@ -103,7 +103,7 @@ initialContent =
                              démarche de qualité, symbolisées par différents labels. Certains 
                              sont hôtels restaurants et offrent une prestation en 
                              demi-pension et pension complète. "]
-              , makeTable "Hôtels" hotels
+              , makeTable "Hôtels" (List.sortBy (.name) hotels)
               , contact
               ]
             )
@@ -117,7 +117,7 @@ initialContent =
                              bungalows."]
               , makeTable "Campings" campings
               , h4 [] [text "Aires de camping-cars"]
-              , makeTable "Aires" aires
+              , makeTable "Aires" (List.sortBy (.name) aires)
               , contact
               ]
             )
@@ -129,7 +129,7 @@ initialContent =
                              Séjourner en chambre d'hôtes, c'est partager le quotidien 
                              de personnes passionnées par leur région et attentives 
                              à la qualité de l'accueil."]
-              , makeTable "Chambres d'Hôtes" chambresHotes
+              , makeTable "Chambres d'Hôtes" (List.sortBy (.name) chambresHotes)
               , contact
               ]
             )
@@ -142,7 +142,7 @@ initialContent =
                              sont tous classés par la préfecture. Le classement, 
                              en étoiles, indique le degré de confort de 
                              la location. Certains sont même labellisés. "]
-              , makeTable "Meublés" meubles
+              , makeTable "Meublés" (List.sortBy (.name) meubles)
               , contact
               ]
             )
@@ -190,7 +190,7 @@ azureva = [{ emptyTe |
              name  = "Azureva"
            , label = FamillePlus
            , stars = Just 2
-           , refOt = Just ("2552","http://www.sancy.com/hebergements/detail/2552/murol/azureva-murol") 
+           , refOt = Just ("922722","https://www.sancy.com/hebergement-collectif/azureva-murol/") 
            , addr  = "route de Jassat 63790 MUROL"
            , descr = ["1 à 6 personnes, 250 lits"
                      , "Contact: azurèva MUROL - Villages & Résidences de Vacances"]
@@ -201,18 +201,19 @@ azureva = [{ emptyTe |
 
 hotels = [{ emptyTe |
             stars = Just 2
-          , name  = "Hotel les Dômes (résidence)"
+          , name  = "Résidence des Dômes"
           , addr  = "rue de Groire, 63790 Murol"
+          , refOt = Just ("922010","https://www.sancy.com/hebergement-collectif/residence-des-domes//")
           , tel   = "04 73 88 60 13"
           , fax   = "04 73 88 80 05"
           , mail  = "domes4@wanadoo.fr"
           , site  = "http://www.lesdomes.com"
-          , descr = ["Résidence"] 
+          , descr = ["Résidence de tourisme"] 
          }
          ,
          { emptyTe |
             stars = Nothing
-          , refOt = Just ("2539","http://www.sancy.com/hebergements/detail/2539/murol/hotel-du-parc")
+          , refOt = Just ("918257","https://www.sancy.com/hotel/hotel-du-parc/")
           , name  = "Hotel du Parc"
           , addr  = "rue George Sand 63790 MUROL"
           , tel   = "04 73 88 60 08 / 07 70 30 29 10"
@@ -230,7 +231,7 @@ hotels = [{ emptyTe |
          ,
          { emptyTe |
             stars = Just 2
-          , refOt = Just ("2542","http://www.sancy.com/hebergements/detail/2542/murol/hotel-des-pins")
+          , refOt = Just ("918292","https://www.sancy.com/hotel/hotel-des-pins/")
           , name  = "Hotel des Pins"
           , addr  = "rue du Levat 63790 MUROL"
           , tel   = "04 73 88 60 50"
@@ -241,7 +242,7 @@ hotels = [{ emptyTe |
          { emptyTe |
             stars = Nothing
           , name  = "Hôtel du Domaine du Lac Chambon"
-          , refOt = Just ("7388","http://www.sancy.com/hebergements/detail/7388/murol/hotel-domaine-du-lac-chambon")
+          , refOt = Just ("918276","https://www.sancy.com/hotel/hotel-domaine-du-lac-chambon/")
           , addr  = "Allée de la Plage 63790 MUROL"
           , tel   = "04 44 05 21 58"
           , descr = ["Hôtel restaurant"] 
@@ -251,7 +252,7 @@ hotels = [{ emptyTe |
          { emptyTe |
             stars = Just 3
           , name  = "Hotel de Paris"
-          , refOt = Just ("2536","http://www.sancy.com/hebergements/detail/2536/murol/hotel-de-paris")
+          , refOt = Just ("917440","https://www.sancy.com/hotel/hotel-de-paris/")
           , addr  = "Rue de la Vieille Tour 63790 Murol"
           , tel   = "04 73 88 19 09"
           , descr = ["Hôtel"]
@@ -263,7 +264,7 @@ campings =
   [{ emptyTe |
      stars = Just 3
    , label = FamillePlus
-   , refOt = Just ("2556","http://www.sancy.com/hebergements/detail/2556/murol/domaine-du-marais")
+   , refOt = Just ("924637","https://www.sancy.com/camping/domaine-du-marais/")
    , name  = "Domaine du marais"
    , descr = ["chalets mobile homes piscine"]
    , addr  = "Le Marais - 63790 MUROL"
@@ -275,7 +276,7 @@ campings =
    { emptyTe |
      stars = Just 3
    , label = FamillePlus
-   , refOt = Just ("2543","http://www.sancy.com/hebergements/detail/2543/murol/camping-le-repos-du-baladin")
+   , refOt = Just ("924640","https://www.sancy.com/camping/camping-le-repos-du-baladin/")
    , name  = "Le Repos du Baladin"
    , addr  = "Groire - 63790 Murol"
    , tel   = "04 73 88 61 93"
@@ -288,7 +289,7 @@ campings =
    { emptyTe |
      stars = Just 3
    , label = FamillePlus
-   , refOt = Just ("7389","http://www.sancy.com/hebergements/detail/7389/murol/le-domaine-du-lac-chambon")
+   , refOt = Just ("924631","https://www.sancy.com/camping/le-domaine-du-lac-chambon/")
    , name  = "Domaine du Lac"
    , addr  = "Allée de la Plage, 63790 MUROL"
    , tel   = "04 44 05 21 58"
@@ -299,7 +300,7 @@ campings =
    { emptyTe |
      stars = Just 3
    , label = FamillePlus
-   , refOt = Just ("2555","http://www.sancy.com/hebergements/detail/2555/murol/les-fougeres")
+   , refOt = Just ("924636","https://www.sancy.com/camping/les-fougeres/")
    , name  = "Les Fougères"
    , addr  = "Pont du Marais - 63790 MUROL"
    , tel   = "04 73 88 67 08"
@@ -321,7 +322,7 @@ campings =
    { emptyTe |
      stars = Just 4
    , label = FamillePlus
-   , refOt = Just ("2558", "http://www.sancy.com/hebergements/detail/2558/murol/camping-l-europe")
+   , refOt = Just ("924641", "https://www.sancy.com/camping/camping-leurope/")
    , name  = "Camping de l'Europe"
    , addr  = "Route de Jassat - 63790 - Murol"
    , tel   = "04 73 88 60 46"
@@ -335,7 +336,7 @@ campings =
 aires = 
   [ { emptyTe |
       descr = ["aire de service et d'accueil"]
-    , refOt = Just ("5127","http://www.sancy.com/hebergements/detail/5127/murol/aire-de-service-et-d-accueil-du-domaine-du-lac-cha")
+    , refOt = Just ("924666","https://www.sancy.com/camping/aire-de-service-et-daccueil-du-domaine-du-lac/")
     , name  = "Domaine du Lac Chambon"
     , addr  = "Allée de la Plage 63790 MUROL"
     , tel   = "04 44 05 21 58"
@@ -344,7 +345,7 @@ aires =
    ,
    { emptyTe |
       descr = ["aire de service et d'accueil"]
-    , refOt = Just ("4318","http://www.sancy.com/hebergements/detail/4318/murol/aire-de-service-et-d-accueil-l-europe")
+    , refOt = Just ("924669","https://www.sancy.com/camping/aire-de-service-et-daccueil-leurope/")
     , stars = Just 4
     , name  = "L'Europe"
     , addr  = "route de Jassat 63790 MUROL"
@@ -355,17 +356,17 @@ aires =
 
 chambresHotes = 
   [{ emptyTe |
-     epis  = "1 épi"
+     stars = Just 2
    , name  = "La Clé des champs"
-   , refOt = Just ("2544","http://www.sancy.com/hebergements/detail/2544/murol/la-cle-des-champs")
+   , refOt = Just ("921341","https://www.sancy.com/chambre-hotes/la-cle-des-champs/")
    , addr  = "Route de Groire - 63790 MUROL"
-   , tel   = "04 73 88 66 29 / 06 77 11 62 06"
+   , tel   = "04 73 88 66 29 / 06 21 49 42 94"
    }
    ,
    { emptyTe |
      stars = Nothing
    , name  = "Marie Roche"
-   , refOt = Just ("1427","http://www.sancy.com/hebergements/detail/1427/murol/marie-roche")
+   , refOt = Just ("921361","https://www.sancy.com/chambre-hotes/marie-roche/")
    , addr  = "Groire - 63790 MUROL"
    , tel   = "04 73 88 64 99 / 06 11 57 97 72"
    }
@@ -388,11 +389,12 @@ chambresHotes =
 meubles = 
   [{ emptyTe |
      epis  = "2 épis"
+   , stars = Just 3
    , name  = "La Cacode"
-   , refOt = Just ("1444","http://www.sancy.com/hebergements/detail/1444/murol/la-cacode")
+   , refOt = Just ("2800891","https://www.sancy.com/meubles-gites/la-cacode/")
    , descr = ["Maison 4 personnes","Contact: Mme CLEMENT Marie-Paule"]
    , addr  = "La Chassagne - 63790 Murol"
-   , tel   = "04 73 88 60 85"
+   , tel   = "04 73 65 36 00"
    , mail  = "lachassagne@hotmail.fr"
    , site  = "http://lachassagne.e-monsite.com/"
    }
@@ -400,7 +402,7 @@ meubles =
    { emptyTe |
      stars = Just 3
    , name  = "La Quiétude"
-   , refOt = Just ("5473","http://www.sancy.com/hebergements/detail/5473/murol/la-quietude")
+   , refOt = Just ("4609702","https://www.sancy.com/meubles-gites/la-quietude/")
    , label = FamillePlus
    , descr = ["Maison 8 personnes","Contact: Mme PLANEIX Suzanne"]
    , addr  = "Rue de Groire 63790 MUROL"
@@ -440,18 +442,18 @@ meubles =
    { emptyTe |
      stars = Just 2
    , name  = "le Chapuzadou"
-   , refOt = Just ("1443","http://www.sancy.com/hebergements/detail/1443/murol/le-chapuzadou")
-   , descr = ["Maison 4 personnes", "Contact: Mme CLEMENT Marie-Paule"]
+   , refOt = Just ("4622601","https://www.sancy.com/meubles-gites/le-chapuzadou/")
+   , descr = ["Maison 3 personnes", "Contact: Mme CLEMENT Marie-Paule"]
    , addr  = "La Chassagne - 63790 Murol"
-   , tel   = "04 73 88 60 85"
+   , tel   = "04 73 65 36 00"
    , mail  = "lachassagne@hotmail.fr"
-   , site  = "http://lachassagne.e-monsite.com/"
+   --, site  = "http://lachassagne.e-monsite.com/"
    }
    ,
    { emptyTe |
      stars = Just 2
    , name  = "Les Cigales"
-   , refOt = Just ("1467","http://www.sancy.com/hebergements/detail/1467/murol/les-cigales")
+   , refOt = Just ("4622806","https://www.sancy.com/meubles-gites/les-cigales/")
    , descr = ["Appartement 5 personnes","Contact: Mme JULIEN Simone"]
    , addr  = "Rue de Groire - 63790 MUROL"
    , tel   = "04 73 88 80 87"
@@ -460,7 +462,7 @@ meubles =
    { emptyTe |
      stars = Just 2
    , name  = "La Clé des champs"
-   , refOt = Just ("1446","http://www.sancy.com/hebergements/detail/1446/murol/la-cle-des-champs")
+   , refOt = Just ("4622644","https://www.sancy.com/meubles-gites/la-cle-des-champs/")
    , descr = ["4 personnes","Contact: M. & Mme DELPEUX Annie et François"]
    , addr  = "Route de Groire - 63790 MUROL"
    , tel   = "04 73 88 66 29 - / 06 21 49 42 94 - 06 77 11 62 06"
@@ -480,7 +482,7 @@ meubles =
    { emptyTe |
      stars = Just 2
    , name  = "Les Genêts"
-   , refOt = Just ("5336","http://www.sancy.com/hebergements/detail/5336/murol/les-genets")
+   , refOt = Just ("4622949","https://www.sancy.com/meubles-gites/les-genets/")
    , descr = ["Appartement 4 personnes","Contact: M. NOTHEISEN Marc"]
    , addr  = "Rue d'Estaing - 63790 MUROL"
    , tel   = "03 86 73 72 25 / 06 83 59 00 67"
@@ -509,7 +511,7 @@ meubles =
    { emptyTe |
      stars = Just 2
    , name  = "Villa Roux"
-   , refOt = Just ("1476","http://www.sancy.com/hebergements/detail/1476/murol/villa-roux")
+   , refOt = Just ("2800984","https://www.sancy.com/meubles-gites/villa-roux/")
    , descr = ["Maison mitoyenne 6 personnes",
               "Contact: M. ROUX André"]
    , addr  = "Beaune-le-Froid - 63790 MUROL"
@@ -519,7 +521,7 @@ meubles =
    { emptyTe |
      stars = Just 2
    , name  = "Villa Roux"
-   , refOt = Just ("1477","http://www.sancy.com/hebergements/detail/1477/murol/villa-roux")
+   , refOt = Just ("2800985","https://www.sancy.com/meubles-gites/villa-roux-2/")
    , descr = ["Maison mitoyenne 4 personnes",
               "Contact: M. ROUX André"]
    , addr  = "Beaune-le-Froid - 63790 MUROL"
@@ -529,7 +531,7 @@ meubles =
    { emptyTe |
      stars = Just 1
    , name  = "Villa Roux"
-   , refOt = Just ("1478","http://www.sancy.com/hebergements/detail/1478/murol/villa-roux")
+   , refOt = Just ("2880170","https://www.sancy.com/meubles-gites/villa-roux-3/")
    , descr = ["Maison mitoyenne 5 personnes",
               "Contact: M. ROUX André"]
    , addr  = "Beaune-le-Froid - 63790 MUROL"
@@ -539,7 +541,7 @@ meubles =
    { emptyTe |
      stars = Just 1
    , name  = "Mon Gai Repos"
-   , refOt = Just ("1516","http://www.sancy.com/hebergements/detail/1516/murol/mon-gai-repos")
+   , refOt = Just ("2880152","https://www.sancy.com/meubles-gites/mon-gai-repos/")
    , descr = ["Appartement 2 personnes",
               "Contact: Mme POMMIER-DESSERRE Madeleine"]
    , addr  = "Groire - 63790 MUROL"
@@ -591,7 +593,7 @@ meubles =
    ,
    { emptyTe |
      name  = "Gîte de groupe le Dolmen"
-   , refOt = Just ("1433","http://www.sancy.com/hebergements/detail/1433/murol/gite-de-groupe-le-dolmen")
+   , refOt = Just ("925767","https://www.sancy.com/hebergement-collectif/gite-de-groupe-le-dolmen/")
    , descr = ["Gîte de groupe 25 personnes"]
    , tel   = "04 73 61 49 64 / 06 42 90 73 53"
    , addr  = "La Chassagne 63790 MUROL"
@@ -649,32 +651,35 @@ meubles =
    ,
    { emptyTe |
      name  = "la Vie de Château"
-   , refOt = Just ("8133","http://www.sancy.com/hebergements/detail/8133/murol/la-vie-de-chateau")  
+   , stars = Just 3
+   , refOt = Just ("4609790","https://www.sancy.com/meubles-gites/la-vie-de-chateau/")  
    , descr = ["Maison mitoyenne 6 personnes"
              , "Contact: ARVERNHA RESORTS"]
    , tel   = "04 73 88 66 46"
    , addr  = "rue de Chabrol 63790 MUROL"
+   , site  = "https://www.facebook.com/media/set/?set=a.1629845623934236.1073741840.1629845083934290&type=1&l=8fb08fb351"
    }
    ,
    { emptyTe |
      name  = "la Villa blanche"
    , stars = Just 3
-   , refOt = Just ("8122","http://www.sancy.com/hebergements/detail/8122/murol/la-villa-blanche")  
+   , refOt = Just ("4609550","https://www.sancy.com/meubles-gites/la-villa-blanche/")  
    , descr = ["Maison 11 personnes"
              , "Contact: Mme DABERT-PANCRACIO Amélie"]
    , tel   = "04 73 88 61 06"
    , fax   = "04 73 88 63 53"
-   , addr  = "rue de la Pardaniche"
+   , addr  = "rue de la Pardaniche, 63790 Murol"
    }
    ,
    { emptyTe |
      name  = "le Chalet des Noisettes"
    , stars = Just 3 
-   , refOt = Just ("7327","http://www.sancy.com/hebergements/detail/7327/murol/chalet-des-noisettes")  
+   , refOt = Just ("4609512","https://www.sancy.com/meubles-gites/chalet-des-noisettes/")  
    , descr = ["Chalet 4 personnes"
              , "Contact: ARVERNHA RESORTS"]
    , tel   = "04 73 88 66 46"
    , addr  = "Allée de la Plage 63790 MUROL"
+   , site  = "https://www.facebook.com/media/set/?set=a.1630069510578514.1073741857.1629845083934290&type=1&l=84432e8458"
    }
    ,
    { emptyTe |
@@ -691,7 +696,7 @@ meubles =
    { emptyTe |
      name  = "les Fushias"
    , stars = Just 2  
-   , refOt = Just ("3080","http://www.sancy.com/hebergements/detail/3080/murol/les-fushias")  
+   , refOt = Just ("4622970","https://www.sancy.com/meubles-gites/les-fushias/")  
    , descr = ["Appartement 2 personnes"
              , "Contact: Mme PEUCH Jeanine "]
    , tel   = "04 73 88 68 28"
@@ -699,13 +704,14 @@ meubles =
    }
    ,
    { emptyTe |
-     name  = "Villa Bel Hêtre"
+     name  = "Villa Bel-Hêtre"
    , stars = Just 4
-   , refOt = Just ("7819","http://www.sancy.com/hebergements/detail/7819/murol/villa-bel-hetre")  
+   , refOt = Just ("2809608","https://www.sancy.com/meubles-gites/villa-bel-hetre/")  
    , descr = ["Maison 8 personnes"
              , "Contact: ARVERNHA RESORTS"]
    , tel   = "04 73 88 66 46"
    , addr  = "Chemin de Groire 63790 MUROL"
+   , site  = "https://www.facebook.com/media/set/?set=a.1629845500600915.1073741838.1629845083934290&type=1&l=a1bb153598"
    }
    ,
    { emptyTe |
@@ -728,6 +734,174 @@ meubles =
    , addr  = "La Chassagne 63790 MUROL"
    , mail  = "philippe.picot@orange.fr"
    , site  = "gite-vergers-sancy.com"
+   }
+   ,
+   { emptyTe |
+     name  = "Gîte de Jassaguet"
+   , refOt = Just ("4609653","https://www.sancy.com/meubles-gites/gite-de-jassaguet/")  
+   , descr = ["Maison 4 personnes"]
+   , tel   = "04 73 88 66 46"
+   , addr  = "Rue Jassaguet 63790 Murol"
+   , mail  = ""
+   , site  = "https://www.facebook.com/media/set/?set=a.1630071440578321.1073741858.1629845083934290&type=1&l=b3f317a2ed"
+   }
+   ,
+   { emptyTe |
+     name  = "Chalet Papon"
+   , refOt = Just ("4746146","https://www.sancy.com/meubles-gites/chalet-papon/")  
+   , descr = ["Maison 6 personnes"]
+   , tel   = "04 73 35 69 82"
+   , addr  = "Route de Clermont, Beaune le Froid 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Les Fougeoles"
+   , refOt = Just ("4622448","https://www.sancy.com/meubles-gites/les-fougeolles/")  
+   , descr = ["Maison 4 personnes"
+             ]
+   , tel   = "04 73 88 48 48"
+   , addr  = "Pied du Puy de Tartaret, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Gîte chez Cadi"
+   , refOt = Just ("2801001","https://www.sancy.com/meubles-gites/gite-chez-cadi/")  
+   , stars = Just 3
+   , descr = ["Maison 6 personnes"
+             ]
+   , tel   = "04 73 65 36 00"
+   , addr  = "Rue du Lavoir - Beaune le Froid, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     stars = Just 2
+   , name  = "Gîte des Dômes"
+   , addr  = "rue de Groire, 63790 Murol"
+   , refOt = Just ("4845395","https://www.sancy.com/hebergement-collectif/gite-des-domes/")
+   , tel   = "04 73 88 60 13"
+   , fax   = "04 73 88 80 05"
+   , mail  = "domes4@wanadoo.fr"
+   , site  = "http://www.lesdomes.com"
+   , descr = ["Gîte de groupe"] 
+       }
+   ,
+   { emptyTe |
+     name  = "Appartement agréable"
+   , refOt = Just ("4633164","https://www.sancy.com/meubles-gites/appartement-agreable/")  
+   , descr = ["Meublé 4 personnes"
+             ]
+   , tel   = "06 58 63 06 27"
+   , addr  = "Le Pré-long, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "La maison de Mémé"
+   , stars = Just 3
+   , refOt = Just ("4632842","https://www.sancy.com/meubles-gites/la-maison-de-meme/")  
+   , descr = ["Maison 4 personnes"]
+   , tel   = "04 73 61 31 47"
+   , addr  = "Groire, 63790 Murol"
+   , mail  = ""
+   , site  = "http://www.gitesdegroire.com/"
+   }
+   ,
+   { emptyTe |
+     name  = "Le petit Lutess"
+   , refOt = Just ("4631153","https://www.sancy.com/meubles-gites/le-petit-lutess/")  
+   , descr = ["Appartement 4 personnes"]
+   , tel   = "04 73 88 66 46"
+   , addr  = "1 rue de Chabrol, 63790 Murol"
+   , mail  = "contact@arvernha-resorts.com"
+   , site  = "https://www.facebook.com/media/set/?set=a.1749357098649754.1073741872.1629845083934290&type=1&l=e85b755304"
+   }
+   ,
+   { emptyTe |
+     name  = "Les gîtes du paradis - n°3"
+   , refOt = Just ("4631141","https://www.sancy.com/meubles-gites/les-gites-du-paradis-n3/")  
+   , descr = ["Maison 4 personnes"
+             ]
+   , tel   = "06 63 25 56 47"
+   , addr  = "Rue Charreton, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Les gîtes du paradis - n°2"
+   , refOt = Just ("4631140","https://www.sancy.com/meubles-gites/les-gites-du-paradis-n2/")  
+   , descr = ["Maison 4 personnes"
+             ]
+   , tel   = "06 63 25 56 47"
+   , addr  = "Rue Charreton, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Les gîtes du paradis - n°1"
+   , refOt = Just ("4631139","https://www.sancy.com/meubles-gites/les-gites-du-paradis-n1/")  
+   , descr = ["Maison 6 personnes"
+             ]
+   , tel   = "06 63 25 56 47"
+   , addr  = "Rue Charreton, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Gîte les Iris"
+   , stars = Just 2
+   , refOt = Just ("2800988","https://www.sancy.com/meubles-gites/gite-les-iris/")  
+   , descr = ["Maison 6 personnes"
+             ]
+   , tel   = "04 73 65 36 00"
+   , addr  = "Beaune-le-Froid, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Gîte les Mésanges"
+   , stars = Just 3
+   , refOt = Just ("2800987","https://www.sancy.com/meubles-gites/gite-les-mesanges-2/")  
+   , descr = ["Maison 5 personnes"
+             ]
+   , tel   = "04 73 65 36 00"
+   , addr  = "Beaune-le-Froid, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Gîte les Hirondelles"
+   , refOt = Just ("2800986","https://www.sancy.com/meubles-gites/gite-les-hirondelles/")  
+   , stars = Just 3
+   , descr = ["Maison 5 personnes"
+             ]
+   , tel   = "04 73 65 36 00"
+   , addr  = "Beaune-le-Froid, 63790 Murol"
+   , mail  = ""
+   , site  = ""
+   }
+   ,
+   { emptyTe |
+     name  = "Gîte le Beaune... heure"
+   , stars = Just 3
+   , refOt = Just ("2800862","https://www.sancy.com/meubles-gites/gite-le-beaune-heure/")  
+   , descr = ["Maison 8 personnes"
+             ]
+   , tel   = "0473653600"
+   , addr  = "Beaune-le-Froid, 63790 Murol"
+   , mail  = ""
+   , site  = ""
    }
    --,
    --{ emptyTe |

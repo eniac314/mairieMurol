@@ -106,8 +106,8 @@ initialContent =
           ]
 
       , h4 [] [text "Rôles et missions des élus"]
-      , h5 [] [text "Le Maire"]
-      , p  [] [text "Le Maire est le représentant de l’Etat dans la commune. "]
+      , h5 [] [text "Le maire"]
+      , p  [] [text "Le maire est le représentant de l’Etat dans la commune. "]
       , p  [] [text "A ce titre, il est officier d’état civil 
                      et officier de police judiciaire, chargé de missions 
                      déléguées par l’Etat : "]
@@ -119,27 +119,27 @@ initialContent =
            , li [] [p [] [text "il veille, en accord avec le préfet, 
                                 à la bonne marche de la police municipale 
                                 qui a pour mission de faire respecter les 
-                                arrêtés pris par le Maire (stationnement, circulation …), 
+                                arrêtés pris par le maire (stationnement, circulation …), 
                                 la police nationale étant chargée du maintien de 
                                 la sécurité publique"]]
            , li [] [p [] [text "enfin, il est responsable de la sécurité 
                                 civile (centre de secours, sapeurs-pompiers)"]]
            ]
-      , p  [] [text "Le Maire est aussi chef de l’administration communale"]
+      , p  [] [text "Le maire est aussi chef de l’administration communale"]
       , p  [] [text "Un peu comme un chef d’entreprise, il assume 
                      quotidiennement de nombreuses charges : faire exécuter les 
                      décisions du Conseil municipal ; préparer le budget 
                      et ordonnancer les dépenses ; signer les contrats 
                      ; diriger les travaux, etc."]
-      , p  [] [text "Le Maire joue enfin le rôle d’ambassadeur de 
+      , p  [] [text "Le maire joue enfin le rôle d’ambassadeur de 
                      la commune auprès des pouvoirs publics et de 
                      tous les interlocuteurs (organismes publics, etc.) qui peuvent 
                      influer sur le sort de la commune. "]
 
       , h5 [] [text "Les adjoints"]
-      , p  [] [text "Les Adjoints sont chargés d’assumer des fonctions que 
-                     le Maire leur confie, et éventuellement de suppléer 
-                     le Maire en cas d’empêchement (dans l’ordre de 
+      , p  [] [text "Les adjoints sont chargés d’assumer des fonctions que 
+                     le maire leur confie, et éventuellement de suppléer 
+                     le maire en cas d’empêchement (dans l’ordre de 
                      nomination). Ils exercent leurs responsabilités dans un domaine 
                      spécifique, en rapport avec leurs compétences et leurs 
                      motivations : finances, habitat, culture, environnement, etc. "]
@@ -147,7 +147,7 @@ initialContent =
       , h5 [] [text "Les conseillers municipaux"]
       --, p  [] [text "Quant aux Conseillers municipaux , ils ont reçu 
       --               une délégation pour exercer une mission précise auprès 
-      --               des adjoints ou du Maire."]
+      --               des adjoints ou du maire."]
       
       , p []
           [ text "Les conseillers municipaux participent et votent les délibérations 
@@ -164,12 +164,12 @@ initialContent =
       , h4 [] [text "Les élus"]
       , table [] 
               [ tr [] [ td [] [img [src "/images/elus/GOUTTEBEL.jpg"] []]
-                      , td [] [span [class "status"] [text "Maire"]]
+                      , td [] [span [class "status"] [text "maire"]]
                       , td [] [ p [class "nom"] [text "Sébastien GOUTTEBEL"]
                               , p [class "job"]
                                   [text "Président SIVOM de la Vallée Verte"
                                   , br [] []
-                                  , text "Président des Maires Ruraux du Puy-de-Dôme"
+                                  , text "Président des maires Ruraux du Puy-de-Dôme"
                                   ]  
                               ]
                       ]
@@ -181,7 +181,7 @@ initialContent =
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/AUBERTY.jpg"] []]
-                      , td [] [span [class "status"] [text "2ème Adjoint"]]
+                      , td [] [span [class "status"] [text "2ème adjoint"]]
                       , td [] [ p [class "nom"] [text "François AUBERTY"]
                               , p [class "job"]
                                   [text "Commandant 
@@ -189,14 +189,14 @@ initialContent =
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/BOUCHE.jpg"] []]
-                      , td [] [span [class "status"] [text "3ème adjoint"]]
+                      , td [] [span [class "status"] [text "3ème adjointe"]]
                       , td [] [ p [class "nom"] [text "Estel BOUCHE"]
                               , p [class "job"]
                                   [text "Professeur d'anglais"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/GILLARD.jpg"] []]
-                      , td [] [span [class "status"] [text "4ème adjoint"]]
+                      , td [] [span [class "status"] [text "4ème adjointe"]]
                       , td [] [ p [class "nom"] [text "Sylvie GILLARD"]
                               , p [class "job"]
                                   [text "Vice-Présidente du CCAS"
@@ -219,23 +219,22 @@ initialContent =
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/DEBOUT.jpg"] []]
-                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [span [class "status"] [text "Conseillère municipale"]]
                       , td [] [ p [class "nom"] [text "Véronique DEBOUT"]
                               , p [class "job"]
                                   [text "Bénévole associatif - Militaire à la retraite"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/DOTTE.jpg"] []]
-                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [span [class "status"] [text "Conseillère municipale"]]
                       , td [] [ p [class "nom"] [text "Anne-Marie DOTTE"]
                               , p [class "job"]
                                   [text "Retraitée du Tourisme"
-                                  , br [] []
-                                  ,text "Co-présidente du COSA"]
+                                  ]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/LAIR.jpg"] []]
-                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [span [class "status"] [text "Conseillère municipale"]]
                       , td [] [ p [class "nom"] [text "Angélique LAIR"]
                               , p [class "job"]
                                   [text "Présidente du Syndicat agricole"
@@ -244,7 +243,7 @@ initialContent =
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/LANARO.jpg"] []]
-                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [span [class "status"] [text "Conseillère municipale"]]
                       , td [] [ p [class "nom"] [text "Joséphine LANARO"]
                               , p [class "job"]
                                   [text "Membre du CCAS
@@ -255,14 +254,14 @@ initialContent =
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/MAURY.jpg"] []]
-                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [span [class "status"] [text "Conseillère municipale"]]
                       , td [] [ p [class "nom"] [text "Cathy MAURY"]
                               , p [class "job"]
                                   [text "Responsable de Halte Garderie"]
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/PEROL.jpg"] []]
-                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [span [class "status"] [text "Conseillère municipale"]]
                       , td [] [ p [class "nom"] [text "Séverine PEROL"]
                               , p [class "job"] 
                                   [text "Exploitante agricole -
@@ -271,7 +270,7 @@ initialContent =
                               ]
                       ]
               , tr [] [ td [] [img [src "/images/elus/ROUX.jpg"] []]
-                      , td [] [span [class "status"] [text "Conseiller municipal"]]
+                      , td [] [span [class "status"] [text "Conseillère municipale"]]
                       , td [] [ p [class "nom"] [text "Christelle ROUX"]
                               , p [class "job"] [text "Commerciale"]
                               ]

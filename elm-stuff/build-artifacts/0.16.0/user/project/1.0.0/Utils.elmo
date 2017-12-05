@@ -168,9 +168,7 @@ Elm.Utils.make = function (_elm) {
            _U.list([A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("Vous souhaitez passer une information: ")
-                   ,A2($Html.a,
-                   _U.list([$Html$Attributes.href(A2($Basics._op["++"],"mailto:","contactsite.murol@orange.fr"))]),
-                   _U.list([$Html.text(" contactez le webmaster")]))]))]))
+                   ,A2($Html.a,_U.list([$Html$Attributes.href("/ContactMairie.html")]),_U.list([$Html.text(" contactez le webmaster")]))]))]))
            ,A2($Html.p,
            _U.list([]),
            _U.list([$Html.text("La mairie: ")
@@ -272,7 +270,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Les seniors","")
                    ,A2(Leaf,"Santé","")
                    ,A2(Leaf,"Transports","")
-                   ,A2(Leaf,"Gestion des déchets","")
+                   ,A2(Leaf,"Environnement","")
                    ,A2(Leaf,"Animaux","")]))
            ,A2(Node,"Vie économique",_U.list([A2(Leaf,"Agriculture",""),A2(Leaf,"Commerces",""),A2(Leaf,"Entreprises",""),A2(Leaf,"Offres d\'emploi","")]))
            ,A2(Node,
@@ -302,8 +300,7 @@ Elm.Utils.make = function (_elm) {
                    ,A2(Leaf,"Elections","")
                    ,A2(Leaf,"Autres publications","")
                    ,A2(Leaf,"Village fleuri","")
-                   ,A2(Leaf,"Service-public.fr","https://www.service-public.fr/")]))
-           ,A2(Leaf,"Petites annonces","")]));
+                   ,A2(Leaf,"Service-public.fr","https://www.service-public.fr/")]))]));
    return _elm.Utils.values = {_op: _op
                               ,Leaf: Leaf
                               ,Node: Node

@@ -25,8 +25,9 @@ import Utils exposing (mainMenu,
 subMenu = 
   { current = "Carte d'identité"
   , entries =
-      [ "Carte d'identité"
-      , "Passeport"
+      [ "Documents d'identité"
+      --, "Carte d'identité"
+      --, "Passeport"
       , "Permis de conduire"
       , "Véhicules"
       , "Etat civil"
@@ -56,8 +57,9 @@ view address model =
 
 
 contentMap =
- fromList [("Carte d'identité",carteId)
-          ,("Passeport",passport)
+ fromList [("Documents d'identité",docId)
+          --,("Carte d'identité",carteId)
+          --,("Passeport",passport)
           ,("Permis de conduire",permis)
           ,("Véhicules",vehic)
           ,("Etat civil",etatCiv)
@@ -94,6 +96,71 @@ initialContent =
       
 
 -- Data
+
+docId = 
+  div [ class "subContainerData", id "idDemarches"]
+      [ h2 [] [text "Documents d'identité"]
+      , h4 [] [text "Première demande ou renouvellement de carte d'identité ou de passeport"]
+      , p [] [b [] [text "Depuis le 21 mars 2017, les démarches entourant les cartes nationales d'identité (CNI) et les passeports ont été modifiées."]]
+      , p [] 
+          [b [] [text "Les personnes souhaitant faire établir ou renouveler ces pièces ne doivent plus se rendre dans les mairies dont elles dépendent, mais, au choix, dans l'une des mairies habilitées"]
+          , text "qui sont équipées d'un dispositif de prise d'empreintes digitales numérisées (désormais utilisées pour la carte nationale d'identité et non plus seulement pour le passeport)."
+          ]
+      , p [] 
+          [ b [] [text "Dans le département du Puy-de-Dôme, 22 mairies sont habilitées :"]
+          , ul []
+               [li [] [text "Ambert"]
+               ,li [] [text "Aubière"]
+               ,li [] [text "Beaumont"]
+               ,li [] [text "Besse"]
+               ,li [] [text "Brassac-les-Mines"]
+               ,li [] [text "Chamalières"]
+               ,li [] [text "Clermont-Ferrand"]
+               ,li [] [text "Cournon-d'Auvergne"]
+               ,li [] [text "Cunlhat"]
+               ,li [] [text "Gerzat"]
+               ,li [] [text "Issoire"]
+               ,li [] [text "Les Martres-de-Veyre"]
+               ,li [] [text "Lezoux"]
+               ,li [] [text "Pont-du-Château"]
+               ,li [] [text "Puy-Guillaume"]
+               ,li [] [text "Riom"]
+               ,li [] [text "Rochefort-Montagne"]
+               ,li [] [text "Saint-Amand-Tallende"]
+               ,li [] [text "Saint-Eloy-les-Mines"]
+               ,li [] [text "Saint-Georges-de-Mons"]
+               ,li [] [text "Thiers"]
+               ,li [] [text "Volvic"]
+               ]
+          ]
+      , p [] 
+          [text "La plus proche de Murol est la mairie de Besse et Saint Anastaise."
+          , br [] []
+          , text "Concernant ces démarches, "
+          , b [] 
+              [text "le service Etat-civil de la commune de Besse et Saint-Anastaise vous propose des rendez-vous "
+              , u [] [text "les lundis et jeudis après-midis"]
+              , text "."
+              ]
+          ]
+      , p []
+          [ text "Par ailleurs, "
+          , b [] [text "un télé-service de pré-demande en ligne est désormais proposé sur le site "]
+          , a [href "http://www.passeport.ants.gouv.fr", target "_blank"]
+              [text "www.passeport.ants.gouv.fr"] 
+          
+          , text ". Facultative, la pré-demande a toutefois le grand intérêt de rendre le dépôt du dossier plus rapide et d'éviter les erreurs liées à la phase de numérisation du Cerfa papier. L'usager après avoir rempli sa pré-demande, doit imprimer le récapitulatif correspondant ou noter le numéro de pré-demande qui lui sera demandé lors de son rendez-vous en mairie. "
+          ]
+      , p [] 
+          [b [] 
+             [text "Pour connaître les démarches à effectuer et les pièces à fournir, suivez les instructions affichées sur les pages dédiées au "]
+          , a [href "https://www.service-public.fr/particuliers/vosdroits/N360", target "_blank"] 
+            [text "passeport"]
+          , b [] [text " et à la "]
+          , a [href "https://www.service-public.fr/particuliers/vosdroits/N358sur", target "_blank"]
+              [text "carte nationale d'identité"]
+          ]
+      ]
 carteId = 
   div [ class "subContainerData", id "idDemarches"]
       [ h2 [] [text "Carte d'identité"]
@@ -291,44 +358,55 @@ passport =
 
 permis = 
   div [ class "subContainerData", id "permisDemarches"]
-      [ h2 [] [text "Délivrance du permis"]
-      , p  [] [text "Il peut être demandé que le permis soit 
-                     délivré dans n'importe quelle sous-préfecture du département dont 
-                     dépend le domicile du candidat reçu (par exemple 
-                     celle du lieu où il travaille)."]
-      , p  [] [text "Dans tous les cas, la demande peut être 
-                     faite sur place ou par correspondance."]
-      , h5 [] [text "Formalités sur place:"]
-      , p  [] [text "Il convient, en principe, de présenter : "]
-      , ul []
-           [ li [] [p  [] [text "une pièce prouvant son identité (carte nationale d'identité, 
-                                 passeport...). "]]
-           , li [] [p  [] [text "le certificat d'examen du permis de conduire (attestation 
-                                 provisoire ou \"feuille jaune\"), délivré par l'inspecteur"]]
-           , li [] [p  [] [text "le montant de la taxe régionale ((non demandée 
-                                 dans certaines régions)."]]
-           ]
-      , p  [] [text "Attention : aucun texte réglementaire ne précise le 
-                     nombre et le type de pièces à fournir 
-                     pour la délivrance du permis définitif. Se renseigner 
-                     au préalable."]
-      , h5 [] [text "Demande par correspondance:"]
-      , p  [] [text "Pour une demande par correspondance doit être joint, 
-                     en principe :"]
-      , ul []
-           [ li [] [p  [] [text "le certificat d'examen du permis de conduire (attestation 
-                                 provisoire ou \"feuille jaune\"), délivré par l'inspecteur"]]
-           , li [] [p  [] [text "une enveloppe libellée aux noms et adresses du 
-                                 demandeur, timbrée au tarif \"lettre recommandée\""]]
-           , li [] [p  [] [text "un chèque ou mandat-lettre à l'ordre de Monsieur 
-                                 le régisseur des recettes de la préfecture, au 
-                                 montant de la taxe régionale (si elle est 
-                                 demandée)"]]
-           , li [] [link "Demande de délivrance" "/baseDocumentaire/imprime_demande_permis_conduire.pdf"
-                   ,span  [] [text " du permis de conduire"]]
-           , li [] [link "Demande de permis international" "/baseDocumentaire/imprime_demande_permis_international.pdf"]
-           ]
+      [ h2 [] [text "Permis de conduire"]
+      , p []
+          [text "Vous devez contacter votre auto-école pour savoir si elle transmet elle-même votre demande de permis de conduire aux services de l'État qui ont enregistré votre inscription à l'examen avec le résultat favorable ou si c'est à vous de le faire."]
+      , p []
+          [ text "Dans la plupart des cas, au cours du délai de 4 mois de validité du certificat, le permis de conduire vous est adressé par voie postale à votre domicile."]
+      , p [] 
+          [text "Si vous faites la demande vous-même, vous devez utiliser le téléservice mis à disposition par l'ANTS :"
+          , a [href "https://ants.gouv.fr/monespace/s-inscrire?slug=s-inscrire", target "_blank"]
+              [text "Demande en ligne de permis de conduire à la suite de la réussite à un examen"]
+          ]
       ]
+      --[ h2 [] [text "Délivrance du permis"]
+      --, p  [] [text "Il peut être demandé que le permis soit 
+      --               délivré dans n'importe quelle sous-préfecture du département dont 
+      --               dépend le domicile du candidat reçu (par exemple 
+      --               celle du lieu où il travaille)."]
+      --, p  [] [text "Dans tous les cas, la demande peut être 
+      --               faite sur place ou par correspondance."]
+      --, h5 [] [text "Formalités sur place:"]
+      --, p  [] [text "Il convient, en principe, de présenter : "]
+      --, ul []
+      --     [ li [] [p  [] [text "une pièce prouvant son identité (carte nationale d'identité, 
+      --                           passeport...). "]]
+      --     , li [] [p  [] [text "le certificat d'examen du permis de conduire (attestation 
+      --                           provisoire ou \"feuille jaune\"), délivré par l'inspecteur"]]
+      --     , li [] [p  [] [text "le montant de la taxe régionale ((non demandée 
+      --                           dans certaines régions)."]]
+      --     ]
+      --, p  [] [text "Attention : aucun texte réglementaire ne précise le 
+      --               nombre et le type de pièces à fournir 
+      --               pour la délivrance du permis définitif. Se renseigner 
+      --               au préalable."]
+      --, h5 [] [text "Demande par correspondance:"]
+      --, p  [] [text "Pour une demande par correspondance doit être joint, 
+      --               en principe :"]
+      --, ul []
+      --     [ li [] [p  [] [text "le certificat d'examen du permis de conduire (attestation 
+      --                           provisoire ou \"feuille jaune\"), délivré par l'inspecteur"]]
+      --     , li [] [p  [] [text "une enveloppe libellée aux noms et adresses du 
+      --                           demandeur, timbrée au tarif \"lettre recommandée\""]]
+      --     , li [] [p  [] [text "un chèque ou mandat-lettre à l'ordre de Monsieur 
+      --                           le régisseur des recettes de la préfecture, au 
+      --                           montant de la taxe régionale (si elle est 
+      --                           demandée)"]]
+      --     , li [] [link "Demande de délivrance" "/baseDocumentaire/imprime_demande_permis_conduire.pdf"
+      --             ,span  [] [text " du permis de conduire"]]
+      --     , li [] [link "Demande de permis international" "/baseDocumentaire/imprime_demande_permis_international.pdf"]
+      --     ]
+      --]
 
 vehic = 
   div [ class "subContainerData", id "vehicDemarches"]
@@ -524,63 +602,100 @@ servCiv =
       , h4 [] [text "Comment m'engager?"]
       , h5 [] [text "Quelles sont les conditions pour pouvoir m’engager en 
                      Service Civique ? "]
-      , p  [] [text "Pour être volontaire, il faut avoir entre 16 
-                     et 25 ans et posséder la nationalité française, 
-                     celle d’un état membre de l’Union européenne ou 
-                     de l’espace économique européen, ou justifier d’un séjour 
-                     régulier en France depuis plus d’un an. "]
-      , p  [] [text "Aucune autre condition n’est requise ; en particulier, 
-                     il n’y a pas de condition en termes 
-                     de diplôme ou d’expérience professionnelle préalable. Ce sont 
-                     les savoirs-être et la motivation qui comptent avant 
-                     tout."]
-      , p  [] [text "Les conditions d’engagement des jeunes entre 16 et 
-                     18 ans sont aménagées. Les missions doivent être 
-                     adaptées à leur âge et une autorisation parentale 
-                     est nécessaire."]
-      , p  [] [text "Les jeunes en situation de handicap peuvent faire 
-                     un Service Civique. L’indemnité de Service Civique est 
-                     entièrement cumulable avec l’Allocation aux Adultes Handicapés (AAH)."]
-      , h5 [] [text "Quelles sont les modalités de l’engagement de Service 
-                     Civique ?"]
-      , p  [] [text "Le Service Civique est un engagement volontaire de 
-                     6 à 12 mois pour l’accomplissement d’une mission 
-                     d’intérêt général dans un des neuf domaines d’interventions 
-                     reconnus prioritaires pour la Nation : culture et 
-                     loisirs, développement international et action humanitaire, éducation pour 
-                     tous, environnement, intervention d'urgence en cas de crise, 
-                     mémoire et citoyenneté, santé, solidarité, sport. "]
-      , p  [] [text "Une indemnité de 446,65 euros nets par mois 
-                     est directement versée au volontaire par l'Etat, quelle 
-                     que soit la durée hebdomadaire de la mission. "]
-      , p  [] [text "L'organisme d’accueil verse aussi au volontaire une prestation 
-                     en nature ou en espèce d’un montant de 
-                     101,49 euros, correspondant à la prise en charge 
-                     des frais d’alimentation (fourniture de repas) ou de 
-                     transports. Cette prestation peut être versée de différentes 
-                     façons (titre repas, accès à la cantine, remboursements 
-                     de frais, etc.) "]
-      , p  [] [text "Les jeunes, bénéficiaires ou appartenant à un foyer 
-                     bénéficiaire du RSA, ou titulaire d'une bourse de 
-                     l'enseignement supérieur au titre du 5e échelon ou 
-                     au delà bénéficient d’une majoration d'indemnité de 101,68 
-                     euros par mois. "]
-      , p  [] [text "Les volontaires en Service Civique bénéficient d'une protection 
-                    sociale intégrale."]
-      , p  [] [text "Au total, selon les situations, les volontaires en 
-                     Service Civique perçoivent entre 548,14 euros et 649,82 
-                     euros par mois. "]
-      , p  [] [text "Le bénéfice de l’aide au logement est conservé 
-                     pendant le Service Civique."]
-      , p  [] [text "Un accompagnement pour faciliter le déroulement de la 
-                     mission est proposé. Il s'agit d'une phase de 
-                     préparation et d'accompagnement dans la réalisation de la 
-                     mission, d'une formation civique et citoyenne et d'un 
-                     appui à la réflexion sur le projet d’avenir. "]
-      , h5 [] [text "Comment postuler à une mission de Service Civique? "]
-      , p  [] [text "Postulez auprès des organismes proposant des missions de 
-                     Service Civique directement à partir du site:"]
-      , link "http://www.service-civique.gouv.fr" "http://www.service-civique.gouv.fr"
+      , p [] 
+          [ text "Pour être volontaire, il faut avoir entre 16 et 25 ans et posséder la nationalité française, celle d’un état membre de l’Union européenne ou de l’espace économique européen, ou justifier d’un séjour régulier en France depuis plus d’un an. "]
+      , p []
+          [ b [] 
+              [text "Aucune autre condition n’est requise ; en particulier, il n’y a pas de condition en termes de diplôme ou d’expérience professionnelle préalable. Ce sont les savoirs-être et la motivation qui comptent avant tout."
+              ]
+          ]
+      , p []
+          [text "Les conditions d’engagement des jeunes entre 16 et 18 ans sont aménagées. Les missions doivent être adaptées à leur âge et une autorisation parentale est nécessaire."]
+      , p []
+          [text "Les jeunes en situation de handicap peuvent faire un Service Civique. L’indemnité de Service Civique est entièrement cumulable avec l’Allocation aux Adultes Handicapés (AAH)."
+          ] 
+      , h5 []
+           [text "Quelles sont les modalités de l’engagement de Service Civique ?"]
+      , p []
+          [text "Le Service Civique est un engagement volontaire de 6 à 12 mois pour l’accomplissement d’une mission d’intérêt général dans un des neuf domaines d’interventions reconnus prioritaires pour la Nation : culture et loisirs, développement international et action humanitaire, éducation pour tous, environnement, intervention d'urgence en cas de crise, mémoire et citoyenneté, santé, solidarité, sport. "]
+      , p [] 
+          [text "Une indemnité de 446,65 euros nets par mois est directement versée au volontaire par l'Etat, quelle que soit la durée hebdomadaire de la mission."]
+      , p [] 
+          [text "L'organisme d’accueil verse aussi au volontaire une prestation en nature ou en espèce d’un montant de 101,49 euros, correspondant à la prise en charge des frais d’alimentation (fourniture de repas) ou de transports. Cette prestation peut être versée de différentes façons (titre repas, accès à la cantine, remboursements de frais, etc.)"]
+      , p [] 
+          [ text "Les jeunes, bénéficiaires ou appartenant à un foyer bénéficiaire du RSA, ou titulaire d'une bourse de l'enseignement supérieur au titre du 5e échelon ou au delà bénéficient d’une majoration d'indemnité de 101,68 euros par mois."]
+      , p [] 
+          [text "Les volontaires en Service Civique bénéficient d'une protection sociale intégrale."]
+      , p []
+          [text "Au total, selon les situations, les volontaires en Service Civique perçoivent entre 548,14 euros et 649,82 euros par mois. "]
+      , p [] 
+          [text "Le bénéfice de l’aide au logement est conservé pendant le Service Civique."]
+      , p [] 
+          [text "Un accompagnement pour faciliter le déroulement de la mission est proposé. Il s'agit d'une phase de préparation et d'accompagnement dans la réalisation de la mission, d'une formation civique et citoyenne et d'un appui à la réflexion sur le projet d’avenir. "]
+      , h5 [] [text "Comment postuler à une mission de Service Civique?"]
+
+      , p [] 
+          [text "Postulez auprès des organismes proposant des missions de Service Civique directement à partir du site: "
+          , a [href "http://www.service-civique.gouv.fr/", target "_blank"] [text "www.service-civique.gouv.fr"]
+          ]
+
+      --, p  [] [text "Pour être volontaire, il faut avoir entre 16 
+      --               et 25 ans et posséder la nationalité française, 
+      --               celle d’un état membre de l’Union européenne ou 
+      --               de l’espace économique européen, ou justifier d’un séjour 
+      --               régulier en France depuis plus d’un an. "]
+      --, p  [] [text "Aucune autre condition n’est requise ; en particulier, 
+      --               il n’y a pas de condition en termes 
+      --               de diplôme ou d’expérience professionnelle préalable. Ce sont 
+      --               les savoirs-être et la motivation qui comptent avant 
+      --               tout."]
+      --, p  [] [text "Les conditions d’engagement des jeunes entre 16 et 
+      --               18 ans sont aménagées. Les missions doivent être 
+      --               adaptées à leur âge et une autorisation parentale 
+      --               est nécessaire."]
+      --, p  [] [text "Les jeunes en situation de handicap peuvent faire 
+      --               un Service Civique. L’indemnité de Service Civique est 
+      --               entièrement cumulable avec l’Allocation aux Adultes Handicapés (AAH)."]
+      --, h5 [] [text "Quelles sont les modalités de l’engagement de Service 
+      --               Civique ?"]
+      --, p  [] [text "Le Service Civique est un engagement volontaire de 
+      --               6 à 12 mois pour l’accomplissement d’une mission 
+      --               d’intérêt général dans un des neuf domaines d’interventions 
+      --               reconnus prioritaires pour la Nation : culture et 
+      --               loisirs, développement international et action humanitaire, éducation pour 
+      --               tous, environnement, intervention d'urgence en cas de crise, 
+      --               mémoire et citoyenneté, santé, solidarité, sport. "]
+      --, p  [] [text "Une indemnité de 446,65 euros nets par mois 
+      --               est directement versée au volontaire par l'Etat, quelle 
+      --               que soit la durée hebdomadaire de la mission. "]
+      --, p  [] [text "L'organisme d’accueil verse aussi au volontaire une prestation 
+      --               en nature ou en espèce d’un montant de 
+      --               101,49 euros, correspondant à la prise en charge 
+      --               des frais d’alimentation (fourniture de repas) ou de 
+      --               transports. Cette prestation peut être versée de différentes 
+      --               façons (titre repas, accès à la cantine, remboursements 
+      --               de frais, etc.) "]
+      --, p  [] [text "Les jeunes, bénéficiaires ou appartenant à un foyer 
+      --               bénéficiaire du RSA, ou titulaire d'une bourse de 
+      --               l'enseignement supérieur au titre du 5e échelon ou 
+      --               au delà bénéficient d’une majoration d'indemnité de 101,68 
+      --               euros par mois. "]
+      --, p  [] [text "Les volontaires en Service Civique bénéficient d'une protection 
+      --              sociale intégrale."]
+      --, p  [] [text "Au total, selon les situations, les volontaires en 
+      --               Service Civique perçoivent entre 548,14 euros et 649,82 
+      --               euros par mois. "]
+      --, p  [] [text "Le bénéfice de l’aide au logement est conservé 
+      --               pendant le Service Civique."]
+      --, p  [] [text "Un accompagnement pour faciliter le déroulement de la 
+      --               mission est proposé. Il s'agit d'une phase de 
+      --               préparation et d'accompagnement dans la réalisation de la 
+      --               mission, d'une formation civique et citoyenne et d'un 
+      --               appui à la réflexion sur le projet d’avenir. "]
+      --, h5 [] [text "Comment postuler à une mission de Service Civique? "]
+      --, p  [] [text "Postulez auprès des organismes proposant des missions de 
+      --               Service Civique directement à partir du site:"]
+      --, link "http://www.service-civique.gouv.fr" "http://www.service-civique.gouv.fr"
       --, p  [] [text "Mission dans le puy de dôme:"]
       --, link "service civique puy de dôme" "http://www.service-civique.gouv.fr/les_missions?tid=All&tid_1=16&tid_2=All&dept=Puy-de-Dôme "
       ]

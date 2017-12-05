@@ -489,7 +489,7 @@ peri =
   , ("Activités jeunesse de la communauté de communes"
     ,"/images/tiles/periscolaire/actiJeunesse.jpg"
     ,[]
-    ," http://www.cc-massifdusancy.fr/"
+    ,"http://www.cc-massifdusancy.fr/enfance-jeunesse/activites-jeunesse_5675.cfm"
     )
   ]
   

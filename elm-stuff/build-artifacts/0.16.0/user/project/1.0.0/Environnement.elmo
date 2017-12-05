@@ -1,0 +1,150 @@
+Elm.Environnement = Elm.Environnement || {};
+Elm.Environnement.make = function (_elm) {
+   "use strict";
+   _elm.Environnement = _elm.Environnement || {};
+   if (_elm.Environnement.values) return _elm.Environnement.values;
+   var _U = Elm.Native.Utils.make(_elm),
+   $Basics = Elm.Basics.make(_elm),
+   $Debug = Elm.Debug.make(_elm),
+   $Html = Elm.Html.make(_elm),
+   $Html$Attributes = Elm.Html.Attributes.make(_elm),
+   $List = Elm.List.make(_elm),
+   $Maybe = Elm.Maybe.make(_elm),
+   $Result = Elm.Result.make(_elm),
+   $Signal = Elm.Signal.make(_elm),
+   $StartApp$Simple = Elm.StartApp.Simple.make(_elm),
+   $String = Elm.String.make(_elm),
+   $TiledMenu = Elm.TiledMenu.make(_elm),
+   $Utils = Elm.Utils.make(_elm);
+   var _op = {};
+   var anim = _U.list([{ctor: "_Tuple4",_0: "Gestion des déchets",_1: "/images/tiles/environnement/dechets.jpg",_2: _U.list([]),_3: "GestionDesDéchets.html"}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Gestion de l’eau"
+                       ,_1: "/images/tiles/environnement/eau.jpg"
+                       ,_2: _U.list([A2($Html.ul,
+                       _U.list([]),
+                       _U.list([A2($Html.li,
+                               _U.list([]),
+                               _U.list([A2($Html.a,
+                               _U.list([$Html$Attributes.href("/baseDocumentaire/environnement/GUIDE SIVU.pdf"),$Html$Attributes.target("_blank")]),
+                               _U.list([$Html.text("guide du SIVU")]))]))
+                               ,A2($Html.li,
+                               _U.list([]),
+                               _U.list([A2($Html.a,
+                               _U.list([$Html$Attributes.href("/baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf")
+                                       ,$Html$Attributes.target("_blank")]),
+                               _U.list([$Html.text("présentation SIVU")]))]))]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Gestion des espaces verts"
+                       ,_1: "/images/tiles/environnement/espacesVerts.jpg"
+                       ,_2: _U.list([A2($Html.ul,
+                       _U.list([]),
+                       _U.list([A2($Html.li,
+                               _U.list([]),
+                               _U.list([A2($Html.a,
+                               _U.list([$Html$Attributes.href("/VillageFleuri.html")]),
+                               _U.list([$Html.text("page ville et village fleuris")]))]))
+                               ,A2($Html.li,
+                               _U.list([]),
+                               _U.list([A2($Html.a,
+                               _U.list([$Html$Attributes.href("/baseDocumentaire/CPDGSdecretarreteambroisies040517.pdf"),$Html$Attributes.target("_blank")]),
+                               _U.list([$Html.text("Communiqué de presse concernant la lutte contre les ambroisies")]))]))]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4",_0: "Gestion des risques",_1: "/images/tiles/environnement/risques.jpg",_2: _U.list([]),_3: "GestionDesRisques.html"}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Charte de développement durable"
+                       ,_1: "/images/tiles/environnement/devDurable.jpg"
+                       ,_2: _U.list([A2($Html.ul,
+                       _U.list([]),
+                       _U.list([A2($Html.li,
+                       _U.list([]),
+                       _U.list([A2($Html.a,
+                       _U.list([$Html$Attributes.href("/baseDocumentaire/Charte de dvlpt durable diagnostic MUROL.pdf"),$Html$Attributes.target("_blank")]),
+                       _U.list([$Html.text("Charte de développement durable dans les stations de montagnes")]))]))]))])
+                       ,_3: ""}
+                      ,{ctor: "_Tuple4"
+                       ,_0: "Milieux sensibles"
+                       ,_1: "/images/tiles/environnement/millieuxSensibles.jpg"
+                       ,_2: _U.list([A2($Html.ul,
+                       _U.list([]),
+                       _U.list([A2($Html.li,
+                               _U.list([]),
+                               _U.list([A2($Html.a,
+                               _U.list([$Html$Attributes.href("/baseDocumentaire/livretLac.pdf"),$Html$Attributes.target("_blank")]),
+                               _U.list([$Html.text("Livret d\'informations sur le lac Chambon")]))]))
+                               ,A2($Html.li,
+                               _U.list([]),
+                               _U.list([A2($Html.a,
+                               _U.list([$Html$Attributes.href("/baseDocumentaire/Dossier zone humide de Murol.pdf"),$Html$Attributes.target("_blank")]),
+                               _U.list([$Html.text("Projet zone humide")]))]))
+                               ,A2($Html.li,
+                               _U.list([]),
+                               _U.list([A2($Html.a,
+                               _U.list([$Html$Attributes.href("/baseDocumentaire/decouvrirMurol/tartaretLavina.pdf"),$Html$Attributes.target("_blank")]),
+                               _U.list([$Html.text("Lles volcans du Tartaret - Pierre Lavina")]))]))]))])
+                       ,_3: ""}]);
+   var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
+   "String",
+   function (v) {
+      return typeof v === "string" || typeof v === "object" && v instanceof String ? v : _U.badPort("a string",v);
+   });
+   var initialContent = {wrapper: F2(function (content,showIntro) {
+                           return A2($Html.div,
+                           _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("periscolaire")]),
+                           _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Environnement")])),content]));
+                        })
+                        ,tiledMenu: A2($TiledMenu.initAtWithLink,locationSearch,anim)};
+   var update = F2(function (action,model) {
+      var _p0 = action;
+      if (_p0.ctor === "NoOp") {
+            return model;
+         } else {
+            var tm = function (_) {    return _.tiledMenu;}(function (_) {    return _.mainContent;}(model));
+            var mc = function (_) {    return _.mainContent;}(model);
+            return _U.update(model,
+            {showIntro: $Basics.not(function (_) {    return _.showIntro;}(model)),mainContent: _U.update(mc,{tiledMenu: A2($TiledMenu.update,_p0._0,tm)})});
+         }
+   });
+   var TiledMenuAction = function (a) {    return {ctor: "TiledMenuAction",_0: a};};
+   var NoOp = {ctor: "NoOp"};
+   var view = F2(function (address,model) {
+      return A2($Html.div,
+      _U.list([$Html$Attributes.id("container")]),
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie locale","Environnement"]),function (_) {    return _.mainMenu;}(model))
+              ,A2($Html.div,
+              _U.list([$Html$Attributes.id("subContainer")]),
+              _U.list([A3(function (_) {
+                 return _.wrapper;
+              },
+              function (_) {
+                 return _.mainContent;
+              }(model),
+              A2($TiledMenu.view,
+              A2($Signal.forwardTo,address,TiledMenuAction),
+              function (_) {
+                 return _.tiledMenu;
+              }(function (_) {    return _.mainContent;}(model))),
+              function (_) {
+                 return _.showIntro;
+              }(model))]))
+              ,$Utils.pageFooter]));
+   });
+   var Model = F4(function (a,b,c,d) {    return {mainMenu: a,subMenu: b,mainContent: c,showIntro: d};});
+   var MainContent = F2(function (a,b) {    return {wrapper: a,tiledMenu: b};});
+   var subMenu = {current: "",entries: _U.list([])};
+   var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent,showIntro: $String.isEmpty(locationSearch) ? true : false};
+   var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
+   return _elm.Environnement.values = {_op: _op
+                                      ,subMenu: subMenu
+                                      ,MainContent: MainContent
+                                      ,Model: Model
+                                      ,initialModel: initialModel
+                                      ,view: view
+                                      ,NoOp: NoOp
+                                      ,TiledMenuAction: TiledMenuAction
+                                      ,update: update
+                                      ,main: main
+                                      ,initialContent: initialContent
+                                      ,anim: anim};
+};

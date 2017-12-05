@@ -124,7 +124,7 @@ view address model =
                                  ]
                       Just l  -> [class "tile"
                                  , href l
-                                 --, target "_blank"
+                                 , target (if (String.startsWith "http" l || String.startsWith "www" l ) then "_blank" else "_self")
                                  , id "tiledMenuTop"
                                  ]
                     picture' = if String.isEmpty picture

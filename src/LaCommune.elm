@@ -94,18 +94,21 @@ initialContent =
                      et bénéficie de l’attrait du lac Chambon où 
                      l’on enregistre 400 000 passages par an."]
       , p [] [ text "La politique touristique de la commune de Murol 
-                     lui a permis d’obtenir le référencement « Station 
-                     Verte » en 1964, la labellisation Famille Plus 
+                     lui a permis d’obtenir en 1964 le référencement « Station 
+                     Verte », la labellisation Famille Plus 
                      en 2011, qui récompense ses efforts en faveur 
-                     de l’accueil des familles, et le classement station 
-                     de tourisme en janvier 2014. "] 
+                     de l’accueil des familles, et le classement "
+              , a [ href "https://www.entreprises.gouv.fr/tourisme/communes-touristiques-et-stations-classees-tourisme", target "_blank"] 
+                  [ text "station de tourisme"]
+              , text " en janvier 2014. "
+              ] 
       , p [] 
           [ text "Depuis 1999, la commune de Murol est membre 
                   de la "
           , a [href "http://www.cc-massifdusancy.fr ", target "_blank"]
               [text "Communauté de Commune du Massif du 
                      Sancy"]
-          , text " qui compte 16 communes à ce jour. " 
+          , text " qui compte 20 communes à ce jour pour une population approchant 10 000 habitants." 
           ]
       , p [] 
           [ text "La commune appartient à de multiples intercommunalités qui 
@@ -117,34 +120,34 @@ initialContent =
           , text ")" 
           ]
       , p [] 
-          [ text "La population de Murol était de 544 habitants 
-                 en 2012. Les nouveaux chiffres du recensement 2016 
+          [ text "La population de Murol était de 561 habitants 
+                 en 2014. Les nouveaux chiffres du recensement 2016 
                  ne sont pas encore publiés par l'"
           , a [href "http://www.insee.fr/fr/themes/comparateur.asp?codgeo=com-63247 ", target "_blank"]
               [text "INSEE"]
           , text "." 
           ]
-      , p [] [ text "On comptait 651 logements en 2012 dont 40% 
+      , p [] [ text "On comptait 656 logements en 2014 dont 42,7% 
                     de résidences principales. "]
       , p [] [ text "La fréquentation touristique est très importante : le 
                      taux de fonction touristique atteint dans notre vallée 
-                     6.82, chiffre le plus élevé dans le massif 
+                     6,82, chiffre le plus élevé dans le massif 
                      du Sancy, qui est a comparé avec le 
-                     chiffre moyen de 1.3 au niveau national et 
-                     5.3, chiffre moyen des zones de montagne. La 
+                     chiffre moyen de 1,3 au niveau national et 
+                     5,3, chiffre moyen des zones de montagne. La 
                      population de Murol est multipliée par plus de 
                      3 en hiver et plus de 5 en 
                      été grâce aux atouts dont notre destination touristique 
                      dispose. "]
-      , p [] [ text "L’INSEE fait état de 125 établissements actifs en 
-                     décembre 2013. Le commerce et les services représentent 
-                     le principal secteur d’activité avec 71% des établissements, 
-                     la construction suit avec 9,6% et l’agriculture reste 
-                     présente avec 7,2% des établissements. "]
+      , p [] [ text "L’INSEE fait état de 137 établissements actifs en 
+                     décembre 2015. Le commerce et les services représentent 
+                     le principal secteur d’activité avec 69,3% des établissements, 
+                     la construction suit avec 8,8% et l’agriculture reste 
+                     présente avec 6,6% des établissements. "]
       
       , a  [ href "/Photothèque.html"] [ text "La photothèque"]
       , br [] []
-      , a  [ href "/VillageFleuri.html"] [ text "Murol village fleuri"] 
+      --, a  [ href "/VillageFleuri.html"] [ text "Murol village fleuri"] 
       ]
 
 --initialContent =

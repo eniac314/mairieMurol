@@ -136,11 +136,11 @@ Elm.Animation.make = function (_elm) {
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
-                                   _U.list([$Html.text("La commune de Murol, riche d’un service animation \n                      municipal et d’une trentaine d’associations dynamiques, offre diverses \n                      animations à sa population locale et à ses \n                      visiteurs tout au long de l’année. Voir le \n                      calendrier ci-dessous.")]))
+                                   _U.list([$Html.text("La commune de Murol offre, tout au long de l’année, diverses animations à sa population locale et à ses visiteurs  grâce à un service municipal dédié et d’une trentaine d’associations dynamiques. Voir le calendrier ci-dessous.")]))
                                    ,A2($Html.p,
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}
                                                                                ,{ctor: "_Tuple2",_0: "displayIntro",_1: showIntro}]))]),
-                                   _U.list([$Html.text("De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent \n                      au cours de l’année à Murol.")]))
+                                   _U.list([$Html.text("De plus, Murol est le site de grandes manifestations culturelles annuelles :")]))
                                    ,content
                                    ,A2($Html.h4,
                                    _U.list([$Html$Attributes.classList(_U.list([{ctor: "_Tuple2",_0: "intro",_1: true}

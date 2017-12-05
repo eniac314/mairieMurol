@@ -95,14 +95,9 @@ initialContent =
        div [ class "subContainerData noSubmenu", id "periscolaire"]
            [ h2 [] [text "Animation"]
            , p [classList [("intro",True),("displayIntro", showIntro)]]
-               [text "La commune de Murol, riche d’un service animation 
-                      municipal et d’une trentaine d’associations dynamiques, offre diverses 
-                      animations à sa population locale et à ses 
-                      visiteurs tout au long de l’année. Voir le 
-                      calendrier ci-dessous."]
+               [text "La commune de Murol offre, tout au long de l’année, diverses animations à sa population locale et à ses visiteurs  grâce à un service municipal dédié et d’une trentaine d’associations dynamiques. Voir le calendrier ci-dessous."]
            , p [classList [("intro",True),("displayIntro", showIntro)]]
-               [text "De plus, plusieurs grandes manifestations culturelles annuelles s’égrainent 
-                      au cours de l’année à Murol."]
+               [text "De plus, Murol est le site de grandes manifestations culturelles annuelles :"]
 
            , content
            

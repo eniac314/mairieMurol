@@ -315,7 +315,7 @@ Elm.Periscolaire.make = function (_elm) {
                        ,_0: "Activités jeunesse de la communauté de communes"
                        ,_1: "/images/tiles/periscolaire/actiJeunesse.jpg"
                        ,_2: _U.list([])
-                       ,_3: " http://www.cc-massifdusancy.fr/"}]);
+                       ,_3: "http://www.cc-massifdusancy.fr/enfance-jeunesse/activites-jeunesse_5675.cfm"}]);
    var locationSearch = Elm.Native.Port.make(_elm).inbound("locationSearch",
    "String",
    function (v) {

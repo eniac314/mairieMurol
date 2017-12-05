@@ -169,7 +169,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 23 octobre 2017"]
+            [text "Dernière mise à jour le lundi 04 décembre 2017"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -1875,7 +1875,19 @@ news =
                      [text "Horaires et infos pratiques"]   
                  ]
    , expiry = Date.fromString "03/11/2018"
-   }      
+   }
+   ,{ emptyNews |
+     title = "Les animations du château pour les vacances de Noël"
+   , date  = Date.fromString "12/04/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez les animations prévues au château de Murol lors des vacances de Noël dans le "
+                    ]
+                 , a [href "/baseDocumentaire/CP Château de Murol - Noel 2017.pdf", target "_blank"]
+                     [text "communiqué de presse"]   
+                 ]
+   , expiry = Date.fromString "01/07/2018"
+   }       
   --,{ emptyNews |
   --   title = ""
   -- , date  = Date.fromString ""

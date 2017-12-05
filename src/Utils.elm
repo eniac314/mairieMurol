@@ -38,7 +38,7 @@ mainMenu = Node ""
          , Leaf "Les seniors" ""
          , Leaf "Santé" ""
          , Leaf "Transports" ""
-         , Leaf "Gestion des déchets" ""
+         , Leaf "Environnement" ""
          , Leaf "Animaux" ""
          ]
   , Node "Vie économique"
@@ -75,7 +75,7 @@ mainMenu = Node ""
          , Leaf "Village fleuri" ""
          , Leaf "Service-public.fr" "https://www.service-public.fr/"
          ]
-  , Leaf "Petites annonces" ""]
+  ]
 
 
 --renderMainMenu : List String -> Menu -> Html
@@ -190,7 +190,7 @@ pageFooter =
   footer [ id "footer"]
          [div[]
              [p [] [ text "Vous souhaitez passer une information: "
-                   , a [href ("mailto:"++"contactsite.murol@orange.fr")]
+                   , a [href "/ContactMairie.html"]
                        [text " contactez le webmaster"]
                    ]
              ]

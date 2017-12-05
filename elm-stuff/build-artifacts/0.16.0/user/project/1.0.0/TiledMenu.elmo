@@ -53,7 +53,11 @@ Elm.TiledMenu.make = function (_elm) {
                                        ,$Html$Attributes.id("tiledMenuTop")
                                        ,A2($Html$Events.onClick,address,ShowTile(iD))]);
                      } else {
-                        return _U.list([$Html$Attributes.$class("tile"),$Html$Attributes.href(_p8._0),$Html$Attributes.id("tiledMenuTop")]);
+                        var _p9 = _p8._0;
+                        return _U.list([$Html$Attributes.$class("tile")
+                                       ,$Html$Attributes.href(_p9)
+                                       ,$Html$Attributes.target(A2($String.startsWith,"http",_p9) || A2($String.startsWith,"www",_p9) ? "_blank" : "_self")
+                                       ,$Html$Attributes.id("tiledMenuTop")]);
                      }
                }();
                var picture$ = $String.isEmpty(picture) ? "/images/tiles/hebergements/placeholder.jpg" : picture;
@@ -88,10 +92,10 @@ Elm.TiledMenu.make = function (_elm) {
    var Tile = F4(function (a,b,c,d) {    return {title: a,iD: b,picture: c,link: d};});
    var nullTile = A4(Tile,"",0,"",$Maybe.Nothing);
    var update = F2(function (action,model) {
-      var _p9 = action;
-      if (_p9.ctor === "ShowTile") {
-            var _p10 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p9._0,model.menuData));
-            var newContent = _p10._1;
+      var _p10 = action;
+      if (_p10.ctor === "ShowTile") {
+            var _p11 = A2($Maybe.withDefault,{ctor: "_Tuple2",_0: nullTile,_1: nullTag},A2($Dict.get,_p10._0,model.menuData));
+            var newContent = _p11._1;
             return _U.update(model,{current: Content(newContent)});
          } else {
             return _U.update(model,{current: Menu});
@@ -102,15 +106,15 @@ Elm.TiledMenu.make = function (_elm) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p11) {
-         var _p12 = _p11;
-         var _p14 = _p12._0._0;
-         var _p13 = _p12._1;
+      function (_p12) {
+         var _p13 = _p12;
+         var _p15 = _p13._0._0;
+         var _p14 = _p13._1;
          return {ctor: "_Tuple2"
-                ,_0: _p13
+                ,_0: _p14
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p14,_p13,_p12._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p14)])),_p12._0._2))}};
+                     ,_0: A4(Tile,_p15,_p14,_p13._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p15)])),_p13._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),false);
@@ -119,28 +123,28 @@ Elm.TiledMenu.make = function (_elm) {
       var model = init(xs);
       var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p15 = maybeId;
-      if (_p15.ctor === "Nothing") {
+      var _p16 = maybeId;
+      if (_p16.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p15._0),model);
+            return A2(update,ShowTile(_p16._0),model);
          }
    });
    var initWithLink = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p16) {
-         var _p17 = _p16;
-         var _p20 = _p17._0._0;
-         var _p19 = _p17._0._3;
-         var _p18 = _p17._1;
-         var l$ = $String.isEmpty(_p19) ? $Maybe.Nothing : $Maybe.Just(_p19);
+      function (_p17) {
+         var _p18 = _p17;
+         var _p21 = _p18._0._0;
+         var _p20 = _p18._0._3;
+         var _p19 = _p18._1;
+         var l$ = $String.isEmpty(_p20) ? $Maybe.Nothing : $Maybe.Just(_p20);
          return {ctor: "_Tuple2"
-                ,_0: _p18
+                ,_0: _p19
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p20,_p18,_p17._0._1,l$)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p20)])),_p17._0._2))}};
+                     ,_0: A4(Tile,_p21,_p19,_p18._0._1,l$)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p21)])),_p18._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),false);
@@ -149,26 +153,26 @@ Elm.TiledMenu.make = function (_elm) {
       var model = initWithLink(xs);
       var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p21 = maybeId;
-      if (_p21.ctor === "Nothing") {
+      var _p22 = maybeId;
+      if (_p22.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p21._0),model);
+            return A2(update,ShowTile(_p22._0),model);
          }
    });
    var initPhoto = function (xs) {
       var zip = $List.map2(F2(function (v0,v1) {    return {ctor: "_Tuple2",_0: v0,_1: v1};}));
       var n = $List.length(xs);
       var xs$ = A2($List.map,
-      function (_p22) {
-         var _p23 = _p22;
-         var _p25 = _p23._0._0;
-         var _p24 = _p23._1;
+      function (_p23) {
+         var _p24 = _p23;
+         var _p26 = _p24._0._0;
+         var _p25 = _p24._1;
          return {ctor: "_Tuple2"
-                ,_0: _p24
+                ,_0: _p25
                 ,_1: {ctor: "_Tuple2"
-                     ,_0: A4(Tile,_p25,_p24,_p23._0._1,$Maybe.Nothing)
-                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p25)])),_p23._0._2))}};
+                     ,_0: A4(Tile,_p26,_p25,_p24._0._1,$Maybe.Nothing)
+                     ,_1: A2($Html.div,_U.list([]),A2($List._op["::"],A2($Html.h4,_U.list([]),_U.list([$Html.text(_p26)])),_p24._0._2))}};
       },
       A2(zip,xs,_U.range(0,n)));
       return A3(Model,Menu,$Dict.fromList(xs$),true);
@@ -177,11 +181,11 @@ Elm.TiledMenu.make = function (_elm) {
       var model = initPhoto(xs);
       var title = $UrlParsing.getTitle(urlParams);
       var maybeId = A2(getByTitle,title,model);
-      var _p26 = maybeId;
-      if (_p26.ctor === "Nothing") {
+      var _p27 = maybeId;
+      if (_p27.ctor === "Nothing") {
             return model;
          } else {
-            return A2(update,ShowTile(_p26._0),model);
+            return A2(update,ShowTile(_p27._0),model);
          }
    });
    return _elm.TiledMenu.values = {_op: _op

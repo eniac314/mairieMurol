@@ -33,7 +33,7 @@ Elm.Restaurants.make = function (_elm) {
                              ,site: "http://www.hoteldespins-murol.com"})
                              ,_U.update($StarTable.emptyTe,
                              {name: "T-Me"
-                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4080",_1: "http://www.sancy.com/activites/detail/4080/murol/t-me"})
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4653973",_1: "https://www.sancy.com/restaurant/t-me/"})
                              ,descr: _U.list(["Bar/bistrot restaurant pizzeria brasserie pub/bar de nuit"])
                              ,addr: "route de Besse 63790 MUROL"
                              ,tel: "09 81 36 69 58 / 06 68 48 00 04"
@@ -43,14 +43,14 @@ Elm.Restaurants.make = function (_elm) {
                              ,_U.update($StarTable.emptyTe,
                              {name: "Snack pizzeria  les Fougères le Domaine du Marais"
                              ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                 ,_0: "7640"
-                                                 ,_1: "http://www.sancy.com/activites/detail/7640/murol/snack-pizzeria-les-fougeres-domaine-du-marais"})
+                                                 ,_0: "4654087"
+                                                 ,_1: "https://www.sancy.com/restaurant/snack-pizzeria-les-fougeres-domaine-du-marais/"})
                              ,descr: _U.list(["restaurant pizzeria sandwicherie snack"])
                              ,addr: "Le Marais, 63790 MUROL"
                              ,tel: "04 73 88 67 08 "})
                              ,_U.update($StarTable.emptyTe,
                              {name: "Crêperie Le George Sand"
-                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4050",_1: ""})
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4654040",_1: "https://www.sancy.com/restaurant/creperie-george-sand/"})
                              ,descr: _U.list(["Restaurant crêperie"])
                              ,addr: "Rue George Sand 63790 MUROL"
                              ,tel: "06 28 29 55 99"
@@ -63,9 +63,7 @@ Elm.Restaurants.make = function (_elm) {
                              ,_U.update($StarTable.emptyTe,
                              {name: "le Domaine du Lac"
                              ,label: $StarTable.FamillePlus
-                             ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                 ,_0: "4041"
-                                                 ,_1: "http://www.sancy.com/activites/detail/4041/murol/le-restaurant-du-domaine-du-lac"})
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4654050",_1: "https://www.sancy.com/restaurant/le-restaurant-du-domaine-du-lac/"})
                              ,descr: _U.list(["Bar/bistrot brasserie restaurant"])
                              ,addr: "Plage de Murol 63790 MUROL"
                              ,tel: "04 44 05 21 58"
@@ -73,13 +71,13 @@ Elm.Restaurants.make = function (_elm) {
                              ,_U.update($StarTable.emptyTe,
                              {name: "Le Picotin"
                              ,descr: _U.list(["Restaurant pizzeria"])
-                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4075",_1: "http://www.sancy.com/activites/detail/4075/murol/le-picotin"})
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4654005",_1: "https://www.sancy.com/restaurant/le-picotin/"})
                              ,label: $StarTable.FamillePlus
                              ,addr: "Rue George Sand - 63790 MUROL"
                              ,tel: "04 73 62 37 10 / 06 83 00 11 85"})
                              ,_U.update($StarTable.emptyTe,
                              {name: "L\'Arbalète"
-                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4034",_1: "http://www.sancy.com/activites/detail/4034/murol/l-arbalete"})
+                             ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4654060",_1: "https://www.sancy.com/restaurant/larbalete/"})
                              ,addr: "Rue George Sand - 63790 Murol"
                              ,tel: "04 73 88 85 79"
                              ,mail: "restaurantlarbalete@gmail.com"})]);
@@ -125,11 +123,17 @@ Elm.Restaurants.make = function (_elm) {
                         ,tiledMenu: $TiledMenu.init(_U.list([{ctor: "_Tuple3"
                                                              ,_0: "Bars, brasseries et restaurants"
                                                              ,_1: "/images/tiles/restaurants/restaurants.jpg"
-                                                             ,_2: _U.list([A2($StarTable.makeTable,"aMurol",restosMurol),contact])}
+                                                             ,_2: _U.list([A2($StarTable.makeTable,
+                                                                          "aMurol",
+                                                                          A2($List.sortBy,function (_) {    return _.name;},restosMurol))
+                                                                          ,contact])}
                                                             ,{ctor: "_Tuple3"
                                                              ,_0: "Famille plus"
                                                              ,_1: "/images/tiles/hebergements/famillePlus.jpg"
-                                                             ,_2: _U.list([A2($StarTable.makeTable,"famillePlus",famillePlus),contact])}]))};
+                                                             ,_2: _U.list([A2($StarTable.makeTable,
+                                                                          "famillePlus",
+                                                                          A2($List.sortBy,function (_) {    return _.name;},famillePlus))
+                                                                          ,contact])}]))};
    var update = F2(function (action,model) {
       var _p0 = action;
       if (_p0.ctor === "NoOp") {

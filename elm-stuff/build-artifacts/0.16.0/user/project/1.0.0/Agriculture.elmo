@@ -110,16 +110,14 @@ Elm.Agriculture.make = function (_elm) {
                                                       {name: "GAEC Tixier"
                                                       ,addr: "Beaune-le-Froid 63790 Murol"
                                                       ,tel: "04 73 88 81 10"
-                                                      ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                          ,_0: "4500"
-                                                                          ,_1: "http://www.sancy.com/activites/detail/4500/murol/gaec-tixier"})})
+                                                      ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4658145",_1: "https://www.sancy.com/producteur/gaec-tixier/"})})
                                                       ,_U.update(defAgri,
                                                       {name: "GAEC des Monts Dores"
                                                       ,addr: "Beaune-le-Froid 63790 Murol "
                                                       ,tel: "04 73 88 64 75 "
                                                       ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                          ,_0: "4179"
-                                                                          ,_1: "http://www.sancy.com/activites/detail/4179/murol/gaec-des-monts-dore"})})
+                                                                          ,_0: "4658139"
+                                                                          ,_1: "https://www.sancy.com/producteur/gaec-des-monts-dore/"})})
                                                       ,_U.update(defAgri,
                                                       {name: "GAEC des Noisetiers",addr: "Beaune-le-Froid 63790 Murol",tel: "04 73 88 66 32 "})
                                                       ,_U.update(defAgri,
@@ -127,8 +125,8 @@ Elm.Agriculture.make = function (_elm) {
                                                       ,addr: "Beaune-le-Froid 63790 Murol "
                                                       ,tel: "04 73 88 65 85"
                                                       ,refOt: $Maybe.Just({ctor: "_Tuple2"
-                                                                          ,_0: "4181"
-                                                                          ,_1: "http://www.sancy.com/activites/detail/4181/murol/gaec-de-la-route-des-caves-ferme-roux"})})
+                                                                          ,_0: "4658143"
+                                                                          ,_1: "https://www.sancy.com/producteur/gaec-de-la-route-des-caves-ferme-roux/"})})
                                                       ,_U.update(defAgri,{name: "Laurent PLANEIX",addr: "Beaune-le-Froid 63790 Murol",tel: "04 73 88 60 74 "})
                                                       ,_U.update(defAgri,{name: "Philippe BEAL",addr: "Les Ballats 63790 Murol",tel: "04 73 88 60 47 "})
                                                       ,_U.update(defAgri,

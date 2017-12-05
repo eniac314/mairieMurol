@@ -103,7 +103,7 @@ initialContent =
               --h5 [] [ text "A Beaune le Froid"]
               --, makeTable "aBeauneLeFroid" restosBeaunes
                 --h5 [] [ text "A Murol"]
-                makeTable "aMurol" restosMurol
+                makeTable "aMurol" (List.sortBy (.name) restosMurol)
               , contact
               ]
             )
@@ -118,7 +118,7 @@ initialContent =
             ,
             ( "Famille plus"
             , "/images/tiles/hebergements/famillePlus.jpg"
-            , [ makeTable "famillePlus"  famillePlus, contact ]
+            , [ makeTable "famillePlus"  (List.sortBy (.name) famillePlus), contact ]
             )
            ]
   }
@@ -231,7 +231,7 @@ restosMurol =
     ,
     { emptyTe |
       name  = "T-Me"
-    , refOt = Just ("4080","http://www.sancy.com/activites/detail/4080/murol/t-me")
+    , refOt = Just ("4653973","https://www.sancy.com/restaurant/t-me/")
     , descr = ["Bar/bistrot restaurant pizzeria brasserie pub/bar de nuit"]
     , addr  = "route de Besse 63790 MUROL"
     , tel   = "09 81 36 69 58 / 06 68 48 00 04"
@@ -247,7 +247,7 @@ restosMurol =
     ,
     { emptyTe |
       name  = "Snack pizzeria  les Fougères le Domaine du Marais"
-    , refOt = Just ("7640","http://www.sancy.com/activites/detail/7640/murol/snack-pizzeria-les-fougeres-domaine-du-marais")
+    , refOt = Just ("4654087","https://www.sancy.com/restaurant/snack-pizzeria-les-fougeres-domaine-du-marais/")
     , descr = ["restaurant pizzeria sandwicherie snack"]
     , addr  = "Le Marais, 63790 MUROL"
     , tel   = "04 73 88 67 08 "
@@ -255,7 +255,7 @@ restosMurol =
     ,
     { emptyTe |
       name  = "Crêperie Le George Sand"
-    , refOt = Just ("4050","")
+    , refOt = Just ("4654040","https://www.sancy.com/restaurant/creperie-george-sand/")
     , descr = ["Restaurant crêperie"]
     , addr  = "Rue George Sand 63790 MUROL"
     , tel   = "06 28 29 55 99"
@@ -272,7 +272,7 @@ restosMurol =
     { emptyTe |
       name  = "le Domaine du Lac"
     , label = FamillePlus
-    , refOt = Just ("4041","http://www.sancy.com/activites/detail/4041/murol/le-restaurant-du-domaine-du-lac")
+    , refOt = Just ("4654050","https://www.sancy.com/restaurant/le-restaurant-du-domaine-du-lac/")
     , descr = ["Bar/bistrot brasserie restaurant"]
     , addr  = "Plage de Murol 63790 MUROL"
     , tel   = "04 44 05 21 58"
@@ -289,7 +289,7 @@ restosMurol =
     { emptyTe |
       name  = "Le Picotin"
     , descr = ["Restaurant pizzeria"]  
-    , refOt = Just ("4075","http://www.sancy.com/activites/detail/4075/murol/le-picotin")
+    , refOt = Just ("4654005","https://www.sancy.com/restaurant/le-picotin/")
     , label = FamillePlus
     , addr  = "Rue George Sand - 63790 MUROL"
     , tel   = "04 73 62 37 10 / 06 83 00 11 85"
@@ -297,7 +297,7 @@ restosMurol =
     ,
     { emptyTe |
       name  = "L'Arbalète"
-    , refOt = Just ("4034","http://www.sancy.com/activites/detail/4034/murol/l-arbalete")
+    , refOt = Just ("4654060","https://www.sancy.com/restaurant/larbalete/")
     , addr  = "Rue George Sand - 63790 Murol"
     , tel   = "04 73 88 85 79"
     , mail  = "restaurantlarbalete@gmail.com"

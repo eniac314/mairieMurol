@@ -34,7 +34,7 @@ initialModel =
 view address model =
   div [ id "container"]
       [ renderMainMenu
-                       ["Mairie", "Gestion des risques"]
+                       ["Vie locale", "Environnement"]
                        (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model

@@ -23,44 +23,46 @@ Elm.VosDemarches.make = function (_elm) {
            ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Quelles sont les conditions pour pouvoir m’engager en \n                     Service Civique ? ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Pour être volontaire, il faut avoir entre 16 \n                     et 25 ans et posséder la nationalité française, \n                     celle d’un état membre de l’Union européenne ou \n                     de l’espace économique européen, ou justifier d’un séjour \n                     régulier en France depuis plus d’un an. ")]))
+           _U.list([$Html.text("Pour être volontaire, il faut avoir entre 16 et 25 ans et posséder la nationalité française, celle d’un état membre de l’Union européenne ou de l’espace économique européen, ou justifier d’un séjour régulier en France depuis plus d’un an. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Aucune autre condition n’est requise ; en particulier, \n                     il n’y a pas de condition en termes \n                     de diplôme ou d’expérience professionnelle préalable. Ce sont \n                     les savoirs-être et la motivation qui comptent avant \n                     tout.")]))
+           _U.list([A2($Html.b,
+           _U.list([]),
+           _U.list([$Html.text("Aucune autre condition n’est requise ; en particulier, il n’y a pas de condition en termes de diplôme ou d’expérience professionnelle préalable. Ce sont les savoirs-être et la motivation qui comptent avant tout.")]))]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les conditions d’engagement des jeunes entre 16 et \n                     18 ans sont aménagées. Les missions doivent être \n                     adaptées à leur âge et une autorisation parentale \n                     est nécessaire.")]))
+           _U.list([$Html.text("Les conditions d’engagement des jeunes entre 16 et 18 ans sont aménagées. Les missions doivent être adaptées à leur âge et une autorisation parentale est nécessaire.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les jeunes en situation de handicap peuvent faire \n                     un Service Civique. L’indemnité de Service Civique est \n                     entièrement cumulable avec l’Allocation aux Adultes Handicapés (AAH).")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Quelles sont les modalités de l’engagement de Service \n                     Civique ?")]))
+           _U.list([$Html.text("Les jeunes en situation de handicap peuvent faire un Service Civique. L’indemnité de Service Civique est entièrement cumulable avec l’Allocation aux Adultes Handicapés (AAH).")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Quelles sont les modalités de l’engagement de Service Civique ?")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Le Service Civique est un engagement volontaire de \n                     6 à 12 mois pour l’accomplissement d’une mission \n                     d’intérêt général dans un des neuf domaines d’interventions \n                     reconnus prioritaires pour la Nation : culture et \n                     loisirs, développement international et action humanitaire, éducation pour \n                     tous, environnement, intervention d\'urgence en cas de crise, \n                     mémoire et citoyenneté, santé, solidarité, sport. ")]))
+           _U.list([$Html.text("Le Service Civique est un engagement volontaire de 6 à 12 mois pour l’accomplissement d’une mission d’intérêt général dans un des neuf domaines d’interventions reconnus prioritaires pour la Nation : culture et loisirs, développement international et action humanitaire, éducation pour tous, environnement, intervention d\'urgence en cas de crise, mémoire et citoyenneté, santé, solidarité, sport. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Une indemnité de 446,65 euros nets par mois \n                     est directement versée au volontaire par l\'Etat, quelle \n                     que soit la durée hebdomadaire de la mission. ")]))
+           _U.list([$Html.text("Une indemnité de 446,65 euros nets par mois est directement versée au volontaire par l\'Etat, quelle que soit la durée hebdomadaire de la mission.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("L\'organisme d’accueil verse aussi au volontaire une prestation \n                     en nature ou en espèce d’un montant de \n                     101,49 euros, correspondant à la prise en charge \n                     des frais d’alimentation (fourniture de repas) ou de \n                     transports. Cette prestation peut être versée de différentes \n                     façons (titre repas, accès à la cantine, remboursements \n                     de frais, etc.) ")]))
+           _U.list([$Html.text("L\'organisme d’accueil verse aussi au volontaire une prestation en nature ou en espèce d’un montant de 101,49 euros, correspondant à la prise en charge des frais d’alimentation (fourniture de repas) ou de transports. Cette prestation peut être versée de différentes façons (titre repas, accès à la cantine, remboursements de frais, etc.)")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les jeunes, bénéficiaires ou appartenant à un foyer \n                     bénéficiaire du RSA, ou titulaire d\'une bourse de \n                     l\'enseignement supérieur au titre du 5e échelon ou \n                     au delà bénéficient d’une majoration d\'indemnité de 101,68 \n                     euros par mois. ")]))
+           _U.list([$Html.text("Les jeunes, bénéficiaires ou appartenant à un foyer bénéficiaire du RSA, ou titulaire d\'une bourse de l\'enseignement supérieur au titre du 5e échelon ou au delà bénéficient d’une majoration d\'indemnité de 101,68 euros par mois.")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Les volontaires en Service Civique bénéficient d\'une protection sociale intégrale.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Les volontaires en Service Civique bénéficient d\'une protection \n                    sociale intégrale.")]))
+           _U.list([$Html.text("Au total, selon les situations, les volontaires en Service Civique perçoivent entre 548,14 euros et 649,82 euros par mois. ")]))
+           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le bénéfice de l’aide au logement est conservé pendant le Service Civique.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Au total, selon les situations, les volontaires en \n                     Service Civique perçoivent entre 548,14 euros et 649,82 \n                     euros par mois. ")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Le bénéfice de l’aide au logement est conservé \n                     pendant le Service Civique.")]))
+           _U.list([$Html.text("Un accompagnement pour faciliter le déroulement de la mission est proposé. Il s\'agit d\'une phase de préparation et d\'accompagnement dans la réalisation de la mission, d\'une formation civique et citoyenne et d\'un appui à la réflexion sur le projet d’avenir. ")]))
+           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Comment postuler à une mission de Service Civique?")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Un accompagnement pour faciliter le déroulement de la \n                     mission est proposé. Il s\'agit d\'une phase de \n                     préparation et d\'accompagnement dans la réalisation de la \n                     mission, d\'une formation civique et citoyenne et d\'un \n                     appui à la réflexion sur le projet d’avenir. ")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Comment postuler à une mission de Service Civique? ")]))
-           ,A2($Html.p,
-           _U.list([]),
-           _U.list([$Html.text("Postulez auprès des organismes proposant des missions de \n                     Service Civique directement à partir du site:")]))
-           ,A2($Utils.link,"http://www.service-civique.gouv.fr","http://www.service-civique.gouv.fr")]));
+           _U.list([$Html.text("Postulez auprès des organismes proposant des missions de Service Civique directement à partir du site: ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.service-civique.gouv.fr/"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("www.service-civique.gouv.fr")]))]))]));
    var listElec = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("listElecDemarches")]),
    _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("inscription listes électorales")]))
@@ -251,61 +253,19 @@ Elm.VosDemarches.make = function (_elm) {
                    _U.list([A2($Utils.link,"Certificat de non gage","http://www.interieur.gouv.fr/A-votre-service/Mes-demarches/Mes-teleservices")]))]))]));
    var permis = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("permisDemarches")]),
-   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Délivrance du permis")]))
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Permis de conduire")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Il peut être demandé que le permis soit \n                     délivré dans n\'importe quelle sous-préfecture du département dont \n                     dépend le domicile du candidat reçu (par exemple \n                     celle du lieu où il travaille).")]))
+           _U.list([$Html.text("Vous devez contacter votre auto-école pour savoir si elle transmet elle-même votre demande de permis de conduire aux services de l\'État qui ont enregistré votre inscription à l\'examen avec le résultat favorable ou si c\'est à vous de le faire.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Dans tous les cas, la demande peut être \n                     faite sur place ou par correspondance.")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Formalités sur place:")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Il convient, en principe, de présenter : ")]))
-           ,A2($Html.ul,
-           _U.list([]),
-           _U.list([A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("une pièce prouvant son identité (carte nationale d\'identité, \n                                 passeport...). ")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("le certificat d\'examen du permis de conduire (attestation \n                                 provisoire ou \"feuille jaune\"), délivré par l\'inspecteur")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("le montant de la taxe régionale ((non demandée \n                                 dans certaines régions).")]))]))]))
+           _U.list([$Html.text("Dans la plupart des cas, au cours du délai de 4 mois de validité du certificat, le permis de conduire vous est adressé par voie postale à votre domicile.")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Attention : aucun texte réglementaire ne précise le \n                     nombre et le type de pièces à fournir \n                     pour la délivrance du permis définitif. Se renseigner \n                     au préalable.")]))
-           ,A2($Html.h5,_U.list([]),_U.list([$Html.text("Demande par correspondance:")]))
-           ,A2($Html.p,_U.list([]),_U.list([$Html.text("Pour une demande par correspondance doit être joint, \n                     en principe :")]))
-           ,A2($Html.ul,
-           _U.list([]),
-           _U.list([A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("le certificat d\'examen du permis de conduire (attestation \n                                 provisoire ou \"feuille jaune\"), délivré par l\'inspecteur")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("une enveloppe libellée aux noms et adresses du \n                                 demandeur, timbrée au tarif \"lettre recommandée\"")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Html.p,
-                   _U.list([]),
-                   _U.list([$Html.text("un chèque ou mandat-lettre à l\'ordre de Monsieur \n                                 le régisseur des recettes de la préfecture, au \n                                 montant de la taxe régionale (si elle est \n                                 demandée)")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Utils.link,"Demande de délivrance","/baseDocumentaire/imprime_demande_permis_conduire.pdf")
-                           ,A2($Html.span,_U.list([]),_U.list([$Html.text(" du permis de conduire")]))]))
-                   ,A2($Html.li,
-                   _U.list([]),
-                   _U.list([A2($Utils.link,"Demande de permis international","/baseDocumentaire/imprime_demande_permis_international.pdf")]))]))]));
+           _U.list([$Html.text("Si vous faites la demande vous-même, vous devez utiliser le téléservice mis à disposition par l\'ANTS :")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("https://ants.gouv.fr/monespace/s-inscrire?slug=s-inscrire"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("Demande en ligne de permis de conduire à la suite de la réussite à un examen")]))]))]));
    var justifDom = A2($Html.div,
    _U.list([$Html$Attributes.$class("justif")]),
    _U.list([A2($Html.h6,_U.list([]),_U.list([$Html.text("Justificatif de domicile ou de résidence")]))
@@ -540,9 +500,80 @@ Elm.VosDemarches.make = function (_elm) {
                                    _U.list([]),
                                    _U.list([$Html.text("fournir également si possible un document officiel avec \n                                           photographie.")]))]))]))]))]))
            ,A2($Html.div,_U.list([$Html$Attributes.$class("justifFrame")]),_U.list([justifNat,justifDom]))]));
+   var docId = A2($Html.div,
+   _U.list([$Html$Attributes.$class("subContainerData"),$Html$Attributes.id("idDemarches")]),
+   _U.list([A2($Html.h2,_U.list([]),_U.list([$Html.text("Documents d\'identité")]))
+           ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Première demande ou renouvellement de carte d\'identité ou de passeport")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.b,
+           _U.list([]),
+           _U.list([$Html.text("Depuis le 21 mars 2017, les démarches entourant les cartes nationales d\'identité (CNI) et les passeports ont été modifiées.")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.b,
+                   _U.list([]),
+                   _U.list([$Html.text("Les personnes souhaitant faire établir ou renouveler ces pièces ne doivent plus se rendre dans les mairies dont elles dépendent, mais, au choix, dans l\'une des mairies habilitées")]))
+                   ,$Html.text("qui sont équipées d\'un dispositif de prise d\'empreintes digitales numérisées (désormais utilisées pour la carte nationale d\'identité et non plus seulement pour le passeport).")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.b,_U.list([]),_U.list([$Html.text("Dans le département du Puy-de-Dôme, 22 mairies sont habilitées :")]))
+                   ,A2($Html.ul,
+                   _U.list([]),
+                   _U.list([A2($Html.li,_U.list([]),_U.list([$Html.text("Ambert")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Aubière")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Beaumont")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Besse")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Brassac-les-Mines")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Chamalières")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Clermont-Ferrand")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Cournon-d\'Auvergne")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Cunlhat")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Gerzat")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Issoire")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Les Martres-de-Veyre")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Lezoux")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Pont-du-Château")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Puy-Guillaume")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Riom")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Rochefort-Montagne")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Saint-Amand-Tallende")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Saint-Eloy-les-Mines")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Saint-Georges-de-Mons")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Thiers")]))
+                           ,A2($Html.li,_U.list([]),_U.list([$Html.text("Volvic")]))]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("La plus proche de Murol est la mairie de Besse et Saint Anastaise.")
+                   ,A2($Html.br,_U.list([]),_U.list([]))
+                   ,$Html.text("Concernant ces démarches, ")
+                   ,A2($Html.b,
+                   _U.list([]),
+                   _U.list([$Html.text("le service Etat-civil de la commune de Besse et Saint-Anastaise vous propose des rendez-vous ")
+                           ,A2($Html.u,_U.list([]),_U.list([$Html.text("les lundis et jeudis après-midis")]))
+                           ,$Html.text(".")]))]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([$Html.text("Par ailleurs, ")
+                   ,A2($Html.b,_U.list([]),_U.list([$Html.text("un télé-service de pré-demande en ligne est désormais proposé sur le site ")]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("http://www.passeport.ants.gouv.fr"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("www.passeport.ants.gouv.fr")]))
+                   ,$Html.text(". Facultative, la pré-demande a toutefois le grand intérêt de rendre le dépôt du dossier plus rapide et d\'éviter les erreurs liées à la phase de numérisation du Cerfa papier. L\'usager après avoir rempli sa pré-demande, doit imprimer le récapitulatif correspondant ou noter le numéro de pré-demande qui lui sera demandé lors de son rendez-vous en mairie. ")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.b,
+                   _U.list([]),
+                   _U.list([$Html.text("Pour connaître les démarches à effectuer et les pièces à fournir, suivez les instructions affichées sur les pages dédiées au ")]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("https://www.service-public.fr/particuliers/vosdroits/N360"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("passeport")]))
+                   ,A2($Html.b,_U.list([]),_U.list([$Html.text(" et à la ")]))
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.href("https://www.service-public.fr/particuliers/vosdroits/N358sur"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("carte nationale d\'identité")]))]))]));
    var initialContent = carteId;
-   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Carte d\'identité",_1: carteId}
-                                           ,{ctor: "_Tuple2",_0: "Passeport",_1: passport}
+   var contentMap = $Dict.fromList(_U.list([{ctor: "_Tuple2",_0: "Documents d\'identité",_1: docId}
                                            ,{ctor: "_Tuple2",_0: "Permis de conduire",_1: permis}
                                            ,{ctor: "_Tuple2",_0: "Véhicules",_1: vehic}
                                            ,{ctor: "_Tuple2",_0: "Etat civil",_1: etatCiv}
@@ -572,7 +603,7 @@ Elm.VosDemarches.make = function (_elm) {
               ,$Utils.pageFooter]));
    });
    var subMenu = {current: "Carte d\'identité"
-                 ,entries: _U.list(["Carte d\'identité","Passeport","Permis de conduire","Véhicules","Etat civil","Liste électorale","Service civique"])};
+                 ,entries: _U.list(["Documents d\'identité","Permis de conduire","Véhicules","Etat civil","Liste électorale","Service civique"])};
    var initialModel = {mainMenu: $Utils.mainMenu,subMenu: subMenu,mainContent: initialContent};
    var main = $StartApp$Simple.start({model: initialModel,view: view,update: update});
    return _elm.VosDemarches.values = {_op: _op
@@ -584,6 +615,7 @@ Elm.VosDemarches.make = function (_elm) {
                                      ,changeMain: changeMain
                                      ,main: main
                                      ,initialContent: initialContent
+                                     ,docId: docId
                                      ,carteId: carteId
                                      ,justifNat: justifNat
                                      ,justifDom: justifDom

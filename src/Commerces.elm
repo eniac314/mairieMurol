@@ -61,6 +61,7 @@ renderCommerceMap am =
             ( [ h5 [] [text k]] ++
                 List.map renderCommerce v)) :: acc
       toDivs = Dict.foldr toDiv [] am
+               --|> List.sortBy .name
 
       col ds = div [class "column", style [("max-width","30%")]] ds
 
@@ -161,7 +162,7 @@ comMapYearLong = fromList
      ,
       { defCom |
         name   = "Supermarché SPAR"
-      , refOt  = Just ("4236","http://www.sancy.com/activites/detail/4236/murol/spar")
+      , refOt  = Just ("4662103","https://www.sancy.com/commerce-service/spar/")
       , descr  = ["Alimentation générale", "Service drive et livraison: www.sparmurol.fr"]
       , addr   = "Rue de Besse - 63790 MUROL"
       , tel    = "04 73 88 60 45 "
@@ -170,7 +171,7 @@ comMapYearLong = fromList
     ,
      { defCom |
        name   = "Vival"
-     , refOt  = Just ("3663","http://www.sancy.com/activites/detail/3663/murol/vival")
+     , refOt  = Just ("4662124","https://www.sancy.com/commerce-service/vival-2/")
      , descr  = ["Alimentation générale"]
      , addr   = "Rue Chabrol - 63790 MUROL"
      , tel    = "04 73 88 61 56" 
@@ -198,7 +199,7 @@ comMapYearLong = fromList
       ,
       { defCom |
         name   = "Distributeur SPAR"
-      , refOt  = Just ("7331","http://www.sancy.com/activites/detail/7331/murol/distributeur-automatique-de-billets")
+      , refOt  = Just ("4700279","https://www.sancy.com/commerce-service/distributeur-automatique-de-billets/")
       , descr  = ["Distributeur de billets"] 
       , addr   = "Route de Besse 63790 MUROL" 
       }]
@@ -206,8 +207,28 @@ comMapYearLong = fromList
   ,("Boucherie"
    , [{ defCom |
         name   = "La Pièce du Boucher"
+      , refOt  = Just ("4662160","https://www.sancy.com/commerce-service/la-piece-du-boucher/")
       , addr   = "Rue George Sand 63790 MUROL"
       , tel    = "04 73 87 77 48"  
+      }]
+   )
+  ,("Prestataires"
+   , [{ defCom |
+        name   = "Auvergne Escapade"
+      , refOt  = Just ("4716925","https://www.sancy.com/commerce-service/auvergne-escapade/")
+      , addr   = "Beaune-le-Froid - 63790 MUROL"
+      , tel    = "06 86 89 34 87" 
+      , descr  = ["Randonnées pédestres guidées et raquettes à neige en hiver"]
+      , site   = "http://www.auvergne-escapade.com/"
+      }
+      ,
+      { defCom |
+        name   = "Bureau Montagne Auvergne Sancy Volcans"
+      , refOt  = Just ("4716923","https://www.sancy.com/commerce-service/bureau-montagne-auvergne-sancy-volcans/")
+      , addr   = "Bp 11 - 63790 MUROL"
+      , tel    = "06 41 66 90 80" 
+      , descr  = ["Raquettes à neige. Randonnées sur les volcans, lever de soleil, orientation, VTT, astronomie, tir à l'arc."]
+      , site   = "http://www.bureaumontagne.com/"
       }]
    )
   --,("Boulangerie"
@@ -227,7 +248,7 @@ comMapYearLong = fromList
   ("Art de la maison - cadeaux - souvenirs"
     , [{ defCom |
          name   = "Le grenier du château"
-       , refOt  = Just ("7548","http://www.sancy.com/activites/detail/7548/murol/le-grenier-du-chateau")
+       , refOt  = Just ("4672387","https://www.sancy.com/commerce-service/le-grenier-du-chateau/")
        , addr   = "Rue Georges Sand - 63790 MUROL"
        , tel    = "04 73 88 95 28"
        , mail   = "le-grenier-du-chateau@sfr.fr"
@@ -248,7 +269,7 @@ comMapYearLong = fromList
         name   = "Garage de l'Avenir"
       , descr  = ["Réparations toutes marques, carburants"]
       , addr   = "Le Marais - 63790 MUROL"
-      , refOt  = Just ("3682","http://www.sancy.com/activites/detail/3682/murol/garage-de-l-avenir")
+      , refOt  = Just ("4668358","https://www.sancy.com/commerce-service/garage-de-lavenir/")
       --, tel    = "04 7388 6022"
       --, fax    =  "04 73 88 61 33"  
       }
@@ -261,7 +282,19 @@ comMapYearLong = fromList
       , fax    = "04 76 88 66 60"
       , mail   = "cattarellisacha@orange.fr"
       --, site   = "http://murolmotosport.wifeo.com"   
-      }]
+      }
+      ,
+      { defCom |
+        name   = "Sancy Bike Service"
+      , descr  = ["Réparation et entretien de vélos, VTT, cyclos. Vente pièces et accessoires."]
+      , addr   = "Rue du Tartaret - 63790 MUROL"
+      , tel    = "0676121929"
+      , refOt  = Just ("4768953","https://www.sancy.com/commerce-service/sancy-bike-service/") 
+      --, fax    = "04 76 88 66 60"
+      , mail   = "ebikeattitude@gmail.com"
+      , site   = "https://www.sancybikeservice.com/"   
+      }
+      ]
    )
   ,("Laverie"
    , [{ defCom |
@@ -289,6 +322,7 @@ comMapYearLong = fromList
   ,("Pharmacie"
    , [{ defCom |
         name   = "Pharmacie Brassier"
+      , refOt  = Just ("4666016","https://www.sancy.com/commerce-service/pharmacie-brassier/")
       , addr   = "Rue Estaing - 63790 MUROL"
       , tel    = "04 73 88 60 42" 
       }]
@@ -298,6 +332,7 @@ comMapYearLong = fromList
     , [{ defCom |
          name   = "Atelier ST Christophe"
        , addr   = "Rue George Sand 63790 MUROL"
+       , refOt  = Just ("4681516","https://www.sancy.com/commerce-service/atelier-saint-christophe-murol-feerie/")
        , tel    = "04 63 22 68 15"
        , descr  = ["Création de bijoux"] 
       }
@@ -327,11 +362,18 @@ comMapYearLong = fromList
       ,
       { defCom |
          name   = "Taxi Maryline"
-       , refOt  = Just ("4552","http://www.sancy.com/activites/detail/4552/murol/taxi-miseroux")   
+       , refOt  = Just ("4666800","https://www.sancy.com/commerce-service/sancy-taxi-maryline-2/")   
        , addr   = "Le Bourg 63790 MUROL"
        , tel    = "04 73 88 81 12 / 06 89 56 25 94"
        , mail   = "sancytaxi@orange.fr"
        , descr  = ["Taxi, transport malade assis"] 
+      }
+      ,
+      { defCom |
+         name   = "Navette Azureva "
+       , refOt  = Just ("4849676","https://www.sancy.com/commerce-service/navette-azureva-murol-besse-super-besse/")
+       , tel    = "04 73 88 58 58"
+       , descr  = ["ligne Murol Superbesse"]
       }
       --,
       --{ defCom |
@@ -387,7 +429,7 @@ comMapYearLong = fromList
   ,("Produit du terroir"
    , [{ defCom |
         name   = "Les Caves du château"
-      , refOt  = Just ("3673","http://www.sancy.com/activites/detail/3673/murol/les-caves-du-chateau")
+      , refOt  = Just ("4662107","https://www.sancy.com/commerce-service/les-caves-du-chateau/")
       , descr  = ["caviste, fromager, produits du terroir"] 
       , addr   = "Place du pont - 63790 MUROL"
       , tel    = "04 73 88 63 34"
@@ -416,6 +458,7 @@ comMapSummer = fromList
    ("Artisanat d'Art, galerie d'art, antiquité"
     , [{ defCom |
          name   = "Cuir Cath"
+       , refOt  = Just ("4795036","https://www.sancy.com/commerce-service/artisanat-dart-cuir-cath-2/")
        , addr   = "Rue George Sand 63790 MUROL"
        , tel    = "06 11 89 14 52"
        , mail   = "cuircath63@orange.fr"
@@ -455,10 +498,23 @@ comMapSummer = fromList
     ,[
      { defCom |
        name  = "Legoueix père et fils (hiver)"
-     , refOt = Just ("6111","http://www.sancy.com/activites/detail/6111/murol/magasin-legoueix")
+     , refOt = Just ("4682148","https://www.sancy.com/commerce-service/legoueix-skishop/")
      , descr = [""]
      , addr  = "Rue du Tartaret 63790 MUROL"
      , tel   = "04 73 88 66 21"  
+     }
+    ]
+    )
+   ,
+   ("Location de Pedal’eau"
+    ,[
+     { defCom |
+       name  = "plage Murol du lac Chambon"
+     , refOt = Just ("4716921","https://www.sancy.com/commerce-service/location-de-pedaleau/")
+     , descr = [""]
+     --, addr  = "06 08 58 40 30"
+     , tel   = "06 08 58 40 30"
+     --, site  = ""  
      }
     ]
     )
@@ -477,7 +533,7 @@ comMapSummer = fromList
       { defCom |
         name   = "Toutiveti"
       , addr   = "Route de Besse - parking supermarché SPAR - 63790 MUROL"
-      , refOt  = Just ("4234","http://www.sancy.com/activites/detail/4234/murol/toutiveti-vetements") 
+      , refOt  = Just ("4679489","https://www.sancy.com/commerce-service/toutiveti-vetements/") 
       , tel    = "06 76 66 97 47"
       , mail   = "toutiveti@hotmail.fr"
       , descr  = [ "Vêtements/chaussures - hommes/femmes/enfants "]
@@ -488,7 +544,7 @@ comMapSummer = fromList
     ,[
      { defCom |
        name  = "Western Poneys"
-     , refOt = Nothing
+     , refOt = Just ("4716916","https://www.sancy.com/commerce-service/western-poneys/")
      , descr = [""]
      , addr  = "Route de Besse 63790 MUROL, à coté du supermaché SPAR"
      , tel   = "06 66 85 24 10 ou 06 63 41 22 47" 

@@ -62,6 +62,8 @@ module.exports = function(grunt) {
           "./js/animationEstivale.js": ["./src/AnimationEstivale.elm"],
           "./js/sallesFetes.js": ["./src/SallesFetes.elm"],
           "./js/mentions.js": ["./src/Mentions.elm"],
+          "./js/environnement.js": ["./src/Environnement.elm"],
+          "./js/contactMairie.js": ["./src/ContactMairie.elm"],
           "./js/documentation.js": ["./src/Documentation.elm"]
           
         }
@@ -127,6 +129,8 @@ module.exports = function(grunt) {
                 , "./src/AnimationEstivale.elm"
                 , "./src/SallesFetes.elm"
                 , "./src/Mentions.elm"
+                , "./src/Environnement.elm"
+                , "./src/ContactMairie.elm"
                 , "./src/Documentation.elm"],
         tasks: ["elm"]
       }

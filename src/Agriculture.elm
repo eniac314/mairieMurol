@@ -191,14 +191,14 @@ agriMap = fromList
         name   = "GAEC Tixier"
       , addr   = "Beaune-le-Froid 63790 Murol"
       , tel    = "04 73 88 81 10"
-      , refOt  = Just ("4500","http://www.sancy.com/activites/detail/4500/murol/gaec-tixier")
+      , refOt  = Just ("4658145","https://www.sancy.com/producteur/gaec-tixier/")
       }
       ,
       { defAgri |
         name   = "GAEC des Monts Dores"
       , addr   = "Beaune-le-Froid 63790 Murol "
       , tel    = "04 73 88 64 75 "
-      , refOt  = Just ("4179","http://www.sancy.com/activites/detail/4179/murol/gaec-des-monts-dore")
+      , refOt  = Just ("4658139","https://www.sancy.com/producteur/gaec-des-monts-dore/")
       }
       ,
       { defAgri |
@@ -211,7 +211,7 @@ agriMap = fromList
         name   = "GAEC de la route des caves"
       , addr   = "Beaune-le-Froid 63790 Murol "
       , tel    = "04 73 88 65 85"
-      , refOt  = Just ("4181","http://www.sancy.com/activites/detail/4181/murol/gaec-de-la-route-des-caves-ferme-roux")
+      , refOt  = Just ("4658143","https://www.sancy.com/producteur/gaec-de-la-route-des-caves-ferme-roux/")
       }
       ,
       { defAgri |
