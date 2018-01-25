@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Site officiel de la commune de Murol">
+  <meta name="author" content="mairie de Murol">
+  <title>La commune de Murol</title>
+  <meta name="description" content="Site officiel de la commune de Murol">
+  <meta name="author" content="mairie de Murol">
+  
+  <script type="text/javascript" src="./js/annee2018.js"></script>
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="/fonts/font-awesome-4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <a name="top" id="top"></a>
+  <header id="header">
+          <h1 id="pageTitle">
+            Murol
+          </h1>
+          <h2 id="subTitle">
+            La municipalité de Murol vous souhaite une très bonne année 2018
+          </h2>
+  </header>
+  <div id="elm-app"></div>
+
+
+<script type="text/javascript">
+  var elmDiv = document.getElementById('elm-app');
+  var elmApp = Elm.embed(Elm.Annee2018, elmDiv);
+  
+</script>
+</body>
+</html>

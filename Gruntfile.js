@@ -13,6 +13,7 @@ module.exports = function(grunt) {
           "./js/patrimoinePhoto.js": ["./src/PatrimoinePhoto.elm"],
           "./js/annee2016.js": ["./src/Annee2016.elm"],
           "./js/annee2017.js": ["./src/Annee2017.elm"],
+          "./js/annee2018.js": ["./src/Annee2018.elm"],
           "./js/journeeMurolais.js": ["./src/JourneeMurolais.elm"],
           "./js/printempsEte.js": ["./src/PrintempsEte.elm"],
           "./js/automneHiver.js": ["./src/AutomneHiver.elm"],
@@ -77,6 +78,7 @@ module.exports = function(grunt) {
                 , "./src/Juillet14.elm"
                 , "./src/Annee2016.elm"
                 , "./src/Annee2017.elm"
+                , "./src/Annee2018.elm"
                 , "./src/PatrimoinePhoto.elm"
                 , "./src/Periscolaire.elm"
                 , "./src/DecouvrirMurol.elm"

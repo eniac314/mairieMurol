@@ -535,6 +535,27 @@ Elm.ListOfPics.make = function (_elm) {
                           ,{ctor: "_Tuple3",_0: "14.jpg",_1: "medievales2015",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "03.jpg",_1: "medievales2015",_2: "/Medievales.html"}
                           ,{ctor: "_Tuple3",_0: "09.jpg",_1: "medievales2015",_2: "/Medievales.html"}
+                          ,{ctor: "_Tuple3",_0: "04.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "10.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "12.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "19.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "08.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "01.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "15.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "11.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "17.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "05.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "18.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "06.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "02.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "07.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "13.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "16.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "20.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "14.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "03.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "IMGP9193 2.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
+                          ,{ctor: "_Tuple3",_0: "09.jpg",_1: "voeuxMaireEtCCAS2018",_2: ""}
                           ,{ctor: "_Tuple3",_0: "04.jpg",_1: "g14Juillet2015",_2: "/14Juillet.html"}
                           ,{ctor: "_Tuple3",_0: "10.jpg",_1: "g14Juillet2015",_2: "/14Juillet.html"}
                           ,{ctor: "_Tuple3",_0: "12.jpg",_1: "g14Juillet2015",_2: "/14Juillet.html"}
@@ -1568,6 +1589,29 @@ Elm.ListOfPics.make = function (_elm) {
                                        ,"16.jpg"
                                        ,"14.jpg"
                                        ,"03.jpg"
+                                       ,"09.jpg"])}
+                         ,{ctor: "_Tuple2"
+                          ,_0: {ctor: "_Tuple2",_0: "voeuxMaireEtCCAS2018",_1: ""}
+                          ,_1: _U.list(["04.jpg"
+                                       ,"10.jpg"
+                                       ,"12.jpg"
+                                       ,"19.jpg"
+                                       ,"08.jpg"
+                                       ,"01.jpg"
+                                       ,"15.jpg"
+                                       ,"11.jpg"
+                                       ,"17.jpg"
+                                       ,"05.jpg"
+                                       ,"18.jpg"
+                                       ,"06.jpg"
+                                       ,"02.jpg"
+                                       ,"07.jpg"
+                                       ,"13.jpg"
+                                       ,"16.jpg"
+                                       ,"20.jpg"
+                                       ,"14.jpg"
+                                       ,"03.jpg"
+                                       ,"IMGP9193 2.jpg"
                                        ,"09.jpg"])}
                          ,{ctor: "_Tuple2"
                           ,_0: {ctor: "_Tuple2",_0: "g14Juillet2015",_1: "/14Juillet.html"}

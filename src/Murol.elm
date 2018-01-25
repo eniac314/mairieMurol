@@ -169,7 +169,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 04 décembre 2017"]
+            [text "Dernière mise à jour le vendredi 25 janvier 2018"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -1887,7 +1887,72 @@ news =
                      [text "communiqué de presse"]   
                  ]
    , expiry = Date.fromString "01/07/2018"
-   }       
+   }
+  ,{ emptyNews |
+     title = "Fêtes de fin d'année à Murol (décembre/janvier)"
+   , date  = Date.fromString "12/08/2017"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez les animations de décembre et janvier dans le "
+                    ]
+                 , a [href "baseDocumentaire/murolInfo/36.pdf", target "_blank"]
+                     [text "Murol infos 36"]   
+                 ]
+   , expiry = Date.fromString "01/08/2018"
+   }
+   ,{ emptyNews |
+     title = "Centre de loisirs février 2018, inscription avant le 18 janvier"
+   , date  = Date.fromString "01/09/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le centre de loisirs du SIVOM de la Vallée Verte sera ouvert du 12 au 23 février 2018."
+                    ]
+                 , a [href "baseDocumentaire/periscolaire/plaquette fév  2018.pdf", target "_blank"]
+                     [text "Plaquette février 2018"]
+                 , br [] []
+                 , a [href "baseDocumentaire/periscolaire/programme fév 2018.pdf", target "_blank"]
+                     [text "Programme février 2018"]
+                 , br [] []
+                 , a [href "baseDocumentaire/periscolaire/inscription prév février 2018.pdf", target "_blank"]
+                     [text "Fiche d'inscription"]   
+                 ]
+   , expiry = Date.fromString "01/19/2018"
+   }
+   ,{ emptyNews |
+     title = "Vœux du maire 2018"
+   , date  = Date.fromString "01/09/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les vœux du maire auront lieu le dimanche 21 janvier 2018 à 11h à la salle des fêtes."
+                    ]
+                   
+                 ]
+   , expiry = Date.fromString "01/22/2018"
+   }
+   ,{ emptyNews |
+     title = "Voeux du maire et repas du CCAS"
+   , date  = Date.fromString "01/25/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Retrouvez les photos des voeux du maire et du repas du CCAS du 21 janvier dans la photothèque."
+                    ]
+                 , a [href "/Annee2018.html"]
+                     [text "Lien ici"]   
+                 ]
+   , expiry = Date.fromString "02/25/2018"
+   }
+   ,{ emptyNews |
+     title = "Diaporama de l'année 2017"
+   , date  = Date.fromString "01/25/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le diaporama 2017 est disponible dans la photothèque."
+                    ]
+                 , a [href "/baseDocumentaire/diaporama2017.pdf", target "_blank"]
+                     [text "Télécharger"]   
+                 ]
+   , expiry = Date.fromString "02/25/2018"
+   }          
   --,{ emptyNews |
   --   title = ""
   -- , date  = Date.fromString ""

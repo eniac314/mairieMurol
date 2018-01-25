@@ -407,24 +407,33 @@ peri =
              maternelle de Murol du lundi au vendredi de 
              8h à 18h:"
       , ul []
-           [ li [] [text "Du 20 février au 3 mars 2017"]
-           , li [] [text "Du 17 au 28 avril 2017"
+           [ li [] [text "Du 12 au 23 février 2018"] 
+           --li [] [text "Du 20 février au 3 mars 2017"]
+           , li [] [text "Du 9 au 20 avril 2018"
                     
                    ]
-           , li [] [text "Du 10 juillet au 25 août 2017"
+           , li [] [text "Du 9 juillet au 24 août 2018"
                    ]
            
            ]
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE ET PROGRAMME JUILLET 2017.pdf", target "_blank"]
-                      [ text "programme des activités et projet pédagogique - Juillet 2017"]
-                  ]
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/programme août 2017.pdf", target "_blank"]
-                      [ text "programme des activités - Août 2017"]
+      --, p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE ET PROGRAMME JUILLET 2017.pdf", target "_blank"]
+      --                [ text "programme des activités et projet pédagogique - Juillet 2017"]
+      --            ]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/programme fév 2018.pdf", target "_blank"]
+                      [ text "programme des activités - Février 2018"]
                   ]
 
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE aout 2017.pdf", target "_blank"]
-                      [ text "projet pédagogique - Août 2017"]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/Projet Pédagogique Février 2018.pdf", target "_blank"]
+                      [ text "projet pédagogique - Février 2018"]
                   ]
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette fév  2018.pdf"
+                , target "_blank"
+                ]
+                [ text "plaquette de présentation du centre de loisirs hiver" ]
+             ]
+      , p [] [ a [href "/baseDocumentaire/periscolaire/inscription prév février 2018", target "_blank"]
+                 [text "la fiche d’inscription CLSH"]
+             ]
                   
       , p [] [text "Des enfants d’autres communes d’origine, de la population 
                    touristique notamment, pourront être également accueillis, dans la 
@@ -441,11 +450,7 @@ peri =
                       familial"]
              ,text ")"    
              ]
-      , p [] [ text "Les "
-             , a [href "/baseDocumentaire/periscolaire/INSCRIPTION  clsh 2017-2018.pdf", target "_blank"]
-                 [text "dossiers d’inscriptions"]
-             , text " sont à remettre au secrétariat du SIVOM, à la mairie de Murol. "
-             ]
+      
       , text "Liens:"
       , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"]
                 [text "Projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
@@ -453,11 +458,7 @@ peri =
       --, p [] [a [href "/baseDocumentaire/periscolaire/PP avril 2017.pdf", target "_blank"]
       --          [text "Projet pédagogique vacances de printemps "]
       --       ]
-      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette CLSH 2017.pdf"
-                , target "_blank"
-                ]
-                [ text "Plaquette de présentation du centre de loisirs été" ]
-             ]
+      
       
       --, p [] [a [ href "/baseDocumentaire/periscolaire/plaquette CLSH 2017.pdf"
       --          , target "_blank"

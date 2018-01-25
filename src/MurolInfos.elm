@@ -99,7 +99,7 @@ murolInf =
            ]
       , h5 [] [text "2009"]
       , ul []
-           [ li [] [link "Numero 05 - Février" "/baseDocumentaire/murolInfo/06.pdf"]
+           [ li [] [link "Numero 06 - Février" "/baseDocumentaire/murolInfo/06.pdf"]
            , li [] [link "Numero 07 - Mai" "/baseDocumentaire/murolInfo/07.pdf"]
            , li [] [link "Numero 08 - Septembre" "/baseDocumentaire/murolInfo/08.pdf"]
            , li [] [link "Numero 09 - Décembre" "/baseDocumentaire/murolInfo/09.pdf"]
@@ -149,6 +149,7 @@ murolInf =
       , ul []
            [ li [] [link "Numero 33 - Mai" "baseDocumentaire/murolInfo/33.pdf"]
            , li [] [link "Numero 34 - Juin" "baseDocumentaire/murolInfo/34.pdf"]
-           , li [] [link "Numero 35 - Septembre" "baseDocumentaire/murolInfo/34.pdf"]
+           , li [] [link "Numero 35 - Septembre" "baseDocumentaire/murolInfo/35.pdf"]
+           , li [] [link "Numero 36 - Décembre" "baseDocumentaire/murolInfo/36.pdf"]
            ]
       ])
