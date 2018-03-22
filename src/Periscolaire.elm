@@ -155,11 +155,16 @@ initialContent =
                    [ text "Charte du savoir-vivre"]
                ]
 
-           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
-           --    [ a [ href "/baseDocumentaire/periscolaire/REGLEMENT INTERIEUR ET TARIFS.pdf"
-           --        , target "_blank"]
-           --        [ text "règlement intérieur"]
-           --    ]
+           , p [ classList [("intro",True),("displayIntro", showIntro)]]
+               [ a [ href "/baseDocumentaire/periscolaire/règlement sivom 2018.pdf"
+                   , target "_blank"]
+                   [ text "Règlement intérieur"]
+               ]
+           , p [ classList [("intro",True),("displayIntro", showIntro)]]
+               [ a [ href "/baseDocumentaire/periscolaire/tarifs SIVOM  2017-2018.pdf"
+                   , target "_blank"]
+                   [ text "Tarifs 2017-2018"]
+               ]
            --, p [ classList [("intro",True),("displayIntro", showIntro)]]
            --    [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
            --        , target "_blank"]
@@ -330,7 +335,7 @@ peri =
                   , td [] [text "Lundi et jeudi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP murol 2017 rentrée à toussaint-1.pdf", target "_blank"] [text "Murol"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/murol tap jusqu'à Pâques.pdf", target "_blank"] [text "Murol"]]
                   ]
              , tr []
                   [ td [] [text "Elémentaire du Chambon"]
@@ -344,7 +349,7 @@ peri =
                   , td [] [text "Mardi et vendredi"]
                   , td [] [text "15h00 à 16h30"]
                   , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/TAP St Nect 2017 rentrée à toussaint-1.pdf", target "_blank"] [text "Saint-Nectaire"]]
+                  , td [] [a [href "/baseDocumentaire/periscolaire/tap st nectaire jusqu'à Pâques.pdf", target "_blank"] [text "Saint-Nectaire"]]
                   ]  
              ]
      , p [] [text "L’inscription est annuelle et la participation
@@ -419,19 +424,22 @@ peri =
       --, p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE ET PROGRAMME JUILLET 2017.pdf", target "_blank"]
       --                [ text "programme des activités et projet pédagogique - Juillet 2017"]
       --            ]
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/programme fév 2018.pdf", target "_blank"]
-                      [ text "programme des activités - Février 2018"]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/planning activités avril 2018.pdf", target "_blank"]
+                      [ text "programme des activités - Avril 2018"]
                   ]
 
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/Projet Pédagogique Février 2018.pdf", target "_blank"]
-                      [ text "projet pédagogique - Février 2018"]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/projet pédagogique avril 2018.pdf", target "_blank"]
+                      [ text "projet pédagogique - Avril 2018"]
                   ]
-      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette fév  2018.pdf"
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette avril 2018.pdf"
                 , target "_blank"
                 ]
-                [ text "plaquette de présentation du centre de loisirs hiver" ]
+                [ text "plaquette de présentation du centre de loisirs printemps" ]
              ]
-      , p [] [ a [href "/baseDocumentaire/periscolaire/inscription prév février 2018", target "_blank"]
+      , p [] [ a [href "/baseDocumentaire/periscolaire/préinscription clsh avril 2018.pdf", target "_blank"]
+                 [text "la fiche de préinscription CLSH"]
+             ]
+      , p [] [ a [href "/baseDocumentaire/periscolaire/dossier complet inscription clsh printemps 2018.pdf", target "_blank"]
                  [text "la fiche d’inscription CLSH"]
              ]
                   
@@ -445,17 +453,17 @@ peri =
       , p [] [text "Ce service est subventionné par la CAF et 
                    la MSA. La participation des familles est fonction 
                    des revenus de celles-ci ("
-             ,a [href "/baseDocumentaire/periscolaire/TARIFS SIVOM 2017.pdf", target "_blank"]
+             ,a [href "/baseDocumentaire/periscolaire/tarifs SIVOM  2017-2018.pdf", target "_blank"]
                 [text "tarifs selon le quotient 
                       familial"]
              ,text ")"    
              ]
       
       , text "Liens:"
-      , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2016.pdf", target "_blank"]
+      , p [] [a [href "/baseDocumentaire/periscolaire/PROJET EDUCATIF 2018.pdf", target "_blank"]
                 [text "Projet éducatif du centre de loisirs du SIVOM de la Vallée Verte"]]
       
-      --, p [] [a [href "/baseDocumentaire/periscolaire/PP avril 2017.pdf", target "_blank"]
+      --, p [] [a [href "/baseDocumentaire/periscolaire/projet pédagogique avril 2018.pdf", target "_blank"]
       --          [text "Projet pédagogique vacances de printemps "]
       --       ]
       

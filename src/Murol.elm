@@ -169,7 +169,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le vendredi 25 janvier 2018"]
+            [text "Dernière mise à jour le jeudi 22 mars 2018"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -1952,7 +1952,99 @@ news =
                      [text "Télécharger"]   
                  ]
    , expiry = Date.fromString "02/25/2018"
-   }          
+   }
+   ,{ emptyNews |
+     title = "Offre d'emploi"
+   , date  = Date.fromString "02/03/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "La mairie de Murol recherche un agent technique."
+                    ]
+                 , a [href "baseDocumentaire/CDD 6 mois - agent technique - CT Murol.pdf", target "_blank"]
+                     [text "Voir l'offre"]   
+                 ]
+   , expiry = Date.fromString "04/03/2018"
+   }
+  ,{ emptyNews |
+     title = "Sancy Snow Jazz à Murol"
+   , date  = Date.fromString "02/08/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Dans le cadre du Sancy Snow Jazz, la commune de Murol accueille le concert de SWINGROCKET dimanche 11 février 2018 à 20h à la salle des fêtes. Entrée libre"
+                    ]
+                 , a [href "baseDocumentaire/afficheJazz.pdf", target "_blank"]
+                     [text "Lien affiche"]   
+                 ]
+   , expiry = Date.fromString "02/12/2018"
+   }
+   ,{ emptyNews |
+     title = "Une nouvelle boulangerie à Murol !"
+   , date  = Date.fromString "02/13/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le \"Fournil du château\" ouvre ses portes rue George Sand mercredi 14 février."]
+                 , p [] 
+                     [text "Irina et Renaud LUCE vous proposent leurs produits de fabrication artisanale de 7h00 à 13h30 et de 16h00 à 19h30 (en continu en juillet et août)."]
+                 , p []
+                     [text "Ouverture 7 jours sur 7 pendant les vacances scolaires toutes zones, fermeture le dimanche après-midi et le lundi le reste de l'année."
+                     ] 
+                 ]
+   , expiry = Date.fromString "03/13/2018"
+   }
+   ,{ emptyNews |
+     title = "Dispositif OrganiCité"
+   , date  = Date.fromString "03/15/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez les actions engagées dans "
+                    ]
+                 , a [href "/baseDocumentaire/lettre OrganiCité n°2.pdf", target "_blank"]
+                     [text "la lettre OrganiCité n°2"]   
+                 ]
+   , expiry = Date.fromString "04/15/2018"
+   }
+   ,{ emptyNews |
+     title = "Animation \"Tous au compost!\" samedi 24 mars"
+   , date  = Date.fromString "03/15/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "une animation est organisée par le réseau compost citoyen et la mairie de Murol aux services techniques (rue de Jassat) samedi 24 mars de 9h à 12h."
+                    ]
+                 , a [href "/baseDocumentaire/affiche animation compost.pdf", target "_blank"]
+                     [text "Voir l'affiche"]   
+                 ]
+   , expiry = Date.fromString "03/25/2018"
+   }
+   ,{ emptyNews |
+     title = "Le bulletin municipal n°9"
+   , date  = Date.fromString "03/15/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le dernier bulletin municipal est en ligne."
+                    ]
+                 , a [href "/baseDocumentaire/bulletin/mars2018.pdf", target "_blank"]
+                     [text "Télécharger"]   
+                 ]
+   , expiry = Date.fromString "04/15/2018"
+   }
+   ,{ emptyNews |
+     title = "Centre de loisirs du SIVOM de la Vallée Verte, vacances de printemps"
+   , date  = Date.fromString "03/22/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Il reste quelques places au centre de loisirs du SIVOM de la Vallée Verte pour les vacances de printemps. Les inscriptions sont encore possibles."
+                    ]
+                 , p [] 
+                     [ text "Découvrez la "
+                     , a [href "/baseDocumentaire/periscolaire/plaquette avril 2018.pdf", target "_blank"] [text "plaquette avril"]
+                     , text ". Les documents d'inscription sont "
+                     , a [href "/PériEtExtra-scolaire.html?bloc=3"] [text "en ligne"]
+                     , text "."
+                     ]
+                        
+                 ]
+   , expiry = Date.fromString "04/22/2018"
+   }            
   --,{ emptyNews |
   --   title = ""
   -- , date  = Date.fromString ""

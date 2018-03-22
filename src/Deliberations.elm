@@ -112,5 +112,7 @@ delib =
            , li [] [link "30 juin" "/baseDocumentaire/Deliberations_conseil/2017/30Juin2017.pdf"] 
            , li [] [link "22 août" "/baseDocumentaire/Deliberations_conseil/2017/22Aout2017.pdf"]
            , li [] [link "27 septembre" "/baseDocumentaire/Deliberations_conseil/2017/27Sep2017.pdf"]         
+           , li [] [link "7 novembre" "/baseDocumentaire/Deliberations_conseil/2017/07Novembre2017.pdf"]
+           , li [] [link "12 décembre" "/baseDocumentaire/Deliberations_conseil/2017/12Decembre2017.pdf"]
            ]
       ])

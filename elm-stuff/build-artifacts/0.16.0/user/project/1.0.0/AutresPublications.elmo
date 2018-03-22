@@ -29,6 +29,7 @@ Elm.AutresPublications.make = function (_elm) {
            ,A2($Utils.link,"Note de présentation SIVU","baseDocumentaire/Note de présentation SIVU et contrat terrirorial.pdf")
            ,A2($Utils.link,"Dossier zone humide de Murol","baseDocumentaire/Dossier zone humide de Murol.pdf")
            ,A2($Utils.link,"Fiche Organicité","baseDocumentaire/ficheORGANICITE.pdf")
+           ,A2($Utils.link,"Fiche Organicité n°2","baseDocumentaire/lettre OrganiCité n°2.pdf")
            ,A2($Utils.link,"Livret d\'informations sur le lac Chambon","baseDocumentaire/livretLac.pdf")
            ,A2($Utils.link,"Plaquette semaine parentalité","baseDocumentaire/plaquette_semaineParentalite2016.pdf")
            ,A2($Utils.link,"Communiqué de presse concernant la lutte contre les ambroisies","baseDocumentaire/CPDGSdecretarreteambroisies040517.pdf")

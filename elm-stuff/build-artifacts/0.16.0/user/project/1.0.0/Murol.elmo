@@ -243,7 +243,7 @@ Elm.Murol.make = function (_elm) {
       _U.list([$Html$Attributes.$class(A2($String.join,"",A2($List.map,$Utils.capitalize,$String.words(title))))]),
       A2($Basics._op["++"],
       _U.list([A2($Html.h4,_U.list([]),_U.list([$Html.text(title)]))
-              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le vendredi 25 janvier 2018")]))]),
+              ,A2($Html.p,_U.list([$Html$Attributes.id("lastUpdate")]),_U.list([$Html.text("Dernière mise à jour le jeudi 22 mars 2018")]))]),
       A2($List.map,renderNews(address),xs)));
    });
    var renderContent = F2(function (n1,address) {
@@ -1657,7 +1657,94 @@ Elm.Murol.make = function (_elm) {
                               ,A2($Html.a,
                               _U.list([$Html$Attributes.href("/baseDocumentaire/diaporama2017.pdf"),$Html$Attributes.target("_blank")]),
                               _U.list([$Html.text("Télécharger")]))]))
-                      ,expiry: $Date.fromString("02/25/2018")})]);
+                      ,expiry: $Date.fromString("02/25/2018")})
+                      ,_U.update(emptyNews,
+                      {title: "Offre d\'emploi"
+                      ,date: $Date.fromString("02/03/2018")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La mairie de Murol recherche un agent technique.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/CDD 6 mois - agent technique - CT Murol.pdf")
+                                      ,$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Voir l\'offre")]))]))
+                      ,expiry: $Date.fromString("04/03/2018")})
+                      ,_U.update(emptyNews,
+                      {title: "Sancy Snow Jazz à Murol"
+                      ,date: $Date.fromString("02/08/2018")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Dans le cadre du Sancy Snow Jazz, la commune de Murol accueille le concert de SWINGROCKET dimanche 11 février 2018 à 20h à la salle des fêtes. Entrée libre")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("baseDocumentaire/afficheJazz.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Lien affiche")]))]))
+                      ,expiry: $Date.fromString("02/12/2018")})
+                      ,_U.update(emptyNews,
+                      {title: "Une nouvelle boulangerie à Murol !"
+                      ,date: $Date.fromString("02/13/2018")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le \"Fournil du château\" ouvre ses portes rue George Sand mercredi 14 février.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Irina et Renaud LUCE vous proposent leurs produits de fabrication artisanale de 7h00 à 13h30 et de 16h00 à 19h30 (en continu en juillet et août).")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Ouverture 7 jours sur 7 pendant les vacances scolaires toutes zones, fermeture le dimanche après-midi et le lundi le reste de l\'année.")]))]))
+                      ,expiry: $Date.fromString("03/13/2018")})
+                      ,_U.update(emptyNews,
+                      {title: "Dispositif OrganiCité"
+                      ,date: $Date.fromString("03/15/2018")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Découvrez les actions engagées dans ")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/lettre OrganiCité n°2.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("la lettre OrganiCité n°2")]))]))
+                      ,expiry: $Date.fromString("04/15/2018")})
+                      ,_U.update(emptyNews,
+                      {title: "Animation \"Tous au compost!\" samedi 24 mars"
+                      ,date: $Date.fromString("03/15/2018")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("une animation est organisée par le réseau compost citoyen et la mairie de Murol aux services techniques (rue de Jassat) samedi 24 mars de 9h à 12h.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/affiche animation compost.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Voir l\'affiche")]))]))
+                      ,expiry: $Date.fromString("03/25/2018")})
+                      ,_U.update(emptyNews,
+                      {title: "Le bulletin municipal n°9"
+                      ,date: $Date.fromString("03/15/2018")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("Le dernier bulletin municipal est en ligne.")]))
+                              ,A2($Html.a,
+                              _U.list([$Html$Attributes.href("/baseDocumentaire/bulletin/mars2018.pdf"),$Html$Attributes.target("_blank")]),
+                              _U.list([$Html.text("Télécharger")]))]))
+                      ,expiry: $Date.fromString("04/15/2018")})
+                      ,_U.update(emptyNews,
+                      {title: "Centre de loisirs du SIVOM de la Vallée Verte, vacances de printemps"
+                      ,date: $Date.fromString("03/22/2018")
+                      ,descr: A2($Html.div,
+                      _U.list([$Html$Attributes.$class("newsdescr")]),
+                      _U.list([A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Il reste quelques places au centre de loisirs du SIVOM de la Vallée Verte pour les vacances de printemps. Les inscriptions sont encore possibles.")]))
+                              ,A2($Html.p,
+                              _U.list([]),
+                              _U.list([$Html.text("Découvrez la ")
+                                      ,A2($Html.a,
+                                      _U.list([$Html$Attributes.href("/baseDocumentaire/periscolaire/plaquette avril 2018.pdf")
+                                              ,$Html$Attributes.target("_blank")]),
+                                      _U.list([$Html.text("plaquette avril")]))
+                                      ,$Html.text(". Les documents d\'inscription sont ")
+                                      ,A2($Html.a,_U.list([$Html$Attributes.href("/PériEtExtra-scolaire.html?bloc=3")]),_U.list([$Html.text("en ligne")]))
+                                      ,$Html.text(".")]))]))
+                      ,expiry: $Date.fromString("04/22/2018")})]);
    var initialModel = {mainMenu: $Utils.mainMenu
                       ,logos: $Utils.logos
                       ,newsletters: newsletters

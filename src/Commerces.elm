@@ -231,12 +231,15 @@ comMapYearLong = fromList
       , site   = "http://www.bureaumontagne.com/"
       }]
    )
-  --,("Boulangerie"
-  -- , [{ defCom |
-  --      addr   = "Rue Chabrol - 63790 MUROL"
-  --    , tel    = "04 7388 6024" 
-  --    }]
-  -- )
+  ,("Boulangerie"
+   , [{ defCom |
+        name   = "Le fournil du château"
+      , addr   = "Rue George Sand - 63790 MUROL"
+      --, tel    = "04 7388 6024"
+      , mail   = "lefournilduchâteau.murol@gmail.com"
+      , descr  = ["Facebook: fb/lefournil.murol"] 
+      }]
+   )
   --,("Café"
   -- , [{ defCom |
   --      name   = "Café de la côte"

@@ -290,7 +290,41 @@ Elm.BulletinsMunicipaux.make = function (_elm) {
                                              ,"L\'annuaire de la maison de santé"
                                              ,"Les services"
                                              ,"Le calendrier"]),
-                                     "/baseDocumentaire/bulletin/mars2017.pdf")]));
+                                     "/baseDocumentaire/bulletin/mars2017.pdf")
+                                     ,A4(Bulletin,
+                                     "cover8.jpg",
+                                     "Mars 2018",
+                                     _U.list(["Etat civil 2017"
+                                             ,"Urbanisme"
+                                             ,"Personnel communal"
+                                             ,"Sapeurs pompiers"
+                                             ,"Eléments budgétaires"
+                                             ,"Locations communales"
+                                             ,"Travaux équipe technique"
+                                             ,"Circulation stationnement"
+                                             ,"Travaux des entreprises"
+                                             ,"Investissements 2017"
+                                             ,"Archéologie"
+                                             ,"Château"
+                                             ,"Musée des peintres"
+                                             ,"Article IGN magazine"
+                                             ,"Murol en images"
+                                             ,"Animation estivale"
+                                             ,"Grandes manifestations"
+                                             ,"Communauté de communes du massif du Sancy"
+                                             ,"SIVU Couze Chambon"
+                                             ,"Pavillon Bleu"
+                                             ,"Environnement"
+                                             ,"Ecoles"
+                                             ,"SIVOM vallée verte"
+                                             ,"CCAS"
+                                             ,"Attention aux arnaques !"
+                                             ,"CLIC et SIVOM de Besse"
+                                             ,"Associations"
+                                             ,"Services"
+                                             ,"Maison de santé"
+                                             ,"Calendrier"]),
+                                     "/baseDocumentaire/bulletin/mars2018.pdf")]));
    var bulletin = A2($Html.div,
    _U.list([$Html$Attributes.$class("subContainerData noSubmenu"),$Html$Attributes.id("bullPubli")]),
    A2($List._op["::"],A2($Html.h2,_U.list([]),_U.list([$Html.text("Le bulletin municipal")])),A2($List.map,renderBulletin,bulls)));

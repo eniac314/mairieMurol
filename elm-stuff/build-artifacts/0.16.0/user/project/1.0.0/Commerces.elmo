@@ -178,6 +178,13 @@ Elm.Commerces.make = function (_elm) {
                                                              ,descr: _U.list(["Raquettes à neige. Randonnées sur les volcans, lever de soleil, orientation, VTT, astronomie, tir à l\'arc."])
                                                              ,site: "http://www.bureaumontagne.com/"})])}
                                                ,{ctor: "_Tuple2"
+                                                ,_0: "Boulangerie"
+                                                ,_1: _U.list([_U.update(defCom,
+                                                {name: "Le fournil du château"
+                                                ,addr: "Rue George Sand - 63790 MUROL"
+                                                ,mail: "lefournilduchâteau.murol@gmail.com"
+                                                ,descr: _U.list(["Facebook: fb/lefournil.murol"])})])}
+                                               ,{ctor: "_Tuple2"
                                                 ,_0: "Art de la maison - cadeaux - souvenirs"
                                                 ,_1: _U.list([_U.update(defCom,
                                                 {name: "Le grenier du château"

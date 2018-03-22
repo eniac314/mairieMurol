@@ -237,6 +237,17 @@ initialContent =
                        ]
                        []
               , br [] []
+              , h4 [id "videoRacineAiles"]
+                   [text "Extrait du reportage de racines & des ailes sur le chateau"]
+              , iframe [ src "https://www.youtube.com/embed/JrkSxy4CBrQ"
+                       , width 560
+                       , height 315
+                       , attribute "frameborder" "0" --(Json.Encode.string "0")
+                       , attribute "allowfullscreen" "true"--(Json.Encode.string "true")
+                       ]
+                       []
+              , br [] []
+              , br [] []
               ]
             )
             ,

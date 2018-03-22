@@ -143,6 +143,18 @@ Elm.DecouvrirMurol.make = function (_elm) {
                                                       ,A2($Html$Attributes.attribute,"frameborder","0")
                                                       ,A2($Html$Attributes.attribute,"allowfullscreen","true")]),
                                               _U.list([]))
+                                              ,A2($Html.br,_U.list([]),_U.list([]))
+                                              ,A2($Html.h4,
+                                              _U.list([$Html$Attributes.id("videoRacineAiles")]),
+                                              _U.list([$Html.text("Extrait du reportage de racines & des ailes sur le chateau")]))
+                                              ,A2($Html.iframe,
+                                              _U.list([$Html$Attributes.src("https://www.youtube.com/embed/JrkSxy4CBrQ")
+                                                      ,$Html$Attributes.width(560)
+                                                      ,$Html$Attributes.height(315)
+                                                      ,A2($Html$Attributes.attribute,"frameborder","0")
+                                                      ,A2($Html$Attributes.attribute,"allowfullscreen","true")]),
+                                              _U.list([]))
+                                              ,A2($Html.br,_U.list([]),_U.list([]))
                                               ,A2($Html.br,_U.list([]),_U.list([]))])}
                                 ,{ctor: "_Tuple3"
                                  ,_0: "Beaune le froid"
