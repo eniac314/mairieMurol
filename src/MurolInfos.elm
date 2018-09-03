@@ -152,4 +152,8 @@ murolInf =
            , li [] [link "Numero 35 - Septembre" "baseDocumentaire/murolInfo/35.pdf"]
            , li [] [link "Numero 36 - Décembre" "baseDocumentaire/murolInfo/36.pdf"]
            ]
+      , h5 [] [text "2018"]     
+      , ul []
+           [ li [] [link "Numero 37 - Juin" "baseDocumentaire/murolInfo/37.pdf"]
+           ]
       ])

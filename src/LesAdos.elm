@@ -34,7 +34,7 @@ initialModel =
 view address model =
   div [ id "container"]
       [ renderMainMenu
-                       ["Mairie", "Horaires et contact"]
+                       ["Vie locale", "Les ados"]
                        (.mainMenu model)
       , div [ id "subContainer"]
             [ .mainContent model
@@ -80,12 +80,12 @@ initialContent =
         , p [] [a [href "/baseDocumentaire/ados/Document d'information argent de poche.pdf", target "_blank"]
                   [text "Document information argent de poche"]
                ]
-        , p [] [a [href "/baseDocumentaire/ados/Dossier d'inscription argent de poche.pdf", target "_blank"]
+        , p [] [a [href "/baseDocumentaire/ados/Dossier d'inscription argent de poche 2018.pdf", target "_blank"]
                   [text "Dossier inscription argent de poche"]
                ]
-        --, p [] [a [href "/baseDocumentaire/ados/plaquette printemps 2017 argent de poche.pdf", target "_blank"]
-        --          [text "Plaquette printemps 2017 argent de poche"]
-        --       ]
+        , p [] [a [href "/baseDocumentaire/ados/plaquette été 2018 argent de poche.pdf", target "_blank"]
+                  [text "Plaquette été 2018 argent de poche"]
+               ]
         ]
       ]
 

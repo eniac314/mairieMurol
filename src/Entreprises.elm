@@ -222,6 +222,15 @@ artMap = fromList
   --    , fax    = ""  
   --    }]
   -- )
+  --,(""
+  -- , [{ defArt |
+  --      name   = ""
+  --    , descr  = ""
+  --    , addr   = ""
+  --    , tel    = ""
+  --    , fax    = ""  
+  --    }]
+  -- )
   --,("Reprographie"
   -- , [{ defArt |
   --      name   = "Chazay Yvon"

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"an",
+				"animation"
+			],
+			[
+				"af",
+				"affiche14juillet2016"
+			],
+			[
+				"d'in",
+				"d'inscription"
+			],
+			[
 				"diaporama",
 				"diaporama2017"
 			],
@@ -38,10 +50,6 @@
 			[
 				"blank",
 				"_blank"
-			],
-			[
-				"an",
-				"animEst"
 			],
 			[
 				"murol",
@@ -506,14 +514,6 @@
 			[
 				"L",
 				"LightboxAction"
-			],
-			[
-				"lig",
-				"lightboxHtml"
-			],
-			[
-				"key",
-				"keyToAct"
 			]
 		]
 	},
@@ -532,7 +532,7 @@
 			"file": "src/Animation.elm",
 			"settings":
 			{
-				"buffer_size": 9531,
+				"buffer_size": 9001,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -604,7 +604,7 @@
 			"file": "src/AnimationEstivale.elm",
 			"settings":
 			{
-				"buffer_size": 2743,
+				"buffer_size": 2967,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -826,7 +826,7 @@
 			"file": "src/Entreprises.elm",
 			"settings":
 			{
-				"buffer_size": 7246,
+				"buffer_size": 7404,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -844,7 +844,7 @@
 			"file": "src/FestivalArt.elm",
 			"settings":
 			{
-				"buffer_size": 9961,
+				"buffer_size": 10108,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -889,7 +889,7 @@
 			"file": "src/GestionDesDechets.elm",
 			"settings":
 			{
-				"buffer_size": 9210,
+				"buffer_size": 9376,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -907,7 +907,7 @@
 			"file": "src/Hebergements.elm",
 			"settings":
 			{
-				"buffer_size": 30769,
+				"buffer_size": 30777,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -943,7 +943,7 @@
 			"file": "src/LesAdos.elm",
 			"settings":
 			{
-				"buffer_size": 2604,
+				"buffer_size": 2584,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -961,7 +961,7 @@
 			"file": "src/ListOfPics.elm",
 			"settings":
 			{
-				"buffer_size": 68163,
+				"buffer_size": 79074,
 				"line_ending": "Unix"
 			}
 		},
@@ -969,7 +969,7 @@
 			"file": "src/Medievales.elm",
 			"settings":
 			{
-				"buffer_size": 3925,
+				"buffer_size": 4081,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -978,7 +978,7 @@
 			"file": "src/Murol.elm",
 			"settings":
 			{
-				"buffer_size": 88452,
+				"buffer_size": 107491,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1002,19 +1002,10 @@
 			}
 		},
 		{
-			"file": "styles/style.css",
-			"settings":
-			{
-				"buffer_size": 48740,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "src/MurolInfos.elm",
 			"settings":
 			{
-				"buffer_size": 5414,
+				"buffer_size": 5555,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1041,7 +1032,25 @@
 			"file": "src/Periscolaire.elm",
 			"settings":
 			{
-				"buffer_size": 21897,
+				"buffer_size": 23307,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/style.css",
+			"settings":
+			{
+				"buffer_size": 48631,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styles/winter2018.css",
+			"settings":
+			{
+				"buffer_size": 48740,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1059,7 +1068,7 @@
 			"file": "src/Patrimoine.elm",
 			"settings":
 			{
-				"buffer_size": 15387,
+				"buffer_size": 15408,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1121,7 +1130,7 @@
 			"file": "src/Sante.elm",
 			"settings":
 			{
-				"buffer_size": 4624,
+				"buffer_size": 4804,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1283,6 +1292,7 @@
 		"height": 146.0,
 		"history":
 		[
+			"sublime.log_commands(True)",
 			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
 		]
 	},
@@ -1297,6 +1307,9 @@
 	},
 	"file_history":
 	[
+		"/home/eniac314/prog/elm/mocalis/src/Main.elm",
+		"/home/eniac314/prog/elixir/gamesLobby/subprogs/hexaboard/notes",
+		"/home/eniac314/prog/elm/mocalis/src/BlogEntry.elm",
 		"/home/eniac314/prog/elm/mairieMurol/src/Annee2018.elm",
 		"/home/eniac314/prog/elm/mairieMurol/Gruntfile.js",
 		"/home/eniac314/prog/elm/mairieMurol/mentionsLegales.html",
@@ -1421,14 +1434,11 @@
 		"/home/fayong/prog/elm/mairieMurol/src/Lightbox.elm",
 		"/home/fayong/prog/elm/mairieMurol/src/UrlParsing.elm",
 		"/home/fayong/prog/elm/mairieMurol/src/AutresPublications.elm",
-		"/home/fayong/prog/elm/mairieMurol/index.html",
-		"/home/fayong/prog/elm/mairieMurol/src/Hebergements.elm",
-		"/home/fayong/prog/elm/mairieMurol/Gruntfile.js",
-		"/home/fayong/prog/elm/mairieMurol/src/CCAS.elm"
+		"/home/fayong/prog/elm/mairieMurol/index.html"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -1443,6 +1453,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mise",
+			"sancy",
+			"mise à jour",
+			"jour",
+			"mise",
+			"jour",
+			"festiva",
+			"photo",
+			"Enfants",
+			"jour",
+			"festivel",
+			"jour",
+			"mail",
+			"jour",
+			"mise",
+			"murol ind",
+			"mise",
+			"bloc",
+			"centre",
+			"jour",
+			"mise",
+			"jour",
+			"Ari",
+			"fon",
 			"jour",
 			"mise",
 			"jour",
@@ -1546,31 +1580,7 @@
 			"miniGalle",
 			"pics",
 			"divers",
-			"jour",
-			"mise",
-			"mise a ",
-			"jour",
-			"mise",
-			"font",
-			"name",
-			"assoc",
-			"?",
-			"animation",
-			"commer",
-			"news",
-			"mise",
-			"|\n",
-			"mise",
-			"Date",
-			"jour",
-			"border",
-			"thumbs",
-			"render",
-			"jour",
-			"lightb",
-			"light",
-			"render",
-			"touris"
+			"jour"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1617,7 +1627,7 @@
 	"groups":
 	[
 		{
-			"selected": 19,
+			"selected": 51,
 			"sheets":
 			[
 				{
@@ -1647,7 +1657,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 31,
 					"type": "text"
 				},
 				{
@@ -1656,15 +1666,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9531,
+						"buffer_size": 9001,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3616,
-								3616
+								8749,
+								8749
 							]
 						],
 						"settings":
@@ -1675,10 +1685,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1935.0,
+						"translation.y": 3484.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1694,8 +1704,8 @@
 						"selection":
 						[
 							[
-								4822,
-								4822
+								3793,
+								3793
 							]
 						],
 						"settings":
@@ -1706,10 +1716,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2280.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
@@ -1739,7 +1749,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 26,
+					"stack_index": 36,
 					"type": "text"
 				},
 				{
@@ -1769,7 +1779,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 23,
+					"stack_index": 34,
 					"type": "text"
 				},
 				{
@@ -1785,21 +1795,22 @@
 						"selection":
 						[
 							[
-								3729,
-								3729
+								600,
+								600
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 133.0,
+						"translation.y": 108.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 24,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1827,10 +1838,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3017.0,
+						"translation.y": 3182.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 30,
 					"type": "text"
 				},
 				{
@@ -1846,8 +1857,8 @@
 						"selection":
 						[
 							[
-								10493,
-								10493
+								4447,
+								4447
 							]
 						],
 						"settings":
@@ -1858,7 +1869,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4205.0,
+						"translation.y": 2422.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
@@ -1892,7 +1903,7 @@
 						"translation.y": 248.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
@@ -1901,15 +1912,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2743,
+						"buffer_size": 2967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1213,
-								1213
+								1839,
+								1839
 							]
 						],
 						"settings":
@@ -1920,10 +1931,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 88.0,
+						"translation.y": 1065.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
@@ -1951,10 +1962,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1782.0,
+						"translation.y": 1881.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
@@ -1982,10 +1993,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2106.0,
+						"translation.y": 2223.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 25,
 					"type": "text"
 				},
 				{
@@ -2016,7 +2027,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 28,
 					"type": "text"
 				},
 				{
@@ -2044,10 +2055,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 619.0,
+						"translation.y": 642.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 27,
 					"type": "text"
 				},
 				{
@@ -2077,7 +2088,7 @@
 						"translation.y": 162.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 25,
+					"stack_index": 35,
 					"type": "text"
 				},
 				{
@@ -2107,7 +2118,7 @@
 						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 59,
+					"stack_index": 61,
 					"type": "text"
 				},
 				{
@@ -2134,10 +2145,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7277.0,
+						"translation.y": 7680.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 60,
+					"stack_index": 62,
 					"type": "text"
 				},
 				{
@@ -2167,7 +2178,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 79,
+					"stack_index": 80,
 					"type": "text"
 				},
 				{
@@ -2195,10 +2206,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1213.0,
+						"translation.y": 1270.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
@@ -2214,8 +2225,8 @@
 						"selection":
 						[
 							[
-								11226,
-								11226
+								8609,
+								8609
 							]
 						],
 						"settings":
@@ -2226,10 +2237,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4527.0,
+						"translation.y": 4773.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -2259,7 +2270,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 32,
 					"type": "text"
 				},
 				{
@@ -2286,10 +2297,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 972.0,
+						"translation.y": 1026.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 33,
 					"type": "text"
 				},
 				{
@@ -2316,10 +2327,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1653.0,
+						"translation.y": 1732.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 40,
 					"type": "text"
 				},
 				{
@@ -2349,7 +2360,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 78,
+					"stack_index": 79,
 					"type": "text"
 				},
 				{
@@ -2379,7 +2390,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 77,
+					"stack_index": 78,
 					"type": "text"
 				},
 				{
@@ -2407,10 +2418,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3989.0,
+						"translation.y": 4364.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -2437,10 +2448,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1512.0,
+						"translation.y": 1706.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 39,
+					"stack_index": 47,
 					"type": "text"
 				},
 				{
@@ -2467,10 +2478,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4367.0,
+						"translation.y": 4643.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 33,
+					"stack_index": 41,
 					"type": "text"
 				},
 				{
@@ -2500,7 +2511,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 45,
+					"stack_index": 49,
 					"type": "text"
 				},
 				{
@@ -2527,10 +2538,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4872.0,
+						"translation.y": 5518.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 49,
+					"stack_index": 53,
 					"type": "text"
 				},
 				{
@@ -2558,10 +2569,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1333.0,
+						"translation.y": 1385.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -2588,10 +2599,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1842.0,
+						"translation.y": 1930.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 55,
+					"stack_index": 58,
 					"type": "text"
 				},
 				{
@@ -2621,7 +2632,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 76,
+					"stack_index": 77,
 					"type": "text"
 				},
 				{
@@ -2651,7 +2662,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 75,
+					"stack_index": 76,
 					"type": "text"
 				},
 				{
@@ -2660,28 +2671,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7246,
+						"buffer_size": 7404,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								5704,
+								5704
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3618.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 74,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -2711,7 +2723,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 73,
+					"stack_index": 75,
 					"type": "text"
 				},
 				{
@@ -2720,28 +2732,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9961,
+						"buffer_size": 10108,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3788,
-								3788
+								3393,
+								3393
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1998.0,
+						"translation.y": 1973.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 50,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -2771,7 +2784,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 72,
+					"stack_index": 74,
 					"type": "text"
 				},
 				{
@@ -2799,7 +2812,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 71,
+					"stack_index": 73,
 					"type": "text"
 				},
 				{
@@ -2829,7 +2842,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 70,
+					"stack_index": 72,
 					"type": "text"
 				},
 				{
@@ -2857,7 +2870,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 69,
+					"stack_index": 71,
 					"type": "text"
 				},
 				{
@@ -2866,28 +2879,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9210,
+						"buffer_size": 9376,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1598,
-								1598
+								3289,
+								3289
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1352.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
@@ -2917,7 +2931,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 34,
+					"stack_index": 42,
 					"type": "text"
 				},
 				{
@@ -2926,28 +2940,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30769,
+						"buffer_size": 30777,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2848,
-								2848
+								25221,
+								25221
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3534.0,
+						"translation.y": 13439.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 28,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -2974,10 +2989,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1871.0,
+						"translation.y": 1961.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 46,
+					"stack_index": 50,
 					"type": "text"
 				},
 				{
@@ -3004,10 +3019,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1184.0,
+						"translation.y": 1232.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 47,
+					"stack_index": 51,
 					"type": "text"
 				},
 				{
@@ -3034,10 +3049,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1499.0,
+						"translation.y": 1691.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 29,
+					"stack_index": 38,
 					"type": "text"
 				},
 				{
@@ -3046,28 +3061,29 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2604,
+						"buffer_size": 2584,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2376,
-								2558
+								916,
+								916
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1110.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 43,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -3097,7 +3113,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 68,
+					"stack_index": 70,
 					"type": "text"
 				},
 				{
@@ -3106,7 +3122,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 68163,
+						"buffer_size": 79074,
 						"regions":
 						{
 						},
@@ -3125,7 +3141,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 54,
+					"stack_index": 57,
 					"type": "text"
 				},
 				{
@@ -3134,7 +3150,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3925,
+						"buffer_size": 4081,
 						"regions":
 						{
 						},
@@ -3147,15 +3163,16 @@
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1712.0,
+						"translation.y": 1805.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 40,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -3164,15 +3181,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 88452,
+						"buffer_size": 107491,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4708,
-								4708
+								4431,
+								4431
 							]
 						],
 						"settings":
@@ -3186,7 +3203,7 @@
 						"translation.y": 2639.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -3217,7 +3234,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 29,
 					"type": "text"
 				},
 				{
@@ -3239,81 +3256,51 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2106.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 41,
-					"type": "text"
-				},
-				{
-					"buffer": 54,
-					"file": "styles/style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48740,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8538,
-								8538
-							]
-						],
-						"settings":
-						{
-							"rainbowth.lispy": false,
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 7020.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 55,
-					"file": "src/MurolInfos.elm",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5414,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5356,
-								5389
-							]
-						],
-						"settings":
-						{
 							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2475.0,
+						"translation.y": 2223.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 56,
+					"buffer": 54,
+					"file": "src/MurolInfos.elm",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5555,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5532,
+								5532
+							]
+						],
+						"settings":
+						{
+							"rainbowth.lispy": false,
+							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3058.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 55,
 					"file": "src/NumerosUrgences.elm",
 					"semi_transient": false,
 					"settings":
@@ -3339,11 +3326,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 67,
+					"stack_index": 69,
 					"type": "text"
 				},
 				{
-					"buffer": 57,
+					"buffer": 56,
 					"file": "src/OfficeTourisme.elm",
 					"semi_transient": false,
 					"settings":
@@ -3366,27 +3353,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 834.0,
+						"translation.y": 862.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 36,
+					"stack_index": 44,
 					"type": "text"
 				},
 				{
-					"buffer": 58,
+					"buffer": 57,
 					"file": "src/Periscolaire.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21897,
+						"buffer_size": 23307,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19220,
-								19220
+								21202,
+								21202
 							]
 						],
 						"settings":
@@ -3397,14 +3384,76 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7271.0,
+						"translation.y": 7559.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 58,
+					"file": "styles/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4329,
+								4329
+							]
+						],
+						"settings":
+						{
+							"rainbowth.lispy": false,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3793.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
 					"buffer": 59,
+					"file": "styles/winter2018.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3979,
+								3979
+							]
+						],
+						"settings":
+						{
+							"rainbowth.lispy": false,
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2826.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 60,
 					"file": "src/OffresEmploi.elm",
 					"semi_transient": false,
 					"settings":
@@ -3427,44 +3476,45 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1094.0,
+						"translation.y": 1145.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 51,
+					"stack_index": 54,
 					"type": "text"
 				},
 				{
-					"buffer": 60,
+					"buffer": 61,
 					"file": "src/Patrimoine.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15387,
+						"buffer_size": 15408,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1249,
-								1249
+								3858,
+								3858
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2869.0,
+						"translation.y": 1765.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 57,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 61,
+					"buffer": 62,
 					"file": "src/PatrimoinePhoto.elm",
 					"semi_transient": false,
 					"settings":
@@ -3487,14 +3537,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1346.0,
+						"translation.y": 1400.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 38,
+					"stack_index": 46,
 					"type": "text"
 				},
 				{
-					"buffer": 62,
+					"buffer": 63,
 					"file": "src/PetitesAnnonces.elm",
 					"semi_transient": false,
 					"settings":
@@ -3520,11 +3570,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 66,
+					"stack_index": 68,
 					"type": "text"
 				},
 				{
-					"buffer": 63,
+					"buffer": 64,
 					"file": "src/Phototheque.elm",
 					"semi_transient": false,
 					"settings":
@@ -3548,14 +3598,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2214.0,
+						"translation.y": 2332.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 64,
+					"buffer": 65,
 					"file": "src/PrintempsEte.elm",
 					"semi_transient": false,
 					"settings":
@@ -3581,11 +3631,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 53,
+					"stack_index": 56,
 					"type": "text"
 				},
 				{
-					"buffer": 65,
+					"buffer": 66,
 					"file": "src/Restaurants.elm",
 					"semi_transient": false,
 					"settings":
@@ -3608,14 +3658,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1539.0,
+						"translation.y": 1733.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 27,
+					"stack_index": 37,
 					"type": "text"
 				},
 				{
-					"buffer": 66,
+					"buffer": 67,
 					"file": "src/SallesFetes.elm",
 					"semi_transient": false,
 					"settings":
@@ -3638,44 +3688,45 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1080.0,
+						"translation.y": 1130.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 52,
+					"stack_index": 55,
 					"type": "text"
 				},
 				{
-					"buffer": 67,
+					"buffer": 68,
 					"file": "src/Sante.elm",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4624,
+						"buffer_size": 4804,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4061,
-								4061
+								1702,
+								1702
 							]
 						],
 						"settings":
 						{
+							"rainbowth.lispy": false,
 							"syntax": "Packages/Elm Language Support/Syntaxes/Elm.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1620.0,
+						"translation.y": 980.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 42,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 68,
+					"buffer": 69,
 					"file": "src/Scroll.elm",
 					"semi_transient": false,
 					"settings":
@@ -3699,11 +3750,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 65,
+					"stack_index": 67,
 					"type": "text"
 				},
 				{
-					"buffer": 69,
+					"buffer": 70,
 					"file": "src/SideMenu.elm",
 					"semi_transient": false,
 					"settings":
@@ -3729,11 +3780,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 64,
+					"stack_index": 66,
 					"type": "text"
 				},
 				{
-					"buffer": 70,
+					"buffer": 71,
 					"file": "src/Sortir.elm",
 					"semi_transient": false,
 					"settings":
@@ -3756,14 +3807,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1620.0,
+						"translation.y": 1701.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 61,
+					"stack_index": 63,
 					"type": "text"
 				},
 				{
-					"buffer": 71,
+					"buffer": 72,
 					"file": "src/SportsDetente.elm",
 					"semi_transient": false,
 					"settings":
@@ -3786,14 +3837,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2078.0,
+						"translation.y": 2294.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 56,
+					"stack_index": 59,
 					"type": "text"
 				},
 				{
-					"buffer": 72,
+					"buffer": 73,
 					"file": "src/StarTable.elm",
 					"semi_transient": false,
 					"settings":
@@ -3819,11 +3870,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 63,
+					"stack_index": 65,
 					"type": "text"
 				},
 				{
-					"buffer": 73,
+					"buffer": 74,
 					"file": "src/Streams.elm",
 					"semi_transient": false,
 					"settings":
@@ -3849,11 +3900,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 37,
+					"stack_index": 45,
 					"type": "text"
 				},
 				{
-					"buffer": 74,
+					"buffer": 75,
 					"file": "src/Mentions.elm",
 					"semi_transient": false,
 					"settings":
@@ -3876,14 +3927,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 835.0,
+						"translation.y": 957.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 48,
+					"stack_index": 52,
 					"type": "text"
 				},
 				{
-					"buffer": 75,
+					"buffer": 76,
 					"file": "src/UrlParsing.elm",
 					"semi_transient": false,
 					"settings":
@@ -3909,11 +3960,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 35,
+					"stack_index": 43,
 					"type": "text"
 				},
 				{
-					"buffer": 76,
+					"buffer": 77,
 					"file": "LesAdos.html",
 					"semi_transient": false,
 					"settings":
@@ -3939,11 +3990,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 58,
+					"stack_index": 60,
 					"type": "text"
 				},
 				{
-					"buffer": 77,
+					"buffer": 78,
 					"file": "src/VieScolaire.elm",
 					"semi_transient": false,
 					"settings":
@@ -3966,14 +4017,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 9398.0,
+						"translation.y": 9975.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 44,
+					"stack_index": 48,
 					"type": "text"
 				},
 				{
-					"buffer": 78,
+					"buffer": 79,
 					"file": "src/VillageFleuri.elm",
 					"semi_transient": false,
 					"settings":
@@ -3999,11 +4050,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 62,
+					"stack_index": 64,
 					"type": "text"
 				},
 				{
-					"buffer": 79,
+					"buffer": 80,
 					"file": "src/VosDemarches.elm",
 					"semi_transient": false,
 					"settings":
@@ -4026,10 +4077,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 15977.0,
+						"translation.y": 16837.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 39,
 					"type": "text"
 				}
 			]
@@ -4037,7 +4088,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -4068,7 +4119,7 @@
 	"menu_visible": true,
 	"output.elm_type":
 	{
-		"height": 0.0
+		"height": 133.0
 	},
 	"output.find_results":
 	{
@@ -4078,7 +4129,7 @@
 	"project": "mairieMurol.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":

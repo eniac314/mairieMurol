@@ -733,7 +733,7 @@ meubles =
    , tel   = "04 73 88 65 79 / 06 84 29 28 25"
    , addr  = "La Chassagne 63790 MUROL"
    , mail  = "philippe.picot@orange.fr"
-   , site  = "gite-vergers-sancy.com"
+   , site  = "http://gite-vergers-sancy.com/"
    }
    ,
    { emptyTe |

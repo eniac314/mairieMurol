@@ -48,7 +48,11 @@ Elm.Patrimoine.make = function (_elm) {
            _U.list([$Html.text("Edifié à l\'emplacement probable d\'un ancien camp romain, \n                     sa construction s\'étale du XIIème au XVIIIe siècle. \n                     Le Château de Murol appartint successivement aux seigneurs \n                     d´Apchon, aux comtes de Murol et enfin aux \n                     d´Estaing. Ces derniers feront de nombreux travaux pour \n                     moderniser les conditions de vie et adapter le \n                     système de défense aux exigences de l´artillerie. Grâce \n                     à la ferveur dont jouissaient les d´Estaing à \n                     la Cour, la forteresse fut épargnée par Richelieu. \n                     Elle le fut aussi à la Révolution. Mais \n                     ensuite abandonnée par son propriétaire, elle servit de \n                     carrière de pierres. Son classement comme Monument Historique \n                     mit un terme aux déprédations. Il est aujourd´hui \n                     propriété de la commune. Son architecture médiévale reste \n                     en partie conservée. C\'est le château le plus \n                     visité de notre région et donne à Murol \n                     une notoriété dépassant largement les limites de l\'Auvergne. ")]))
            ,A2($Html.p,
            _U.list([]),
-           _U.list([$Html.text("Des animations en costumes du Moyen-Âge sont proposées \n                   par les \"Paladins du Sancy\" de l\'agence Organicom. \n                   Aux travers d´histoires et de démonstrations (combat à \n                   l\'épée), des paysans, hommes d´armes, gentes dames et \n                   chevaliers font découvrir la vie d´une châtellenie au \n                   XIIIe siècle. ")]))
+           _U.list([$Html.text("C\'est le château le plus visité d’Auvergne. Il attire plus de 100 000 visiteurs par an qui peuvent découvrir cette forteresse lors de ")
+                   ,A2($Html.a,
+                   _U.list([$Html$Attributes.target("_blank"),$Html$Attributes.href("http://www.murolchateau.com")]),
+                   _U.list([$Html.text("visites simples ou animées")]))
+                   ,$Html.text(". Guillemette ou Maître Jean accompagnent les visiteurs dans le quotidien de Guillaume de Murol au fil des salles reconstituées.")]))
            ,A2($Utils.link,"Site officiel","http://www.murolchateau.com")
            ,A2($Html.h4,_U.list([]),_U.list([$Html.text("Musée archéologique ")]))
            ,A2($Html.p,

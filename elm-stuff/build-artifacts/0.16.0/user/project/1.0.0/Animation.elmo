@@ -94,32 +94,17 @@ Elm.Animation.make = function (_elm) {
                        ,_0: "Animation estivale pour tous"
                        ,_1: "/images/tiles/animation/animation estivale.jpg"
                        ,_2: _U.list([A2($Html.p,_U.list([]),_U.list([$Html.text("La saison estivale est riche de nombreuses animations!")]))
-                                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Programmes des mois de juillet et août 2017: ")]))
+                                    ,A2($Html.p,_U.list([]),_U.list([$Html.text("Programme du mois de juillet 2018: ")]))
                                     ,A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 1 juillet 2017.pdf")
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme des animations de la vallée verte juillet 2018.pdf")
                                             ,$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("programme 9 - 21 juillet")]))
+                                    _U.list([$Html.text("programme animations vallée verte juillet 2018")]))
+                                    ,A2($Html.br,_U.list([]),_U.list([]))
                                     ,A2($Html.br,_U.list([]),_U.list([]))
                                     ,A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 2 juillet 2017.pdf")
+                                    _U.list([$Html$Attributes.href("/baseDocumentaire/baseDocumentaire/animationsAout2018.pdf")
                                             ,$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("programme 23 juillet - 5 août")]))
-                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                    ,A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme3 aout 2017.pdf"),$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("programme 6 - 18 août")]))
-                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                    ,A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/programme 4 aout 2017.pdf"),$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("programme 20 août - 1 septembre")]))
-                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                    ,A2($Html.br,_U.list([]),_U.list([]))
-                                    ,A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/expos estivales 2017.pdf"),$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("Les expos estivales 2017")]))
-                                    ,A2($Html.a,
-                                    _U.list([$Html$Attributes.href("/baseDocumentaire/animation/affiche14juillet2017.pdf"),$Html$Attributes.target("_blank")]),
-                                    _U.list([$Html.text("programme 14 juillet 2017")]))
+                                    _U.list([$Html.text("programme animations vallée verte août 2018")]))
                                     ,A2($Html.br,_U.list([]),_U.list([]))
                                     ,A2($Html.br,_U.list([]),_U.list([]))
                                     ,A2($Html.img,_U.list([$Html$Attributes.src("/images/illustration animations estivales.jpg")]),_U.list([]))])

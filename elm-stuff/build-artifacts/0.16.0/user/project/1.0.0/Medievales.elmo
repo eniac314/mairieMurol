@@ -20,61 +20,65 @@ Elm.Medievales.make = function (_elm) {
    $Time = Elm.Time.make(_elm),
    $Utils = Elm.Utils.make(_elm);
    var _op = {};
-   var _p0 = A3($Gallery.init,$Lightbox.picList(64),"medievales2017","Les Médiévales 2017");
-   var medievales2017 = _p0._0;
-   var medievales2017Fx = _p0._1;
-   var _p1 = A3($Gallery.init,$Lightbox.picList(56),"medievales2016","Les Médiévales 2016");
-   var medievales2016 = _p1._0;
-   var medievales2016Fx = _p1._1;
-   var _p2 = A3($Gallery.init,$Lightbox.picList(16),"medievales2015","Les Médiévales 2015");
-   var medievales2015 = _p2._0;
-   var medievales2015Fx = _p2._1;
-   var _p3 = A3($Gallery.init,$Lightbox.picList(20),"medievales2014","Les Médiévales 2014");
-   var medievales2014 = _p3._0;
-   var medievales2014Fx = _p3._1;
-   var _p4 = A3($Gallery.init,$Lightbox.picList(36),"medievales2013","Les Médiévales 2013");
-   var medievales2013 = _p4._0;
-   var medievales2013Fx = _p4._1;
-   var galleries = _U.list([{ctor: "_Tuple2",_0: medievales2017,_1: "medievales2017"}
+   var _p0 = A3($Gallery.init,$Lightbox.picList(84),"medievales2018","Les Médiévales 2018");
+   var medievales2018 = _p0._0;
+   var medievales2018Fx = _p0._1;
+   var _p1 = A3($Gallery.init,$Lightbox.picList(64),"medievales2017","Les Médiévales 2017");
+   var medievales2017 = _p1._0;
+   var medievales2017Fx = _p1._1;
+   var _p2 = A3($Gallery.init,$Lightbox.picList(56),"medievales2016","Les Médiévales 2016");
+   var medievales2016 = _p2._0;
+   var medievales2016Fx = _p2._1;
+   var _p3 = A3($Gallery.init,$Lightbox.picList(16),"medievales2015","Les Médiévales 2015");
+   var medievales2015 = _p3._0;
+   var medievales2015Fx = _p3._1;
+   var _p4 = A3($Gallery.init,$Lightbox.picList(20),"medievales2014","Les Médiévales 2014");
+   var medievales2014 = _p4._0;
+   var medievales2014Fx = _p4._1;
+   var _p5 = A3($Gallery.init,$Lightbox.picList(36),"medievales2013","Les Médiévales 2013");
+   var medievales2013 = _p5._0;
+   var medievales2013Fx = _p5._1;
+   var galleries = _U.list([{ctor: "_Tuple2",_0: medievales2018,_1: "medievales2018"}
+                           ,{ctor: "_Tuple2",_0: medievales2017,_1: "medievales2017"}
                            ,{ctor: "_Tuple2",_0: medievales2016,_1: "medievales2016"}
                            ,{ctor: "_Tuple2",_0: medievales2015,_1: "medievales2015"}
                            ,{ctor: "_Tuple2",_0: medievales2014,_1: "medievales2014"}
                            ,{ctor: "_Tuple2",_0: medievales2013,_1: "medievales2013"}]);
    var GalleryAction = F2(function (a,b) {    return {ctor: "GalleryAction",_0: a,_1: b};});
    var update = F2(function (action,model) {
-      var _p5 = action;
-      if (_p5.ctor === "NoOp") {
+      var _p6 = action;
+      if (_p6.ctor === "NoOp") {
             return {ctor: "_Tuple2",_0: model,_1: $Effects.none};
          } else {
-            var updateWithId = function (_p6) {
-               var _p7 = _p6;
-               var _p9 = _p7._0;
-               var _p8 = _p7._1;
-               return _U.eq(_p8,_p5._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p5._1,_p9),_1: _p8} : {ctor: "_Tuple2"
-                                                                                                         ,_0: {ctor: "_Tuple2",_0: _p9,_1: $Effects.none}
-                                                                                                         ,_1: _p8};
+            var updateWithId = function (_p7) {
+               var _p8 = _p7;
+               var _p10 = _p8._0;
+               var _p9 = _p8._1;
+               return _U.eq(_p9,_p6._0) ? {ctor: "_Tuple2",_0: A2($Gallery.update,_p6._1,_p10),_1: _p9} : {ctor: "_Tuple2"
+                                                                                                          ,_0: {ctor: "_Tuple2",_0: _p10,_1: $Effects.none}
+                                                                                                          ,_1: _p9};
             };
-            var _p10 = A3($List.foldl,
-            F2(function (_p12,_p11) {
-               var _p13 = _p12;
-               var _p15 = _p13._1;
-               var _p14 = _p11;
+            var _p11 = A3($List.foldl,
+            F2(function (_p13,_p12) {
+               var _p14 = _p13;
+               var _p16 = _p14._1;
+               var _p15 = _p12;
                return {ctor: "_Tuple2"
-                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p13._0._0,_1: _p15},_p14._0)
-                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p15),_p13._0._1),_p14._1)};
+                      ,_0: A2($List._op["::"],{ctor: "_Tuple2",_0: _p14._0._0,_1: _p16},_p15._0)
+                      ,_1: A2($List._op["::"],A2($Effects.map,GalleryAction(_p16),_p14._0._1),_p15._1)};
             }),
             {ctor: "_Tuple2",_0: _U.list([]),_1: _U.list([])},
             A2($List.map,updateWithId,function (_) {    return _.galleries;}(model)));
-            var ng = _p10._0;
-            var effs = _p10._1;
+            var ng = _p11._0;
+            var effs = _p11._1;
             return {ctor: "_Tuple2",_0: _U.update(model,{galleries: $List.reverse(ng)}),_1: $Effects.batch(effs)};
          }
    });
-   var viewGallery = F2(function (address,_p16) {
-      var _p17 = _p16;
-      var _p18 = _p17._0;
-      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p18))]));
-      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p17._1)),_p18)]));
+   var viewGallery = F2(function (address,_p17) {
+      var _p18 = _p17;
+      var _p19 = _p18._0;
+      var t = A2($Html.h5,_U.list([]),_U.list([$Html.text(function (_) {    return _.descr;}(_p19))]));
+      return A2($List._op["::"],t,_U.list([A2($Gallery.view,A2($Signal.forwardTo,address,GalleryAction(_p18._1)),_p19)]));
    });
    var view = F2(function (address,model) {
       var galleriesHtml = $List.concat(A2($List.map,viewGallery(address),function (_) {    return _.galleries;}(model)));
@@ -94,7 +98,7 @@ Elm.Medievales.make = function (_elm) {
               ,$Utils.pageFooter]));
    });
    var timer = function (g) {
-      return A2($Signal.map,function (_p19) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
+      return A2($Signal.map,function (_p20) {    return A2(GalleryAction,$Basics.snd(g),$Gallery.TimeStep);},$Time.every(3 * $Time.second));
    };
    var timers = A2($List.map,timer,galleries);
    var NoOp = {ctor: "NoOp"};
@@ -125,5 +129,7 @@ Elm.Medievales.make = function (_elm) {
                                    ,medievales2016: medievales2016
                                    ,medievales2016Fx: medievales2016Fx
                                    ,medievales2017: medievales2017
-                                   ,medievales2017Fx: medievales2017Fx};
+                                   ,medievales2017Fx: medievales2017Fx
+                                   ,medievales2018: medievales2018
+                                   ,medievales2018Fx: medievales2018Fx};
 };

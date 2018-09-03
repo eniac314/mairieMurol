@@ -122,10 +122,14 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [(festival2017, "festival2017")
+galleries = [(festival2018, "festival2018")
+            ,(festival2017, "festival2017")
             ,(festival2016, "festival2016")
             ,(festival, "festival")
             ]
+
+(festival2018, festival2018Fx) = 
+  Gallery.init (picList 98) "festivalArt2018" "Festival d'Art 2018"
 
 (festival2017, festival2017Fx) = 
   Gallery.init (picList 88) "festivalArt2017" "Festival d'Art 2017"

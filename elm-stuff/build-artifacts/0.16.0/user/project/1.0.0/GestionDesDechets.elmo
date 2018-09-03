@@ -39,6 +39,11 @@ Elm.GestionDesDechets.make = function (_elm) {
            _U.list([]),
            _U.list([$Html.text("Les déchets verts (tontes, branches et même troncs débités)\n                        doivent être apportés au SICTOM DES COUZES à St Diéry.")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("Ils ne doivent pas être déposés ni brûlés sur le site de  RABACHOT.")]))
+           ,A2($Html.p,
+           _U.list([]),
+           _U.list([A2($Html.a,
+           _U.list([$Html$Attributes.href("/baseDocumentaire/reservComposteur.pdf"),$Html$Attributes.target("_blank")]),
+           _U.list([$Html.text("Commande de composteur individuel")]))]))
            ,A2($Html.h5,_U.list([$Html$Attributes.$class("trashCat")]),_U.list([$Html.text("Déchèteries")]))
            ,A2($Html.p,_U.list([]),_U.list([$Html.text("La plus proche est celle de Besse")]))
            ,A2($Html.ul,

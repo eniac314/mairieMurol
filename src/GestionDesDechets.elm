@@ -95,6 +95,9 @@ initialContent =
         , p  [] [ text "Les déchets verts (tontes, branches et même troncs débités)
                         doivent être apportés au SICTOM DES COUZES à St Diéry."]
         , p  [] [ text "Ils ne doivent pas être déposés ni brûlés sur le site de  RABACHOT."]
+        , p  [] [ a [href "/baseDocumentaire/reservComposteur.pdf", target "_blank"]
+                    [text "Commande de composteur individuel"]
+                ]
         , h5 [ class "trashCat"] [ text "Déchèteries"]
         , p  [] [ text "La plus proche est celle de Besse"]
         , ul []

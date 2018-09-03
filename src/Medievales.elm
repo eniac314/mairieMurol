@@ -123,7 +123,8 @@ port tasks =
 -- Data
 
 --galleries : List Gallery
-galleries = [ (medievales2017, "medievales2017") 
+galleries = [ (medievales2018, "medievales2018") 
+            , (medievales2017, "medievales2017") 
             , (medievales2016, "medievales2016")
             , (medievales2015, "medievales2015")
             , (medievales2014, "medievales2014")
@@ -144,3 +145,6 @@ galleries = [ (medievales2017, "medievales2017")
 
 (medievales2017, medievales2017Fx) = 
   Gallery.init (picList 64) "medievales2017" "Les Médiévales 2017"
+
+(medievales2018, medievales2018Fx) = 
+  Gallery.init (picList 84) "medievales2018" "Les Médiévales 2018"

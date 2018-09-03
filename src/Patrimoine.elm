@@ -106,12 +106,10 @@ initialContent =
                      en partie conservée. C'est le château le plus 
                      visité de notre région et donne à Murol 
                      une notoriété dépassant largement les limites de l'Auvergne. "]
-      , p [] [text "Des animations en costumes du Moyen-Âge sont proposées 
-                   par les \"Paladins du Sancy\" de l'agence Organicom. 
-                   Aux travers d´histoires et de démonstrations (combat à 
-                   l'épée), des paysans, hommes d´armes, gentes dames et 
-                   chevaliers font découvrir la vie d´une châtellenie au 
-                   XIIIe siècle. "]
+      , p [] [text "C'est le château le plus visité d’Auvergne. Il attire plus de 100 000 visiteurs par an qui peuvent découvrir cette forteresse lors de "
+             , a [target "_blank", href "http://www.murolchateau.com"] [text "visites simples ou animées"]
+             , text ". Guillemette ou Maître Jean accompagnent les visiteurs dans le quotidien de Guillaume de Murol au fil des salles reconstituées."
+             ]
       , link "Site officiel" "http://www.murolchateau.com"
 
       , h4 [] [text "Musée archéologique "]

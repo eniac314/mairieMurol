@@ -135,35 +135,35 @@ initialContent =
            --        , target "_blank"]
            --        [ text "règlement intérieur et charte du savoir vivre"]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/dossier d'inscription cantine garderie murol 2018-2019.pdf"
                    , target "_blank"]
                    [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
                    ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/dossier d'inscription cantine garderie chambon 2018-2019.pdf"
                    , target "_blank"]
                    [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
                ]
-           , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
-                   , target "_blank"]
-                   [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
-               ]
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+           --        , target "_blank"]
+           --        [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
+           --    ]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
                [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
                    , target "_blank"]
                    [ text "Charte du savoir-vivre"]
                ]
 
+           --, p [ classList [("intro",True),("displayIntro", showIntro)]]
+           --    [ a [ href "/baseDocumentaire/periscolaire/règlement sivom 2018.pdf"
+           --        , target "_blank"]
+           --        [ text "Règlement intérieur"]
+               --]
            , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/règlement sivom 2018.pdf"
+               [ a [ href "/baseDocumentaire/periscolaire/règlement et tarifs SIVOM juin 2018.pdf"
                    , target "_blank"]
-                   [ text "Règlement intérieur"]
-               ]
-           , p [ classList [("intro",True),("displayIntro", showIntro)]]
-               [ a [ href "/baseDocumentaire/periscolaire/tarifs SIVOM  2017-2018.pdf"
-                   , target "_blank"]
-                   [ text "Tarifs 2017-2018"]
+                   [ text "Règlement et tarifs SIVOM juin 2018"]
                ]
            --, p [ classList [("intro",True),("displayIntro", showIntro)]]
            --    [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
@@ -213,38 +213,40 @@ peri =
                    ]
               , tr [ class "quotAltLine"]
                    [ td [] [ text "Tarif maternelle"]
-                   , td [] [ text "2,00€"]
-                   , td [] [ text "2,40€"]
-                   , td [] [ text "2,70€"]
-                   , td [] [ text "2,95€"]
+                   , td [] [ text "2,10€"]
+                   , td [] [ text "2,50€"]
+                   , td [] [ text "2,80€"]
+                   , td [] [ text "3,05€"]
                    ]
               , tr [ class "quotLine"]
                    [ td [] [ text "Tarif  élémentaire"]
-                   , td [] [ text "2,00€"]
-                   , td [] [ text "2,50€"]
-                   , td [] [ text "2,85€"]
-                   , td [] [ text "3,10€"]
+                   , td [] [ text "2,10€"]
+                   , td [] [ text "2,60€"]
+                   , td [] [ text "2,95€"]
+                   , td [] [ text "3,20€"]
                    ]
               ]
+      
+
       , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
+          [ a [ href "/baseDocumentaire/periscolaire/dossier d'inscription cantine garderie murol 2018-2019.pdf"
               , target "_blank"]
               [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
-              ]
-      , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
-              , target "_blank"]
-              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
           ]
       , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+          [ a [ href "/baseDocumentaire/periscolaire/dossier d'inscription cantine garderie chambon 2018-2019.pdf"
               , target "_blank"]
-              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
           ]
       , p [ ]
           [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
               , target "_blank"]
               [ text "Charte du savoir-vivre"]
+          ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/règlement et tarifs SIVOM juin 2018.pdf"
+              , target "_blank"]
+              [ text "Règlement et tarifs SIVOM juin 2018"]
           ]
     ]
     ,"")
@@ -276,99 +278,102 @@ peri =
       , text "La participation des familles est fonction des revenus 
               de celles-ci : "
       , ul []
-           [ li [] [text "Familles non-imposables : 1,15€ de l’heure "]
-           , li [] [text "Familles imposables : 1,35€ de l’heure "]
+           [ li [] [text "Familles non-imposables : 1,25€ de l’heure "]
+           , li [] [text "Familles imposables : 1,45€ de l’heure "]
            ]
       , p [] [text "NB : le créneau 16h30/18h est facturé comme 
                     1 heure. "]
       , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
+          [ a [ href "/baseDocumentaire/periscolaire/dossier d'inscription cantine garderie murol 2018-2019.pdf"
               , target "_blank"]
               [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
-              ]
-      , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
-              , target "_blank"]
-              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
           ]
       , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+          [ a [ href "/baseDocumentaire/periscolaire/dossier d'inscription cantine garderie chambon 2018-2019.pdf"
               , target "_blank"]
-              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
+              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
           ]
       , p [ ]
           [ a [ href "/baseDocumentaire/periscolaire/Charte du SAVOIR VIVRE.pdf"
               , target "_blank"]
               [ text "Charte du savoir-vivre"]
           ]
+      , p [ ]
+          [ a [ href "/baseDocumentaire/periscolaire/règlement et tarifs SIVOM juin 2018.pdf"
+              , target "_blank"]
+              [ text "Règlement et tarifs SIVOM juin 2018"]
+          ]
       ]
     ,""
     )
   , ("Temps d'activités périscolaires (TAP)"
     ,"/images/tiles/periscolaire/TAP.jpg"
-    ,[ p [] [text "L’organisation des activités périscolaires dans les quatre écoles 
-                   de la vallée est réalisée par le SIVOM 
-                   dans le cadre d’un projet éducatif territorial qui 
-                   garantit un encadrement de qualité pour les enfants 
-                   et une programmation qui répond à des objectifs 
-                   éducatifs. Le financement est assuré par le SIVOM, 
-                   l’Etat, la CAF et la participation des parents."]
-     , p [] [text "Les enfants inscrits bénéficient de deux séances d’activités 
-                   hebdomadaires: "]
-     , table [ id "tableTAP"]
-             [ tr []
-                  [ th [] [text "ECOLE"]
-                  , th [] [text "JOURS DE TAP"]
-                  , th [] [text "HORAIRES DE TAP"]
-                  , th [] [text "DIRECTION"]
-                  , th [] [text "PROGRAMMES"]
-                  ]
-             , tr []
-                  [ td [] [text "Maternelle de Murol"]
-                  , td [] [text "Mardi et vendredi"]
-                  , td [] [text "15h00 à 16h30"]
-                  , td [] [text "Karine Fouquet"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/PROGRAMME TAP MATERNELLE 2017 2018.pdf", target "_blank"] [text "maternelle"]]
-                  ]
-             , tr []
-                  [ td [] [text "Elémentaire de Murol"]
-                  , td [] [text "Lundi et jeudi"]
-                  , td [] [text "15h00 à 16h30"]
-                  , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/murol tap jusqu'à Pâques.pdf", target "_blank"] [text "Murol"]]
-                  ]
-             , tr []
-                  [ td [] [text "Elémentaire du Chambon"]
-                  , td [] [text "Lundi et jeudi"]
-                  , td [] [text "15h15 à 16h45"]
-                  , td [] [text "Karine Fouquet"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/PROGRAMME TAP CHAMBON 2017 2018.pdf", target "_blank"] [text "Chambon"]]
-                  ]
-             , tr []
-                  [ td [] [text "Primaire de St Nectaire"]
-                  , td [] [text "Mardi et vendredi"]
-                  , td [] [text "15h00 à 16h30"]
-                  , td [] [text "Frédérique Heitz"]
-                  , td [] [a [href "/baseDocumentaire/periscolaire/tap st nectaire jusqu'à Pâques.pdf", target "_blank"] [text "Saint-Nectaire"]]
-                  ]  
-             ]
-     , p [] [text "L’inscription est annuelle et la participation
-                   des familles est de 12€ par trimestre et par enfant."]   
-     , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
-              , target "_blank"]
-              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
-              ]
-      , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
-              , target "_blank"]
-              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
-          ]
-      , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
-              , target "_blank"]
-              [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
-          ]
+    ,[ p []
+         [text "Les écoles des communes du SIVOM de la Vallée Verte verront leurs rythmes scolaires modifiés à la rentrée 2018. Les élèves auront classe sur 4 jours, les lundis, mardis, jeudis et vendredis. Le SIVOM de la Vallée Verte a donc délibéré pour la suppression des temps d'activités périscolaires (TAP)."]
+
+    --p [] [text "L’organisation des activités périscolaires dans les quatre écoles 
+    --               de la vallée est réalisée par le SIVOM 
+    --               dans le cadre d’un projet éducatif territorial qui 
+    --               garantit un encadrement de qualité pour les enfants 
+    --               et une programmation qui répond à des objectifs 
+    --               éducatifs. Le financement est assuré par le SIVOM, 
+    --               l’Etat, la CAF et la participation des parents."]
+    -- , p [] [text "Les enfants inscrits bénéficient de deux séances d’activités 
+    --               hebdomadaires: "]
+    -- , table [ id "tableTAP"]
+    --         [ tr []
+    --              [ th [] [text "ECOLE"]
+    --              , th [] [text "JOURS DE TAP"]
+    --              , th [] [text "HORAIRES DE TAP"]
+    --              , th [] [text "DIRECTION"]
+    --              , th [] [text "PROGRAMMES"]
+    --              ]
+    --         , tr []
+    --              [ td [] [text "Maternelle de Murol"]
+    --              , td [] [text "Mardi et vendredi"]
+    --              , td [] [text "15h00 à 16h30"]
+    --              , td [] [text "Karine Fouquet"]
+    --              , td [] [a [href "/baseDocumentaire/periscolaire/PROGRAMME TAP MATERNELLE 2017 2018.pdf", target "_blank"] [text "maternelle"]]
+    --              ]
+    --         , tr []
+    --              [ td [] [text "Elémentaire de Murol"]
+    --              , td [] [text "Lundi et jeudi"]
+    --              , td [] [text "15h00 à 16h30"]
+    --              , td [] [text "Frédérique Heitz"]
+    --              , td [] [a [href "/baseDocumentaire/periscolaire/murol tap jusqu'à Pâques.pdf", target "_blank"] [text "Murol"]]
+    --              ]
+    --         , tr []
+    --              [ td [] [text "Elémentaire du Chambon"]
+    --              , td [] [text "Lundi et jeudi"]
+    --              , td [] [text "15h15 à 16h45"]
+    --              , td [] [text "Karine Fouquet"]
+    --              , td [] [a [href "/baseDocumentaire/periscolaire/PROGRAMME TAP CHAMBON 2017 2018.pdf", target "_blank"] [text "Chambon"]]
+    --              ]
+    --         , tr []
+    --              [ td [] [text "Primaire de St Nectaire"]
+    --              , td [] [text "Mardi et vendredi"]
+    --              , td [] [text "15h00 à 16h30"]
+    --              , td [] [text "Frédérique Heitz"]
+    --              , td [] [a [href "/baseDocumentaire/periscolaire/tap st nectaire jusqu'à Pâques.pdf", target "_blank"] [text "Saint-Nectaire"]]
+    --              ]  
+    --         ]
+    -- , p [] [text "L’inscription est annuelle et la participation
+    --               des familles est de 12€ par trimestre et par enfant."]   
+    -- , p [ ]
+    --      [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS MUROL 2017-2018.pdf"
+    --          , target "_blank"]
+    --          [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Murol"]
+    --          ]
+    --  , p [ ]
+    --      [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS CHAMBON 2017 2018.pdf"
+    --          , target "_blank"]
+    --          [ text "Dossier d’inscription SIVOM pour les enfants scolarisés au Chambon"]
+    --      ]
+    --  , p [ ]
+    --      [ a [ href "/baseDocumentaire/periscolaire/FICHE RENSEIGNEMENTS ST NECTAIRE 2017-2018.pdf"
+    --          , target "_blank"]
+    --          [ text "Dossier d’inscription SIVOM pour les enfants scolarisés à Saint-Nectaire"]
+    --      ]
      
       
       --, p [ ]
@@ -393,9 +398,9 @@ peri =
       --        [ text "programme TAP Maternelle"]
       --    ]
       , p [ ]
-          [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE TAP 2017 2018.pdf"
+          [ a [ href "/baseDocumentaire/periscolaire/délibération rythmes scolaires.pdf"
               , target "_blank"]
-              [ text "projet pédagogique TAP"]
+              [ text "Délibération rythmes scolaires"]
           ]
      
      ]
@@ -424,22 +429,29 @@ peri =
       --, p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE ET PROGRAMME JUILLET 2017.pdf", target "_blank"]
       --                [ text "programme des activités et projet pédagogique - Juillet 2017"]
       --            ]
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/planning activités avril 2018.pdf", target "_blank"]
-                      [ text "programme des activités - Avril 2018"]
-                  ]
+      --, p [] [ a [ href "/baseDocumentaire/periscolaire/planning activités avril 2018.pdf", target "_blank"]
+      --                [ text "programme des activités et projet pédagogique - Juillet 2018"]
+      --            ]
 
-      , p [] [ a [ href "/baseDocumentaire/periscolaire/projet pédagogique avril 2018.pdf", target "_blank"]
-                      [ text "projet pédagogique - Avril 2018"]
-                  ]
-      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette avril 2018.pdf"
+      
+      , p [] [a [ href "/baseDocumentaire/periscolaire/plaquette clsh été 2018.pdf"
                 , target "_blank"
                 ]
-                [ text "plaquette de présentation du centre de loisirs printemps" ]
+                [ text "plaquette de présentation du centre de loisirs été" ]
              ]
-      , p [] [ a [href "/baseDocumentaire/periscolaire/préinscription clsh avril 2018.pdf", target "_blank"]
-                 [text "la fiche de préinscription CLSH"]
-             ]
-      , p [] [ a [href "/baseDocumentaire/periscolaire/dossier complet inscription clsh printemps 2018.pdf", target "_blank"]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/PROJET PEDAGOGIQUE karine juillet 2018.pdf", target "_blank"]
+                      [ text "programme des activités et projet pédagogique - Juillet 2018"]
+                  ]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/planning août 2018.pdf", target "_blank"]
+                      [ text "programme des activités - Août 2018"]
+                  ]
+      , p [] [ a [ href "/baseDocumentaire/periscolaire/PP aout 2018.pdf", target "_blank"]
+                      [ text "projet pédagogique - Août 2018"]
+                  ]
+      --, p [] [ a [href "/baseDocumentaire/periscolaire/préinscription clsh avril 2018.pdf", target "_blank"]
+      --           [text "la fiche de préinscription CLSH"]
+      --       ]
+      , p [] [ a [href "/baseDocumentaire/periscolaire/dossier inscription Centre Aéré été 2018.pdf", target "_blank"]
                  [text "la fiche d’inscription CLSH"]
              ]
                   
@@ -453,9 +465,8 @@ peri =
       , p [] [text "Ce service est subventionné par la CAF et 
                    la MSA. La participation des familles est fonction 
                    des revenus de celles-ci ("
-             ,a [href "/baseDocumentaire/periscolaire/tarifs SIVOM  2017-2018.pdf", target "_blank"]
-                [text "tarifs selon le quotient 
-                      familial"]
+             ,a [href "/baseDocumentaire/periscolaire/règlement et tarifs SIVOM juin 2018.pdf", target "_blank"]
+                [text "règlement et tarifs SIVOM juin 2018"]
              ,text ")"    
              ]
       

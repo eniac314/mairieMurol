@@ -73,6 +73,11 @@ main =
 initialContent =
   div [ class "subContainerData noSubmenu", id "sante"]
       [ h2 [] [text "Santé"]
+      , p [] 
+          [ text "Document "
+          , a [href "/baseDocumentaire/Flyer_AmbroisieV4.pdf", target "_blank"] 
+          [text "reconnaître l'ambroisie"] 
+          ]
       , h3 [] [text "MAISON DE SANTE PLURIDISCIPLINAIRE"]
       , p  [] [text "Nos professionnels de santé vous accueillent à la maison de santé: "]
       , p  [] [text "Rue Maupassant- 63790 MUROL"]

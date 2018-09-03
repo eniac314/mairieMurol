@@ -277,7 +277,7 @@ Elm.Hebergements.make = function (_elm) {
                          ,tel: "04 73 88 65 79 / 06 84 29 28 25"
                          ,addr: "La Chassagne 63790 MUROL"
                          ,mail: "philippe.picot@orange.fr"
-                         ,site: "gite-vergers-sancy.com"})
+                         ,site: "http://gite-vergers-sancy.com/"})
                          ,_U.update($StarTable.emptyTe,
                          {name: "Gîte de Jassaguet"
                          ,refOt: $Maybe.Just({ctor: "_Tuple2",_0: "4609653",_1: "https://www.sancy.com/meubles-gites/gite-de-jassaguet/"})

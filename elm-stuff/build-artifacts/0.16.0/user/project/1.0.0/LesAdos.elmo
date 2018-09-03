@@ -33,8 +33,13 @@ Elm.LesAdos.make = function (_elm) {
                    ,A2($Html.p,
                    _U.list([]),
                    _U.list([A2($Html.a,
-                   _U.list([$Html$Attributes.href("/baseDocumentaire/ados/Dossier d\'inscription argent de poche.pdf"),$Html$Attributes.target("_blank")]),
-                   _U.list([$Html.text("Dossier inscription argent de poche")]))]))]))]));
+                   _U.list([$Html$Attributes.href("/baseDocumentaire/ados/Dossier d\'inscription argent de poche 2018.pdf"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("Dossier inscription argent de poche")]))]))
+                   ,A2($Html.p,
+                   _U.list([]),
+                   _U.list([A2($Html.a,
+                   _U.list([$Html$Attributes.href("/baseDocumentaire/ados/plaquette été 2018 argent de poche.pdf"),$Html$Attributes.target("_blank")]),
+                   _U.list([$Html.text("Plaquette été 2018 argent de poche")]))]))]))]));
    var contentMap = $Dict.fromList(_U.list([]));
    var changeMain = F2(function (model,s) {
       var newContent = A2($Dict.get,s,contentMap);
@@ -49,7 +54,7 @@ Elm.LesAdos.make = function (_elm) {
    var view = F2(function (address,model) {
       return A2($Html.div,
       _U.list([$Html$Attributes.id("container")]),
-      _U.list([A2($Utils.renderMainMenu,_U.list(["Mairie","Horaires et contact"]),function (_) {    return _.mainMenu;}(model))
+      _U.list([A2($Utils.renderMainMenu,_U.list(["Vie locale","Les ados"]),function (_) {    return _.mainMenu;}(model))
               ,A2($Html.div,_U.list([$Html$Attributes.id("subContainer")]),_U.list([function (_) {    return _.mainContent;}(model)]))
               ,$Utils.pageFooter]));
    });

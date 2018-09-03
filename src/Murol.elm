@@ -169,7 +169,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le jeudi 22 mars 2018"]
+            [text "Dernière mise à jour le lundi 3 septembre 2018"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -286,8 +286,8 @@ renderMisc =
             --, a [href "http://www.musee-murol.fr/fr", target "_blank" ]
             --    [ text " musée des peintres de l’Ecole de Murols"]
             --, p [] [text "Réouverture le 23 décembre."]
-              p [] [ text "A partir du 18 février, le château sera ouvert tous les jours de 10h à 18h." ] 
-            , p [] [ text "Plus d'informations sur le nouveau site officiel : "
+              p [] [ text "Le château de Murol est ouvert au public pour des visites libres et des visites animées." ] 
+            , p [] [ text "Horaires, tarifs et autres renseignements sur le site officiel :"
                    , a [href "http://murolchateau.com/", target "_blank" ] [text "murolchateau.com"]
                    ]
             
@@ -450,19 +450,20 @@ port tasks =
  
 news : List News
 news = 
-  [{ emptyNews |
-     title = "L'Auvergne dans le Best of de Lonely Planet"
-   , date  = Date.fromString "10/29/2015"
-   , descr = div [class "newsdescr"]
-                 [p [] [text "L'Auvergne fait une entrée remarquée dans le Best
-                              of du voyage de Lonely Planet en 2016.
-                              En 6ème position du classement des régions
-                              à visiter dans le monde: "
-                 , link "Source" "http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016"]
-                 ]
-   , pic   = Just "lonely.png"            
-   }
-  ,{ emptyNews |
+  [
+  --{ emptyNews |
+  --   title = "L'Auvergne dans le Best of de Lonely Planet"
+  -- , date  = Date.fromString "10/29/2015"
+  -- , descr = div [class "newsdescr"]
+  --               [p [] [text "L'Auvergne fait une entrée remarquée dans le Best
+  --                            of du voyage de Lonely Planet en 2016.
+  --                            En 6ème position du classement des régions
+  --                            à visiter dans le monde: "
+  --               , link "Source" "http://www.lonelyplanet.fr/article/lauvergne-6eme-region-du-monde-visiter-en-2016"]
+  --               ]
+  -- , pic   = Just "lonely.png"            
+  -- }
+  { emptyNews |
      title = "Chant de Noël à l'église de Beaune le Froid"
    , date  = Date.fromString "12/15/2015"
    , descr = div [class "newsdescr"]
@@ -606,32 +607,32 @@ news =
                  ]
    , expiry = Date.fromString "03/17/2016"
    } 
-   ,{ emptyNews |
-     title = "Chaîne des Puys & Faille de Limagne - nouveau film"
-   , date  = Date.fromString "03/11/2016"
-   , descr = div [class "newsdescr"]
-                 [ p [] [text "Découvrez, les Origines de la Terre, le "
-                        , a [ href "https://www.youtube.com/watch?v=nkWlN3u2evc"
-                            , target "_blank"]
-                            [text "nouveau film"]
-                        , text " promotionnel de la candidature au patrimoine mondial 
-                               pour la Chaîne des Puys et la faille 
-                               de Limagne. "
-                        ]
-                 ]
-   , expiry = Date.fromString ""
-   } 
-   ,{ emptyNews |
-     title = "Survol du château de Murol en drone - Vidéo"
-   , date  = Date.fromString "03/11/2016"
-   , descr = div [class "newsdescr"]
-                 [ p [] [text "Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)"]
-                 , p [] [a [href "https://youtu.be/tY89AZLnvZc", target "_blank"]
-                           [text "voir la vidéo"]
-                        ] 
-                 ]
-   , expiry = Date.fromString ""
-   } 
+   --,{ emptyNews |
+   --  title = "Chaîne des Puys & Faille de Limagne - nouveau film"
+   --, date  = Date.fromString "03/11/2016"
+   --, descr = div [class "newsdescr"]
+   --              [ p [] [text "Découvrez, les Origines de la Terre, le "
+   --                     , a [ href "https://www.youtube.com/watch?v=nkWlN3u2evc"
+   --                         , target "_blank"]
+   --                         [text "nouveau film"]
+   --                     , text " promotionnel de la candidature au patrimoine mondial 
+   --                            pour la Chaîne des Puys et la faille 
+   --                            de Limagne. "
+   --                     ]
+   --              ]
+   --, expiry = Date.fromString ""
+   --} 
+   --,{ emptyNews |
+   --  title = "Survol du château de Murol en drone - Vidéo"
+   --, date  = Date.fromString "03/11/2016"
+   --, descr = div [class "newsdescr"]
+   --              [ p [] [text "Film réalisé par Andrzej W Szczygiel (entreprise PROP-EYE LTD)"]
+   --              , p [] [a [href "https://youtu.be/tY89AZLnvZc", target "_blank"]
+   --                        [text "voir la vidéo"]
+   --                     ] 
+   --              ]
+   --, expiry = Date.fromString ""
+   --} 
    ,{ emptyNews |
      title = "Bienvenue sur le nouveau site officiel de la commune de Murol!"
    , date  = Date.fromString "03/12/2016"
@@ -1549,26 +1550,26 @@ news =
                  ]
    , expiry = Date.fromString "06/23/2017"
    } 
-   ,{ emptyNews |
-     title = "Conte des enfants de l'école de Murol et fête des écoles"
-   , date  = Date.fromString "06/19/2017"
-   , descr = div [class "newsdescr"]
-                 [p []
-                    [text "Il était une fois une fête des écoles qui a transporté
-                           les spectateurs au coeur du Moyen-Âge : chevaliers, dragon,
-                           sorcier, danseurs et chanteurs... rien n'a été oublié par
-                           les auteurs en herbe de ce conte inédit ! "
-                    ]
-                 , a [href "/Annee2017.html"]
-                     [text "Voir les photos"]
-                 , p []
-                     [a [ href "/baseDocumentaire/conte élémentaire Murol.pdf" 
-                        , target "_blank"]
-                        [ text "Conte des enfants de l'école de Murol"]
-                     ]
-                 ]
-   , expiry = Date.fromString "16/31/2017"
-   }
+   --,{ emptyNews |
+   --  title = "Conte des enfants de l'école de Murol et fête des écoles"
+   --, date  = Date.fromString "06/19/2017"
+   --, descr = div [class "newsdescr"]
+   --              [p []
+   --                 [text "Il était une fois une fête des écoles qui a transporté
+   --                        les spectateurs au coeur du Moyen-Âge : chevaliers, dragon,
+   --                        sorcier, danseurs et chanteurs... rien n'a été oublié par
+   --                        les auteurs en herbe de ce conte inédit ! "
+   --                 ]
+   --              , a [href "/Annee2017.html"]
+   --                  [text "Voir les photos"]
+   --              , p []
+   --                  [a [ href "/baseDocumentaire/conte élémentaire Murol.pdf" 
+   --                     , target "_blank"]
+   --                     [ text "Conte des enfants de l'école de Murol"]
+   --                  ]
+   --              ]
+   --, expiry = Date.fromString "16/31/2017"
+   --}
    ,{ emptyNews |
      title = "Ouverture du centre de loisirs du SIVOM de la Vallée Verte"
    , date  = Date.fromString "06/25/2017"
@@ -2044,7 +2045,386 @@ news =
                         
                  ]
    , expiry = Date.fromString "04/22/2018"
-   }            
+   }
+   ,{ emptyNews |
+     title = "Opération \"Argent de poche\" 2018"
+   , date  = Date.fromString "03/25/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les jeunes de la commune âgés de 14 à 18 ans vont pouvoir participer à l'opération \"Argent de poche\" pendant les vacances scolaires de printemps, d'été et d'automne 2018."
+                    ]
+                 , p [] 
+                     [text "Inscrivez-vous avant le 3 avril 2018 pour les vacances de printemps!"]
+                 , a [href "/baseDocumentaire/plaquette printemps 2018 argent de poche.pdf", target "_blank"]
+                     [text "plaquette de printemps"]
+                 , br [] []
+                 , a [href "/baseDocumentaire/Dossier d'inscription argent de poche 2018.pdf", target "_blank"]
+                     [text "dossier d'inscription"]       
+                 ]
+   , expiry = Date.fromString "04/04/2018"
+   }  
+  ,{ emptyNews |
+     title = "Offres d'emplois saisonniers"
+   , date  = Date.fromString "03/25/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "La commune de Murol recherche pour cet été :"
+                    ]
+                 --, a [href "/baseDocumentaire/offre responsable de surveillance de baignade 2018.pdf", target "_blank"]
+                 --    [text "un(e) responsable de surveillance de baignade"]
+                 --, br [] []
+                 , a [href "/baseDocumentaire/offre surveillants de baignade 2018.pdf", target "_blank"]
+                     [text "des surveillant(e)s de baignade"]
+                 --, br [] []
+                 --, a [href "/baseDocumentaire/offre responsable  animation 2018.pdf", target "_blank"]
+                 --    [text "un(e) responsable de l'animation estivale"]   
+                 ]
+   , expiry = Date.fromString "07/01/2018"
+   }
+   ,{ emptyNews |
+     title = "Commande de composteur individuel"
+   , date  = Date.fromString "04/08/2018"
+   , descr = div [class "newsdescr"]
+                 [ a [href "/baseDocumentaire/reservComposteur.pdf", target "_blank"]
+                     [text "Télécharger le bon de réservation"]   
+                 ]
+   , expiry = Date.fromString "09/01/2018"
+   }
+   ,{ emptyNews |
+     title = "Collecte des pesticides des particuliers"
+   , date  = Date.fromString "04/19/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ b [] [text "Jusqu’au 29 avril "]
+                    , text "Une opération de collecte des pesticides des particuliers est organisée en partenariat avec le Valtom et ses collectivités.  Sont concernés les produits phytosanitaires des particuliers, entamés ou non utilisés, dans leur emballage d’origine :"
+                    , br [] []
+                    , text "anti-mousses, herbicides, fongicides, insecticides, anti-limaces, engrais non organiques, etc.
+Toutes les informations pratiques sont sur le "
+                    , a [href "http://www.valtom63.fr/actualites/operation-en-route-vers-zero-pesticide/", target "_blank"]
+                     [text "site du Valtom"]
+                    ]          
+                 ]
+   , expiry = Date.fromString "04/30/2018"
+   }
+   ,{ emptyNews |
+     title = "Médiévales 2018 : vendredi 11 et samedi 12 mai"
+   , date  = Date.fromString "05/08/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Murol va vivre deux jours au rythme du Moyen-Âge! Découvrez le "
+                    ]
+                 , a [href "/baseDocumentaire/animation/programme Médiévales 2018.pdf", target "_blank"]
+                     [text "programme"]   
+                 ]
+   , expiry = Date.fromString "05/13/2018"
+   }
+   ,{ emptyNews |
+     title = "Nuit européenne des musées à Murol : samedi 19 mai à 20h30"
+   , date  = Date.fromString "05/17/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le musée des Peintres de l’École de Murols proposera aux visiteurs une rencontre entre deux arts majeurs, la peinture et la musique."
+                    ]
+                 , p []
+                     [text "Les chants de la chorale de la Vallée Verte entreront en résonance avec les œuvres post-impressionnistes des artistes de l’École de Murols qui, au début du XXe siècle, se sont regroupés autour de maîtres comme Victor Charreton, Armand Point et Wladimir de Terlikowski avec lesquels ils ont pu partager leur passion pour les paysages de neige du massif du Sancy."]   
+                 , a [href "/baseDocumentaire/affiche nuit des musées bandeau.pdf", target "_blank"]
+                     [text "Voir l'affiche"]   
+                 ]
+   , expiry = Date.fromString "05/20/2018"
+   }
+   ,{ emptyNews |
+     title = "Concert pour Rétina : vendredi 25 mai à 20h30 église de Murol"
+   , date  = Date.fromString "05/17/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les chorales des Grains de Folies et de la Vallée Verte seront en concert en faveur de la recherche médicale en ophtalmologie. Venez nombreux!"
+                    ]
+                 , a [href "/baseDocumentaire/affiche retina.pdf", target "_blank"]
+                     [text "Voir l'affiche"]   
+                 ]
+   , expiry = Date.fromString "05/26/2018"
+   }
+   ,{ emptyNews |
+     title = "Centre de loisirs - été 2018"
+   , date  = Date.fromString "05/17/2018"
+   , descr = div [class "newsdescr"]
+                 [ p []
+                     [text "Centre de loisirs pour les 3 à 11 ans:
+                            retrouvez les programmes d'activités de
+                            cet été ainsi que le dossier d'inscription
+                             "
+                     , a [href "/PériEtExtra-scolaire.html?bloc=3"]
+                     [text "ici"]     
+                     ]
+
+                 
+                 ]
+   , expiry = Date.fromString "09/01/2018"
+   }
+
+   ,{ emptyNews |
+     title = "Photos des Médiévales 2018"
+   , date  = Date.fromString "05/17/2018"
+   , descr = div [class "newsdescr"]
+                 [ p [] [text "Les photos des Médiévales 2018 sont disponibles dans la photothèque.
+                               Si vous avez des photos que vous souhaitez partager, contactez le webmaster."]
+                 , a [href "/Medievales.html"] [text "Lien photothèque"]
+                 ]
+   , expiry = Date.fromString "06/15/2018"
+   }
+   ,{ emptyNews |
+     title = "Vidéo des Médiévales 2018"
+   , date  = Date.fromString "05/22/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "A découvrir sur "
+                    
+                 , a [href "https://www.youtube.com/watch?v=rwnkX4ZpR5Q", target "_blank"]
+                     [text "youtube"]   
+                 ]
+                 ]
+   , expiry = Date.fromString "06/22/2018"
+   }
+   ,{ emptyNews |
+     title = "Article sur les Médiévales"
+   , date  = Date.fromString "05/22/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Fabienne Sauvageot, nous fait partager ses impressions sur Murol et les Médiévales "
+                    ]
+                 , p [] 
+                     [ text "A découvrir sur son blog " 
+                     , a [href "https://aleaudevichy.wordpress.com/2018/05/12/les-medievales-de-murol/", target "_blank"]
+                         [text "ici"]
+                     ]   
+                 ]
+   , expiry = Date.fromString "06/22/2018"
+   }
+  
+  ,{ emptyNews |
+     title = "Informations du SIVOM de la Vallée Verte"
+   , date  = Date.fromString "06/20/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les programmes du centre de loisirs ainsi que les documents d'inscriptions à la cantine et garderie pour l'année scolaire 2018/2019 sont en ligne sur la page "
+                    , a [href "/PériEtExtra-scolaire.html"]
+                        [text "péri et extra scolaire"]   
+                    ]
+                 ]
+   , expiry = Date.fromString "07/20/2018"
+   }
+   ,{ emptyNews |
+     title = "Les animations de juillet 2018"
+   , date  = Date.fromString "06/20/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez les animations estivales des communes de la vallée verte (Chambon sur Lac, Murol et Saint Nectaire) dans la "
+                    
+                    , a [href "baseDocumentaire/animation/programme des animations de la vallée verte juillet 2018.pdf", target "_blank"]
+                       [text "brochure"]   
+                 ]
+                 ]
+   , expiry = Date.fromString "07/31/2018"
+   }
+  ,{ emptyNews |
+     title = "Fête de la musique à Murol : 21 juin"
+   , date  = Date.fromString "06/20/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez le programme "
+                    , a [href "/baseDocumentaire/Fête de la musique 2018.pdf"
+                        , target "_blank"]
+                        [text "ici"]
+                    ]    
+                 ]
+   , expiry = Date.fromString "06/22/2018"
+   }
+   ,{ emptyNews |
+     title = "Murol Infos 37"
+   , date  = Date.fromString "07/02/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "Le nouveau \"Murol Infos\" (juin 2018) est disponible: "
+                    , a [href "baseDocumentaire/murolInfo/37.pdf"] [text "Télécharger"]]
+                 ]
+   , expiry = Date.fromString "08/02/2018"
+   }
+  ,{ emptyNews |
+     title = "Argent de Poche - été 2018"
+   , date  = Date.fromString "07/02/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le dispositif \"Argent de Poche\" est ouvert aux jeunes pour l'été"
+                    ]
+                 , a [href "baseDocumentaire/ados/plaquette été 2018 argent de poche.pdf", target "_blank"]
+                     [text "Plaquette été 2018"]
+                 , br [] []
+                 , br [] []
+                 , a [href "baseDocumentaire/ados/Dossier d'inscription argent de poche 2018.pdf", target "_blank"]
+                     [text "Dossier d'inscription"]   
+                 ]
+   , expiry = Date.fromString "08/31/2018"
+   }
+  ,{ emptyNews |
+     title = "Exposition estivale des Amis du vieux Murol"
+   , date  = Date.fromString "07/02/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les amis du vieux Murol proposent leur exposition estivale"
+                    ]
+                 , a [href "/baseDocumentaire/animation/expo 2018 amis du vieux murol.pdf", target "_blank"]
+                     [text "Voir l'affiche"]   
+                 ]
+   , expiry = Date.fromString "08/31/2018"
+   }
+   ,{ emptyNews |
+     title = "1er prix du trophée EDF du patrimoine Aurhalpin"
+   , date  = Date.fromString "07/10/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Suite aux travaux d’illuminations du château, la commune de Murol a obtenu le 1er prix du trophée EDF qui récompense la meilleure valorisation d’un élément du patrimonial régional par sa mise en lumière."
+                    ]
+                 ]
+   , expiry = Date.fromString "08/10/2018"
+   }
+  ,{ emptyNews |
+     title = "1er juillet, Murol fait sa révolution"
+   , date  = Date.fromString "07/10/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez le "
+                    ]
+                 , a [href "baseDocumentaire/animation/affiche14juillet2018.pdf", target "_blank"]
+                     [text "programme 2018"]   
+                 ]
+   , expiry = Date.fromString "07/15/2018"
+   }
+   ,{ emptyNews |
+     title = "Recherche de témoignages de personnes gênées par l'ambroisie"
+   , date  = Date.fromString "07/19/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "l'Observatoire des ambroisies et la Direction Générale de la Santé :"
+                    , br [] []
+                    , br [] []
+                    , text "Nous sommes à la recherche de témoignages de personnes qui sont gênées par l’ambroisie : symptômes gênants, impossibilité de travailler, besoin de déménager à cause de l’ambroisie, etc. Bref, tout témoignage qui démontre la nuisibilité de l’ambroisie."
+                    , br [] []
+                    , text "Ces témoignages peuvent être sous n’importe quel format : vidéo, par écrit … que vous voudrez bien transmettre à l'adresse mail suivante:"
+                    ]
+                 , a [href "mailto:conseillersmurol@gmail.com", target "_Top"]
+                     [text "conseillersmurol@gmail.com"]   
+                 , p [] 
+                     [ text "Document "
+                     , a [href "/baseDocumentaire/Flyer_AmbroisieV4.pdf", target "_blank"] 
+                         [text "reconnaître l'ambroisie"] 
+                     ]
+                 ]
+   , expiry = Date.fromString "08/06/2018"
+   }
+  ,{ emptyNews |
+     title = "Dysfonctionnement du feu d'artifice du 14 juillet"
+   , date  = Date.fromString "07/22/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le feu d'artifice du 14 juillet ne s'est pas déroulé selon le programme annoncé. Voir le "
+                    ]
+                 , a [href "baseDocumentaire/message feu d'artifice.pdf", target "_blank"]
+                     [text "message du maire"]   
+                 ]
+   , expiry = Date.fromString "08/22/2018"
+   }
+   ,{ emptyNews |
+     title = "Festival d'Art : dimanche 29 juillet"
+   , date  = Date.fromString "07/26/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez le "
+                    ]
+                 , a [href "baseDocumentaire/animation/afficheFestivalArt2018.pdf", target "_blank"]
+                     [text "programme"]   
+                 ]
+   , expiry = Date.fromString "08/01/2018"
+   }
+   ,{ emptyNews |
+     title = "La chaine des Puys-Faille de la Limagne dans le patrimoine de l'Unesco!"
+   , date  = Date.fromString "08/03/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Le 2 juillet 2018, le comité du patrimoine mondial réuni à Bahreim a décidé d'inscrire ce haut lieu tectonique. Pour plus de renseignements: "
+                    ]
+                 , a [href "http://www.chainedespuys-failledelimagne.com/?actualite=la-chaine-des-puys-faille-de-limagne-inscrite-au-patrimoine-mondial-de-lunesco", target "_blank"]
+                     [text "voir ici"]   
+                 ]
+   , expiry = Date.fromString "12/01/2018"
+   }
+   ,{ emptyNews |
+     title = "Les animations d'août 2018"
+   , date  = Date.fromString "08/03/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Découvrez les animations estivales des communes de la Vallée Verte (Chambon sur Lac, Murol et Saint Nectaire) dans la "
+                    
+                 , a [href "baseDocumentaire/animationsAout2018.pdf", target "_blank"]
+                     [text "brochure"]]   
+                 ]
+   , expiry = Date.fromString "09/01/2018"
+   }
+   ,{ emptyNews |
+     title = "Les photos de la 5ème édition du festival d'Art de Murol"
+   , date  = Date.fromString "08/03/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les photos sont disponibles dans la "
+                    
+                 , a [href "/FestivalArt.html"] [text "photothèque"]]  
+                 ]
+   , expiry = Date.fromString "09/01/2018"
+   }
+   ,{ emptyNews |
+     title = "Concert \"l'âme slave\" dimanche 19 août "
+   , date  = Date.fromString "08/17/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Venez profiter du concert de deux virtuoses de la musique russes à 20h30 à l'église de Murol !"
+                    ]
+                 , a [href "baseDocumentaire/animation/concert église 19-8-18.pdf", target "_blank"]
+                     [text "Voir l'affiche"]   
+                 ]
+   , expiry = Date.fromString "08/20/2018"
+   }
+   ,{ emptyNews |
+     title = "Reprise des activités pour la rentrée"
+   , date  = Date.fromString "09/03/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les associations font leur rentrée et vous invitent à les rejoindre :"
+                    
+
+
+
+                    ]
+                 , ul [] 
+                         [ li [] [ a [target "_blank", href "baseDocumentaire/Ensemble Instrumental de la Vallée Verte.pdf"]
+                                     [text "L'ensemble instrumental de la vallée verte"]
+                                 , text " dont la chorale fait sa première répétition mardi 4 septembre à 20h à la salle des fêtes"
+                                 ]
+                         , li [] [ text "Les balades "
+                                 , a [target "_blank", href "baseDocumentaire/Marchons dans nos campagnes.pdf"]
+                                     [text "Marchons dans nos campagnes"]
+                                 , text " proposées par le Clic pour les séniors dès le vendredi 14 septembre à 14h"
+                                 ]
+                         , li [] [ text "les activités sportives proposées par "
+                                 , a [ target "_blank", href "baseDocumentaire/Sancy Sports et Loisirs.pdf"] 
+                                     [text "Sancy Sports et Loisirs"]
+                                 , text " dès le mardi 17 septembre"
+                                 ]
+                         ]
+                 , p [] 
+                     [ text "D'autres associations ( ACTVV, Amis du Vieux Murol...) nous transmettront prochainement leurs programmes, nous vous les communiquerons."]
+                    
+                 ]
+   , expiry = Date.fromString "10/03/2018"
+   }     
   --,{ emptyNews |
   --   title = ""
   -- , date  = Date.fromString ""
@@ -2058,6 +2438,7 @@ news =
   -- , expiry = Date.fromString ""
   -- }  
   ]
+  
 
 newsletters =
   [("Aux bulletins d'informations de la commune"
