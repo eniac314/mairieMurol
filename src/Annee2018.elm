@@ -121,11 +121,21 @@ port tasks =
 -- Data 
 
 --galleries : List Gallery
-galleries = [(voeuxMaireEtCCAS2018, "voeuxMaireEtCCAS2018")
+galleries = [ (terreEauDeLaPaix2018, "TerreEauDeLaPaix2018")
+            , (tropheeEdf, "tropheeEdf")
+            , (rentreeMusique2018, "rentreeMusique2018")
+            , (voeuxMaireEtCCAS2018, "voeuxMaireEtCCAS2018")
             ]
 
+( terreEauDeLaPaix2018, terreEauDeLaPaix2018FX ) =
+    Gallery.init (picList 28) "TerreEauDeLaPaix2018" "22 et 23 septembre - Performances dansées Terre-eau de la Paix"
+
+( tropheeEdf, tropheeEdfFX ) = 
+  Gallery.init (picList 10) "tropheeEdf" "19 septembre - La cérémonie de remise du trophée EDF"
 
 ( voeuxMaireEtCCAS2018, voeuxMaireEtCCAS2018FX ) = 
   Gallery.init (picList 21) "voeuxMaireEtCCAS2018" "21 janvier - Les voeux du maire"
 
+(rentreeMusique2018, rentreeMusique2018FX) = 
+  Gallery.init (picList 6) "rentreeMusique2018" "3 septembre - La rentrée en musique"  
 

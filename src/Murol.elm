@@ -169,7 +169,7 @@ renderNewsList address title xs =
   div [class (title |> words |> List.map capitalize |> join "")]
       ([ h4 [] [text title]
        , p  [ id "lastUpdate" ]
-            [text "Dernière mise à jour le lundi 3 septembre 2018"]
+            [text "Dernière mise à jour le mardi 25 septembre 2018"]
        ]
       ++ (List.map (renderNews address) xs))
 
@@ -372,7 +372,7 @@ renderPlugins =
 renderAgenda = 
   div [id "agenda", class "submenu"]
       [ h3 [] [text "Agenda"]
-      , iframe [ src "https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=chldn4cf472b1le89c6qocsugc%40group.calendar.google.com&color=%2329527A&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&color=%23B1440E&src=k1f61irouk8ra89maeu6rgdqr0%40group.calendar.google.com&color=%23AB8B00&src=llf7dsbh7ivhvv15sdc14ndi94%40group.calendar.google.com&color=%23182C57&src=53uq1md0197h673u1kh7l9nmn0%40group.calendar.google.com&color=%232F6309&ctz=Europe%2FParis"
+      , iframe [ src "https://calendar.google.com/calendar/embed?showTitle=0&showTabs=0&showNav=0&showPrint=0&showCalendars=0&showTz=0&mode=AGENDA&height=150&wkst=2&hl=fr&bgcolor=%23FFFFFF&src=1claq68scg7llpg29j2fasprtk%40group.calendar.google.com&;color=%23fe3b00&;src=n1jce3hgvarkt6n3o69c6nl66g%40group.calendar.google.com&;color=%23007451&;src=r46rbonnui234n2b2glau5btoo%40group.calendar.google.com&;color=%2305f2ff&ctz=Europe%2FParis"
                ] []
       , p [] [a [href "/Animation.html"]
                 [text "Consulter le calendrier"]
@@ -2424,7 +2424,82 @@ Toutes les informations pratiques sont sur le "
                     
                  ]
    , expiry = Date.fromString "10/03/2018"
-   }     
+   }
+   ,{ emptyNews |
+     title = "Activités dans la vallée, suite..."
+   , date  = Date.fromString "09/11/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [ text "L'association culture et tradition de la vallée verte (ACTVV) propose de "
+                    ,  a [href "baseDocumentaire/Les activités 2018-2019 ACTVV.pdf", target "_blank"]
+                         [text "nombreuses activités toute l'année"]
+                    , text "."
+                    ]
+                 , p []
+                     [text "Nouveau! Les ateliers Zelle proposent des "
+                     , a [href "baseDocumentaire/ateliers Zelle.pdf", target "_blank"]
+                         [text "activités musicales"]
+                     , text " à partir de 3 ans."  
+                     ]
+                  
+                 ]
+   , expiry = Date.fromString "12/31/2018"
+   }
+   
+    
+  ,{ emptyNews |
+     title = "La rentrée en musique"
+   , date  = Date.fromString "09/20/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Cette année, les écoliers de Murol et Chambon sur Lac ont eu droit à faire leur rentrée en musique grâce au concours des instrumentistes de l'ensemble instrumental des la vallée verte"
+                    ]
+                 , a [href "Annee2018.html"]
+                     [text "Voir les photos"]   
+                 ]
+   , expiry = Date.fromString "10/20/2018"
+ }
+   ,{ emptyNews |
+     title = "La commune de Murol a reçu le trophée EDF" 
+   , date  = Date.fromString "09/20/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "La cérémonie de remise du trophée EDF récompensant la mise en lumière des remparts du château a eu lieu mercredi 19 septembre"
+                    ]
+                 , a [href "baseDocumentaire/dossier de presseEDF.pdf", target "_blank"]
+                     [text "Voir le dossier de presse"]   
+                 , br [] []
+                 , a [href "Annee2018.html"]
+                     [text "Voir les photos"]
+                 ]
+
+   , expiry = Date.fromString "10/20/2018"
+   }
+   ,{ emptyNews |
+     title = "Samedi 22 et dimanche 23 septembre : spectacles du projet terre-eau de la paix"
+   , date  = Date.fromString "09/20/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Vous pourrez assister aux productions dansées du projet Terre-Eau de la Paix les 22 et 23 septembre 2018 à 15h30 au Lac Chambon, plage de Murol. Cette manifestation émane de la collaboration entre l’association des Maires Ruraux du Puy de Dôme, porteur du projet, le Master international Choréomundus, et l’association Passeurs de danse. Ce projet s’inscrit dans une démarche de promotion de la Paix à travers la coopération artistique interculturelle des acteurs. Il rend hommage, en la prolongeant, à la journée internationale de la Paix (21 septembre). Spectacle gratuit."
+                    ]
+                 , a [href "/baseDocumentaire/animation/Terre-eau de la paix.jpg", target "_blank"]
+                      [text "voir l'affiche"]   
+                 ]
+   , expiry = Date.fromString "09/24/2018"
+   }
+   ,{ emptyNews |
+     title = "Performances dansées Terre-eau de la Paix"
+   , date  = Date.fromString "09/25/2018"
+   , descr = div [class "newsdescr"]
+                 [p []
+                    [text "Les photos des spectacles des 22 et 23 septembre à la plage sont disponibles dans la "
+                    ]
+                 , a [href "Annee2018.html"]
+                     [text "photothèque"]   
+                 ]
+   , expiry = Date.fromString "10/25/2018"
+   }    
+           
   --,{ emptyNews |
   --   title = ""
   -- , date  = Date.fromString ""
